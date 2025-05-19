@@ -1,0 +1,177 @@
+import { CoreStrapi } from '../../@types';
+import { Nexus } from '../../@types/graphql';
+declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
+    type: string;
+    args: {
+        relation: import("nexus/dist/core").NexusNonNullDef<any>;
+        filters: import("nexus/dist/core").NexusInputObjectTypeDef<any>;
+        pagination: any;
+        sort: any;
+    };
+    resolve(obj: Object, args: any): Promise<{
+        data: ({
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        } | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: {
+                id?: number;
+                documentId?: string;
+                locale?: string;
+                uid?: string;
+                requireCommentsApproval?: boolean;
+            };
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        })[];
+        pagination?: {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
+        };
+    }>;
+};
+export default _default;

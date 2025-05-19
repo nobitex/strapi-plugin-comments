@@ -1,0 +1,78 @@
+import { Params } from '@strapi/database/dist/entity-manager/types';
+import { CoreStrapi } from '../@types';
+import { ReportResultValidator } from '../validators/repositories';
+export declare const getReportCommentRepositorySource: (strapi: CoreStrapi) => {
+    findPage(params: Params): Promise<ReportResultValidator['findPage']>;
+    findMany(params: Params): Promise<ReportResultValidator['findMany']>;
+    update(params: Params): Promise<ReportResultValidator['update']>;
+    updateMany(params: Params): Promise<import("@strapi/database/dist/types").CountResult>;
+    create(params: Params): Promise<{
+        id?: number;
+        documentId?: string;
+        content?: string;
+        related?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            locale?: string;
+        };
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }>;
+};
+export declare const getReportCommentRepository: (strapi: CoreStrapi) => {
+    findPage(params: Params): Promise<ReportResultValidator['findPage']>;
+    findMany(params: Params): Promise<ReportResultValidator['findMany']>;
+    update(params: Params): Promise<ReportResultValidator['update']>;
+    updateMany(params: Params): Promise<import("@strapi/database/dist/types").CountResult>;
+    create(params: Params): Promise<{
+        id?: number;
+        documentId?: string;
+        content?: string;
+        related?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            locale?: string;
+        };
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }>;
+};
+export type ReportCommentRepository = ReturnType<typeof getReportCommentRepository>;

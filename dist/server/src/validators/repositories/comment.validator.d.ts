@@ -1,0 +1,3272 @@
+import { z } from 'zod';
+declare const commentSchema: z.ZodObject<{
+    id: z.ZodNumber;
+    documentId: z.ZodNullable<z.ZodString>;
+    content: z.ZodString;
+    blocked: z.ZodNullable<z.ZodBoolean>;
+    blockedThread: z.ZodNullable<z.ZodBoolean>;
+    blockReason: z.ZodNullable<z.ZodString>;
+    isAdminComment: z.ZodNullable<z.ZodBoolean>;
+    removed: z.ZodNullable<z.ZodBoolean>;
+    approvalStatus: z.ZodNullable<z.ZodString>;
+    related: z.ZodString;
+    createdAt: z.ZodString;
+    updatedAt: z.ZodNullable<z.ZodString>;
+    publishedAt: z.ZodNullable<z.ZodString>;
+    authorId: z.ZodNullable<z.ZodString>;
+    authorName: z.ZodNullable<z.ZodString>;
+    authorEmail: z.ZodNullable<z.ZodString>;
+    authorAvatar: z.ZodNullable<z.ZodString>;
+    authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        id: z.ZodNumber;
+        email: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        email?: string;
+    }, {
+        id?: number;
+        email?: string;
+    }>]>>>;
+    locale: z.ZodNullable<z.ZodString>;
+} & {
+    gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+    threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+    reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        reason: z.ZodString;
+        resolved: z.ZodBoolean;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodString;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        locale: z.ZodNullable<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }>, "many">>;
+    author: z.ZodAny;
+} & {
+    threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    }>]>>>>;
+}, "strip", z.ZodTypeAny, {
+    id?: number;
+    documentId?: string;
+    content?: string;
+    blocked?: boolean;
+    blockedThread?: boolean;
+    blockReason?: string;
+    isAdminComment?: boolean;
+    removed?: boolean;
+    approvalStatus?: string;
+    related?: string;
+    createdAt?: string;
+    updatedAt?: string;
+    publishedAt?: string;
+    authorId?: string;
+    authorName?: string;
+    authorEmail?: string;
+    authorAvatar?: string;
+    authorUser?: string | {
+        id?: number;
+        email?: string;
+    };
+    locale?: string;
+    gotThread?: boolean;
+    threadFirstItemId?: number;
+    reports?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }[];
+    author?: any;
+    threadOf?: number | {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    };
+}, {
+    id?: number;
+    documentId?: string;
+    content?: string;
+    blocked?: boolean;
+    blockedThread?: boolean;
+    blockReason?: string;
+    isAdminComment?: boolean;
+    removed?: boolean;
+    approvalStatus?: string;
+    related?: string;
+    createdAt?: string;
+    updatedAt?: string;
+    publishedAt?: string;
+    authorId?: string;
+    authorName?: string;
+    authorEmail?: string;
+    authorAvatar?: string;
+    authorUser?: string | {
+        id?: number;
+        email?: string;
+    };
+    locale?: string;
+    gotThread?: boolean;
+    threadFirstItemId?: number;
+    reports?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }[];
+    author?: any;
+    threadOf?: number | {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    };
+}>;
+declare const commentRelatedSchema: z.ZodObject<{
+    id: z.ZodNumber;
+    uid: z.ZodString;
+    documentId: z.ZodString;
+    requireCommentsApproval: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+    locale: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+}, "strip", z.ZodTypeAny, {
+    id?: number;
+    documentId?: string;
+    locale?: string;
+    uid?: string;
+    requireCommentsApproval?: boolean;
+}, {
+    id?: number;
+    documentId?: string;
+    locale?: string;
+    uid?: string;
+    requireCommentsApproval?: boolean;
+}>;
+export type CommentRelated = z.infer<typeof commentRelatedSchema>;
+declare const commentWithRelatedSchema: z.ZodObject<Omit<{
+    id: z.ZodNumber;
+    documentId: z.ZodNullable<z.ZodString>;
+    content: z.ZodString;
+    blocked: z.ZodNullable<z.ZodBoolean>;
+    blockedThread: z.ZodNullable<z.ZodBoolean>;
+    blockReason: z.ZodNullable<z.ZodString>;
+    isAdminComment: z.ZodNullable<z.ZodBoolean>;
+    removed: z.ZodNullable<z.ZodBoolean>;
+    approvalStatus: z.ZodNullable<z.ZodString>;
+    related: z.ZodString;
+    createdAt: z.ZodString;
+    updatedAt: z.ZodNullable<z.ZodString>;
+    publishedAt: z.ZodNullable<z.ZodString>;
+    authorId: z.ZodNullable<z.ZodString>;
+    authorName: z.ZodNullable<z.ZodString>;
+    authorEmail: z.ZodNullable<z.ZodString>;
+    authorAvatar: z.ZodNullable<z.ZodString>;
+    authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        id: z.ZodNumber;
+        email: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        email?: string;
+    }, {
+        id?: number;
+        email?: string;
+    }>]>>>;
+    locale: z.ZodNullable<z.ZodString>;
+} & {
+    gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+    threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+    reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        reason: z.ZodString;
+        resolved: z.ZodBoolean;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodString;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        locale: z.ZodNullable<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }>, "many">>;
+    author: z.ZodAny;
+} & {
+    threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    }>]>>>>;
+}, "related"> & {
+    related: z.ZodOptional<z.ZodNullable<z.ZodObject<{
+        id: z.ZodNumber;
+        uid: z.ZodString;
+        documentId: z.ZodString;
+        requireCommentsApproval: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        locale: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        locale?: string;
+        uid?: string;
+        requireCommentsApproval?: boolean;
+    }, {
+        id?: number;
+        documentId?: string;
+        locale?: string;
+        uid?: string;
+        requireCommentsApproval?: boolean;
+    }>>>;
+}, "strip", z.ZodTypeAny, {
+    id?: number;
+    documentId?: string;
+    content?: string;
+    blocked?: boolean;
+    blockedThread?: boolean;
+    blockReason?: string;
+    isAdminComment?: boolean;
+    removed?: boolean;
+    approvalStatus?: string;
+    related?: {
+        id?: number;
+        documentId?: string;
+        locale?: string;
+        uid?: string;
+        requireCommentsApproval?: boolean;
+    };
+    createdAt?: string;
+    updatedAt?: string;
+    publishedAt?: string;
+    authorId?: string;
+    authorName?: string;
+    authorEmail?: string;
+    authorAvatar?: string;
+    authorUser?: string | {
+        id?: number;
+        email?: string;
+    };
+    locale?: string;
+    gotThread?: boolean;
+    threadFirstItemId?: number;
+    reports?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }[];
+    author?: any;
+    threadOf?: number | {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    };
+}, {
+    id?: number;
+    documentId?: string;
+    content?: string;
+    blocked?: boolean;
+    blockedThread?: boolean;
+    blockReason?: string;
+    isAdminComment?: boolean;
+    removed?: boolean;
+    approvalStatus?: string;
+    related?: {
+        id?: number;
+        documentId?: string;
+        locale?: string;
+        uid?: string;
+        requireCommentsApproval?: boolean;
+    };
+    createdAt?: string;
+    updatedAt?: string;
+    publishedAt?: string;
+    authorId?: string;
+    authorName?: string;
+    authorEmail?: string;
+    authorAvatar?: string;
+    authorUser?: string | {
+        id?: number;
+        email?: string;
+    };
+    locale?: string;
+    gotThread?: boolean;
+    threadFirstItemId?: number;
+    reports?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }[];
+    author?: any;
+    threadOf?: number | {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    };
+}>;
+export type CommentWithRelated = z.infer<typeof commentWithRelatedSchema>;
+export declare const findManySchema: z.ZodArray<z.ZodObject<{
+    id: z.ZodNumber;
+    documentId: z.ZodNullable<z.ZodString>;
+    content: z.ZodString;
+    blocked: z.ZodNullable<z.ZodBoolean>;
+    blockedThread: z.ZodNullable<z.ZodBoolean>;
+    blockReason: z.ZodNullable<z.ZodString>;
+    isAdminComment: z.ZodNullable<z.ZodBoolean>;
+    removed: z.ZodNullable<z.ZodBoolean>;
+    approvalStatus: z.ZodNullable<z.ZodString>;
+    related: z.ZodString;
+    createdAt: z.ZodString;
+    updatedAt: z.ZodNullable<z.ZodString>;
+    publishedAt: z.ZodNullable<z.ZodString>;
+    authorId: z.ZodNullable<z.ZodString>;
+    authorName: z.ZodNullable<z.ZodString>;
+    authorEmail: z.ZodNullable<z.ZodString>;
+    authorAvatar: z.ZodNullable<z.ZodString>;
+    authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+        id: z.ZodNumber;
+        email: z.ZodString;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        email?: string;
+    }, {
+        id?: number;
+        email?: string;
+    }>]>>>;
+    locale: z.ZodNullable<z.ZodString>;
+} & {
+    gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+    threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+    reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        reason: z.ZodString;
+        resolved: z.ZodBoolean;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodString;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        locale: z.ZodNullable<z.ZodString>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }>, "many">>;
+    author: z.ZodAny;
+} & {
+    threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    }>]>>>>;
+}, "strip", z.ZodTypeAny, {
+    id?: number;
+    documentId?: string;
+    content?: string;
+    blocked?: boolean;
+    blockedThread?: boolean;
+    blockReason?: string;
+    isAdminComment?: boolean;
+    removed?: boolean;
+    approvalStatus?: string;
+    related?: string;
+    createdAt?: string;
+    updatedAt?: string;
+    publishedAt?: string;
+    authorId?: string;
+    authorName?: string;
+    authorEmail?: string;
+    authorAvatar?: string;
+    authorUser?: string | {
+        id?: number;
+        email?: string;
+    };
+    locale?: string;
+    gotThread?: boolean;
+    threadFirstItemId?: number;
+    reports?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }[];
+    author?: any;
+    threadOf?: number | {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    };
+}, {
+    id?: number;
+    documentId?: string;
+    content?: string;
+    blocked?: boolean;
+    blockedThread?: boolean;
+    blockReason?: string;
+    isAdminComment?: boolean;
+    removed?: boolean;
+    approvalStatus?: string;
+    related?: string;
+    createdAt?: string;
+    updatedAt?: string;
+    publishedAt?: string;
+    authorId?: string;
+    authorName?: string;
+    authorEmail?: string;
+    authorAvatar?: string;
+    authorUser?: string | {
+        id?: number;
+        email?: string;
+    };
+    locale?: string;
+    gotThread?: boolean;
+    threadFirstItemId?: number;
+    reports?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        locale?: string;
+        reason?: string;
+        resolved?: boolean;
+    }[];
+    author?: any;
+    threadOf?: number | {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+    };
+}>, "many">;
+export declare const findWithCountSchema: z.ZodObject<{
+    pagination: z.ZodObject<{
+        page: z.ZodNumber;
+        pageSize: z.ZodNumber;
+        pageCount: z.ZodNumber;
+        total: z.ZodNumber;
+    }, "strip", z.ZodTypeAny, {
+        page?: number;
+        pageSize?: number;
+        pageCount?: number;
+        total?: number;
+    }, {
+        page?: number;
+        pageSize?: number;
+        pageCount?: number;
+        total?: number;
+    }>;
+    results: z.ZodArray<z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    } & {
+        threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            blocked: z.ZodNullable<z.ZodBoolean>;
+            blockedThread: z.ZodNullable<z.ZodBoolean>;
+            blockReason: z.ZodNullable<z.ZodString>;
+            isAdminComment: z.ZodNullable<z.ZodBoolean>;
+            removed: z.ZodNullable<z.ZodBoolean>;
+            approvalStatus: z.ZodNullable<z.ZodString>;
+            related: z.ZodString;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodNullable<z.ZodString>;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            authorId: z.ZodNullable<z.ZodString>;
+            authorName: z.ZodNullable<z.ZodString>;
+            authorEmail: z.ZodNullable<z.ZodString>;
+            authorAvatar: z.ZodNullable<z.ZodString>;
+            authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                id: z.ZodNumber;
+                email: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                email?: string;
+            }, {
+                id?: number;
+                email?: string;
+            }>]>>>;
+            locale: z.ZodNullable<z.ZodString>;
+        } & {
+            gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+            threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+            reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+                id: z.ZodNumber;
+                documentId: z.ZodNullable<z.ZodString>;
+                content: z.ZodString;
+                reason: z.ZodString;
+                resolved: z.ZodBoolean;
+                createdAt: z.ZodString;
+                updatedAt: z.ZodString;
+                publishedAt: z.ZodNullable<z.ZodString>;
+                locale: z.ZodNullable<z.ZodString>;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }>, "many">>;
+            author: z.ZodAny;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }>]>>>>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }>, "many">;
+}, "strip", z.ZodTypeAny, {
+    pagination?: {
+        page?: number;
+        pageSize?: number;
+        pageCount?: number;
+        total?: number;
+    };
+    results?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }[];
+}, {
+    pagination?: {
+        page?: number;
+        pageSize?: number;
+        pageCount?: number;
+        total?: number;
+    };
+    results?: {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }[];
+}>;
+export type Comment = z.infer<typeof commentSchema>;
+export type CommentResultValidator = {
+    findMany: z.infer<typeof findManySchema>;
+    findWithCount: z.infer<typeof findWithCountSchema>;
+    findOne: z.infer<typeof commentSchema>;
+    create: z.infer<typeof commentSchema>;
+};
+export declare const commentResultValidator: {
+    findMany: z.ZodArray<z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    } & {
+        threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            blocked: z.ZodNullable<z.ZodBoolean>;
+            blockedThread: z.ZodNullable<z.ZodBoolean>;
+            blockReason: z.ZodNullable<z.ZodString>;
+            isAdminComment: z.ZodNullable<z.ZodBoolean>;
+            removed: z.ZodNullable<z.ZodBoolean>;
+            approvalStatus: z.ZodNullable<z.ZodString>;
+            related: z.ZodString;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodNullable<z.ZodString>;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            authorId: z.ZodNullable<z.ZodString>;
+            authorName: z.ZodNullable<z.ZodString>;
+            authorEmail: z.ZodNullable<z.ZodString>;
+            authorAvatar: z.ZodNullable<z.ZodString>;
+            authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                id: z.ZodNumber;
+                email: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                email?: string;
+            }, {
+                id?: number;
+                email?: string;
+            }>]>>>;
+            locale: z.ZodNullable<z.ZodString>;
+        } & {
+            gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+            threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+            reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+                id: z.ZodNumber;
+                documentId: z.ZodNullable<z.ZodString>;
+                content: z.ZodString;
+                reason: z.ZodString;
+                resolved: z.ZodBoolean;
+                createdAt: z.ZodString;
+                updatedAt: z.ZodString;
+                publishedAt: z.ZodNullable<z.ZodString>;
+                locale: z.ZodNullable<z.ZodString>;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }>, "many">>;
+            author: z.ZodAny;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }>]>>>>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }>, "many">;
+    findWithCount: z.ZodObject<{
+        pagination: z.ZodObject<{
+            page: z.ZodNumber;
+            pageSize: z.ZodNumber;
+            pageCount: z.ZodNumber;
+            total: z.ZodNumber;
+        }, "strip", z.ZodTypeAny, {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
+        }, {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
+        }>;
+        results: z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            blocked: z.ZodNullable<z.ZodBoolean>;
+            blockedThread: z.ZodNullable<z.ZodBoolean>;
+            blockReason: z.ZodNullable<z.ZodString>;
+            isAdminComment: z.ZodNullable<z.ZodBoolean>;
+            removed: z.ZodNullable<z.ZodBoolean>;
+            approvalStatus: z.ZodNullable<z.ZodString>;
+            related: z.ZodString;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodNullable<z.ZodString>;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            authorId: z.ZodNullable<z.ZodString>;
+            authorName: z.ZodNullable<z.ZodString>;
+            authorEmail: z.ZodNullable<z.ZodString>;
+            authorAvatar: z.ZodNullable<z.ZodString>;
+            authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                id: z.ZodNumber;
+                email: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                email?: string;
+            }, {
+                id?: number;
+                email?: string;
+            }>]>>>;
+            locale: z.ZodNullable<z.ZodString>;
+        } & {
+            gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+            threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+            reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+                id: z.ZodNumber;
+                documentId: z.ZodNullable<z.ZodString>;
+                content: z.ZodString;
+                reason: z.ZodString;
+                resolved: z.ZodBoolean;
+                createdAt: z.ZodString;
+                updatedAt: z.ZodString;
+                publishedAt: z.ZodNullable<z.ZodString>;
+                locale: z.ZodNullable<z.ZodString>;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }>, "many">>;
+            author: z.ZodAny;
+        } & {
+            threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+                id: z.ZodNumber;
+                documentId: z.ZodNullable<z.ZodString>;
+                content: z.ZodString;
+                blocked: z.ZodNullable<z.ZodBoolean>;
+                blockedThread: z.ZodNullable<z.ZodBoolean>;
+                blockReason: z.ZodNullable<z.ZodString>;
+                isAdminComment: z.ZodNullable<z.ZodBoolean>;
+                removed: z.ZodNullable<z.ZodBoolean>;
+                approvalStatus: z.ZodNullable<z.ZodString>;
+                related: z.ZodString;
+                createdAt: z.ZodString;
+                updatedAt: z.ZodNullable<z.ZodString>;
+                publishedAt: z.ZodNullable<z.ZodString>;
+                authorId: z.ZodNullable<z.ZodString>;
+                authorName: z.ZodNullable<z.ZodString>;
+                authorEmail: z.ZodNullable<z.ZodString>;
+                authorAvatar: z.ZodNullable<z.ZodString>;
+                authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                    id: z.ZodNumber;
+                    email: z.ZodString;
+                }, "strip", z.ZodTypeAny, {
+                    id?: number;
+                    email?: string;
+                }, {
+                    id?: number;
+                    email?: string;
+                }>]>>>;
+                locale: z.ZodNullable<z.ZodString>;
+            } & {
+                gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+                threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+                reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+                    id: z.ZodNumber;
+                    documentId: z.ZodNullable<z.ZodString>;
+                    content: z.ZodString;
+                    reason: z.ZodString;
+                    resolved: z.ZodBoolean;
+                    createdAt: z.ZodString;
+                    updatedAt: z.ZodString;
+                    publishedAt: z.ZodNullable<z.ZodString>;
+                    locale: z.ZodNullable<z.ZodString>;
+                }, "strip", z.ZodTypeAny, {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }, {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }>, "many">>;
+                author: z.ZodAny;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            }, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            }>]>>>>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        }>, "many">;
+    }, "strip", z.ZodTypeAny, {
+        pagination?: {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
+        };
+        results?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        }[];
+    }, {
+        pagination?: {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
+        };
+        results?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        }[];
+    }>;
+    findOne: z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    } & {
+        threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            blocked: z.ZodNullable<z.ZodBoolean>;
+            blockedThread: z.ZodNullable<z.ZodBoolean>;
+            blockReason: z.ZodNullable<z.ZodString>;
+            isAdminComment: z.ZodNullable<z.ZodBoolean>;
+            removed: z.ZodNullable<z.ZodBoolean>;
+            approvalStatus: z.ZodNullable<z.ZodString>;
+            related: z.ZodString;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodNullable<z.ZodString>;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            authorId: z.ZodNullable<z.ZodString>;
+            authorName: z.ZodNullable<z.ZodString>;
+            authorEmail: z.ZodNullable<z.ZodString>;
+            authorAvatar: z.ZodNullable<z.ZodString>;
+            authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                id: z.ZodNumber;
+                email: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                email?: string;
+            }, {
+                id?: number;
+                email?: string;
+            }>]>>>;
+            locale: z.ZodNullable<z.ZodString>;
+        } & {
+            gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+            threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+            reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+                id: z.ZodNumber;
+                documentId: z.ZodNullable<z.ZodString>;
+                content: z.ZodString;
+                reason: z.ZodString;
+                resolved: z.ZodBoolean;
+                createdAt: z.ZodString;
+                updatedAt: z.ZodString;
+                publishedAt: z.ZodNullable<z.ZodString>;
+                locale: z.ZodNullable<z.ZodString>;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }>, "many">>;
+            author: z.ZodAny;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }>]>>>>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }>;
+    create: z.ZodObject<{
+        id: z.ZodNumber;
+        documentId: z.ZodNullable<z.ZodString>;
+        content: z.ZodString;
+        blocked: z.ZodNullable<z.ZodBoolean>;
+        blockedThread: z.ZodNullable<z.ZodBoolean>;
+        blockReason: z.ZodNullable<z.ZodString>;
+        isAdminComment: z.ZodNullable<z.ZodBoolean>;
+        removed: z.ZodNullable<z.ZodBoolean>;
+        approvalStatus: z.ZodNullable<z.ZodString>;
+        related: z.ZodString;
+        createdAt: z.ZodString;
+        updatedAt: z.ZodNullable<z.ZodString>;
+        publishedAt: z.ZodNullable<z.ZodString>;
+        authorId: z.ZodNullable<z.ZodString>;
+        authorName: z.ZodNullable<z.ZodString>;
+        authorEmail: z.ZodNullable<z.ZodString>;
+        authorAvatar: z.ZodNullable<z.ZodString>;
+        authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+            id: z.ZodNumber;
+            email: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            email?: string;
+        }, {
+            id?: number;
+            email?: string;
+        }>]>>>;
+        locale: z.ZodNullable<z.ZodString>;
+    } & {
+        gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+        threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+        reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            reason: z.ZodString;
+            resolved: z.ZodBoolean;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodString;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            locale: z.ZodNullable<z.ZodString>;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }>, "many">>;
+        author: z.ZodAny;
+    } & {
+        threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
+            id: z.ZodNumber;
+            documentId: z.ZodNullable<z.ZodString>;
+            content: z.ZodString;
+            blocked: z.ZodNullable<z.ZodBoolean>;
+            blockedThread: z.ZodNullable<z.ZodBoolean>;
+            blockReason: z.ZodNullable<z.ZodString>;
+            isAdminComment: z.ZodNullable<z.ZodBoolean>;
+            removed: z.ZodNullable<z.ZodBoolean>;
+            approvalStatus: z.ZodNullable<z.ZodString>;
+            related: z.ZodString;
+            createdAt: z.ZodString;
+            updatedAt: z.ZodNullable<z.ZodString>;
+            publishedAt: z.ZodNullable<z.ZodString>;
+            authorId: z.ZodNullable<z.ZodString>;
+            authorName: z.ZodNullable<z.ZodString>;
+            authorEmail: z.ZodNullable<z.ZodString>;
+            authorAvatar: z.ZodNullable<z.ZodString>;
+            authorUser: z.ZodNullable<z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodObject<{
+                id: z.ZodNumber;
+                email: z.ZodString;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                email?: string;
+            }, {
+                id?: number;
+                email?: string;
+            }>]>>>;
+            locale: z.ZodNullable<z.ZodString>;
+        } & {
+            gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+            threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+            reports: z.ZodDefault<z.ZodArray<z.ZodObject<{
+                id: z.ZodNumber;
+                documentId: z.ZodNullable<z.ZodString>;
+                content: z.ZodString;
+                reason: z.ZodString;
+                resolved: z.ZodBoolean;
+                createdAt: z.ZodString;
+                updatedAt: z.ZodString;
+                publishedAt: z.ZodNullable<z.ZodString>;
+                locale: z.ZodNullable<z.ZodString>;
+            }, "strip", z.ZodTypeAny, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }, {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }>, "many">>;
+            author: z.ZodAny;
+        }, "strip", z.ZodTypeAny, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }, {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        }>]>>>>;
+    }, "strip", z.ZodTypeAny, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }, {
+        id?: number;
+        documentId?: string;
+        content?: string;
+        blocked?: boolean;
+        blockedThread?: boolean;
+        blockReason?: string;
+        isAdminComment?: boolean;
+        removed?: boolean;
+        approvalStatus?: string;
+        related?: string;
+        createdAt?: string;
+        updatedAt?: string;
+        publishedAt?: string;
+        authorId?: string;
+        authorName?: string;
+        authorEmail?: string;
+        authorAvatar?: string;
+        authorUser?: string | {
+            id?: number;
+            email?: string;
+        };
+        locale?: string;
+        gotThread?: boolean;
+        threadFirstItemId?: number;
+        reports?: {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            locale?: string;
+            reason?: string;
+            resolved?: boolean;
+        }[];
+        author?: any;
+        threadOf?: number | {
+            id?: number;
+            documentId?: string;
+            content?: string;
+            blocked?: boolean;
+            blockedThread?: boolean;
+            blockReason?: string;
+            isAdminComment?: boolean;
+            removed?: boolean;
+            approvalStatus?: string;
+            related?: string;
+            createdAt?: string;
+            updatedAt?: string;
+            publishedAt?: string;
+            authorId?: string;
+            authorName?: string;
+            authorEmail?: string;
+            authorAvatar?: string;
+            authorUser?: string | {
+                id?: number;
+                email?: string;
+            };
+            locale?: string;
+            gotThread?: boolean;
+            threadFirstItemId?: number;
+            reports?: {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                locale?: string;
+                reason?: string;
+                resolved?: boolean;
+            }[];
+            author?: any;
+        };
+    }>;
+};
+export {};
