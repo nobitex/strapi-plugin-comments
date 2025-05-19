@@ -22,6 +22,7 @@ import { client as clientValidator } from '../validators/api';
 import { Comment, CommentRelated, CommentWithRelated } from '../validators/repositories';
 import { Pagination } from '../validators/repositories/utils';
 import { buildAuthorModel, buildNestedStructure, filterOurResolvedReports, getRelatedGroups } from './utils/functions';
+import {isPersianProfane} from "../utils/isPersianProfane";
 
 
 const PAGE_SIZE = 10;
@@ -337,7 +338,7 @@ const commonService = ({ strapi }: StrapiContext) => ({
   async checkBadWords(content: string) {
     const config = await this.getConfig(CONFIG_PARAMS.BAD_WORDS, true);
     if (config) {
-      if (content && isProfane({ testString: content })) {
+      if (content && (isProfane({ testString: content }) || isPersianProfane(content))) {
         throw new PluginError(
           400,
           'Bad language used! Please polite your comment...',

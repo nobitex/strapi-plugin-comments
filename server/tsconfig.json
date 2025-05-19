@@ -1,6 +1,7 @@
 {
   "extends": "@strapi/typescript-utils/tsconfigs/server",
   "include": ["./src"],
+  "resolveJsonModule": true,
   "compilerOptions": {
     "rootDir": "../",
     "baseUrl": "."
