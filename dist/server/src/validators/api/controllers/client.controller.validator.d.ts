@@ -11,6 +11,7 @@ export declare const newCommentValidator: (enabledCollections: string[], relatio
         email?: string;
         avatar?: string;
     };
+    entry?: string;
     threadOf?: string | number;
     relation?: `${string}::${string}.${string}`;
 }>;

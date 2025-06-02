@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { orderBy } from 'lodash';
 import { useAPI } from './useAPI';
 
-export const useCommentsAll = (queryParams: Record<string, string>) => {
+export const useCommentsAll = (queryParams: Record<string, any>) => {
   const api = useAPI();
   return useQuery({
     queryKey: api.comments.findAll.getKey(queryParams),

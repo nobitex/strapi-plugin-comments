@@ -88,6 +88,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -125,6 +126,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -169,6 +171,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -206,8 +209,9 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
-            }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
+            }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -244,6 +248,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -281,6 +286,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
             findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -747,6 +753,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -784,6 +791,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -828,6 +836,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -865,6 +874,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -1334,6 +1344,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1371,6 +1382,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[]>;
             findOne(criteria: Partial<any>): Promise<{
@@ -1410,6 +1422,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1447,6 +1460,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }>;
             findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -1486,6 +1500,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1523,6 +1538,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[]>;
             updateComment(criteria: Partial<any>, data: Partial<{
@@ -1562,6 +1578,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1599,6 +1616,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }>): Promise<{
                 id?: number;
@@ -1637,6 +1655,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1674,6 +1693,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }>;
             findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -2140,6 +2160,7 @@ declare const pluginServices: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -2177,6 +2198,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -2220,6 +2242,7 @@ declare const pluginServices: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -2257,6 +2280,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -2303,6 +2327,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2340,6 +2365,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[]): Promise<{
                 id?: number;
@@ -2385,6 +2411,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2422,6 +2449,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }, relatedEntities?: {
                 id?: number;
@@ -2472,6 +2500,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2509,9 +2538,10 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
-            modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
+            modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -2548,6 +2578,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2585,6 +2616,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[T_2], deepLimit?: number): Promise<boolean>;
             checkBadWords(content: string): Promise<string>;
@@ -2800,6 +2832,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2837,6 +2870,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[];
         }>;
@@ -3035,6 +3069,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3072,6 +3107,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[];
             pagination: {
@@ -3127,6 +3163,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3164,6 +3201,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
             level: {
@@ -3203,6 +3241,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3240,6 +3279,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[];
         }>;
@@ -3280,6 +3320,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3317,6 +3358,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         deleteComment(id: import("../@types").Id): Promise<{
@@ -3356,6 +3398,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3393,6 +3436,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         blockCommentThread(id: import("../@types").Id, forceStatus?: boolean): Promise<{
@@ -3432,6 +3476,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3469,6 +3514,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         approveComment(id: import("../@types").Id): Promise<{
@@ -3508,6 +3554,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3545,6 +3592,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         rejectComment(id: import("../@types").Id): Promise<{
@@ -3584,6 +3632,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3621,6 +3670,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         blockNestedThreads(id: import("../@types").Id, status: boolean): Promise<boolean>;
@@ -3694,6 +3744,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3731,6 +3782,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         updateComment({ id, content }: {
@@ -3773,6 +3825,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3810,6 +3863,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
     };
@@ -3902,6 +3956,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3939,6 +3994,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -3983,6 +4039,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -4020,8 +4077,9 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
-            }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
+            }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -4058,6 +4116,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -4095,6 +4154,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
             findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -4561,6 +4621,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -4598,6 +4659,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -4642,6 +4704,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -4679,6 +4742,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -5148,6 +5212,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -5185,6 +5250,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[]>;
             findOne(criteria: Partial<any>): Promise<{
@@ -5224,6 +5290,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -5261,6 +5328,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }>;
             findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -5300,6 +5368,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -5337,6 +5406,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[]>;
             updateComment(criteria: Partial<any>, data: Partial<{
@@ -5376,6 +5446,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -5413,6 +5484,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }>): Promise<{
                 id?: number;
@@ -5451,6 +5523,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -5488,6 +5561,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }>;
             findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -5954,6 +6028,7 @@ declare const pluginServices: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -5991,6 +6066,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -6034,6 +6110,7 @@ declare const pluginServices: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
+                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6071,6 +6148,7 @@ declare const pluginServices: {
                             resolved?: boolean;
                         }[];
                         author?: any;
+                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -6117,6 +6195,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -6154,6 +6233,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[]): Promise<{
                 id?: number;
@@ -6199,6 +6279,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -6236,6 +6317,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }, relatedEntities?: {
                 id?: number;
@@ -6286,6 +6368,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -6323,9 +6406,10 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
-            modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
+            modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -6362,6 +6446,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -6399,6 +6484,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[T_2], deepLimit?: number): Promise<boolean>;
             checkBadWords(content: string): Promise<string>;
@@ -6407,7 +6493,7 @@ declare const pluginServices: {
             registerLifecycleHook(): void;
             runLifecycleHook(): Promise<void>;
         };
-        create({ relation, content, threadOf, author, approvalStatus, locale }: {
+        create({ relation, content, threadOf, author, approvalStatus, locale, entry }: {
             content?: string;
             approvalStatus?: import("../const").APPROVAL_STATUS;
             locale?: string;
@@ -6417,6 +6503,7 @@ declare const pluginServices: {
                 email?: string;
                 avatar?: string;
             };
+            entry?: string;
             threadOf?: string | number;
             relation?: `${string}::${string}.${string}`;
         }, user?: import("../@types").AdminUser): Promise<{
@@ -6456,6 +6543,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -6493,6 +6581,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         update({ commentId, content, author, relation }: {
@@ -6542,6 +6631,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -6579,6 +6669,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         reportAbuse({ commentId, relation, ...payload }: {
@@ -6624,6 +6715,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -6661,6 +6753,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
             id?: number;
@@ -6714,6 +6807,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -6751,6 +6845,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         sendAbuseReportEmail(reason: string, content: string): Promise<void>;
@@ -6792,6 +6887,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -6829,6 +6925,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }): Promise<void>;
     };
@@ -6920,6 +7017,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -6957,6 +7055,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         } | {
             id?: number;
@@ -7001,6 +7100,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -7038,8 +7138,9 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
-        }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
+        }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
             id?: number;
             documentId?: string;
             content?: string;
@@ -7076,6 +7177,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -7113,6 +7215,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
         findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -7579,6 +7682,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7616,6 +7720,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -7660,6 +7765,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7697,6 +7803,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -8166,6 +8273,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -8203,6 +8311,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]>;
         findOne(criteria: Partial<any>): Promise<{
@@ -8242,6 +8351,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -8279,6 +8389,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -8318,6 +8429,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -8355,6 +8467,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]>;
         updateComment(criteria: Partial<any>, data: Partial<{
@@ -8394,6 +8507,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -8431,6 +8545,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>): Promise<{
             id?: number;
@@ -8469,6 +8584,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -8506,6 +8622,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -8972,6 +9089,7 @@ declare const pluginServices: {
                     reason?: string;
                     resolved?: boolean;
                 }[];
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -9009,6 +9127,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -9052,6 +9171,7 @@ declare const pluginServices: {
                     reason?: string;
                     resolved?: boolean;
                 }[];
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -9089,6 +9209,7 @@ declare const pluginServices: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -9135,6 +9256,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -9172,6 +9294,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]): Promise<{
             id?: number;
@@ -9217,6 +9340,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -9254,6 +9378,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }, relatedEntities?: {
             id?: number;
@@ -9304,6 +9429,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -9341,9 +9467,10 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
-        modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
+        modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
             id?: number;
             documentId?: string;
             content?: string;
@@ -9380,6 +9507,7 @@ declare const pluginServices: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -9417,6 +9545,7 @@ declare const pluginServices: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[T_2], deepLimit?: number): Promise<boolean>;
         checkBadWords(content: string): Promise<string>;

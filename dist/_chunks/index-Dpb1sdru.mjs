@@ -1,10 +1,10 @@
 import { jsx as e, Fragment as O, jsxs as i } from "react/jsx-runtime";
-import { l as j, e as L, f as ae, B as p, a3 as re, F as q, T as m, $ as r, o as n, a4 as T, a5 as x, a6 as f, a7 as se, a8 as N, a9 as Q, aa as le } from "./index-DSuxxeoB.mjs";
+import { l as j, e as L, f as ae, B as p, a3 as re, F as q, T as m, $ as r, o as n, a4 as T, a5 as x, a6 as f, a7 as se, a8 as N, a9 as Q, aa as le } from "./index-B5je850n.mjs";
 import { useTracking as ce, useNotification as de, Page as W, Layouts as D, Form as ge } from "@strapi/strapi/admin";
 import { useMutation as A, useQuery as M, useQueryClient as he, QueryClient as pe } from "@tanstack/react-query";
 import { useMemo as me, useRef as ue, useState as be, useCallback as $ } from "react";
 import fe from "styled-components";
-import { u as U, e as ye, a as Se, g as t, d as we } from "./index-KYyo-6zY.mjs";
+import { u as U, e as ye, a as Se, g as t, d as we } from "./index-BFRNZxuF.mjs";
 const P = ({
   children: d,
   condition: l

@@ -1,4 +1,4 @@
-export declare const useCommentsAll: (queryParams: Record<string, string>) => import("@tanstack/react-query").DefinedUseQueryResult<{
+export declare const useCommentsAll: (queryParams: Record<string, any>) => import("@tanstack/react-query").DefinedUseQueryResult<{
     result: {
         reports: {
             resolved: boolean;
@@ -35,6 +35,7 @@ export declare const useCommentsAll: (queryParams: Record<string, string>) => im
         };
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
+        entry?: string | undefined;
         threadOf?: import("../api/schemas").Comment | null | undefined;
         related?: string | ({
             uid: string;

@@ -52,6 +52,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -89,6 +90,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[];
         }>;
@@ -130,6 +132,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -167,6 +170,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[];
             pagination: {
@@ -231,6 +235,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -268,6 +273,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
             level: {
@@ -307,6 +313,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -344,6 +351,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             }[];
         }>;
@@ -396,6 +404,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -433,6 +442,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         unblockComment(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -484,6 +494,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -521,6 +532,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         deleteComment(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -572,6 +584,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -609,6 +622,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         blockCommentThread(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -660,6 +674,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -697,6 +712,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         unblockCommentThread(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -748,6 +764,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -785,6 +802,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         resolveAbuseReport(ctx: import("../@types").RequestContext<object, {
@@ -898,6 +916,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -935,6 +954,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         updateComment(ctx: import("../@types").RequestContext<Omit<{
@@ -994,6 +1014,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1031,6 +1052,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         approveComment(ctx: import("../@types").RequestContext<object, {
@@ -1072,6 +1094,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1109,6 +1132,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         rejectComment(ctx: import("../@types").RequestContext<object, {
@@ -1150,6 +1174,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1187,6 +1212,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
     };
@@ -1443,6 +1469,7 @@ declare const controllers: {
                 email?: string;
                 avatar?: string;
             };
+            entry?: string;
             threadOf?: string | number;
             relation?: `${string}::${string}.${string}`;
         }, "relation">>): Promise<{
@@ -1482,6 +1509,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1519,6 +1547,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         findAllFlat(ctx: import("../@types").RequestContext<object, Pick<{
@@ -1985,6 +2014,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2022,6 +2052,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -2066,6 +2097,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2103,6 +2135,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -2572,6 +2605,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2609,6 +2643,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]>;
         findAllPerAuthor(ctx: import("../@types").RequestContext<object, Pick<{
@@ -3075,6 +3110,7 @@ declare const controllers: {
                     reason?: string;
                     resolved?: boolean;
                 }[];
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3112,6 +3148,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -3155,6 +3192,7 @@ declare const controllers: {
                     reason?: string;
                     resolved?: boolean;
                 }[];
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3192,6 +3230,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -3241,6 +3280,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3278,6 +3318,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         reportAbuse(ctx: import("../@types").RequestContext): Promise<{
@@ -3318,6 +3359,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3355,6 +3397,7 @@ declare const controllers: {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             };
             id?: number;
@@ -3404,6 +3447,7 @@ declare const controllers: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -3441,6 +3485,7 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
     };

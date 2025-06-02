@@ -113,7 +113,7 @@ export declare const useAPI: () => {
     comments: {
         findAll: {
             getKey(queryParams?: Record<string, string> | undefined): string[];
-            query(queryParams: Record<string, string>): Promise<{
+            query(queryParams: Record<string, any>): Promise<{
                 pagination: {
                     page: number;
                     pageSize: number;
@@ -172,6 +172,7 @@ export declare const useAPI: () => {
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
+                    entry?: string | undefined;
                     threadOf?: {
                         id: number;
                         documentId: string;
@@ -210,6 +211,7 @@ export declare const useAPI: () => {
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
+                        entry?: string | undefined;
                         threadOf?: {
                             id: number;
                             createdAt: string;
@@ -248,6 +250,7 @@ export declare const useAPI: () => {
                             }[] | null | undefined;
                             gotThread?: boolean | null | undefined;
                             threadFirstItemId?: number | null | undefined;
+                            entry?: string | undefined;
                             threadOf?: import("../api/schemas").Comment | null | undefined;
                         } | null | undefined;
                     } | null | undefined;
@@ -289,6 +292,7 @@ export declare const useAPI: () => {
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
+                    entry?: string | undefined;
                 }[];
             }>;
         };
@@ -382,6 +386,7 @@ export declare const useAPI: () => {
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
+                        entry?: string | undefined;
                     };
                     resolved?: boolean | undefined;
                     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;

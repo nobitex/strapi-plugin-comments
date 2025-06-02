@@ -281,6 +281,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -318,6 +319,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     findAllFlat(ctx: RequestContext<object, Pick<clientValidator.FindAllFlatSchema, 'relation'>>): Promise<{
@@ -358,6 +360,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -395,6 +398,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         } | {
             id?: number;
@@ -439,6 +443,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -476,6 +481,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         })[];
         pagination?: {
@@ -522,6 +528,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -559,6 +566,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }[]>;
     findAllPerAuthor(ctx: RequestContext<object, Pick<clientValidator.FindAllPerAuthorValidatorSchema, 'authorId' | 'type'>>): Promise<{
@@ -598,6 +606,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 reason?: string;
                 resolved?: boolean;
             }[];
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -635,6 +644,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         } | {
             id?: number;
@@ -678,6 +688,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 reason?: string;
                 resolved?: boolean;
             }[];
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -715,6 +726,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         })[];
         pagination?: {
@@ -764,6 +776,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -801,6 +814,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     reportAbuse(ctx: RequestContext): Promise<{
@@ -841,6 +855,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -878,6 +893,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
         id?: number;
@@ -927,6 +943,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -964,6 +981,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
 };

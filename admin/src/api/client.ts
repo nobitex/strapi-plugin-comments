@@ -60,7 +60,7 @@ export const getApiClient = once((fetch: ReturnType<typeof getFetchClient>) => (
       getKey(queryParams?: Record<string, string>) {
         return [URL_PREFIX, 'moderate', 'all', queryParams ? JSON.stringify(queryParams) : undefined].filter(Boolean) as string[];
       },
-      async query(queryParams: Record<string, string>) {
+      async query(queryParams: Record<string, any>) {
         const response = await fetch.get(`/${URL_PREFIX}/moderate/all?${stringify(queryParams, { encode: false })}`);
         return commentsSchema.parseAsync(response.data);
       },

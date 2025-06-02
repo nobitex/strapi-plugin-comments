@@ -63,6 +63,7 @@ declare const commentSchema: z.ZodObject<{
         resolved?: boolean;
     }>, "many">>;
     author: z.ZodAny;
+    entry: z.ZodOptional<z.ZodString>;
 } & {
     threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
         id: z.ZodNumber;
@@ -128,6 +129,7 @@ declare const commentSchema: z.ZodObject<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -165,6 +167,7 @@ declare const commentSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     }, {
         id?: number;
         documentId?: string;
@@ -202,6 +205,7 @@ declare const commentSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     }>]>>>>;
 }, "strip", z.ZodTypeAny, {
     id?: number;
@@ -240,6 +244,7 @@ declare const commentSchema: z.ZodObject<{
         resolved?: boolean;
     }[];
     author?: any;
+    entry?: string;
     threadOf?: number | {
         id?: number;
         documentId?: string;
@@ -277,6 +282,7 @@ declare const commentSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     };
 }, {
     id?: number;
@@ -315,6 +321,7 @@ declare const commentSchema: z.ZodObject<{
         resolved?: boolean;
     }[];
     author?: any;
+    entry?: string;
     threadOf?: number | {
         id?: number;
         documentId?: string;
@@ -352,6 +359,7 @@ declare const commentSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     };
 }>;
 declare const commentRelatedSchema: z.ZodObject<{
@@ -438,6 +446,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
         resolved?: boolean;
     }>, "many">>;
     author: z.ZodAny;
+    entry: z.ZodOptional<z.ZodString>;
 } & {
     threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
         id: z.ZodNumber;
@@ -503,6 +512,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -540,6 +550,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     }, {
         id?: number;
         documentId?: string;
@@ -577,6 +588,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     }>]>>>>;
 }, "related"> & {
     related: z.ZodOptional<z.ZodNullable<z.ZodObject<{
@@ -641,6 +653,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
         resolved?: boolean;
     }[];
     author?: any;
+    entry?: string;
     threadOf?: number | {
         id?: number;
         documentId?: string;
@@ -678,6 +691,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     };
 }, {
     id?: number;
@@ -722,6 +736,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
         resolved?: boolean;
     }[];
     author?: any;
+    entry?: string;
     threadOf?: number | {
         id?: number;
         documentId?: string;
@@ -759,6 +774,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     };
 }>;
 export type CommentWithRelated = z.infer<typeof commentWithRelatedSchema>;
@@ -826,6 +842,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
         resolved?: boolean;
     }>, "many">>;
     author: z.ZodAny;
+    entry: z.ZodOptional<z.ZodString>;
 } & {
     threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
         id: z.ZodNumber;
@@ -891,6 +908,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -928,6 +946,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     }, {
         id?: number;
         documentId?: string;
@@ -965,6 +984,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     }>]>>>>;
 }, "strip", z.ZodTypeAny, {
     id?: number;
@@ -1003,6 +1023,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
         resolved?: boolean;
     }[];
     author?: any;
+    entry?: string;
     threadOf?: number | {
         id?: number;
         documentId?: string;
@@ -1040,6 +1061,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     };
 }, {
     id?: number;
@@ -1078,6 +1100,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
         resolved?: boolean;
     }[];
     author?: any;
+    entry?: string;
     threadOf?: number | {
         id?: number;
         documentId?: string;
@@ -1115,6 +1138,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
     };
 }>, "many">;
 export declare const findWithCountSchema: z.ZodObject<{
@@ -1198,6 +1222,7 @@ export declare const findWithCountSchema: z.ZodObject<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -1263,6 +1288,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
+            entry: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -1300,6 +1326,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -1337,6 +1364,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }>]>>>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -1375,6 +1403,7 @@ export declare const findWithCountSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -1412,6 +1441,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }, {
         id?: number;
@@ -1450,6 +1480,7 @@ export declare const findWithCountSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -1487,6 +1518,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
@@ -1533,6 +1565,7 @@ export declare const findWithCountSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -1570,6 +1603,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }[];
 }, {
@@ -1616,6 +1650,7 @@ export declare const findWithCountSchema: z.ZodObject<{
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -1653,6 +1688,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }[];
 }>;
@@ -1728,6 +1764,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -1793,6 +1830,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
+            entry: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -1830,6 +1868,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -1867,6 +1906,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }>]>>>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -1905,6 +1945,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -1942,6 +1983,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }, {
         id?: number;
@@ -1980,6 +2022,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -2017,6 +2060,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>, "many">;
     findWithCount: z.ZodObject<{
@@ -2100,6 +2144,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
+            entry: z.ZodOptional<z.ZodString>;
         } & {
             threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
                 id: z.ZodNumber;
@@ -2165,6 +2210,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }>, "many">>;
                 author: z.ZodAny;
+                entry: z.ZodOptional<z.ZodString>;
             }, "strip", z.ZodTypeAny, {
                 id?: number;
                 documentId?: string;
@@ -2202,6 +2248,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             }, {
                 id?: number;
                 documentId?: string;
@@ -2239,6 +2286,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             }>]>>>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
@@ -2277,6 +2325,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2314,6 +2363,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }, {
             id?: number;
@@ -2352,6 +2402,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2389,6 +2440,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
@@ -2435,6 +2487,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2472,6 +2525,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[];
     }, {
@@ -2518,6 +2572,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2555,6 +2610,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[];
     }>;
@@ -2622,6 +2678,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -2687,6 +2744,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
+            entry: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -2724,6 +2782,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -2761,6 +2820,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }>]>>>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -2799,6 +2859,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -2836,6 +2897,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }, {
         id?: number;
@@ -2874,6 +2936,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -2911,6 +2974,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     create: z.ZodObject<{
@@ -2977,6 +3041,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
+        entry: z.ZodOptional<z.ZodString>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -3042,6 +3107,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
+            entry: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -3079,6 +3145,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -3116,6 +3183,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         }>]>>>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -3154,6 +3222,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3191,6 +3260,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }, {
         id?: number;
@@ -3229,6 +3299,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3266,6 +3337,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
 };

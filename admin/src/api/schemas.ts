@@ -110,6 +110,7 @@ const baseCommentSchema = z.object({
   author: authorSchema,
   gotThread: z.boolean().nullable().optional(),
   threadFirstItemId: z.number().nullable().optional(),
+  entry: z.string().optional(),
 });
 
 type BaseComment = z.infer<typeof baseCommentSchema>;

@@ -6,15 +6,21 @@ import { CommentRow } from '../../components/CommentRow';
 import { CommentsStatusFilters } from '../../components/CommentStatusFilters';
 import { useCommentsAll } from '../../hooks/useCommentsAll';
 import { getMessage } from '../../utils';
+import {CommentsEntryFilters} from "../../components/CommentEntryFilter";
 
-
+const getUniqueEntryValues = (result: Array<Record<string, any>>): string[] => {
+  const allEntries = result
+      .map((item) => item.entry)
+      .filter((entry): entry is string => typeof entry === 'string');
+  return Array.from(new Set(allEntries));
+};
 
 export const Discover: FC<{ config: Config }> = ({ config }) => {
   const [{ query: queryParams }, setQueryParams] = useQueryParams();
 
 
-  const { data: { result, pagination } } = useCommentsAll(queryParams as Record<string, string>);
-
+  const { data: { result, pagination } } = useCommentsAll(queryParams as Record<string, any>);
+  const entries = getUniqueEntryValues(result);
   return (
     <>
       <Page.Title children={'Comments - discover'} />
@@ -28,6 +34,7 @@ export const Discover: FC<{ config: Config }> = ({ config }) => {
           <>
             <SearchInput label="Search" />
             <CommentsStatusFilters setQueryParams={setQueryParams}/>
+            <CommentsEntryFilters setQueryParams={setQueryParams} filterOptions={entries} />
           </>
         }/>
         <Layouts.Content>
@@ -75,7 +82,6 @@ export const Discover: FC<{ config: Config }> = ({ config }) => {
             <Tbody>
               {result.map((comment) => (
                 <CommentRow
-                  config={config}
                   key={comment.id}
                   item={comment}
                 />

@@ -93,6 +93,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -130,6 +131,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         } | {
             id?: number;
@@ -174,6 +176,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -211,8 +214,9 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
-        }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
+        }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
             id?: number;
             documentId?: string;
             content?: string;
@@ -249,6 +253,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -286,6 +291,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
         findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -752,6 +758,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -789,6 +796,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -833,6 +841,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -870,6 +879,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -1339,6 +1349,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1376,6 +1387,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]>;
         findOne(criteria: Partial<any>): Promise<{
@@ -1415,6 +1427,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1452,6 +1465,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -1491,6 +1505,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1528,6 +1543,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]>;
         updateComment(criteria: Partial<any>, data: Partial<{
@@ -1567,6 +1583,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1604,6 +1621,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>): Promise<{
             id?: number;
@@ -1642,6 +1660,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1679,6 +1698,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }>;
         findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -2145,6 +2165,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     reason?: string;
                     resolved?: boolean;
                 }[];
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2182,6 +2203,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -2225,6 +2247,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     reason?: string;
                     resolved?: boolean;
                 }[];
+                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2262,6 +2285,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
+                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -2308,6 +2332,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2345,6 +2370,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[]): Promise<{
             id?: number;
@@ -2390,6 +2416,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2427,6 +2454,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }, relatedEntities?: {
             id?: number;
@@ -2477,6 +2505,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2514,9 +2543,10 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
-        modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
+        modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("../@types").Id, fieldName: T_2, value: {
             id?: number;
             documentId?: string;
             content?: string;
@@ -2553,6 +2583,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2590,6 +2621,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[T_2], deepLimit?: number): Promise<boolean>;
         checkBadWords(content: string): Promise<string>;
@@ -2598,7 +2630,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
         registerLifecycleHook(): void;
         runLifecycleHook(): Promise<void>;
     };
-    create({ relation, content, threadOf, author, approvalStatus, locale }: client.NewCommentValidatorSchema, user?: AdminUser): Promise<{
+    create({ relation, content, threadOf, author, approvalStatus, locale, entry }: client.NewCommentValidatorSchema, user?: AdminUser): Promise<{
         id?: number;
         documentId?: string;
         content?: string;
@@ -2635,6 +2667,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -2672,6 +2705,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     update({ commentId, content, author, relation }: client.UpdateCommentValidatorSchema, user?: AdminUser): Promise<{
@@ -2711,6 +2745,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -2748,6 +2783,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     reportAbuse({ commentId, relation, ...payload }: client.ReportAbuseValidatorSchema, user?: AdminUser): Promise<{
@@ -2788,6 +2824,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2825,6 +2862,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
         id?: number;
@@ -2874,6 +2912,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -2911,6 +2950,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     sendAbuseReportEmail(reason: string, content: string): Promise<void>;

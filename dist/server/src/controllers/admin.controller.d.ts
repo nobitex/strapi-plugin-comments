@@ -56,6 +56,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -93,6 +94,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[];
     }>;
@@ -134,6 +136,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -171,6 +174,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[];
         pagination: {
@@ -223,6 +227,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -260,6 +265,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         };
         level: {
@@ -299,6 +305,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -336,6 +343,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         }[];
     }>;
@@ -376,6 +384,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -413,6 +422,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     unblockComment(ctx: RequestContextWithId): Promise<{
@@ -452,6 +462,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -489,6 +500,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     deleteComment(ctx: RequestContextWithId): Promise<{
@@ -528,6 +540,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -565,6 +578,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     blockCommentThread(ctx: RequestContextWithId): Promise<{
@@ -604,6 +618,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -641,6 +656,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     unblockCommentThread(ctx: RequestContextWithId): Promise<{
@@ -680,6 +696,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -717,6 +734,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     resolveAbuseReport(ctx: RequestContext<object, {
@@ -774,6 +792,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -811,6 +830,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     updateComment(ctx: RequestContext<Omit<adminValidator.CommentPostValidatorSchema, 'id'>, Pick<adminValidator.CommentPostValidatorSchema, 'id'>>): Promise<{
@@ -850,6 +870,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -887,6 +908,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     approveComment(ctx: RequestContext<object, adminValidator.IdValidatorSchema>): Promise<{
@@ -926,6 +948,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -963,6 +986,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
     rejectComment(ctx: RequestContext<object, adminValidator.IdValidatorSchema>): Promise<{
@@ -1002,6 +1026,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
+        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -1039,6 +1064,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
         };
     }>;
 };

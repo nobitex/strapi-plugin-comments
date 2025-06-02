@@ -20,6 +20,7 @@ const baseCommentSchema = dbBaseCommentSchema.merge(
       threadFirstItemId: z.number().nullable().optional(),
       reports: z.array(reportSchema).default([]),
       author: z.any(),
+      entry: z.string().optional()
     },
   ),
 );

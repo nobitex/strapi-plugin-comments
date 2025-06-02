@@ -116,7 +116,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
     comments: {
         findAll: {
             getKey(queryParams?: Record<string, string>): string[];
-            query(queryParams: Record<string, string>): Promise<{
+            query(queryParams: Record<string, any>): Promise<{
                 pagination: {
                     page: number;
                     pageSize: number;
@@ -175,6 +175,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
+                    entry?: string | undefined;
                     threadOf?: {
                         id: number;
                         documentId: string;
@@ -213,6 +214,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
+                        entry?: string | undefined;
                         threadOf?: {
                             id: number;
                             createdAt: string;
@@ -251,6 +253,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                             }[] | null | undefined;
                             gotThread?: boolean | null | undefined;
                             threadFirstItemId?: number | null | undefined;
+                            entry?: string | undefined;
                             threadOf?: import("./schemas").Comment | null | undefined;
                         } | null | undefined;
                     } | null | undefined;
@@ -292,6 +295,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
+                    entry?: string | undefined;
                 }[];
             }>;
         };
@@ -365,6 +369,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
+                        entry?: string | undefined;
                     };
                     resolved?: boolean | undefined;
                     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;

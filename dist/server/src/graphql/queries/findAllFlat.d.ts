@@ -46,6 +46,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -83,6 +84,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         } | {
             id?: number;
@@ -127,6 +129,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -164,6 +167,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                entry?: string;
             };
         })[];
         pagination?: {
