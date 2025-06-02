@@ -1,10 +1,10 @@
 import { Flex, IconButton, Link, Td, Tooltip, Tr, Typography } from '@strapi/design-system';
 import { Eye } from '@strapi/icons';
-import { isEmpty, isNil } from 'lodash';
-import { FC, SyntheticEvent, useMemo } from 'react';
+import {first, isEmpty, isNil} from 'lodash';
+import {FC, SyntheticEvent, useMemo, useState} from 'react';
 import { useIntl } from 'react-intl';
-import { useNavigate } from 'react-router-dom';
-import { Comment } from '../../api/schemas';
+import {useNavigate} from 'react-router-dom';
+import {Comment, Config} from '../../api/schemas';
 import { useAPI } from '../../hooks/useAPI';
 import { usePermissions } from '../../hooks/usePermissions';
 import { getMessage } from '../../utils';
@@ -13,11 +13,13 @@ import { CommentStatusBadge } from '../CommentStatusBadge';
 import { IconButtonGroup } from '../IconButtonGroup';
 import { ReviewFlow } from '../ReviewFlow';
 import { UserAvatar } from '../UserAvatar';
+import {useQuery} from "@tanstack/react-query";
 
 type Props = {
   readonly item: Comment;
+  readonly config: Config;
 };
-export const CommentRow: FC<Props> = ({ item }) => {
+export const CommentRow: FC<Props> = ({ item, config }) => {
   const {
     canAccessReports,
     canModerate,
@@ -26,6 +28,8 @@ export const CommentRow: FC<Props> = ({ item }) => {
   const api = useAPI();
   const navigate = useNavigate();
   const { formatDate } = useIntl();
+  const { entryLabel = {} } = config;
+
 
   const hasReports = !isEmpty(item.reports?.filter((_) => !_.resolved));
 
@@ -39,6 +43,23 @@ export const CommentRow: FC<Props> = ({ item }) => {
     evt.stopPropagation();
     navigate(id.toString());
   };
+
+    const { id } = item
+    const [filters, setFilters] = useState({});
+
+    const { data: { entity } } = useQuery({
+        queryKey: api.comments.findOne.getKey(id!, filters),
+        queryFn: () => api.comments.findOne.query(id!, filters),
+        initialData: {
+            level: [],
+            selected: {} as any,
+            entity: {} as any,
+        },
+    });
+
+    const entityLabelKey = first(entryLabel[entity?.uid]);
+
+
 
   const contentTypeLink = useMemo(() => {
     const related = item.related;
@@ -61,7 +82,8 @@ export const CommentRow: FC<Props> = ({ item }) => {
 
   const { name, email, avatar } = item.author || {};
 
-  return (
+  // @ts-ignore
+    return (
     <Tr>
       <Td>
         <Typography>{item.id}</Typography>
@@ -101,7 +123,7 @@ export const CommentRow: FC<Props> = ({ item }) => {
         ) : '-'}
       </Td>
       <Td maxWidth="200px">
-        {contentTypeLink ?? '-'}
+        {entity[entityLabelKey!] ?? contentTypeLink ?? '-'}
       </Td>
       <Td>
         <Typography>
