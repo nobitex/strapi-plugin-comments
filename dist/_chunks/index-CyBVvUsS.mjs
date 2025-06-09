@@ -1,5 +1,5 @@
 import { jsx as _, jsxs as Ae } from "react/jsx-runtime";
-import { ab as tn, ac as $r, l as wr, ad as nn, ae as it, af as on, ag as ee, ah as Rr, ai as lt, p as an, aj as V, F as ln, ak as un, T as cn, e as Cr } from "./index-B5je850n.mjs";
+import { ab as tn, ac as $r, l as wr, ad as nn, ae as it, af as on, ag as ee, ah as Rr, ai as lt, p as an, aj as V, F as ln, ak as un, T as cn, e as Cr } from "./index-CInskFzs.mjs";
 import { useQuery as fn, QueryClientProvider as sn, QueryClient as pn } from "@tanstack/react-query";
 import * as ae from "react";
 import { useMemo as ut, createContext as yn, useState as Tr } from "react";
@@ -1427,7 +1427,7 @@ const z = {
   author: si,
   gotThread: a.boolean().nullable().optional(),
   threadFirstItemId: a.number().nullable().optional(),
-  entry: a.string().optional()
+  section: a.string().optional()
 }), Lt = a.object({
   page: a.number(),
   pageSize: a.number(),

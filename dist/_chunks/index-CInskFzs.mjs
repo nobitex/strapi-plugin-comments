@@ -38445,7 +38445,7 @@ const zee = "strapi-plugin-comments", Uee = {
         id: `${Ei}.plugin.name`,
         defaultMessage: Gw
       },
-      Component: () => import("./index-yHcQJKWC.mjs"),
+      Component: () => import("./index-BTDp0OCc.mjs"),
       permissions: Kw.access
     }), t.createSettingSection(
       {
@@ -38463,7 +38463,7 @@ const zee = "strapi-plugin-comments", Uee = {
           },
           id: "comments",
           to: `/settings/${Ei}`,
-          Component: () => import("./index-Dpb1sdru.mjs"),
+          Component: () => import("./index-BZpqnNwH.mjs"),
           permissions: Kw.settings
         }
       ]

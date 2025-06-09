@@ -1,9 +1,9 @@
 import { jsxs as w, jsx as m, Fragment as tt } from "react/jsx-runtime";
 import { useNotification as rt, Form as cd, Page as Be, Layouts as Oe, useQueryParams as ld, SearchInput as _d, Pagination as Je } from "@strapi/strapi/admin";
 import { useNavigate as dd, useParams as Xd, Routes as Zd, Route as Ot, Navigate as Jd } from "react-router-dom";
-import { S as jd, a as eu, b as tu, c as nu, d as Oi, p as ni, l as oe, B as ie, T as K, D as Wo, F as W, C as mt, e as Se, I as ee, f as ft, g as ru, h as au, i as Ft, j as Ae, P as ou, k as iu, m as su, n as cu, o as Ze, q as kt, r as be, s as Ai, t as yi, u as Ii, v as Di, w as jt, x as lu, y as _u, z as du, A as uu, E as pu, G as mu, M as re, H as ri, J as ai, K as nt, L as te, N as oi, O as gu, Q as Eu, R as ii, U as Su, V as fu, W as At, X as Ko, Y as bu, Z as Qo, _ as Tu, $ as en, a0 as Ee, a1 as hu, a2 as yt } from "./index-B5je850n.mjs";
+import { S as jd, a as eu, b as tu, c as nu, d as Oi, p as ni, l as oe, B as ie, T as K, D as Wo, F as W, C as mt, e as Se, I as ee, f as ft, g as ru, h as au, i as Ft, j as Ae, P as ou, k as iu, m as su, n as cu, o as Ze, q as kt, r as be, s as Ai, t as yi, u as Ii, v as Di, w as jt, x as lu, y as _u, z as du, A as uu, E as pu, G as mu, M as re, H as ri, J as ai, K as nt, L as te, N as oi, O as gu, Q as Eu, R as ii, U as Su, V as fu, W as At, X as Ko, Y as bu, Z as Qo, _ as Tu, $ as en, a0 as Ee, a1 as hu, a2 as yt } from "./index-CInskFzs.mjs";
 import { useQuery as gt, useQueryClient as ye, useMutation as ge } from "@tanstack/react-query";
-import { u as fe, C as J, R as Ce, g as x, a as bt, U as Ru, b as We, c as wi, d as Mi, e as Cu } from "./index-BFRNZxuF.mjs";
+import { u as fe, C as J, R as Ce, g as x, a as bt, U as Ru, b as We, c as wi, d as Mi, e as Cu } from "./index-CyBVvUsS.mjs";
 import { create as Nu } from "zustand/react";
 import * as ue from "react";
 import { useCallback as Bt, useMemo as Gt, useContext as vu, useState as ke, useRef as ud, Fragment as Ou } from "react";
@@ -41525,7 +41525,9 @@ ${t}
     canAccessReports: e,
     canModerate: n,
     canReviewReports: r
-  } = bt(), a = fe(), o = dd(), { formatDate: i } = We(), c = !oe.isEmpty(t.reports?.filter((g) => !g.resolved)), s = e && c && !(t.blocked || t.blockedThread), _ = !oe.isNil(t.approvalStatus) && t.approvalStatus === "PENDING", p = (g) => (f) => {
+  } = bt(), a = fe(), o = dd(), { formatDate: i } = We();
+  console.log({ item: t });
+  const c = !oe.isEmpty(t.reports?.filter((g) => !g.resolved)), s = e && c && !(t.blocked || t.blockedThread), _ = !oe.isNil(t.approvalStatus) && t.approvalStatus === "PENDING", p = (g) => (f) => {
     f.preventDefault(), f.stopPropagation(), o(g.toString());
   }, d = Gt(() => {
     const g = t.related;
@@ -41571,7 +41573,7 @@ ${t}
       },
       "#" + t.threadOf.id
     ) }) : "-" }),
-    /* @__PURE__ */ m(Ee, { maxWidth: "200px", children: t.entry ?? d ?? "-" }),
+    /* @__PURE__ */ m(Ee, { maxWidth: "200px", children: t.section ?? d ?? "-" }),
     /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(K, { children: i(t.updatedAt || t.createdAt, {
       dateStyle: "long",
       timeStyle: "short"
@@ -41672,19 +41674,15 @@ ${t}
 }, yDe = ({ setQueryParams: t, filterOptions: e }) => {
   const [n, r] = ke(), a = (o) => {
     r(o), t({
-      page: {},
-      pageSize: {},
       filters: {
-        entry: {
-          $eq: o
-        }
+        section: o
       }
     });
   };
   return /* @__PURE__ */ m(
     kt,
     {
-      placeholder: x("page.common.item.status.setFilter"),
+      placeholder: "Filter by Entry",
       value: n,
       onClear: () => a(void 0),
       onChange: a,
@@ -41692,7 +41690,7 @@ ${t}
     }
   );
 }, IDe = (t) => {
-  const e = t.map((n) => n.entry).filter((n) => typeof n == "string");
+  const e = t.map((n) => n.section).filter((n) => typeof n == "string");
   return Array.from(new Set(e));
 }, DDe = ({ config: t }) => {
   const [{ query: e }, n] = ld(), { data: { result: r, pagination: a } } = ADe(e), o = IDe(r);

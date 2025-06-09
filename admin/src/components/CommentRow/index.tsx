@@ -27,6 +27,8 @@ export const CommentRow: FC<Props> = ({ item }) => {
   const navigate = useNavigate();
   const { formatDate } = useIntl();
 
+  console.log({item})
+
 
   const hasReports = !isEmpty(item.reports?.filter((_) => !_.resolved));
 
@@ -104,7 +106,7 @@ export const CommentRow: FC<Props> = ({ item }) => {
         ) : '-'}
       </Td>
       <Td maxWidth="200px">
-        {item.entry ?? contentTypeLink ?? '-'}
+        {item.section ?? contentTypeLink ?? '-'}
       </Td>
       <Td>
         <Typography>

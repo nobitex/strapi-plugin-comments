@@ -13,7 +13,7 @@ const getCommentSchema = (enabledCollections: string[]) => {
     threadOf: z.union([z.string(), z.number()]).optional(),
     approvalStatus: z.nativeEnum(APPROVAL_STATUS).optional(),
     locale: z.string().optional(),
-    entry: z.string().optional(),
+    section: z.string().optional(),
   });
 };
 
@@ -64,6 +64,7 @@ const getBaseFindSchema = (enabledCollections: string[]) => {
       filters: getFiltersOperators({
         id: true,
         content: true,
+        section:true,
         authorId: true,
         authorName: true,
         authorEmail: true,

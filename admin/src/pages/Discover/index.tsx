@@ -8,11 +8,11 @@ import { useCommentsAll } from '../../hooks/useCommentsAll';
 import { getMessage } from '../../utils';
 import {CommentsEntryFilters} from "../../components/CommentEntryFilter";
 
-const getUniqueEntryValues = (result: Array<Record<string, any>>): string[] => {
-  const allEntries = result
-      .map((item) => item.entry)
+const getUniqueSectionValues = (result: Array<Record<string, any>>): string[] => {
+  const allSections = result
+      .map((item) => item.section)
       .filter((entry): entry is string => typeof entry === 'string');
-  return Array.from(new Set(allEntries));
+  return Array.from(new Set(allSections));
 };
 
 export const Discover: FC<{ config: Config }> = ({ config }) => {
@@ -20,7 +20,7 @@ export const Discover: FC<{ config: Config }> = ({ config }) => {
 
 
   const { data: { result, pagination } } = useCommentsAll(queryParams as Record<string, any>);
-  const entries = getUniqueEntryValues(result);
+  const sections = getUniqueSectionValues(result);
   return (
     <>
       <Page.Title children={'Comments - discover'} />
@@ -34,7 +34,7 @@ export const Discover: FC<{ config: Config }> = ({ config }) => {
           <>
             <SearchInput label="Search" />
             <CommentsStatusFilters setQueryParams={setQueryParams}/>
-            <CommentsEntryFilters setQueryParams={setQueryParams} filterOptions={entries} />
+            <CommentsEntryFilters setQueryParams={setQueryParams} filterOptions={sections} />
           </>
         }/>
         <Layouts.Content>

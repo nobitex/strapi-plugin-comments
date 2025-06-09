@@ -15,19 +15,15 @@ export const CommentsEntryFilters: FC<CommentStatusFiltersProps> = ({ setQueryPa
     const handleChange = (filter: string | undefined) => {
         setCurrentFilter(filter)
         setQueryParams({
-            page: {},
-            pageSize: {},
             filters: {
-                entry: {
-                    $eq: filter,
-                }
+                section: filter
             }
         });
     }
 
     return (
         <SingleSelect
-            placeholder={getMessage('page.common.item.status.setFilter')}
+            placeholder={'Filter by Entry'}
             value={currentFilter}
             onClear={() => handleChange(undefined)}
             onChange={handleChange}

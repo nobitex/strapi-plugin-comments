@@ -75,6 +75,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -89,7 +90,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -113,6 +113,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -127,7 +128,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         } | {
             id?: number;
@@ -158,6 +158,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -172,7 +173,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -196,6 +196,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -210,9 +211,8 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
-        }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
+        }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
             id?: number;
             documentId?: string;
             content?: string;
@@ -235,6 +235,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -249,7 +250,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -273,6 +273,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -287,7 +288,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         };
         findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -710,6 +710,43 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
             };
             limit?: number;
             fields?: string[];
@@ -740,6 +777,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -754,7 +792,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -778,6 +815,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -792,7 +830,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -823,6 +860,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -837,7 +875,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -861,6 +898,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -875,7 +913,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -1300,6 +1337,43 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
             };
             limit?: number;
             fields?: string[];
@@ -1331,6 +1405,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -1345,7 +1420,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1369,6 +1443,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1383,7 +1458,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[]>;
         findOne(criteria: Partial<any>): Promise<{
@@ -1409,6 +1483,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -1423,7 +1498,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1447,6 +1521,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1461,7 +1536,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }>;
         findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -1487,6 +1561,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -1501,7 +1576,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1525,6 +1599,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1539,7 +1614,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[]>;
         updateComment(criteria: Partial<any>, data: Partial<{
@@ -1565,6 +1639,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -1579,7 +1654,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1603,6 +1677,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1617,7 +1692,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }>): Promise<{
             id?: number;
@@ -1642,6 +1716,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -1656,7 +1731,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -1680,6 +1754,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1694,7 +1769,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }>;
         findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -2118,6 +2192,43 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
             };
             limit?: number;
             fields?: string[];
@@ -2148,6 +2259,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2161,7 +2273,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     reason?: string;
                     resolved?: boolean;
                 }[];
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2185,6 +2296,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -2199,7 +2311,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -2230,6 +2341,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2243,7 +2355,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     reason?: string;
                     resolved?: boolean;
                 }[];
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2267,6 +2378,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -2281,7 +2393,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             })[];
             pagination?: {
@@ -2314,6 +2425,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2328,7 +2440,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2352,6 +2463,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2366,7 +2478,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[]): Promise<{
             id?: number;
@@ -2398,6 +2509,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2412,7 +2524,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2436,6 +2547,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2450,7 +2562,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }, relatedEntities?: {
             id?: number;
@@ -2487,6 +2598,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2501,7 +2613,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2525,6 +2636,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2539,10 +2651,9 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         };
-        modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: Id, fieldName: T_2, value: {
+        modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: Id, fieldName: T_2, value: {
             id?: number;
             documentId?: string;
             content?: string;
@@ -2565,6 +2676,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2579,7 +2691,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2603,6 +2714,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2617,7 +2729,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[T_2], deepLimit?: number): Promise<boolean>;
         checkBadWords(content: string): Promise<string>;
@@ -2662,6 +2773,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2676,7 +2788,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2700,6 +2811,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2714,7 +2826,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[];
     }>;
@@ -2742,6 +2853,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2756,7 +2868,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2780,6 +2891,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2794,7 +2906,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[];
         pagination: {
@@ -2833,6 +2944,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2847,7 +2959,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2871,6 +2982,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2885,7 +2997,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         };
         level: {
@@ -2911,6 +3022,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -2925,7 +3037,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -2949,6 +3060,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2963,7 +3075,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         }[];
     }>;
@@ -2990,6 +3101,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3004,7 +3116,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3028,6 +3139,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3042,7 +3154,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     deleteComment(id: Id): Promise<{
@@ -3068,6 +3179,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3082,7 +3194,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3106,6 +3217,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3120,7 +3232,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     blockCommentThread(id: Id, forceStatus?: boolean): Promise<{
@@ -3146,6 +3257,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3160,7 +3272,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3184,6 +3295,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3198,7 +3310,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     approveComment(id: Id): Promise<{
@@ -3224,6 +3335,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3238,7 +3350,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3262,6 +3373,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3276,7 +3388,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     rejectComment(id: Id): Promise<{
@@ -3302,6 +3413,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3316,7 +3428,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3340,6 +3451,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3354,7 +3466,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     blockNestedThreads(id: Id, status: boolean): Promise<boolean>;
@@ -3396,6 +3507,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3410,7 +3522,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3434,6 +3545,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3448,7 +3560,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     updateComment({ id, content }: adminValidator.UpdateCommentValidatorSchema): Promise<{
@@ -3474,6 +3585,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -3488,7 +3600,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -3512,6 +3623,7 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -3526,7 +3638,6 @@ declare const _default: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
 };

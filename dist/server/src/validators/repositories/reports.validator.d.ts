@@ -28,6 +28,7 @@ declare const reportSchema: z.ZodObject<{
         updatedAt: z.ZodString;
         publishedAt: z.ZodString;
         locale: z.ZodNullable<z.ZodString>;
+        section: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -47,6 +48,7 @@ declare const reportSchema: z.ZodObject<{
         authorEmail?: string;
         authorAvatar?: string;
         locale?: string;
+        section?: string;
     }, {
         id?: number;
         documentId?: string;
@@ -66,6 +68,7 @@ declare const reportSchema: z.ZodObject<{
         authorEmail?: string;
         authorAvatar?: string;
         locale?: string;
+        section?: string;
     }>>>;
 }, "strip", z.ZodTypeAny, {
     id?: number;
@@ -90,6 +93,7 @@ declare const reportSchema: z.ZodObject<{
         authorEmail?: string;
         authorAvatar?: string;
         locale?: string;
+        section?: string;
     };
     createdAt?: string;
     updatedAt?: string;
@@ -120,6 +124,7 @@ declare const reportSchema: z.ZodObject<{
         authorEmail?: string;
         authorAvatar?: string;
         locale?: string;
+        section?: string;
     };
     createdAt?: string;
     updatedAt?: string;
@@ -158,6 +163,7 @@ declare const findPageSchema: z.ZodObject<{
             updatedAt: z.ZodString;
             publishedAt: z.ZodString;
             locale: z.ZodNullable<z.ZodString>;
+            section: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -177,6 +183,7 @@ declare const findPageSchema: z.ZodObject<{
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -196,6 +203,7 @@ declare const findPageSchema: z.ZodObject<{
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         }>>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -220,6 +228,7 @@ declare const findPageSchema: z.ZodObject<{
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -250,6 +259,7 @@ declare const findPageSchema: z.ZodObject<{
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -304,6 +314,7 @@ declare const findPageSchema: z.ZodObject<{
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -342,6 +353,7 @@ declare const findPageSchema: z.ZodObject<{
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -422,6 +434,7 @@ declare const findManySchema: z.ZodArray<z.ZodObject<{
             email?: string;
         }>]>>>;
         locale: z.ZodNullable<z.ZodString>;
+        section: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -445,6 +458,7 @@ declare const findManySchema: z.ZodArray<z.ZodObject<{
             email?: string;
         };
         locale?: string;
+        section?: string;
     }, {
         id?: number;
         documentId?: string;
@@ -468,6 +482,7 @@ declare const findManySchema: z.ZodArray<z.ZodObject<{
             email?: string;
         };
         locale?: string;
+        section?: string;
     }>>;
 }, "strip", z.ZodTypeAny, {
     id?: number;
@@ -496,6 +511,7 @@ declare const findManySchema: z.ZodArray<z.ZodObject<{
             email?: string;
         };
         locale?: string;
+        section?: string;
     };
     createdAt?: string;
     updatedAt?: string;
@@ -530,6 +546,7 @@ declare const findManySchema: z.ZodArray<z.ZodObject<{
             email?: string;
         };
         locale?: string;
+        section?: string;
     };
     createdAt?: string;
     updatedAt?: string;
@@ -584,6 +601,7 @@ export declare const reportResultValidator: {
                 email?: string;
             }>]>>>;
             locale: z.ZodNullable<z.ZodString>;
+            section: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -607,6 +625,7 @@ export declare const reportResultValidator: {
                 email?: string;
             };
             locale?: string;
+            section?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -630,6 +649,7 @@ export declare const reportResultValidator: {
                 email?: string;
             };
             locale?: string;
+            section?: string;
         }>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -658,6 +678,7 @@ export declare const reportResultValidator: {
                 email?: string;
             };
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -692,6 +713,7 @@ export declare const reportResultValidator: {
                 email?: string;
             };
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -730,6 +752,7 @@ export declare const reportResultValidator: {
                 updatedAt: z.ZodString;
                 publishedAt: z.ZodString;
                 locale: z.ZodNullable<z.ZodString>;
+                section: z.ZodOptional<z.ZodString>;
             }, "strip", z.ZodTypeAny, {
                 id?: number;
                 documentId?: string;
@@ -749,6 +772,7 @@ export declare const reportResultValidator: {
                 authorEmail?: string;
                 authorAvatar?: string;
                 locale?: string;
+                section?: string;
             }, {
                 id?: number;
                 documentId?: string;
@@ -768,6 +792,7 @@ export declare const reportResultValidator: {
                 authorEmail?: string;
                 authorAvatar?: string;
                 locale?: string;
+                section?: string;
             }>>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
@@ -792,6 +817,7 @@ export declare const reportResultValidator: {
                 authorEmail?: string;
                 authorAvatar?: string;
                 locale?: string;
+                section?: string;
             };
             createdAt?: string;
             updatedAt?: string;
@@ -822,6 +848,7 @@ export declare const reportResultValidator: {
                 authorEmail?: string;
                 authorAvatar?: string;
                 locale?: string;
+                section?: string;
             };
             createdAt?: string;
             updatedAt?: string;
@@ -876,6 +903,7 @@ export declare const reportResultValidator: {
                 authorEmail?: string;
                 authorAvatar?: string;
                 locale?: string;
+                section?: string;
             };
             createdAt?: string;
             updatedAt?: string;
@@ -914,6 +942,7 @@ export declare const reportResultValidator: {
                 authorEmail?: string;
                 authorAvatar?: string;
                 locale?: string;
+                section?: string;
             };
             createdAt?: string;
             updatedAt?: string;
@@ -983,6 +1012,7 @@ export declare const reportResultValidator: {
             updatedAt: z.ZodString;
             publishedAt: z.ZodString;
             locale: z.ZodNullable<z.ZodString>;
+            section: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -1002,6 +1032,7 @@ export declare const reportResultValidator: {
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         }, {
             id?: number;
             documentId?: string;
@@ -1021,6 +1052,7 @@ export declare const reportResultValidator: {
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         }>>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
@@ -1045,6 +1077,7 @@ export declare const reportResultValidator: {
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -1075,6 +1108,7 @@ export declare const reportResultValidator: {
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;

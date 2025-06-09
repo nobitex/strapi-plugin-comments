@@ -43,6 +43,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -57,7 +58,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -81,6 +81,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -95,7 +96,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }[]>;
     findOne(criteria: Partial<Params['where']>): Promise<{
@@ -121,6 +121,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -135,7 +136,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -159,6 +159,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -173,7 +174,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     findMany(criteria: Params): Promise<{
@@ -199,6 +199,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -213,7 +214,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -237,6 +237,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -251,7 +252,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }[]>;
     updateComment(criteria: Partial<Params['where']>, data: Partial<Comment>): Promise<{
@@ -277,6 +277,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -291,7 +292,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -315,6 +315,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -329,7 +330,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }>;
     findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: clientValidator.FindAllPerAuthorValidatorSchema, isStrapiAuthor?: boolean): Promise<{
@@ -356,6 +356,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -369,7 +370,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 reason?: string;
                 resolved?: boolean;
             }[];
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -393,6 +393,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -407,7 +408,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         } | {
             id?: number;
@@ -438,6 +438,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -451,7 +452,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 reason?: string;
                 resolved?: boolean;
             }[];
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -475,6 +475,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -489,14 +490,13 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         })[];
         pagination?: Pagination;
     }>;
     findRelatedEntitiesFor(entries: Array<Comment>): Promise<Array<CommentRelated>>;
     mergeRelatedEntityTo(entity: Comment, relatedEntities?: Array<CommentRelated>): CommentWithRelated;
-    modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: Id, fieldName: T_2, value: {
+    modifiedNestedNestedComments<T_2 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: Id, fieldName: T_2, value: {
         id?: number;
         documentId?: string;
         content?: string;
@@ -519,6 +519,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             email?: string;
         };
         locale?: string;
+        section?: string;
         gotThread?: boolean;
         threadFirstItemId?: number;
         reports?: {
@@ -533,7 +534,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
             resolved?: boolean;
         }[];
         author?: any;
-        entry?: string;
         threadOf?: number | {
             id?: number;
             documentId?: string;
@@ -557,6 +557,7 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -571,7 +572,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
         };
     }[T_2], deepLimit?: number): Promise<boolean>;
     checkBadWords(content: string): Promise<string>;

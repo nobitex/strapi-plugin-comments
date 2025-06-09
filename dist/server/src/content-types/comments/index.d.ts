@@ -26,6 +26,11 @@ declare const _default: {
                 configurable: boolean;
                 required: boolean;
             };
+            section: {
+                type: string;
+                configurable: boolean;
+                required: boolean;
+            };
             blocked: {
                 type: string;
                 default: boolean;

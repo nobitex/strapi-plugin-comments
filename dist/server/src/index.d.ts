@@ -108,6 +108,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -122,7 +123,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -146,6 +146,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -160,7 +161,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[];
             }>;
@@ -188,6 +188,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -202,7 +203,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -226,6 +226,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -240,7 +241,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[];
                 pagination: {
@@ -291,6 +291,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -305,7 +306,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -329,6 +329,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -343,7 +344,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
                 level: {
@@ -369,6 +369,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -383,7 +384,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -407,6 +407,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -421,7 +422,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[];
             }>;
@@ -460,6 +460,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -474,7 +475,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -498,6 +498,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -512,7 +513,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             unblockComment(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -550,6 +550,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -564,7 +565,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -588,6 +588,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -602,7 +603,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             deleteComment(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -640,6 +640,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -654,7 +655,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -678,6 +678,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -692,7 +693,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             blockCommentThread(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -730,6 +730,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -744,7 +745,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -768,6 +768,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -782,7 +783,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             unblockCommentThread(ctx: Omit<import("koa").Context, "body" | "query" | "request"> & {
@@ -820,6 +820,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -834,7 +835,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -858,6 +858,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -872,7 +873,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             resolveAbuseReport(ctx: import("./@types").RequestContext<object, {
@@ -972,6 +972,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -986,7 +987,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1010,6 +1010,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -1024,7 +1025,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             updateComment(ctx: import("./@types").RequestContext<Omit<{
@@ -1070,6 +1070,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1084,7 +1085,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1108,6 +1108,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -1122,7 +1123,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             approveComment(ctx: import("./@types").RequestContext<object, {
@@ -1150,6 +1150,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1164,7 +1165,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1188,6 +1188,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -1202,7 +1203,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             rejectComment(ctx: import("./@types").RequestContext<object, {
@@ -1230,6 +1230,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1244,7 +1245,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1268,6 +1268,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -1282,7 +1283,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
         };
@@ -1533,13 +1533,13 @@ declare const _default: {
                 content?: string;
                 approvalStatus?: import("./const").APPROVAL_STATUS;
                 locale?: string;
+                section?: string;
                 author?: {
                     name?: string;
                     id?: string | number;
                     email?: string;
                     avatar?: string;
                 };
-                entry?: string;
                 threadOf?: string | number;
                 relation?: `${string}::${string}.${string}`;
             }, "relation">>): Promise<{
@@ -1565,6 +1565,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -1579,7 +1580,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -1603,6 +1603,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -1617,7 +1618,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             findAllFlat(ctx: import("./@types").RequestContext<object, Pick<{
@@ -2040,6 +2040,43 @@ declare const _default: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 };
                 limit?: number;
                 fields?: string[];
@@ -2070,6 +2107,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -2084,7 +2122,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -2108,6 +2145,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -2122,7 +2160,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -2153,6 +2190,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -2167,7 +2205,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -2191,6 +2228,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -2205,7 +2243,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -2630,6 +2667,43 @@ declare const _default: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 };
                 limit?: number;
                 fields?: string[];
@@ -2661,6 +2735,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -2675,7 +2750,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -2699,6 +2773,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -2713,7 +2788,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }[]>;
             findAllPerAuthor(ctx: import("./@types").RequestContext<object, Pick<{
@@ -3137,6 +3211,43 @@ declare const _default: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 };
                 limit?: number;
                 fields?: string[];
@@ -3167,6 +3278,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3180,7 +3292,6 @@ declare const _default: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -3204,6 +3315,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -3218,7 +3330,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -3249,6 +3360,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3262,7 +3374,6 @@ declare const _default: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -3286,6 +3397,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -3300,7 +3412,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -3336,6 +3447,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -3350,7 +3462,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3374,6 +3485,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3388,7 +3500,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             reportAbuse(ctx: import("./@types").RequestContext): Promise<{
@@ -3415,6 +3526,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3429,7 +3541,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -3453,6 +3564,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -3467,7 +3579,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
                 id?: number;
@@ -3503,6 +3614,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -3517,7 +3629,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -3541,6 +3652,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3555,7 +3667,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
         };
@@ -3842,6 +3953,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3856,7 +3968,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -3880,6 +3991,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -3894,7 +4006,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -3925,6 +4036,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -3939,7 +4051,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -3963,6 +4074,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -3977,9 +4089,8 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
-                }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
+                }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
                     id?: number;
                     documentId?: string;
                     content?: string;
@@ -4002,6 +4113,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -4016,7 +4128,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -4040,6 +4151,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -4054,7 +4166,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
                 findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -4477,6 +4588,43 @@ declare const _default: {
                         } | {
                             $notNull?: boolean;
                         };
+                        section?: string | number | {
+                            $eq?: string;
+                        } | {
+                            $eqi?: string;
+                        } | {
+                            $ne?: string;
+                        } | {
+                            $nei?: string;
+                        } | {
+                            $gt?: string;
+                        } | {
+                            $gte?: string;
+                        } | {
+                            $lt?: string;
+                        } | {
+                            $lte?: string;
+                        } | {
+                            $startsWith?: string;
+                        } | {
+                            $startsWithi?: string;
+                        } | {
+                            $endsWith?: string;
+                        } | {
+                            $endsWithi?: string;
+                        } | {
+                            $contains?: string;
+                        } | {
+                            $containsi?: string;
+                        } | {
+                            $notContains?: string;
+                        } | {
+                            $notContainsi?: string;
+                        } | {
+                            $null?: string;
+                        } | {
+                            $notNull?: boolean;
+                        };
                     };
                     limit?: number;
                     fields?: string[];
@@ -4507,6 +4655,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -4521,7 +4670,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -4545,6 +4693,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -4559,7 +4708,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     } | {
                         id?: number;
@@ -4590,6 +4738,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -4604,7 +4753,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -4628,6 +4776,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -4642,7 +4791,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     })[];
                     pagination?: {
@@ -5067,6 +5215,43 @@ declare const _default: {
                         } | {
                             $notNull?: boolean;
                         };
+                        section?: string | number | {
+                            $eq?: string;
+                        } | {
+                            $eqi?: string;
+                        } | {
+                            $ne?: string;
+                        } | {
+                            $nei?: string;
+                        } | {
+                            $gt?: string;
+                        } | {
+                            $gte?: string;
+                        } | {
+                            $lt?: string;
+                        } | {
+                            $lte?: string;
+                        } | {
+                            $startsWith?: string;
+                        } | {
+                            $startsWithi?: string;
+                        } | {
+                            $endsWith?: string;
+                        } | {
+                            $endsWithi?: string;
+                        } | {
+                            $contains?: string;
+                        } | {
+                            $containsi?: string;
+                        } | {
+                            $notContains?: string;
+                        } | {
+                            $notContainsi?: string;
+                        } | {
+                            $null?: string;
+                        } | {
+                            $notNull?: boolean;
+                        };
                     };
                     limit?: number;
                     fields?: string[];
@@ -5098,6 +5283,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -5112,7 +5298,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -5136,6 +5321,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -5150,7 +5336,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[]>;
                 findOne(criteria: Partial<any>): Promise<{
@@ -5176,6 +5361,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -5190,7 +5376,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -5214,6 +5399,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -5228,7 +5414,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }>;
                 findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -5254,6 +5439,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -5268,7 +5454,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -5292,6 +5477,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -5306,7 +5492,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[]>;
                 updateComment(criteria: Partial<any>, data: Partial<{
@@ -5332,6 +5517,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -5346,7 +5532,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -5370,6 +5555,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -5384,7 +5570,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }>): Promise<{
                     id?: number;
@@ -5409,6 +5594,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -5423,7 +5609,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -5447,6 +5632,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -5461,7 +5647,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }>;
                 findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -5885,6 +6070,43 @@ declare const _default: {
                         } | {
                             $notNull?: boolean;
                         };
+                        section?: string | number | {
+                            $eq?: string;
+                        } | {
+                            $eqi?: string;
+                        } | {
+                            $ne?: string;
+                        } | {
+                            $nei?: string;
+                        } | {
+                            $gt?: string;
+                        } | {
+                            $gte?: string;
+                        } | {
+                            $lt?: string;
+                        } | {
+                            $lte?: string;
+                        } | {
+                            $startsWith?: string;
+                        } | {
+                            $startsWithi?: string;
+                        } | {
+                            $endsWith?: string;
+                        } | {
+                            $endsWithi?: string;
+                        } | {
+                            $contains?: string;
+                        } | {
+                            $containsi?: string;
+                        } | {
+                            $notContains?: string;
+                        } | {
+                            $notContainsi?: string;
+                        } | {
+                            $null?: string;
+                        } | {
+                            $notNull?: boolean;
+                        };
                     };
                     limit?: number;
                     fields?: string[];
@@ -5915,6 +6137,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -5928,7 +6151,6 @@ declare const _default: {
                             reason?: string;
                             resolved?: boolean;
                         }[];
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -5952,6 +6174,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -5966,7 +6189,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     } | {
                         id?: number;
@@ -5997,6 +6219,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6010,7 +6233,6 @@ declare const _default: {
                             reason?: string;
                             resolved?: boolean;
                         }[];
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -6034,6 +6256,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -6048,7 +6271,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     })[];
                     pagination?: {
@@ -6081,6 +6303,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6095,7 +6318,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6119,6 +6341,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6133,7 +6356,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[]): Promise<{
                     id?: number;
@@ -6165,6 +6387,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6179,7 +6402,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6203,6 +6425,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6217,7 +6440,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }, relatedEntities?: {
                     id?: number;
@@ -6254,6 +6476,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6268,7 +6491,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6292,6 +6514,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6306,10 +6529,9 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
-                modifiedNestedNestedComments<T_5 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("./@types").Id, fieldName: T_5, value: {
+                modifiedNestedNestedComments<T_5 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("./@types").Id, fieldName: T_5, value: {
                     id?: number;
                     documentId?: string;
                     content?: string;
@@ -6332,6 +6554,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6346,7 +6569,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6370,6 +6592,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6384,7 +6607,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[T_5], deepLimit?: number): Promise<boolean>;
                 checkBadWords(content: string): Promise<string>;
@@ -6586,6 +6808,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6600,7 +6823,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6624,6 +6846,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6638,7 +6861,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[];
             }>;
@@ -6823,6 +7045,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6837,7 +7060,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6861,6 +7083,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6875,7 +7098,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[];
                 pagination: {
@@ -6917,6 +7139,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -6931,7 +7154,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -6955,6 +7177,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -6969,7 +7192,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
                 level: {
@@ -6995,6 +7217,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7009,7 +7232,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -7033,6 +7255,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -7047,7 +7270,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[];
             }>;
@@ -7074,6 +7296,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7088,7 +7311,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7112,6 +7334,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7126,7 +7349,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             deleteComment(id: import("./@types").Id): Promise<{
@@ -7152,6 +7374,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7166,7 +7389,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7190,6 +7412,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7204,7 +7427,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             blockCommentThread(id: import("./@types").Id, forceStatus?: boolean): Promise<{
@@ -7230,6 +7452,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7244,7 +7467,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7268,6 +7490,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7282,7 +7505,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             approveComment(id: import("./@types").Id): Promise<{
@@ -7308,6 +7530,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7322,7 +7545,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7346,6 +7568,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7360,7 +7583,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             rejectComment(id: import("./@types").Id): Promise<{
@@ -7386,6 +7608,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7400,7 +7623,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7424,6 +7646,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7438,7 +7661,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             blockNestedThreads(id: import("./@types").Id, status: boolean): Promise<boolean>;
@@ -7498,6 +7720,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7512,7 +7735,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7536,6 +7758,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7550,7 +7773,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             updateComment({ id, content }: {
@@ -7579,6 +7801,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -7593,7 +7816,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -7617,6 +7839,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7631,7 +7854,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
         };
@@ -7710,6 +7932,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7724,7 +7947,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -7748,6 +7970,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -7762,7 +7985,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -7793,6 +8015,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7807,7 +8030,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -7831,6 +8053,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -7845,9 +8068,8 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
-                }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
+                }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
                     id?: number;
                     documentId?: string;
                     content?: string;
@@ -7870,6 +8092,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -7884,7 +8107,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -7908,6 +8130,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -7922,7 +8145,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
                 findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -8345,6 +8567,43 @@ declare const _default: {
                         } | {
                             $notNull?: boolean;
                         };
+                        section?: string | number | {
+                            $eq?: string;
+                        } | {
+                            $eqi?: string;
+                        } | {
+                            $ne?: string;
+                        } | {
+                            $nei?: string;
+                        } | {
+                            $gt?: string;
+                        } | {
+                            $gte?: string;
+                        } | {
+                            $lt?: string;
+                        } | {
+                            $lte?: string;
+                        } | {
+                            $startsWith?: string;
+                        } | {
+                            $startsWithi?: string;
+                        } | {
+                            $endsWith?: string;
+                        } | {
+                            $endsWithi?: string;
+                        } | {
+                            $contains?: string;
+                        } | {
+                            $containsi?: string;
+                        } | {
+                            $notContains?: string;
+                        } | {
+                            $notContainsi?: string;
+                        } | {
+                            $null?: string;
+                        } | {
+                            $notNull?: boolean;
+                        };
                     };
                     limit?: number;
                     fields?: string[];
@@ -8375,6 +8634,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -8389,7 +8649,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -8413,6 +8672,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -8427,7 +8687,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     } | {
                         id?: number;
@@ -8458,6 +8717,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -8472,7 +8732,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -8496,6 +8755,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -8510,7 +8770,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     })[];
                     pagination?: {
@@ -8935,6 +9194,43 @@ declare const _default: {
                         } | {
                             $notNull?: boolean;
                         };
+                        section?: string | number | {
+                            $eq?: string;
+                        } | {
+                            $eqi?: string;
+                        } | {
+                            $ne?: string;
+                        } | {
+                            $nei?: string;
+                        } | {
+                            $gt?: string;
+                        } | {
+                            $gte?: string;
+                        } | {
+                            $lt?: string;
+                        } | {
+                            $lte?: string;
+                        } | {
+                            $startsWith?: string;
+                        } | {
+                            $startsWithi?: string;
+                        } | {
+                            $endsWith?: string;
+                        } | {
+                            $endsWithi?: string;
+                        } | {
+                            $contains?: string;
+                        } | {
+                            $containsi?: string;
+                        } | {
+                            $notContains?: string;
+                        } | {
+                            $notContainsi?: string;
+                        } | {
+                            $null?: string;
+                        } | {
+                            $notNull?: boolean;
+                        };
                     };
                     limit?: number;
                     fields?: string[];
@@ -8966,6 +9262,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -8980,7 +9277,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -9004,6 +9300,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9018,7 +9315,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[]>;
                 findOne(criteria: Partial<any>): Promise<{
@@ -9044,6 +9340,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -9058,7 +9355,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -9082,6 +9378,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9096,7 +9393,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }>;
                 findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -9122,6 +9418,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -9136,7 +9433,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -9160,6 +9456,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9174,7 +9471,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[]>;
                 updateComment(criteria: Partial<any>, data: Partial<{
@@ -9200,6 +9496,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -9214,7 +9511,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -9238,6 +9534,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9252,7 +9549,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }>): Promise<{
                     id?: number;
@@ -9277,6 +9573,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -9291,7 +9588,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -9315,6 +9611,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9329,7 +9626,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }>;
                 findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -9753,6 +10049,43 @@ declare const _default: {
                         } | {
                             $notNull?: boolean;
                         };
+                        section?: string | number | {
+                            $eq?: string;
+                        } | {
+                            $eqi?: string;
+                        } | {
+                            $ne?: string;
+                        } | {
+                            $nei?: string;
+                        } | {
+                            $gt?: string;
+                        } | {
+                            $gte?: string;
+                        } | {
+                            $lt?: string;
+                        } | {
+                            $lte?: string;
+                        } | {
+                            $startsWith?: string;
+                        } | {
+                            $startsWithi?: string;
+                        } | {
+                            $endsWith?: string;
+                        } | {
+                            $endsWithi?: string;
+                        } | {
+                            $contains?: string;
+                        } | {
+                            $containsi?: string;
+                        } | {
+                            $notContains?: string;
+                        } | {
+                            $notContainsi?: string;
+                        } | {
+                            $null?: string;
+                        } | {
+                            $notNull?: boolean;
+                        };
                     };
                     limit?: number;
                     fields?: string[];
@@ -9783,6 +10116,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9796,7 +10130,6 @@ declare const _default: {
                             reason?: string;
                             resolved?: boolean;
                         }[];
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -9820,6 +10153,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -9834,7 +10168,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     } | {
                         id?: number;
@@ -9865,6 +10198,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -9878,7 +10212,6 @@ declare const _default: {
                             reason?: string;
                             resolved?: boolean;
                         }[];
-                        entry?: string;
                         threadOf?: number | {
                             id?: number;
                             documentId?: string;
@@ -9902,6 +10235,7 @@ declare const _default: {
                                 email?: string;
                             };
                             locale?: string;
+                            section?: string;
                             gotThread?: boolean;
                             threadFirstItemId?: number;
                             reports?: {
@@ -9916,7 +10250,6 @@ declare const _default: {
                                 resolved?: boolean;
                             }[];
                             author?: any;
-                            entry?: string;
                         };
                     })[];
                     pagination?: {
@@ -9949,6 +10282,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -9963,7 +10297,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -9987,6 +10320,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -10001,7 +10335,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[]): Promise<{
                     id?: number;
@@ -10033,6 +10366,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10047,7 +10381,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -10071,6 +10404,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -10085,7 +10419,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }, relatedEntities?: {
                     id?: number;
@@ -10122,6 +10455,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10136,7 +10470,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -10160,6 +10493,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -10174,10 +10508,9 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
-                modifiedNestedNestedComments<T_5 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("./@types").Id, fieldName: T_5, value: {
+                modifiedNestedNestedComments<T_5 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("./@types").Id, fieldName: T_5, value: {
                     id?: number;
                     documentId?: string;
                     content?: string;
@@ -10200,6 +10533,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10214,7 +10548,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -10238,6 +10571,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -10252,7 +10586,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 }[T_5], deepLimit?: number): Promise<boolean>;
                 checkBadWords(content: string): Promise<string>;
@@ -10261,17 +10594,17 @@ declare const _default: {
                 registerLifecycleHook(): void;
                 runLifecycleHook(): Promise<void>;
             };
-            create({ relation, content, threadOf, author, approvalStatus, locale, entry }: {
+            create({ relation, content, threadOf, author, approvalStatus, locale, section }: {
                 content?: string;
                 approvalStatus?: import("./const").APPROVAL_STATUS;
                 locale?: string;
+                section?: string;
                 author?: {
                     name?: string;
                     id?: string | number;
                     email?: string;
                     avatar?: string;
                 };
-                entry?: string;
                 threadOf?: string | number;
                 relation?: `${string}::${string}.${string}`;
             }, user?: import("./@types").AdminUser): Promise<{
@@ -10297,6 +10630,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10311,7 +10645,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10335,6 +10668,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10349,7 +10683,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             update({ commentId, content, author, relation }: {
@@ -10385,6 +10718,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10399,7 +10733,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10423,6 +10756,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10437,7 +10771,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             reportAbuse({ commentId, relation, ...payload }: {
@@ -10469,6 +10802,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10483,7 +10817,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -10507,6 +10840,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -10521,7 +10855,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 };
                 id?: number;
@@ -10561,6 +10894,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10575,7 +10909,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10599,6 +10932,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10613,7 +10947,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             sendAbuseReportEmail(reason: string, content: string): Promise<void>;
@@ -10641,6 +10974,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10655,7 +10989,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10679,6 +11012,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10693,7 +11027,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }): Promise<void>;
         };
@@ -10771,6 +11104,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10785,7 +11119,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10809,6 +11142,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10823,7 +11157,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             } | {
                 id?: number;
@@ -10854,6 +11187,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10868,7 +11202,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10892,6 +11225,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10906,9 +11240,8 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
-            }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf")[], populate?: any): {
+            }, blockedAuthors: string[], omitProps?: ("id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf")[], populate?: any): {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -10931,6 +11264,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -10945,7 +11279,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -10969,6 +11302,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -10983,7 +11317,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             };
             findAllFlat({ fields, limit, skip, sort, populate, omit: baseOmit, isAdmin, pagination, filters, locale, }: {
@@ -11406,6 +11739,43 @@ declare const _default: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 };
                 limit?: number;
                 fields?: string[];
@@ -11436,6 +11806,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -11450,7 +11821,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -11474,6 +11844,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -11488,7 +11859,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -11519,6 +11889,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -11533,7 +11904,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -11557,6 +11927,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -11571,7 +11942,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -11996,6 +12366,43 @@ declare const _default: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 };
                 limit?: number;
                 fields?: string[];
@@ -12027,6 +12434,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -12041,7 +12449,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -12065,6 +12472,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12079,7 +12487,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }[]>;
             findOne(criteria: Partial<any>): Promise<{
@@ -12105,6 +12512,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -12119,7 +12527,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -12143,6 +12550,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12157,7 +12565,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             findMany(criteria: import("@strapi/database/dist/entity-manager").Params): Promise<{
@@ -12183,6 +12590,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -12197,7 +12605,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -12221,6 +12628,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12235,7 +12643,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }[]>;
             updateComment(criteria: Partial<any>, data: Partial<{
@@ -12261,6 +12668,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -12275,7 +12683,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -12299,6 +12706,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12313,7 +12721,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>): Promise<{
                 id?: number;
@@ -12338,6 +12745,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -12352,7 +12760,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -12376,6 +12783,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12390,7 +12798,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }>;
             findAllPerAuthor({ filters, populate, pagination, sort, fields, isAdmin, authorId, }: {
@@ -12814,6 +13221,43 @@ declare const _default: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 };
                 limit?: number;
                 fields?: string[];
@@ -12844,6 +13288,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12857,7 +13302,6 @@ declare const _default: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -12881,6 +13325,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -12895,7 +13340,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 } | {
                     id?: number;
@@ -12926,6 +13370,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -12939,7 +13384,6 @@ declare const _default: {
                         reason?: string;
                         resolved?: boolean;
                     }[];
-                    entry?: string;
                     threadOf?: number | {
                         id?: number;
                         documentId?: string;
@@ -12963,6 +13407,7 @@ declare const _default: {
                             email?: string;
                         };
                         locale?: string;
+                        section?: string;
                         gotThread?: boolean;
                         threadFirstItemId?: number;
                         reports?: {
@@ -12977,7 +13422,6 @@ declare const _default: {
                             resolved?: boolean;
                         }[];
                         author?: any;
-                        entry?: string;
                     };
                 })[];
                 pagination?: {
@@ -13010,6 +13454,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -13024,7 +13469,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -13048,6 +13492,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -13062,7 +13507,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }[]): Promise<{
                 id?: number;
@@ -13094,6 +13538,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -13108,7 +13553,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -13132,6 +13576,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -13146,7 +13591,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }, relatedEntities?: {
                 id?: number;
@@ -13183,6 +13627,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -13197,7 +13642,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -13221,6 +13665,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -13235,10 +13680,9 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             };
-            modifiedNestedNestedComments<T_5 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "entry" | "threadOf">(id: import("./@types").Id, fieldName: T_5, value: {
+            modifiedNestedNestedComments<T_5 extends "id" | "documentId" | "content" | "blocked" | "blockedThread" | "blockReason" | "isAdminComment" | "removed" | "approvalStatus" | "related" | "createdAt" | "updatedAt" | "publishedAt" | "authorId" | "authorName" | "authorEmail" | "authorAvatar" | "authorUser" | "locale" | "section" | "gotThread" | "threadFirstItemId" | "reports" | "author" | "threadOf">(id: import("./@types").Id, fieldName: T_5, value: {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -13261,6 +13705,7 @@ declare const _default: {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -13275,7 +13720,6 @@ declare const _default: {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
                 threadOf?: number | {
                     id?: number;
                     documentId?: string;
@@ -13299,6 +13743,7 @@ declare const _default: {
                         email?: string;
                     };
                     locale?: string;
+                    section?: string;
                     gotThread?: boolean;
                     threadFirstItemId?: number;
                     reports?: {
@@ -13313,7 +13758,6 @@ declare const _default: {
                         resolved?: boolean;
                     }[];
                     author?: any;
-                    entry?: string;
                 };
             }[T_5], deepLimit?: number): Promise<boolean>;
             checkBadWords(content: string): Promise<string>;
@@ -13505,6 +13949,11 @@ declare const _default: {
                 };
                 attributes: {
                     content: {
+                        type: string;
+                        configurable: boolean;
+                        required: boolean;
+                    };
+                    section: {
                         type: string;
                         configurable: boolean;
                         required: boolean;

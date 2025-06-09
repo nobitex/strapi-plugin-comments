@@ -35,7 +35,7 @@ export declare const useCommentsAll: (queryParams: Record<string, any>) => impor
         };
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
         threadOf?: import("../api/schemas").Comment | null | undefined;
         related?: string | ({
             uid: string;

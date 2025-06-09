@@ -29,6 +29,7 @@ export declare const getReportCommentRepositorySource: (strapi: CoreStrapi) => {
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;
@@ -66,6 +67,7 @@ export declare const getReportCommentRepository: (strapi: CoreStrapi) => {
             authorEmail?: string;
             authorAvatar?: string;
             locale?: string;
+            section?: string;
         };
         createdAt?: string;
         updatedAt?: string;

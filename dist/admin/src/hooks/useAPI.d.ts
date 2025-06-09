@@ -172,7 +172,7 @@ export declare const useAPI: () => {
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
-                    entry?: string | undefined;
+                    section?: string | undefined;
                     threadOf?: {
                         id: number;
                         documentId: string;
@@ -211,7 +211,7 @@ export declare const useAPI: () => {
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
-                        entry?: string | undefined;
+                        section?: string | undefined;
                         threadOf?: {
                             id: number;
                             createdAt: string;
@@ -250,7 +250,7 @@ export declare const useAPI: () => {
                             }[] | null | undefined;
                             gotThread?: boolean | null | undefined;
                             threadFirstItemId?: number | null | undefined;
-                            entry?: string | undefined;
+                            section?: string | undefined;
                             threadOf?: import("../api/schemas").Comment | null | undefined;
                         } | null | undefined;
                     } | null | undefined;
@@ -292,7 +292,7 @@ export declare const useAPI: () => {
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
-                    entry?: string | undefined;
+                    section?: string | undefined;
                 }[];
             }>;
         };
@@ -386,7 +386,7 @@ export declare const useAPI: () => {
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
-                        entry?: string | undefined;
+                        section?: string | undefined;
                     };
                     resolved?: boolean | undefined;
                     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;

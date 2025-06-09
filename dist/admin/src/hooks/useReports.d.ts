@@ -48,7 +48,7 @@ export declare const useReports: (queryParams?: Record<string, string>) => impor
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         };
         resolved?: boolean | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;

@@ -336,7 +336,7 @@ declare const baseCommentSchema: z.ZodObject<{
     }>;
     gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
     threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-    entry: z.ZodOptional<z.ZodString>;
+    section: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
     id: number;
     createdAt: string;
@@ -373,7 +373,7 @@ declare const baseCommentSchema: z.ZodObject<{
     }[] | null | undefined;
     gotThread?: boolean | null | undefined;
     threadFirstItemId?: number | null | undefined;
-    entry?: string | undefined;
+    section?: string | undefined;
 }, {
     id: number;
     createdAt: string;
@@ -410,7 +410,7 @@ declare const baseCommentSchema: z.ZodObject<{
     }[] | null | undefined;
     gotThread?: boolean | null | undefined;
     threadFirstItemId?: number | null | undefined;
-    entry?: string | undefined;
+    section?: string | undefined;
 }>;
 type BaseComment = z.infer<typeof baseCommentSchema>;
 export type CommentReport = z.infer<typeof commentReportSchema>;
@@ -588,7 +588,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }>;
         gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
         threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-        entry: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodString>;
     } & {
         related: z.ZodString;
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodObject<Omit<{
@@ -699,7 +699,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }>;
             gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
             threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-            entry: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodString>;
         } & {
             related: z.ZodOptional<z.ZodIntersection<z.ZodObject<{
                 id: z.ZodNumber;
@@ -835,7 +835,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }>;
                 gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
                 threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-                entry: z.ZodOptional<z.ZodString>;
+                section: z.ZodOptional<z.ZodString>;
             } & {
                 related: z.ZodString;
                 threadOf: z.ZodOptional<z.ZodNullable<z.ZodType<Comment, z.ZodTypeDef, Comment>>>;
@@ -878,7 +878,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             }, {
                 id: number;
@@ -918,7 +918,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             }>>>>;
         }, "related"> & {
@@ -961,7 +961,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1000,7 +1000,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         }, {
@@ -1041,7 +1041,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1080,7 +1080,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         }>>>;
@@ -1121,7 +1121,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1160,7 +1160,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1199,7 +1199,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -1240,7 +1240,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1279,7 +1279,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1318,7 +1318,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -1431,7 +1431,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }>;
         gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
         threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-        entry: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodString>;
     } & {
         related: z.ZodOptional<z.ZodIntersection<z.ZodObject<{
             id: z.ZodNumber;
@@ -1567,7 +1567,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }>;
             gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
             threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-            entry: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodString>;
         } & {
             related: z.ZodString;
             threadOf: z.ZodOptional<z.ZodNullable<z.ZodType<Comment, z.ZodTypeDef, Comment>>>;
@@ -1610,7 +1610,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: Comment | null | undefined;
         }, {
             id: number;
@@ -1650,7 +1650,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: Comment | null | undefined;
         }>>>>;
     }, "related" | "threadOf">, "strip", z.ZodTypeAny, {
@@ -1690,7 +1690,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     }, {
         id: number;
         documentId: string;
@@ -1728,7 +1728,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     entity: {
@@ -1777,7 +1777,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1816,7 +1816,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1855,7 +1855,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -1897,7 +1897,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     }[];
 }, {
     entity: {
@@ -1946,7 +1946,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1985,7 +1985,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -2024,7 +2024,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                entry?: string | undefined;
+                section?: string | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -2066,7 +2066,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     }[];
 }>;
 export type CommentDetails = z.infer<typeof commentDetailsSchema>;
@@ -2419,7 +2419,7 @@ export declare const reportSchema: z.ZodObject<{
         }>;
         gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
         threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-        entry: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
         id: number;
         createdAt: string;
@@ -2456,7 +2456,7 @@ export declare const reportSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     }, {
         id: number;
         createdAt: string;
@@ -2493,7 +2493,7 @@ export declare const reportSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     id: number;
@@ -2538,7 +2538,7 @@ export declare const reportSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     };
     resolved?: boolean | undefined;
     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
@@ -2586,7 +2586,7 @@ export declare const reportSchema: z.ZodObject<{
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        entry?: string | undefined;
+        section?: string | undefined;
     };
     resolved?: boolean | undefined;
     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
@@ -2728,7 +2728,7 @@ export declare const reportsSchema: z.ZodObject<{
             }>;
             gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
             threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-            entry: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
             id: number;
             createdAt: string;
@@ -2765,7 +2765,7 @@ export declare const reportsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         }, {
             id: number;
             createdAt: string;
@@ -2802,7 +2802,7 @@ export declare const reportsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
         id: number;
@@ -2847,7 +2847,7 @@ export declare const reportsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         };
         resolved?: boolean | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
@@ -2895,7 +2895,7 @@ export declare const reportsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         };
         resolved?: boolean | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
@@ -2951,7 +2951,7 @@ export declare const reportsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         };
         resolved?: boolean | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
@@ -3007,7 +3007,7 @@ export declare const reportsSchema: z.ZodObject<{
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            entry?: string | undefined;
+            section?: string | undefined;
         };
         resolved?: boolean | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;

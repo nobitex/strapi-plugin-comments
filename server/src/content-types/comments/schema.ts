@@ -27,6 +27,11 @@ export default {
       configurable: false,
       required: true,
     },
+    section: {
+      type: "text",
+      configurable: false,
+      required: false,
+    },
     blocked: {
       type: "boolean",
       default: false,

@@ -29,6 +29,7 @@ export declare const getCreateAbuseReport: (strapi: CoreStrapi, nexus: Nexus) =>
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -43,7 +44,6 @@ export declare const getCreateAbuseReport: (strapi: CoreStrapi, nexus: Nexus) =>
                 resolved?: boolean;
             }[];
             author?: any;
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -67,6 +67,7 @@ export declare const getCreateAbuseReport: (strapi: CoreStrapi, nexus: Nexus) =>
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -81,7 +82,6 @@ export declare const getCreateAbuseReport: (strapi: CoreStrapi, nexus: Nexus) =>
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         };
         id?: number;

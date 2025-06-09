@@ -33,6 +33,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -46,7 +47,6 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                 reason?: string;
                 resolved?: boolean;
             }[];
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -70,6 +70,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -84,7 +85,6 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         } | {
             id?: number;
@@ -115,6 +115,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                 email?: string;
             };
             locale?: string;
+            section?: string;
             gotThread?: boolean;
             threadFirstItemId?: number;
             reports?: {
@@ -128,7 +129,6 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                 reason?: string;
                 resolved?: boolean;
             }[];
-            entry?: string;
             threadOf?: number | {
                 id?: number;
                 documentId?: string;
@@ -152,6 +152,7 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                     email?: string;
                 };
                 locale?: string;
+                section?: string;
                 gotThread?: boolean;
                 threadFirstItemId?: number;
                 reports?: {
@@ -166,7 +167,6 @@ declare const _default: (strapi: CoreStrapi, nexus: Nexus) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
-                entry?: string;
             };
         })[];
         pagination?: {

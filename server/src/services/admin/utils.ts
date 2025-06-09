@@ -20,8 +20,16 @@ export const getAdminServiceUtils = once((strapi: CoreStrapi) => {
           page,
           pageSize,
         };
+
         if (_q) {
-          set(params, 'where.content.$contains', _q);
+          params.where = {
+            ...params.where,
+            content: {
+              ...(params.where?.content || {}),
+              // @ts-ignore
+              $contains: _q,
+            },
+          };
         }
         return params;
       },

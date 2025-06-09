@@ -175,7 +175,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
-                    entry?: string | undefined;
+                    section?: string | undefined;
                     threadOf?: {
                         id: number;
                         documentId: string;
@@ -214,7 +214,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
-                        entry?: string | undefined;
+                        section?: string | undefined;
                         threadOf?: {
                             id: number;
                             createdAt: string;
@@ -253,7 +253,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                             }[] | null | undefined;
                             gotThread?: boolean | null | undefined;
                             threadFirstItemId?: number | null | undefined;
-                            entry?: string | undefined;
+                            section?: string | undefined;
                             threadOf?: import("./schemas").Comment | null | undefined;
                         } | null | undefined;
                     } | null | undefined;
@@ -295,7 +295,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
-                    entry?: string | undefined;
+                    section?: string | undefined;
                 }[];
             }>;
         };
@@ -369,7 +369,7 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
-                        entry?: string | undefined;
+                        section?: string | undefined;
                     };
                     resolved?: boolean | undefined;
                     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
