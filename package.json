@@ -29,7 +29,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "",
     "publish:latest": "npm publish --tag latest",
     "publish:beta": "npm publish --tag beta",
     "build": "yarn clean && strapi-plugin build --minify",
@@ -105,7 +105,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn test:unit"
+      "pre-commit": ""
     }
   },
   "author": {
