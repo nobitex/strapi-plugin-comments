@@ -247,6 +247,8 @@ Feature / Capability focused permissions:
 }
 ```
 
+> _**Note:** If you want to use `plguin::user-permissions.user` as a comment's author with an avatar, you need to add an `avatar` field to its model. This field have to be of type `Media`._
+
 ## 🕸️ Public REST API specification
 
 **Strapi Users vs. Generic authors**
@@ -416,6 +418,23 @@ _Strapi user_
 {
   "content": "My sample response",
   "threadOf": 2 // id of comment we would like to start / continue the thread (Optional)
+}
+```
+
+_Multi-language entities_
+
+> When posting comments to entities with multiple locales, you must provide the `locale` field in the payload to match the entity's locale:
+
+```json
+{
+  "author": {
+    "id": 518,
+    "name": "Author",
+    "email": "author@example.com",
+    "avatar": "<Link to avatar file>"
+  },
+  "content": "Test",
+  "locale": "fr" // Locale must be the same as the provided entity
 }
 ```
 

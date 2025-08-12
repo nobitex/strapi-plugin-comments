@@ -4,6 +4,7 @@
   "resolveJsonModule": true,
   "compilerOptions": {
     "rootDir": "../",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["node", "minimatch", "jest"]
   }
 }
