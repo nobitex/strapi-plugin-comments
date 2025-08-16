@@ -22,7 +22,7 @@ const e = {
   "page.common.item.status.setFilter": "Durumu ayarla...",
   "page.updates.header": "Son güncellemeler",
   "page.discover.header": "Konuları keşfet",
-  "page.discover.header.count": "giriş bulundu",
+  "page.discover.header.count": "{count} giriş bulundu",
   "page.discover.table.header.id": "ID",
   "page.discover.table.header.author": "Yazar",
   "page.discover.table.header.message": "İleti",

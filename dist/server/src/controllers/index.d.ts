@@ -1,4 +1,3 @@
-/// <reference types="koa" />
 declare const controllers: {
     admin: ({ strapi }: import("../@types").StrapiContext) => {
         getService<T extends "gql" | "client" | "admin" | "common" | "settings">(name: T): import("../services").PluginServices[T];
@@ -1711,6 +1710,43 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
+                isAdminComment?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 removed?: string | number | {
                     $eq?: string;
                 } | {
@@ -1970,43 +2006,898 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
-                section?: string | number | {
-                    $eq?: string;
-                } | {
-                    $eqi?: string;
-                } | {
-                    $ne?: string;
-                } | {
-                    $nei?: string;
-                } | {
-                    $gt?: string;
-                } | {
-                    $gte?: string;
-                } | {
-                    $lt?: string;
-                } | {
-                    $lte?: string;
-                } | {
-                    $startsWith?: string;
-                } | {
-                    $startsWithi?: string;
-                } | {
-                    $endsWith?: string;
-                } | {
-                    $endsWithi?: string;
-                } | {
-                    $contains?: string;
-                } | {
-                    $containsi?: string;
-                } | {
-                    $notContains?: string;
-                } | {
-                    $notContainsi?: string;
-                } | {
-                    $null?: string;
-                } | {
-                    $notNull?: boolean;
-                };
+                $or?: {
+                    id?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    content?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blocked?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blockedThread?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    isAdminComment?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    removed?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    approvalStatus?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    createdAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    updatedAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorId?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorName?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                }[];
+                $and?: {
+                    id?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    content?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blocked?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blockedThread?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    isAdminComment?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    removed?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    approvalStatus?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    createdAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    updatedAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorId?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorName?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                }[];
             };
             limit?: number;
             fields?: string[];
@@ -2338,6 +3229,43 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
+                isAdminComment?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 removed?: string | number | {
                     $eq?: string;
                 } | {
@@ -2597,43 +3525,898 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
-                section?: string | number | {
-                    $eq?: string;
-                } | {
-                    $eqi?: string;
-                } | {
-                    $ne?: string;
-                } | {
-                    $nei?: string;
-                } | {
-                    $gt?: string;
-                } | {
-                    $gte?: string;
-                } | {
-                    $lt?: string;
-                } | {
-                    $lte?: string;
-                } | {
-                    $startsWith?: string;
-                } | {
-                    $startsWithi?: string;
-                } | {
-                    $endsWith?: string;
-                } | {
-                    $endsWithi?: string;
-                } | {
-                    $contains?: string;
-                } | {
-                    $containsi?: string;
-                } | {
-                    $notContains?: string;
-                } | {
-                    $notContainsi?: string;
-                } | {
-                    $null?: string;
-                } | {
-                    $notNull?: boolean;
-                };
+                $or?: {
+                    id?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    content?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blocked?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blockedThread?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    isAdminComment?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    removed?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    approvalStatus?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    createdAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    updatedAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorId?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorName?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                }[];
+                $and?: {
+                    id?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    content?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blocked?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blockedThread?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    isAdminComment?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    removed?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    approvalStatus?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    createdAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    updatedAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorId?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorName?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                }[];
             };
             limit?: number;
             fields?: string[];
@@ -2882,6 +4665,43 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
+                isAdminComment?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 removed?: string | number | {
                     $eq?: string;
                 } | {
@@ -3141,43 +4961,898 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
-                section?: string | number | {
-                    $eq?: string;
-                } | {
-                    $eqi?: string;
-                } | {
-                    $ne?: string;
-                } | {
-                    $nei?: string;
-                } | {
-                    $gt?: string;
-                } | {
-                    $gte?: string;
-                } | {
-                    $lt?: string;
-                } | {
-                    $lte?: string;
-                } | {
-                    $startsWith?: string;
-                } | {
-                    $startsWithi?: string;
-                } | {
-                    $endsWith?: string;
-                } | {
-                    $endsWithi?: string;
-                } | {
-                    $contains?: string;
-                } | {
-                    $containsi?: string;
-                } | {
-                    $notContains?: string;
-                } | {
-                    $notContainsi?: string;
-                } | {
-                    $null?: string;
-                } | {
-                    $notNull?: boolean;
-                };
+                $or?: {
+                    id?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    content?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blocked?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blockedThread?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    isAdminComment?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    removed?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    approvalStatus?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    createdAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    updatedAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorId?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorName?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                }[];
+                $and?: {
+                    id?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    content?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blocked?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    blockedThread?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    isAdminComment?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    removed?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    approvalStatus?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    createdAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    updatedAt?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorId?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorName?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                }[];
             };
             limit?: number;
             fields?: string[];

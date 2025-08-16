@@ -22,7 +22,7 @@ const relatedSchema = z.object({
   updatedAt: z.string(),
   publishedAt: z.string(),
   locale: z.string().nullable(),
-  section: z.string().optional(),
+  section: z.string().nullable().optional(),
 });
 
 const reportSchema = z.object({

@@ -7,7 +7,7 @@ import { CommentsStatusFilters } from '../../components/CommentStatusFilters';
 import { SortableTh } from '../../components/SortableTh';
 import { useCommentsAll } from '../../hooks/useCommentsAll';
 import { getMessage } from '../../utils';
-import {CommentsEntryFilters} from "../../components/CommentEntryFilter";
+import {CommentsSectionFilters} from "../../components/CommentSectionFilter";
 
 const tableHeaders = [
   { label: "page.discover.table.header.id" },
@@ -18,6 +18,12 @@ const tableHeaders = [
   { label: "page.discover.table.header.lastUpdate", orderBy: "updatedAt" },
   { label: "page.discover.table.header.status" },
 ];
+const getUniqueSectionValues = (result: Array<Record<string, any>>): string[] => {
+  const allSections = result
+      .map((item) => item.section)
+      .filter((section): section is string => typeof section === 'string');
+  return Array.from(new Set(allSections));
+};
 
 export const Discover: FC<{ config: Config }> = ({ config }) => {
   const [{ query: queryParams }, setQueryParams] = useQueryParams();
@@ -46,7 +52,7 @@ export const Discover: FC<{ config: Config }> = ({ config }) => {
           <>
             <SearchInput label={getMessage('common.search', "Search")} />
             <CommentsStatusFilters />
-            <CommentsEntryFilters setQueryParams={setQueryParams} filterOptions={sections} />
+            <CommentsSectionFilters filterOptions={sections} />
           </>
         }/>
         <Layouts.Content>

@@ -3,19 +3,7 @@ export declare const configSchema: z.ZodObject<{
     entryLabel: z.ZodRecord<z.ZodString, z.ZodArray<z.ZodString, "many">>;
     approvalFlow: z.ZodArray<z.ZodString, "many">;
     blockedAuthorProps: z.ZodArray<z.ZodString, "many">;
-    reportReasons: z.ZodObject<{
-        BAD_LANGUAGE: z.ZodLiteral<"BAD_LANGUAGE">;
-        DISCRIMINATION: z.ZodLiteral<"DISCRIMINATION">;
-        OTHER: z.ZodLiteral<"OTHER">;
-    }, "strip", z.ZodTypeAny, {
-        BAD_LANGUAGE: "BAD_LANGUAGE";
-        DISCRIMINATION: "DISCRIMINATION";
-        OTHER: "OTHER";
-    }, {
-        BAD_LANGUAGE: "BAD_LANGUAGE";
-        DISCRIMINATION: "DISCRIMINATION";
-        OTHER: "OTHER";
-    }>;
+    reportReasons: z.ZodRecord<z.ZodString, z.ZodString>;
     regex: z.ZodObject<{
         uid: z.ZodString;
         relatedUid: z.ZodString;
@@ -57,11 +45,7 @@ export declare const configSchema: z.ZodObject<{
     entryLabel: Record<string, string[]>;
     approvalFlow: string[];
     blockedAuthorProps: string[];
-    reportReasons: {
-        BAD_LANGUAGE: "BAD_LANGUAGE";
-        DISCRIMINATION: "DISCRIMINATION";
-        OTHER: "OTHER";
-    };
+    reportReasons: Record<string, string>;
     regex: {
         uid: string;
         relatedUid: string;
@@ -83,11 +67,7 @@ export declare const configSchema: z.ZodObject<{
     entryLabel: Record<string, string[]>;
     approvalFlow: string[];
     blockedAuthorProps: string[];
-    reportReasons: {
-        BAD_LANGUAGE: "BAD_LANGUAGE";
-        DISCRIMINATION: "DISCRIMINATION";
-        OTHER: "OTHER";
-    };
+    reportReasons: Record<string, string>;
     regex: {
         uid: string;
         relatedUid: string;
@@ -208,7 +188,7 @@ declare const authorSchema: z.ZodObject<{
 export type Author = z.infer<typeof authorSchema>;
 declare const commentReportSchema: z.ZodObject<{
     id: z.ZodNumber;
-    reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+    reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
     content: z.ZodString;
     resolved: z.ZodBoolean;
     createdAt: z.ZodString;
@@ -218,15 +198,15 @@ declare const commentReportSchema: z.ZodObject<{
     id: number;
     createdAt: string;
     updatedAt: string | null;
-    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
     content: string;
+    reason?: string | null | undefined;
 }, {
     resolved: boolean;
     id: number;
     createdAt: string;
     updatedAt: string | null;
-    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
     content: string;
+    reason?: string | null | undefined;
 }>;
 declare const baseCommentSchema: z.ZodObject<{
     id: z.ZodNumber;
@@ -241,7 +221,7 @@ declare const baseCommentSchema: z.ZodObject<{
     updatedAt: z.ZodString;
     reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
         id: z.ZodNumber;
-        reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+        reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
         content: z.ZodString;
         resolved: z.ZodBoolean;
         createdAt: z.ZodString;
@@ -251,15 +231,15 @@ declare const baseCommentSchema: z.ZodObject<{
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
+        reason?: string | null | undefined;
     }, {
         resolved: boolean;
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
+        reason?: string | null | undefined;
     }>, "many">>>;
     author: z.ZodObject<{
         id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -336,7 +316,7 @@ declare const baseCommentSchema: z.ZodObject<{
     }>;
     gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
     threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-    section: z.ZodOptional<z.ZodString>;
+    section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
 }, "strip", z.ZodTypeAny, {
     id: number;
     createdAt: string;
@@ -368,12 +348,12 @@ declare const baseCommentSchema: z.ZodObject<{
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
+        reason?: string | null | undefined;
     }[] | null | undefined;
     gotThread?: boolean | null | undefined;
     threadFirstItemId?: number | null | undefined;
-    section?: string | undefined;
+    section?: string | null | undefined;
 }, {
     id: number;
     createdAt: string;
@@ -405,12 +385,12 @@ declare const baseCommentSchema: z.ZodObject<{
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
+        reason?: string | null | undefined;
     }[] | null | undefined;
     gotThread?: boolean | null | undefined;
     threadFirstItemId?: number | null | undefined;
-    section?: string | undefined;
+    section?: string | null | undefined;
 }>;
 type BaseComment = z.infer<typeof baseCommentSchema>;
 export type CommentReport = z.infer<typeof commentReportSchema>;
@@ -493,7 +473,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         updatedAt: z.ZodString;
         reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
             id: z.ZodNumber;
-            reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+            reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
             content: z.ZodString;
             resolved: z.ZodBoolean;
             createdAt: z.ZodString;
@@ -503,15 +483,15 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }, {
             resolved: boolean;
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }>, "many">>>;
         author: z.ZodObject<{
             id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -588,7 +568,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }>;
         gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
         threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     } & {
         related: z.ZodString;
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodObject<Omit<{
@@ -604,7 +584,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             updatedAt: z.ZodString;
             reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
                 id: z.ZodNumber;
-                reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+                reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
                 content: z.ZodString;
                 resolved: z.ZodBoolean;
                 createdAt: z.ZodString;
@@ -614,15 +594,15 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }, {
                 resolved: boolean;
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }>, "many">>>;
             author: z.ZodObject<{
                 id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -699,7 +679,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }>;
             gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
             threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         } & {
             related: z.ZodOptional<z.ZodIntersection<z.ZodObject<{
                 id: z.ZodNumber;
@@ -740,7 +720,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 updatedAt: z.ZodString;
                 reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
                     id: z.ZodNumber;
-                    reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+                    reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
                     content: z.ZodString;
                     resolved: z.ZodBoolean;
                     createdAt: z.ZodString;
@@ -750,15 +730,15 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }, {
                     resolved: boolean;
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }>, "many">>>;
                 author: z.ZodObject<{
                     id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -835,7 +815,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 }>;
                 gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
                 threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-                section: z.ZodOptional<z.ZodString>;
+                section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             } & {
                 related: z.ZodString;
                 threadOf: z.ZodOptional<z.ZodNullable<z.ZodType<Comment, z.ZodTypeDef, Comment>>>;
@@ -873,12 +853,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             }, {
                 id: number;
@@ -913,12 +893,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             }>>>>;
         }, "related"> & {
@@ -956,12 +936,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -995,12 +975,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         }, {
@@ -1036,12 +1016,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1075,12 +1055,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         }>>>;
@@ -1116,12 +1096,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1155,12 +1135,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1194,12 +1174,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -1235,12 +1215,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1274,12 +1254,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1313,12 +1293,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -1336,7 +1316,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         updatedAt: z.ZodString;
         reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
             id: z.ZodNumber;
-            reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+            reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
             content: z.ZodString;
             resolved: z.ZodBoolean;
             createdAt: z.ZodString;
@@ -1346,15 +1326,15 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }, {
             resolved: boolean;
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }>, "many">>>;
         author: z.ZodObject<{
             id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -1431,7 +1411,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
         }>;
         gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
         threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     } & {
         related: z.ZodOptional<z.ZodIntersection<z.ZodObject<{
             id: z.ZodNumber;
@@ -1472,7 +1452,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             updatedAt: z.ZodString;
             reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
                 id: z.ZodNumber;
-                reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+                reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
                 content: z.ZodString;
                 resolved: z.ZodBoolean;
                 createdAt: z.ZodString;
@@ -1482,15 +1462,15 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }, {
                 resolved: boolean;
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }>, "many">>>;
             author: z.ZodObject<{
                 id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -1567,7 +1547,7 @@ export declare const commentDetailsSchema: z.ZodObject<{
             }>;
             gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
             threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         } & {
             related: z.ZodString;
             threadOf: z.ZodOptional<z.ZodNullable<z.ZodType<Comment, z.ZodTypeDef, Comment>>>;
@@ -1605,12 +1585,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: Comment | null | undefined;
         }, {
             id: number;
@@ -1645,12 +1625,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: Comment | null | undefined;
         }>>>>;
     }, "related" | "threadOf">, "strip", z.ZodTypeAny, {
@@ -1685,12 +1665,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     }, {
         id: number;
         documentId: string;
@@ -1723,12 +1703,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     entity: {
@@ -1772,12 +1752,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1811,12 +1791,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -1850,12 +1830,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -1892,12 +1872,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     }[];
 }, {
     entity: {
@@ -1941,12 +1921,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
         threadOf?: {
             id: number;
             documentId: string;
@@ -1980,12 +1960,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
             threadOf?: {
                 id: number;
                 createdAt: string;
@@ -2019,12 +1999,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
+                    reason?: string | null | undefined;
                 }[] | null | undefined;
                 gotThread?: boolean | null | undefined;
                 threadFirstItemId?: number | null | undefined;
-                section?: string | undefined;
+                section?: string | null | undefined;
                 threadOf?: Comment | null | undefined;
             } | null | undefined;
         } | null | undefined;
@@ -2061,12 +2041,12 @@ export declare const commentDetailsSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     }[];
 }>;
 export type CommentDetails = z.infer<typeof commentDetailsSchema>;
@@ -2091,24 +2071,24 @@ export declare const contentTypeSchema: z.ZodObject<{
             singularName: z.ZodString;
             visible: z.ZodBoolean;
         }, "strip", z.ZodTypeAny, {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
             singularName: string;
             visible: boolean;
         }, {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2119,12 +2099,12 @@ export declare const contentTypeSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2135,12 +2115,12 @@ export declare const contentTypeSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2153,12 +2133,12 @@ export declare const contentTypeSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2171,12 +2151,12 @@ export declare const contentTypeSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2206,24 +2186,24 @@ export declare const contentTypesSchema: z.ZodObject<{
             singularName: z.ZodString;
             visible: z.ZodBoolean;
         }, "strip", z.ZodTypeAny, {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
             singularName: string;
             visible: boolean;
         }, {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2234,12 +2214,12 @@ export declare const contentTypesSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2250,12 +2230,12 @@ export declare const contentTypesSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2268,12 +2248,12 @@ export declare const contentTypesSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2286,12 +2266,12 @@ export declare const contentTypesSchema: z.ZodObject<{
         uid: string;
         apiID: string;
         schema: {
-            displayName: string;
             attributes: Record<string, {
                 type: string;
             }>;
             collectionName: string;
             description: string;
+            displayName: string;
             draftAndPublish: boolean;
             kind: string;
             pluralName: string;
@@ -2306,7 +2286,7 @@ export declare const reportSchema: z.ZodObject<{
     content: z.ZodString;
     id: z.ZodNumber;
     approvalStatus: z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodLiteral<"PENDING">, z.ZodLiteral<"APPROVED">, z.ZodLiteral<"REJECTED">, z.ZodLiteral<"BLOCKED">, z.ZodLiteral<"OPEN">, z.ZodLiteral<"REMOVED">, z.ZodLiteral<"TO_REVIEW">, z.ZodLiteral<"UNKNOWN">]>>>;
-    reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+    reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
     reports: z.ZodArray<z.ZodUnknown, "many">;
     resolved: z.ZodOptional<z.ZodBoolean>;
     updatedAt: z.ZodNullable<z.ZodString>;
@@ -2324,7 +2304,7 @@ export declare const reportSchema: z.ZodObject<{
         updatedAt: z.ZodString;
         reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
             id: z.ZodNumber;
-            reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+            reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
             content: z.ZodString;
             resolved: z.ZodBoolean;
             createdAt: z.ZodString;
@@ -2334,15 +2314,15 @@ export declare const reportSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }, {
             resolved: boolean;
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }>, "many">>>;
         author: z.ZodObject<{
             id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -2419,7 +2399,7 @@ export declare const reportSchema: z.ZodObject<{
         }>;
         gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
         threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
         id: number;
         createdAt: string;
@@ -2451,12 +2431,12 @@ export declare const reportSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     }, {
         id: number;
         createdAt: string;
@@ -2488,18 +2468,17 @@ export declare const reportSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     id: number;
     createdAt: string;
     updatedAt: string | null;
-    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
     content: string;
     reports: unknown[];
     related: {
@@ -2533,21 +2512,21 @@ export declare const reportSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     };
     resolved?: boolean | undefined;
+    reason?: string | null | undefined;
     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
     author?: unknown;
 }, {
     id: number;
     createdAt: string;
     updatedAt: string | null;
-    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
     content: string;
     reports: unknown[];
     related: {
@@ -2581,14 +2560,15 @@ export declare const reportSchema: z.ZodObject<{
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[] | null | undefined;
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
     };
     resolved?: boolean | undefined;
+    reason?: string | null | undefined;
     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
     author?: unknown;
 }>;
@@ -2615,7 +2595,7 @@ export declare const reportsSchema: z.ZodObject<{
         content: z.ZodString;
         id: z.ZodNumber;
         approvalStatus: z.ZodOptional<z.ZodNullable<z.ZodUnion<[z.ZodLiteral<"PENDING">, z.ZodLiteral<"APPROVED">, z.ZodLiteral<"REJECTED">, z.ZodLiteral<"BLOCKED">, z.ZodLiteral<"OPEN">, z.ZodLiteral<"REMOVED">, z.ZodLiteral<"TO_REVIEW">, z.ZodLiteral<"UNKNOWN">]>>>;
-        reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+        reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
         reports: z.ZodArray<z.ZodUnknown, "many">;
         resolved: z.ZodOptional<z.ZodBoolean>;
         updatedAt: z.ZodNullable<z.ZodString>;
@@ -2633,7 +2613,7 @@ export declare const reportsSchema: z.ZodObject<{
             updatedAt: z.ZodString;
             reports: z.ZodOptional<z.ZodNullable<z.ZodArray<z.ZodObject<{
                 id: z.ZodNumber;
-                reason: z.ZodUnion<[z.ZodLiteral<"BAD_LANGUAGE">, z.ZodLiteral<"DISCRIMINATION">, z.ZodLiteral<"OTHER">]>;
+                reason: z.ZodNullable<z.ZodOptional<z.ZodString>>;
                 content: z.ZodString;
                 resolved: z.ZodBoolean;
                 createdAt: z.ZodString;
@@ -2643,15 +2623,15 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }, {
                 resolved: boolean;
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }>, "many">>>;
             author: z.ZodObject<{
                 id: z.ZodUnion<[z.ZodNumber, z.ZodString]>;
@@ -2728,7 +2708,7 @@ export declare const reportsSchema: z.ZodObject<{
             }>;
             gotThread: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
             threadFirstItemId: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id: number;
             createdAt: string;
@@ -2760,12 +2740,12 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         }, {
             id: number;
             createdAt: string;
@@ -2797,18 +2777,17 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
         reports: unknown[];
         related: {
@@ -2842,21 +2821,21 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         };
         resolved?: boolean | undefined;
+        reason?: string | null | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
         author?: unknown;
     }, {
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
         reports: unknown[];
         related: {
@@ -2890,14 +2869,15 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         };
         resolved?: boolean | undefined;
+        reason?: string | null | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
         author?: unknown;
     }>, "many">;
@@ -2912,7 +2892,6 @@ export declare const reportsSchema: z.ZodObject<{
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
         reports: unknown[];
         related: {
@@ -2946,14 +2925,15 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         };
         resolved?: boolean | undefined;
+        reason?: string | null | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
         author?: unknown;
     }[];
@@ -2968,7 +2948,6 @@ export declare const reportsSchema: z.ZodObject<{
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
         reports: unknown[];
         related: {
@@ -3002,14 +2981,15 @@ export declare const reportsSchema: z.ZodObject<{
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         };
         resolved?: boolean | undefined;
+        reason?: string | null | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
         author?: unknown;
     }[];

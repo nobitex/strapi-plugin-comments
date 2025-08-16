@@ -28,7 +28,7 @@ type CommentApprovalStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
 export type Comment<TAuthor = CommentAuthor> = {
   id: Id;
   content: string;
-  entry?: string;
+  section?: string;
   author?: TAuthor;
   children?: Array<Comment>;
   reports?: Array<CommentReport>;

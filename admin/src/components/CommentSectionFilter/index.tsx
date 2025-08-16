@@ -1,15 +1,14 @@
 import { FC, useState } from "react"
-import { getMessage } from "../../utils";
-import { COMMENT_STATUS } from '../../utils/constants';
+import { useQueryParams } from "@strapi/strapi/admin";
 import { SingleSelect, SingleSelectOption } from '@strapi/design-system';
 
 
 type CommentStatusFiltersProps = {
-    setQueryParams: (nextParams: object, method?: "push" | "remove", replace?: boolean) => void;
     filterOptions: string[]
 };
 
-export const CommentsEntryFilters: FC<CommentStatusFiltersProps> = ({ setQueryParams, filterOptions }) => {
+export const CommentsSectionFilters: FC<CommentStatusFiltersProps> = ({ filterOptions }) => {
+    const [_, setQueryParams] = useQueryParams();
     const [currentFilter, setCurrentFilter] = useState<string>();
 
     const handleChange = (filter: string | undefined) => {
@@ -23,7 +22,7 @@ export const CommentsEntryFilters: FC<CommentStatusFiltersProps> = ({ setQueryPa
 
     return (
         <SingleSelect
-            placeholder={'Filter by Entry'}
+            placeholder={'Filter by Section'}
             value={currentFilter}
             onClear={() => handleChange(undefined)}
             onChange={handleChange}

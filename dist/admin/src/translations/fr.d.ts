@@ -3,6 +3,8 @@ declare const _default: {
     'plugin.section': string;
     'plugin.section.item': string;
     'common.button.back': string;
+    'common.more': string;
+    'common.search': string;
     'nav.header.moderation': string;
     'nav.header.settings': string;
     'nav.item.updates': string;
@@ -99,6 +101,8 @@ declare const _default: {
     'page.details.actions.comment.delete': string;
     'page.details.actions.comment.delete.confirmation.success': string;
     'page.details.actions.comment.reports.review': string;
+    'page.details.actions.comment.reports.approve': string;
+    'page.details.actions.comment.reports.reject': string;
     'page.details.actions.thread.block': string;
     'page.details.actions.thread.block.confirmation.header': string;
     'page.details.actions.thread.block.confirmation.description': string;
@@ -191,5 +195,14 @@ declare const _default: {
     'customField.comments.input.populate.label': string;
     'customField.comments.input.populate.author.label': string;
     'customField.comments.input.populate.avatar.label': string;
+    'wysiwyg.bold': string;
+    'wysiwyg.italic': string;
+    'wysiwyg.underline': string;
+    'wysiwyg.strikethrough': string;
+    'wysiwyg.bulletList': string;
+    'wysiwyg.numberList': string;
+    'wysiwyg.code': string;
+    'wysiwyg.link': string;
+    'wysiwyg.quote': string;
 };
 export default _default;

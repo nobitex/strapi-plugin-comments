@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-comments",
-  "version": "3.0.15",
+  "version": "3.0.15.10",
   "description": "Strapi - Comments plugin",
   "strapi": {
     "name": "comments",
@@ -29,7 +29,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "",
+    "prepare": "husky install",
     "publish:latest": "npm publish --tag latest",
     "publish:beta": "npm publish --tag beta",
     "build": "yarn clean && strapi-plugin build --minify",
@@ -105,7 +105,9 @@
     "ext": "js,json,ts"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "pre-commit": "yarn format && yarn test:unit"
+    }
   },
   "author": {
     "name": "VirtusLab",

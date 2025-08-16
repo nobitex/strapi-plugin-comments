@@ -3,6 +3,8 @@ const e = {
   "plugin.section": "Plugin de commentaires",
   "plugin.section.item": "Configuration",
   "common.button.back": "Retour",
+  "common.more": "Plus",
+  "common.search": "Rechercher",
   "nav.header.moderation": "Modération",
   "nav.header.settings": "Paramètres",
   "nav.item.updates": "Mises à jour",
@@ -22,7 +24,7 @@ const e = {
   "page.common.item.status.setFilter": "Définir le statut…",
   "page.updates.header": "Mises à jour récentes",
   "page.discover.header": "Découvrir les fils de discussion",
-  "page.discover.header.count": "entrées trouvées",
+  "page.discover.header.count": "{count} entrées trouvées",
   "page.discover.table.header.id": "ID",
   "page.discover.table.header.author": "Auteur",
   "page.discover.table.header.message": "Message",
@@ -99,6 +101,8 @@ const e = {
   "page.details.actions.comment.delete": "Supprimer le commentaire",
   "page.details.actions.comment.delete.confirmation.success": "Le commentaire a été supprimé",
   "page.details.actions.comment.reports.review": "Examiner",
+  "page.details.actions.comment.reports.approve": "Approuver",
+  "page.details.actions.comment.reports.reject": "Rejeter",
   "page.details.actions.thread.block": "Bloquer le fil de discussion",
   "page.details.actions.thread.block.confirmation.header": "Modération : Bloquer le fil de discussion",
   "page.details.actions.thread.block.confirmation.description": "Voulez-vous vraiment bloquer tout le fil de discussion ? Aucune autre discussion ne sera autorisée.",
@@ -190,7 +194,16 @@ const e = {
   "customField.comments.input.filterBy.option.approvalStatus.option.rejected.label": "Rejeté",
   "customField.comments.input.populate.label": "Charger",
   "customField.comments.input.populate.author.label": "Charger le champ auteur",
-  "customField.comments.input.populate.avatar.label": "Charger le champ avatar"
+  "customField.comments.input.populate.avatar.label": "Charger le champ avatar",
+  "wysiwyg.bold": "Gras",
+  "wysiwyg.italic": "Italique",
+  "wysiwyg.underline": "Souligné",
+  "wysiwyg.strikethrough": "Barré",
+  "wysiwyg.bulletList": "Liste à puces",
+  "wysiwyg.numberList": "Liste numérotée",
+  "wysiwyg.code": "Code",
+  "wysiwyg.link": "Lien",
+  "wysiwyg.quote": "Citation"
 };
 export {
   e as default

@@ -56,6 +56,7 @@ export const clientService = ({ strapi }: StrapiContext) => {
           `Relation for field "related" does not exist. Check your payload please.`,
         );
       }
+      const config = await this.getCommonService()
       const approvalFlow = await this.getCommonService().getConfig(CONFIG_PARAMS.APPROVAL_FLOW, []);
       const isApprovalFlowEnabled = approvalFlow.includes(uid) || relatedEntity.requireCommentsApproval;
       const doNotPopulateAuthor = await this.getCommonService().getConfig(

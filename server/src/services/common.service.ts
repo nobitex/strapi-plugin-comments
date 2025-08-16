@@ -102,6 +102,7 @@ const commonService = ({ strapi }: StrapiContext) => ({
 
     const params = {
       where: {
+        approvalStatus: 'APPROVED',
         ...filters,
         ...(locale ? { locale } : {}),
       },

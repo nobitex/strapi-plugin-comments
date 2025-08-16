@@ -576,7 +576,6 @@ declare const commonService: ({ strapi }: StrapiContext) => {
     }[T_2], deepLimit?: number): Promise<boolean>;
     checkBadWords(content: string): Promise<string>;
     perRemove(related: string, locale?: string): Promise<import("@strapi/database/dist/types").CountResult>;
-    perRestore(related: string, locale?: string): Promise<import("@strapi/database/dist/types").CountResult>;
     registerLifecycleHook(): void;
     runLifecycleHook(): Promise<void>;
 };

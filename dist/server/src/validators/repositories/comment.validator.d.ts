@@ -63,7 +63,7 @@ declare const commentSchema: z.ZodObject<{
         resolved?: boolean;
     }>, "many">>;
     author: z.ZodAny;
-    section: z.ZodOptional<z.ZodString>;
+    section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
 } & {
     threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
         id: z.ZodNumber;
@@ -129,7 +129,7 @@ declare const commentSchema: z.ZodObject<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -446,7 +446,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
         resolved?: boolean;
     }>, "many">>;
     author: z.ZodAny;
-    section: z.ZodOptional<z.ZodString>;
+    section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
 } & {
     threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
         id: z.ZodNumber;
@@ -512,7 +512,7 @@ declare const commentWithRelatedSchema: z.ZodObject<Omit<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -842,7 +842,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
         resolved?: boolean;
     }>, "many">>;
     author: z.ZodAny;
-    section: z.ZodOptional<z.ZodString>;
+    section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
 } & {
     threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
         id: z.ZodNumber;
@@ -908,7 +908,7 @@ export declare const findManySchema: z.ZodArray<z.ZodObject<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -1222,7 +1222,7 @@ export declare const findWithCountSchema: z.ZodObject<{
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -1288,7 +1288,7 @@ export declare const findWithCountSchema: z.ZodObject<{
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -1764,7 +1764,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -1830,7 +1830,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -2144,7 +2144,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         } & {
             threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
                 id: z.ZodNumber;
@@ -2210,7 +2210,7 @@ export declare const commentResultValidator: {
                     resolved?: boolean;
                 }>, "many">>;
                 author: z.ZodAny;
-                section: z.ZodOptional<z.ZodString>;
+                section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             }, "strip", z.ZodTypeAny, {
                 id?: number;
                 documentId?: string;
@@ -2678,7 +2678,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -2744,7 +2744,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -3041,7 +3041,7 @@ export declare const commentResultValidator: {
             resolved?: boolean;
         }>, "many">>;
         author: z.ZodAny;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     } & {
         threadOf: z.ZodOptional<z.ZodNullable<z.ZodLazy<z.ZodUnion<[z.ZodNumber, z.ZodObject<{
             id: z.ZodNumber;
@@ -3107,7 +3107,7 @@ export declare const commentResultValidator: {
                 resolved?: boolean;
             }>, "many">>;
             author: z.ZodAny;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;

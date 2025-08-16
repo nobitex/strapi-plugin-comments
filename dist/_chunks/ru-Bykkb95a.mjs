@@ -22,7 +22,7 @@ const e = {
   "page.common.item.status.setFilter": "Установите статус...",
   "page.updates.header": "Недавние обновления",
   "page.discover.header": "Поиск тем",
-  "page.discover.header.count": "записей найдено",
+  "page.discover.header.count": "{count} записей найдено",
   "page.discover.table.header.id": "ID",
   "page.discover.table.header.author": "Автор",
   "page.discover.table.header.message": "Сообщение",

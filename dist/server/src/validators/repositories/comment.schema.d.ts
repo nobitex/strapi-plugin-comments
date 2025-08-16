@@ -28,7 +28,7 @@ export declare const dbBaseCommentSchema: z.ZodObject<{
         email?: string;
     }>]>>>;
     locale: z.ZodNullable<z.ZodString>;
-    section: z.ZodOptional<z.ZodString>;
+    section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
 }, "strip", z.ZodTypeAny, {
     id?: number;
     documentId?: string;

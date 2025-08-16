@@ -959,8 +959,7 @@ Example:
   commentsCommonService.registerLifecycleHook({
     callback: async ({ action, result }) => {
       const saveResult = await logIntoSystem(action, result);
-
-      console.log(saveResult);
+      
     },
     contentTypeName: "report",
     hookName: "afterCreate",

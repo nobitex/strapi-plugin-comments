@@ -5,11 +5,7 @@ export declare const useAPI: () => {
             entryLabel: Record<string, string[]>;
             approvalFlow: string[];
             blockedAuthorProps: string[];
-            reportReasons: {
-                BAD_LANGUAGE: "BAD_LANGUAGE";
-                DISCRIMINATION: "DISCRIMINATION";
-                OTHER: "OTHER";
-            };
+            reportReasons: Record<string, string>;
             regex: {
                 uid: string;
                 relatedUid: string;
@@ -36,12 +32,12 @@ export declare const useAPI: () => {
                 uid: string;
                 apiID: string;
                 schema: {
-                    displayName: string;
                     attributes: Record<string, {
                         type: string;
                     }>;
                     collectionName: string;
                     description: string;
+                    displayName: string;
                     draftAndPublish: boolean;
                     kind: string;
                     pluralName: string;
@@ -56,12 +52,12 @@ export declare const useAPI: () => {
                 uid: string;
                 apiID: string;
                 schema: {
-                    displayName: string;
                     attributes: Record<string, {
                         type: string;
                     }>;
                     collectionName: string;
                     description: string;
+                    displayName: string;
                     draftAndPublish: boolean;
                     kind: string;
                     pluralName: string;
@@ -167,12 +163,12 @@ export declare const useAPI: () => {
                         id: number;
                         createdAt: string;
                         updatedAt: string | null;
-                        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                         content: string;
+                        reason?: string | null | undefined;
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
-                    section?: string | undefined;
+                    section?: string | null | undefined;
                     threadOf?: {
                         id: number;
                         documentId: string;
@@ -206,12 +202,12 @@ export declare const useAPI: () => {
                             id: number;
                             createdAt: string;
                             updatedAt: string | null;
-                            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                             content: string;
+                            reason?: string | null | undefined;
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
-                        section?: string | undefined;
+                        section?: string | null | undefined;
                         threadOf?: {
                             id: number;
                             createdAt: string;
@@ -245,12 +241,12 @@ export declare const useAPI: () => {
                                 id: number;
                                 createdAt: string;
                                 updatedAt: string | null;
-                                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                                 content: string;
+                                reason?: string | null | undefined;
                             }[] | null | undefined;
                             gotThread?: boolean | null | undefined;
                             threadFirstItemId?: number | null | undefined;
-                            section?: string | undefined;
+                            section?: string | null | undefined;
                             threadOf?: import("../api/schemas").Comment | null | undefined;
                         } | null | undefined;
                     } | null | undefined;
@@ -287,12 +283,12 @@ export declare const useAPI: () => {
                         id: number;
                         createdAt: string;
                         updatedAt: string | null;
-                        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                         content: string;
+                        reason?: string | null | undefined;
                     }[] | null | undefined;
                     gotThread?: boolean | null | undefined;
                     threadFirstItemId?: number | null | undefined;
-                    section?: string | undefined;
+                    section?: string | null | undefined;
                 }[];
             }>;
         };
@@ -347,7 +343,6 @@ export declare const useAPI: () => {
                     id: number;
                     createdAt: string;
                     updatedAt: string | null;
-                    reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                     content: string;
                     reports: unknown[];
                     related: {
@@ -381,14 +376,15 @@ export declare const useAPI: () => {
                             id: number;
                             createdAt: string;
                             updatedAt: string | null;
-                            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                             content: string;
+                            reason?: string | null | undefined;
                         }[] | null | undefined;
                         gotThread?: boolean | null | undefined;
                         threadFirstItemId?: number | null | undefined;
-                        section?: string | undefined;
+                        section?: string | null | undefined;
                     };
                     resolved?: boolean | undefined;
+                    reason?: string | null | undefined;
                     approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
                     author?: unknown;
                 }[];

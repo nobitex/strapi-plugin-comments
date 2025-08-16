@@ -28,7 +28,7 @@ declare const reportSchema: z.ZodObject<{
         updatedAt: z.ZodString;
         publishedAt: z.ZodString;
         locale: z.ZodNullable<z.ZodString>;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -163,7 +163,7 @@ declare const findPageSchema: z.ZodObject<{
             updatedAt: z.ZodString;
             publishedAt: z.ZodString;
             locale: z.ZodNullable<z.ZodString>;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -434,7 +434,7 @@ declare const findManySchema: z.ZodArray<z.ZodObject<{
             email?: string;
         }>]>>>;
         locale: z.ZodNullable<z.ZodString>;
-        section: z.ZodOptional<z.ZodString>;
+        section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
     }, "strip", z.ZodTypeAny, {
         id?: number;
         documentId?: string;
@@ -601,7 +601,7 @@ export declare const reportResultValidator: {
                 email?: string;
             }>]>>>;
             locale: z.ZodNullable<z.ZodString>;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;
@@ -752,7 +752,7 @@ export declare const reportResultValidator: {
                 updatedAt: z.ZodString;
                 publishedAt: z.ZodString;
                 locale: z.ZodNullable<z.ZodString>;
-                section: z.ZodOptional<z.ZodString>;
+                section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
             }, "strip", z.ZodTypeAny, {
                 id?: number;
                 documentId?: string;
@@ -1012,7 +1012,7 @@ export declare const reportResultValidator: {
             updatedAt: z.ZodString;
             publishedAt: z.ZodString;
             locale: z.ZodNullable<z.ZodString>;
-            section: z.ZodOptional<z.ZodString>;
+            section: z.ZodOptional<z.ZodNullable<z.ZodString>>;
         }, "strip", z.ZodTypeAny, {
             id?: number;
             documentId?: string;

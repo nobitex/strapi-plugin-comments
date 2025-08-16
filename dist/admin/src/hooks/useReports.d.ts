@@ -9,7 +9,6 @@ export declare const useReports: (queryParams?: Record<string, string>) => impor
         id: number;
         createdAt: string;
         updatedAt: string | null;
-        reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
         content: string;
         reports: unknown[];
         related: {
@@ -43,14 +42,15 @@ export declare const useReports: (queryParams?: Record<string, string>) => impor
                 id: number;
                 createdAt: string;
                 updatedAt: string | null;
-                reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
                 content: string;
+                reason?: string | null | undefined;
             }[] | null | undefined;
             gotThread?: boolean | null | undefined;
             threadFirstItemId?: number | null | undefined;
-            section?: string | undefined;
+            section?: string | null | undefined;
         };
         resolved?: boolean | undefined;
+        reason?: string | null | undefined;
         approvalStatus?: "PENDING" | "APPROVED" | "REJECTED" | "BLOCKED" | "OPEN" | "REMOVED" | "TO_REVIEW" | "UNKNOWN" | null | undefined;
         author?: unknown;
     }[];

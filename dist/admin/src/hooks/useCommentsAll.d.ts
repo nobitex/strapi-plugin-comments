@@ -5,8 +5,8 @@ export declare const useCommentsAll: (queryParams: Record<string, any>) => impor
             id: number;
             createdAt: string;
             updatedAt: string | null;
-            reason: "BAD_LANGUAGE" | "DISCRIMINATION" | "OTHER";
             content: string;
+            reason?: string | null | undefined;
         }[];
         id: number;
         createdAt: string;
@@ -35,7 +35,7 @@ export declare const useCommentsAll: (queryParams: Record<string, any>) => impor
         };
         gotThread?: boolean | null | undefined;
         threadFirstItemId?: number | null | undefined;
-        section?: string | undefined;
+        section?: string | null | undefined;
         threadOf?: import("../api/schemas").Comment | null | undefined;
         related?: string | ({
             uid: string;

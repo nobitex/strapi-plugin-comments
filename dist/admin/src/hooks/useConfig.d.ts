@@ -3,11 +3,7 @@ export declare const useConfig: (setSettings: (settings: Config) => void) => imp
     entryLabel: Record<string, string[]>;
     approvalFlow: string[];
     blockedAuthorProps: string[];
-    reportReasons: {
-        BAD_LANGUAGE: "BAD_LANGUAGE";
-        DISCRIMINATION: "DISCRIMINATION";
-        OTHER: "OTHER";
-    };
+    reportReasons: Record<string, string>;
     regex: {
         uid: string;
         relatedUid: string;

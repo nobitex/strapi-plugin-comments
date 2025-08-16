@@ -3,6 +3,8 @@ const e = {
   "plugin.section": "Comments plugin",
   "plugin.section.item": "Configuration",
   "common.button.back": "Go back",
+  "common.more": "More",
+  "common.search": "Search",
   "nav.header.moderation": "Moderation",
   "nav.header.settings": "Settings",
   "nav.item.updates": "Updates",
@@ -22,7 +24,7 @@ const e = {
   "page.common.item.status.setFilter": "Set status...",
   "page.updates.header": "Recent updates",
   "page.discover.header": "Discover threads",
-  "page.discover.header.count": "entries found",
+  "page.discover.header.count": "{count} entries found",
   "page.discover.table.header.id": "ID",
   "page.discover.table.header.author": "Author",
   "page.discover.table.header.message": "Message",
@@ -99,6 +101,8 @@ const e = {
   "page.details.actions.comment.delete": "Delete comment",
   "page.details.actions.comment.delete.confirmation.success": "Comment has been deleted",
   "page.details.actions.comment.reports.review": "Review",
+  "page.details.actions.comment.reports.approve": "Approve",
+  "page.details.actions.comment.reports.reject": "Reject",
   "page.details.actions.thread.block": "Block thread",
   "page.details.actions.thread.block.confirmation.header": "Moderation: Block thread",
   "page.details.actions.thread.block.confirmation.description": "Do you really want to block whole thread? No further discussions are going to be allowed.",
@@ -190,7 +194,16 @@ const e = {
   "customField.comments.input.filterBy.option.approvalStatus.option.rejected.label": "Rejected",
   "customField.comments.input.populate.label": "Populate",
   "customField.comments.input.populate.author.label": "Populate author field",
-  "customField.comments.input.populate.avatar.label": "Populate avatar field"
+  "customField.comments.input.populate.avatar.label": "Populate avatar field",
+  "wysiwyg.bold": "Bold",
+  "wysiwyg.italic": "Italic",
+  "wysiwyg.underline": "Underline",
+  "wysiwyg.strikethrough": "Strikethrough",
+  "wysiwyg.bulletList": "Bullet list",
+  "wysiwyg.numberList": "Number list",
+  "wysiwyg.code": "Code",
+  "wysiwyg.link": "Link",
+  "wysiwyg.quote": "Quote"
 };
 export {
   e as default
