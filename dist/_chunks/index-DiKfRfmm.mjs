@@ -38553,7 +38553,7 @@ const pte = "strapi-plugin-comments", mte = {
         id: `${Ri}.plugin.name`,
         defaultMessage: Qw
       },
-      Component: () => import("./index-Bo0qhymA.mjs"),
+      Component: () => import("./index-D2RvMRYa.mjs"),
       permissions: jw.access
     }), t.createSettingSection(
       {
@@ -38571,7 +38571,7 @@ const pte = "strapi-plugin-comments", mte = {
           },
           id: "comments",
           to: `/settings/${Ri}`,
-          Component: () => import("./index-BE5McFxx.mjs"),
+          Component: () => import("./index-PvQsamqK.mjs"),
           permissions: jw.settings
         }
       ]

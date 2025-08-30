@@ -337,21 +337,21 @@ const commonService = ({ strapi }: StrapiContext) => ({
   },
 
   async checkBadWords(content: string) {
-    const config = await this.getConfig(CONFIG_PARAMS.BAD_WORDS, true);
-    if (config) {
-      if (content && (isProfane({ testString: content }) || isPersianProfane(content))) {
-        throw new PluginError(
-          400,
-          'Bad language used! Please polite your comment...',
-          {
-            content: {
-              original: content,
-              filtered: content && replaceProfanities({ testString: content }),
-            },
-          },
-        );
-      }
-    }
+    // const config = await this.getConfig(CONFIG_PARAMS.BAD_WORDS, true);
+    // if (config) {
+    //   if (content && (isProfane({ testString: content }) || isPersianProfane(content))) {
+    //     throw new PluginError(
+    //       400,
+    //       'Bad language used! Please polite your comment...',
+    //       {
+    //         content: {
+    //           original: content,
+    //           filtered: content && replaceProfanities({ testString: content }),
+    //         },
+    //       },
+    //     );
+    //   }
+    // }
     return content;
   },
 
