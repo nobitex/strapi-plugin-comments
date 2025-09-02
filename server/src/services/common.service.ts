@@ -252,15 +252,37 @@ const commonService = ({ strapi }: StrapiContext) => ({
       false,
     );
 
-    const sortChildren = (nodes: any[]) => {
-      nodes.sort((a, b) => (toTime(a?.[createdKey]) - toTime(b?.[createdKey])) * (dir === 'asc' ? 1 : -1));
+    const sortChildren = (nodes: any[], isRoot = false) => {
+      if (!isRoot) {
+        nodes.sort((a, b) => (toTime(a?.[createdKey]) - toTime(b?.[createdKey])) * (dir === 'asc' ? 1 : -1));
+      }
       nodes.forEach((n) => {
-        if (Array.isArray(n.children) && n.children.length) sortChildren(n.children);
+        if (Array.isArray(n.children) && n.children.length) sortChildren(n.children, false);
       });
       return nodes;
     };
 
-    const sortedTree = sortChildren(tree as any);
+    // Compute thread activity (max createdAt in subtree) for root ordering
+    const getMaxActivityMs = (node: any): number => {
+      const selfMs = toTime(node?.[createdKey]);
+      const children = Array.isArray(node.children) ? node.children : [];
+      let maxMs = selfMs;
+      for (const c of children) {
+        const childMs = getMaxActivityMs(c);
+        if (childMs > maxMs) maxMs = childMs;
+      }
+      return maxMs;
+    };
+
+    // Roots ordered by activity: DESC = newest activity first, ASC = oldest activity first
+    const sortedTree = sortChildren(
+      (tree as any).sort((a: any, b: any) => {
+        const aMs = getMaxActivityMs(a);
+        const bMs = getMaxActivityMs(b);
+        return (aMs - bMs) * (dir === 'asc' ? 1 : -1);
+      }),
+      true,
+    );
 
     return {
       data: sortedTree,
