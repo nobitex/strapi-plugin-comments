@@ -24,5 +24,6 @@ export const getDefaultAuthorPopulate = (strapi: CoreStrapi) => {
 };
 
 export function getOrderBy(orderBy?: string | null) {
-  return typeof orderBy === 'string' ? orderBy.split(':') : 'createdAt:desc'.split(':');
+  const [field, dir] = typeof orderBy === 'string' ? orderBy.split(':') : 'createdAt:desc'.split(':');
+  return [field, (dir || 'desc').toLowerCase()];
 }

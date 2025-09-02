@@ -85,7 +85,7 @@ const commonService = ({ strapi }: StrapiContext) => ({
     locale,
   }: clientValidator.FindAllFlatSchema, relatedEntity?: any): Promise<{ data: Array<CommentWithRelated | Comment>, pagination?: Pagination }> {
     const omit = baseOmit.filter((field) => !REQUIRED_FIELDS.includes(field));
-    const defaultSelect = (['id', 'related'] as const).filter((field) => !omit.includes(field));
+    const defaultSelect = (['id', 'related', 'createdAt'] as const).filter((field) => !omit.includes(field));
 
     const populateClause: clientValidator.FindAllFlatSchema['populate'] = {
       authorUser: true,
@@ -158,7 +158,11 @@ const commonService = ({ strapi }: StrapiContext) => ({
 
     return {
       data: hasRelatedEntitiesToMap ? result.map((_) => this.mergeRelatedEntityTo(_, relatedEntities)) : result,
-      pagination: resultPaginationData,
+      pagination: {
+        total: (resultPaginationData as any)?.total ?? 0,
+        page: params.page,
+        pageSize: params.pageSize,
+      },
     };
   },
 
@@ -180,7 +184,11 @@ const commonService = ({ strapi }: StrapiContext) => ({
     relatedEntity?: any,
   ) {
     // Fetch the current paginated slice (usually roots)
-    const entities = await this.findAllFlat({ filters, populate, sort, fields, isAdmin, omit, locale, limit, pagination }, relatedEntity);
+    const rootFilters = {
+      ...filterItem(filters || {}, ['threadOf']) as any,
+      threadOf: typeof startingFromId === 'number' ? startingFromId : null,
+    } as any;
+    const entities = await this.findAllFlat({ filters: rootFilters, populate, sort, fields, isAdmin, omit, locale, limit, pagination }, relatedEntity);
 
     // Ensure all descendants of the visible slice are included to build a complete tree
     const byId = new Map<number, any>();
@@ -202,13 +210,18 @@ const commonService = ({ strapi }: StrapiContext) => ({
     // We intentionally do not paginate children to avoid missing replies
     while (currentParentIds.length) {
       const uniqueParentIds = Array.from(new Set(currentParentIds));
+      // Build child-safe filters: preserve relation and basic constraints, drop root-level boolean logic
+      const baseChildFilters: any = {
+        related: (filters as any)?.related,
+        approvalStatus: 'APPROVED',
+        ...(locale ? { locale } : {}),
+      };
       const childrenBatches = await Promise.all(
         uniqueParentIds.map((parentId) => this.findAllFlat({
-          // Casting to any to allow internal helper usage with threadOf filter
           filters: {
-            ...(filterItem(filters || {}, ['related']) as any),
+            ...baseChildFilters,
             threadOf: parentId as any,
-          } as any,
+          },
           populate,
           sort,
           fields,
@@ -225,16 +238,32 @@ const commonService = ({ strapi }: StrapiContext) => ({
       currentParentIds = unseenChildren.map((c: any) => c.id);
     }
 
-    const allEntities = Array.from(byId.values());
+    // De-duplicate entities by id to avoid cycles/overflow during tree build
+    const allEntities = Array.from(byId.values()).filter((e, idx, arr) => arr.findIndex((x: any) => x.id === (e as any).id) === idx);
+
+    const [op, dir] = getOrderBy(sort);
+    const createdKey = op || 'createdAt';
+    const toTime = (v: any) => (v ? new Date(v).getTime() : 0);
+    const tree = buildNestedStructure(
+      allEntities as any,
+      startingFromId,
+      'threadOf',
+      dropBlockedThreads,
+      false,
+    );
+
+    const sortChildren = (nodes: any[]) => {
+      nodes.sort((a, b) => (toTime(a?.[createdKey]) - toTime(b?.[createdKey])) * (dir === 'asc' ? 1 : -1));
+      nodes.forEach((n) => {
+        if (Array.isArray(n.children) && n.children.length) sortChildren(n.children);
+      });
+      return nodes;
+    };
+
+    const sortedTree = sortChildren(tree as any);
 
     return {
-      data: buildNestedStructure(
-        allEntities as any,
-        startingFromId,
-        'threadOf',
-        dropBlockedThreads,
-        false,
-      ),
+      data: sortedTree,
       // Keep pagination of roots slice
       pagination: entities?.pagination,
     };
