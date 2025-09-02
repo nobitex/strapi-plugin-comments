@@ -3076,6 +3076,11 @@ declare const controllers: {
         findAllInHierarchy(ctx: import("../@types").RequestContext<object, Pick<{
             sort?: string;
             locale?: string;
+            pagination?: {
+                page?: number;
+                pageSize?: number;
+                withCount?: boolean;
+            };
             relation?: `${string}::${string}.${string}`;
             populate?: Record<string, boolean | {
                 populate?: boolean;
@@ -4426,44 +4431,7 @@ declare const controllers: {
             startingFromId?: number;
             dropBlockedThreads?: boolean;
         }, "relation">>): Promise<{
-            id?: number;
-            documentId?: string;
-            content?: string;
-            blocked?: boolean;
-            blockedThread?: boolean;
-            blockReason?: string;
-            isAdminComment?: boolean;
-            removed?: boolean;
-            approvalStatus?: string;
-            related?: string;
-            createdAt?: string;
-            updatedAt?: string;
-            publishedAt?: string;
-            authorId?: string;
-            authorName?: string;
-            authorEmail?: string;
-            authorAvatar?: string;
-            authorUser?: string | {
-                id?: number;
-                email?: string;
-            };
-            locale?: string;
-            section?: string;
-            gotThread?: boolean;
-            threadFirstItemId?: number;
-            reports?: {
-                id?: number;
-                documentId?: string;
-                content?: string;
-                createdAt?: string;
-                updatedAt?: string;
-                publishedAt?: string;
-                locale?: string;
-                reason?: string;
-                resolved?: boolean;
-            }[];
-            author?: any;
-            threadOf?: number | {
+            data: {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -4501,8 +4469,53 @@ declare const controllers: {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                threadOf?: number | {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    blocked?: boolean;
+                    blockedThread?: boolean;
+                    blockReason?: string;
+                    isAdminComment?: boolean;
+                    removed?: boolean;
+                    approvalStatus?: string;
+                    related?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    authorId?: string;
+                    authorName?: string;
+                    authorEmail?: string;
+                    authorAvatar?: string;
+                    authorUser?: string | {
+                        id?: number;
+                        email?: string;
+                    };
+                    locale?: string;
+                    section?: string;
+                    gotThread?: boolean;
+                    threadFirstItemId?: number;
+                    reports?: {
+                        id?: number;
+                        documentId?: string;
+                        content?: string;
+                        createdAt?: string;
+                        updatedAt?: string;
+                        publishedAt?: string;
+                        locale?: string;
+                        reason?: string;
+                        resolved?: boolean;
+                    }[];
+                    author?: any;
+                };
+            }[];
+            pagination: {
+                page?: number;
+                pageSize?: number;
+                pageCount?: number;
+                total?: number;
             };
-        }[]>;
+        }>;
         findAllPerAuthor(ctx: import("../@types").RequestContext<object, Pick<{
             type?: string;
             sort?: string;

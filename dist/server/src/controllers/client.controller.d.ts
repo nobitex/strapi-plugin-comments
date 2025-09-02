@@ -492,44 +492,7 @@ declare const controllers: ({ strapi }: StrapiContext) => {
         };
     }>;
     findAllInHierarchy(ctx: RequestContext<object, Pick<clientValidator.FindAllInHierarchyValidatorSchema, 'relation'>>): Promise<{
-        id?: number;
-        documentId?: string;
-        content?: string;
-        blocked?: boolean;
-        blockedThread?: boolean;
-        blockReason?: string;
-        isAdminComment?: boolean;
-        removed?: boolean;
-        approvalStatus?: string;
-        related?: string;
-        createdAt?: string;
-        updatedAt?: string;
-        publishedAt?: string;
-        authorId?: string;
-        authorName?: string;
-        authorEmail?: string;
-        authorAvatar?: string;
-        authorUser?: string | {
-            id?: number;
-            email?: string;
-        };
-        locale?: string;
-        section?: string;
-        gotThread?: boolean;
-        threadFirstItemId?: number;
-        reports?: {
-            id?: number;
-            documentId?: string;
-            content?: string;
-            createdAt?: string;
-            updatedAt?: string;
-            publishedAt?: string;
-            locale?: string;
-            reason?: string;
-            resolved?: boolean;
-        }[];
-        author?: any;
-        threadOf?: number | {
+        data: {
             id?: number;
             documentId?: string;
             content?: string;
@@ -567,8 +530,53 @@ declare const controllers: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                section?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        }[];
+        pagination: {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
         };
-    }[]>;
+    }>;
     findAllPerAuthor(ctx: RequestContext<object, Pick<clientValidator.FindAllPerAuthorValidatorSchema, 'authorId' | 'type'>>): Promise<{
         data: ({
             id?: number;

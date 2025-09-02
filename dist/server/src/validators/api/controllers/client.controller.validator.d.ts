@@ -1388,6 +1388,11 @@ export type FindAllFlatSchema = ExtractRightEither<ReturnType<typeof findAllFlat
 export declare const findAllInHierarchyValidator: (enabledCollections: string[], relation: string, payload: object) => import("../../../utils/Either").Left<import("../../../utils/PluginError").default> | import("../../../utils/Either").Right<{
     sort?: string;
     locale?: string;
+    pagination?: {
+        page?: number;
+        pageSize?: number;
+        withCount?: boolean;
+    };
     relation?: `${string}::${string}.${string}`;
     populate?: Record<string, boolean | {
         populate?: boolean;

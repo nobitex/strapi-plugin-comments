@@ -20,45 +20,8 @@ declare const commonService: ({ strapi }: StrapiContext) => {
         data: Array<CommentWithRelated | Comment>;
         pagination?: Pagination;
     }>;
-    findAllInHierarchy({ filters, populate, sort, fields, startingFromId, dropBlockedThreads, isAdmin, omit, locale, limit, }: clientValidator.FindAllInHierarchyValidatorSchema, relatedEntity?: any): Promise<{
-        id?: number;
-        documentId?: string;
-        content?: string;
-        blocked?: boolean;
-        blockedThread?: boolean;
-        blockReason?: string;
-        isAdminComment?: boolean;
-        removed?: boolean;
-        approvalStatus?: string;
-        related?: string;
-        createdAt?: string;
-        updatedAt?: string;
-        publishedAt?: string;
-        authorId?: string;
-        authorName?: string;
-        authorEmail?: string;
-        authorAvatar?: string;
-        authorUser?: string | {
-            id?: number;
-            email?: string;
-        };
-        locale?: string;
-        section?: string;
-        gotThread?: boolean;
-        threadFirstItemId?: number;
-        reports?: {
-            id?: number;
-            documentId?: string;
-            content?: string;
-            createdAt?: string;
-            updatedAt?: string;
-            publishedAt?: string;
-            locale?: string;
-            reason?: string;
-            resolved?: boolean;
-        }[];
-        author?: any;
-        threadOf?: number | {
+    findAllInHierarchy({ filters, populate, sort, fields, startingFromId, dropBlockedThreads, isAdmin, omit, locale, limit, pagination, }: clientValidator.FindAllInHierarchyValidatorSchema, relatedEntity?: any): Promise<{
+        data: {
             id?: number;
             documentId?: string;
             content?: string;
@@ -96,8 +59,53 @@ declare const commonService: ({ strapi }: StrapiContext) => {
                 resolved?: boolean;
             }[];
             author?: any;
+            threadOf?: number | {
+                id?: number;
+                documentId?: string;
+                content?: string;
+                blocked?: boolean;
+                blockedThread?: boolean;
+                blockReason?: string;
+                isAdminComment?: boolean;
+                removed?: boolean;
+                approvalStatus?: string;
+                related?: string;
+                createdAt?: string;
+                updatedAt?: string;
+                publishedAt?: string;
+                authorId?: string;
+                authorName?: string;
+                authorEmail?: string;
+                authorAvatar?: string;
+                authorUser?: string | {
+                    id?: number;
+                    email?: string;
+                };
+                locale?: string;
+                section?: string;
+                gotThread?: boolean;
+                threadFirstItemId?: number;
+                reports?: {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    locale?: string;
+                    reason?: string;
+                    resolved?: boolean;
+                }[];
+                author?: any;
+            };
+        }[];
+        pagination: {
+            page?: number;
+            pageSize?: number;
+            pageCount?: number;
+            total?: number;
         };
-    }[]>;
+    }>;
     findOne(criteria: Partial<Params['where']>): Promise<{
         id?: number;
         documentId?: string;

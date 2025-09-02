@@ -21,7 +21,7 @@ export default (strapi: CoreStrapi, nexus: Nexus) => {
     },
     async resolve(_obj, args) {
       const { relation, filters, sort } = args;
-      return await getPluginService(strapi, 'common').findAllInHierarchy({
+      const result = await getPluginService(strapi, 'common').findAllInHierarchy({
         ...flatInput({
           relation,
           filters: getPluginService(strapi, 'gql').graphQLFiltersToStrapiQuery(filters, contentType),
@@ -29,6 +29,7 @@ export default (strapi: CoreStrapi, nexus: Nexus) => {
         }),
         dropBlockedThreads: true,
       });
+      return result.data;
     },
   };
 

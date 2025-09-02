@@ -118,6 +118,7 @@ export const findAllInHierarchyValidator = (enabledCollections: string[], relati
     skip: true,
     relation: true,
     locale: true,
+    pagination: true,
   })
   .merge(z.object({
     startingFromId: z.number().optional(),

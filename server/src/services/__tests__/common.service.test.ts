@@ -303,12 +303,13 @@ describe('common.service', () => {
         sort: 'createdAt:desc',
       });
 
-      const typedResult = result as CommentWithChildren[];
+      const typedResult = result.data as CommentWithChildren[];
 
       expect(typedResult).toHaveLength(1); // One root comment
       expect(typedResult[0].id).toBe(1); // Parent comment
       expect(typedResult[0].children).toHaveLength(2); // Two child comments
       expect(typedResult[0].children![0].children).toHaveLength(1); // One grandchild
+      expect(result.pagination).toEqual({ total: 4 });
     });
 
     it('should handle empty comments list', async () => {
@@ -327,7 +328,8 @@ describe('common.service', () => {
         fields: ['id', 'content', 'threadOf'],
       });
 
-      expect(result).toHaveLength(0);
+      expect(result.data).toHaveLength(0);
+      expect(result.pagination).toEqual({ total: 0 });
     });
 
     it('should start from specific comment when startingFromId is provided', async () => {
@@ -354,10 +356,11 @@ describe('common.service', () => {
         startingFromId: 2,
       });
 
-      const typedResult = result as CommentWithChildren[];
+      const typedResult = result.data as CommentWithChildren[];
 
       expect(typedResult[0].id).toBe(4);
       expect(typedResult[0].children).toHaveLength(1);
+      expect(result.pagination).toEqual({ total: 3 });
     });
 
     it('should handle comments with dropBlockedThreads enabled', async () => {
@@ -379,13 +382,45 @@ describe('common.service', () => {
       mockStoreRepository.getConfig.mockResolvedValue([]);
 
       const result = await service.findAllInHierarchy({
-        fields: ['id', 'content', 'threadOf', 'blocked'],
+        fields: ['id', 'content', 'threadOf'],
         dropBlockedThreads: true,
       });
 
-      const typedResult = result as CommentWithChildren[];
+      expect(result.data).toHaveLength(0); // Should filter out blocked threads
+      expect(result.pagination).toEqual({ total: 4 });
+    });
 
-      expect(typedResult[0].children).toHaveLength(0); // drop blocked threads
+    it('should handle pagination correctly', async () => {
+      const strapi = getStrapi();
+      const service = getService(strapi);
+      const mockComments = [
+        { id: 1, content: 'Parent 1', threadOf: null },
+        { id: 2, content: 'Child 1', threadOf: 1 },
+        { id: 3, content: 'Child 2', threadOf: 1 },
+        { id: 4, content: 'Grandchild 1', threadOf: 2 },
+      ];
+
+      mockCommentRepository.findMany.mockResolvedValue(mockComments);
+      caster<jest.Mock>(getOrderBy).mockReturnValue(['createdAt', 'desc']);
+      mockCommentRepository.findWithCount.mockResolvedValue({
+        results: mockComments,
+        pagination: { total: 4, page: 1, pageSize: 10 },
+      });
+      mockStoreRepository.getConfig.mockResolvedValue([]);
+
+      const result = await service.findAllInHierarchy({
+        fields: ['id', 'content', 'threadOf'],
+        pagination: { page: 1, pageSize: 10 },
+      });
+
+      expect(result.data).toHaveLength(1); // One root comment
+      expect(result.pagination).toEqual({ total: 4, page: 1, pageSize: 10 });
+      expect(mockCommentRepository.findWithCount).toHaveBeenCalledWith(
+        expect.objectContaining({
+          pageSize: 10,
+          page: 1,
+        })
+      );
     });
   });
 

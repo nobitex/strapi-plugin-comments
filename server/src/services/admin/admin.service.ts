@@ -127,7 +127,7 @@ export default ({ strapi }: StrapiContext) => {
         });
       const levelThreadId = entity.threadOf && typeof entity.threadOf === 'object' ? entity.threadOf.id : null;
 
-      const entitiesOnSameLevel =
+      const entitiesOnSameLevelResult =
         await this.getCommonService().findAllInHierarchy(
           {
             filters: {
@@ -143,6 +143,8 @@ export default ({ strapi }: StrapiContext) => {
           },
           false,
         );
+      
+      const entitiesOnSameLevel = entitiesOnSameLevelResult.data;
 
       const populate = typeof defaultAuthorUserPopulate !== 'boolean' ? defaultAuthorUserPopulate?.populate : {};
       const selectedEntity = this.getCommonService().sanitizeCommentEntity(

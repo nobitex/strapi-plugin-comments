@@ -175,17 +175,69 @@ const commonService = ({ strapi }: StrapiContext) => ({
       omit = [],
       locale,
       limit,
+      pagination,
     }: clientValidator.FindAllInHierarchyValidatorSchema,
     relatedEntity?: any,
   ) {
-    const entities = await this.findAllFlat({ filters, populate, sort, fields, isAdmin, omit, locale, limit }, relatedEntity);
-    return buildNestedStructure(
-      entities?.data,
-      startingFromId,
-      'threadOf',
-      dropBlockedThreads,
-      false,
-    );
+    // Fetch the current paginated slice (usually roots)
+    const entities = await this.findAllFlat({ filters, populate, sort, fields, isAdmin, omit, locale, limit, pagination }, relatedEntity);
+
+    // Ensure all descendants of the visible slice are included to build a complete tree
+    const byId = new Map<number, any>();
+    for (const item of entities.data) {
+      byId.set((item as any).id, item);
+    }
+
+    // Seed parent ids
+    let currentParentIds: number[];
+    if (typeof startingFromId === 'number') {
+      currentParentIds = [startingFromId];
+    } else {
+      currentParentIds = entities.data
+        .filter((_: any) => _ && ((_.threadOf ?? null) === null))
+        .map((_: any) => _.id);
+    }
+
+    // Iteratively fetch children for the visible parents until no more descendants are found
+    // We intentionally do not paginate children to avoid missing replies
+    while (currentParentIds.length) {
+      const uniqueParentIds = Array.from(new Set(currentParentIds));
+      const childrenBatches = await Promise.all(
+        uniqueParentIds.map((parentId) => this.findAllFlat({
+          // Casting to any to allow internal helper usage with threadOf filter
+          filters: {
+            ...(filterItem(filters || {}, ['related']) as any),
+            threadOf: parentId as any,
+          } as any,
+          populate,
+          sort,
+          fields,
+          isAdmin,
+          omit,
+          locale,
+          limit: Number.MAX_SAFE_INTEGER,
+        } as any, relatedEntity)),
+      );
+
+      const newChildren: any[] = childrenBatches.flatMap((_) => _.data);
+      const unseenChildren = newChildren.filter((child) => !byId.has((child as any).id));
+      unseenChildren.forEach((child) => byId.set((child as any).id, child));
+      currentParentIds = unseenChildren.map((c: any) => c.id);
+    }
+
+    const allEntities = Array.from(byId.values());
+
+    return {
+      data: buildNestedStructure(
+        allEntities as any,
+        startingFromId,
+        'threadOf',
+        dropBlockedThreads,
+        false,
+      ),
+      // Keep pagination of roots slice
+      pagination: entities?.pagination,
+    };
   },
 
   // Find single comment

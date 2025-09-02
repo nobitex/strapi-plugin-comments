@@ -35,6 +35,7 @@ export const buildNestedStructure = (
       (isObject(entityField) && (entityField as any).id === id)
     );
   })
+  .filter((entity: Comment) => !dropBlockedThreads || !entity.blockedThread)
   .map((entity: Comment) => ({
     ...entity,
     [field]: undefined,

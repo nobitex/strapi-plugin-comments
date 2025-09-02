@@ -207,7 +207,7 @@ describe('admin.service', () => {
       mockCommentRepository.findOne.mockResolvedValue(mockComment);
       mockCommonService.parseRelationString.mockReturnValue({ uid: 'api::test.test', relatedId: '1' });
       mockFindOne.mockResolvedValue(mockRelatedEntity);
-      mockCommonService.findAllInHierarchy.mockResolvedValue([]);
+      mockCommonService.findAllInHierarchy.mockResolvedValue({ data: [], pagination: { total: 0 } });
       mockCommonService.sanitizeCommentEntity.mockImplementation(comment => comment);
 
       const result = await service.findOneAndThread({ id: 1 });

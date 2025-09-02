@@ -1818,9 +1818,14 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                 total?: number;
             };
         }>;
-        findAllInHierarchy({ filters, populate, sort, fields, startingFromId, dropBlockedThreads, isAdmin, omit, locale, limit, }: {
+        findAllInHierarchy({ filters, populate, sort, fields, startingFromId, dropBlockedThreads, isAdmin, omit, locale, limit, pagination, }: {
             sort?: string;
             locale?: string;
+            pagination?: {
+                page?: number;
+                pageSize?: number;
+                withCount?: boolean;
+            };
             relation?: `${string}::${string}.${string}`;
             populate?: Record<string, boolean | {
                 populate?: boolean;
@@ -3171,44 +3176,7 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
             startingFromId?: number;
             dropBlockedThreads?: boolean;
         }, relatedEntity?: any): Promise<{
-            id?: number;
-            documentId?: string;
-            content?: string;
-            blocked?: boolean;
-            blockedThread?: boolean;
-            blockReason?: string;
-            isAdminComment?: boolean;
-            removed?: boolean;
-            approvalStatus?: string;
-            related?: string;
-            createdAt?: string;
-            updatedAt?: string;
-            publishedAt?: string;
-            authorId?: string;
-            authorName?: string;
-            authorEmail?: string;
-            authorAvatar?: string;
-            authorUser?: string | {
-                id?: number;
-                email?: string;
-            };
-            locale?: string;
-            section?: string;
-            gotThread?: boolean;
-            threadFirstItemId?: number;
-            reports?: {
-                id?: number;
-                documentId?: string;
-                content?: string;
-                createdAt?: string;
-                updatedAt?: string;
-                publishedAt?: string;
-                locale?: string;
-                reason?: string;
-                resolved?: boolean;
-            }[];
-            author?: any;
-            threadOf?: number | {
+            data: {
                 id?: number;
                 documentId?: string;
                 content?: string;
@@ -3246,8 +3214,53 @@ export declare const clientService: ({ strapi }: StrapiContext) => {
                     resolved?: boolean;
                 }[];
                 author?: any;
+                threadOf?: number | {
+                    id?: number;
+                    documentId?: string;
+                    content?: string;
+                    blocked?: boolean;
+                    blockedThread?: boolean;
+                    blockReason?: string;
+                    isAdminComment?: boolean;
+                    removed?: boolean;
+                    approvalStatus?: string;
+                    related?: string;
+                    createdAt?: string;
+                    updatedAt?: string;
+                    publishedAt?: string;
+                    authorId?: string;
+                    authorName?: string;
+                    authorEmail?: string;
+                    authorAvatar?: string;
+                    authorUser?: string | {
+                        id?: number;
+                        email?: string;
+                    };
+                    locale?: string;
+                    section?: string;
+                    gotThread?: boolean;
+                    threadFirstItemId?: number;
+                    reports?: {
+                        id?: number;
+                        documentId?: string;
+                        content?: string;
+                        createdAt?: string;
+                        updatedAt?: string;
+                        publishedAt?: string;
+                        locale?: string;
+                        reason?: string;
+                        resolved?: boolean;
+                    }[];
+                    author?: any;
+                };
+            }[];
+            pagination: {
+                page?: number;
+                pageSize?: number;
+                pageCount?: number;
+                total?: number;
             };
-        }[]>;
+        }>;
         findOne(criteria: Partial<any>): Promise<{
             id?: number;
             documentId?: string;
