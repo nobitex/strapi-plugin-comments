@@ -309,7 +309,7 @@ describe('common.service', () => {
       expect(typedResult[0].id).toBe(1); // Parent comment
       expect(typedResult[0].children).toHaveLength(2); // Two child comments
       expect(typedResult[0].children![0].children).toHaveLength(1); // One grandchild
-      expect(result.pagination).toEqual({ total: 4 });
+      expect(result.pagination).toEqual({ page: 1, pageSize: 10, total: 4 });
     });
 
     it('should handle empty comments list', async () => {
@@ -329,7 +329,7 @@ describe('common.service', () => {
       });
 
       expect(result.data).toHaveLength(0);
-      expect(result.pagination).toEqual({ total: 0 });
+      expect(result.pagination).toEqual({ page: 1, pageSize: 10, total: 0 });
     });
 
     it('should start from specific comment when startingFromId is provided', async () => {
@@ -387,7 +387,7 @@ describe('common.service', () => {
       });
 
       expect(result.data).toHaveLength(0); // Should filter out blocked threads
-      expect(result.pagination).toEqual({ total: 4 });
+      expect(result.pagination).toEqual({ page: 1, pageSize: 10, total: 4 });
     });
 
     it('should handle pagination correctly', async () => {

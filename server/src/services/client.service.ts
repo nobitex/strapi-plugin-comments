@@ -245,6 +245,12 @@ export const clientService = ({ strapi }: StrapiContext) => {
     },
 
     async sendAbuseReportEmail(reason: string, content: string) {
+      // Check if email functionality is enabled
+      const emailEnabled = await this.getCommonService().getConfig('emailEnabled', false);
+      if (!emailEnabled) {
+        return;
+      }
+
       const SUPER_ADMIN_ROLE = 'strapi-super-admin';
       const rolesToNotify = await this.getCommonService().getConfig(CONFIG_PARAMS.MODERATOR_ROLES, [SUPER_ADMIN_ROLE]);
       if (rolesToNotify.length > 0) {
@@ -280,6 +286,12 @@ export const clientService = ({ strapi }: StrapiContext) => {
     },
 
     async sendResponseNotification(entity: Comment) {
+      // Check if email functionality is enabled
+      const emailEnabled = await this.getCommonService().getConfig('emailEnabled', false);
+      if (!emailEnabled) {
+        return;
+      }
+
       if (entity.threadOf) {
         const thread = typeof entity.threadOf === 'object' ? entity.threadOf : await this.getCommonService().findOne({ id: entity.threadOf });
         let emailRecipient = thread?.author?.email;

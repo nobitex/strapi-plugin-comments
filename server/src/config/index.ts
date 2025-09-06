@@ -16,6 +16,7 @@ const defaultPluginConfig: CommentsPluginConfig = {
     OTHER: REPORT_REASON.OTHER,
   },
   blockedAuthorProps: [],
+  emailEnabled: false,
 };
 
 const reportReasonsSchema = z.object({
@@ -34,6 +35,7 @@ export const schemaConfig = z.object({
   [CONFIG_PARAMS.ENTRY_LABEL]: z.record(z.array(z.string())),
   [CONFIG_PARAMS.BAD_WORDS]: z.boolean().optional(),
   [CONFIG_PARAMS.AUTHOR_BLOCKED_PROPS]: z.array(z.string()),
+  emailEnabled: z.boolean().optional(),
   gql: z.object({
     auth: z.boolean().optional(),
   }).optional(),
