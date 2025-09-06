@@ -6,6 +6,7 @@ import { CommentRow } from '../../components/CommentRow';
 import { CommentsStatusFilters } from '../../components/CommentStatusFilters';
 import { SortableTh } from '../../components/SortableTh';
 import { useCommentsAll } from '../../hooks/useCommentsAll';
+import { useAllSections } from '../../hooks/useAllSections';
 import { getMessage } from '../../utils';
 import {CommentsSectionFilters} from "../../components/CommentSectionFilter";
 
@@ -28,9 +29,15 @@ const getUniqueSectionValues = (result: Array<Record<string, any>>): string[] =>
 export const Discover: FC<{ config: Config }> = ({ config }) => {
   const [{ query: queryParams }, setQueryParams] = useQueryParams();
 
-
   const { data: { result, pagination } } = useCommentsAll(queryParams as Record<string, any>);
-  const sections = getUniqueSectionValues(result);
+  const { data: { sections: allSections }, isLoading: sectionsLoading, error: sectionsError } = useAllSections();
+  
+  // Use API sections if available, otherwise fallback to current page sections
+  const currentPageSections = getUniqueSectionValues(result);
+  const apiSections = allSections || [];
+  const sections = (sectionsLoading || sectionsError || apiSections.length === 0) 
+    ? currentPageSections 
+    : apiSections;
   return (
     <>
       <Page.Title children={'Comments - discover'} />

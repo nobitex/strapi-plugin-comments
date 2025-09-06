@@ -1,23 +1,23 @@
 import { jsxs as M, jsx as m, Fragment as qe } from "react/jsx-runtime";
-import { useNotification as rt, Form as ld, Page as Be, Layouts as Oe, useQueryParams as ft, SearchInput as _d, Pagination as je } from "@strapi/strapi/admin";
+import { useNotification as at, Form as ld, Page as Be, Layouts as Oe, useQueryParams as ft, SearchInput as _d, Pagination as je } from "@strapi/strapi/admin";
 import { useNavigate as dd, useParams as Zd, Routes as Jd, Route as yt, Navigate as jd } from "react-router-dom";
-import { p as ri, l as ae, S as eu, a as tu, b as nu, c as ru, d as yi, B as oe, T as K, D as Ko, F as W, C as mt, e as Se, I as ee, f as bt, g as au, h as ou, i as Bt, j as ye, P as iu, k as su, m as cu, n as lu, o as Je, q as Pt, r as be, s as Ai, t as Ii, u as Di, v as wi, w as en, x as _u, y as du, z as uu, A as pu, E as mu, G as gu, M as ne, H as ai, J as oi, K as nt, L as de, N as ii, O as Eu, Q as Su, R as si, U as fu, V as bu, W as At, X as Qo, Y as Tu, Z as Xo, _ as hu, $ as tn, a0 as Ee, a1 as Ru, a2 as Cu, a3 as Nu, a4 as It } from "./index-DiKfRfmm.mjs";
-import { C as J, R as Ce, g as A, u as fe, a as Tt, U as vu, b as Ke, c as Mi, d as xi, e as Ou } from "./index-DBgdpMBd.mjs";
-import { useQuery as gt, useQueryClient as Ae, useMutation as ge } from "@tanstack/react-query";
+import { p as ri, l as ae, S as eu, a as tu, b as nu, c as ru, d as yi, B as oe, T as K, D as Ko, F as W, C as gt, e as Se, I as ee, f as bt, g as au, h as ou, i as Bt, j as ye, P as iu, k as su, m as cu, n as lu, o as Je, q as Pt, r as be, s as Ai, t as Ii, u as Di, v as wi, w as en, x as _u, y as du, z as uu, A as pu, E as mu, G as gu, M as ne, H as ai, J as oi, K as nt, L as de, N as ii, O as Eu, Q as Su, R as si, U as fu, V as bu, W as At, X as Qo, Y as Tu, Z as Xo, _ as hu, $ as tn, a0 as Ee, a1 as Ru, a2 as Cu, a3 as Nu, a4 as It } from "./index-GrrzTSFM.mjs";
+import { C as J, R as Ce, g as A, u as fe, a as Tt, U as vu, b as Ke, c as Mi, d as xi, e as Ou } from "./index-BoOgt2yl.mjs";
+import { useQuery as rt, useQueryClient as Ae, useMutation as ge } from "@tanstack/react-query";
 import { create as yu } from "zustand/react";
 import * as ue from "react";
-import { useCallback as Gt, useMemo as qt, useContext as Au, useState as ke, useRef as ud, Fragment as Iu } from "react";
-import at, { styled as Ie } from "styled-components";
+import { useCallback as Gt, useMemo as qt, useContext as Au, useState as ke, useRef as ud, Fragment as Iu, useEffect as Du } from "react";
+import ot, { styled as Ie } from "styled-components";
 import Zo from "codemirror5";
 import Li from "sanitize-html";
-import Du from "punycode";
+import wu from "punycode";
 import "codemirror5/addon/display/placeholder";
-const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app.components.notification.error") => {
+const Mu = (t = "") => `/plugins/${ri}/${t}`, xu = (t = null, e = null, n = "app.components.notification.error") => {
   throw e({
     type: "warning",
     message: `${ri}.${n}`
   }), t || new Error("error");
-}, ki = (t = "") => ae.isString(t) ? t.split(" ").map((e) => ae.first(e)).join("").toUpperCase() : "", xu = ({
+}, ki = (t = "") => ae.isString(t) ? t.split(" ").map((e) => ae.first(e)).join("").toUpperCase() : "", Lu = ({
   removed: t,
   blocked: e,
   blockedThread: n,
@@ -36,7 +36,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     return Object.keys(J).includes(o) ? o : J.UNKNOWN;
   }
   return J.OPEN;
-}, Lu = (t) => {
+}, ku = (t) => {
   if (Object.values(J).includes(t))
     switch (t) {
       case J.REMOVED:
@@ -51,7 +51,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
         return "success";
     }
   return "secondary";
-}, ku = ({
+}, Pu = ({
   resolved: t,
   related: { blocked: e, blockedThread: n },
   approvalStatus: r
@@ -66,7 +66,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     return Object.keys(Ce).includes(i) ? i : Ce.PENDING;
   }
   return Ce.PENDING;
-}, Pu = (t) => {
+}, Uu = (t) => {
   switch (t) {
     case Ce.PENDING:
       return "primary";
@@ -83,7 +83,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     value: e,
     flags: n
   };
-}, Uu = () => /* @__PURE__ */ M(eu, { "aria-label": "Comments sub nav", children: [
+}, Fu = () => /* @__PURE__ */ M(eu, { "aria-label": "Comments sub nav", children: [
   /* @__PURE__ */ m(tu, { label: A("plugin.name") }),
   /* @__PURE__ */ m(nu, { children: /* @__PURE__ */ M(ru, { label: A("nav.header.moderation"), children: [
     /* @__PURE__ */ m(yi, { href: "/admin/plugins/comments/discover", children: A("nav.item.discover") }),
@@ -96,13 +96,13 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       }
     )
   ] }) })
-] }), Fu = (t) => {
+] }), Bu = (t) => {
   const e = fe();
-  return gt({
+  return rt({
     queryKey: e.config.getKey(),
     queryFn: () => e.config.query().then((n) => (t(n), n))
   });
-}, Bu = yu((t) => ({
+}, Gu = yu((t) => ({
   settings: {
     entryLabel: {},
     approvalFlow: [],
@@ -127,11 +127,11 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     }
   },
   setSettings: (e) => t({ settings: e })
-})), Gu = ({ config: t, entity: e, filters: n, onChangeFilters: r, schema: a }) => {
-  const { entryLabel: i = {} } = t, { attributes: o = {} } = a, { removed: s = !1 } = n;
+})), qu = ({ config: t, entity: e, filters: n, onChangeFilters: r, schema: a }) => {
+  const { entryLabel: i = {} } = t, { attributes: o = {} } = a, { removed: c = !1 } = n;
   Ae();
-  const c = Object.keys(o), l = ae.first(i[e?.uid]), p = ae.take(
-    c.filter(
+  const s = Object.keys(o), l = ae.first(i[e?.uid]), p = ae.take(
+    s.filter(
       (S) => o[S].type === "string" && !ae.isNil(e[S]) && S !== l
     ),
     5
@@ -176,9 +176,9 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       /* @__PURE__ */ m(K, { variant: "sigma", textColor: "neutral600", id: "view-filters", children: A("page.details.filters.label", "View") }),
       /* @__PURE__ */ m(oe, { paddingTop: 2, paddingBottom: 4, children: /* @__PURE__ */ m(Ko, {}) }),
       /* @__PURE__ */ m(W, { children: /* @__PURE__ */ m(
-        mt,
+        gt,
         {
-          checked: s,
+          checked: c,
           onCheckedChange: E,
           children: A(
             "page.details.filters.removed.visibility",
@@ -188,7 +188,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       ) })
     ] })
   ] });
-}, ot = (t = { comment: {}, report: {} }) => {
+}, it = (t = { comment: {}, report: {} }) => {
   const e = fe(), { canModerate: n } = Tt(), r = (S) => n ? S : void 0, a = ge({
     mutationFn: r(e.comments.block),
     onSuccess: t.comment?.blockSuccess,
@@ -201,11 +201,11 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     mutationFn: r(e.comments.blockThread),
     onSuccess: t.comment?.blockThreadSuccess,
     onError: t.comment?.blockThreadError
-  }), s = ge({
+  }), c = ge({
     mutationFn: r(e.comments.unBlockThread),
     onSuccess: t.comment?.unBlockThreadSuccess,
     onError: t.comment?.unBlockThreadError
-  }), c = ge({
+  }), s = ge({
     mutationFn: r(e.comments.delete),
     onSuccess: t.comment?.deleteSuccess,
     onError: t.comment?.deleteError
@@ -239,8 +239,8 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       block: a,
       unBlock: i,
       blockThread: o,
-      unBlockThread: s,
-      delete: c,
+      unBlockThread: c,
+      delete: s,
       postComment: l
     },
     reportMutation: {
@@ -254,11 +254,11 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     a,
     i,
     o,
-    s,
+    c,
     _,
     u,
     E,
-    c,
+    s,
     d
   ]);
 }, ci = () => {
@@ -266,12 +266,12 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
   if (!t)
     throw new Error("UserContext is not provided");
   return t;
-}, Jo = at(Se)(({ isSingle: t }) => ({
+}, Jo = ot(Se)(({ isSingle: t }) => ({
   padding: "7px 16px",
   marginLeft: t ? "0" : ".5rem",
   whiteSpace: "nowrap"
 })), pd = ({ id: t, canModerate: e, queryKey: n }) => {
-  const { toggleNotification: r } = rt(), a = Ae(), i = fe(), o = (d) => async () => {
+  const { toggleNotification: r } = at(), a = Ae(), i = fe(), o = (d) => async () => {
     await a.invalidateQueries({
       exact: !1,
       queryKey: n
@@ -279,20 +279,20 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       type: "success",
       message: `${ri}.${d}`
     });
-  }, s = (d) => {
-    Mu(d, r);
-  }, c = ge({
+  }, c = (d) => {
+    xu(d, r);
+  }, s = ge({
     mutationKey: ["approveItem", t],
     mutationFn: i.comments.approve,
     onSuccess: o("success.approveItem"),
-    onError: s
+    onError: c
   }), l = () => {
-    c.mutate(t);
+    s.mutate(t);
   }, _ = ge({
     mutationKey: ["rejectItem", t],
     mutationFn: i.comments.reject,
     onSuccess: o("success.rejectItem"),
-    onError: s
+    onError: c
   }), p = () => {
     _.mutate(t);
   };
@@ -314,7 +314,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       }
     )
   ] }) : null;
-}, qu = at(ou)`
+}, Yu = ot(ou)`
   padding: 5px 8px;
   border: 1px ${({ theme: t, color: e }) => t.colors[`${e}200`]} solid;
 
@@ -327,8 +327,8 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
   span {
     text-transform: none;
   }
-`, Yt = ({ children: t, textColor: e, ...n }) => /* @__PURE__ */ m(qu, { ...n, children: /* @__PURE__ */ m(K, { variant: "omega", fontWeight: "semibold", textColor: e, children: t }) }), jo = ({ item: t, canAccessReports: e, hasReports: n }) => {
-  const r = e && n && !(t.blocked || t.blockedThread), a = xu({ ...t, reviewFlowEnabled: r }), i = Lu(a), o = t.reports?.filter((s) => !s.resolved) ?? [];
+`, Yt = ({ children: t, textColor: e, ...n }) => /* @__PURE__ */ m(Yu, { ...n, children: /* @__PURE__ */ m(K, { variant: "omega", fontWeight: "semibold", textColor: e, children: t }) }), jo = ({ item: t, canAccessReports: e, hasReports: n }) => {
+  const r = e && n && !(t.blocked || t.blockedThread), a = Lu({ ...t, reviewFlowEnabled: r }), i = ku(a), o = t.reports?.filter((c) => !c.resolved) ?? [];
   return /* @__PURE__ */ m(
     Yt,
     {
@@ -346,7 +346,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       )
     }
   );
-}, Lt = at(Bt)(({ isSingle: t, withMargin: e }) => ({
+}, Lt = ot(Bt)(({ isSingle: t, withMargin: e }) => ({
   ...t ? {
     button: {
       "&:first-child": {
@@ -360,7 +360,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
   ...e ? {
     marginLeft: ".5rem"
   } : {}
-})), Yu = 330, ut = ({ width: t, height: e, size: n = 16 }) => /* @__PURE__ */ m(
+})), Hu = 330, pt = ({ width: t, height: e, size: n = 16 }) => /* @__PURE__ */ m(
   "svg",
   {
     width: t || n,
@@ -369,7 +369,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     style: { width: `${t || n}px`, height: `${e || n}px` },
     xmlns: "http://www.w3.org/2000/svg",
     fill: "currentColor",
-    children: /* @__PURE__ */ m("g", { style: { transform: `scale(${(t || n) / Yu})` }, children: /* @__PURE__ */ m(
+    children: /* @__PURE__ */ m("g", { style: { transform: `scale(${(t || n) / Hu})` }, children: /* @__PURE__ */ m(
       "path",
       {
         d: `M165,330c63.411,0,115-51.589,115-115c0-29.771-11.373-56.936-30-77.379V85c0-46.869-38.131-85-85-85
@@ -380,7 +380,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
       }
     ) })
   }
-), Hu = 330, Ui = ({ width: t, height: e, size: n = 16 }) => /* @__PURE__ */ m(
+), Vu = 330, Ui = ({ width: t, height: e, size: n = 16 }) => /* @__PURE__ */ m(
   "svg",
   {
     width: t || n,
@@ -388,7 +388,7 @@ const wu = (t = "") => `/plugins/${ri}/${t}`, Mu = (t = null, e = null, n = "app
     viewBox: `0 0 ${t || n} ${e || n}`,
     style: { width: `${t || n}px`, height: `${e || n}px` },
     xmlns: "http://www.w3.org/2000/svg",
-    children: /* @__PURE__ */ m("g", { style: { transform: `scale(${(t || n) / Hu})` }, children: /* @__PURE__ */ m(
+    children: /* @__PURE__ */ m("g", { style: { transform: `scale(${(t || n) / Vu})` }, children: /* @__PURE__ */ m(
       "path",
       {
         d: `M15,160c8.283,0,15-6.716,15-15V85c0-30.327,24.672-55,55-55c30.326,0,55,24.673,55,55v42.893
@@ -408,8 +408,8 @@ function li(t) {
     typeof n == "object" && !Object.isFrozen(n) && li(n);
   }), t;
 }
-var md = li, Vu = li;
-md.default = Vu;
+var md = li, zu = li;
+md.default = zu;
 class Fi {
   /**
    * @param {CompiledMode} mode
@@ -434,8 +434,8 @@ function Ge(t, ...e) {
   }), /** @type {T} */
   n;
 }
-const zu = "</span>", Bi = (t) => !!t.kind;
-class $u {
+const $u = "</span>", Bi = (t) => !!t.kind;
+class Wu {
   /**
    * Creates a new HTMLRenderer
    *
@@ -466,7 +466,7 @@ class $u {
    *
    * @param {Node} node */
   closeNode(e) {
-    Bi(e) && (this.buffer += zu);
+    Bi(e) && (this.buffer += $u);
   }
   /**
    * returns the accumulated buffer
@@ -535,7 +535,7 @@ class _i {
     }));
   }
 }
-class Wu extends _i {
+class Ku extends _i {
   /**
    * @param {*} options
    */
@@ -564,52 +564,52 @@ class Wu extends _i {
     r.kind = n, r.sublanguage = !0, this.add(r);
   }
   toHTML() {
-    return new $u(this, this.options).value();
+    return new Wu(this, this.options).value();
   }
   finalize() {
     return !0;
   }
 }
-function Ku(t) {
+function Qu(t) {
   return new RegExp(t.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&"), "m");
 }
 function Et(t) {
   return t ? typeof t == "string" ? t : t.source : null;
 }
-function Qu(...t) {
+function Xu(...t) {
   return t.map((n) => Et(n)).join("");
 }
-function Xu(...t) {
+function Zu(...t) {
   return "(" + t.map((n) => Et(n)).join("|") + ")";
 }
-function Zu(t) {
+function Ju(t) {
   return new RegExp(t.toString() + "|").exec("").length - 1;
 }
-function Ju(t, e) {
+function ju(t, e) {
   const n = t && t.exec(e);
   return n && n.index === 0;
 }
-const ju = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;
-function ep(t, e = "|") {
+const ep = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;
+function tp(t, e = "|") {
   let n = 0;
   return t.map((r) => {
     n += 1;
     const a = n;
     let i = Et(r), o = "";
     for (; i.length > 0; ) {
-      const s = ju.exec(i);
-      if (!s) {
+      const c = ep.exec(i);
+      if (!c) {
         o += i;
         break;
       }
-      o += i.substring(0, s.index), i = i.substring(s.index + s[0].length), s[0][0] === "\\" && s[1] ? o += "\\" + String(Number(s[1]) + a) : (o += s[0], s[0] === "(" && n++);
+      o += i.substring(0, c.index), i = i.substring(c.index + c[0].length), c[0][0] === "\\" && c[1] ? o += "\\" + String(Number(c[1]) + a) : (o += c[0], c[0] === "(" && n++);
     }
     return o;
   }).map((r) => `(${r})`).join(e);
 }
-const tp = /\b\B/, gd = "[a-zA-Z]\\w*", di = "[a-zA-Z_]\\w*", ui = "\\b\\d+(\\.\\d+)?", Ed = "(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)", Sd = "\\b(0b[01]+)", np = "!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~", rp = (t = {}) => {
+const np = /\b\B/, gd = "[a-zA-Z]\\w*", di = "[a-zA-Z_]\\w*", ui = "\\b\\d+(\\.\\d+)?", Ed = "(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)", Sd = "\\b(0b[01]+)", rp = "!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~", ap = (t = {}) => {
   const e = /^#![ ]*\//;
-  return t.binary && (t.begin = Qu(
+  return t.binary && (t.begin = Xu(
     e,
     /.*\b/,
     t.binary,
@@ -627,13 +627,13 @@ const tp = /\b\B/, gd = "[a-zA-Z]\\w*", di = "[a-zA-Z_]\\w*", ui = "\\b\\d+(\\.\
 }, St = {
   begin: "\\\\[\\s\\S]",
   relevance: 0
-}, ap = {
+}, op = {
   className: "string",
   begin: "'",
   end: "'",
   illegal: "\\n",
   contains: [St]
-}, op = {
+}, ip = {
   className: "string",
   begin: '"',
   end: '"',
@@ -656,23 +656,23 @@ const tp = /\b\B/, gd = "[a-zA-Z]\\w*", di = "[a-zA-Z_]\\w*", ui = "\\b\\d+(\\.\
     begin: "(?:TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):",
     relevance: 0
   }), r;
-}, ip = Ht("//", "$"), sp = Ht("/\\*", "\\*/"), cp = Ht("#", "$"), lp = {
+}, sp = Ht("//", "$"), cp = Ht("/\\*", "\\*/"), lp = Ht("#", "$"), _p = {
   className: "number",
   begin: ui,
   relevance: 0
-}, _p = {
+}, dp = {
   className: "number",
   begin: Ed,
   relevance: 0
-}, dp = {
+}, up = {
   className: "number",
   begin: Sd,
   relevance: 0
-}, up = {
+}, pp = {
   className: "number",
   begin: ui + "(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
   relevance: 0
-}, pp = {
+}, mp = {
   // this outer rule makes sure we actually have a WHOLE regex and not simply
   // an expression such as:
   //
@@ -695,19 +695,19 @@ const tp = /\b\B/, gd = "[a-zA-Z]\\w*", di = "[a-zA-Z_]\\w*", ui = "\\b\\d+(\\.\
       }
     ]
   }]
-}, mp = {
+}, gp = {
   className: "title",
   begin: gd,
   relevance: 0
-}, gp = {
+}, Ep = {
   className: "title",
   begin: di,
   relevance: 0
-}, Ep = {
+}, Sp = {
   // excludes method names from keyword processing
   begin: "\\.\\s*" + di,
   relevance: 0
-}, Sp = function(t) {
+}, fp = function(t) {
   return Object.assign(
     t,
     {
@@ -724,51 +724,51 @@ const tp = /\b\B/, gd = "[a-zA-Z]\\w*", di = "[a-zA-Z_]\\w*", ui = "\\b\\d+(\\.\
 };
 var Dt = /* @__PURE__ */ Object.freeze({
   __proto__: null,
-  MATCH_NOTHING_RE: tp,
+  MATCH_NOTHING_RE: np,
   IDENT_RE: gd,
   UNDERSCORE_IDENT_RE: di,
   NUMBER_RE: ui,
   C_NUMBER_RE: Ed,
   BINARY_NUMBER_RE: Sd,
-  RE_STARTERS_RE: np,
-  SHEBANG: rp,
+  RE_STARTERS_RE: rp,
+  SHEBANG: ap,
   BACKSLASH_ESCAPE: St,
-  APOS_STRING_MODE: ap,
-  QUOTE_STRING_MODE: op,
+  APOS_STRING_MODE: op,
+  QUOTE_STRING_MODE: ip,
   PHRASAL_WORDS_MODE: fd,
   COMMENT: Ht,
-  C_LINE_COMMENT_MODE: ip,
-  C_BLOCK_COMMENT_MODE: sp,
-  HASH_COMMENT_MODE: cp,
-  NUMBER_MODE: lp,
-  C_NUMBER_MODE: _p,
-  BINARY_NUMBER_MODE: dp,
-  CSS_NUMBER_MODE: up,
-  REGEXP_MODE: pp,
-  TITLE_MODE: mp,
-  UNDERSCORE_TITLE_MODE: gp,
-  METHOD_GUARD: Ep,
-  END_SAME_AS_BEGIN: Sp
+  C_LINE_COMMENT_MODE: sp,
+  C_BLOCK_COMMENT_MODE: cp,
+  HASH_COMMENT_MODE: lp,
+  NUMBER_MODE: _p,
+  C_NUMBER_MODE: dp,
+  BINARY_NUMBER_MODE: up,
+  CSS_NUMBER_MODE: pp,
+  REGEXP_MODE: mp,
+  TITLE_MODE: gp,
+  UNDERSCORE_TITLE_MODE: Ep,
+  METHOD_GUARD: Sp,
+  END_SAME_AS_BEGIN: fp
 });
-function fp(t, e) {
+function bp(t, e) {
   t.input[t.index - 1] === "." && e.ignoreMatch();
 }
-function bp(t, e) {
-  e && t.beginKeywords && (t.begin = "\\b(" + t.beginKeywords.split(" ").join("|") + ")(?!\\.)(?=\\b|\\s)", t.__beforeBegin = fp, t.keywords = t.keywords || t.beginKeywords, delete t.beginKeywords, t.relevance === void 0 && (t.relevance = 0));
-}
 function Tp(t, e) {
-  Array.isArray(t.illegal) && (t.illegal = Xu(...t.illegal));
+  e && t.beginKeywords && (t.begin = "\\b(" + t.beginKeywords.split(" ").join("|") + ")(?!\\.)(?=\\b|\\s)", t.__beforeBegin = bp, t.keywords = t.keywords || t.beginKeywords, delete t.beginKeywords, t.relevance === void 0 && (t.relevance = 0));
 }
 function hp(t, e) {
+  Array.isArray(t.illegal) && (t.illegal = Zu(...t.illegal));
+}
+function Rp(t, e) {
   if (t.match) {
     if (t.begin || t.end) throw new Error("begin & end are not supported with match");
     t.begin = t.match, delete t.match;
   }
 }
-function Rp(t, e) {
+function Cp(t, e) {
   t.relevance === void 0 && (t.relevance = 1);
 }
-const Cp = [
+const Np = [
   "of",
   "and",
   "for",
@@ -783,8 +783,8 @@ const Cp = [
   // common variable name
   "value"
   // common variable name
-], Np = "keyword";
-function bd(t, e, n = Np) {
+], vp = "keyword";
+function bd(t, e, n = vp) {
   const r = {};
   return typeof t == "string" ? a(n, t.split(" ")) : Array.isArray(t) ? a(n, t) : Object.keys(t).forEach(function(i) {
     Object.assign(
@@ -793,23 +793,23 @@ function bd(t, e, n = Np) {
     );
   }), r;
   function a(i, o) {
-    e && (o = o.map((s) => s.toLowerCase())), o.forEach(function(s) {
-      const c = s.split("|");
-      r[c[0]] = [i, vp(c[0], c[1])];
+    e && (o = o.map((c) => c.toLowerCase())), o.forEach(function(c) {
+      const s = c.split("|");
+      r[s[0]] = [i, Op(s[0], s[1])];
     });
   }
 }
-function vp(t, e) {
-  return e ? Number(e) : Op(t) ? 0 : 1;
+function Op(t, e) {
+  return e ? Number(e) : yp(t) ? 0 : 1;
 }
-function Op(t) {
-  return Cp.includes(t.toLowerCase());
+function yp(t) {
+  return Np.includes(t.toLowerCase());
 }
-function yp(t, { plugins: e }) {
-  function n(s, c) {
+function Ap(t, { plugins: e }) {
+  function n(c, s) {
     return new RegExp(
-      Et(s),
-      "m" + (t.case_insensitive ? "i" : "") + (c ? "g" : "")
+      Et(c),
+      "m" + (t.case_insensitive ? "i" : "") + (s ? "g" : "")
     );
   }
   class r {
@@ -817,18 +817,18 @@ function yp(t, { plugins: e }) {
       this.matchIndexes = {}, this.regexes = [], this.matchAt = 1, this.position = 0;
     }
     // @ts-ignore
-    addRule(c, l) {
-      l.position = this.position++, this.matchIndexes[this.matchAt] = l, this.regexes.push([l, c]), this.matchAt += Zu(c) + 1;
+    addRule(s, l) {
+      l.position = this.position++, this.matchIndexes[this.matchAt] = l, this.regexes.push([l, s]), this.matchAt += Ju(s) + 1;
     }
     compile() {
       this.regexes.length === 0 && (this.exec = () => null);
-      const c = this.regexes.map((l) => l[1]);
-      this.matcherRe = n(ep(c), !0), this.lastIndex = 0;
+      const s = this.regexes.map((l) => l[1]);
+      this.matcherRe = n(tp(s), !0), this.lastIndex = 0;
     }
     /** @param {string} s */
-    exec(c) {
+    exec(s) {
       this.matcherRe.lastIndex = this.lastIndex;
-      const l = this.matcherRe.exec(c);
+      const l = this.matcherRe.exec(s);
       if (!l)
         return null;
       const _ = l.findIndex((d, u) => u > 0 && d !== void 0), p = this.matchIndexes[_];
@@ -840,10 +840,10 @@ function yp(t, { plugins: e }) {
       this.rules = [], this.multiRegexes = [], this.count = 0, this.lastIndex = 0, this.regexIndex = 0;
     }
     // @ts-ignore
-    getMatcher(c) {
-      if (this.multiRegexes[c]) return this.multiRegexes[c];
+    getMatcher(s) {
+      if (this.multiRegexes[s]) return this.multiRegexes[s];
       const l = new r();
-      return this.rules.slice(c).forEach(([_, p]) => l.addRule(_, p)), l.compile(), this.multiRegexes[c] = l, l;
+      return this.rules.slice(s).forEach(([_, p]) => l.addRule(_, p)), l.compile(), this.multiRegexes[s] = l, l;
     }
     resumingScanAtSamePosition() {
       return this.regexIndex !== 0;
@@ -852,58 +852,58 @@ function yp(t, { plugins: e }) {
       this.regexIndex = 0;
     }
     // @ts-ignore
-    addRule(c, l) {
-      this.rules.push([c, l]), l.type === "begin" && this.count++;
+    addRule(s, l) {
+      this.rules.push([s, l]), l.type === "begin" && this.count++;
     }
     /** @param {string} s */
-    exec(c) {
+    exec(s) {
       const l = this.getMatcher(this.regexIndex);
       l.lastIndex = this.lastIndex;
-      let _ = l.exec(c);
+      let _ = l.exec(s);
       if (this.resumingScanAtSamePosition() && !(_ && _.index === this.lastIndex)) {
         const p = this.getMatcher(0);
-        p.lastIndex = this.lastIndex + 1, _ = p.exec(c);
+        p.lastIndex = this.lastIndex + 1, _ = p.exec(s);
       }
       return _ && (this.regexIndex += _.position + 1, this.regexIndex === this.count && this.considerAll()), _;
     }
   }
-  function i(s) {
-    const c = new a();
-    return s.contains.forEach((l) => c.addRule(l.begin, { rule: l, type: "begin" })), s.terminatorEnd && c.addRule(s.terminatorEnd, { type: "end" }), s.illegal && c.addRule(s.illegal, { type: "illegal" }), c;
+  function i(c) {
+    const s = new a();
+    return c.contains.forEach((l) => s.addRule(l.begin, { rule: l, type: "begin" })), c.terminatorEnd && s.addRule(c.terminatorEnd, { type: "end" }), c.illegal && s.addRule(c.illegal, { type: "illegal" }), s;
   }
-  function o(s, c) {
+  function o(c, s) {
     const l = (
       /** @type CompiledMode */
-      s
+      c
     );
-    if (s.isCompiled) return l;
+    if (c.isCompiled) return l;
     [
       // do this early so compiler extensions generally don't have to worry about
       // the distinction between match/begin
-      hp
-    ].forEach((p) => p(s, c)), t.compilerExtensions.forEach((p) => p(s, c)), s.__beforeBegin = null, [
-      bp,
+      Rp
+    ].forEach((p) => p(c, s)), t.compilerExtensions.forEach((p) => p(c, s)), c.__beforeBegin = null, [
+      Tp,
       // do this later so compiler extensions that come earlier have access to the
       // raw array if they wanted to perhaps manipulate it, etc.
-      Tp,
+      hp,
       // default to 1 relevance if not specified
-      Rp
-    ].forEach((p) => p(s, c)), s.isCompiled = !0;
+      Cp
+    ].forEach((p) => p(c, s)), c.isCompiled = !0;
     let _ = null;
-    if (typeof s.keywords == "object" && (_ = s.keywords.$pattern, delete s.keywords.$pattern), s.keywords && (s.keywords = bd(s.keywords, t.case_insensitive)), s.lexemes && _)
+    if (typeof c.keywords == "object" && (_ = c.keywords.$pattern, delete c.keywords.$pattern), c.keywords && (c.keywords = bd(c.keywords, t.case_insensitive)), c.lexemes && _)
       throw new Error("ERR: Prefer `keywords.$pattern` to `mode.lexemes`, BOTH are not allowed. (see mode reference) ");
-    return _ = _ || s.lexemes || /\w+/, l.keywordPatternRe = n(_, !0), c && (s.begin || (s.begin = /\B|\b/), l.beginRe = n(s.begin), s.endSameAsBegin && (s.end = s.begin), !s.end && !s.endsWithParent && (s.end = /\B|\b/), s.end && (l.endRe = n(s.end)), l.terminatorEnd = Et(s.end) || "", s.endsWithParent && c.terminatorEnd && (l.terminatorEnd += (s.end ? "|" : "") + c.terminatorEnd)), s.illegal && (l.illegalRe = n(
+    return _ = _ || c.lexemes || /\w+/, l.keywordPatternRe = n(_, !0), s && (c.begin || (c.begin = /\B|\b/), l.beginRe = n(c.begin), c.endSameAsBegin && (c.end = c.begin), !c.end && !c.endsWithParent && (c.end = /\B|\b/), c.end && (l.endRe = n(c.end)), l.terminatorEnd = Et(c.end) || "", c.endsWithParent && s.terminatorEnd && (l.terminatorEnd += (c.end ? "|" : "") + s.terminatorEnd)), c.illegal && (l.illegalRe = n(
       /** @type {RegExp | string} */
-      s.illegal
-    )), s.contains || (s.contains = []), s.contains = [].concat(...s.contains.map(function(p) {
-      return Ap(p === "self" ? s : p);
-    })), s.contains.forEach(function(p) {
+      c.illegal
+    )), c.contains || (c.contains = []), c.contains = [].concat(...c.contains.map(function(p) {
+      return Ip(p === "self" ? c : p);
+    })), c.contains.forEach(function(p) {
       o(
         /** @type Mode */
         p,
         l
       );
-    }), s.starts && o(s.starts, c), l.matcher = i(l), l;
+    }), c.starts && o(c.starts, s), l.matcher = i(l), l;
   }
   if (t.compilerExtensions || (t.compilerExtensions = []), t.contains && t.contains.includes("self"))
     throw new Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.");
@@ -915,16 +915,16 @@ function yp(t, { plugins: e }) {
 function Td(t) {
   return t ? t.endsWithParent || Td(t.starts) : !1;
 }
-function Ap(t) {
+function Ip(t) {
   return t.variants && !t.cachedVariants && (t.cachedVariants = t.variants.map(function(e) {
     return Ge(t, { variants: null }, e);
   })), t.cachedVariants ? t.cachedVariants : Td(t) ? Ge(t, { starts: t.starts ? Ge(t.starts) : null }) : Object.isFrozen(t) ? Ge(t) : t;
 }
-var Ip = "10.7.3";
-function Dp(t) {
+var Dp = "10.7.3";
+function wp(t) {
   return !!(t || t === "");
 }
-function wp(t) {
+function Mp(t) {
   const e = {
     props: ["language", "code", "autodetect"],
     data: function() {
@@ -944,7 +944,7 @@ function wp(t) {
         return this.autoDetect ? (r = t.highlightAuto(this.code), this.detectedLanguage = r.language) : (r = t.highlight(this.language, this.code, this.ignoreIllegals), this.detectedLanguage = this.language), r.value;
       },
       autoDetect() {
-        return !this.language || Dp(this.autodetect);
+        return !this.language || wp(this.autodetect);
       },
       ignoreIllegals() {
         return !0;
@@ -968,12 +968,12 @@ function wp(t) {
     }
   } };
 }
-const Mp = {
+const xp = {
   "after:highlightElement": ({ el: t, result: e, text: n }) => {
     const r = Gi(t);
     if (!r.length) return;
     const a = document.createElement("div");
-    a.innerHTML = e.value, e.value = xp(r, Gi(a), n);
+    a.innerHTML = e.value, e.value = Lp(r, Gi(a), n);
   }
 };
 function ei(t) {
@@ -995,32 +995,32 @@ function Gi(t) {
     return a;
   }(t, 0), e;
 }
-function xp(t, e, n) {
+function Lp(t, e, n) {
   let r = 0, a = "";
   const i = [];
   function o() {
     return !t.length || !e.length ? t.length ? t : e : t[0].offset !== e[0].offset ? t[0].offset < e[0].offset ? t : e : e[0].event === "start" ? t : e;
   }
-  function s(_) {
+  function c(_) {
     function p(d) {
       return " " + d.nodeName + '="' + et(d.value) + '"';
     }
     a += "<" + ei(_) + [].map.call(_.attributes, p).join("") + ">";
   }
-  function c(_) {
+  function s(_) {
     a += "</" + ei(_) + ">";
   }
   function l(_) {
-    (_.event === "start" ? s : c)(_.node);
+    (_.event === "start" ? c : s)(_.node);
   }
   for (; t.length || e.length; ) {
     let _ = o();
     if (a += et(n.substring(r, _[0].offset)), r = _[0].offset, _ === t) {
-      i.reverse().forEach(c);
+      i.reverse().forEach(s);
       do
         l(_.splice(0, 1)[0]), _ = o();
       while (_ === t && _.length && _[0].offset === r);
-      i.reverse().forEach(s);
+      i.reverse().forEach(c);
     } else
       _[0].event === "start" ? i.push(_[0].node) : i.pop(), l(_.splice(0, 1)[0]);
   }
@@ -1032,11 +1032,11 @@ const qi = {}, nn = (t) => {
   console.log(`WARN: ${t}`, ...e);
 }, Re = (t, e) => {
   qi[`${t}/${e}`] || (console.log(`Deprecated as of ${t}. ${e}`), qi[`${t}/${e}`] = !0);
-}, rn = et, Hi = Ge, Vi = Symbol("nomatch"), Lp = function(t) {
+}, rn = et, Hi = Ge, Vi = Symbol("nomatch"), kp = function(t) {
   const e = /* @__PURE__ */ Object.create(null), n = /* @__PURE__ */ Object.create(null), r = [];
   let a = !0;
-  const i = /(^(<[^>]+>|\t|)+|\n)/gm, o = "Could not find the language '{}', did you forget to load/include a language module?", s = { disableAutodetect: !0, name: "Plain text", contains: [] };
-  let c = {
+  const i = /(^(<[^>]+>|\t|)+|\n)/gm, o = "Could not find the language '{}', did you forget to load/include a language module?", c = { disableAutodetect: !0, name: "Plain text", contains: [] };
+  let s = {
     noHighlightRe: /^(no-?highlight)$/i,
     languageDetectRe: /\blang(?:uage)?-([\w-]+)\b/i,
     classPrefix: "hljs-",
@@ -1045,15 +1045,15 @@ const qi = {}, nn = (t) => {
     languages: null,
     // beta configuration options, subject to change, welcome to discuss
     // https://github.com/highlightjs/highlight.js/issues/1086
-    __emitter: Wu
+    __emitter: Ku
   };
   function l(O) {
-    return c.noHighlightRe.test(O);
+    return s.noHighlightRe.test(O);
   }
   function _(O) {
     let x = O.className + " ";
     x += O.parentNode ? O.parentNode.className : "";
-    const Y = c.languageDetectRe.exec(x);
+    const Y = s.languageDetectRe.exec(x);
     if (Y) {
       const z = k(Y[1]);
       return z || (Yi(o.replace("{}", Y[1])), Yi("Falling back to no-highlight mode for this block.", O)), z ? Y[1] : "no-highlight";
@@ -1110,7 +1110,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
           re.addText(j);
           return;
         }
-        U = d(H.subLanguage, j, !0, dt[H.subLanguage]), dt[H.subLanguage] = /** @type {CompiledMode} */
+        U = d(H.subLanguage, j, !0, ut[H.subLanguage]), ut[H.subLanguage] = /** @type {CompiledMode} */
         U.top;
       } else
         U = E(j, H.subLanguage.length ? H.subLanguage : null);
@@ -1123,7 +1123,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
       return U.className && re.openNode(xe.classNameAliases[U.className] || U.className), H = Object.create(U, { parent: { value: H } }), H;
     }
     function me(U, F, V) {
-      let B = Ju(U.endRe, V);
+      let B = ju(U.endRe, V);
       if (B) {
         if (U["on:end"]) {
           const ce = new Fi(U);
@@ -1138,15 +1138,15 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
       if (U.endsWithParent)
         return me(U.parent, F, V);
     }
-    function lt(U) {
+    function _t(U) {
       return H.matcher.regexIndex === 0 ? (j += U[0], 1) : (Xe = !0, 0);
     }
     function Ct(U) {
       const F = U[0], V = U.rule, B = new Fi(V), ce = [V.__beforeBegin, V["on:begin"]];
       for (const Fe of ce)
         if (Fe && (Fe(U, B), B.isMatchIgnored))
-          return lt(F);
-      return V && V.endSameAsBegin && (V.endRe = Ku(F)), V.skip ? j += F : (V.excludeBegin && (j += F), Z(), !V.returnBegin && !V.excludeBegin && (j = F)), se(V), V.returnBegin ? 0 : F.length;
+          return _t(F);
+      return V && V.endSameAsBegin && (V.endRe = Qu(F)), V.skip ? j += F : (V.excludeBegin && (j += F), Z(), !V.returnBegin && !V.excludeBegin && (j = F)), se(V), V.returnBegin ? 0 : F.length;
     }
     function Nt(U) {
       const F = U[0], V = x.substr(U.index), B = me(H, U, V);
@@ -1166,7 +1166,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
       U.forEach((F) => re.openNode(F));
     }
     let Ye = {};
-    function _t(U, F) {
+    function dt(U, F) {
       const V = F && F[0];
       if (j += U, V == null)
         return Z(), 0;
@@ -1196,9 +1196,9 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
     const xe = k(O);
     if (!xe)
       throw nn(o.replace("{}", O)), new Error('Unknown language: "' + O + '"');
-    const He = yp(xe, { plugins: r });
+    const He = Ap(xe, { plugins: r });
     let he = "", H = z || He;
-    const dt = {}, re = new c.__emitter(c);
+    const ut = {}, re = new s.__emitter(s);
     Qe();
     let j = "", Ue = 0, Le = 0, Ve = 0, Xe = !1;
     try {
@@ -1206,10 +1206,10 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
         Ve++, Xe ? Xe = !1 : H.matcher.considerAll(), H.matcher.lastIndex = Le;
         const U = H.matcher.exec(x);
         if (!U) break;
-        const F = x.substring(Le, U.index), V = _t(F, U);
+        const F = x.substring(Le, U.index), V = dt(F, U);
         Le = U.index + V;
       }
-      return _t(x.substr(Le)), re.closeAllNodes(), re.finalize(), he = re.toHTML(), {
+      return dt(x.substr(Le)), re.closeAllNodes(), re.finalize(), he = re.toHTML(), {
         // avoid possible breakage with v10 clients expecting
         // this to always be an integer
         relevance: Math.floor(Ue),
@@ -1249,15 +1249,15 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
   function u(O) {
     const x = {
       relevance: 0,
-      emitter: new c.__emitter(c),
+      emitter: new s.__emitter(s),
       value: rn(O),
       illegal: !1,
-      top: s
+      top: c
     };
     return x.emitter.addText(O), x;
   }
   function E(O, x) {
-    x = x || c.languages || Object.keys(e);
+    x = x || s.languages || Object.keys(e);
     const Y = u(O), z = x.filter(k).filter($).map(
       (se) => d(se, O, !1)
     );
@@ -1275,8 +1275,8 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
     return Z.second_best = ie, Z;
   }
   function S(O) {
-    return c.tabReplace || c.useBR ? O.replace(i, (x) => x === `
-` ? c.useBR ? "<br>" : x : c.tabReplace ? x.replace(/\t/g, c.tabReplace) : x) : O;
+    return s.tabReplace || s.useBR ? O.replace(i, (x) => x === `
+` ? s.useBR ? "<br>" : x : s.tabReplace ? x.replace(/\t/g, s.tabReplace) : x) : O;
   }
   function g(O, x, Y) {
     const z = x ? n[x] : Y;
@@ -1284,17 +1284,17 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
   }
   const f = {
     "before:highlightElement": ({ el: O }) => {
-      c.useBR && (O.innerHTML = O.innerHTML.replace(/\n/g, "").replace(/<br[ /]*>/g, `
+      s.useBR && (O.innerHTML = O.innerHTML.replace(/\n/g, "").replace(/<br[ /]*>/g, `
 `));
     },
     "after:highlightElement": ({ result: O }) => {
-      c.useBR && (O.value = O.value.replace(/\n/g, "<br>"));
+      s.useBR && (O.value = O.value.replace(/\n/g, "<br>"));
     }
   }, b = /^(<[^>]+>|\t)+/gm, h = {
     "after:highlightElement": ({ result: O }) => {
-      c.tabReplace && (O.value = O.value.replace(
+      s.tabReplace && (O.value = O.value.replace(
         b,
-        (x) => x.replace(/\t/g, c.tabReplace)
+        (x) => x.replace(/\t/g, s.tabReplace)
       ));
     }
   };
@@ -1320,7 +1320,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
     });
   }
   function v(O) {
-    O.useBR && (Re("10.3.0", "'useBR' will be removed entirely in v11.0"), Re("10.3.0", "Please see https://github.com/highlightjs/highlight.js/issues/2559")), c = Hi(c, O);
+    O.useBR && (Re("10.3.0", "'useBR' will be removed entirely in v11.0"), Re("10.3.0", "Please see https://github.com/highlightjs/highlight.js/issues/2559")), s = Hi(s, O);
   }
   const R = () => {
     if (R.called) return;
@@ -1350,7 +1350,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
         nn(z);
       else
         throw z;
-      Y = s;
+      Y = c;
     }
     Y.name || (Y.name = O), e[O] = Y, Y.rawDefinition = x.bind(null, t), Y.aliases && D(Y.aliases, { languageName: O });
   }
@@ -1428,22 +1428,22 @@ https://github.com/highlightjs/highlight.js/issues/2277`), pe = O, X = x);
     inherit: Hi,
     addPlugin: le,
     // plugins for frameworks
-    vuePlugin: wp(t).VuePlugin
+    vuePlugin: Mp(t).VuePlugin
   }), t.debugMode = function() {
     a = !1;
   }, t.safeMode = function() {
     a = !0;
-  }, t.versionString = Ip;
+  }, t.versionString = Dp;
   for (const O in Dt)
     typeof Dt[O] == "object" && md(Dt[O]);
-  return Object.assign(t, Dt), t.addPlugin(f), t.addPlugin(Mp), t.addPlugin(h), t;
+  return Object.assign(t, Dt), t.addPlugin(f), t.addPlugin(xp), t.addPlugin(h), t;
 };
-var kp = Lp({}), Pp = kp, an, zi;
-function Up() {
+var Pp = kp({}), Up = Pp, an, zi;
+function Fp() {
   if (zi) return an;
   zi = 1;
   function t(e) {
-    var n = "[A-Za-zА-Яа-яёЁ_][A-Za-zА-Яа-яёЁ_0-9]+", r = "далее ", a = "возврат вызватьисключение выполнить для если и из или иначе иначеесли исключение каждого конецесли конецпопытки конеццикла не новый перейти перем по пока попытка прервать продолжить тогда цикл экспорт ", i = r + a, o = "загрузитьизфайла ", s = "вебклиент вместо внешнеесоединение клиент конецобласти мобильноеприложениеклиент мобильноеприложениесервер наклиенте наклиентенасервере наклиентенасерверебезконтекста насервере насерверебезконтекста область перед после сервер толстыйклиентобычноеприложение толстыйклиентуправляемоеприложение тонкийклиент ", c = o + s, l = "разделительстраниц разделительстрок символтабуляции ", _ = "ansitooem oemtoansi ввестивидсубконто ввестиперечисление ввестипериод ввестиплансчетов выбранныйплансчетов датагод датамесяц датачисло заголовоксистемы значениевстроку значениеизстроки каталогиб каталогпользователя кодсимв конгода конецпериодаби конецрассчитанногопериодаби конецстандартногоинтервала конквартала конмесяца коннедели лог лог10 максимальноеколичествосубконто названиеинтерфейса названиенабораправ назначитьвид назначитьсчет найтиссылки началопериодаби началостандартногоинтервала начгода начквартала начмесяца начнедели номерднягода номерднянедели номернеделигода обработкаожидания основнойжурналрасчетов основнойплансчетов основнойязык очиститьокносообщений периодстр получитьвремята получитьдатута получитьдокументта получитьзначенияотбора получитьпозициюта получитьпустоезначение получитьта префиксавтонумерации пропись пустоезначение разм разобратьпозициюдокумента рассчитатьрегистрына рассчитатьрегистрыпо симв создатьобъект статусвозврата стрколичествострок сформироватьпозициюдокумента счетпокоду текущеевремя типзначения типзначениястр установитьтана установитьтапо фиксшаблон шаблон ", p = "acos asin atan base64значение base64строка cos exp log log10 pow sin sqrt tan xmlзначение xmlстрока xmlтип xmlтипзнч активноеокно безопасныйрежим безопасныйрежимразделенияданных булево ввестидату ввестизначение ввестистроку ввестичисло возможностьчтенияxml вопрос восстановитьзначение врег выгрузитьжурналрегистрации выполнитьобработкуоповещения выполнитьпроверкуправдоступа вычислить год данныеформывзначение дата день деньгода деньнедели добавитьмесяц заблокироватьданныедляредактирования заблокироватьработупользователя завершитьработусистемы загрузитьвнешнююкомпоненту закрытьсправку записатьjson записатьxml записатьдатуjson записьжурналарегистрации заполнитьзначениясвойств запроситьразрешениепользователя запуститьприложение запуститьсистему зафиксироватьтранзакцию значениевданныеформы значениевстрокувнутр значениевфайл значениезаполнено значениеизстрокивнутр значениеизфайла изxmlтипа импортмоделиxdto имякомпьютера имяпользователя инициализироватьпредопределенныеданные информацияобошибке каталогбиблиотекимобильногоустройства каталогвременныхфайлов каталогдокументов каталогпрограммы кодироватьстроку кодлокализацииинформационнойбазы кодсимвола командасистемы конецгода конецдня конецквартала конецмесяца конецминуты конецнедели конецчаса конфигурациябазыданныхизмененадинамически конфигурацияизменена копироватьданныеформы копироватьфайл краткоепредставлениеошибки лев макс местноевремя месяц мин минута монопольныйрежим найти найтинедопустимыесимволыxml найтиокнопонавигационнойссылке найтипомеченныенаудаление найтипоссылкам найтифайлы началогода началодня началоквартала началомесяца началоминуты началонедели началочаса начатьзапросразрешенияпользователя начатьзапускприложения начатькопированиефайла начатьперемещениефайла начатьподключениевнешнейкомпоненты начатьподключениерасширенияработыскриптографией начатьподключениерасширенияработысфайлами начатьпоискфайлов начатьполучениекаталогавременныхфайлов начатьполучениекаталогадокументов начатьполучениерабочегокаталогаданныхпользователя начатьполучениефайлов начатьпомещениефайла начатьпомещениефайлов начатьсозданиедвоичныхданныхизфайла начатьсозданиекаталога начатьтранзакцию начатьудалениефайлов начатьустановкувнешнейкомпоненты начатьустановкурасширенияработыскриптографией начатьустановкурасширенияработысфайлами неделягода необходимостьзавершениясоединения номерсеансаинформационнойбазы номерсоединенияинформационнойбазы нрег нстр обновитьинтерфейс обновитьнумерациюобъектов обновитьповторноиспользуемыезначения обработкапрерыванияпользователя объединитьфайлы окр описаниеошибки оповестить оповеститьобизменении отключитьобработчикзапросанастроекклиенталицензирования отключитьобработчикожидания отключитьобработчикоповещения открытьзначение открытьиндекссправки открытьсодержаниесправки открытьсправку открытьформу открытьформумодально отменитьтранзакцию очиститьжурналрегистрации очиститьнастройкипользователя очиститьсообщения параметрыдоступа перейтипонавигационнойссылке переместитьфайл подключитьвнешнююкомпоненту подключитьобработчикзапросанастроекклиенталицензирования подключитьобработчикожидания подключитьобработчикоповещения подключитьрасширениеработыскриптографией подключитьрасширениеработысфайлами подробноепредставлениеошибки показатьвводдаты показатьвводзначения показатьвводстроки показатьвводчисла показатьвопрос показатьзначение показатьинформациюобошибке показатьнакарте показатьоповещениепользователя показатьпредупреждение полноеимяпользователя получитьcomобъект получитьxmlтип получитьадреспоместоположению получитьблокировкусеансов получитьвремязавершенияспящегосеанса получитьвремязасыпанияпассивногосеанса получитьвремяожиданияблокировкиданных получитьданныевыбора получитьдополнительныйпараметрклиенталицензирования получитьдопустимыекодылокализации получитьдопустимыечасовыепояса получитьзаголовокклиентскогоприложения получитьзаголовоксистемы получитьзначенияотборажурналарегистрации получитьидентификаторконфигурации получитьизвременногохранилища получитьимявременногофайла получитьимяклиенталицензирования получитьинформациюэкрановклиента получитьиспользованиежурналарегистрации получитьиспользованиесобытияжурналарегистрации получитькраткийзаголовокприложения получитьмакетоформления получитьмаскувсефайлы получитьмаскувсефайлыклиента получитьмаскувсефайлысервера получитьместоположениепоадресу получитьминимальнуюдлинупаролейпользователей получитьнавигационнуюссылку получитьнавигационнуюссылкуинформационнойбазы получитьобновлениеконфигурациибазыданных получитьобновлениепредопределенныхданныхинформационнойбазы получитьобщиймакет получитьобщуюформу получитьокна получитьоперативнуюотметкувремени получитьотключениебезопасногорежима получитьпараметрыфункциональныхопцийинтерфейса получитьполноеимяпредопределенногозначения получитьпредставлениянавигационныхссылок получитьпроверкусложностипаролейпользователей получитьразделительпути получитьразделительпутиклиента получитьразделительпутисервера получитьсеансыинформационнойбазы получитьскоростьклиентскогосоединения получитьсоединенияинформационнойбазы получитьсообщенияпользователю получитьсоответствиеобъектаиформы получитьсоставстандартногоинтерфейсаodata получитьструктурухранениябазыданных получитьтекущийсеансинформационнойбазы получитьфайл получитьфайлы получитьформу получитьфункциональнуюопцию получитьфункциональнуюопциюинтерфейса получитьчасовойпоясинформационнойбазы пользователиос поместитьвовременноехранилище поместитьфайл поместитьфайлы прав праводоступа предопределенноезначение представлениекодалокализации представлениепериода представлениеправа представлениеприложения представлениесобытияжурналарегистрации представлениечасовогопояса предупреждение прекратитьработусистемы привилегированныйрежим продолжитьвызов прочитатьjson прочитатьxml прочитатьдатуjson пустаястрока рабочийкаталогданныхпользователя разблокироватьданныедляредактирования разделитьфайл разорватьсоединениесвнешнимисточникомданных раскодироватьстроку рольдоступна секунда сигнал символ скопироватьжурналрегистрации смещениелетнеговремени смещениестандартноговремени соединитьбуферыдвоичныхданных создатькаталог создатьфабрикуxdto сокрл сокрлп сокрп сообщить состояние сохранитьзначение сохранитьнастройкипользователя сред стрдлина стрзаканчиваетсяна стрзаменить стрнайти стрначинаетсяс строка строкасоединенияинформационнойбазы стрполучитьстроку стрразделить стрсоединить стрсравнить стрчисловхождений стрчислострок стршаблон текущаядата текущаядатасеанса текущаяуниверсальнаядата текущаяуниверсальнаядатавмиллисекундах текущийвариантинтерфейсаклиентскогоприложения текущийвариантосновногошрифтаклиентскогоприложения текущийкодлокализации текущийрежимзапуска текущийязык текущийязыксистемы тип типзнч транзакцияактивна трег удалитьданныеинформационнойбазы удалитьизвременногохранилища удалитьобъекты удалитьфайлы универсальноевремя установитьбезопасныйрежим установитьбезопасныйрежимразделенияданных установитьблокировкусеансов установитьвнешнююкомпоненту установитьвремязавершенияспящегосеанса установитьвремязасыпанияпассивногосеанса установитьвремяожиданияблокировкиданных установитьзаголовокклиентскогоприложения установитьзаголовоксистемы установитьиспользованиежурналарегистрации установитьиспользованиесобытияжурналарегистрации установитькраткийзаголовокприложения установитьминимальнуюдлинупаролейпользователей установитьмонопольныйрежим установитьнастройкиклиенталицензирования установитьобновлениепредопределенныхданныхинформационнойбазы установитьотключениебезопасногорежима установитьпараметрыфункциональныхопцийинтерфейса установитьпривилегированныйрежим установитьпроверкусложностипаролейпользователей установитьрасширениеработыскриптографией установитьрасширениеработысфайлами установитьсоединениесвнешнимисточникомданных установитьсоответствиеобъектаиформы установитьсоставстандартногоинтерфейсаodata установитьчасовойпоясинформационнойбазы установитьчасовойпояссеанса формат цел час часовойпояс часовойпояссеанса число числопрописью этоадресвременногохранилища ", d = "wsссылки библиотекакартинок библиотекамакетовоформлениякомпоновкиданных библиотекастилей бизнеспроцессы внешниеисточникиданных внешниеобработки внешниеотчеты встроенныепокупки главныйинтерфейс главныйстиль документы доставляемыеуведомления журналыдокументов задачи информацияобинтернетсоединении использованиерабочейдаты историяработыпользователя константы критерииотбора метаданные обработки отображениерекламы отправкадоставляемыхуведомлений отчеты панельзадачос параметрзапуска параметрысеанса перечисления планывидоврасчета планывидовхарактеристик планыобмена планысчетов полнотекстовыйпоиск пользователиинформационнойбазы последовательности проверкавстроенныхпокупок рабочаядата расширенияконфигурации регистрыбухгалтерии регистрынакопления регистрырасчета регистрысведений регламентныезадания сериализаторxdto справочники средствагеопозиционирования средствакриптографии средствамультимедиа средстваотображениярекламы средствапочты средствателефонии фабрикаxdto файловыепотоки фоновыезадания хранилищанастроек хранилищевариантовотчетов хранилищенастроекданныхформ хранилищеобщихнастроек хранилищепользовательскихнастроекдинамическихсписков хранилищепользовательскихнастроекотчетов хранилищесистемныхнастроек ", u = l + _ + p + d, E = "webцвета windowsцвета windowsшрифты библиотекакартинок рамкистиля символы цветастиля шрифтыстиля ", S = "автоматическоесохранениеданныхформывнастройках автонумерациявформе автораздвижениесерий анимациядиаграммы вариантвыравниванияэлементовизаголовков вариантуправлениявысотойтаблицы вертикальнаяпрокруткаформы вертикальноеположение вертикальноеположениеэлемента видгруппыформы виддекорацииформы виддополненияэлементаформы видизмененияданных видкнопкиформы видпереключателя видподписейкдиаграмме видполяформы видфлажка влияниеразмеранапузырекдиаграммы горизонтальноеположение горизонтальноеположениеэлемента группировкаколонок группировкаподчиненныхэлементовформы группыиэлементы действиеперетаскивания дополнительныйрежимотображения допустимыедействияперетаскивания интервалмеждуэлементамиформы использованиевывода использованиеполосыпрокрутки используемоезначениеточкибиржевойдиаграммы историявыборапривводе источникзначенийоситочекдиаграммы источникзначенияразмерапузырькадиаграммы категориягруппыкоманд максимумсерий начальноеотображениедерева начальноеотображениесписка обновлениетекстаредактирования ориентациядендрограммы ориентациядиаграммы ориентацияметокдиаграммы ориентацияметоксводнойдиаграммы ориентацияэлементаформы отображениевдиаграмме отображениевлегендедиаграммы отображениегруппыкнопок отображениезаголовкашкалыдиаграммы отображениезначенийсводнойдиаграммы отображениезначенияизмерительнойдиаграммы отображениеинтерваладиаграммыганта отображениекнопки отображениекнопкивыбора отображениеобсужденийформы отображениеобычнойгруппы отображениеотрицательныхзначенийпузырьковойдиаграммы отображениепанелипоиска отображениеподсказки отображениепредупрежденияприредактировании отображениеразметкиполосырегулирования отображениестраницформы отображениетаблицы отображениетекстазначениядиаграммыганта отображениеуправленияобычнойгруппы отображениефигурыкнопки палитрацветовдиаграммы поведениеобычнойгруппы поддержкамасштабадендрограммы поддержкамасштабадиаграммыганта поддержкамасштабасводнойдиаграммы поисквтаблицепривводе положениезаголовкаэлементаформы положениекартинкикнопкиформы положениекартинкиэлементаграфическойсхемы положениекоманднойпанелиформы положениекоманднойпанелиэлементаформы положениеопорнойточкиотрисовки положениеподписейкдиаграмме положениеподписейшкалызначенийизмерительнойдиаграммы положениесостоянияпросмотра положениестрокипоиска положениетекстасоединительнойлинии положениеуправленияпоиском положениешкалывремени порядокотображенияточекгоризонтальнойгистограммы порядоксерийвлегендедиаграммы размеркартинки расположениезаголовкашкалыдиаграммы растягиваниеповертикалидиаграммыганта режимавтоотображениясостояния режимвводастроктаблицы режимвыборанезаполненного режимвыделениядаты режимвыделениястрокитаблицы режимвыделениятаблицы режимизмененияразмера режимизменениясвязанногозначения режимиспользованиядиалогапечати режимиспользованияпараметракоманды режиммасштабированияпросмотра режимосновногоокнаклиентскогоприложения режимоткрытияокнаформы режимотображениявыделения режимотображениягеографическойсхемы режимотображениязначенийсерии режимотрисовкисеткиграфическойсхемы режимполупрозрачностидиаграммы режимпробеловдиаграммы режимразмещениянастранице режимредактированияколонки режимсглаживаниядиаграммы режимсглаживанияиндикатора режимсписказадач сквозноевыравнивание сохранениеданныхформывнастройках способзаполнениятекстазаголовкашкалыдиаграммы способопределенияограничивающегозначениядиаграммы стандартнаягруппакоманд стандартноеоформление статусоповещенияпользователя стильстрелки типаппроксимациилиниитрендадиаграммы типдиаграммы типединицышкалывремени типимпортасерийслоягеографическойсхемы типлиниигеографическойсхемы типлиниидиаграммы типмаркерагеографическойсхемы типмаркерадиаграммы типобластиоформления типорганизацииисточникаданныхгеографическойсхемы типотображениясериислоягеографическойсхемы типотображенияточечногообъектагеографическойсхемы типотображенияшкалыэлементалегендыгеографическойсхемы типпоискаобъектовгеографическойсхемы типпроекциигеографическойсхемы типразмещенияизмерений типразмещенияреквизитовизмерений типрамкиэлементауправления типсводнойдиаграммы типсвязидиаграммыганта типсоединениязначенийпосериямдиаграммы типсоединенияточекдиаграммы типсоединительнойлинии типстороныэлементаграфическойсхемы типформыотчета типшкалырадарнойдиаграммы факторлиниитрендадиаграммы фигуракнопки фигурыграфическойсхемы фиксациявтаблице форматдняшкалывремени форматкартинки ширинаподчиненныхэлементовформы ", g = "виддвижениябухгалтерии виддвижениянакопления видпериодарегистрарасчета видсчета видточкимаршрутабизнеспроцесса использованиеагрегатарегистранакопления использованиегруппиэлементов использованиережимапроведения использованиесреза периодичностьагрегатарегистранакопления режимавтовремя режимзаписидокумента режимпроведениядокумента ", f = "авторегистрацияизменений допустимыйномерсообщения отправкаэлементаданных получениеэлементаданных ", b = "использованиерасшифровкитабличногодокумента ориентациястраницы положениеитоговколоноксводнойтаблицы положениеитоговстроксводнойтаблицы положениетекстаотносительнокартинки расположениезаголовкагруппировкитабличногодокумента способчтениязначенийтабличногодокумента типдвустороннейпечати типзаполненияобластитабличногодокумента типкурсоровтабличногодокумента типлиниирисункатабличногодокумента типлинииячейкитабличногодокумента типнаправленияпереходатабличногодокумента типотображениявыделениятабличногодокумента типотображениялинийсводнойтаблицы типразмещениятекстатабличногодокумента типрисункатабличногодокумента типсмещениятабличногодокумента типузоратабличногодокумента типфайлатабличногодокумента точностьпечати чередованиерасположениястраниц ", h = "отображениевремениэлементовпланировщика ", N = "типфайлаформатированногодокумента ", v = "обходрезультатазапроса типзаписизапроса ", R = "видзаполнениярасшифровкипостроителяотчета типдобавленияпредставлений типизмеренияпостроителяотчета типразмещенияитогов ", C = "доступкфайлу режимдиалогавыборафайла режимоткрытияфайла ", w = "типизмеренияпостроителязапроса ", L = "видданныханализа методкластеризации типединицыинтервалавременианализаданных типзаполнениятаблицырезультатаанализаданных типиспользованиячисловыхзначенийанализаданных типисточникаданныхпоискаассоциаций типколонкианализаданныхдереворешений типколонкианализаданныхкластеризация типколонкианализаданныхобщаястатистика типколонкианализаданныхпоискассоциаций типколонкианализаданныхпоискпоследовательностей типколонкимоделипрогноза типмерырасстоянияанализаданных типотсеченияправилассоциации типполяанализаданных типстандартизациианализаданных типупорядочиванияправилассоциациианализаданных типупорядочиванияшаблоновпоследовательностейанализаданных типупрощениядереварешений ", y = "wsнаправлениепараметра вариантxpathxs вариантзаписидатыjson вариантпростоготипаxs видгруппымоделиxs видфасетаxdto действиепостроителяdom завершенностьпростоготипаxs завершенностьсоставноготипаxs завершенностьсхемыxs запрещенныеподстановкиxs исключениягруппподстановкиxs категорияиспользованияатрибутаxs категорияограниченияидентичностиxs категорияограниченияпространствименxs методнаследованияxs модельсодержимогоxs назначениетипаxml недопустимыеподстановкиxs обработкапробельныхсимволовxs обработкасодержимогоxs ограничениезначенияxs параметрыотбораузловdom переносстрокjson позициявдокументеdom пробельныесимволыxml типатрибутаxml типзначенияjson типканоническогоxml типкомпонентыxs типпроверкиxml типрезультатаdomxpath типузлаdom типузлаxml формаxml формапредставленияxs форматдатыjson экранированиесимволовjson ", G = "видсравнениякомпоновкиданных действиеобработкирасшифровкикомпоновкиданных направлениесортировкикомпоновкиданных расположениевложенныхэлементоврезультатакомпоновкиданных расположениеитоговкомпоновкиданных расположениегруппировкикомпоновкиданных расположениеполейгруппировкикомпоновкиданных расположениеполякомпоновкиданных расположениереквизитовкомпоновкиданных расположениересурсовкомпоновкиданных типбухгалтерскогоостаткакомпоновкиданных типвыводатекстакомпоновкиданных типгруппировкикомпоновкиданных типгруппыэлементовотборакомпоновкиданных типдополненияпериодакомпоновкиданных типзаголовкаполейкомпоновкиданных типмакетагруппировкикомпоновкиданных типмакетаобластикомпоновкиданных типостаткакомпоновкиданных типпериодакомпоновкиданных типразмещениятекстакомпоновкиданных типсвязинаборовданныхкомпоновкиданных типэлементарезультатакомпоновкиданных расположениелегендыдиаграммыкомпоновкиданных типпримененияотборакомпоновкиданных режимотображенияэлементанастройкикомпоновкиданных режимотображениянастроеккомпоновкиданных состояниеэлементанастройкикомпоновкиданных способвосстановлениянастроеккомпоновкиданных режимкомпоновкирезультата использованиепараметракомпоновкиданных автопозицияресурсовкомпоновкиданных вариантиспользованиягруппировкикомпоновкиданных расположениересурсоввдиаграммекомпоновкиданных фиксациякомпоновкиданных использованиеусловногооформлениякомпоновкиданных ", P = "важностьинтернетпочтовогосообщения обработкатекстаинтернетпочтовогосообщения способкодированияинтернетпочтовоговложения способкодированиянеasciiсимволовинтернетпочтовогосообщения типтекстапочтовогосообщения протоколинтернетпочты статусразборапочтовогосообщения ", q = "режимтранзакциизаписижурналарегистрации статустранзакциизаписижурналарегистрации уровеньжурналарегистрации ", I = "расположениехранилищасертификатовкриптографии режимвключениясертификатовкриптографии режимпроверкисертификатакриптографии типхранилищасертификатовкриптографии ", k = "кодировкаименфайловвzipфайле методсжатияzip методшифрованияzip режимвосстановленияпутейфайловzip режимобработкиподкаталоговzip режимсохраненияпутейzip уровеньсжатияzip ", D = "звуковоеоповещение направлениепереходакстроке позициявпотоке порядокбайтов режимблокировкиданных режимуправленияблокировкойданных сервисвстроенныхпокупок состояниефоновогозадания типподписчикадоставляемыхуведомлений уровеньиспользованиязащищенногосоединенияftp ", $ = "направлениепорядкасхемызапроса типдополненияпериодамисхемызапроса типконтрольнойточкисхемызапроса типобъединениясхемызапроса типпараметрадоступнойтаблицысхемызапроса типсоединениясхемызапроса ", te = "httpметод автоиспользованиеобщегореквизита автопрефиксномеразадачи вариантвстроенногоязыка видиерархии видрегистранакопления видтаблицывнешнегоисточникаданных записьдвиженийприпроведении заполнениепоследовательностей индексирование использованиебазыпланавидоврасчета использованиебыстроговыбора использованиеобщегореквизита использованиеподчинения использованиеполнотекстовогопоиска использованиеразделяемыхданныхобщегореквизита использованиереквизита назначениеиспользованияприложения назначениерасширенияконфигурации направлениепередачи обновлениепредопределенныхданных оперативноепроведение основноепредставлениевидарасчета основноепредставлениевидахарактеристики основноепредставлениезадачи основноепредставлениепланаобмена основноепредставлениесправочника основноепредставлениесчета перемещениеграницыприпроведении периодичностьномерабизнеспроцесса периодичностьномерадокумента периодичностьрегистрарасчета периодичностьрегистрасведений повторноеиспользованиевозвращаемыхзначений полнотекстовыйпоискпривводепостроке принадлежностьобъекта проведение разделениеаутентификацииобщегореквизита разделениеданныхобщегореквизита разделениерасширенийконфигурацииобщегореквизита режимавтонумерацииобъектов режимзаписирегистра режимиспользованиямодальности режимиспользованиясинхронныхвызововрасширенийплатформыивнешнихкомпонент режимповторногоиспользованиясеансов режимполученияданныхвыборапривводепостроке режимсовместимости режимсовместимостиинтерфейса режимуправленияблокировкойданныхпоумолчанию сериикодовпланавидовхарактеристик сериикодовпланасчетов сериикодовсправочника созданиепривводе способвыбора способпоискастрокипривводепостроке способредактирования типданныхтаблицывнешнегоисточникаданных типкодапланавидоврасчета типкодасправочника типмакета типномерабизнеспроцесса типномерадокумента типномеразадачи типформы удалениедвижений ", le = "важностьпроблемыприменениярасширенияконфигурации вариантинтерфейсаклиентскогоприложения вариантмасштабаформклиентскогоприложения вариантосновногошрифтаклиентскогоприложения вариантстандартногопериода вариантстандартнойдатыначала видграницы видкартинки видотображенияполнотекстовогопоиска видрамки видсравнения видцвета видчисловогозначения видшрифта допустимаядлина допустимыйзнак использованиеbyteordermark использованиеметаданныхполнотекстовогопоиска источникрасширенийконфигурации клавиша кодвозвратадиалога кодировкаxbase кодировкатекста направлениепоиска направлениесортировки обновлениепредопределенныхданных обновлениеприизмененииданных отображениепанелиразделов проверказаполнения режимдиалогавопрос режимзапускаклиентскогоприложения режимокругления режимоткрытияформприложения режимполнотекстовогопоиска скоростьклиентскогосоединения состояниевнешнегоисточникаданных состояниеобновленияконфигурациибазыданных способвыборасертификатаwindows способкодированиястроки статуссообщения типвнешнейкомпоненты типплатформы типповеденияклавишиenter типэлементаинформацииовыполненииобновленияконфигурациибазыданных уровеньизоляциитранзакций хешфункция частидаты", _e = E + S + g + f + b + h + N + v + R + C + w + L + y + G + P + q + I + k + D + $ + te + le, Me = "comобъект ftpсоединение httpзапрос httpсервисответ httpсоединение wsопределения wsпрокси xbase анализданных аннотацияxs блокировкаданных буфердвоичныхданных включениеxs выражениекомпоновкиданных генераторслучайныхчисел географическаясхема географическиекоординаты графическаясхема группамоделиxs данныерасшифровкикомпоновкиданных двоичныеданные дендрограмма диаграмма диаграммаганта диалогвыборафайла диалогвыборацвета диалогвыборашрифта диалограсписаниярегламентногозадания диалогредактированиястандартногопериода диапазон документdom документhtml документацияxs доставляемоеуведомление записьdom записьfastinfoset записьhtml записьjson записьxml записьzipфайла записьданных записьтекста записьузловdom запрос защищенноесоединениеopenssl значенияполейрасшифровкикомпоновкиданных извлечениетекста импортxs интернетпочта интернетпочтовоесообщение интернетпочтовыйпрофиль интернетпрокси интернетсоединение информациядляприложенияxs использованиеатрибутаxs использованиесобытияжурналарегистрации источникдоступныхнастроеккомпоновкиданных итераторузловdom картинка квалификаторыдаты квалификаторыдвоичныхданных квалификаторыстроки квалификаторычисла компоновщикмакетакомпоновкиданных компоновщикнастроеккомпоновкиданных конструктормакетаоформлениякомпоновкиданных конструкторнастроеккомпоновкиданных конструкторформатнойстроки линия макеткомпоновкиданных макетобластикомпоновкиданных макетоформлениякомпоновкиданных маскаxs менеджеркриптографии наборсхемxml настройкикомпоновкиданных настройкисериализацииjson обработкакартинок обработкарасшифровкикомпоновкиданных обходдереваdom объявлениеатрибутаxs объявлениенотацииxs объявлениеэлементаxs описаниеиспользованиясобытиядоступжурналарегистрации описаниеиспользованиясобытияотказвдоступежурналарегистрации описаниеобработкирасшифровкикомпоновкиданных описаниепередаваемогофайла описаниетипов определениегруппыатрибутовxs определениегруппымоделиxs определениеограниченияидентичностиxs определениепростоготипаxs определениесоставноготипаxs определениетипадокументаdom определенияxpathxs отборкомпоновкиданных пакетотображаемыхдокументов параметрвыбора параметркомпоновкиданных параметрызаписиjson параметрызаписиxml параметрычтенияxml переопределениеxs планировщик полеанализаданных полекомпоновкиданных построительdom построительзапроса построительотчета построительотчетаанализаданных построительсхемxml поток потоквпамяти почта почтовоесообщение преобразованиеxsl преобразованиекканоническомуxml процессорвыводарезультатакомпоновкиданныхвколлекциюзначений процессорвыводарезультатакомпоновкиданныхвтабличныйдокумент процессоркомпоновкиданных разыменовательпространствименdom рамка расписаниерегламентногозадания расширенноеимяxml результатчтенияданных своднаядиаграмма связьпараметравыбора связьпотипу связьпотипукомпоновкиданных сериализаторxdto сертификатклиентаwindows сертификатклиентафайл сертификаткриптографии сертификатыудостоверяющихцентровwindows сертификатыудостоверяющихцентровфайл сжатиеданных системнаяинформация сообщениепользователю сочетаниеклавиш сравнениезначений стандартнаядатаначала стандартныйпериод схемаxml схемакомпоновкиданных табличныйдокумент текстовыйдокумент тестируемоеприложение типданныхxml уникальныйидентификатор фабрикаxdto файл файловыйпоток фасетдлиныxs фасетколичестваразрядовдробнойчастиxs фасетмаксимальноговключающегозначенияxs фасетмаксимальногоисключающегозначенияxs фасетмаксимальнойдлиныxs фасетминимальноговключающегозначенияxs фасетминимальногоисключающегозначенияxs фасетминимальнойдлиныxs фасетобразцаxs фасетобщегоколичестваразрядовxs фасетперечисленияxs фасетпробельныхсимволовxs фильтрузловdom форматированнаястрока форматированныйдокумент фрагментxs хешированиеданных хранилищезначения цвет чтениеfastinfoset чтениеhtml чтениеjson чтениеxml чтениеzipфайла чтениеданных чтениетекста чтениеузловdom шрифт элементрезультатакомпоновкиданных ", Pe = "comsafearray деревозначений массив соответствие списокзначений структура таблицазначений фиксированнаяструктура фиксированноесоответствие фиксированныймассив ", O = Me + Pe, x = "null истина ложь неопределено", Y = e.inherit(e.NUMBER_MODE), z = {
+    var n = "[A-Za-zА-Яа-яёЁ_][A-Za-zА-Яа-яёЁ_0-9]+", r = "далее ", a = "возврат вызватьисключение выполнить для если и из или иначе иначеесли исключение каждого конецесли конецпопытки конеццикла не новый перейти перем по пока попытка прервать продолжить тогда цикл экспорт ", i = r + a, o = "загрузитьизфайла ", c = "вебклиент вместо внешнеесоединение клиент конецобласти мобильноеприложениеклиент мобильноеприложениесервер наклиенте наклиентенасервере наклиентенасерверебезконтекста насервере насерверебезконтекста область перед после сервер толстыйклиентобычноеприложение толстыйклиентуправляемоеприложение тонкийклиент ", s = o + c, l = "разделительстраниц разделительстрок символтабуляции ", _ = "ansitooem oemtoansi ввестивидсубконто ввестиперечисление ввестипериод ввестиплансчетов выбранныйплансчетов датагод датамесяц датачисло заголовоксистемы значениевстроку значениеизстроки каталогиб каталогпользователя кодсимв конгода конецпериодаби конецрассчитанногопериодаби конецстандартногоинтервала конквартала конмесяца коннедели лог лог10 максимальноеколичествосубконто названиеинтерфейса названиенабораправ назначитьвид назначитьсчет найтиссылки началопериодаби началостандартногоинтервала начгода начквартала начмесяца начнедели номерднягода номерднянедели номернеделигода обработкаожидания основнойжурналрасчетов основнойплансчетов основнойязык очиститьокносообщений периодстр получитьвремята получитьдатута получитьдокументта получитьзначенияотбора получитьпозициюта получитьпустоезначение получитьта префиксавтонумерации пропись пустоезначение разм разобратьпозициюдокумента рассчитатьрегистрына рассчитатьрегистрыпо симв создатьобъект статусвозврата стрколичествострок сформироватьпозициюдокумента счетпокоду текущеевремя типзначения типзначениястр установитьтана установитьтапо фиксшаблон шаблон ", p = "acos asin atan base64значение base64строка cos exp log log10 pow sin sqrt tan xmlзначение xmlстрока xmlтип xmlтипзнч активноеокно безопасныйрежим безопасныйрежимразделенияданных булево ввестидату ввестизначение ввестистроку ввестичисло возможностьчтенияxml вопрос восстановитьзначение врег выгрузитьжурналрегистрации выполнитьобработкуоповещения выполнитьпроверкуправдоступа вычислить год данныеформывзначение дата день деньгода деньнедели добавитьмесяц заблокироватьданныедляредактирования заблокироватьработупользователя завершитьработусистемы загрузитьвнешнююкомпоненту закрытьсправку записатьjson записатьxml записатьдатуjson записьжурналарегистрации заполнитьзначениясвойств запроситьразрешениепользователя запуститьприложение запуститьсистему зафиксироватьтранзакцию значениевданныеформы значениевстрокувнутр значениевфайл значениезаполнено значениеизстрокивнутр значениеизфайла изxmlтипа импортмоделиxdto имякомпьютера имяпользователя инициализироватьпредопределенныеданные информацияобошибке каталогбиблиотекимобильногоустройства каталогвременныхфайлов каталогдокументов каталогпрограммы кодироватьстроку кодлокализацииинформационнойбазы кодсимвола командасистемы конецгода конецдня конецквартала конецмесяца конецминуты конецнедели конецчаса конфигурациябазыданныхизмененадинамически конфигурацияизменена копироватьданныеформы копироватьфайл краткоепредставлениеошибки лев макс местноевремя месяц мин минута монопольныйрежим найти найтинедопустимыесимволыxml найтиокнопонавигационнойссылке найтипомеченныенаудаление найтипоссылкам найтифайлы началогода началодня началоквартала началомесяца началоминуты началонедели началочаса начатьзапросразрешенияпользователя начатьзапускприложения начатькопированиефайла начатьперемещениефайла начатьподключениевнешнейкомпоненты начатьподключениерасширенияработыскриптографией начатьподключениерасширенияработысфайлами начатьпоискфайлов начатьполучениекаталогавременныхфайлов начатьполучениекаталогадокументов начатьполучениерабочегокаталогаданныхпользователя начатьполучениефайлов начатьпомещениефайла начатьпомещениефайлов начатьсозданиедвоичныхданныхизфайла начатьсозданиекаталога начатьтранзакцию начатьудалениефайлов начатьустановкувнешнейкомпоненты начатьустановкурасширенияработыскриптографией начатьустановкурасширенияработысфайлами неделягода необходимостьзавершениясоединения номерсеансаинформационнойбазы номерсоединенияинформационнойбазы нрег нстр обновитьинтерфейс обновитьнумерациюобъектов обновитьповторноиспользуемыезначения обработкапрерыванияпользователя объединитьфайлы окр описаниеошибки оповестить оповеститьобизменении отключитьобработчикзапросанастроекклиенталицензирования отключитьобработчикожидания отключитьобработчикоповещения открытьзначение открытьиндекссправки открытьсодержаниесправки открытьсправку открытьформу открытьформумодально отменитьтранзакцию очиститьжурналрегистрации очиститьнастройкипользователя очиститьсообщения параметрыдоступа перейтипонавигационнойссылке переместитьфайл подключитьвнешнююкомпоненту подключитьобработчикзапросанастроекклиенталицензирования подключитьобработчикожидания подключитьобработчикоповещения подключитьрасширениеработыскриптографией подключитьрасширениеработысфайлами подробноепредставлениеошибки показатьвводдаты показатьвводзначения показатьвводстроки показатьвводчисла показатьвопрос показатьзначение показатьинформациюобошибке показатьнакарте показатьоповещениепользователя показатьпредупреждение полноеимяпользователя получитьcomобъект получитьxmlтип получитьадреспоместоположению получитьблокировкусеансов получитьвремязавершенияспящегосеанса получитьвремязасыпанияпассивногосеанса получитьвремяожиданияблокировкиданных получитьданныевыбора получитьдополнительныйпараметрклиенталицензирования получитьдопустимыекодылокализации получитьдопустимыечасовыепояса получитьзаголовокклиентскогоприложения получитьзаголовоксистемы получитьзначенияотборажурналарегистрации получитьидентификаторконфигурации получитьизвременногохранилища получитьимявременногофайла получитьимяклиенталицензирования получитьинформациюэкрановклиента получитьиспользованиежурналарегистрации получитьиспользованиесобытияжурналарегистрации получитькраткийзаголовокприложения получитьмакетоформления получитьмаскувсефайлы получитьмаскувсефайлыклиента получитьмаскувсефайлысервера получитьместоположениепоадресу получитьминимальнуюдлинупаролейпользователей получитьнавигационнуюссылку получитьнавигационнуюссылкуинформационнойбазы получитьобновлениеконфигурациибазыданных получитьобновлениепредопределенныхданныхинформационнойбазы получитьобщиймакет получитьобщуюформу получитьокна получитьоперативнуюотметкувремени получитьотключениебезопасногорежима получитьпараметрыфункциональныхопцийинтерфейса получитьполноеимяпредопределенногозначения получитьпредставлениянавигационныхссылок получитьпроверкусложностипаролейпользователей получитьразделительпути получитьразделительпутиклиента получитьразделительпутисервера получитьсеансыинформационнойбазы получитьскоростьклиентскогосоединения получитьсоединенияинформационнойбазы получитьсообщенияпользователю получитьсоответствиеобъектаиформы получитьсоставстандартногоинтерфейсаodata получитьструктурухранениябазыданных получитьтекущийсеансинформационнойбазы получитьфайл получитьфайлы получитьформу получитьфункциональнуюопцию получитьфункциональнуюопциюинтерфейса получитьчасовойпоясинформационнойбазы пользователиос поместитьвовременноехранилище поместитьфайл поместитьфайлы прав праводоступа предопределенноезначение представлениекодалокализации представлениепериода представлениеправа представлениеприложения представлениесобытияжурналарегистрации представлениечасовогопояса предупреждение прекратитьработусистемы привилегированныйрежим продолжитьвызов прочитатьjson прочитатьxml прочитатьдатуjson пустаястрока рабочийкаталогданныхпользователя разблокироватьданныедляредактирования разделитьфайл разорватьсоединениесвнешнимисточникомданных раскодироватьстроку рольдоступна секунда сигнал символ скопироватьжурналрегистрации смещениелетнеговремени смещениестандартноговремени соединитьбуферыдвоичныхданных создатькаталог создатьфабрикуxdto сокрл сокрлп сокрп сообщить состояние сохранитьзначение сохранитьнастройкипользователя сред стрдлина стрзаканчиваетсяна стрзаменить стрнайти стрначинаетсяс строка строкасоединенияинформационнойбазы стрполучитьстроку стрразделить стрсоединить стрсравнить стрчисловхождений стрчислострок стршаблон текущаядата текущаядатасеанса текущаяуниверсальнаядата текущаяуниверсальнаядатавмиллисекундах текущийвариантинтерфейсаклиентскогоприложения текущийвариантосновногошрифтаклиентскогоприложения текущийкодлокализации текущийрежимзапуска текущийязык текущийязыксистемы тип типзнч транзакцияактивна трег удалитьданныеинформационнойбазы удалитьизвременногохранилища удалитьобъекты удалитьфайлы универсальноевремя установитьбезопасныйрежим установитьбезопасныйрежимразделенияданных установитьблокировкусеансов установитьвнешнююкомпоненту установитьвремязавершенияспящегосеанса установитьвремязасыпанияпассивногосеанса установитьвремяожиданияблокировкиданных установитьзаголовокклиентскогоприложения установитьзаголовоксистемы установитьиспользованиежурналарегистрации установитьиспользованиесобытияжурналарегистрации установитькраткийзаголовокприложения установитьминимальнуюдлинупаролейпользователей установитьмонопольныйрежим установитьнастройкиклиенталицензирования установитьобновлениепредопределенныхданныхинформационнойбазы установитьотключениебезопасногорежима установитьпараметрыфункциональныхопцийинтерфейса установитьпривилегированныйрежим установитьпроверкусложностипаролейпользователей установитьрасширениеработыскриптографией установитьрасширениеработысфайлами установитьсоединениесвнешнимисточникомданных установитьсоответствиеобъектаиформы установитьсоставстандартногоинтерфейсаodata установитьчасовойпоясинформационнойбазы установитьчасовойпояссеанса формат цел час часовойпояс часовойпояссеанса число числопрописью этоадресвременногохранилища ", d = "wsссылки библиотекакартинок библиотекамакетовоформлениякомпоновкиданных библиотекастилей бизнеспроцессы внешниеисточникиданных внешниеобработки внешниеотчеты встроенныепокупки главныйинтерфейс главныйстиль документы доставляемыеуведомления журналыдокументов задачи информацияобинтернетсоединении использованиерабочейдаты историяработыпользователя константы критерииотбора метаданные обработки отображениерекламы отправкадоставляемыхуведомлений отчеты панельзадачос параметрзапуска параметрысеанса перечисления планывидоврасчета планывидовхарактеристик планыобмена планысчетов полнотекстовыйпоиск пользователиинформационнойбазы последовательности проверкавстроенныхпокупок рабочаядата расширенияконфигурации регистрыбухгалтерии регистрынакопления регистрырасчета регистрысведений регламентныезадания сериализаторxdto справочники средствагеопозиционирования средствакриптографии средствамультимедиа средстваотображениярекламы средствапочты средствателефонии фабрикаxdto файловыепотоки фоновыезадания хранилищанастроек хранилищевариантовотчетов хранилищенастроекданныхформ хранилищеобщихнастроек хранилищепользовательскихнастроекдинамическихсписков хранилищепользовательскихнастроекотчетов хранилищесистемныхнастроек ", u = l + _ + p + d, E = "webцвета windowsцвета windowsшрифты библиотекакартинок рамкистиля символы цветастиля шрифтыстиля ", S = "автоматическоесохранениеданныхформывнастройках автонумерациявформе автораздвижениесерий анимациядиаграммы вариантвыравниванияэлементовизаголовков вариантуправлениявысотойтаблицы вертикальнаяпрокруткаформы вертикальноеположение вертикальноеположениеэлемента видгруппыформы виддекорацииформы виддополненияэлементаформы видизмененияданных видкнопкиформы видпереключателя видподписейкдиаграмме видполяформы видфлажка влияниеразмеранапузырекдиаграммы горизонтальноеположение горизонтальноеположениеэлемента группировкаколонок группировкаподчиненныхэлементовформы группыиэлементы действиеперетаскивания дополнительныйрежимотображения допустимыедействияперетаскивания интервалмеждуэлементамиформы использованиевывода использованиеполосыпрокрутки используемоезначениеточкибиржевойдиаграммы историявыборапривводе источникзначенийоситочекдиаграммы источникзначенияразмерапузырькадиаграммы категориягруппыкоманд максимумсерий начальноеотображениедерева начальноеотображениесписка обновлениетекстаредактирования ориентациядендрограммы ориентациядиаграммы ориентацияметокдиаграммы ориентацияметоксводнойдиаграммы ориентацияэлементаформы отображениевдиаграмме отображениевлегендедиаграммы отображениегруппыкнопок отображениезаголовкашкалыдиаграммы отображениезначенийсводнойдиаграммы отображениезначенияизмерительнойдиаграммы отображениеинтерваладиаграммыганта отображениекнопки отображениекнопкивыбора отображениеобсужденийформы отображениеобычнойгруппы отображениеотрицательныхзначенийпузырьковойдиаграммы отображениепанелипоиска отображениеподсказки отображениепредупрежденияприредактировании отображениеразметкиполосырегулирования отображениестраницформы отображениетаблицы отображениетекстазначениядиаграммыганта отображениеуправленияобычнойгруппы отображениефигурыкнопки палитрацветовдиаграммы поведениеобычнойгруппы поддержкамасштабадендрограммы поддержкамасштабадиаграммыганта поддержкамасштабасводнойдиаграммы поисквтаблицепривводе положениезаголовкаэлементаформы положениекартинкикнопкиформы положениекартинкиэлементаграфическойсхемы положениекоманднойпанелиформы положениекоманднойпанелиэлементаформы положениеопорнойточкиотрисовки положениеподписейкдиаграмме положениеподписейшкалызначенийизмерительнойдиаграммы положениесостоянияпросмотра положениестрокипоиска положениетекстасоединительнойлинии положениеуправленияпоиском положениешкалывремени порядокотображенияточекгоризонтальнойгистограммы порядоксерийвлегендедиаграммы размеркартинки расположениезаголовкашкалыдиаграммы растягиваниеповертикалидиаграммыганта режимавтоотображениясостояния режимвводастроктаблицы режимвыборанезаполненного режимвыделениядаты режимвыделениястрокитаблицы режимвыделениятаблицы режимизмененияразмера режимизменениясвязанногозначения режимиспользованиядиалогапечати режимиспользованияпараметракоманды режиммасштабированияпросмотра режимосновногоокнаклиентскогоприложения режимоткрытияокнаформы режимотображениявыделения режимотображениягеографическойсхемы режимотображениязначенийсерии режимотрисовкисеткиграфическойсхемы режимполупрозрачностидиаграммы режимпробеловдиаграммы режимразмещениянастранице режимредактированияколонки режимсглаживаниядиаграммы режимсглаживанияиндикатора режимсписказадач сквозноевыравнивание сохранениеданныхформывнастройках способзаполнениятекстазаголовкашкалыдиаграммы способопределенияограничивающегозначениядиаграммы стандартнаягруппакоманд стандартноеоформление статусоповещенияпользователя стильстрелки типаппроксимациилиниитрендадиаграммы типдиаграммы типединицышкалывремени типимпортасерийслоягеографическойсхемы типлиниигеографическойсхемы типлиниидиаграммы типмаркерагеографическойсхемы типмаркерадиаграммы типобластиоформления типорганизацииисточникаданныхгеографическойсхемы типотображениясериислоягеографическойсхемы типотображенияточечногообъектагеографическойсхемы типотображенияшкалыэлементалегендыгеографическойсхемы типпоискаобъектовгеографическойсхемы типпроекциигеографическойсхемы типразмещенияизмерений типразмещенияреквизитовизмерений типрамкиэлементауправления типсводнойдиаграммы типсвязидиаграммыганта типсоединениязначенийпосериямдиаграммы типсоединенияточекдиаграммы типсоединительнойлинии типстороныэлементаграфическойсхемы типформыотчета типшкалырадарнойдиаграммы факторлиниитрендадиаграммы фигуракнопки фигурыграфическойсхемы фиксациявтаблице форматдняшкалывремени форматкартинки ширинаподчиненныхэлементовформы ", g = "виддвижениябухгалтерии виддвижениянакопления видпериодарегистрарасчета видсчета видточкимаршрутабизнеспроцесса использованиеагрегатарегистранакопления использованиегруппиэлементов использованиережимапроведения использованиесреза периодичностьагрегатарегистранакопления режимавтовремя режимзаписидокумента режимпроведениядокумента ", f = "авторегистрацияизменений допустимыйномерсообщения отправкаэлементаданных получениеэлементаданных ", b = "использованиерасшифровкитабличногодокумента ориентациястраницы положениеитоговколоноксводнойтаблицы положениеитоговстроксводнойтаблицы положениетекстаотносительнокартинки расположениезаголовкагруппировкитабличногодокумента способчтениязначенийтабличногодокумента типдвустороннейпечати типзаполненияобластитабличногодокумента типкурсоровтабличногодокумента типлиниирисункатабличногодокумента типлинииячейкитабличногодокумента типнаправленияпереходатабличногодокумента типотображениявыделениятабличногодокумента типотображениялинийсводнойтаблицы типразмещениятекстатабличногодокумента типрисункатабличногодокумента типсмещениятабличногодокумента типузоратабличногодокумента типфайлатабличногодокумента точностьпечати чередованиерасположениястраниц ", h = "отображениевремениэлементовпланировщика ", N = "типфайлаформатированногодокумента ", v = "обходрезультатазапроса типзаписизапроса ", R = "видзаполнениярасшифровкипостроителяотчета типдобавленияпредставлений типизмеренияпостроителяотчета типразмещенияитогов ", C = "доступкфайлу режимдиалогавыборафайла режимоткрытияфайла ", w = "типизмеренияпостроителязапроса ", L = "видданныханализа методкластеризации типединицыинтервалавременианализаданных типзаполнениятаблицырезультатаанализаданных типиспользованиячисловыхзначенийанализаданных типисточникаданныхпоискаассоциаций типколонкианализаданныхдереворешений типколонкианализаданныхкластеризация типколонкианализаданныхобщаястатистика типколонкианализаданныхпоискассоциаций типколонкианализаданныхпоискпоследовательностей типколонкимоделипрогноза типмерырасстоянияанализаданных типотсеченияправилассоциации типполяанализаданных типстандартизациианализаданных типупорядочиванияправилассоциациианализаданных типупорядочиванияшаблоновпоследовательностейанализаданных типупрощениядереварешений ", y = "wsнаправлениепараметра вариантxpathxs вариантзаписидатыjson вариантпростоготипаxs видгруппымоделиxs видфасетаxdto действиепостроителяdom завершенностьпростоготипаxs завершенностьсоставноготипаxs завершенностьсхемыxs запрещенныеподстановкиxs исключениягруппподстановкиxs категорияиспользованияатрибутаxs категорияограниченияидентичностиxs категорияограниченияпространствименxs методнаследованияxs модельсодержимогоxs назначениетипаxml недопустимыеподстановкиxs обработкапробельныхсимволовxs обработкасодержимогоxs ограничениезначенияxs параметрыотбораузловdom переносстрокjson позициявдокументеdom пробельныесимволыxml типатрибутаxml типзначенияjson типканоническогоxml типкомпонентыxs типпроверкиxml типрезультатаdomxpath типузлаdom типузлаxml формаxml формапредставленияxs форматдатыjson экранированиесимволовjson ", G = "видсравнениякомпоновкиданных действиеобработкирасшифровкикомпоновкиданных направлениесортировкикомпоновкиданных расположениевложенныхэлементоврезультатакомпоновкиданных расположениеитоговкомпоновкиданных расположениегруппировкикомпоновкиданных расположениеполейгруппировкикомпоновкиданных расположениеполякомпоновкиданных расположениереквизитовкомпоновкиданных расположениересурсовкомпоновкиданных типбухгалтерскогоостаткакомпоновкиданных типвыводатекстакомпоновкиданных типгруппировкикомпоновкиданных типгруппыэлементовотборакомпоновкиданных типдополненияпериодакомпоновкиданных типзаголовкаполейкомпоновкиданных типмакетагруппировкикомпоновкиданных типмакетаобластикомпоновкиданных типостаткакомпоновкиданных типпериодакомпоновкиданных типразмещениятекстакомпоновкиданных типсвязинаборовданныхкомпоновкиданных типэлементарезультатакомпоновкиданных расположениелегендыдиаграммыкомпоновкиданных типпримененияотборакомпоновкиданных режимотображенияэлементанастройкикомпоновкиданных режимотображениянастроеккомпоновкиданных состояниеэлементанастройкикомпоновкиданных способвосстановлениянастроеккомпоновкиданных режимкомпоновкирезультата использованиепараметракомпоновкиданных автопозицияресурсовкомпоновкиданных вариантиспользованиягруппировкикомпоновкиданных расположениересурсоввдиаграммекомпоновкиданных фиксациякомпоновкиданных использованиеусловногооформлениякомпоновкиданных ", P = "важностьинтернетпочтовогосообщения обработкатекстаинтернетпочтовогосообщения способкодированияинтернетпочтовоговложения способкодированиянеasciiсимволовинтернетпочтовогосообщения типтекстапочтовогосообщения протоколинтернетпочты статусразборапочтовогосообщения ", q = "режимтранзакциизаписижурналарегистрации статустранзакциизаписижурналарегистрации уровеньжурналарегистрации ", I = "расположениехранилищасертификатовкриптографии режимвключениясертификатовкриптографии режимпроверкисертификатакриптографии типхранилищасертификатовкриптографии ", k = "кодировкаименфайловвzipфайле методсжатияzip методшифрованияzip режимвосстановленияпутейфайловzip режимобработкиподкаталоговzip режимсохраненияпутейzip уровеньсжатияzip ", D = "звуковоеоповещение направлениепереходакстроке позициявпотоке порядокбайтов режимблокировкиданных режимуправленияблокировкойданных сервисвстроенныхпокупок состояниефоновогозадания типподписчикадоставляемыхуведомлений уровеньиспользованиязащищенногосоединенияftp ", $ = "направлениепорядкасхемызапроса типдополненияпериодамисхемызапроса типконтрольнойточкисхемызапроса типобъединениясхемызапроса типпараметрадоступнойтаблицысхемызапроса типсоединениясхемызапроса ", te = "httpметод автоиспользованиеобщегореквизита автопрефиксномеразадачи вариантвстроенногоязыка видиерархии видрегистранакопления видтаблицывнешнегоисточникаданных записьдвиженийприпроведении заполнениепоследовательностей индексирование использованиебазыпланавидоврасчета использованиебыстроговыбора использованиеобщегореквизита использованиеподчинения использованиеполнотекстовогопоиска использованиеразделяемыхданныхобщегореквизита использованиереквизита назначениеиспользованияприложения назначениерасширенияконфигурации направлениепередачи обновлениепредопределенныхданных оперативноепроведение основноепредставлениевидарасчета основноепредставлениевидахарактеристики основноепредставлениезадачи основноепредставлениепланаобмена основноепредставлениесправочника основноепредставлениесчета перемещениеграницыприпроведении периодичностьномерабизнеспроцесса периодичностьномерадокумента периодичностьрегистрарасчета периодичностьрегистрасведений повторноеиспользованиевозвращаемыхзначений полнотекстовыйпоискпривводепостроке принадлежностьобъекта проведение разделениеаутентификацииобщегореквизита разделениеданныхобщегореквизита разделениерасширенийконфигурацииобщегореквизита режимавтонумерацииобъектов режимзаписирегистра режимиспользованиямодальности режимиспользованиясинхронныхвызововрасширенийплатформыивнешнихкомпонент режимповторногоиспользованиясеансов режимполученияданныхвыборапривводепостроке режимсовместимости режимсовместимостиинтерфейса режимуправленияблокировкойданныхпоумолчанию сериикодовпланавидовхарактеристик сериикодовпланасчетов сериикодовсправочника созданиепривводе способвыбора способпоискастрокипривводепостроке способредактирования типданныхтаблицывнешнегоисточникаданных типкодапланавидоврасчета типкодасправочника типмакета типномерабизнеспроцесса типномерадокумента типномеразадачи типформы удалениедвижений ", le = "важностьпроблемыприменениярасширенияконфигурации вариантинтерфейсаклиентскогоприложения вариантмасштабаформклиентскогоприложения вариантосновногошрифтаклиентскогоприложения вариантстандартногопериода вариантстандартнойдатыначала видграницы видкартинки видотображенияполнотекстовогопоиска видрамки видсравнения видцвета видчисловогозначения видшрифта допустимаядлина допустимыйзнак использованиеbyteordermark использованиеметаданныхполнотекстовогопоиска источникрасширенийконфигурации клавиша кодвозвратадиалога кодировкаxbase кодировкатекста направлениепоиска направлениесортировки обновлениепредопределенныхданных обновлениеприизмененииданных отображениепанелиразделов проверказаполнения режимдиалогавопрос режимзапускаклиентскогоприложения режимокругления режимоткрытияформприложения режимполнотекстовогопоиска скоростьклиентскогосоединения состояниевнешнегоисточникаданных состояниеобновленияконфигурациибазыданных способвыборасертификатаwindows способкодированиястроки статуссообщения типвнешнейкомпоненты типплатформы типповеденияклавишиenter типэлементаинформацииовыполненииобновленияконфигурациибазыданных уровеньизоляциитранзакций хешфункция частидаты", _e = E + S + g + f + b + h + N + v + R + C + w + L + y + G + P + q + I + k + D + $ + te + le, Me = "comобъект ftpсоединение httpзапрос httpсервисответ httpсоединение wsопределения wsпрокси xbase анализданных аннотацияxs блокировкаданных буфердвоичныхданных включениеxs выражениекомпоновкиданных генераторслучайныхчисел географическаясхема географическиекоординаты графическаясхема группамоделиxs данныерасшифровкикомпоновкиданных двоичныеданные дендрограмма диаграмма диаграммаганта диалогвыборафайла диалогвыборацвета диалогвыборашрифта диалограсписаниярегламентногозадания диалогредактированиястандартногопериода диапазон документdom документhtml документацияxs доставляемоеуведомление записьdom записьfastinfoset записьhtml записьjson записьxml записьzipфайла записьданных записьтекста записьузловdom запрос защищенноесоединениеopenssl значенияполейрасшифровкикомпоновкиданных извлечениетекста импортxs интернетпочта интернетпочтовоесообщение интернетпочтовыйпрофиль интернетпрокси интернетсоединение информациядляприложенияxs использованиеатрибутаxs использованиесобытияжурналарегистрации источникдоступныхнастроеккомпоновкиданных итераторузловdom картинка квалификаторыдаты квалификаторыдвоичныхданных квалификаторыстроки квалификаторычисла компоновщикмакетакомпоновкиданных компоновщикнастроеккомпоновкиданных конструктормакетаоформлениякомпоновкиданных конструкторнастроеккомпоновкиданных конструкторформатнойстроки линия макеткомпоновкиданных макетобластикомпоновкиданных макетоформлениякомпоновкиданных маскаxs менеджеркриптографии наборсхемxml настройкикомпоновкиданных настройкисериализацииjson обработкакартинок обработкарасшифровкикомпоновкиданных обходдереваdom объявлениеатрибутаxs объявлениенотацииxs объявлениеэлементаxs описаниеиспользованиясобытиядоступжурналарегистрации описаниеиспользованиясобытияотказвдоступежурналарегистрации описаниеобработкирасшифровкикомпоновкиданных описаниепередаваемогофайла описаниетипов определениегруппыатрибутовxs определениегруппымоделиxs определениеограниченияидентичностиxs определениепростоготипаxs определениесоставноготипаxs определениетипадокументаdom определенияxpathxs отборкомпоновкиданных пакетотображаемыхдокументов параметрвыбора параметркомпоновкиданных параметрызаписиjson параметрызаписиxml параметрычтенияxml переопределениеxs планировщик полеанализаданных полекомпоновкиданных построительdom построительзапроса построительотчета построительотчетаанализаданных построительсхемxml поток потоквпамяти почта почтовоесообщение преобразованиеxsl преобразованиекканоническомуxml процессорвыводарезультатакомпоновкиданныхвколлекциюзначений процессорвыводарезультатакомпоновкиданныхвтабличныйдокумент процессоркомпоновкиданных разыменовательпространствименdom рамка расписаниерегламентногозадания расширенноеимяxml результатчтенияданных своднаядиаграмма связьпараметравыбора связьпотипу связьпотипукомпоновкиданных сериализаторxdto сертификатклиентаwindows сертификатклиентафайл сертификаткриптографии сертификатыудостоверяющихцентровwindows сертификатыудостоверяющихцентровфайл сжатиеданных системнаяинформация сообщениепользователю сочетаниеклавиш сравнениезначений стандартнаядатаначала стандартныйпериод схемаxml схемакомпоновкиданных табличныйдокумент текстовыйдокумент тестируемоеприложение типданныхxml уникальныйидентификатор фабрикаxdto файл файловыйпоток фасетдлиныxs фасетколичестваразрядовдробнойчастиxs фасетмаксимальноговключающегозначенияxs фасетмаксимальногоисключающегозначенияxs фасетмаксимальнойдлиныxs фасетминимальноговключающегозначенияxs фасетминимальногоисключающегозначенияxs фасетминимальнойдлиныxs фасетобразцаxs фасетобщегоколичестваразрядовxs фасетперечисленияxs фасетпробельныхсимволовxs фильтрузловdom форматированнаястрока форматированныйдокумент фрагментxs хешированиеданных хранилищезначения цвет чтениеfastinfoset чтениеhtml чтениеjson чтениеxml чтениеzipфайла чтениеданных чтениетекста чтениеузловdom шрифт элементрезультатакомпоновкиданных ", Pe = "comsafearray деревозначений массив соответствие списокзначений структура таблицазначений фиксированнаяструктура фиксированноесоответствие фиксированныймассив ", O = Me + Pe, x = "null истина ложь неопределено", Y = e.inherit(e.NUMBER_MODE), z = {
       className: "string",
       begin: '"|\\|',
       end: '"|$',
@@ -1465,7 +1465,7 @@ function Up() {
       end: "$",
       keywords: {
         $pattern: n,
-        "meta-keyword": i + c
+        "meta-keyword": i + s
       },
       contains: [
         pe
@@ -1535,7 +1535,7 @@ function Up() {
   return an = t, an;
 }
 var on, $i;
-function Fp() {
+function Bp() {
   if ($i) return on;
   $i = 1;
   function t(r) {
@@ -1565,10 +1565,10 @@ function Fp() {
       "SP",
       "VCHAR",
       "WSP"
-    ], o = r.COMMENT(/;/, /$/), s = {
+    ], o = r.COMMENT(/;/, /$/), c = {
       className: "symbol",
       begin: /%b[0-1]+(-[0-1]+|(\.[0-1]+)+){0,1}/
-    }, c = {
+    }, s = {
       className: "symbol",
       begin: /%d[0-9]+(-[0-9]+|(\.[0-9]+)+){0,1}/
     }, l = {
@@ -1588,8 +1588,8 @@ function Fp() {
       contains: [
         p,
         o,
-        s,
         c,
+        s,
         l,
         _,
         r.QUOTE_STRING_MODE,
@@ -1600,7 +1600,7 @@ function Fp() {
   return on = n, on;
 }
 var sn, Wi;
-function Bp() {
+function Gp() {
   if (Wi) return sn;
   Wi = 1;
   function t(a) {
@@ -1693,7 +1693,7 @@ function Bp() {
   return sn = r, sn;
 }
 var cn, Ki;
-function Gp() {
+function qp() {
   if (Ki) return cn;
   Ki = 1;
   function t(r) {
@@ -1775,11 +1775,11 @@ function Gp() {
   return cn = n, cn;
 }
 var ln, Qi;
-function qp() {
+function Yp() {
   if (Qi) return ln;
   Qi = 1;
   function t(e) {
-    const n = "\\d(_|\\d)*", r = "[eE][-+]?" + n, a = n + "(\\." + n + ")?(" + r + ")?", i = "\\w+", s = "\\b(" + (n + "#" + i + "(\\." + i + ")?#(" + r + ")?") + "|" + a + ")", c = "[A-Za-z](_?[A-Za-z0-9.])*", l = `[]\\{\\}%#'"`, _ = e.COMMENT("--", "$"), p = {
+    const n = "\\d(_|\\d)*", r = "[eE][-+]?" + n, a = n + "(\\." + n + ")?(" + r + ")?", i = "\\w+", c = "\\b(" + (n + "#" + i + "(\\." + i + ")?#(" + r + ")?") + "|" + a + ")", s = "[A-Za-z](_?[A-Za-z0-9.])*", l = `[]\\{\\}%#'"`, _ = e.COMMENT("--", "$"), p = {
       // TODO: These spaces are not required by the Ada syntax
       // however, I have yet to see handwritten Ada code where
       // someone does not put spaces around :
@@ -1802,7 +1802,7 @@ function qp() {
         },
         {
           className: "type",
-          begin: c,
+          begin: s,
           endsParent: !0,
           relevance: 0
         }
@@ -1836,13 +1836,13 @@ function qp() {
         {
           // number literals
           className: "number",
-          begin: s,
+          begin: c,
           relevance: 0
         },
         {
           // Attributes
           className: "symbol",
-          begin: "'" + c
+          begin: "'" + s
         },
         {
           // package definition, maybe inside generic
@@ -1914,7 +1914,7 @@ function qp() {
   return ln = t, ln;
 }
 var _n, Xi;
-function Yp() {
+function Hp() {
   if (Xi) return _n;
   Xi = 1;
   function t(e) {
@@ -2029,7 +2029,7 @@ function Yp() {
   return _n = t, _n;
 }
 var dn, Zi;
-function Hp() {
+function Vp() {
   if (Zi) return dn;
   Zi = 1;
   function t(e) {
@@ -2105,7 +2105,7 @@ function Hp() {
   return dn = t, dn;
 }
 var un, Ji;
-function Vp() {
+function zp() {
   if (Ji) return un;
   Ji = 1;
   function t(a) {
@@ -2132,19 +2132,19 @@ function Vp() {
         a.C_NUMBER_MODE,
         i
       ]
-    }, s = a.COMMENT(/--/, /$/), c = a.COMMENT(
+    }, c = a.COMMENT(/--/, /$/), s = a.COMMENT(
       /\(\*/,
       /\*\)/,
       {
         contains: [
           "self",
           // allow nesting
-          s
+          c
         ]
       }
     ), l = [
-      s,
       c,
+      s,
       a.HASH_COMMENT_MODE
     ], _ = [
       /apart from/,
@@ -2236,7 +2236,7 @@ function Vp() {
   return un = r, un;
 }
 var pn, ji;
-function zp() {
+function $p() {
   if (ji) return pn;
   ji = 1;
   function t(e) {
@@ -2268,7 +2268,7 @@ function zp() {
       keywords: r,
       contains: []
       // defined later
-    }, s = {
+    }, c = {
       className: "string",
       begin: "`",
       end: "`",
@@ -2280,11 +2280,11 @@ function zp() {
     o.contains = [
       e.APOS_STRING_MODE,
       e.QUOTE_STRING_MODE,
-      s,
+      c,
       i,
       e.REGEXP_MODE
     ];
-    const c = o.contains.concat([
+    const s = o.contains.concat([
       e.C_BLOCK_COMMENT_MODE,
       e.C_LINE_COMMENT_MODE
     ]);
@@ -2294,7 +2294,7 @@ function zp() {
       contains: [
         e.APOS_STRING_MODE,
         e.QUOTE_STRING_MODE,
-        s,
+        c,
         e.C_LINE_COMMENT_MODE,
         e.C_BLOCK_COMMENT_MODE,
         a,
@@ -2342,7 +2342,7 @@ function zp() {
                     excludeBegin: !0,
                     excludeEnd: !0,
                     keywords: r,
-                    contains: c
+                    contains: s
                   }
                 ]
               }]
@@ -2365,7 +2365,7 @@ function zp() {
               end: /\)/,
               excludeBegin: !0,
               excludeEnd: !0,
-              contains: c
+              contains: s
             }
           ],
           illegal: /\[|%/
@@ -2380,7 +2380,7 @@ function zp() {
   return pn = t, pn;
 }
 var mn, es;
-function $p() {
+function Wp() {
   if (es) return mn;
   es = 1;
   function t(o) {
@@ -2393,16 +2393,16 @@ function $p() {
     return r("(", o, ")?");
   }
   function r(...o) {
-    return o.map((c) => t(c)).join("");
+    return o.map((s) => t(s)).join("");
   }
   function a(o) {
-    const s = o.COMMENT("//", "$", {
+    const c = o.COMMENT("//", "$", {
       contains: [
         {
           begin: /\\\n/
         }
       ]
-    }), c = "decltype\\(auto\\)", l = "[a-zA-Z_]\\w*::", p = "(" + c + "|" + n(l) + "[a-zA-Z_]\\w*" + n("<[^<>]+>") + ")", d = {
+    }), s = "decltype\\(auto\\)", l = "[a-zA-Z_]\\w*::", p = "(" + s + "|" + n(l) + "[a-zA-Z_]\\w*" + n("<[^<>]+>") + ")", d = {
       className: "keyword",
       begin: "\\b[a-z\\d_]*_t\\b"
     }, E = {
@@ -2457,7 +2457,7 @@ function $p() {
           className: "meta-string",
           begin: /<.*?>/
         },
-        s,
+        c,
         o.C_BLOCK_COMMENT_MODE
       ]
     }, f = {
@@ -2600,7 +2600,7 @@ function $p() {
       v,
       g,
       d,
-      s,
+      c,
       o.C_BLOCK_COMMENT_MODE,
       S,
       E
@@ -2644,7 +2644,7 @@ function $p() {
       contains: [
         {
           // to prevent it from being confused as the function title
-          begin: c,
+          begin: s,
           keywords: N,
           relevance: 0
         },
@@ -2676,7 +2676,7 @@ function $p() {
           keywords: N,
           relevance: 0,
           contains: [
-            s,
+            c,
             o.C_BLOCK_COMMENT_MODE,
             E,
             S,
@@ -2689,7 +2689,7 @@ function $p() {
               relevance: 0,
               contains: [
                 "self",
-                s,
+                c,
                 o.C_BLOCK_COMMENT_MODE,
                 E,
                 S,
@@ -2699,7 +2699,7 @@ function $p() {
           ]
         },
         d,
-        s,
+        c,
         o.C_BLOCK_COMMENT_MODE,
         g
       ]
@@ -2762,21 +2762,21 @@ function $p() {
     };
   }
   function i(o) {
-    const s = {
+    const c = {
       keyword: "boolean byte word String",
       built_in: "KeyboardController MouseController SoftwareSerial EthernetServer EthernetClient LiquidCrystal RobotControl GSMVoiceCall EthernetUDP EsploraTFT HttpClient RobotMotor WiFiClient GSMScanner FileSystem Scheduler GSMServer YunClient YunServer IPAddress GSMClient GSMModem Keyboard Ethernet Console GSMBand Esplora Stepper Process WiFiUDP GSM_SMS Mailbox USBHost Firmata PImage Client Server GSMPIN FileIO Bridge Serial EEPROM Stream Mouse Audio Servo File Task GPRS WiFi Wire TFT GSM SPI SD ",
       _: "setup loop runShellCommandAsynchronously analogWriteResolution retrieveCallingNumber printFirmwareVersion analogReadResolution sendDigitalPortPair noListenOnLocalhost readJoystickButton setFirmwareVersion readJoystickSwitch scrollDisplayRight getVoiceCallStatus scrollDisplayLeft writeMicroseconds delayMicroseconds beginTransmission getSignalStrength runAsynchronously getAsynchronously listenOnLocalhost getCurrentCarrier readAccelerometer messageAvailable sendDigitalPorts lineFollowConfig countryNameWrite runShellCommand readStringUntil rewindDirectory readTemperature setClockDivider readLightSensor endTransmission analogReference detachInterrupt countryNameRead attachInterrupt encryptionType readBytesUntil robotNameWrite readMicrophone robotNameRead cityNameWrite userNameWrite readJoystickY readJoystickX mouseReleased openNextFile scanNetworks noInterrupts digitalWrite beginSpeaker mousePressed isActionDone mouseDragged displayLogos noAutoscroll addParameter remoteNumber getModifiers keyboardRead userNameRead waitContinue processInput parseCommand printVersion readNetworks writeMessage blinkVersion cityNameRead readMessage setDataMode parsePacket isListening setBitOrder beginPacket isDirectory motorsWrite drawCompass digitalRead clearScreen serialEvent rightToLeft setTextSize leftToRight requestFrom keyReleased compassRead analogWrite interrupts WiFiServer disconnect playMelody parseFloat autoscroll getPINUsed setPINUsed setTimeout sendAnalog readSlider analogRead beginWrite createChar motorsStop keyPressed tempoWrite readButton subnetMask debugPrint macAddress writeGreen randomSeed attachGPRS readString sendString remotePort releaseAll mouseMoved background getXChange getYChange answerCall getResult voiceCall endPacket constrain getSocket writeJSON getButton available connected findUntil readBytes exitValue readGreen writeBlue startLoop IPAddress isPressed sendSysex pauseMode gatewayIP setCursor getOemKey tuneWrite noDisplay loadImage switchPIN onRequest onReceive changePIN playFile noBuffer parseInt overflow checkPIN knobRead beginTFT bitClear updateIR bitWrite position writeRGB highByte writeRed setSpeed readBlue noStroke remoteIP transfer shutdown hangCall beginSMS endWrite attached maintain noCursor checkReg checkPUK shiftOut isValid shiftIn pulseIn connect println localIP pinMode getIMEI display noBlink process getBand running beginSD drawBMP lowByte setBand release bitRead prepare pointTo readRed setMode noFill remove listen stroke detach attach noTone exists buffer height bitSet circle config cursor random IRread setDNS endSMS getKey micros millis begin print write ready flush width isPIN blink clear press mkdir rmdir close point yield image BSSID click delay read text move peek beep rect line open seek fill size turn stop home find step tone sqrt RSSI SSID end bit tan cos sin pow map abs max min get run put",
       literal: "DIGITAL_MESSAGE FIRMATA_STRING ANALOG_MESSAGE REPORT_DIGITAL REPORT_ANALOG INPUT_PULLUP SET_PIN_MODE INTERNAL2V56 SYSTEM_RESET LED_BUILTIN INTERNAL1V1 SYSEX_START INTERNAL EXTERNAL DEFAULT OUTPUT INPUT HIGH LOW"
-    }, c = a(o), l = (
+    }, s = a(o), l = (
       /** @type {Record<string,any>} */
-      c.keywords
+      s.keywords
     );
-    return l.keyword += " " + s.keyword, l.literal += " " + s.literal, l.built_in += " " + s.built_in, l._ += " " + s._, c.name = "Arduino", c.aliases = ["ino"], c.supersetOf = "cpp", c;
+    return l.keyword += " " + c.keyword, l.literal += " " + c.literal, l.built_in += " " + c.built_in, l._ += " " + c._, s.name = "Arduino", s.aliases = ["ino"], s.supersetOf = "cpp", s;
   }
   return mn = i, mn;
 }
 var gn, ts;
-function Wp() {
+function Kp() {
   if (ts) return gn;
   ts = 1;
   function t(e) {
@@ -2872,7 +2872,7 @@ function Wp() {
   return gn = t, gn;
 }
 var En, ns;
-function Kp() {
+function Qp() {
   if (ns) return En;
   ns = 1;
   function t(o) {
@@ -2885,13 +2885,13 @@ function Kp() {
     return r("(", o, ")?");
   }
   function r(...o) {
-    return o.map((c) => t(c)).join("");
+    return o.map((s) => t(s)).join("");
   }
   function a(...o) {
-    return "(" + o.map((c) => t(c)).join("|") + ")";
+    return "(" + o.map((s) => t(s)).join("|") + ")";
   }
   function i(o) {
-    const s = r(/[A-Z_]/, n(/[A-Z0-9_.-]*:/), /[A-Z0-9_.-]*/), c = /[A-Za-z0-9._:-]+/, l = {
+    const c = r(/[A-Z_]/, n(/[A-Z0-9_.-]*:/), /[A-Z0-9_.-]*/), s = /[A-Za-z0-9._:-]+/, l = {
       className: "symbol",
       begin: /&[a-z]+;|&#[0-9]+;|&#x[a-f0-9]+;/
     }, _ = {
@@ -2917,7 +2917,7 @@ function Kp() {
       contains: [
         {
           className: "attr",
-          begin: c,
+          begin: s,
           relevance: 0
         },
         {
@@ -3064,7 +3064,7 @@ function Kp() {
           begin: r(
             /</,
             e(r(
-              s,
+              c,
               // <tag/>
               // <tag>
               // <tag ...
@@ -3075,7 +3075,7 @@ function Kp() {
           contains: [
             {
               className: "name",
-              begin: s,
+              begin: c,
               relevance: 0,
               starts: E
             }
@@ -3087,14 +3087,14 @@ function Kp() {
           begin: r(
             /<\//,
             e(r(
-              s,
+              c,
               />/
             ))
           ),
           contains: [
             {
               className: "name",
-              begin: s,
+              begin: c,
               relevance: 0
             },
             {
@@ -3110,7 +3110,7 @@ function Kp() {
   return En = i, En;
 }
 var Sn, rs;
-function Qp() {
+function Xp() {
   if (rs) return Sn;
   rs = 1;
   function t(r) {
@@ -3174,7 +3174,7 @@ function Qp() {
         // must not precede or follow a word character
         begin: /\*[^\s]([^\n]+\n)+([^\n]+)\*/
       }
-    ], s = [
+    ], c = [
       // inline unconstrained emphasis (single line)
       {
         className: "emphasis",
@@ -3216,7 +3216,7 @@ function Qp() {
         }],
         relevance: 0
       }
-    ], c = {
+    ], s = {
       className: "symbol",
       begin: "^(NOTE|TIP|IMPORTANT|WARNING|CAUTION):\\s+",
       relevance: 10
@@ -3312,10 +3312,10 @@ function Qp() {
           relevance: 10
         },
         l,
-        c,
+        s,
         ...i,
         ...o,
-        ...s,
+        ...c,
         // inline smart quotes
         {
           className: "string",
@@ -3380,7 +3380,7 @@ function Qp() {
   return Sn = n, Sn;
 }
 var fn, as;
-function Xp() {
+function Zp() {
   if (as) return fn;
   as = 1;
   function t(r) {
@@ -3532,7 +3532,7 @@ function Xp() {
   return fn = n, fn;
 }
 var bn, os;
-function Zp() {
+function Jp() {
   if (os) return bn;
   os = 1;
   function t(e) {
@@ -3611,7 +3611,7 @@ function Zp() {
   return bn = t, bn;
 }
 var Tn, is;
-function Jp() {
+function jp() {
   if (is) return Tn;
   is = 1;
   function t(e) {
@@ -3638,9 +3638,9 @@ function Jp() {
         e.COMMENT("#cs", "#ce"),
         e.COMMENT("#comments-start", "#comments-end")
       ]
-    }, s = {
-      begin: "\\$[A-z0-9_]+"
     }, c = {
+      begin: "\\$[A-z0-9_]+"
+    }, s = {
       className: "string",
       variants: [
         {
@@ -3684,7 +3684,7 @@ function Jp() {
           },
           end: "$",
           contains: [
-            c,
+            s,
             {
               className: "meta-string",
               variants: [
@@ -3712,7 +3712,7 @@ function Jp() {
             }
           ]
         },
-        c,
+        s,
         o
       ]
     }, p = {
@@ -3734,8 +3734,8 @@ function Jp() {
           begin: "\\(",
           end: "\\)",
           contains: [
-            s,
             c,
+            s,
             l
           ]
         }
@@ -3752,8 +3752,8 @@ function Jp() {
       },
       contains: [
         o,
-        s,
         c,
+        s,
         l,
         _,
         p,
@@ -3764,7 +3764,7 @@ function Jp() {
   return Tn = t, Tn;
 }
 var hn, ss;
-function jp() {
+function em() {
   if (ss) return hn;
   ss = 1;
   function t(e) {
@@ -3828,7 +3828,7 @@ function jp() {
   return hn = t, hn;
 }
 var Rn, cs;
-function em() {
+function tm() {
   if (cs) return Rn;
   cs = 1;
   function t(e) {
@@ -3895,7 +3895,7 @@ function em() {
   return Rn = t, Rn;
 }
 var Cn, ls;
-function tm() {
+function nm() {
   if (ls) return Cn;
   ls = 1;
   function t(e) {
@@ -4061,7 +4061,7 @@ function tm() {
   return Cn = t, Cn;
 }
 var Nn, _s;
-function nm() {
+function rm() {
   if (_s) return Nn;
   _s = 1;
   function t(r) {
@@ -4100,7 +4100,7 @@ function nm() {
       begin: /\$\(/,
       end: /\)/,
       contains: [r.BACKSLASH_ESCAPE]
-    }, s = {
+    }, c = {
       begin: /<<-?\s*(?=\w+)/,
       starts: {
         contains: [
@@ -4111,7 +4111,7 @@ function nm() {
           })
         ]
       }
-    }, c = {
+    }, s = {
       className: "string",
       begin: /"/,
       end: /"/,
@@ -4121,7 +4121,7 @@ function nm() {
         o
       ]
     };
-    o.contains.push(c);
+    o.contains.push(s);
     const l = {
       className: "",
       begin: /\\"/
@@ -4178,8 +4178,8 @@ function nm() {
         E,
         p,
         r.HASH_COMMENT_MODE,
-        s,
         c,
+        s,
         l,
         _,
         a
@@ -4189,7 +4189,7 @@ function nm() {
   return Nn = n, Nn;
 }
 var vn, ds;
-function rm() {
+function am() {
   if (ds) return vn;
   ds = 1;
   function t(e) {
@@ -4238,7 +4238,7 @@ function rm() {
   return vn = t, vn;
 }
 var On, us;
-function am() {
+function om() {
   if (us) return On;
   us = 1;
   function t(e) {
@@ -4273,7 +4273,7 @@ function am() {
   return On = t, On;
 }
 var yn, ps;
-function om() {
+function im() {
   if (ps) return yn;
   ps = 1;
   function t(e) {
@@ -4318,7 +4318,7 @@ function om() {
   return yn = t, yn;
 }
 var An, ms;
-function im() {
+function sm() {
   if (ms) return An;
   ms = 1;
   function t(o) {
@@ -4331,16 +4331,16 @@ function im() {
     return r("(", o, ")?");
   }
   function r(...o) {
-    return o.map((c) => t(c)).join("");
+    return o.map((s) => t(s)).join("");
   }
   function a(o) {
-    const s = o.COMMENT("//", "$", {
+    const c = o.COMMENT("//", "$", {
       contains: [
         {
           begin: /\\\n/
         }
       ]
-    }), c = "decltype\\(auto\\)", l = "[a-zA-Z_]\\w*::", p = "(" + c + "|" + n(l) + "[a-zA-Z_]\\w*" + n("<[^<>]+>") + ")", d = {
+    }), s = "decltype\\(auto\\)", l = "[a-zA-Z_]\\w*::", p = "(" + s + "|" + n(l) + "[a-zA-Z_]\\w*" + n("<[^<>]+>") + ")", d = {
       className: "keyword",
       begin: "\\b[a-z\\d_]*_t\\b"
     }, E = {
@@ -4395,7 +4395,7 @@ function im() {
           className: "meta-string",
           begin: /<.*?>/
         },
-        s,
+        c,
         o.C_BLOCK_COMMENT_MODE
       ]
     }, f = {
@@ -4538,7 +4538,7 @@ function im() {
       v,
       g,
       d,
-      s,
+      c,
       o.C_BLOCK_COMMENT_MODE,
       S,
       E
@@ -4582,7 +4582,7 @@ function im() {
       contains: [
         {
           // to prevent it from being confused as the function title
-          begin: c,
+          begin: s,
           keywords: N,
           relevance: 0
         },
@@ -4614,7 +4614,7 @@ function im() {
           keywords: N,
           relevance: 0,
           contains: [
-            s,
+            c,
             o.C_BLOCK_COMMENT_MODE,
             E,
             S,
@@ -4627,7 +4627,7 @@ function im() {
               relevance: 0,
               contains: [
                 "self",
-                s,
+                c,
                 o.C_BLOCK_COMMENT_MODE,
                 E,
                 S,
@@ -4637,7 +4637,7 @@ function im() {
           ]
         },
         d,
-        s,
+        c,
         o.C_BLOCK_COMMENT_MODE,
         g
       ]
@@ -4700,7 +4700,7 @@ function im() {
     };
   }
   function i(o) {
-    const s = a(o), c = [
+    const c = a(o), s = [
       "c",
       "h"
     ], l = [
@@ -4712,12 +4712,12 @@ function im() {
       "hxx",
       "cxx"
     ];
-    return s.disableAutodetect = !0, s.aliases = [], o.getLanguage("c") || s.aliases.push(...c), o.getLanguage("cpp") || s.aliases.push(...l), s;
+    return c.disableAutodetect = !0, c.aliases = [], o.getLanguage("c") || c.aliases.push(...s), o.getLanguage("cpp") || c.aliases.push(...l), c;
   }
   return An = i, An;
 }
 var In, gs;
-function sm() {
+function cm() {
   if (gs) return In;
   gs = 1;
   function t(a) {
@@ -4736,7 +4736,7 @@ function sm() {
           begin: /\\\n/
         }
       ]
-    }), o = "decltype\\(auto\\)", s = "[a-zA-Z_]\\w*::", l = "(" + o + "|" + e(s) + "[a-zA-Z_]\\w*" + e("<[^<>]+>") + ")", _ = {
+    }), o = "decltype\\(auto\\)", c = "[a-zA-Z_]\\w*::", l = "(" + o + "|" + e(c) + "[a-zA-Z_]\\w*" + e("<[^<>]+>") + ")", _ = {
       className: "keyword",
       begin: "\\b[a-z\\d_]*_t\\b"
     }, d = {
@@ -4796,9 +4796,9 @@ function sm() {
       ]
     }, S = {
       className: "title",
-      begin: e(s) + a.IDENT_RE,
+      begin: e(c) + a.IDENT_RE,
       relevance: 0
-    }, g = e(s) + a.IDENT_RE + "\\s*\\(", f = {
+    }, g = e(c) + a.IDENT_RE + "\\s*\\(", f = {
       keyword: "int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace unsigned long volatile static protected bool template mutable if public friend do goto auto void enum else break extern using asm case typeid wchar_t short reinterpret_cast|10 default double register explicit signed typename try this switch continue inline delete alignas alignof constexpr consteval constinit decltype concept co_await co_return co_yield requires noexcept static_assert thread_local restrict final override atomic_bool atomic_char atomic_schar atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong atomic_ullong new throw return and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq",
       built_in: "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr _Bool complex _Complex imaginary _Imaginary",
       literal: "true false nullptr NULL"
@@ -4947,7 +4947,7 @@ function sm() {
   return In = r, In;
 }
 var Dn, Es;
-function cm() {
+function lm() {
   if (Es) return Dn;
   Es = 1;
   function t(e) {
@@ -4977,11 +4977,11 @@ function cm() {
     }, o = {
       className: "string",
       begin: /(#\d+)+/
-    }, s = {
+    }, c = {
       className: "number",
       begin: "\\b\\d+(\\.\\d+)?(DT|D|T)",
       relevance: 0
-    }, c = {
+    }, s = {
       className: "string",
       // not a string technically but makes sense to be highlighted in the same style
       begin: '"',
@@ -5024,8 +5024,8 @@ function cm() {
       contains: [
         i,
         o,
-        s,
         c,
+        s,
         e.NUMBER_MODE,
         _,
         l
@@ -5035,7 +5035,7 @@ function cm() {
   return Dn = t, Dn;
 }
 var wn, Ss;
-function lm() {
+function _m() {
   if (Ss) return wn;
   Ss = 1;
   function t(e) {
@@ -5092,7 +5092,7 @@ function lm() {
   return wn = t, wn;
 }
 var Mn, fs;
-function _m() {
+function dm() {
   if (fs) return Mn;
   fs = 1;
   function t(e) {
@@ -5155,7 +5155,7 @@ function _m() {
   return Mn = t, Mn;
 }
 var xn, bs;
-function dm() {
+function um() {
   if (bs) return xn;
   bs = 1;
   function t(e) {
@@ -5186,7 +5186,7 @@ function dm() {
   return xn = t, xn;
 }
 var Ln, Ts;
-function um() {
+function pm() {
   if (Ts) return Ln;
   Ts = 1;
   function t(e) {
@@ -5196,10 +5196,10 @@ function um() {
         // Clojure keywords
         a + " cond apply if-not if-let if not not= =|0 <|0 >|0 <=|0 >=|0 ==|0 +|0 /|0 *|0 -|0 rem quot neg? pos? delay? symbol? keyword? true? false? integer? empty? coll? list? set? ifn? fn? associative? sequential? sorted? counted? reversible? number? decimal? class? distinct? isa? float? rational? reduced? ratio? odd? even? char? seq? vector? string? map? nil? contains? zero? instance? not-every? not-any? libspec? -> ->> .. . inc compare do dotimes mapcat take remove take-while drop letfn drop-last take-last drop-while while intern condp case reduced cycle split-at split-with repeat replicate iterate range merge zipmap declare line-seq sort comparator sort-by dorun doall nthnext nthrest partition eval doseq await await-for let agent atom send send-off release-pending-sends add-watch mapv filterv remove-watch agent-error restart-agent set-error-handler error-handler set-error-mode! error-mode shutdown-agents quote var fn loop recur throw try monitor-enter monitor-exit macroexpand macroexpand-1 for dosync and or when when-not when-let comp juxt partial sequence memoize constantly complement identity assert peek pop doto proxy first rest cons cast coll last butlast sigs reify second ffirst fnext nfirst nnext meta with-meta ns in-ns create-ns import refer keys select-keys vals key val rseq name namespace promise into transient persistent! conj! assoc! dissoc! pop! disj! use class type num float double short byte boolean bigint biginteger bigdec print-method print-dup throw-if printf format load compile get-in update-in pr pr-on newline flush read slurp read-line subvec with-open memfn time re-find re-groups rand-int rand mod locking assert-valid-fdecl alias resolve ref deref refset swap! reset! set-validator! compare-and-set! alter-meta! reset-meta! commute get-validator alter ref-set ref-history-count ref-min-history ref-max-history ensure sync io! new next conj set! to-array future future-call into-array aset gen-class reduce map filter find empty hash-map hash-set sorted-map sorted-map-by sorted-set sorted-set-by vec vector seq flatten reverse assoc dissoc list disj get union difference intersection extend extend-type extend-protocol int nth delay count concat chunk chunk-buffer chunk-append chunk-first chunk-rest max min dec unchecked-inc-int unchecked-inc unchecked-dec-inc unchecked-dec unchecked-negate unchecked-add-int unchecked-add unchecked-subtract-int unchecked-subtract chunk-next chunk-cons chunked-seq? prn vary-meta lazy-seq spread list* str find-keyword keyword symbol gensym force rationalize"
       )
-    }, o = "[-+]?\\d+(\\.\\d+)?", s = {
+    }, o = "[-+]?\\d+(\\.\\d+)?", c = {
       begin: r,
       relevance: 0
-    }, c = {
+    }, s = {
       className: "number",
       begin: o,
       relevance: 0
@@ -5243,9 +5243,9 @@ function um() {
       _,
       S,
       d,
-      c,
+      s,
       p,
-      s
+      c
     ], N = {
       beginKeywords: a,
       lexemes: r,
@@ -5278,7 +5278,7 @@ function um() {
         _,
         S,
         d,
-        c,
+        s,
         p
       ]
     };
@@ -5286,7 +5286,7 @@ function um() {
   return Ln = t, Ln;
 }
 var kn, hs;
-function pm() {
+function mm() {
   if (hs) return kn;
   hs = 1;
   function t(e) {
@@ -5307,7 +5307,7 @@ function pm() {
   return kn = t, kn;
 }
 var Pn, Rs;
-function mm() {
+function gm() {
   if (Rs) return Pn;
   Rs = 1;
   function t(e) {
@@ -5336,7 +5336,7 @@ function mm() {
   return Pn = t, Pn;
 }
 var Un, Cs;
-function gm() {
+function Em() {
   if (Cs) return Un;
   Cs = 1;
   const t = [
@@ -5467,7 +5467,7 @@ function gm() {
     n,
     r
   );
-  function s(c) {
+  function c(s) {
     const l = [
       "npm",
       "print"
@@ -5504,8 +5504,8 @@ function gm() {
       end: /\}/,
       keywords: E
     }, f = [
-      c.BINARY_NUMBER_MODE,
-      c.inherit(c.C_NUMBER_MODE, {
+      s.BINARY_NUMBER_MODE,
+      s.inherit(s.C_NUMBER_MODE, {
         starts: {
           end: "(\\s*/)?",
           relevance: 0
@@ -5518,18 +5518,18 @@ function gm() {
           {
             begin: /'''/,
             end: /'''/,
-            contains: [c.BACKSLASH_ESCAPE]
+            contains: [s.BACKSLASH_ESCAPE]
           },
           {
             begin: /'/,
             end: /'/,
-            contains: [c.BACKSLASH_ESCAPE]
+            contains: [s.BACKSLASH_ESCAPE]
           },
           {
             begin: /"""/,
             end: /"""/,
             contains: [
-              c.BACKSLASH_ESCAPE,
+              s.BACKSLASH_ESCAPE,
               g
             ]
           },
@@ -5537,7 +5537,7 @@ function gm() {
             begin: /"/,
             end: /"/,
             contains: [
-              c.BACKSLASH_ESCAPE,
+              s.BACKSLASH_ESCAPE,
               g
             ]
           }
@@ -5551,7 +5551,7 @@ function gm() {
             end: "///",
             contains: [
               g,
-              c.HASH_COMMENT_MODE
+              s.HASH_COMMENT_MODE
             ]
           },
           {
@@ -5586,7 +5586,7 @@ function gm() {
       }
     ];
     g.contains = f;
-    const b = c.inherit(c.TITLE_MODE, {
+    const b = s.inherit(s.TITLE_MODE, {
       begin: S
     }), h = "(\\(.*\\)\\s*)?\\B[-=]>", N = {
       className: "params",
@@ -5611,8 +5611,8 @@ function gm() {
       keywords: E,
       illegal: /\/\*/,
       contains: f.concat([
-        c.COMMENT("###", "###"),
-        c.HASH_COMMENT_MODE,
+        s.COMMENT("###", "###"),
+        s.HASH_COMMENT_MODE,
         {
           className: "function",
           begin: "^\\s*" + S + "\\s*=\\s*" + h,
@@ -5660,10 +5660,10 @@ function gm() {
       ])
     };
   }
-  return Un = s, Un;
+  return Un = c, Un;
 }
 var Fn, Ns;
-function Em() {
+function Sm() {
   if (Ns) return Fn;
   Ns = 1;
   function t(e) {
@@ -5693,7 +5693,7 @@ function Em() {
   return Fn = t, Fn;
 }
 var Bn, vs;
-function Sm() {
+function fm() {
   if (vs) return Bn;
   vs = 1;
   function t(e) {
@@ -5783,7 +5783,7 @@ function Sm() {
   return Bn = t, Bn;
 }
 var Gn, Os;
-function fm() {
+function bm() {
   if (Os) return Gn;
   Os = 1;
   function t(i) {
@@ -5796,7 +5796,7 @@ function fm() {
     return r("(", i, ")?");
   }
   function r(...i) {
-    return i.map((s) => t(s)).join("");
+    return i.map((c) => t(c)).join("");
   }
   function a(i) {
     const o = i.COMMENT("//", "$", {
@@ -5805,7 +5805,7 @@ function fm() {
           begin: /\\\n/
         }
       ]
-    }), s = "decltype\\(auto\\)", c = "[a-zA-Z_]\\w*::", _ = "(" + s + "|" + n(c) + "[a-zA-Z_]\\w*" + n("<[^<>]+>") + ")", p = {
+    }), c = "decltype\\(auto\\)", s = "[a-zA-Z_]\\w*::", _ = "(" + c + "|" + n(s) + "[a-zA-Z_]\\w*" + n("<[^<>]+>") + ")", p = {
       className: "keyword",
       begin: "\\b[a-z\\d_]*_t\\b"
     }, u = {
@@ -5865,9 +5865,9 @@ function fm() {
       ]
     }, g = {
       className: "title",
-      begin: n(c) + i.IDENT_RE,
+      begin: n(s) + i.IDENT_RE,
       relevance: 0
-    }, f = n(c) + i.IDENT_RE + "\\s*\\(", h = {
+    }, f = n(s) + i.IDENT_RE + "\\s*\\(", h = {
       keyword: "int float while private char char8_t char16_t char32_t catch import module export virtual operator sizeof dynamic_cast|10 typedef const_cast|10 const for static_cast|10 union namespace unsigned long volatile static protected bool template mutable if public friend do goto auto void enum else break extern using asm case typeid wchar_t short reinterpret_cast|10 default double register explicit signed typename try this switch continue inline delete alignas alignof constexpr consteval constinit decltype concept co_await co_return co_yield requires noexcept static_assert thread_local restrict final override atomic_bool atomic_char atomic_schar atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong atomic_ullong new throw return and and_eq bitand bitor compl not not_eq or or_eq xor xor_eq",
       built_in: "_Bool _Complex _Imaginary",
       _relevance_hints: [
@@ -6047,7 +6047,7 @@ function fm() {
       contains: [
         {
           // to prevent it from being confused as the function title
-          begin: s,
+          begin: c,
           keywords: h,
           relevance: 0
         },
@@ -6167,7 +6167,7 @@ function fm() {
   return Gn = a, Gn;
 }
 var qn, ys;
-function bm() {
+function Tm() {
   if (ys) return qn;
   ys = 1;
   function t(e) {
@@ -6253,19 +6253,19 @@ function bm() {
   return qn = t, qn;
 }
 var Yn, As;
-function Tm() {
+function hm() {
   if (As) return Yn;
   As = 1;
   function t(e) {
-    const n = "(_?[ui](8|16|32|64|128))?", r = "(_?f(32|64))?", a = "[a-zA-Z_]\\w*[!?=]?", i = "[a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|[=!]~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~|]|//|//=|&[-+*]=?|&\\*\\*|\\[\\][=?]?", o = "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?", s = {
+    const n = "(_?[ui](8|16|32|64|128))?", r = "(_?f(32|64))?", a = "[a-zA-Z_]\\w*[!?=]?", i = "[a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|[=!]~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~|]|//|//=|&[-+*]=?|&\\*\\*|\\[\\][=?]?", o = "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?", c = {
       $pattern: a,
       keyword: "abstract alias annotation as as? asm begin break case class def do else elsif end ensure enum extend for fun if include instance_sizeof is_a? lib macro module next nil? of out pointerof private protected rescue responds_to? return require select self sizeof struct super then type typeof union uninitialized unless until verbatim when while with yield __DIR__ __END_LINE__ __FILE__ __LINE__",
       literal: "false nil true"
-    }, c = {
+    }, s = {
       className: "subst",
       begin: /#\{/,
       end: /\}/,
-      keywords: s
+      keywords: c
     }, l = {
       className: "template-variable",
       variants: [
@@ -6278,7 +6278,7 @@ function Tm() {
           end: "%\\}"
         }
       ],
-      keywords: s
+      keywords: c
     };
     function _(f, b) {
       const h = [
@@ -6293,7 +6293,7 @@ function Tm() {
       className: "string",
       contains: [
         e.BACKSLASH_ESCAPE,
-        c
+        s
       ],
       variants: [
         {
@@ -6379,7 +6379,7 @@ function Tm() {
           className: "regexp",
           contains: [
             e.BACKSLASH_ESCAPE,
-            c
+            s
           ],
           variants: [
             {
@@ -6398,7 +6398,7 @@ function Tm() {
       className: "regexp",
       contains: [
         e.BACKSLASH_ESCAPE,
-        c
+        s
       ],
       variants: [
         {
@@ -6545,17 +6545,17 @@ function Tm() {
         relevance: 0
       }
     ];
-    return c.contains = g, l.contains = g.slice(1), {
+    return s.contains = g, l.contains = g.slice(1), {
       name: "Crystal",
       aliases: ["cr"],
-      keywords: s,
+      keywords: c,
       contains: g
     };
   }
   return Yn = t, Yn;
 }
 var Hn, Is;
-function hm() {
+function Rm() {
   if (Is) return Hn;
   Is = 1;
   function t(e) {
@@ -6692,11 +6692,11 @@ function hm() {
       "where",
       "with",
       "yield"
-    ], s = {
+    ], c = {
       keyword: i.concat(o),
       built_in: n,
       literal: a
-    }, c = e.inherit(e.TITLE_MODE, {
+    }, s = e.inherit(e.TITLE_MODE, {
       begin: "[a-zA-Z](\\.?\\w)*"
     }), l = {
       className: "number",
@@ -6727,7 +6727,7 @@ function hm() {
       className: "subst",
       begin: /\{/,
       end: /\}/,
-      keywords: s
+      keywords: c
     }, u = e.inherit(d, {
       illegal: /\n/
     }), E = {
@@ -6810,7 +6810,7 @@ function hm() {
         {
           beginKeywords: "in out"
         },
-        c
+        s
       ]
     }, h = e.IDENT_RE + "(<" + e.IDENT_RE + "(\\s*,\\s*" + e.IDENT_RE + ")*>)?(\\[\\])?", N = {
       // prevents expressions like `@class` from incorrect flagging
@@ -6824,7 +6824,7 @@ function hm() {
         "cs",
         "c#"
       ],
-      keywords: s,
+      keywords: c,
       illegal: /::/,
       contains: [
         e.COMMENT(
@@ -6873,7 +6873,7 @@ function hm() {
             {
               beginKeywords: "where class"
             },
-            c,
+            s,
             b,
             e.C_LINE_COMMENT_MODE,
             e.C_BLOCK_COMMENT_MODE
@@ -6885,7 +6885,7 @@ function hm() {
           end: /[{;=]/,
           illegal: /[^\s:]/,
           contains: [
-            c,
+            s,
             e.C_LINE_COMMENT_MODE,
             e.C_BLOCK_COMMENT_MODE
           ]
@@ -6896,7 +6896,7 @@ function hm() {
           end: /[{;=]/,
           illegal: /[^\s:]/,
           contains: [
-            c,
+            s,
             b,
             e.C_LINE_COMMENT_MODE,
             e.C_BLOCK_COMMENT_MODE
@@ -6929,7 +6929,7 @@ function hm() {
           returnBegin: !0,
           end: /\s*[{;=]/,
           excludeEnd: !0,
-          keywords: s,
+          keywords: c,
           contains: [
             // prevents these from being highlighted `title`
             {
@@ -6951,7 +6951,7 @@ function hm() {
               end: /\)/,
               excludeBegin: !0,
               excludeEnd: !0,
-              keywords: s,
+              keywords: c,
               relevance: 0,
               contains: [
                 f,
@@ -6970,7 +6970,7 @@ function hm() {
   return Hn = t, Hn;
 }
 var Vn, Ds;
-function Rm() {
+function Cm() {
   if (Ds) return Vn;
   Ds = 1;
   function t(e) {
@@ -6999,7 +6999,7 @@ function Rm() {
   return Vn = t, Vn;
 }
 var zn, ws;
-function Cm() {
+function Nm() {
   if (ws) return zn;
   ws = 1;
   const t = (_) => ({
@@ -7433,10 +7433,10 @@ function Cm() {
   function o(_) {
     return _ ? typeof _ == "string" ? _ : _.source : null;
   }
-  function s(_) {
-    return c("(?=", _, ")");
+  function c(_) {
+    return s("(?=", _, ")");
   }
-  function c(..._) {
+  function s(..._) {
     return _.map((d) => o(d)).join("");
   }
   function l(_) {
@@ -7534,7 +7534,7 @@ function Cm() {
           ]
         },
         {
-          begin: s(/@/),
+          begin: c(/@/),
           end: "[{;]",
           relevance: 0,
           illegal: /:/,
@@ -7575,7 +7575,7 @@ function Cm() {
   return zn = l, zn;
 }
 var $n, Ms;
-function Nm() {
+function vm() {
   if (Ms) return $n;
   Ms = 1;
   function t(e) {
@@ -7584,7 +7584,7 @@ function Nm() {
       keyword: "abstract alias align asm assert auto body break byte case cast catch class const continue debug default delete deprecated do else enum export extern final finally for foreach foreach_reverse|10 goto if immutable import in inout int interface invariant is lazy macro mixin module new nothrow out override package pragma private protected public pure ref return scope shared static struct super switch synchronized template this throw try typedef typeid typeof union unittest version void volatile while with __FILE__ __LINE__ __gshared|10 __thread __traits __DATE__ __EOF__ __TIME__ __TIMESTAMP__ __VENDOR__ __VERSION__",
       built_in: "bool cdouble cent cfloat char creal dchar delegate double dstring float function idouble ifloat ireal long real short string ubyte ucent uint ulong ushort wchar wstring",
       literal: "false null true"
-    }, r = "(0|[1-9][\\d_]*)", a = "(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d)", i = "0[bB][01_]+", o = "([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)", s = "0[xX]" + o, c = "([eE][+-]?" + a + ")", l = "(" + a + "(\\.\\d*|" + c + ")|\\d+\\." + a + "|\\." + r + c + "?)", _ = "(0[xX](" + o + "\\." + o + "|\\.?" + o + ")[pP][+-]?" + a + ")", p = "(" + r + "|" + i + "|" + s + ")", d = "(" + _ + "|" + l + ")", u = `\\\\(['"\\?\\\\abfnrtv]|u[\\dA-Fa-f]{4}|[0-7]{1,3}|x[\\dA-Fa-f]{2}|U[\\dA-Fa-f]{8})|&[a-zA-Z\\d]{2,};`, E = {
+    }, r = "(0|[1-9][\\d_]*)", a = "(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d)", i = "0[bB][01_]+", o = "([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)", c = "0[xX]" + o, s = "([eE][+-]?" + a + ")", l = "(" + a + "(\\.\\d*|" + s + ")|\\d+\\." + a + "|\\." + r + s + "?)", _ = "(0[xX](" + o + "\\." + o + "|\\.?" + o + ")[pP][+-]?" + a + ")", p = "(" + r + "|" + i + "|" + c + ")", d = "(" + _ + "|" + l + ")", u = `\\\\(['"\\?\\\\abfnrtv]|u[\\dA-Fa-f]{4}|[0-7]{1,3}|x[\\dA-Fa-f]{2}|U[\\dA-Fa-f]{8})|&[a-zA-Z\\d]{2,};`, E = {
       className: "number",
       begin: "\\b" + p + "(L|u|U|Lu|LU|uL|UL)?",
       relevance: 0
@@ -7667,7 +7667,7 @@ function Nm() {
   return $n = t, $n;
 }
 var Wn, xs;
-function vm() {
+function Om() {
   if (xs) return Wn;
   xs = 1;
   function t(r) {
@@ -7720,12 +7720,12 @@ function vm() {
           relevance: 0
         }
       ]
-    }, s = {
+    }, c = {
       className: "bullet",
       begin: "^[ 	]*([*+-]|(\\d+\\.))(?=\\s+)",
       end: "\\s+",
       excludeEnd: !0
-    }, c = {
+    }, s = {
       begin: /^\[[^\n]+\]:/,
       returnBegin: !0,
       contains: [
@@ -7865,7 +7865,7 @@ function vm() {
           ]
         },
         a,
-        s,
+        c,
         p,
         d,
         {
@@ -7877,14 +7877,14 @@ function vm() {
         o,
         i,
         _,
-        c
+        s
       ]
     };
   }
   return Wn = n, Wn;
 }
 var Kn, Ls;
-function Om() {
+function ym() {
   if (Ls) return Kn;
   Ls = 1;
   function t(e) {
@@ -7994,7 +7994,7 @@ function Om() {
       // dart:html
       "Element",
       "ElementList"
-    ], o = i.map((c) => `${c}?`);
+    ], o = i.map((s) => `${s}?`);
     return {
       name: "Dart",
       keywords: {
@@ -8064,7 +8064,7 @@ function Om() {
   return Kn = t, Kn;
 }
 var Qn, ks;
-function ym() {
+function Am() {
   if (ks) return Qn;
   ks = 1;
   function t(e) {
@@ -8113,10 +8113,10 @@ function ym() {
           begin: "%[01]+"
         }
       ]
-    }, s = {
+    }, c = {
       className: "string",
       begin: /(#\d+)+/
-    }, c = {
+    }, s = {
       begin: e.IDENT_RE + "\\s*=\\s*class\\s*\\(",
       returnBegin: !0,
       contains: [e.TITLE_MODE]
@@ -8134,7 +8134,7 @@ function ym() {
           keywords: n,
           contains: [
             i,
-            s,
+            c,
             a
           ].concat(r)
         },
@@ -8158,10 +8158,10 @@ function ym() {
       illegal: /"|\$[G-Zg-z]|\/\*|<\/|\|/,
       contains: [
         i,
-        s,
+        c,
         e.NUMBER_MODE,
         o,
-        c,
+        s,
         l,
         a
       ].concat(r)
@@ -8170,7 +8170,7 @@ function ym() {
   return Qn = t, Qn;
 }
 var Xn, Ps;
-function Am() {
+function Im() {
   if (Ps) return Xn;
   Ps = 1;
   function t(e) {
@@ -8250,7 +8250,7 @@ function Am() {
   return Xn = t, Xn;
 }
 var Zn, Us;
-function Im() {
+function Dm() {
   if (Us) return Zn;
   Us = 1;
   function t(e) {
@@ -8302,7 +8302,7 @@ function Im() {
   return Zn = t, Zn;
 }
 var Jn, Fs;
-function Dm() {
+function wm() {
   if (Fs) return Jn;
   Fs = 1;
   function t(e) {
@@ -8342,7 +8342,7 @@ function Dm() {
   return Jn = t, Jn;
 }
 var jn, Bs;
-function wm() {
+function Mm() {
   if (Bs) return jn;
   Bs = 1;
   function t(e) {
@@ -8370,7 +8370,7 @@ function wm() {
   return jn = t, jn;
 }
 var er, Gs;
-function Mm() {
+function xm() {
   if (Gs) return er;
   Gs = 1;
   function t(e) {
@@ -8423,7 +8423,7 @@ function Mm() {
   return er = t, er;
 }
 var tr, qs;
-function xm() {
+function Lm() {
   if (qs) return tr;
   qs = 1;
   function t(e) {
@@ -8480,7 +8480,7 @@ function xm() {
   return tr = t, tr;
 }
 var nr, Ys;
-function Lm() {
+function km() {
   if (Ys) return nr;
   Ys = 1;
   function t(e) {
@@ -8552,10 +8552,10 @@ function Lm() {
     }, o = {
       className: "meta-keyword",
       begin: "/[a-z][a-z\\d-]*/"
-    }, s = {
+    }, c = {
       className: "symbol",
       begin: "^\\s*[a-zA-Z_][a-zA-Z\\d_]*:"
-    }, c = {
+    }, s = {
       className: "params",
       begin: "<",
       end: ">",
@@ -8582,9 +8582,9 @@ function Lm() {
           contains: [
             i,
             o,
-            s,
-            l,
             c,
+            l,
+            s,
             e.C_LINE_COMMENT_MODE,
             e.C_BLOCK_COMMENT_MODE,
             r,
@@ -8593,9 +8593,9 @@ function Lm() {
         },
         i,
         o,
-        s,
-        l,
         c,
+        l,
+        s,
         e.C_LINE_COMMENT_MODE,
         e.C_BLOCK_COMMENT_MODE,
         r,
@@ -8611,7 +8611,7 @@ function Lm() {
   return nr = t, nr;
 }
 var rr, Hs;
-function km() {
+function Pm() {
   if (Hs) return rr;
   Hs = 1;
   function t(e) {
@@ -8649,7 +8649,7 @@ function km() {
   return rr = t, rr;
 }
 var ar, Vs;
-function Pm() {
+function Um() {
   if (Vs) return ar;
   Vs = 1;
   function t(e) {
@@ -8692,7 +8692,7 @@ function Pm() {
   return ar = t, ar;
 }
 var or, zs;
-function Um() {
+function Fm() {
   if (zs) return or;
   zs = 1;
   function t(e) {
@@ -8708,9 +8708,9 @@ function Um() {
       className: "number",
       begin: "(\\b0o[0-7_]+)|(\\b0b[01_]+)|(\\b0x[0-9a-fA-F_]+)|(-?\\b[1-9][0-9_]*(\\.[0-9_]+([eE][-+]?[0-9]+)?)?)",
       relevance: 0
-    }, s = `[/|([{<"']`, c = {
+    }, c = `[/|([{<"']`, s = {
       className: "string",
-      begin: "~[a-z](?=" + s + ")",
+      begin: "~[a-z](?=" + c + ")",
       contains: [
         {
           endsParent: !0,
@@ -8760,7 +8760,7 @@ function Um() {
       ]
     }, l = {
       className: "string",
-      begin: "~[A-Z](?=" + s + ")",
+      begin: "~[A-Z](?=" + c + ")",
       contains: [
         {
           begin: /"/,
@@ -8861,7 +8861,7 @@ function Um() {
     }), u = [
       _,
       l,
-      c,
+      s,
       e.HASH_COMMENT_MODE,
       d,
       p,
@@ -8935,7 +8935,7 @@ function Um() {
   return or = t, or;
 }
 var ir, $s;
-function Fm() {
+function Bm() {
   if ($s) return ir;
   $s = 1;
   function t(e) {
@@ -9046,7 +9046,7 @@ function Fm() {
   return ir = t, ir;
 }
 var sr, Ws;
-function Bm() {
+function Gm() {
   if (Ws) return sr;
   Ws = 1;
   function t(a) {
@@ -9063,10 +9063,10 @@ function Bm() {
       keyword: "and then defined module in return redo if BEGIN retry end for self when next until do begin unless END rescue else break undef not super class case require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor __FILE__",
       built_in: "proc lambda",
       literal: "true false nil"
-    }, s = {
+    }, c = {
       className: "doctag",
       begin: "@[A-Za-z]+"
-    }, c = {
+    }, s = {
       begin: "#<",
       end: ">"
     }, l = [
@@ -9074,14 +9074,14 @@ function Bm() {
         "#",
         "$",
         {
-          contains: [s]
+          contains: [c]
         }
       ),
       a.COMMENT(
         "^=begin",
         "^=end",
         {
-          contains: [s],
+          contains: [c],
           relevance: 10
         }
       ),
@@ -9325,10 +9325,10 @@ function Bm() {
               }
             ]
           }
-        ].concat(c, l),
+        ].concat(s, l),
         relevance: 0
       }
-    ].concat(c, l);
+    ].concat(s, l);
     _.contains = g, S.contains = g;
     const N = [
       {
@@ -9347,7 +9347,7 @@ function Bm() {
         }
       }
     ];
-    return l.unshift(c), {
+    return l.unshift(s), {
       name: "Ruby",
       aliases: [
         "rb",
@@ -9368,7 +9368,7 @@ function Bm() {
   return sr = r, sr;
 }
 var cr, Ks;
-function Gm() {
+function qm() {
   if (Ks) return cr;
   Ks = 1;
   function t(e) {
@@ -9390,7 +9390,7 @@ function Gm() {
   return cr = t, cr;
 }
 var lr, Qs;
-function qm() {
+function Ym() {
   if (Qs) return lr;
   Qs = 1;
   function t(r) {
@@ -9452,7 +9452,7 @@ function qm() {
   return lr = n, lr;
 }
 var _r, Xs;
-function Ym() {
+function Hm() {
   if (Xs) return _r;
   Xs = 1;
   function t(e) {
@@ -9463,9 +9463,9 @@ function Ym() {
       className: "number",
       begin: "\\b(\\d+(_\\d+)*#[a-fA-F0-9]+(_[a-fA-F0-9]+)*|\\d+(_\\d+)*(\\.\\d+(_\\d+)*)?([eE][-+]?\\d+)?)",
       relevance: 0
-    }, s = {
-      begin: "fun\\s+" + n + "/\\d+"
     }, c = {
+      begin: "fun\\s+" + n + "/\\d+"
+    }, s = {
       begin: r + "\\(",
       end: "\\)",
       returnBegin: !0,
@@ -9518,12 +9518,12 @@ function Ym() {
     };
     u.contains = [
       i,
-      s,
+      c,
       e.inherit(e.APOS_STRING_MODE, {
         className: ""
       }),
       u,
-      c,
+      s,
       e.QUOTE_STRING_MODE,
       o,
       l,
@@ -9533,9 +9533,9 @@ function Ym() {
     ];
     const E = [
       i,
-      s,
-      u,
       c,
+      u,
+      s,
       e.QUOTE_STRING_MODE,
       o,
       l,
@@ -9543,7 +9543,7 @@ function Ym() {
       p,
       d
     ];
-    c.contains[1].contains = E, l.contains = E, d.contains[1].contains = E;
+    s.contains[1].contains = E, l.contains = E, d.contains[1].contains = E;
     const S = [
       "-module",
       "-record",
@@ -9625,7 +9625,7 @@ function Ym() {
   return _r = t, _r;
 }
 var dr, Zs;
-function Hm() {
+function Vm() {
   if (Zs) return dr;
   Zs = 1;
   function t(e) {
@@ -9689,7 +9689,7 @@ function Hm() {
   return dr = t, dr;
 }
 var ur, Js;
-function Vm() {
+function zm() {
   if (Js) return ur;
   Js = 1;
   function t(e) {
@@ -9724,7 +9724,7 @@ function Vm() {
   return ur = t, ur;
 }
 var pr, js;
-function zm() {
+function $m() {
   if (js) return pr;
   js = 1;
   function t(e) {
@@ -9767,7 +9767,7 @@ function zm() {
   return pr = t, pr;
 }
 var mr, ec;
-function $m() {
+function Wm() {
   if (ec) return mr;
   ec = 1;
   function t(r) {
@@ -9794,17 +9794,17 @@ function $m() {
           relevance: 0
         })
       ]
-    }, o = /(_[a-z_\d]+)?/, s = /([de][+-]?\d+)?/, c = {
+    }, o = /(_[a-z_\d]+)?/, c = /([de][+-]?\d+)?/, s = {
       className: "number",
       variants: [
         {
-          begin: e(/\b\d+/, /\.(\d*)/, s, o)
+          begin: e(/\b\d+/, /\.(\d*)/, c, o)
         },
         {
-          begin: e(/\b\d+/, s, o)
+          begin: e(/\b\d+/, c, o)
         },
         {
-          begin: e(/\.\d+/, s, o)
+          begin: e(/\.\d+/, c, o)
         }
       ],
       relevance: 0
@@ -9847,14 +9847,14 @@ function $m() {
           relevance: 0
         },
         i,
-        c
+        s
       ]
     };
   }
   return mr = n, mr;
 }
 var gr, tc;
-function Wm() {
+function Km() {
   if (tc) return gr;
   tc = 1;
   function t(e) {
@@ -9928,7 +9928,7 @@ function Wm() {
   return gr = t, gr;
 }
 var Er, nc;
-function Km() {
+function Qm() {
   if (nc) return Er;
   nc = 1;
   function t(a) {
@@ -9951,7 +9951,7 @@ function Km() {
       end: /\)/,
       excludeBegin: !0,
       excludeEnd: !0
-    }, s = {
+    }, c = {
       className: "symbol",
       variants: [
         {
@@ -9961,7 +9961,7 @@ function Km() {
           begin: /\$/
         }
       ]
-    }, c = {
+    }, s = {
       // One-line quoted comment string
       className: "comment",
       variants: [
@@ -9981,7 +9981,7 @@ function Km() {
       end: "/",
       keywords: i,
       contains: [
-        c,
+        s,
         a.C_LINE_COMMENT_MODE,
         a.C_BLOCK_COMMENT_MODE,
         a.QUOTE_STRING_MODE,
@@ -9995,7 +9995,7 @@ function Km() {
       end: "$",
       endsWithParent: !0,
       contains: [
-        c,
+        s,
         l,
         {
           className: "comment",
@@ -10080,18 +10080,18 @@ function Km() {
               begin: /^[a-z0-9_]+/
             },
             o,
-            s
+            c
           ]
         },
         a.C_NUMBER_MODE,
-        s
+        c
       ]
     };
   }
   return Er = r, Er;
 }
 var Sr, rc;
-function Qm() {
+function Xm() {
   if (rc) return Sr;
   rc = 1;
   function t(e) {
@@ -10162,11 +10162,11 @@ function Qm() {
           i
         ]
       }
-    ], s = {
+    ], c = {
       className: "title",
       begin: e.UNDERSCORE_IDENT_RE,
       relevance: 0
-    }, c = function(u, E, S) {
+    }, s = function(u, E, S) {
       const g = e.inherit(
         {
           className: "function",
@@ -10177,7 +10177,7 @@ function Qm() {
         },
         {}
       );
-      return g.contains.push(s), g.contains.push(e.C_NUMBER_MODE), g.contains.push(e.C_BLOCK_COMMENT_MODE), g.contains.push(r), g;
+      return g.contains.push(c), g.contains.push(e.C_NUMBER_MODE), g.contains.push(e.C_BLOCK_COMMENT_MODE), g.contains.push(r), g;
     }, l = {
       // these are explicitly named internal function calls
       className: "built_in",
@@ -10243,8 +10243,8 @@ function Qm() {
           className: "keyword",
           begin: /\bexternal (matrix|string|array|sparse matrix|struct|proc|keyword|fn)/
         },
-        c("proc keyword", ";"),
-        c("fn", "="),
+        s("proc keyword", ";"),
+        s("fn", "="),
         {
           beginKeywords: "for threadfor",
           end: /;/,
@@ -10277,7 +10277,7 @@ function Qm() {
   return Sr = t, Sr;
 }
 var fr, ac;
-function Xm() {
+function Zm() {
   if (ac) return fr;
   ac = 1;
   function t(e) {
@@ -10289,7 +10289,7 @@ function Xm() {
       begin: "([O])([0-9]+)"
     }, o = e.inherit(e.C_NUMBER_MODE, {
       begin: "([-+]?((\\.\\d+)|(\\d+)(\\.\\d*)?))|" + e.C_NUMBER_RE
-    }), s = [
+    }), c = [
       e.C_LINE_COMMENT_MODE,
       e.C_BLOCK_COMMENT_MODE,
       e.COMMENT(/\(/, /\)/),
@@ -10349,13 +10349,13 @@ function Xm() {
           begin: r
         },
         i
-      ].concat(s)
+      ].concat(c)
     };
   }
   return fr = t, fr;
 }
 var br, oc;
-function Zm() {
+function Jm() {
   if (oc) return br;
   oc = 1;
   function t(e) {
@@ -10401,7 +10401,7 @@ function Zm() {
   return br = t, br;
 }
 var Tr, ic;
-function Jm() {
+function jm() {
   if (ic) return Tr;
   ic = 1;
   function t(e) {
@@ -10435,7 +10435,7 @@ function Jm() {
   return Tr = t, Tr;
 }
 var hr, sc;
-function jm() {
+function eg() {
   if (sc) return hr;
   sc = 1;
   function t(e) {
@@ -10461,7 +10461,7 @@ function jm() {
   return hr = t, hr;
 }
 var Rr, cc;
-function eg() {
+function tg() {
   if (cc) return Rr;
   cc = 1;
   function t(e) {
@@ -10525,7 +10525,7 @@ function eg() {
   return Rr = t, Rr;
 }
 var Cr, lc;
-function tg() {
+function ng() {
   if (lc) return Cr;
   lc = 1;
   function t(e) {
@@ -10549,7 +10549,7 @@ function tg() {
   return Cr = t, Cr;
 }
 var Nr, _c;
-function ng() {
+function rg() {
   if (_c) return Nr;
   _c = 1;
   function t(e) {
@@ -10572,7 +10572,7 @@ function ng() {
   return Nr = t, Nr;
 }
 var vr, dc;
-function rg() {
+function ag() {
   if (dc) return vr;
   dc = 1;
   function t(i) {
@@ -10582,13 +10582,13 @@ function rg() {
     return n("(?=", i, ")");
   }
   function n(...i) {
-    return i.map((s) => t(s)).join("");
+    return i.map((c) => t(c)).join("");
   }
   function r(i, o = {}) {
     return o.variants = i, o;
   }
   function a(i) {
-    const o = "[A-Za-z0-9_$]+", s = r([
+    const o = "[A-Za-z0-9_$]+", c = r([
       i.C_LINE_COMMENT_MODE,
       i.C_BLOCK_COMMENT_MODE,
       i.COMMENT(
@@ -10609,7 +10609,7 @@ function rg() {
           ]
         }
       )
-    ]), c = {
+    ]), s = {
       className: "regexp",
       begin: /~?\/[^\/\n]+\//,
       contains: [i.BACKSLASH_ESCAPE]
@@ -10650,9 +10650,9 @@ function rg() {
           binary: "groovy",
           relevance: 10
         }),
-        s,
-        _,
         c,
+        _,
+        s,
         l,
         {
           className: "class",
@@ -10684,9 +10684,9 @@ function rg() {
           end: /:/,
           relevance: 0,
           contains: [
-            s,
-            _,
             c,
+            _,
+            s,
             l,
             "self"
           ]
@@ -10706,7 +10706,7 @@ function rg() {
   return vr = a, vr;
 }
 var Or, uc;
-function ag() {
+function og() {
   if (uc) return Or;
   uc = 1;
   function t(e) {
@@ -10818,7 +10818,7 @@ function ag() {
   return Or = t, Or;
 }
 var yr, pc;
-function og() {
+function ig() {
   if (pc) return yr;
   pc = 1;
   function t(o) {
@@ -10831,13 +10831,13 @@ function og() {
     return r("(", o, ")?");
   }
   function r(...o) {
-    return o.map((c) => t(c)).join("");
+    return o.map((s) => t(s)).join("");
   }
   function a(...o) {
-    return "(" + o.map((c) => t(c)).join("|") + ")";
+    return "(" + o.map((s) => t(s)).join("|") + ")";
   }
   function i(o) {
-    const s = {
+    const c = {
       "builtin-name": [
         "action",
         "bindattr",
@@ -10869,7 +10869,7 @@ function og() {
         "with",
         "yield"
       ]
-    }, c = {
+    }, s = {
       literal: [
         "true",
         "false",
@@ -10899,7 +10899,7 @@ function og() {
       begin: S,
       lexemes: /[\w.\/]+/
     }, b = o.inherit(f, {
-      keywords: c
+      keywords: s
     }), h = {
       begin: /\(/,
       end: /\)/
@@ -10951,24 +10951,24 @@ function og() {
       // end-token of the surrounding mode)
     }, C = o.inherit(f, {
       className: "name",
-      keywords: s,
+      keywords: c,
       starts: o.inherit(R, {
         end: /\)/
       })
     });
     h.contains = [C];
     const w = o.inherit(f, {
-      keywords: s,
+      keywords: c,
       className: "name",
       starts: o.inherit(R, {
         end: /\}\}/
       })
     }), L = o.inherit(f, {
-      keywords: s,
+      keywords: c,
       className: "name"
     }), y = o.inherit(f, {
       className: "name",
-      keywords: s,
+      keywords: c,
       starts: o.inherit(R, {
         end: /\}\}/
       })
@@ -11059,7 +11059,7 @@ function og() {
   return yr = i, yr;
 }
 var Ar, mc;
-function ig() {
+function sg() {
   if (mc) return Ar;
   mc = 1;
   function t(e) {
@@ -11103,7 +11103,7 @@ function ig() {
         }),
         n
       ]
-    }, s = {
+    }, c = {
       begin: /\{/,
       end: /\}/,
       contains: o.contains
@@ -11154,7 +11154,7 @@ function ig() {
             r,
             i,
             o,
-            s,
+            c,
             n
           ]
         },
@@ -11212,7 +11212,7 @@ function ig() {
   return Ar = t, Ar;
 }
 var Ir, gc;
-function sg() {
+function cg() {
   if (gc) return Ir;
   gc = 1;
   function t(e) {
@@ -11368,7 +11368,7 @@ function sg() {
   return Ir = t, Ir;
 }
 var Dr, Ec;
-function cg() {
+function lg() {
   if (Ec) return Dr;
   Ec = 1;
   function t(e) {
@@ -11425,26 +11425,26 @@ function cg() {
   return Dr = t, Dr;
 }
 var wr, Sc;
-function lg() {
+function _g() {
   if (Sc) return wr;
   Sc = 1;
-  function t(s) {
-    return s ? typeof s == "string" ? s : s.source : null;
+  function t(c) {
+    return c ? typeof c == "string" ? c : c.source : null;
   }
-  function e(s) {
-    return r("(", s, ")*");
+  function e(c) {
+    return r("(", c, ")*");
   }
-  function n(s) {
-    return r("(", s, ")?");
+  function n(c) {
+    return r("(", c, ")?");
   }
-  function r(...s) {
-    return s.map((l) => t(l)).join("");
+  function r(...c) {
+    return c.map((l) => t(l)).join("");
   }
-  function a(...s) {
-    return "(" + s.map((l) => t(l)).join("|") + ")";
+  function a(...c) {
+    return "(" + c.map((l) => t(l)).join("|") + ")";
   }
-  function i(s) {
-    const c = {
+  function i(c) {
+    const s = {
       "builtin-name": [
         "action",
         "bindattr",
@@ -11505,7 +11505,7 @@ function lg() {
     ), b = {
       begin: g,
       lexemes: /[\w.\/]+/
-    }, h = s.inherit(b, {
+    }, h = c.inherit(b, {
       keywords: l
     }), N = {
       begin: /\(/,
@@ -11521,9 +11521,9 @@ function lg() {
         end: /=/,
         starts: {
           contains: [
-            s.NUMBER_MODE,
-            s.QUOTE_STRING_MODE,
-            s.APOS_STRING_MODE,
+            c.NUMBER_MODE,
+            c.QUOTE_STRING_MODE,
+            c.APOS_STRING_MODE,
             h,
             N
           ]
@@ -11544,9 +11544,9 @@ function lg() {
       ]
     }, C = {
       contains: [
-        s.NUMBER_MODE,
-        s.QUOTE_STRING_MODE,
-        s.APOS_STRING_MODE,
+        c.NUMBER_MODE,
+        c.QUOTE_STRING_MODE,
+        c.APOS_STRING_MODE,
         R,
         v,
         h,
@@ -11556,27 +11556,27 @@ function lg() {
       // the property "end" is defined through inheritance when the mode is used. If depends
       // on the surrounding mode, but "endsWithParent" does not work here (i.e. it includes the
       // end-token of the surrounding mode)
-    }, w = s.inherit(b, {
+    }, w = c.inherit(b, {
       className: "name",
-      keywords: c,
-      starts: s.inherit(C, {
+      keywords: s,
+      starts: c.inherit(C, {
         end: /\)/
       })
     });
     N.contains = [w];
-    const L = s.inherit(b, {
-      keywords: c,
+    const L = c.inherit(b, {
+      keywords: s,
       className: "name",
-      starts: s.inherit(C, {
+      starts: c.inherit(C, {
         end: /\}\}/
       })
-    }), y = s.inherit(b, {
-      keywords: c,
+    }), y = c.inherit(b, {
+      keywords: s,
       className: "name"
-    }), G = s.inherit(b, {
+    }), G = c.inherit(b, {
       className: "name",
-      keywords: c,
-      starts: s.inherit(C, {
+      keywords: s,
+      starts: c.inherit(C, {
         end: /\}\}/
       })
     });
@@ -11599,8 +11599,8 @@ function lg() {
           begin: /\\\\(?=\{\{)/,
           skip: !0
         },
-        s.COMMENT(/\{\{!--/, /--\}\}/),
-        s.COMMENT(/\{\{!/, /\}\}/),
+        c.COMMENT(/\{\{!--/, /--\}\}/),
+        c.COMMENT(/\{\{!/, /\}\}/),
         {
           // open raw block "{{{{raw}}}} content not evaluated {{{{/raw}}}}"
           className: "template-tag",
@@ -11663,14 +11663,14 @@ function lg() {
       ]
     };
   }
-  function o(s) {
-    const c = i(s);
-    return c.name = "HTMLbars", s.getLanguage("handlebars") && (c.disableAutodetect = !0), c;
+  function o(c) {
+    const s = i(c);
+    return s.name = "HTMLbars", c.getLanguage("handlebars") && (s.disableAutodetect = !0), s;
   }
   return wr = o, wr;
 }
 var Mr, fc;
-function _g() {
+function dg() {
   if (fc) return Mr;
   fc = 1;
   function t(r) {
@@ -11696,7 +11696,7 @@ function _g() {
           }
         ]
       }
-    }, s = [
+    }, c = [
       o,
       {
         begin: "\\n\\n",
@@ -11725,7 +11725,7 @@ function _g() {
           starts: {
             end: /\b\B/,
             illegal: /\S/,
-            contains: s
+            contains: c
           }
         },
         // request
@@ -11752,7 +11752,7 @@ function _g() {
           starts: {
             end: /\b\B/,
             illegal: /\S/,
-            contains: s
+            contains: c
           }
         },
         // to allow headers to work even without a preamble
@@ -11765,7 +11765,7 @@ function _g() {
   return Mr = n, Mr;
 }
 var xr, bc;
-function dg() {
+function ug() {
   if (bc) return xr;
   bc = 1;
   function t(e) {
@@ -11778,11 +11778,11 @@ function dg() {
     }, i = "[-+]?\\d+(\\.\\d+)?", o = {
       begin: r,
       relevance: 0
-    }, s = {
+    }, c = {
       className: "number",
       begin: i,
       relevance: 0
-    }, c = e.inherit(e.QUOTE_STRING_MODE, { illegal: null }), l = e.COMMENT(
+    }, s = e.inherit(e.QUOTE_STRING_MODE, { illegal: null }), l = e.COMMENT(
       ";",
       "$",
       {
@@ -11812,18 +11812,18 @@ function dg() {
       keywords: a,
       begin: r,
       starts: g
-    }, b = [S, c, d, u, l, E, p, s, _, o];
+    }, b = [S, s, d, u, l, E, p, c, _, o];
     return S.contains = [e.COMMENT("comment", ""), f, g], g.contains = b, p.contains = b, {
       name: "Hy",
       aliases: ["hylang"],
       illegal: /\S/,
-      contains: [e.SHEBANG(), S, c, d, u, l, E, p, s, _]
+      contains: [e.SHEBANG(), S, s, d, u, l, E, p, c, _]
     };
   }
   return xr = t, xr;
 }
 var Lr, Tc;
-function ug() {
+function pg() {
   if (Tc) return Lr;
   Tc = 1;
   function t(e) {
@@ -11883,7 +11883,7 @@ function ug() {
   return Lr = t, Lr;
 }
 var kr, hc;
-function pg() {
+function mg() {
   if (hc) return kr;
   hc = 1;
   function t(i) {
@@ -11893,10 +11893,10 @@ function pg() {
     return n("(?=", i, ")");
   }
   function n(...i) {
-    return i.map((s) => t(s)).join("");
+    return i.map((c) => t(c)).join("");
   }
   function r(...i) {
-    return "(" + i.map((s) => t(s)).join("|") + ")";
+    return "(" + i.map((c) => t(c)).join("|") + ")";
   }
   function a(i) {
     const o = {
@@ -11910,8 +11910,8 @@ function pg() {
           begin: i.NUMBER_RE
         }
       ]
-    }, s = i.COMMENT();
-    s.variants = [
+    }, c = i.COMMENT();
+    c.variants = [
       {
         begin: /;/,
         end: /$/
@@ -11921,7 +11921,7 @@ function pg() {
         end: /$/
       }
     ];
-    const c = {
+    const s = {
       className: "variable",
       variants: [
         {
@@ -11961,9 +11961,9 @@ function pg() {
       begin: /\[/,
       end: /\]/,
       contains: [
-        s,
-        l,
         c,
+        l,
+        s,
         _,
         o,
         "self"
@@ -11986,7 +11986,7 @@ function pg() {
       case_insensitive: !0,
       illegal: /\S/,
       contains: [
-        s,
+        c,
         {
           className: "section",
           begin: /\[+/,
@@ -11998,10 +11998,10 @@ function pg() {
           starts: {
             end: /$/,
             contains: [
-              s,
+              c,
               p,
               l,
-              c,
+              s,
               _,
               o
             ]
@@ -12013,7 +12013,7 @@ function pg() {
   return kr = a, kr;
 }
 var Pr, Rc;
-function mg() {
+function gg() {
   if (Rc) return Pr;
   Rc = 1;
   function t(r) {
@@ -12027,7 +12027,7 @@ function mg() {
       className: "params",
       begin: "\\(",
       end: "\\)"
-    }, i = /(_[a-z_\d]+)?/, o = /([de][+-]?\d+)?/, s = {
+    }, i = /(_[a-z_\d]+)?/, o = /([de][+-]?\d+)?/, c = {
       className: "number",
       variants: [
         {
@@ -12075,14 +12075,14 @@ function mg() {
         r.COMMENT("begin_doc", "end_doc", {
           relevance: 10
         }),
-        s
+        c
       ]
     };
   }
   return Pr = n, Pr;
 }
 var Ur, Cc;
-function gg() {
+function Eg() {
   if (Cc) return Ur;
   Cc = 1;
   function t(e) {
@@ -12198,7 +12198,7 @@ function gg() {
   return Ur = t, Ur;
 }
 var Fr, Nc;
-function Eg() {
+function Sg() {
   if (Nc) return Fr;
   Nc = 1;
   var t = "[0-9](_*[0-9])*", e = `\\.(${t})`, n = "[0-9a-fA-F](_*[0-9a-fA-F])*", r = {
@@ -12225,7 +12225,7 @@ function Eg() {
     relevance: 0
   };
   function a(i) {
-    var o = "[À-ʸa-zA-Z_$][À-ʸa-zA-Z_$0-9]*", s = o + "(<" + o + "(\\s*,\\s*" + o + ")*>)?", c = "false synchronized int abstract float private char boolean var static null if const for true while long strictfp finally protected import native final void enum else break transient catch instanceof byte super volatile case assert short package default double public try this switch continue throws protected public private module requires exports do", l = {
+    var o = "[À-ʸa-zA-Z_$][À-ʸa-zA-Z_$0-9]*", c = o + "(<" + o + "(\\s*,\\s*" + o + ")*>)?", s = "false synchronized int abstract float private char boolean var static null if const for true while long strictfp finally protected import native final void enum else break transient catch instanceof byte super volatile case assert short package default double public try this switch continue throws protected public private module requires exports do", l = {
       className: "meta",
       begin: "@" + o,
       contains: [
@@ -12241,7 +12241,7 @@ function Eg() {
     return {
       name: "Java",
       aliases: ["jsp"],
-      keywords: c,
+      keywords: s,
       illegal: /<\/|#/,
       contains: [
         i.COMMENT(
@@ -12301,7 +12301,7 @@ function Eg() {
           returnBegin: !0,
           excludeEnd: !0,
           end: /[{;=]/,
-          keywords: c,
+          keywords: s,
           contains: [
             { beginKeywords: "record" },
             {
@@ -12314,7 +12314,7 @@ function Eg() {
               className: "params",
               begin: /\(/,
               end: /\)/,
-              keywords: c,
+              keywords: s,
               relevance: 0,
               contains: [
                 i.C_BLOCK_COMMENT_MODE
@@ -12326,11 +12326,11 @@ function Eg() {
         },
         {
           className: "function",
-          begin: "(" + s + "\\s+)+" + i.UNDERSCORE_IDENT_RE + "\\s*\\(",
+          begin: "(" + c + "\\s+)+" + i.UNDERSCORE_IDENT_RE + "\\s*\\(",
           returnBegin: !0,
           end: /[{;=]/,
           excludeEnd: !0,
-          keywords: c,
+          keywords: s,
           contains: [
             {
               begin: i.UNDERSCORE_IDENT_RE + "\\s*\\(",
@@ -12342,7 +12342,7 @@ function Eg() {
               className: "params",
               begin: /\(/,
               end: /\)/,
-              keywords: c,
+              keywords: s,
               relevance: 0,
               contains: [
                 l,
@@ -12364,7 +12364,7 @@ function Eg() {
   return Fr = a, Fr;
 }
 var Br, vc;
-function Sg() {
+function fg() {
   if (vc) return Br;
   vc = 1;
   const t = "[A-Za-z$_][0-9A-Za-z$_]*", e = [
@@ -12489,20 +12489,20 @@ function Sg() {
     "module",
     "global"
     // Node.js
-  ], s = [].concat(
+  ], c = [].concat(
     i,
     o,
     r,
     a
   );
-  function c(d) {
+  function s(d) {
     return d ? typeof d == "string" ? d : d.source : null;
   }
   function l(d) {
     return _("(?=", d, ")");
   }
   function _(...d) {
-    return d.map((E) => c(E)).join("");
+    return d.map((E) => s(E)).join("");
   }
   function p(d) {
     const u = (D, { after: $ }) => {
@@ -12530,7 +12530,7 @@ function Sg() {
       $pattern: t,
       keyword: e,
       literal: n,
-      built_in: s
+      built_in: c
     }, b = "[0-9](_?[0-9])*", h = `\\.(${b})`, N = "0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*", v = {
       className: "number",
       variants: [
@@ -12878,7 +12878,7 @@ function Sg() {
   return Br = p, Br;
 }
 var Gr, Oc;
-function fg() {
+function bg() {
   if (Oc) return Gr;
   Oc = 1;
   function t(e) {
@@ -12931,7 +12931,7 @@ function fg() {
   return Gr = t, Gr;
 }
 var qr, yc;
-function bg() {
+function Tg() {
   if (yc) return qr;
   yc = 1;
   function t(e) {
@@ -12965,15 +12965,15 @@ function bg() {
         })
       ].concat(r),
       illegal: "\\S"
-    }, s = {
+    }, c = {
       begin: "\\[",
       end: "\\]",
       contains: [e.inherit(i)],
       // inherit is a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents
       illegal: "\\S"
     };
-    return a.push(o, s), r.forEach(function(c) {
-      a.push(c);
+    return a.push(o, c), r.forEach(function(s) {
+      a.push(s);
     }), {
       name: "JSON",
       contains: a,
@@ -12984,7 +12984,7 @@ function bg() {
   return qr = t, qr;
 }
 var Yr, Ac;
-function Tg() {
+function hg() {
   if (Ac) return Yr;
   Ac = 1;
   function t(e) {
@@ -13253,10 +13253,10 @@ function Tg() {
       keyword: r,
       literal: a,
       built_in: i
-    }, s = {
+    }, c = {
       keywords: o,
       illegal: /<\//
-    }, c = {
+    }, s = {
       className: "number",
       // supported numeric literals:
       //  * binary literal (e.g. 0x10)
@@ -13300,8 +13300,8 @@ function Tg() {
         { begin: "#", end: "$" }
       ]
     };
-    return s.name = "Julia", s.contains = [
-      c,
+    return c.name = "Julia", c.contains = [
+      s,
       l,
       d,
       u,
@@ -13314,12 +13314,12 @@ function Tg() {
       },
       { begin: /<:/ }
       // relevance booster
-    ], _.contains = s.contains, s;
+    ], _.contains = c.contains, c;
   }
   return Yr = t, Yr;
 }
 var Hr, Ic;
-function hg() {
+function Rg() {
   if (Ic) return Hr;
   Ic = 1;
   function t(e) {
@@ -13349,7 +13349,7 @@ function hg() {
   return Hr = t, Hr;
 }
 var Vr, Dc;
-function Rg() {
+function Cg() {
   if (Dc) return Vr;
   Dc = 1;
   var t = "[0-9](_*[0-9])*", e = `\\.(${t})`, n = "[0-9a-fA-F](_*[0-9a-fA-F])*", r = {
@@ -13380,7 +13380,7 @@ function Rg() {
       keyword: "abstract as val var vararg get set class object open private protected public noinline crossinline dynamic final enum if else do while for when throw try catch finally import package is in fun override companion reified inline lateinit init interface annotation data sealed internal infix operator out by constructor super tailrec where const inner suspend typealias external expect actual",
       built_in: "Byte Short Char Int Long Boolean Float Double Void Unit Nothing",
       literal: "true false null"
-    }, s = {
+    }, c = {
       className: "keyword",
       begin: /\b(break|continue|return|this)\b/,
       starts: {
@@ -13391,7 +13391,7 @@ function Rg() {
           }
         ]
       }
-    }, c = {
+    }, s = {
       className: "symbol",
       begin: i.UNDERSCORE_IDENT_RE + "@"
     }, l = {
@@ -13492,8 +13492,8 @@ function Rg() {
         ),
         i.C_LINE_COMMENT_MODE,
         S,
-        s,
         c,
+        s,
         d,
         u,
         {
@@ -13594,7 +13594,7 @@ function Rg() {
   return Vr = a, Vr;
 }
 var zr, wc;
-function Cg() {
+function Ng() {
   if (wc) return zr;
   wc = 1;
   function t(e) {
@@ -13609,7 +13609,7 @@ function Cg() {
       {
         relevance: 0
       }
-    ), s = {
+    ), c = {
       className: "meta",
       begin: "\\[noprocess\\]",
       starts: {
@@ -13617,7 +13617,7 @@ function Cg() {
         returnEnd: !0,
         contains: [o]
       }
-    }, c = {
+    }, s = {
       className: "meta",
       begin: "\\[/noprocess|" + r
     }, l = {
@@ -13709,8 +13709,8 @@ function Cg() {
             contains: [o]
           }
         },
-        s,
         c,
+        s,
         {
           className: "meta",
           begin: "\\[no_square_brackets",
@@ -13729,8 +13729,8 @@ function Cg() {
                   contains: [o]
                 }
               },
-              s,
-              c
+              c,
+              s
             ].concat(_)
           }
         },
@@ -13751,7 +13751,7 @@ function Cg() {
   return zr = t, zr;
 }
 var $r, Mc;
-function Ng() {
+function vg() {
   if (Mc) return $r;
   Mc = 1;
   function t(r) {
@@ -13808,14 +13808,14 @@ function Ng() {
       // control word
       { begin: /[^a-zA-Z@]?/ }
       // control symbol
-    ], s = [
+    ], c = [
       { begin: /\^{6}[0-9a-f]{6}/ },
       { begin: /\^{5}[0-9a-f]{5}/ },
       { begin: /\^{4}[0-9a-f]{4}/ },
       { begin: /\^{3}[0-9a-f]{3}/ },
       { begin: /\^{2}[0-9a-f]{2}/ },
       { begin: /\^{2}[\u0000-\u007f]/ }
-    ], c = {
+    ], s = {
       className: "keyword",
       begin: /\\/,
       relevance: 0,
@@ -13830,7 +13830,7 @@ function Ng() {
         },
         {
           endsParent: !0,
-          variants: s
+          variants: c
         },
         {
           endsParent: !0,
@@ -13844,7 +13844,7 @@ function Ng() {
       begin: /#+\d?/
     }, _ = {
       // relevance: 1
-      variants: s
+      variants: c
     }, p = {
       className: "built_in",
       relevance: 0,
@@ -13861,7 +13861,7 @@ function Ng() {
         relevance: 0
       }
     ), E = [
-      c,
+      s,
       l,
       _,
       p,
@@ -13975,7 +13975,7 @@ function Ng() {
   return $r = n, $r;
 }
 var Wr, xc;
-function vg() {
+function Og() {
   if (xc) return Wr;
   xc = 1;
   function t(e) {
@@ -14015,7 +14015,7 @@ function vg() {
   return Wr = t, Wr;
 }
 var Kr, Lc;
-function Og() {
+function yg() {
   if (Lc) return Kr;
   Lc = 1;
   function t(e) {
@@ -14062,10 +14062,10 @@ function Og() {
   return Kr = t, Kr;
 }
 var Qr, kc;
-function yg() {
+function Ag() {
   if (kc) return Qr;
   kc = 1;
-  const t = (c) => ({
+  const t = (s) => ({
     IMPORTANT: {
       className: "meta",
       begin: "!important"
@@ -14080,8 +14080,8 @@ function yg() {
       end: /\]/,
       illegal: "$",
       contains: [
-        c.APOS_STRING_MODE,
-        c.QUOTE_STRING_MODE
+        s.APOS_STRING_MODE,
+        s.QUOTE_STRING_MODE
       ]
     }
   }), e = [
@@ -14493,8 +14493,8 @@ function yg() {
     // reverse makes sure longer attributes `font-weight` are matched fully
     // instead of getting false positives on say `font`
   ].reverse(), o = r.concat(a);
-  function s(c) {
-    const l = t(c), _ = o, p = "and or not only", d = "[\\w-]+", u = "(" + d + "|@\\{" + d + "\\})", E = [], S = [], g = function(G) {
+  function c(s) {
+    const l = t(s), _ = o, p = "and or not only", d = "[\\w-]+", u = "(" + d + "|@\\{" + d + "\\})", E = [], S = [], g = function(G) {
       return {
         // Less strings are not multiline (also include '~' for more consistent coloring of "escaped" strings)
         className: "string",
@@ -14519,11 +14519,11 @@ function yg() {
       relevance: 0
     };
     S.push(
-      c.C_LINE_COMMENT_MODE,
-      c.C_BLOCK_COMMENT_MODE,
+      s.C_LINE_COMMENT_MODE,
+      s.C_BLOCK_COMMENT_MODE,
       g("'"),
       g('"'),
-      c.CSS_NUMBER_MODE,
+      s.CSS_NUMBER_MODE,
       // fixme: it does not include dot for numbers like .5em :(
       {
         begin: "(url|data-uri)\\(",
@@ -14633,8 +14633,8 @@ function yg() {
       illegal: `[<='$"]`,
       relevance: 0,
       contains: [
-        c.C_LINE_COMMENT_MODE,
-        c.C_BLOCK_COMMENT_MODE,
+        s.C_LINE_COMMENT_MODE,
+        s.C_BLOCK_COMMENT_MODE,
         v,
         f("keyword", "all\\b"),
         f("variable", "@\\{" + d + "\\}"),
@@ -14674,8 +14674,8 @@ function yg() {
       contains: [L]
     };
     return E.push(
-      c.C_LINE_COMMENT_MODE,
-      c.C_BLOCK_COMMENT_MODE,
+      s.C_LINE_COMMENT_MODE,
+      s.C_BLOCK_COMMENT_MODE,
       C,
       w,
       y,
@@ -14688,10 +14688,10 @@ function yg() {
       contains: E
     };
   }
-  return Qr = s, Qr;
+  return Qr = c, Qr;
 }
 var Xr, Pc;
-function Ag() {
+function Ig() {
   if (Pc) return Xr;
   Pc = 1;
   function t(e) {
@@ -14707,7 +14707,7 @@ function Ag() {
         { begin: "#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?" },
         { begin: "#(c|C)\\(" + a + " +" + a, end: "\\)" }
       ]
-    }, s = e.inherit(e.QUOTE_STRING_MODE, { illegal: null }), c = e.COMMENT(
+    }, c = e.inherit(e.QUOTE_STRING_MODE, { illegal: null }), s = e.COMMENT(
       ";",
       "$",
       {
@@ -14727,9 +14727,9 @@ function Ag() {
     }, u = {
       begin: "\\(",
       end: "\\)",
-      contains: ["self", i, s, o, p]
+      contains: ["self", i, c, o, p]
     }, E = {
-      contains: [o, s, l, _, u, p],
+      contains: [o, c, l, _, u, p],
       variants: [
         {
           begin: "['`]\\(",
@@ -14768,15 +14768,15 @@ function Ag() {
         ]
       },
       f
-    ], f.contains = [E, S, g, i, o, s, c, l, _, d, p], {
+    ], f.contains = [E, S, g, i, o, c, s, l, _, d, p], {
       name: "Lisp",
       illegal: /\S/,
       contains: [
         o,
         e.SHEBANG(),
         i,
-        s,
         c,
+        s,
         E,
         S,
         g,
@@ -14787,7 +14787,7 @@ function Ag() {
   return Xr = t, Xr;
 }
 var Zr, Uc;
-function Ig() {
+function Dg() {
   if (Uc) return Zr;
   Uc = 1;
   function t(e) {
@@ -14898,7 +14898,7 @@ function Ig() {
   return Zr = t, Zr;
 }
 var Jr, Fc;
-function Dg() {
+function wg() {
   if (Fc) return Jr;
   Fc = 1;
   const t = [
@@ -15029,7 +15029,7 @@ function Dg() {
     n,
     r
   );
-  function s(c) {
+  function c(s) {
     const l = [
       "npm",
       "print"
@@ -15075,7 +15075,7 @@ function Dg() {
       keyword: t.concat(p),
       literal: e.concat(_),
       built_in: o.concat(l)
-    }, u = "[A-Za-z$_](?:-[0-9A-Za-z$_]|[0-9A-Za-z$_])*", E = c.inherit(c.TITLE_MODE, {
+    }, u = "[A-Za-z$_](?:-[0-9A-Za-z$_]|[0-9A-Za-z$_])*", E = s.inherit(s.TITLE_MODE, {
       begin: u
     }), S = {
       className: "subst",
@@ -15088,7 +15088,7 @@ function Dg() {
       end: /(?:-[0-9A-Za-z$_]|[0-9A-Za-z$_])*/,
       keywords: d
     }, f = [
-      c.BINARY_NUMBER_MODE,
+      s.BINARY_NUMBER_MODE,
       {
         className: "number",
         begin: "(\\b0[xX][a-fA-F0-9_]+)|(\\b\\d(\\d|_\\d)*(\\.(\\d(\\d|_\\d)*)?)?(_*[eE]([-+]\\d(_\\d|\\d)*)?)?[_a-z]*)",
@@ -15105,18 +15105,18 @@ function Dg() {
           {
             begin: /'''/,
             end: /'''/,
-            contains: [c.BACKSLASH_ESCAPE]
+            contains: [s.BACKSLASH_ESCAPE]
           },
           {
             begin: /'/,
             end: /'/,
-            contains: [c.BACKSLASH_ESCAPE]
+            contains: [s.BACKSLASH_ESCAPE]
           },
           {
             begin: /"""/,
             end: /"""/,
             contains: [
-              c.BACKSLASH_ESCAPE,
+              s.BACKSLASH_ESCAPE,
               S,
               g
             ]
@@ -15125,7 +15125,7 @@ function Dg() {
             begin: /"/,
             end: /"/,
             contains: [
-              c.BACKSLASH_ESCAPE,
+              s.BACKSLASH_ESCAPE,
               S,
               g
             ]
@@ -15145,7 +15145,7 @@ function Dg() {
             end: "//[gim]*",
             contains: [
               S,
-              c.HASH_COMMENT_MODE
+              s.HASH_COMMENT_MODE
             ]
           },
           {
@@ -15190,8 +15190,8 @@ function Dg() {
       keywords: d,
       illegal: /\/\*/,
       contains: f.concat([
-        c.COMMENT("\\/\\*", "\\*\\/"),
-        c.HASH_COMMENT_MODE,
+        s.COMMENT("\\/\\*", "\\*\\/"),
+        s.HASH_COMMENT_MODE,
         h,
         // relevance booster
         {
@@ -15241,10 +15241,10 @@ function Dg() {
       ])
     };
   }
-  return Jr = s, Jr;
+  return Jr = c, Jr;
 }
 var jr, Bc;
-function wg() {
+function Mg() {
   if (Bc) return jr;
   Bc = 1;
   function t(r) {
@@ -15261,11 +15261,11 @@ function wg() {
       className: "operator",
       relevance: 0,
       begin: /=/
-    }, s = {
+    }, c = {
       className: "punctuation",
       relevance: 0,
       begin: /,/
-    }, c = {
+    }, s = {
       className: "number",
       variants: [
         { begin: /0[xX][a-fA-F0-9]+/ },
@@ -15318,18 +15318,18 @@ function wg() {
           ]
         },
         p,
-        s,
+        c,
         o,
         _,
         l,
-        c
+        s
       ]
     };
   }
   return jr = n, jr;
 }
 var ea, Gc;
-function Mg() {
+function xg() {
   if (Gc) return ea;
   Gc = 1;
   function t(e) {
@@ -15410,7 +15410,7 @@ function Mg() {
   return ea = t, ea;
 }
 var ta, qc;
-function xg() {
+function Lg() {
   if (qc) return ta;
   qc = 1;
   function t(e) {
@@ -15473,7 +15473,7 @@ function xg() {
   return ta = t, ta;
 }
 var na, Yc;
-function Lg() {
+function kg() {
   if (Yc) return na;
   Yc = 1;
   function t(e) {
@@ -15514,7 +15514,7 @@ function Lg() {
         $pattern: /[\.\w]+/,
         "meta-keyword": ".PHONY"
       }
-    }, s = {
+    }, c = {
       className: "section",
       begin: /^[^\s]+:/,
       end: /$/,
@@ -15538,14 +15538,14 @@ function Lg() {
         a,
         i,
         o,
-        s
+        c
       ]
     };
   }
   return na = t, na;
 }
 var ra, Hc;
-function kg() {
+function Pg() {
   if (Hc) return ra;
   Hc = 1;
   const t = [
@@ -22181,13 +22181,13 @@ function kg() {
     return r("(", o, ")?");
   }
   function r(...o) {
-    return o.map((c) => e(c)).join("");
+    return o.map((s) => e(s)).join("");
   }
   function a(...o) {
-    return "(" + o.map((c) => e(c)).join("|") + ")";
+    return "(" + o.map((s) => e(s)).join("|") + ")";
   }
   function i(o) {
-    const s = /([2-9]|[1-2]\d|[3][0-5])\^\^/, c = /(\w*\.\w+|\w+\.\w*|\w+)/, l = /(\d*\.\d+|\d+\.\d*|\d+)/, _ = a(r(s, c), l), u = a(/``[+-]?(\d*\.\d+|\d+\.\d*|\d+)/, /`([+-]?(\d*\.\d+|\d+\.\d*|\d+))?/), E = /\*\^[+-]?\d+/, g = {
+    const c = /([2-9]|[1-2]\d|[3][0-5])\^\^/, s = /(\w*\.\w+|\w+\.\w*|\w+)/, l = /(\d*\.\d+|\d+\.\d*|\d+)/, _ = a(r(c, s), l), u = a(/``[+-]?(\d*\.\d+|\d+\.\d*|\d+)/, /`([+-]?(\d*\.\d+|\d+\.\d*|\d+))?/), E = /\*\^[+-]?\d+/, g = {
       className: "number",
       relevance: 0,
       begin: r(
@@ -22269,7 +22269,7 @@ function kg() {
   return ra = i, ra;
 }
 var aa, Vc;
-function Pg() {
+function Ug() {
   if (Vc) return aa;
   Vc = 1;
   function t(e) {
@@ -22350,7 +22350,7 @@ function Pg() {
   return aa = t, aa;
 }
 var oa, zc;
-function Ug() {
+function Fg() {
   if (zc) return oa;
   zc = 1;
   function t(e) {
@@ -22404,7 +22404,7 @@ function Ug() {
   return oa = t, oa;
 }
 var ia, $c;
-function Fg() {
+function Bg() {
   if ($c) return ia;
   $c = 1;
   function t(e) {
@@ -22434,7 +22434,7 @@ function Fg() {
   return ia = t, ia;
 }
 var sa, Wc;
-function Bg() {
+function Gg() {
   if (Wc) return sa;
   Wc = 1;
   function t(e) {
@@ -22452,12 +22452,12 @@ function Bg() {
       relevance: 0
     }), o = e.inherit(e.QUOTE_STRING_MODE, {
       relevance: 0
-    }), s = {
+    }), c = {
       className: "subst",
       begin: "\\\\[abfnrtv]\\|\\\\x[0-9a-fA-F]*\\\\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]",
       relevance: 0
     };
-    return o.contains = o.contains.slice(), o.contains.push(s), {
+    return o.contains = o.contains.slice(), o.contains.push(c), {
       name: "Mercury",
       aliases: [
         "m",
@@ -22519,7 +22519,7 @@ function Bg() {
   return sa = t, sa;
 }
 var ca, Kc;
-function Gg() {
+function qg() {
   if (Kc) return ca;
   Kc = 1;
   function t(e) {
@@ -22599,7 +22599,7 @@ function Gg() {
   return ca = t, ca;
 }
 var la, Qc;
-function qg() {
+function Yg() {
   if (Qc) return la;
   Qc = 1;
   function t(e) {
@@ -22614,7 +22614,7 @@ function qg() {
   return la = t, la;
 }
 var _a, Xc;
-function Yg() {
+function Hg() {
   if (Xc) return _a;
   Xc = 1;
   function t(a) {
@@ -22858,14 +22858,14 @@ function Yg() {
       "x|0",
       "xor",
       "y|0"
-    ], o = /[dualxmsipngr]{0,12}/, s = {
+    ], o = /[dualxmsipngr]{0,12}/, c = {
       $pattern: /[\w.]+/,
       keyword: i.join(" ")
-    }, c = {
+    }, s = {
       className: "subst",
       begin: "[$@]\\{",
       end: "\\}",
-      keywords: s
+      keywords: c
     }, l = {
       begin: /->\{/,
       end: /\}/
@@ -22890,7 +22890,7 @@ function Yg() {
       ]
     }, p = [
       a.BACKSLASH_ESCAPE,
-      c,
+      s,
       _
     ], d = [
       /!/,
@@ -23058,20 +23058,20 @@ function Yg() {
         ]
       }
     ];
-    return c.contains = S, l.contains = S, {
+    return s.contains = S, l.contains = S, {
       name: "Perl",
       aliases: [
         "pl",
         "pm"
       ],
-      keywords: s,
+      keywords: c,
       contains: S
     };
   }
   return _a = r, _a;
 }
 var da, Zc;
-function Hg() {
+function Vg() {
   if (Zc) return da;
   Zc = 1;
   function t(e) {
@@ -23103,7 +23103,7 @@ function Hg() {
   return da = t, da;
 }
 var ua, Jc;
-function Vg() {
+function zg() {
   if (Jc) return ua;
   Jc = 1;
   function t(e) {
@@ -23182,7 +23182,7 @@ function Vg() {
   return ua = t, ua;
 }
 var pa, jc;
-function zg() {
+function $g() {
   if (jc) return pa;
   jc = 1;
   function t(e) {
@@ -23243,7 +23243,7 @@ function zg() {
     a.contains = i;
     const o = e.inherit(e.TITLE_MODE, {
       begin: r
-    }), s = "(\\(.*\\)\\s*)?\\B[-=]>", c = {
+    }), c = "(\\(.*\\)\\s*)?\\B[-=]>", s = {
       className: "params",
       begin: "\\([^\\(]",
       returnBegin: !0,
@@ -23268,12 +23268,12 @@ function zg() {
         {
           className: "function",
           // function: -> =>
-          begin: "^\\s*" + r + "\\s*=\\s*" + s,
+          begin: "^\\s*" + r + "\\s*=\\s*" + c,
           end: "[-=]>",
           returnBegin: !0,
           contains: [
             o,
-            c
+            s
           ]
         },
         {
@@ -23283,10 +23283,10 @@ function zg() {
           contains: [
             {
               className: "function",
-              begin: s,
+              begin: c,
               end: "[-=]>",
               returnBegin: !0,
-              contains: [c]
+              contains: [s]
             }
           ]
         },
@@ -23320,7 +23320,7 @@ function zg() {
   return pa = t, pa;
 }
 var ma, el;
-function $g() {
+function Wg() {
   if (el) return ma;
   el = 1;
   function t(e) {
@@ -23371,7 +23371,7 @@ function $g() {
   return ma = t, ma;
 }
 var ga, tl;
-function Wg() {
+function Kg() {
   if (tl) return ga;
   tl = 1;
   function t(e) {
@@ -23503,7 +23503,7 @@ function Wg() {
   return ga = t, ga;
 }
 var Ea, nl;
-function Kg() {
+function Qg() {
   if (nl) return Ea;
   nl = 1;
   function t(e) {
@@ -23568,7 +23568,7 @@ function Kg() {
   return Ea = t, Ea;
 }
 var Sa, rl;
-function Qg() {
+function Xg() {
   if (rl) return Sa;
   rl = 1;
   function t(e) {
@@ -23621,7 +23621,7 @@ function Qg() {
   return Sa = t, Sa;
 }
 var fa, al;
-function Xg() {
+function Zg() {
   if (al) return fa;
   al = 1;
   function t(e) {
@@ -23654,7 +23654,7 @@ function Xg() {
   return fa = t, fa;
 }
 var ba, ol;
-function Zg() {
+function Jg() {
   if (ol) return ba;
   ol = 1;
   function t(e) {
@@ -23678,11 +23678,11 @@ function Zg() {
       // command parameters
       className: "params",
       begin: "(ARCHIVE|FILE_ATTRIBUTE_ARCHIVE|FILE_ATTRIBUTE_NORMAL|FILE_ATTRIBUTE_OFFLINE|FILE_ATTRIBUTE_READONLY|FILE_ATTRIBUTE_SYSTEM|FILE_ATTRIBUTE_TEMPORARY|HKCR|HKCU|HKDD|HKEY_CLASSES_ROOT|HKEY_CURRENT_CONFIG|HKEY_CURRENT_USER|HKEY_DYN_DATA|HKEY_LOCAL_MACHINE|HKEY_PERFORMANCE_DATA|HKEY_USERS|HKLM|HKPD|HKU|IDABORT|IDCANCEL|IDIGNORE|IDNO|IDOK|IDRETRY|IDYES|MB_ABORTRETRYIGNORE|MB_DEFBUTTON1|MB_DEFBUTTON2|MB_DEFBUTTON3|MB_DEFBUTTON4|MB_ICONEXCLAMATION|MB_ICONINFORMATION|MB_ICONQUESTION|MB_ICONSTOP|MB_OK|MB_OKCANCEL|MB_RETRYCANCEL|MB_RIGHT|MB_RTLREADING|MB_SETFOREGROUND|MB_TOPMOST|MB_USERICON|MB_YESNO|NORMAL|OFFLINE|READONLY|SHCTX|SHELL_CONTEXT|SYSTEM|TEMPORARY)"
-    }, s = {
+    }, c = {
       // !compiler_flags
       className: "keyword",
       begin: /!(addincludedir|addplugindir|appendfile|cd|define|delfile|echo|else|endif|error|execute|finalize|getdllversion|gettlbversion|if|ifdef|ifmacrodef|ifmacrondef|ifndef|include|insertmacro|macro|macroend|makensis|packhdr|searchparse|searchreplace|system|tempfile|undef|verbose|warning)/
-    }, c = {
+    }, s = {
       // $\n, $\r, $\t, $$
       className: "meta",
       begin: /\$(\\[nrt]|\$)/
@@ -23708,7 +23708,7 @@ function Zg() {
       ],
       illegal: /\n/,
       contains: [
-        c,
+        s,
         n,
         r,
         a,
@@ -23738,7 +23738,7 @@ function Zg() {
           end: "$"
         },
         _,
-        s,
+        c,
         r,
         a,
         i,
@@ -23751,7 +23751,7 @@ function Zg() {
   return ba = t, ba;
 }
 var Ta, il;
-function Jg() {
+function jg() {
   if (il) return Ta;
   il = 1;
   function t(e) {
@@ -23839,7 +23839,7 @@ function Jg() {
   return Ta = t, Ta;
 }
 var ha, sl;
-function jg() {
+function eE() {
   if (sl) return ha;
   sl = 1;
   function t(e) {
@@ -23908,7 +23908,7 @@ function jg() {
   return ha = t, ha;
 }
 var Ra, cl;
-function eE() {
+function tE() {
   if (cl) return Ra;
   cl = 1;
   function t(e) {
@@ -23932,7 +23932,7 @@ function eE() {
       },
       begin: "include|use <",
       end: ">"
-    }, s = {
+    }, c = {
       className: "params",
       begin: "\\(",
       end: "\\)",
@@ -23943,7 +23943,7 @@ function eE() {
         n,
         r
       ]
-    }, c = {
+    }, s = {
       begin: "[*!#%]",
       relevance: 0
     }, l = {
@@ -23951,7 +23951,7 @@ function eE() {
       beginKeywords: "module function",
       end: /=|\{/,
       contains: [
-        s,
+        c,
         e.UNDERSCORE_TITLE_MODE
       ]
     };
@@ -23970,7 +23970,7 @@ function eE() {
         o,
         i,
         n,
-        c,
+        s,
         l
       ]
     };
@@ -23978,7 +23978,7 @@ function eE() {
   return Ra = t, Ra;
 }
 var Ca, ll;
-function tE() {
+function nE() {
   if (ll) return Ca;
   ll = 1;
   function t(e) {
@@ -24009,7 +24009,7 @@ function tE() {
     }, o = {
       className: "string",
       begin: "(#\\d+)+"
-    }, s = {
+    }, c = {
       className: "function",
       beginKeywords: "function constructor destructor procedure method",
       end: "[:;]",
@@ -24042,7 +24042,7 @@ function tE() {
         i,
         o,
         e.NUMBER_MODE,
-        s,
+        c,
         {
           className: "class",
           begin: "=\\bclass\\b",
@@ -24054,7 +24054,7 @@ function tE() {
             r,
             a,
             e.C_LINE_COMMENT_MODE,
-            s
+            c
           ]
         }
       ]
@@ -24063,7 +24063,7 @@ function tE() {
   return Ca = t, Ca;
 }
 var Na, _l;
-function nE() {
+function rE() {
   if (_l) return Na;
   _l = 1;
   function t(e) {
@@ -24116,7 +24116,7 @@ function nE() {
   return Na = t, Na;
 }
 var va, dl;
-function rE() {
+function aE() {
   if (dl) return va;
   dl = 1;
   function t(e) {
@@ -24154,7 +24154,7 @@ function rE() {
   return va = t, va;
 }
 var Oa, ul;
-function aE() {
+function oE() {
   if (ul) return Oa;
   ul = 1;
   function t(e) {
@@ -24163,10 +24163,10 @@ function aE() {
       // https://www.postgresql.org/docs/11/static/sql-commands.html
       // SQL commands (starting words)
       "ABORT ALTER ANALYZE BEGIN CALL CHECKPOINT|10 CLOSE CLUSTER COMMENT COMMIT COPY CREATE DEALLOCATE DECLARE DELETE DISCARD DO DROP END EXECUTE EXPLAIN FETCH GRANT IMPORT INSERT LISTEN LOAD LOCK MOVE NOTIFY PREPARE REASSIGN|10 REFRESH REINDEX RELEASE RESET REVOKE ROLLBACK SAVEPOINT SECURITY SELECT SET SHOW START TRUNCATE UNLISTEN|10 UPDATE VACUUM|10 VALUES AGGREGATE COLLATION CONVERSION|10 DATABASE DEFAULT PRIVILEGES DOMAIN TRIGGER EXTENSION FOREIGN WRAPPER|10 TABLE FUNCTION GROUP LANGUAGE LARGE OBJECT MATERIALIZED VIEW OPERATOR CLASS FAMILY POLICY PUBLICATION|10 ROLE RULE SCHEMA SEQUENCE SERVER STATISTICS SUBSCRIPTION SYSTEM TABLESPACE CONFIGURATION DICTIONARY PARSER TEMPLATE TYPE USER MAPPING PREPARED ACCESS METHOD CAST AS TRANSFORM TRANSACTION OWNED TO INTO SESSION AUTHORIZATION INDEX PROCEDURE ASSERTION ALL ANALYSE AND ANY ARRAY ASC ASYMMETRIC|10 BOTH CASE CHECK COLLATE COLUMN CONCURRENTLY|10 CONSTRAINT CROSS DEFERRABLE RANGE DESC DISTINCT ELSE EXCEPT FOR FREEZE|10 FROM FULL HAVING ILIKE IN INITIALLY INNER INTERSECT IS ISNULL JOIN LATERAL LEADING LIKE LIMIT NATURAL NOT NOTNULL NULL OFFSET ON ONLY OR ORDER OUTER OVERLAPS PLACING PRIMARY REFERENCES RETURNING SIMILAR SOME SYMMETRIC TABLESAMPLE THEN TRAILING UNION UNIQUE USING VARIADIC|10 VERBOSE WHEN WHERE WINDOW WITH BY RETURNS INOUT OUT SETOF|10 IF STRICT CURRENT CONTINUE OWNER LOCATION OVER PARTITION WITHIN BETWEEN ESCAPE EXTERNAL INVOKER DEFINER WORK RENAME VERSION CONNECTION CONNECT TABLES TEMP TEMPORARY FUNCTIONS SEQUENCES TYPES SCHEMAS OPTION CASCADE RESTRICT ADD ADMIN EXISTS VALID VALIDATE ENABLE DISABLE REPLICA|10 ALWAYS PASSING COLUMNS PATH REF VALUE OVERRIDING IMMUTABLE STABLE VOLATILE BEFORE AFTER EACH ROW PROCEDURAL ROUTINE NO HANDLER VALIDATOR OPTIONS STORAGE OIDS|10 WITHOUT INHERIT DEPENDS CALLED INPUT LEAKPROOF|10 COST ROWS NOWAIT SEARCH UNTIL ENCRYPTED|10 PASSWORD CONFLICT|10 INSTEAD INHERITS CHARACTERISTICS WRITE CURSOR ALSO STATEMENT SHARE EXCLUSIVE INLINE ISOLATION REPEATABLE READ COMMITTED SERIALIZABLE UNCOMMITTED LOCAL GLOBAL SQL PROCEDURES RECURSIVE SNAPSHOT ROLLUP CUBE TRUSTED|10 INCLUDE FOLLOWING PRECEDING UNBOUNDED RANGE GROUPS UNENCRYPTED|10 SYSID FORMAT DELIMITER HEADER QUOTE ENCODING FILTER OFF FORCE_QUOTE FORCE_NOT_NULL FORCE_NULL COSTS BUFFERS TIMING SUMMARY DISABLE_PAGE_SKIPPING RESTART CYCLE GENERATED IDENTITY DEFERRED IMMEDIATE LEVEL LOGGED UNLOGGED OF NOTHING NONE EXCLUDE ATTRIBUTE USAGE ROUTINES TRUE FALSE NAN INFINITY "
-    ), s = (
+    ), c = (
       // only those not in keywrods already
       "SUPERUSER NOSUPERUSER CREATEDB NOCREATEDB CREATEROLE NOCREATEROLE INHERIT NOINHERIT LOGIN NOLOGIN REPLICATION NOREPLICATION BYPASSRLS NOBYPASSRLS "
-    ), c = "ALIAS BEGIN CONSTANT DECLARE END EXCEPTION RETURN PERFORM|10 RAISE GET DIAGNOSTICS STACKED|10 FOREACH LOOP ELSIF EXIT WHILE REVERSE SLICE DEBUG LOG INFO NOTICE WARNING ASSERT OPEN ", l = (
+    ), s = "ALIAS BEGIN CONSTANT DECLARE END EXCEPTION RETURN PERFORM|10 RAISE GET DIAGNOSTICS STACKED|10 FOREACH LOOP ELSIF EXIT WHILE REVERSE SLICE DEBUG LOG INFO NOTICE WARNING ASSERT OPEN ", l = (
       // https://www.postgresql.org/docs/11/static/datatype.html
       "BIGINT INT8 BIGSERIAL SERIAL8 BIT VARYING VARBIT BOOLEAN BOOL BOX BYTEA CHARACTER CHAR VARCHAR CIDR CIRCLE DATE DOUBLE PRECISION FLOAT8 FLOAT INET INTEGER INT INT4 INTERVAL JSON JSONB LINE LSEG|10 MACADDR MACADDR8 MONEY NUMERIC DEC DECIMAL PATH POINT POLYGON REAL FLOAT4 SMALLINT INT2 SMALLSERIAL|10 SERIAL2|10 SERIAL|10 SERIAL4|10 TEXT TIME ZONE TIMETZ|10 TIMESTAMP TIMESTAMPTZ|10 TSQUERY|10 TSVECTOR|10 TXID_SNAPSHOT|10 UUID XML NATIONAL NCHAR INT4RANGE|10 INT8RANGE|10 NUMRANGE|10 TSRANGE|10 TSTZRANGE|10 DATERANGE|10 ANYELEMENT ANYARRAY ANYNONARRAY ANYENUM ANYRANGE CSTRING INTERNAL RECORD PG_DDL_COMMAND VOID UNKNOWN OPAQUE REFCURSOR NAME OID REGPROC|10 REGPROCEDURE|10 REGOPER|10 REGOPERATOR|10 REGCLASS|10 REGTYPE|10 REGROLE|10 REGNAMESPACE|10 REGCONFIG|10 REGDICTIONARY|10 "
     ), _ = l.trim().split(" ").map(function(g) {
@@ -24185,7 +24185,7 @@ function aE() {
       ],
       case_insensitive: !0,
       keywords: {
-        keyword: o + c + s,
+        keyword: o + s + c,
         built_in: p + d + u
       },
       // Forbid some cunstructs from other languages to improve autodetect. In fact
@@ -24521,7 +24521,7 @@ function aE() {
   return Oa = t, Oa;
 }
 var ya, pl;
-function oE() {
+function iE() {
   if (pl) return ya;
   pl = 1;
   function t(e) {
@@ -24548,11 +24548,11 @@ function oE() {
     }), o = e.inherit(e.QUOTE_STRING_MODE, {
       illegal: null,
       contains: e.QUOTE_STRING_MODE.contains.concat(a)
-    }), s = e.END_SAME_AS_BEGIN({
+    }), c = e.END_SAME_AS_BEGIN({
       begin: /<<<[ \t]*(\w+)\n/,
       end: /[ \t]*(\w+)\b/,
       contains: e.QUOTE_STRING_MODE.contains.concat(a)
-    }), c = {
+    }), s = {
       className: "string",
       contains: [e.BACKSLASH_ESCAPE, r],
       variants: [
@@ -24566,7 +24566,7 @@ function oE() {
         }),
         o,
         i,
-        s
+        c
       ]
     }, l = {
       className: "number",
@@ -24659,7 +24659,7 @@ function oE() {
                 "self",
                 n,
                 e.C_BLOCK_COMMENT_MODE,
-                c,
+                s,
                 l
               ]
             }
@@ -24692,7 +24692,7 @@ function oE() {
           end: ";",
           contains: [e.UNDERSCORE_TITLE_MODE]
         },
-        c,
+        s,
         l
       ]
     };
@@ -24700,7 +24700,7 @@ function oE() {
   return ya = t, ya;
 }
 var Aa, ml;
-function iE() {
+function sE() {
   if (ml) return Aa;
   ml = 1;
   function t(e) {
@@ -24750,7 +24750,7 @@ function iE() {
   return Aa = t, Aa;
 }
 var Ia, gl;
-function sE() {
+function cE() {
   if (gl) return Ia;
   gl = 1;
   function t(e) {
@@ -24766,7 +24766,7 @@ function sE() {
   return Ia = t, Ia;
 }
 var Da, El;
-function cE() {
+function lE() {
   if (El) return Da;
   El = 1;
   function t(e) {
@@ -24794,7 +24794,7 @@ function cE() {
       className: "type",
       begin: "\\b_?[A-Z][\\w]*",
       relevance: 0
-    }, s = {
+    }, c = {
       begin: e.IDENT_RE + "'",
       relevance: 0
     };
@@ -24806,7 +24806,7 @@ function cE() {
         r,
         a,
         i,
-        s,
+        c,
         {
           className: "number",
           begin: "(-?)(\\b0[xX][a-fA-F0-9]+|\\b0[bB][01]+|(\\b\\d+(_\\d+)?(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",
@@ -24820,7 +24820,7 @@ function cE() {
   return Da = t, Da;
 }
 var wa, Sl;
-function lE() {
+function _E() {
   if (Sl) return wa;
   Sl = 1;
   function t(e) {
@@ -24845,10 +24845,10 @@ function lE() {
       // "echo" relevance has been set to 0 to avoid auto-detect conflicts with shell transcripts
       built_in: "ac asnp cat cd CFS chdir clc clear clhy cli clp cls clv cnsn compare copy cp cpi cpp curl cvpa dbp del diff dir dnsn ebp echo|0 epal epcsv epsn erase etsn exsn fc fhx fl ft fw gal gbp gc gcb gci gcm gcs gdr gerr ghy gi gin gjb gl gm gmo gp gps gpv group gsn gsnp gsv gtz gu gv gwmi h history icm iex ihy ii ipal ipcsv ipmo ipsn irm ise iwmi iwr kill lp ls man md measure mi mount move mp mv nal ndr ni nmo npssc nsn nv ogv oh popd ps pushd pwd r rbp rcjb rcsn rd rdr ren ri rjb rm rmdir rmo rni rnp rp rsn rsnp rujb rv rvpa rwmi sajb sal saps sasv sbp sc scb select set shcm si sl sleep sls sort sp spjb spps spsv start stz sujb sv swmi tee trcm type wget where wjb write"
       // TODO: 'validate[A-Z]+' can't work in keywords
-    }, o = /\w[\w\d]*((-)[\w\d]+)*/, s = {
+    }, o = /\w[\w\d]*((-)[\w\d]+)*/, c = {
       begin: "`[\\s\\S]",
       relevance: 0
-    }, c = {
+    }, s = {
       className: "variable",
       variants: [
         {
@@ -24878,8 +24878,8 @@ function lE() {
         }
       ],
       contains: [
-        s,
         c,
+        s,
         {
           className: "variable",
           begin: /\$[A-z]/,
@@ -24964,7 +24964,7 @@ function lE() {
           end: /\)/,
           className: "params",
           relevance: 0,
-          contains: [c]
+          contains: [s]
         }
         // CMDLETS
       ]
@@ -25024,13 +25024,13 @@ function lE() {
       // STATIC_MEMBER,
       N,
       u,
-      s,
+      c,
       e.NUMBER_MODE,
       _,
       p,
       // PS_NEW_OBJECT_TYPE,
       E,
-      c,
+      s,
       l,
       h
     ], R = {
@@ -25074,7 +25074,7 @@ function lE() {
   return wa = t, wa;
 }
 var Ma, fl;
-function _E() {
+function dE() {
   if (fl) return Ma;
   fl = 1;
   function t(e) {
@@ -25098,7 +25098,7 @@ function _E() {
   return Ma = t, Ma;
 }
 var xa, bl;
-function dE() {
+function uE() {
   if (bl) return xa;
   bl = 1;
   function t(e) {
@@ -25139,7 +25139,7 @@ function dE() {
   return xa = t, xa;
 }
 var La, Tl;
-function uE() {
+function pE() {
   if (Tl) return La;
   Tl = 1;
   function t(e) {
@@ -25169,12 +25169,12 @@ function uE() {
       begin: /%/,
       end: /$/,
       contains: [e.PHRASAL_WORDS_MODE]
-    }, s = {
+    }, c = {
       className: "string",
       begin: /`/,
       end: /`/,
       contains: [e.BACKSLASH_ESCAPE]
-    }, c = {
+    }, s = {
       className: "string",
       // 0'a etc.
       begin: /0'(\\'|.)/
@@ -25195,8 +25195,8 @@ function uE() {
       e.C_BLOCK_COMMENT_MODE,
       e.QUOTE_STRING_MODE,
       e.APOS_STRING_MODE,
-      s,
       c,
+      s,
       l,
       e.C_NUMBER_MODE
     ];
@@ -25213,11 +25213,11 @@ function uE() {
   return La = t, La;
 }
 var ka, hl;
-function pE() {
+function mE() {
   if (hl) return ka;
   hl = 1;
   function t(e) {
-    var n = "[ \\t\\f]*", r = "[ \\t\\f]+", a = n + "[:=]" + n, i = r, o = "(" + a + "|" + i + ")", s = "([^\\\\\\W:= \\t\\f\\n]|\\\\.)+", c = "([^\\\\:= \\t\\f\\n]|\\\\.)+", l = {
+    var n = "[ \\t\\f]*", r = "[ \\t\\f]+", a = n + "[:=]" + n, i = r, o = "(" + a + "|" + i + ")", c = "([^\\\\\\W:= \\t\\f\\n]|\\\\.)+", s = "([^\\\\:= \\t\\f\\n]|\\\\.)+", l = {
       // skip DELIM
       end: o,
       relevance: 0,
@@ -25243,13 +25243,13 @@ function pE() {
         {
           returnBegin: !0,
           variants: [
-            { begin: s + a, relevance: 1 },
-            { begin: s + i, relevance: 0 }
+            { begin: c + a, relevance: 1 },
+            { begin: c + i, relevance: 0 }
           ],
           contains: [
             {
               className: "attr",
-              begin: s,
+              begin: c,
               endsParent: !0,
               relevance: 0
             }
@@ -25258,13 +25258,13 @@ function pE() {
         },
         // case of key containing non-alphanumeric chars => relevance = 0
         {
-          begin: c + o,
+          begin: s + o,
           returnBegin: !0,
           relevance: 0,
           contains: [
             {
               className: "meta",
-              begin: c,
+              begin: s,
               endsParent: !0,
               relevance: 0
             }
@@ -25275,7 +25275,7 @@ function pE() {
         {
           className: "attr",
           relevance: 0,
-          begin: c + n + "$"
+          begin: s + n + "$"
         }
       ]
     };
@@ -25283,7 +25283,7 @@ function pE() {
   return ka = t, ka;
 }
 var Pa, Rl;
-function mE() {
+function gE() {
   if (Rl) return Pa;
   Rl = 1;
   function t(e) {
@@ -25329,7 +25329,7 @@ function mE() {
   return Pa = t, Pa;
 }
 var Ua, Cl;
-function gE() {
+function EE() {
   if (Cl) return Ua;
   Cl = 1;
   function t(e) {
@@ -25351,7 +25351,7 @@ function gE() {
     }), o = {
       className: "variable",
       begin: "\\$" + a
-    }, s = {
+    }, c = {
       className: "string",
       contains: [
         e.BACKSLASH_ESCAPE,
@@ -25374,7 +25374,7 @@ function gE() {
       contains: [
         r,
         o,
-        s,
+        c,
         {
           beginKeywords: "class",
           end: "\\{|;",
@@ -25410,7 +25410,7 @@ function gE() {
               keywords: n,
               relevance: 0,
               contains: [
-                s,
+                c,
                 r,
                 {
                   begin: "[a-zA-Z_]+\\s*=>",
@@ -25440,7 +25440,7 @@ function gE() {
   return Ua = t, Ua;
 }
 var Fa, Nl;
-function EE() {
+function SE() {
   if (Nl) return Fa;
   Nl = 1;
   function t(e) {
@@ -25504,7 +25504,7 @@ function EE() {
   return Fa = t, Fa;
 }
 var Ba, vl;
-function SE() {
+function fE() {
   if (vl) return Ba;
   vl = 1;
   function t(a) {
@@ -25894,7 +25894,7 @@ function SE() {
   return Ba = r, Ba;
 }
 var Ga, Ol;
-function fE() {
+function bE() {
   if (Ol) return Ga;
   Ol = 1;
   function t(e) {
@@ -25927,7 +25927,7 @@ function fE() {
   return Ga = t, Ga;
 }
 var qa, yl;
-function bE() {
+function TE() {
   if (yl) return qa;
   yl = 1;
   function t(e) {
@@ -25954,7 +25954,7 @@ function bE() {
   return qa = t, qa;
 }
 var Ya, Al;
-function TE() {
+function hE() {
   if (Al) return Ya;
   Al = 1;
   function t(r) {
@@ -25976,7 +25976,7 @@ function TE() {
         end: "(:|=|;|,|//|/\\*|$)",
         returnEnd: !0
       }
-    }, s = {
+    }, c = {
       className: "keyword",
       begin: "\\bsignal\\b",
       starts: {
@@ -25984,7 +25984,7 @@ function TE() {
         end: "(\\(|:|=|;|,|//|/\\*|$)",
         returnEnd: !0
       }
-    }, c = {
+    }, s = {
       className: "attribute",
       begin: "\\bid\\s*:",
       starts: {
@@ -26077,7 +26077,7 @@ function TE() {
           ],
           relevance: 0
         },
-        s,
+        c,
         o,
         {
           className: "function",
@@ -26107,7 +26107,7 @@ function TE() {
           begin: "\\." + r.IDENT_RE,
           relevance: 0
         },
-        c,
+        s,
         l,
         _
       ],
@@ -26117,7 +26117,7 @@ function TE() {
   return Ya = n, Ya;
 }
 var Ha, Il;
-function hE() {
+function RE() {
   if (Il) return Ha;
   Il = 1;
   function t(a) {
@@ -26147,18 +26147,18 @@ function hE() {
       compilerExtensions: [
         // allow beforeMatch to act as a "qualifier" for the match
         // the full match begin must be [beforeMatch][begin]
-        (s, c) => {
-          if (!s.beforeMatch) return;
-          if (s.starts) throw new Error("beforeMatch cannot be used with starts");
-          const l = Object.assign({}, s);
-          Object.keys(s).forEach((_) => {
-            delete s[_];
-          }), s.begin = n(l.beforeMatch, e(l.begin)), s.starts = {
+        (c, s) => {
+          if (!c.beforeMatch) return;
+          if (c.starts) throw new Error("beforeMatch cannot be used with starts");
+          const l = Object.assign({}, c);
+          Object.keys(c).forEach((_) => {
+            delete c[_];
+          }), c.begin = n(l.beforeMatch, e(l.begin)), c.starts = {
             relevance: 0,
             contains: [
               Object.assign(l, { endsParent: !0 })
             ]
-          }, s.relevance = 0, delete l.beforeMatch;
+          }, c.relevance = 0, delete l.beforeMatch;
         }
       ],
       contains: [
@@ -26279,7 +26279,7 @@ function hE() {
   return Ha = r, Ha;
 }
 var Va, Dl;
-function RE() {
+function CE() {
   if (Dl) return Va;
   Dl = 1;
   function t(e) {
@@ -26290,7 +26290,7 @@ function RE() {
         }).join("");
       }).join("|");
     }
-    const r = "~?[a-z$_][0-9a-zA-Z$_]*", a = "`?[A-Z$_][0-9a-zA-Z$_]*", i = "'?[a-z$_][0-9a-z$_]*", o = "\\s*:\\s*[a-z$_][0-9a-z$_]*(\\(\\s*(" + i + "\\s*(," + i + "\\s*)*)?\\))?", s = r + "(" + o + "){0,2}", c = "(" + n([
+    const r = "~?[a-z$_][0-9a-zA-Z$_]*", a = "`?[A-Z$_][0-9a-zA-Z$_]*", i = "'?[a-z$_][0-9a-z$_]*", o = "\\s*:\\s*[a-z$_][0-9a-z$_]*(\\(\\s*(" + i + "\\s*(," + i + "\\s*)*)?\\))?", c = r + "(" + o + "){0,2}", s = "(" + n([
       "||",
       "++",
       "**",
@@ -26300,7 +26300,7 @@ function RE() {
       "*.",
       "/.",
       "..."
-    ]) + "|\\|>|&&|==|===)", l = "\\s+" + c + "\\s+", _ = {
+    ]) + "|\\|>|&&|==|===)", l = "\\s+" + s + "\\s+", _ = {
       keyword: "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
       built_in: "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
       literal: "true false"
@@ -26318,7 +26318,7 @@ function RE() {
     }, u = {
       className: "operator",
       relevance: 0,
-      begin: c
+      begin: s
     }, E = [
       {
         className: "identifier",
@@ -26391,7 +26391,7 @@ function RE() {
                   begin: r
                 },
                 {
-                  begin: s
+                  begin: c
                 },
                 {
                   begin: /\(\s*\)/
@@ -26550,7 +26550,7 @@ function RE() {
   return Va = t, Va;
 }
 var za, wl;
-function CE() {
+function NE() {
   if (wl) return za;
   wl = 1;
   function t(e) {
@@ -26569,7 +26569,7 @@ function CE() {
   return za = t, za;
 }
 var $a, Ml;
-function NE() {
+function vE() {
   if (Ml) return $a;
   Ml = 1;
   function t(e) {
@@ -26641,11 +26641,11 @@ function NE() {
   return $a = t, $a;
 }
 var Wa, xl;
-function vE() {
+function OE() {
   if (xl) return Wa;
   xl = 1;
   function t(e) {
-    const n = "foreach do while for if from to step else on-error and or not in", r = "global local beep delay put len typeof pick log time set find environment terminal error execute parse resolve toarray tobool toid toip toip6 tonum tostr totime", a = "add remove enable disable set get print export edit find run debug error info warning", i = "true false yes no nothing nil null", o = "traffic-flow traffic-generator firewall scheduler aaa accounting address-list address align area bandwidth-server bfd bgp bridge client clock community config connection console customer default dhcp-client dhcp-server discovery dns e-mail ethernet filter firmware gps graphing group hardware health hotspot identity igmp-proxy incoming instance interface ip ipsec ipv6 irq l2tp-server lcd ldp logging mac-server mac-winbox mangle manual mirror mme mpls nat nd neighbor network note ntp ospf ospf-v3 ovpn-server page peer pim ping policy pool port ppp pppoe-client pptp-server prefix profile proposal proxy queue radius resource rip ripng route routing screen script security-profiles server service service-port settings shares smb sms sniffer snmp snooper socks sstp-server system tool tracking type upgrade upnp user-manager users user vlan secret vrrp watchdog web-access wireless pptp pppoe lan wan layer7-protocol lease simple raw", s = {
+    const n = "foreach do while for if from to step else on-error and or not in", r = "global local beep delay put len typeof pick log time set find environment terminal error execute parse resolve toarray tobool toid toip toip6 tonum tostr totime", a = "add remove enable disable set get print export edit find run debug error info warning", i = "true false yes no nothing nil null", o = "traffic-flow traffic-generator firewall scheduler aaa accounting address-list address align area bandwidth-server bfd bgp bridge client clock community config connection console customer default dhcp-client dhcp-server discovery dns e-mail ethernet filter firmware gps graphing group hardware health hotspot identity igmp-proxy incoming instance interface ip ipsec ipv6 irq l2tp-server lcd ldp logging mac-server mac-winbox mangle manual mirror mme mpls nat nd neighbor network note ntp ospf ospf-v3 ovpn-server page peer pim ping policy pool port ppp pppoe-client pptp-server prefix profile proposal proxy queue radius resource rip ripng route routing screen script security-profiles server service service-port settings shares smb sms sniffer snmp snooper socks sstp-server system tool tracking type upgrade upnp user-manager users user vlan secret vrrp watchdog web-access wireless pptp pppoe lan wan layer7-protocol lease simple raw", c = {
       className: "variable",
       variants: [
         {
@@ -26655,13 +26655,13 @@ function vE() {
           begin: /\$\{(.*?)\}/
         }
       ]
-    }, c = {
+    }, s = {
       className: "string",
       begin: /"/,
       end: /"/,
       contains: [
         e.BACKSLASH_ESCAPE,
-        s,
+        c,
         {
           className: "variable",
           begin: /\$\(/,
@@ -26708,9 +26708,9 @@ function vE() {
           illegal: /./
         },
         e.COMMENT("^#", "$"),
-        c,
-        l,
         s,
+        l,
+        c,
         // attribute=value
         {
           // > is to avoid matches with => in other grammars
@@ -26727,9 +26727,9 @@ function vE() {
               endsWithParent: !0,
               relevance: 0,
               contains: [
-                c,
-                l,
                 s,
+                l,
+                c,
                 {
                   className: "literal",
                   begin: "\\b(" + i.split(" ").join("|") + ")\\b"
@@ -26792,7 +26792,7 @@ function vE() {
   return Wa = t, Wa;
 }
 var Ka, Ll;
-function OE() {
+function yE() {
   if (Ll) return Ka;
   Ll = 1;
   function t(e) {
@@ -26829,7 +26829,7 @@ function OE() {
   return Ka = t, Ka;
 }
 var Qa, kl;
-function yE() {
+function AE() {
   if (kl) return Qa;
   kl = 1;
   function t(e) {
@@ -26864,7 +26864,7 @@ function yE() {
   return Qa = t, Qa;
 }
 var Xa, Pl;
-function AE() {
+function IE() {
   if (Pl) return Xa;
   Pl = 1;
   function t(e) {
@@ -26980,7 +26980,7 @@ function AE() {
   return Xa = t, Xa;
 }
 var Za, Ul;
-function IE() {
+function DE() {
   if (Ul) return Za;
   Ul = 1;
   function t(e) {
@@ -27038,7 +27038,7 @@ function IE() {
   return Za = t, Za;
 }
 var Ja, Fl;
-function DE() {
+function wE() {
   if (Fl) return Ja;
   Fl = 1;
   function t(e) {
@@ -27093,11 +27093,11 @@ function DE() {
       className: "type",
       begin: "\\b[A-Z][A-Za-z0-9_]*",
       relevance: 0
-    }, s = {
+    }, c = {
       className: "title",
       begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
       relevance: 0
-    }, c = {
+    }, s = {
       className: "class",
       beginKeywords: "class object trait type",
       end: /[:={\[\n;]/,
@@ -27126,14 +27126,14 @@ function DE() {
           relevance: 0,
           contains: [o]
         },
-        s
+        c
       ]
     }, l = {
       className: "function",
       beginKeywords: "def",
       end: /[:={\[(\n;]/,
       excludeEnd: !0,
-      contains: [s]
+      contains: [c]
     };
     return {
       name: "Scala",
@@ -27148,7 +27148,7 @@ function DE() {
         i,
         o,
         l,
-        c,
+        s,
         e.C_NUMBER_MODE,
         n
       ]
@@ -27157,7 +27157,7 @@ function DE() {
   return Ja = t, Ja;
 }
 var ja, Bl;
-function wE() {
+function ME() {
   if (Bl) return ja;
   Bl = 1;
   function t(e) {
@@ -27167,7 +27167,7 @@ function wE() {
     }, o = {
       className: "literal",
       begin: "(#t|#f|#\\\\" + n + "|#\\\\.)"
-    }, s = {
+    }, c = {
       className: "number",
       variants: [
         {
@@ -27188,7 +27188,7 @@ function wE() {
           begin: "#x[0-9a-f]+(/[0-9a-f]+)?"
         }
       ]
-    }, c = e.QUOTE_STRING_MODE, l = [
+    }, s = e.QUOTE_STRING_MODE, l = [
       e.COMMENT(
         ";",
         "$",
@@ -27222,8 +27222,8 @@ function wE() {
           contains: [
             "self",
             o,
-            c,
             s,
+            c,
             _,
             p
           ]
@@ -27274,8 +27274,8 @@ function wE() {
     };
     return d.contains = [
       o,
-      s,
       c,
+      s,
       _,
       p,
       u,
@@ -27285,8 +27285,8 @@ function wE() {
       illegal: /\S/,
       contains: [
         e.SHEBANG(),
-        s,
         c,
+        s,
         p,
         u,
         g
@@ -27296,7 +27296,7 @@ function wE() {
   return ja = t, ja;
 }
 var eo, Gl;
-function ME() {
+function xE() {
   if (Gl) return eo;
   Gl = 1;
   function t(e) {
@@ -27360,10 +27360,10 @@ function ME() {
   return eo = t, eo;
 }
 var to, ql;
-function xE() {
+function LE() {
   if (ql) return to;
   ql = 1;
-  const t = (s) => ({
+  const t = (c) => ({
     IMPORTANT: {
       className: "meta",
       begin: "!important"
@@ -27378,8 +27378,8 @@ function xE() {
       end: /\]/,
       illegal: "$",
       contains: [
-        s.APOS_STRING_MODE,
-        s.QUOTE_STRING_MODE
+        c.APOS_STRING_MODE,
+        c.QUOTE_STRING_MODE
       ]
     }
   }), e = [
@@ -27791,8 +27791,8 @@ function xE() {
     // reverse makes sure longer attributes `font-weight` are matched fully
     // instead of getting false positives on say `font`
   ].reverse();
-  function o(s) {
-    const c = t(s), l = a, _ = r, p = "@[a-z-]+", d = "and or not only", E = {
+  function o(c) {
+    const s = t(c), l = a, _ = r, p = "@[a-z-]+", d = "and or not only", E = {
       className: "variable",
       begin: "(\\$" + "[a-zA-Z-][a-zA-Z0-9_-]*" + ")\\b"
     };
@@ -27801,8 +27801,8 @@ function xE() {
       case_insensitive: !0,
       illegal: "[=/|']",
       contains: [
-        s.C_LINE_COMMENT_MODE,
-        s.C_BLOCK_COMMENT_MODE,
+        c.C_LINE_COMMENT_MODE,
+        c.C_BLOCK_COMMENT_MODE,
         {
           className: "selector-id",
           begin: "#[A-Za-z0-9_-]+",
@@ -27813,7 +27813,7 @@ function xE() {
           begin: "\\.[A-Za-z0-9_-]+",
           relevance: 0
         },
-        c.ATTRIBUTE_SELECTOR_MODE,
+        s.ATTRIBUTE_SELECTOR_MODE,
         {
           className: "selector-tag",
           begin: "\\b(" + e.join("|") + ")\\b",
@@ -27833,7 +27833,7 @@ function xE() {
           // pseudo-selector params
           begin: /\(/,
           end: /\)/,
-          contains: [s.CSS_NUMBER_MODE]
+          contains: [c.CSS_NUMBER_MODE]
         },
         {
           className: "attribute",
@@ -27847,11 +27847,11 @@ function xE() {
           end: ";",
           contains: [
             E,
-            c.HEXCOLOR,
-            s.CSS_NUMBER_MODE,
-            s.QUOTE_STRING_MODE,
-            s.APOS_STRING_MODE,
-            c.IMPORTANT
+            s.HEXCOLOR,
+            c.CSS_NUMBER_MODE,
+            c.QUOTE_STRING_MODE,
+            c.APOS_STRING_MODE,
+            s.IMPORTANT
           ]
         },
         // matching these here allows us to treat them more like regular CSS
@@ -27881,10 +27881,10 @@ function xE() {
               className: "attribute"
             },
             E,
-            s.QUOTE_STRING_MODE,
-            s.APOS_STRING_MODE,
-            c.HEXCOLOR,
-            s.CSS_NUMBER_MODE
+            c.QUOTE_STRING_MODE,
+            c.APOS_STRING_MODE,
+            s.HEXCOLOR,
+            c.CSS_NUMBER_MODE
           ]
         }
       ]
@@ -27893,7 +27893,7 @@ function xE() {
   return to = o, to;
 }
 var no, Yl;
-function LE() {
+function kE() {
   if (Yl) return no;
   Yl = 1;
   function t(e) {
@@ -27918,7 +27918,7 @@ function LE() {
   return no = t, no;
 }
 var ro, Hl;
-function kE() {
+function PE() {
   if (Hl) return ro;
   Hl = 1;
   function t(e) {
@@ -28049,7 +28049,7 @@ function kE() {
   return ro = t, ro;
 }
 var ao, Vl;
-function PE() {
+function UE() {
   if (Vl) return ao;
   Vl = 1;
   function t(e) {
@@ -28108,7 +28108,7 @@ function PE() {
   return ao = t, ao;
 }
 var oo, zl;
-function UE() {
+function FE() {
   if (zl) return oo;
   zl = 1;
   function t(e) {
@@ -28184,7 +28184,7 @@ function UE() {
   return oo = t, oo;
 }
 var io, $l;
-function FE() {
+function BE() {
   if ($l) return io;
   $l = 1;
   function t(e) {
@@ -28262,7 +28262,7 @@ function FE() {
   return io = t, io;
 }
 var so, Wl;
-function BE() {
+function GE() {
   if (Wl) return so;
   Wl = 1;
   function t(e) {
@@ -28317,7 +28317,7 @@ function BE() {
   return so = t, so;
 }
 var co, Kl;
-function GE() {
+function qE() {
   if (Kl) return co;
   Kl = 1;
   function t(a) {
@@ -28341,11 +28341,11 @@ function GE() {
           ]
         }
       ]
-    }, s = {
+    }, c = {
       begin: /"/,
       end: /"/,
       contains: [{ begin: /""/ }]
-    }, c = [
+    }, s = [
       "true",
       "false",
       // Not sure it's correct to call NULL literal, and clauses like IS [NOT] NULL look strange that way.
@@ -28905,7 +28905,7 @@ function GE() {
       keywords: {
         $pattern: /\b[\w\.]+/,
         keyword: v(f, { when: (R) => R.length < 3 }),
-        literal: c,
+        literal: s,
         type: _,
         built_in: E
       },
@@ -28915,7 +28915,7 @@ function GE() {
           keywords: {
             $pattern: /[\w\.]+/,
             keyword: f.concat(S),
-            literal: c,
+            literal: s,
             type: _
           }
         },
@@ -28926,7 +28926,7 @@ function GE() {
         N,
         b,
         o,
-        s,
+        c,
         a.C_NUMBER_MODE,
         a.C_BLOCK_COMMENT_MODE,
         i,
@@ -28937,7 +28937,7 @@ function GE() {
   return co = r, co;
 }
 var lo, Ql;
-function qE() {
+function YE() {
   if (Ql) return lo;
   Ql = 1;
   function t(e) {
@@ -29342,7 +29342,7 @@ function qE() {
       "wiener_lpdf",
       "wishart_lpdf",
       "wishart_rng"
-    ], s = [
+    ], c = [
       "bernoulli",
       "bernoulli_logit",
       "beta",
@@ -29448,7 +29448,7 @@ function qE() {
         },
         {
           begin: "~\\s*(" + e.IDENT_RE + ")\\s*\\(",
-          keywords: s
+          keywords: c
         },
         {
           className: "number",
@@ -29474,7 +29474,7 @@ function qE() {
   return lo = t, lo;
 }
 var _o, Xl;
-function YE() {
+function HE() {
   if (Xl) return _o;
   Xl = 1;
   function t(e) {
@@ -29525,7 +29525,7 @@ function YE() {
   return _o = t, _o;
 }
 var uo, Zl;
-function HE() {
+function VE() {
   if (Zl) return uo;
   Zl = 1;
   function t(e) {
@@ -29584,10 +29584,10 @@ function HE() {
   return uo = t, uo;
 }
 var po, Jl;
-function VE() {
+function zE() {
   if (Jl) return po;
   Jl = 1;
-  const t = (s) => ({
+  const t = (c) => ({
     IMPORTANT: {
       className: "meta",
       begin: "!important"
@@ -29602,8 +29602,8 @@ function VE() {
       end: /\]/,
       illegal: "$",
       contains: [
-        s.APOS_STRING_MODE,
-        s.QUOTE_STRING_MODE
+        c.APOS_STRING_MODE,
+        c.QUOTE_STRING_MODE
       ]
     }
   }), e = [
@@ -30015,10 +30015,10 @@ function VE() {
     // reverse makes sure longer attributes `font-weight` are matched fully
     // instead of getting false positives on say `font`
   ].reverse();
-  function o(s) {
-    const c = t(s), l = "and or not only", _ = {
+  function o(c) {
+    const s = t(c), l = "and or not only", _ = {
       className: "variable",
-      begin: "\\$" + s.IDENT_RE
+      begin: "\\$" + c.IDENT_RE
     }, p = [
       "charset",
       "css",
@@ -30064,13 +30064,13 @@ function VE() {
       ].join("|") + ")",
       contains: [
         // strings
-        s.QUOTE_STRING_MODE,
-        s.APOS_STRING_MODE,
+        c.QUOTE_STRING_MODE,
+        c.APOS_STRING_MODE,
         // comments
-        s.C_LINE_COMMENT_MODE,
-        s.C_BLOCK_COMMENT_MODE,
+        c.C_LINE_COMMENT_MODE,
+        c.C_BLOCK_COMMENT_MODE,
         // hex colors
-        c.HEXCOLOR,
+        s.HEXCOLOR,
         // class tag
         {
           begin: "\\.[a-zA-Z][a-zA-Z0-9_-]*" + d,
@@ -30095,7 +30095,7 @@ function VE() {
           className: "selector-pseudo",
           begin: "&?::(" + a.join("|") + ")" + d
         },
-        c.ATTRIBUTE_SELECTOR_MODE,
+        s.ATTRIBUTE_SELECTOR_MODE,
         {
           className: "keyword",
           begin: /@media/,
@@ -30106,7 +30106,7 @@ function VE() {
               keyword: l,
               attribute: n.join(" ")
             },
-            contains: [s.CSS_NUMBER_MODE]
+            contains: [c.CSS_NUMBER_MODE]
           }
         },
         // @ keywords
@@ -30117,7 +30117,7 @@ function VE() {
         // variables
         _,
         // dimension
-        s.CSS_NUMBER_MODE,
+        c.CSS_NUMBER_MODE,
         // functions
         //  - only from beginning of line + whitespace
         {
@@ -30135,11 +30135,11 @@ function VE() {
               begin: /\(/,
               end: /\)/,
               contains: [
-                c.HEXCOLOR,
+                s.HEXCOLOR,
                 _,
-                s.APOS_STRING_MODE,
-                s.CSS_NUMBER_MODE,
-                s.QUOTE_STRING_MODE
+                c.APOS_STRING_MODE,
+                c.CSS_NUMBER_MODE,
+                c.QUOTE_STRING_MODE
               ]
             }
           ]
@@ -30154,13 +30154,13 @@ function VE() {
             // value container
             end: /;|$/,
             contains: [
-              c.HEXCOLOR,
+              s.HEXCOLOR,
               _,
-              s.APOS_STRING_MODE,
-              s.QUOTE_STRING_MODE,
-              s.CSS_NUMBER_MODE,
-              s.C_BLOCK_COMMENT_MODE,
-              c.IMPORTANT
+              c.APOS_STRING_MODE,
+              c.QUOTE_STRING_MODE,
+              c.CSS_NUMBER_MODE,
+              c.C_BLOCK_COMMENT_MODE,
+              s.IMPORTANT
             ],
             illegal: /\./,
             relevance: 0
@@ -30172,7 +30172,7 @@ function VE() {
   return po = o, po;
 }
 var mo, jl;
-function zE() {
+function $E() {
   if (jl) return mo;
   jl = 1;
   function t(e) {
@@ -30219,7 +30219,7 @@ function zE() {
   return mo = t, mo;
 }
 var go, e_;
-function $E() {
+function WE() {
   if (e_) return go;
   e_ = 1;
   function t(C) {
@@ -30246,10 +30246,10 @@ function $E() {
   ].map(a), o = [
     "init",
     "self"
-  ].map(a), s = [
+  ].map(a), c = [
     "Any",
     "Self"
-  ], c = [
+  ], s = [
     // strings below will be fed into the regular `keywords` engine while regex
     // will result in additional modes being created to scan for those keywords to
     // avoid conflicts with other rules
@@ -30546,9 +30546,9 @@ function $E() {
       excludeBegin: !0
     }, P = {
       // Consume .keyword to prevent highlighting properties and methods as keywords.
-      match: n(/\./, r(...c)),
+      match: n(/\./, r(...s)),
       relevance: 0
-    }, q = c.filter((B) => typeof B == "string").concat(["_|0"]), I = c.filter((B) => typeof B != "string").concat(s).map(a), k = {
+    }, q = s.filter((B) => typeof B == "string").concat(["_|0"]), I = s.filter((B) => typeof B != "string").concat(c).map(a), k = {
       variants: [
         {
           className: "keyword",
@@ -30665,7 +30665,7 @@ function $E() {
         se("##"),
         se("###")
       ]
-    }, lt = {
+    }, _t = {
       match: n(/`/, b, /`/)
     }, Ct = {
       className: "variable",
@@ -30674,7 +30674,7 @@ function $E() {
       className: "variable",
       match: `\\$${f}+`
     }, Qe = [
-      lt,
+      _t,
       Ct,
       Nt
     ], Ye = {
@@ -30694,7 +30694,7 @@ function $E() {
           }
         ]
       }
-    }, _t = {
+    }, dt = {
       className: "keyword",
       match: n(/@/, r(...N))
     }, xe = {
@@ -30702,7 +30702,7 @@ function $E() {
       match: n(/@/, b)
     }, He = [
       Ye,
-      _t,
+      dt,
       xe
     ], he = {
       match: e(/\b[A-Z]/),
@@ -30748,7 +30748,7 @@ function $E() {
       ]
     };
     he.contains.push(H);
-    const dt = {
+    const ut = {
       match: n(b, /\s*:/),
       keywords: "_|0",
       relevance: 0
@@ -30759,7 +30759,7 @@ function $E() {
       keywords: D,
       contains: [
         "self",
-        dt,
+        ut,
         ...y,
         ...$,
         ..._e,
@@ -30775,7 +30775,7 @@ function $E() {
       contains: [
         {
           className: "title",
-          match: r(lt.match, b, S),
+          match: r(_t.match, b, S),
           // Required to make sure the opening < of the generic parameter clause
           // isn't parsed as a second title.
           endsParent: !0,
@@ -30949,7 +30949,7 @@ function $E() {
   return go = R, go;
 }
 var Eo, t_;
-function WE() {
+function KE() {
   if (t_) return Eo;
   t_ = 1;
   function t(e) {
@@ -30993,7 +30993,7 @@ function WE() {
   return Eo = t, Eo;
 }
 var So, n_;
-function KE() {
+function QE() {
   if (n_) return So;
   n_ = 1;
   function t(e) {
@@ -31026,15 +31026,15 @@ function KE() {
         e.BACKSLASH_ESCAPE,
         i
       ]
-    }, s = e.inherit(o, {
+    }, c = e.inherit(o, {
       variants: [
         { begin: /'/, end: /'/ },
         { begin: /"/, end: /"/ },
         { begin: /[^\s,{}[\]]+/ }
       ]
-    }), c = "[0-9]{4}(-[0-9][0-9]){0,2}", l = "([Tt \\t][0-9][0-9]?(:[0-9][0-9]){2})?", _ = "(\\.[0-9]*)?", p = "([ \\t])*(Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?", d = {
+    }), s = "[0-9]{4}(-[0-9][0-9]){0,2}", l = "([Tt \\t][0-9][0-9]?(:[0-9][0-9]){2})?", _ = "(\\.[0-9]*)?", p = "([ \\t])*(Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?", d = {
       className: "number",
-      begin: "\\b" + c + l + _ + p + "\\b"
+      begin: "\\b" + s + l + _ + p + "\\b"
     }, u = {
       end: ",",
       endsWithParent: !0,
@@ -31133,7 +31133,7 @@ function KE() {
       S,
       o
     ], f = [...g];
-    return f.pop(), f.push(s), u.contains = f, {
+    return f.pop(), f.push(c), u.contains = f, {
       name: "YAML",
       case_insensitive: !0,
       aliases: ["yml"],
@@ -31143,7 +31143,7 @@ function KE() {
   return So = t, So;
 }
 var fo, r_;
-function QE() {
+function XE() {
   if (r_) return fo;
   r_ = 1;
   function t(e) {
@@ -31194,7 +31194,7 @@ function QE() {
   return fo = t, fo;
 }
 var bo, a_;
-function XE() {
+function ZE() {
   if (a_) return bo;
   a_ = 1;
   function t(a) {
@@ -31268,7 +31268,7 @@ function XE() {
   return bo = r, bo;
 }
 var To, o_;
-function ZE() {
+function JE() {
   if (o_) return To;
   o_ = 1;
   function t(e) {
@@ -31312,7 +31312,7 @@ function ZE() {
   return To = t, To;
 }
 var ho, i_;
-function JE() {
+function jE() {
   if (i_) return ho;
   i_ = 1;
   function t(e) {
@@ -31395,7 +31395,7 @@ function JE() {
   return ho = t, ho;
 }
 var Ro, s_;
-function jE() {
+function eS() {
   if (s_) return Ro;
   s_ = 1;
   function t(e) {
@@ -31417,8 +31417,8 @@ function jE() {
         a
       ]
     }, o = "apply autoescape block deprecated do embed extends filter flush for from if import include macro sandbox set use verbatim with";
-    return o = o + " " + o.split(" ").map(function(s) {
-      return "end" + s;
+    return o = o + " " + o.split(" ").map(function(c) {
+      return "end" + c;
     }).join(" "), {
       name: "Twig",
       aliases: ["craftcms"],
@@ -31455,7 +31455,7 @@ function jE() {
   return Ro = t, Ro;
 }
 var Co, c_;
-function eS() {
+function tS() {
   if (c_) return Co;
   c_ = 1;
   const t = "[A-Za-z$_][0-9A-Za-z$_]*", e = [
@@ -31580,20 +31580,20 @@ function eS() {
     "module",
     "global"
     // Node.js
-  ], s = [].concat(
+  ], c = [].concat(
     i,
     o,
     r,
     a
   );
-  function c(u) {
+  function s(u) {
     return u ? typeof u == "string" ? u : u.source : null;
   }
   function l(u) {
     return _("(?=", u, ")");
   }
   function _(...u) {
-    return u.map((S) => c(S)).join("");
+    return u.map((S) => s(S)).join("");
   }
   function p(u) {
     const E = ($, { after: te }) => {
@@ -31621,7 +31621,7 @@ function eS() {
       $pattern: t,
       keyword: e,
       literal: n,
-      built_in: s
+      built_in: c
     }, h = "[0-9](_?[0-9])*", N = `\\.(${h})`, v = "0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*", R = {
       className: "number",
       variants: [
@@ -32005,7 +32005,7 @@ function eS() {
       $pattern: t,
       keyword: e.concat(h),
       literal: n,
-      built_in: s.concat(b)
+      built_in: c.concat(b)
     }, v = {
       className: "meta",
       begin: "@" + E
@@ -32029,7 +32029,7 @@ function eS() {
   return Co = d, Co;
 }
 var No, l_;
-function tS() {
+function nS() {
   if (l_) return No;
   l_ = 1;
   function t(e) {
@@ -32075,7 +32075,7 @@ function tS() {
   return No = t, No;
 }
 var vo, __;
-function nS() {
+function rS() {
   if (__) return vo;
   __ = 1;
   function t(a) {
@@ -32102,12 +32102,12 @@ function nS() {
           begin: /""/
         }
       ]
-    }, s = /\d{1,2}\/\d{1,2}\/\d{4}/, c = /\d{4}-\d{1,2}-\d{1,2}/, l = /(\d|1[012])(:\d+){0,2} *(AM|PM)/, _ = /\d{1,2}(:\d{1,2}){1,2}/, p = {
+    }, c = /\d{1,2}\/\d{1,2}\/\d{4}/, s = /\d{4}-\d{1,2}-\d{1,2}/, l = /(\d|1[012])(:\d+){0,2} *(AM|PM)/, _ = /\d{1,2}(:\d{1,2}){1,2}/, p = {
       className: "literal",
       variants: [
         {
           // #YYYY-MM-DD# (ISO-Date) or #M/D/YYYY# (US-Date)
-          begin: e(/# */, n(c, s), / *#/)
+          begin: e(/# */, n(s, c), / *#/)
         },
         {
           // #H:mm[:ss]# (24h Time)
@@ -32121,7 +32121,7 @@ function nS() {
           // date plus time
           begin: e(
             /# */,
-            n(c, s),
+            n(s, c),
             / +/,
             n(l, _),
             / *#/
@@ -32219,7 +32219,7 @@ function nS() {
   return vo = r, vo;
 }
 var Oo, d_;
-function rS() {
+function aS() {
   if (d_) return Oo;
   d_ = 1;
   function t(a) {
@@ -32241,7 +32241,7 @@ function rS() {
       "scriptenginebuildversion",
       "scriptengineminorversion",
       "scriptenginemajorversion"
-    ], s = {
+    ], c = {
       begin: e(n(...i), "\\s*\\("),
       // relevance 0 because this is acting as a beginKeywords really
       relevance: 0,
@@ -32260,7 +32260,7 @@ function rS() {
       },
       illegal: "//",
       contains: [
-        s,
+        c,
         a.inherit(a.QUOTE_STRING_MODE, { contains: [{ begin: '""' }] }),
         a.COMMENT(
           /'/,
@@ -32276,7 +32276,7 @@ function rS() {
   return Oo = r, Oo;
 }
 var yo, u_;
-function aS() {
+function oS() {
   if (u_) return yo;
   u_ = 1;
   function t(e) {
@@ -32295,7 +32295,7 @@ function aS() {
   return yo = t, yo;
 }
 var Ao, p_;
-function oS() {
+function iS() {
   if (p_) return Ao;
   p_ = 1;
   function t(e) {
@@ -32361,11 +32361,11 @@ function oS() {
   return Ao = t, Ao;
 }
 var Io, m_;
-function iS() {
+function sS() {
   if (m_) return Io;
   m_ = 1;
   function t(e) {
-    const n = "\\d(_|\\d)*", r = "[eE][-+]?" + n, a = n + "(\\." + n + ")?(" + r + ")?", i = "\\w+", s = "\\b(" + (n + "#" + i + "(\\." + i + ")?#(" + r + ")?") + "|" + a + ")";
+    const n = "\\d(_|\\d)*", r = "[eE][-+]?" + n, a = n + "(\\." + n + ")?(" + r + ")?", i = "\\w+", c = "\\b(" + (n + "#" + i + "(\\." + i + ")?#(" + r + ")?") + "|" + a + ")";
     return {
       name: "VHDL",
       case_insensitive: !0,
@@ -32383,7 +32383,7 @@ function iS() {
         e.QUOTE_STRING_MODE,
         {
           className: "number",
-          begin: s,
+          begin: c,
           relevance: 0
         },
         {
@@ -32402,7 +32402,7 @@ function iS() {
   return Io = t, Io;
 }
 var Do, g_;
-function sS() {
+function cS() {
   if (g_) return Do;
   g_ = 1;
   function t(e) {
@@ -32471,7 +32471,7 @@ function sS() {
   return Do = t, Do;
 }
 var wo, E_;
-function cS() {
+function lS() {
   if (E_) return wo;
   E_ = 1;
   function t(e) {
@@ -32572,7 +32572,7 @@ function cS() {
   return wo = t, wo;
 }
 var Mo, S_;
-function lS() {
+function _S() {
   if (S_) return Mo;
   S_ = 1;
   function t(e) {
@@ -32595,10 +32595,10 @@ function lS() {
       className: "string",
       begin: "<<",
       end: ">>"
-    }, s = {
+    }, c = {
       className: "number",
       begin: "[0-9]+#[0-9A-Z_]+(\\.[0-9-A-Z_]+)?#?([Ee][+-]?[0-9]+)?"
-    }, c = {
+    }, s = {
       beginKeywords: "import",
       end: "$",
       keywords: r,
@@ -32628,8 +32628,8 @@ function lS() {
         i,
         o,
         l,
-        c,
         s,
+        c,
         e.NUMBER_MODE
       ]
     };
@@ -32637,7 +32637,7 @@ function lS() {
   return Mo = t, Mo;
 }
 var xo, f_;
-function _S() {
+function dS() {
   if (f_) return xo;
   f_ = 1;
   function t(e) {
@@ -32780,7 +32780,7 @@ function _S() {
   return xo = t, xo;
 }
 var Lo, b_;
-function dS() {
+function uS() {
   if (b_) return Lo;
   b_ = 1;
   function t(e) {
@@ -32889,2329 +32889,2329 @@ function dS() {
   }
   return Lo = t, Lo;
 }
-var T = Pp;
-T.registerLanguage("1c", Up());
-T.registerLanguage("abnf", Fp());
-T.registerLanguage("accesslog", Bp());
-T.registerLanguage("actionscript", Gp());
-T.registerLanguage("ada", qp());
-T.registerLanguage("angelscript", Yp());
-T.registerLanguage("apache", Hp());
-T.registerLanguage("applescript", Vp());
-T.registerLanguage("arcade", zp());
-T.registerLanguage("arduino", $p());
-T.registerLanguage("armasm", Wp());
-T.registerLanguage("xml", Kp());
-T.registerLanguage("asciidoc", Qp());
-T.registerLanguage("aspectj", Xp());
-T.registerLanguage("autohotkey", Zp());
-T.registerLanguage("autoit", Jp());
-T.registerLanguage("avrasm", jp());
-T.registerLanguage("awk", em());
-T.registerLanguage("axapta", tm());
-T.registerLanguage("bash", nm());
-T.registerLanguage("basic", rm());
-T.registerLanguage("bnf", am());
-T.registerLanguage("brainfuck", om());
-T.registerLanguage("c-like", im());
-T.registerLanguage("c", sm());
-T.registerLanguage("cal", cm());
-T.registerLanguage("capnproto", lm());
-T.registerLanguage("ceylon", _m());
-T.registerLanguage("clean", dm());
-T.registerLanguage("clojure", um());
-T.registerLanguage("clojure-repl", pm());
-T.registerLanguage("cmake", mm());
-T.registerLanguage("coffeescript", gm());
-T.registerLanguage("coq", Em());
-T.registerLanguage("cos", Sm());
-T.registerLanguage("cpp", fm());
-T.registerLanguage("crmsh", bm());
-T.registerLanguage("crystal", Tm());
-T.registerLanguage("csharp", hm());
-T.registerLanguage("csp", Rm());
-T.registerLanguage("css", Cm());
-T.registerLanguage("d", Nm());
-T.registerLanguage("markdown", vm());
-T.registerLanguage("dart", Om());
-T.registerLanguage("delphi", ym());
-T.registerLanguage("diff", Am());
-T.registerLanguage("django", Im());
-T.registerLanguage("dns", Dm());
-T.registerLanguage("dockerfile", wm());
-T.registerLanguage("dos", Mm());
-T.registerLanguage("dsconfig", xm());
-T.registerLanguage("dts", Lm());
-T.registerLanguage("dust", km());
-T.registerLanguage("ebnf", Pm());
-T.registerLanguage("elixir", Um());
-T.registerLanguage("elm", Fm());
-T.registerLanguage("ruby", Bm());
-T.registerLanguage("erb", Gm());
-T.registerLanguage("erlang-repl", qm());
-T.registerLanguage("erlang", Ym());
-T.registerLanguage("excel", Hm());
-T.registerLanguage("fix", Vm());
-T.registerLanguage("flix", zm());
-T.registerLanguage("fortran", $m());
-T.registerLanguage("fsharp", Wm());
-T.registerLanguage("gams", Km());
-T.registerLanguage("gauss", Qm());
-T.registerLanguage("gcode", Xm());
-T.registerLanguage("gherkin", Zm());
-T.registerLanguage("glsl", Jm());
-T.registerLanguage("gml", jm());
-T.registerLanguage("go", eg());
-T.registerLanguage("golo", tg());
-T.registerLanguage("gradle", ng());
-T.registerLanguage("groovy", rg());
-T.registerLanguage("haml", ag());
-T.registerLanguage("handlebars", og());
-T.registerLanguage("haskell", ig());
-T.registerLanguage("haxe", sg());
-T.registerLanguage("hsp", cg());
-T.registerLanguage("htmlbars", lg());
-T.registerLanguage("http", _g());
-T.registerLanguage("hy", dg());
-T.registerLanguage("inform7", ug());
-T.registerLanguage("ini", pg());
-T.registerLanguage("irpf90", mg());
-T.registerLanguage("isbl", gg());
-T.registerLanguage("java", Eg());
-T.registerLanguage("javascript", Sg());
-T.registerLanguage("jboss-cli", fg());
-T.registerLanguage("json", bg());
-T.registerLanguage("julia", Tg());
-T.registerLanguage("julia-repl", hg());
-T.registerLanguage("kotlin", Rg());
-T.registerLanguage("lasso", Cg());
-T.registerLanguage("latex", Ng());
-T.registerLanguage("ldif", vg());
-T.registerLanguage("leaf", Og());
-T.registerLanguage("less", yg());
-T.registerLanguage("lisp", Ag());
-T.registerLanguage("livecodeserver", Ig());
-T.registerLanguage("livescript", Dg());
-T.registerLanguage("llvm", wg());
-T.registerLanguage("lsl", Mg());
-T.registerLanguage("lua", xg());
-T.registerLanguage("makefile", Lg());
-T.registerLanguage("mathematica", kg());
-T.registerLanguage("matlab", Pg());
-T.registerLanguage("maxima", Ug());
-T.registerLanguage("mel", Fg());
-T.registerLanguage("mercury", Bg());
-T.registerLanguage("mipsasm", Gg());
-T.registerLanguage("mizar", qg());
-T.registerLanguage("perl", Yg());
-T.registerLanguage("mojolicious", Hg());
-T.registerLanguage("monkey", Vg());
-T.registerLanguage("moonscript", zg());
-T.registerLanguage("n1ql", $g());
-T.registerLanguage("nginx", Wg());
-T.registerLanguage("nim", Kg());
-T.registerLanguage("nix", Qg());
-T.registerLanguage("node-repl", Xg());
-T.registerLanguage("nsis", Zg());
-T.registerLanguage("objectivec", Jg());
-T.registerLanguage("ocaml", jg());
-T.registerLanguage("openscad", eE());
-T.registerLanguage("oxygene", tE());
-T.registerLanguage("parser3", nE());
-T.registerLanguage("pf", rE());
-T.registerLanguage("pgsql", aE());
-T.registerLanguage("php", oE());
-T.registerLanguage("php-template", iE());
-T.registerLanguage("plaintext", sE());
-T.registerLanguage("pony", cE());
-T.registerLanguage("powershell", lE());
-T.registerLanguage("processing", _E());
-T.registerLanguage("profile", dE());
-T.registerLanguage("prolog", uE());
-T.registerLanguage("properties", pE());
-T.registerLanguage("protobuf", mE());
-T.registerLanguage("puppet", gE());
-T.registerLanguage("purebasic", EE());
-T.registerLanguage("python", SE());
-T.registerLanguage("python-repl", fE());
-T.registerLanguage("q", bE());
-T.registerLanguage("qml", TE());
-T.registerLanguage("r", hE());
-T.registerLanguage("reasonml", RE());
-T.registerLanguage("rib", CE());
-T.registerLanguage("roboconf", NE());
-T.registerLanguage("routeros", vE());
-T.registerLanguage("rsl", OE());
-T.registerLanguage("ruleslanguage", yE());
-T.registerLanguage("rust", AE());
-T.registerLanguage("sas", IE());
-T.registerLanguage("scala", DE());
-T.registerLanguage("scheme", wE());
-T.registerLanguage("scilab", ME());
-T.registerLanguage("scss", xE());
-T.registerLanguage("shell", LE());
-T.registerLanguage("smali", kE());
-T.registerLanguage("smalltalk", PE());
-T.registerLanguage("sml", UE());
-T.registerLanguage("sqf", FE());
-T.registerLanguage("sql_more", BE());
-T.registerLanguage("sql", GE());
-T.registerLanguage("stan", qE());
-T.registerLanguage("stata", YE());
-T.registerLanguage("step21", HE());
-T.registerLanguage("stylus", VE());
-T.registerLanguage("subunit", zE());
-T.registerLanguage("swift", $E());
-T.registerLanguage("taggerscript", WE());
-T.registerLanguage("yaml", KE());
-T.registerLanguage("tap", QE());
-T.registerLanguage("tcl", XE());
-T.registerLanguage("thrift", ZE());
-T.registerLanguage("tp", JE());
-T.registerLanguage("twig", jE());
-T.registerLanguage("typescript", eS());
-T.registerLanguage("vala", tS());
-T.registerLanguage("vbnet", nS());
-T.registerLanguage("vbscript", rS());
-T.registerLanguage("vbscript-html", aS());
-T.registerLanguage("verilog", oS());
-T.registerLanguage("vhdl", iS());
-T.registerLanguage("vim", sS());
-T.registerLanguage("x86asm", cS());
-T.registerLanguage("xl", lS());
-T.registerLanguage("xquery", _S());
-T.registerLanguage("zephir", dS());
+var T = Up;
+T.registerLanguage("1c", Fp());
+T.registerLanguage("abnf", Bp());
+T.registerLanguage("accesslog", Gp());
+T.registerLanguage("actionscript", qp());
+T.registerLanguage("ada", Yp());
+T.registerLanguage("angelscript", Hp());
+T.registerLanguage("apache", Vp());
+T.registerLanguage("applescript", zp());
+T.registerLanguage("arcade", $p());
+T.registerLanguage("arduino", Wp());
+T.registerLanguage("armasm", Kp());
+T.registerLanguage("xml", Qp());
+T.registerLanguage("asciidoc", Xp());
+T.registerLanguage("aspectj", Zp());
+T.registerLanguage("autohotkey", Jp());
+T.registerLanguage("autoit", jp());
+T.registerLanguage("avrasm", em());
+T.registerLanguage("awk", tm());
+T.registerLanguage("axapta", nm());
+T.registerLanguage("bash", rm());
+T.registerLanguage("basic", am());
+T.registerLanguage("bnf", om());
+T.registerLanguage("brainfuck", im());
+T.registerLanguage("c-like", sm());
+T.registerLanguage("c", cm());
+T.registerLanguage("cal", lm());
+T.registerLanguage("capnproto", _m());
+T.registerLanguage("ceylon", dm());
+T.registerLanguage("clean", um());
+T.registerLanguage("clojure", pm());
+T.registerLanguage("clojure-repl", mm());
+T.registerLanguage("cmake", gm());
+T.registerLanguage("coffeescript", Em());
+T.registerLanguage("coq", Sm());
+T.registerLanguage("cos", fm());
+T.registerLanguage("cpp", bm());
+T.registerLanguage("crmsh", Tm());
+T.registerLanguage("crystal", hm());
+T.registerLanguage("csharp", Rm());
+T.registerLanguage("csp", Cm());
+T.registerLanguage("css", Nm());
+T.registerLanguage("d", vm());
+T.registerLanguage("markdown", Om());
+T.registerLanguage("dart", ym());
+T.registerLanguage("delphi", Am());
+T.registerLanguage("diff", Im());
+T.registerLanguage("django", Dm());
+T.registerLanguage("dns", wm());
+T.registerLanguage("dockerfile", Mm());
+T.registerLanguage("dos", xm());
+T.registerLanguage("dsconfig", Lm());
+T.registerLanguage("dts", km());
+T.registerLanguage("dust", Pm());
+T.registerLanguage("ebnf", Um());
+T.registerLanguage("elixir", Fm());
+T.registerLanguage("elm", Bm());
+T.registerLanguage("ruby", Gm());
+T.registerLanguage("erb", qm());
+T.registerLanguage("erlang-repl", Ym());
+T.registerLanguage("erlang", Hm());
+T.registerLanguage("excel", Vm());
+T.registerLanguage("fix", zm());
+T.registerLanguage("flix", $m());
+T.registerLanguage("fortran", Wm());
+T.registerLanguage("fsharp", Km());
+T.registerLanguage("gams", Qm());
+T.registerLanguage("gauss", Xm());
+T.registerLanguage("gcode", Zm());
+T.registerLanguage("gherkin", Jm());
+T.registerLanguage("glsl", jm());
+T.registerLanguage("gml", eg());
+T.registerLanguage("go", tg());
+T.registerLanguage("golo", ng());
+T.registerLanguage("gradle", rg());
+T.registerLanguage("groovy", ag());
+T.registerLanguage("haml", og());
+T.registerLanguage("handlebars", ig());
+T.registerLanguage("haskell", sg());
+T.registerLanguage("haxe", cg());
+T.registerLanguage("hsp", lg());
+T.registerLanguage("htmlbars", _g());
+T.registerLanguage("http", dg());
+T.registerLanguage("hy", ug());
+T.registerLanguage("inform7", pg());
+T.registerLanguage("ini", mg());
+T.registerLanguage("irpf90", gg());
+T.registerLanguage("isbl", Eg());
+T.registerLanguage("java", Sg());
+T.registerLanguage("javascript", fg());
+T.registerLanguage("jboss-cli", bg());
+T.registerLanguage("json", Tg());
+T.registerLanguage("julia", hg());
+T.registerLanguage("julia-repl", Rg());
+T.registerLanguage("kotlin", Cg());
+T.registerLanguage("lasso", Ng());
+T.registerLanguage("latex", vg());
+T.registerLanguage("ldif", Og());
+T.registerLanguage("leaf", yg());
+T.registerLanguage("less", Ag());
+T.registerLanguage("lisp", Ig());
+T.registerLanguage("livecodeserver", Dg());
+T.registerLanguage("livescript", wg());
+T.registerLanguage("llvm", Mg());
+T.registerLanguage("lsl", xg());
+T.registerLanguage("lua", Lg());
+T.registerLanguage("makefile", kg());
+T.registerLanguage("mathematica", Pg());
+T.registerLanguage("matlab", Ug());
+T.registerLanguage("maxima", Fg());
+T.registerLanguage("mel", Bg());
+T.registerLanguage("mercury", Gg());
+T.registerLanguage("mipsasm", qg());
+T.registerLanguage("mizar", Yg());
+T.registerLanguage("perl", Hg());
+T.registerLanguage("mojolicious", Vg());
+T.registerLanguage("monkey", zg());
+T.registerLanguage("moonscript", $g());
+T.registerLanguage("n1ql", Wg());
+T.registerLanguage("nginx", Kg());
+T.registerLanguage("nim", Qg());
+T.registerLanguage("nix", Xg());
+T.registerLanguage("node-repl", Zg());
+T.registerLanguage("nsis", Jg());
+T.registerLanguage("objectivec", jg());
+T.registerLanguage("ocaml", eE());
+T.registerLanguage("openscad", tE());
+T.registerLanguage("oxygene", nE());
+T.registerLanguage("parser3", rE());
+T.registerLanguage("pf", aE());
+T.registerLanguage("pgsql", oE());
+T.registerLanguage("php", iE());
+T.registerLanguage("php-template", sE());
+T.registerLanguage("plaintext", cE());
+T.registerLanguage("pony", lE());
+T.registerLanguage("powershell", _E());
+T.registerLanguage("processing", dE());
+T.registerLanguage("profile", uE());
+T.registerLanguage("prolog", pE());
+T.registerLanguage("properties", mE());
+T.registerLanguage("protobuf", gE());
+T.registerLanguage("puppet", EE());
+T.registerLanguage("purebasic", SE());
+T.registerLanguage("python", fE());
+T.registerLanguage("python-repl", bE());
+T.registerLanguage("q", TE());
+T.registerLanguage("qml", hE());
+T.registerLanguage("r", RE());
+T.registerLanguage("reasonml", CE());
+T.registerLanguage("rib", NE());
+T.registerLanguage("roboconf", vE());
+T.registerLanguage("routeros", OE());
+T.registerLanguage("rsl", yE());
+T.registerLanguage("ruleslanguage", AE());
+T.registerLanguage("rust", IE());
+T.registerLanguage("sas", DE());
+T.registerLanguage("scala", wE());
+T.registerLanguage("scheme", ME());
+T.registerLanguage("scilab", xE());
+T.registerLanguage("scss", LE());
+T.registerLanguage("shell", kE());
+T.registerLanguage("smali", PE());
+T.registerLanguage("smalltalk", UE());
+T.registerLanguage("sml", FE());
+T.registerLanguage("sqf", BE());
+T.registerLanguage("sql_more", GE());
+T.registerLanguage("sql", qE());
+T.registerLanguage("stan", YE());
+T.registerLanguage("stata", HE());
+T.registerLanguage("step21", VE());
+T.registerLanguage("stylus", zE());
+T.registerLanguage("subunit", $E());
+T.registerLanguage("swift", WE());
+T.registerLanguage("taggerscript", KE());
+T.registerLanguage("yaml", QE());
+T.registerLanguage("tap", XE());
+T.registerLanguage("tcl", ZE());
+T.registerLanguage("thrift", JE());
+T.registerLanguage("tp", jE());
+T.registerLanguage("twig", eS());
+T.registerLanguage("typescript", tS());
+T.registerLanguage("vala", nS());
+T.registerLanguage("vbnet", rS());
+T.registerLanguage("vbscript", aS());
+T.registerLanguage("vbscript-html", oS());
+T.registerLanguage("verilog", iS());
+T.registerLanguage("vhdl", sS());
+T.registerLanguage("vim", cS());
+T.registerLanguage("x86asm", lS());
+T.registerLanguage("xl", _S());
+T.registerLanguage("xquery", dS());
+T.registerLanguage("zephir", uS());
 var ko = T, Q = {};
-const uS = "Á", pS = "á", mS = "Ă", gS = "ă", ES = "∾", SS = "∿", fS = "∾̳", bS = "Â", TS = "â", hS = "´", RS = "А", CS = "а", NS = "Æ", vS = "æ", OS = "⁡", yS = "𝔄", AS = "𝔞", IS = "À", DS = "à", wS = "ℵ", MS = "ℵ", xS = "Α", LS = "α", kS = "Ā", PS = "ā", US = "⨿", FS = "&", BS = "&", GS = "⩕", qS = "⩓", YS = "∧", HS = "⩜", VS = "⩘", zS = "⩚", $S = "∠", WS = "⦤", KS = "∠", QS = "⦨", XS = "⦩", ZS = "⦪", JS = "⦫", jS = "⦬", ef = "⦭", tf = "⦮", nf = "⦯", rf = "∡", af = "∟", of = "⊾", sf = "⦝", cf = "∢", lf = "Å", _f = "⍼", df = "Ą", uf = "ą", pf = "𝔸", mf = "𝕒", gf = "⩯", Ef = "≈", Sf = "⩰", ff = "≊", bf = "≋", Tf = "'", hf = "⁡", Rf = "≈", Cf = "≊", Nf = "Å", vf = "å", Of = "𝒜", yf = "𝒶", Af = "≔", If = "*", Df = "≈", wf = "≍", Mf = "Ã", xf = "ã", Lf = "Ä", kf = "ä", Pf = "∳", Uf = "⨑", Ff = "≌", Bf = "϶", Gf = "‵", qf = "∽", Yf = "⋍", Hf = "∖", Vf = "⫧", zf = "⊽", $f = "⌅", Wf = "⌆", Kf = "⌅", Qf = "⎵", Xf = "⎶", Zf = "≌", Jf = "Б", jf = "б", eb = "„", tb = "∵", nb = "∵", rb = "∵", ab = "⦰", ob = "϶", ib = "ℬ", sb = "ℬ", cb = "Β", lb = "β", _b = "ℶ", db = "≬", ub = "𝔅", pb = "𝔟", mb = "⋂", gb = "◯", Eb = "⋃", Sb = "⨀", fb = "⨁", bb = "⨂", Tb = "⨆", hb = "★", Rb = "▽", Cb = "△", Nb = "⨄", vb = "⋁", Ob = "⋀", yb = "⤍", Ab = "⧫", Ib = "▪", Db = "▴", wb = "▾", Mb = "◂", xb = "▸", Lb = "␣", kb = "▒", Pb = "░", Ub = "▓", Fb = "█", Bb = "=⃥", Gb = "≡⃥", qb = "⫭", Yb = "⌐", Hb = "𝔹", Vb = "𝕓", zb = "⊥", $b = "⊥", Wb = "⋈", Kb = "⧉", Qb = "┐", Xb = "╕", Zb = "╖", Jb = "╗", jb = "┌", eT = "╒", tT = "╓", nT = "╔", rT = "─", aT = "═", oT = "┬", iT = "╤", sT = "╥", cT = "╦", lT = "┴", _T = "╧", dT = "╨", uT = "╩", pT = "⊟", mT = "⊞", gT = "⊠", ET = "┘", ST = "╛", fT = "╜", bT = "╝", TT = "└", hT = "╘", RT = "╙", CT = "╚", NT = "│", vT = "║", OT = "┼", yT = "╪", AT = "╫", IT = "╬", DT = "┤", wT = "╡", MT = "╢", xT = "╣", LT = "├", kT = "╞", PT = "╟", UT = "╠", FT = "‵", BT = "˘", GT = "˘", qT = "¦", YT = "𝒷", HT = "ℬ", VT = "⁏", zT = "∽", $T = "⋍", WT = "⧅", KT = "\\", QT = "⟈", XT = "•", ZT = "•", JT = "≎", jT = "⪮", eh = "≏", th = "≎", nh = "≏", rh = "Ć", ah = "ć", oh = "⩄", ih = "⩉", sh = "⩋", ch = "∩", lh = "⋒", _h = "⩇", dh = "⩀", uh = "ⅅ", ph = "∩︀", mh = "⁁", gh = "ˇ", Eh = "ℭ", Sh = "⩍", fh = "Č", bh = "č", Th = "Ç", hh = "ç", Rh = "Ĉ", Ch = "ĉ", Nh = "∰", vh = "⩌", Oh = "⩐", yh = "Ċ", Ah = "ċ", Ih = "¸", Dh = "¸", wh = "⦲", Mh = "¢", xh = "·", Lh = "·", kh = "𝔠", Ph = "ℭ", Uh = "Ч", Fh = "ч", Bh = "✓", Gh = "✓", qh = "Χ", Yh = "χ", Hh = "ˆ", Vh = "≗", zh = "↺", $h = "↻", Wh = "⊛", Kh = "⊚", Qh = "⊝", Xh = "⊙", Zh = "®", Jh = "Ⓢ", jh = "⊖", eR = "⊕", tR = "⊗", nR = "○", rR = "⧃", aR = "≗", oR = "⨐", iR = "⫯", sR = "⧂", cR = "∲", lR = "”", _R = "’", dR = "♣", uR = "♣", pR = ":", mR = "∷", gR = "⩴", ER = "≔", SR = "≔", fR = ",", bR = "@", TR = "∁", hR = "∘", RR = "∁", CR = "ℂ", NR = "≅", vR = "⩭", OR = "≡", yR = "∮", AR = "∯", IR = "∮", DR = "𝕔", wR = "ℂ", MR = "∐", xR = "∐", LR = "©", kR = "©", PR = "℗", UR = "∳", FR = "↵", BR = "✗", GR = "⨯", qR = "𝒞", YR = "𝒸", HR = "⫏", VR = "⫑", zR = "⫐", $R = "⫒", WR = "⋯", KR = "⤸", QR = "⤵", XR = "⋞", ZR = "⋟", JR = "↶", jR = "⤽", eC = "⩈", tC = "⩆", nC = "≍", rC = "∪", aC = "⋓", oC = "⩊", iC = "⊍", sC = "⩅", cC = "∪︀", lC = "↷", _C = "⤼", dC = "⋞", uC = "⋟", pC = "⋎", mC = "⋏", gC = "¤", EC = "↶", SC = "↷", fC = "⋎", bC = "⋏", TC = "∲", hC = "∱", RC = "⌭", CC = "†", NC = "‡", vC = "ℸ", OC = "↓", yC = "↡", AC = "⇓", IC = "‐", DC = "⫤", wC = "⊣", MC = "⤏", xC = "˝", LC = "Ď", kC = "ď", PC = "Д", UC = "д", FC = "‡", BC = "⇊", GC = "ⅅ", qC = "ⅆ", YC = "⤑", HC = "⩷", VC = "°", zC = "∇", $C = "Δ", WC = "δ", KC = "⦱", QC = "⥿", XC = "𝔇", ZC = "𝔡", JC = "⥥", jC = "⇃", eN = "⇂", tN = "´", nN = "˙", rN = "˝", aN = "`", oN = "˜", iN = "⋄", sN = "⋄", cN = "⋄", lN = "♦", _N = "♦", dN = "¨", uN = "ⅆ", pN = "ϝ", mN = "⋲", gN = "÷", EN = "÷", SN = "⋇", fN = "⋇", bN = "Ђ", TN = "ђ", hN = "⌞", RN = "⌍", CN = "$", NN = "𝔻", vN = "𝕕", ON = "¨", yN = "˙", AN = "⃜", IN = "≐", DN = "≑", wN = "≐", MN = "∸", xN = "∔", LN = "⊡", kN = "⌆", PN = "∯", UN = "¨", FN = "⇓", BN = "⇐", GN = "⇔", qN = "⫤", YN = "⟸", HN = "⟺", VN = "⟹", zN = "⇒", $N = "⊨", WN = "⇑", KN = "⇕", QN = "∥", XN = "⤓", ZN = "↓", JN = "↓", jN = "⇓", ev = "⇵", tv = "̑", nv = "⇊", rv = "⇃", av = "⇂", ov = "⥐", iv = "⥞", sv = "⥖", cv = "↽", lv = "⥟", _v = "⥗", dv = "⇁", uv = "↧", pv = "⊤", mv = "⤐", gv = "⌟", Ev = "⌌", Sv = "𝒟", fv = "𝒹", bv = "Ѕ", Tv = "ѕ", hv = "⧶", Rv = "Đ", Cv = "đ", Nv = "⋱", vv = "▿", Ov = "▾", yv = "⇵", Av = "⥯", Iv = "⦦", Dv = "Џ", wv = "џ", Mv = "⟿", xv = "É", Lv = "é", kv = "⩮", Pv = "Ě", Uv = "ě", Fv = "Ê", Bv = "ê", Gv = "≖", qv = "≕", Yv = "Э", Hv = "э", Vv = "⩷", zv = "Ė", $v = "ė", Wv = "≑", Kv = "ⅇ", Qv = "≒", Xv = "𝔈", Zv = "𝔢", Jv = "⪚", jv = "È", eO = "è", tO = "⪖", nO = "⪘", rO = "⪙", aO = "∈", oO = "⏧", iO = "ℓ", sO = "⪕", cO = "⪗", lO = "Ē", _O = "ē", dO = "∅", uO = "∅", pO = "◻", mO = "∅", gO = "▫", EO = " ", SO = " ", fO = " ", bO = "Ŋ", TO = "ŋ", hO = " ", RO = "Ę", CO = "ę", NO = "𝔼", vO = "𝕖", OO = "⋕", yO = "⧣", AO = "⩱", IO = "ε", DO = "Ε", wO = "ε", MO = "ϵ", xO = "≖", LO = "≕", kO = "≂", PO = "⪖", UO = "⪕", FO = "⩵", BO = "=", GO = "≂", qO = "≟", YO = "⇌", HO = "≡", VO = "⩸", zO = "⧥", $O = "⥱", WO = "≓", KO = "ℯ", QO = "ℰ", XO = "≐", ZO = "⩳", JO = "≂", jO = "Η", ey = "η", ty = "Ð", ny = "ð", ry = "Ë", ay = "ë", oy = "€", iy = "!", sy = "∃", cy = "∃", ly = "ℰ", _y = "ⅇ", dy = "ⅇ", uy = "≒", py = "Ф", my = "ф", gy = "♀", Ey = "ﬃ", Sy = "ﬀ", fy = "ﬄ", by = "𝔉", Ty = "𝔣", hy = "ﬁ", Ry = "◼", Cy = "▪", Ny = "fj", vy = "♭", Oy = "ﬂ", yy = "▱", Ay = "ƒ", Iy = "𝔽", Dy = "𝕗", wy = "∀", My = "∀", xy = "⋔", Ly = "⫙", ky = "ℱ", Py = "⨍", Uy = "½", Fy = "⅓", By = "¼", Gy = "⅕", qy = "⅙", Yy = "⅛", Hy = "⅔", Vy = "⅖", zy = "¾", $y = "⅗", Wy = "⅜", Ky = "⅘", Qy = "⅚", Xy = "⅝", Zy = "⅞", Jy = "⁄", jy = "⌢", eA = "𝒻", tA = "ℱ", nA = "ǵ", rA = "Γ", aA = "γ", oA = "Ϝ", iA = "ϝ", sA = "⪆", cA = "Ğ", lA = "ğ", _A = "Ģ", dA = "Ĝ", uA = "ĝ", pA = "Г", mA = "г", gA = "Ġ", EA = "ġ", SA = "≥", fA = "≧", bA = "⪌", TA = "⋛", hA = "≥", RA = "≧", CA = "⩾", NA = "⪩", vA = "⩾", OA = "⪀", yA = "⪂", AA = "⪄", IA = "⋛︀", DA = "⪔", wA = "𝔊", MA = "𝔤", xA = "≫", LA = "⋙", kA = "⋙", PA = "ℷ", UA = "Ѓ", FA = "ѓ", BA = "⪥", GA = "≷", qA = "⪒", YA = "⪤", HA = "⪊", VA = "⪊", zA = "⪈", $A = "≩", WA = "⪈", KA = "≩", QA = "⋧", XA = "𝔾", ZA = "𝕘", JA = "`", jA = "≥", eI = "⋛", tI = "≧", nI = "⪢", rI = "≷", aI = "⩾", oI = "≳", iI = "𝒢", sI = "ℊ", cI = "≳", lI = "⪎", _I = "⪐", dI = "⪧", uI = "⩺", pI = ">", mI = ">", gI = "≫", EI = "⋗", SI = "⦕", fI = "⩼", bI = "⪆", TI = "⥸", hI = "⋗", RI = "⋛", CI = "⪌", NI = "≷", vI = "≳", OI = "≩︀", yI = "≩︀", AI = "ˇ", II = " ", DI = "½", wI = "ℋ", MI = "Ъ", xI = "ъ", LI = "⥈", kI = "↔", PI = "⇔", UI = "↭", FI = "^", BI = "ℏ", GI = "Ĥ", qI = "ĥ", YI = "♥", HI = "♥", VI = "…", zI = "⊹", $I = "𝔥", WI = "ℌ", KI = "ℋ", QI = "⤥", XI = "⤦", ZI = "⇿", JI = "∻", jI = "↩", eD = "↪", tD = "𝕙", nD = "ℍ", rD = "―", aD = "─", oD = "𝒽", iD = "ℋ", sD = "ℏ", cD = "Ħ", lD = "ħ", _D = "≎", dD = "≏", uD = "⁃", pD = "‐", mD = "Í", gD = "í", ED = "⁣", SD = "Î", fD = "î", bD = "И", TD = "и", hD = "İ", RD = "Е", CD = "е", ND = "¡", vD = "⇔", OD = "𝔦", yD = "ℑ", AD = "Ì", ID = "ì", DD = "ⅈ", wD = "⨌", MD = "∭", xD = "⧜", LD = "℩", kD = "Ĳ", PD = "ĳ", UD = "Ī", FD = "ī", BD = "ℑ", GD = "ⅈ", qD = "ℐ", YD = "ℑ", HD = "ı", VD = "ℑ", zD = "⊷", $D = "Ƶ", WD = "⇒", KD = "℅", QD = "∞", XD = "⧝", ZD = "ı", JD = "⊺", jD = "∫", ew = "∬", tw = "ℤ", nw = "∫", rw = "⊺", aw = "⋂", ow = "⨗", iw = "⨼", sw = "⁣", cw = "⁢", lw = "Ё", _w = "ё", dw = "Į", uw = "į", pw = "𝕀", mw = "𝕚", gw = "Ι", Ew = "ι", Sw = "⨼", fw = "¿", bw = "𝒾", Tw = "ℐ", hw = "∈", Rw = "⋵", Cw = "⋹", Nw = "⋴", vw = "⋳", Ow = "∈", yw = "⁢", Aw = "Ĩ", Iw = "ĩ", Dw = "І", ww = "і", Mw = "Ï", xw = "ï", Lw = "Ĵ", kw = "ĵ", Pw = "Й", Uw = "й", Fw = "𝔍", Bw = "𝔧", Gw = "ȷ", qw = "𝕁", Yw = "𝕛", Hw = "𝒥", Vw = "𝒿", zw = "Ј", $w = "ј", Ww = "Є", Kw = "є", Qw = "Κ", Xw = "κ", Zw = "ϰ", Jw = "Ķ", jw = "ķ", eM = "К", tM = "к", nM = "𝔎", rM = "𝔨", aM = "ĸ", oM = "Х", iM = "х", sM = "Ќ", cM = "ќ", lM = "𝕂", _M = "𝕜", dM = "𝒦", uM = "𝓀", pM = "⇚", mM = "Ĺ", gM = "ĺ", EM = "⦴", SM = "ℒ", fM = "Λ", bM = "λ", TM = "⟨", hM = "⟪", RM = "⦑", CM = "⟨", NM = "⪅", vM = "ℒ", OM = "«", yM = "⇤", AM = "⤟", IM = "←", DM = "↞", wM = "⇐", MM = "⤝", xM = "↩", LM = "↫", kM = "⤹", PM = "⥳", UM = "↢", FM = "⤙", BM = "⤛", GM = "⪫", qM = "⪭", YM = "⪭︀", HM = "⤌", VM = "⤎", zM = "❲", $M = "{", WM = "[", KM = "⦋", QM = "⦏", XM = "⦍", ZM = "Ľ", JM = "ľ", jM = "Ļ", ex = "ļ", tx = "⌈", nx = "{", rx = "Л", ax = "л", ox = "⤶", ix = "“", sx = "„", cx = "⥧", lx = "⥋", _x = "↲", dx = "≤", ux = "≦", px = "⟨", mx = "⇤", gx = "←", Ex = "←", Sx = "⇐", fx = "⇆", bx = "↢", Tx = "⌈", hx = "⟦", Rx = "⥡", Cx = "⥙", Nx = "⇃", vx = "⌊", Ox = "↽", yx = "↼", Ax = "⇇", Ix = "↔", Dx = "↔", wx = "⇔", Mx = "⇆", xx = "⇋", Lx = "↭", kx = "⥎", Px = "↤", Ux = "⊣", Fx = "⥚", Bx = "⋋", Gx = "⧏", qx = "⊲", Yx = "⊴", Hx = "⥑", Vx = "⥠", zx = "⥘", $x = "↿", Wx = "⥒", Kx = "↼", Qx = "⪋", Xx = "⋚", Zx = "≤", Jx = "≦", jx = "⩽", eL = "⪨", tL = "⩽", nL = "⩿", rL = "⪁", aL = "⪃", oL = "⋚︀", iL = "⪓", sL = "⪅", cL = "⋖", lL = "⋚", _L = "⪋", dL = "⋚", uL = "≦", pL = "≶", mL = "≶", gL = "⪡", EL = "≲", SL = "⩽", fL = "≲", bL = "⥼", TL = "⌊", hL = "𝔏", RL = "𝔩", CL = "≶", NL = "⪑", vL = "⥢", OL = "↽", yL = "↼", AL = "⥪", IL = "▄", DL = "Љ", wL = "љ", ML = "⇇", xL = "≪", LL = "⋘", kL = "⌞", PL = "⇚", UL = "⥫", FL = "◺", BL = "Ŀ", GL = "ŀ", qL = "⎰", YL = "⎰", HL = "⪉", VL = "⪉", zL = "⪇", $L = "≨", WL = "⪇", KL = "≨", QL = "⋦", XL = "⟬", ZL = "⇽", JL = "⟦", jL = "⟵", ek = "⟵", tk = "⟸", nk = "⟷", rk = "⟷", ak = "⟺", ok = "⟼", ik = "⟶", sk = "⟶", ck = "⟹", lk = "↫", _k = "↬", dk = "⦅", uk = "𝕃", pk = "𝕝", mk = "⨭", gk = "⨴", Ek = "∗", Sk = "_", fk = "↙", bk = "↘", Tk = "◊", hk = "◊", Rk = "⧫", Ck = "(", Nk = "⦓", vk = "⇆", Ok = "⌟", yk = "⇋", Ak = "⥭", Ik = "‎", Dk = "⊿", wk = "‹", Mk = "𝓁", xk = "ℒ", Lk = "↰", kk = "↰", Pk = "≲", Uk = "⪍", Fk = "⪏", Bk = "[", Gk = "‘", qk = "‚", Yk = "Ł", Hk = "ł", Vk = "⪦", zk = "⩹", $k = "<", Wk = "<", Kk = "≪", Qk = "⋖", Xk = "⋋", Zk = "⋉", Jk = "⥶", jk = "⩻", eP = "◃", tP = "⊴", nP = "◂", rP = "⦖", aP = "⥊", oP = "⥦", iP = "≨︀", sP = "≨︀", cP = "¯", lP = "♂", _P = "✠", dP = "✠", uP = "↦", pP = "↦", mP = "↧", gP = "↤", EP = "↥", SP = "▮", fP = "⨩", bP = "М", TP = "м", hP = "—", RP = "∺", CP = "∡", NP = " ", vP = "ℳ", OP = "𝔐", yP = "𝔪", AP = "℧", IP = "µ", DP = "*", wP = "⫰", MP = "∣", xP = "·", LP = "⊟", kP = "−", PP = "∸", UP = "⨪", FP = "∓", BP = "⫛", GP = "…", qP = "∓", YP = "⊧", HP = "𝕄", VP = "𝕞", zP = "∓", $P = "𝓂", WP = "ℳ", KP = "∾", QP = "Μ", XP = "μ", ZP = "⊸", JP = "⊸", jP = "∇", eU = "Ń", tU = "ń", nU = "∠⃒", rU = "≉", aU = "⩰̸", oU = "≋̸", iU = "ŉ", sU = "≉", cU = "♮", lU = "ℕ", _U = "♮", dU = " ", uU = "≎̸", pU = "≏̸", mU = "⩃", gU = "Ň", EU = "ň", SU = "Ņ", fU = "ņ", bU = "≇", TU = "⩭̸", hU = "⩂", RU = "Н", CU = "н", NU = "–", vU = "⤤", OU = "↗", yU = "⇗", AU = "↗", IU = "≠", DU = "≐̸", wU = "​", MU = "​", xU = "​", LU = "​", kU = "≢", PU = "⤨", UU = "≂̸", FU = "≫", BU = "≪", GU = `
-`, qU = "∄", YU = "∄", HU = "𝔑", VU = "𝔫", zU = "≧̸", $U = "≱", WU = "≱", KU = "≧̸", QU = "⩾̸", XU = "⩾̸", ZU = "⋙̸", JU = "≵", jU = "≫⃒", e0 = "≯", t0 = "≯", n0 = "≫̸", r0 = "↮", a0 = "⇎", o0 = "⫲", i0 = "∋", s0 = "⋼", c0 = "⋺", l0 = "∋", _0 = "Њ", d0 = "њ", u0 = "↚", p0 = "⇍", m0 = "‥", g0 = "≦̸", E0 = "≰", S0 = "↚", f0 = "⇍", b0 = "↮", T0 = "⇎", h0 = "≰", R0 = "≦̸", C0 = "⩽̸", N0 = "⩽̸", v0 = "≮", O0 = "⋘̸", y0 = "≴", A0 = "≪⃒", I0 = "≮", D0 = "⋪", w0 = "⋬", M0 = "≪̸", x0 = "∤", L0 = "⁠", k0 = " ", P0 = "𝕟", U0 = "ℕ", F0 = "⫬", B0 = "¬", G0 = "≢", q0 = "≭", Y0 = "∦", H0 = "∉", V0 = "≠", z0 = "≂̸", $0 = "∄", W0 = "≯", K0 = "≱", Q0 = "≧̸", X0 = "≫̸", Z0 = "≹", J0 = "⩾̸", j0 = "≵", eF = "≎̸", tF = "≏̸", nF = "∉", rF = "⋵̸", aF = "⋹̸", oF = "∉", iF = "⋷", sF = "⋶", cF = "⧏̸", lF = "⋪", _F = "⋬", dF = "≮", uF = "≰", pF = "≸", mF = "≪̸", gF = "⩽̸", EF = "≴", SF = "⪢̸", fF = "⪡̸", bF = "∌", TF = "∌", hF = "⋾", RF = "⋽", CF = "⊀", NF = "⪯̸", vF = "⋠", OF = "∌", yF = "⧐̸", AF = "⋫", IF = "⋭", DF = "⊏̸", wF = "⋢", MF = "⊐̸", xF = "⋣", LF = "⊂⃒", kF = "⊈", PF = "⊁", UF = "⪰̸", FF = "⋡", BF = "≿̸", GF = "⊃⃒", qF = "⊉", YF = "≁", HF = "≄", VF = "≇", zF = "≉", $F = "∤", WF = "∦", KF = "∦", QF = "⫽⃥", XF = "∂̸", ZF = "⨔", JF = "⊀", jF = "⋠", eB = "⊀", tB = "⪯̸", nB = "⪯̸", rB = "⤳̸", aB = "↛", oB = "⇏", iB = "↝̸", sB = "↛", cB = "⇏", lB = "⋫", _B = "⋭", dB = "⊁", uB = "⋡", pB = "⪰̸", mB = "𝒩", gB = "𝓃", EB = "∤", SB = "∦", fB = "≁", bB = "≄", TB = "≄", hB = "∤", RB = "∦", CB = "⋢", NB = "⋣", vB = "⊄", OB = "⫅̸", yB = "⊈", AB = "⊂⃒", IB = "⊈", DB = "⫅̸", wB = "⊁", MB = "⪰̸", xB = "⊅", LB = "⫆̸", kB = "⊉", PB = "⊃⃒", UB = "⊉", FB = "⫆̸", BB = "≹", GB = "Ñ", qB = "ñ", YB = "≸", HB = "⋪", VB = "⋬", zB = "⋫", $B = "⋭", WB = "Ν", KB = "ν", QB = "#", XB = "№", ZB = " ", JB = "≍⃒", jB = "⊬", eG = "⊭", tG = "⊮", nG = "⊯", rG = "≥⃒", aG = ">⃒", oG = "⤄", iG = "⧞", sG = "⤂", cG = "≤⃒", lG = "<⃒", _G = "⊴⃒", dG = "⤃", uG = "⊵⃒", pG = "∼⃒", mG = "⤣", gG = "↖", EG = "⇖", SG = "↖", fG = "⤧", bG = "Ó", TG = "ó", hG = "⊛", RG = "Ô", CG = "ô", NG = "⊚", vG = "О", OG = "о", yG = "⊝", AG = "Ő", IG = "ő", DG = "⨸", wG = "⊙", MG = "⦼", xG = "Œ", LG = "œ", kG = "⦿", PG = "𝔒", UG = "𝔬", FG = "˛", BG = "Ò", GG = "ò", qG = "⧁", YG = "⦵", HG = "Ω", VG = "∮", zG = "↺", $G = "⦾", WG = "⦻", KG = "‾", QG = "⧀", XG = "Ō", ZG = "ō", JG = "Ω", jG = "ω", e1 = "Ο", t1 = "ο", n1 = "⦶", r1 = "⊖", a1 = "𝕆", o1 = "𝕠", i1 = "⦷", s1 = "“", c1 = "‘", l1 = "⦹", _1 = "⊕", d1 = "↻", u1 = "⩔", p1 = "∨", m1 = "⩝", g1 = "ℴ", E1 = "ℴ", S1 = "ª", f1 = "º", b1 = "⊶", T1 = "⩖", h1 = "⩗", R1 = "⩛", C1 = "Ⓢ", N1 = "𝒪", v1 = "ℴ", O1 = "Ø", y1 = "ø", A1 = "⊘", I1 = "Õ", D1 = "õ", w1 = "⨶", M1 = "⨷", x1 = "⊗", L1 = "Ö", k1 = "ö", P1 = "⌽", U1 = "‾", F1 = "⏞", B1 = "⎴", G1 = "⏜", q1 = "¶", Y1 = "∥", H1 = "∥", V1 = "⫳", z1 = "⫽", $1 = "∂", W1 = "∂", K1 = "П", Q1 = "п", X1 = "%", Z1 = ".", J1 = "‰", j1 = "⊥", eq = "‱", tq = "𝔓", nq = "𝔭", rq = "Φ", aq = "φ", oq = "ϕ", iq = "ℳ", sq = "☎", cq = "Π", lq = "π", _q = "⋔", dq = "ϖ", uq = "ℏ", pq = "ℎ", mq = "ℏ", gq = "⨣", Eq = "⊞", Sq = "⨢", fq = "+", bq = "∔", Tq = "⨥", hq = "⩲", Rq = "±", Cq = "±", Nq = "⨦", vq = "⨧", Oq = "±", yq = "ℌ", Aq = "⨕", Iq = "𝕡", Dq = "ℙ", wq = "£", Mq = "⪷", xq = "⪻", Lq = "≺", kq = "≼", Pq = "⪷", Uq = "≺", Fq = "≼", Bq = "≺", Gq = "⪯", qq = "≼", Yq = "≾", Hq = "⪯", Vq = "⪹", zq = "⪵", $q = "⋨", Wq = "⪯", Kq = "⪳", Qq = "≾", Xq = "′", Zq = "″", Jq = "ℙ", jq = "⪹", eY = "⪵", tY = "⋨", nY = "∏", rY = "∏", aY = "⌮", oY = "⌒", iY = "⌓", sY = "∝", cY = "∝", lY = "∷", _Y = "∝", dY = "≾", uY = "⊰", pY = "𝒫", mY = "𝓅", gY = "Ψ", EY = "ψ", SY = " ", fY = "𝔔", bY = "𝔮", TY = "⨌", hY = "𝕢", RY = "ℚ", CY = "⁗", NY = "𝒬", vY = "𝓆", OY = "ℍ", yY = "⨖", AY = "?", IY = "≟", DY = '"', wY = '"', MY = "⇛", xY = "∽̱", LY = "Ŕ", kY = "ŕ", PY = "√", UY = "⦳", FY = "⟩", BY = "⟫", GY = "⦒", qY = "⦥", YY = "⟩", HY = "»", VY = "⥵", zY = "⇥", $Y = "⤠", WY = "⤳", KY = "→", QY = "↠", XY = "⇒", ZY = "⤞", JY = "↪", jY = "↬", eH = "⥅", tH = "⥴", nH = "⤖", rH = "↣", aH = "↝", oH = "⤚", iH = "⤜", sH = "∶", cH = "ℚ", lH = "⤍", _H = "⤏", dH = "⤐", uH = "❳", pH = "}", mH = "]", gH = "⦌", EH = "⦎", SH = "⦐", fH = "Ř", bH = "ř", TH = "Ŗ", hH = "ŗ", RH = "⌉", CH = "}", NH = "Р", vH = "р", OH = "⤷", yH = "⥩", AH = "”", IH = "”", DH = "↳", wH = "ℜ", MH = "ℛ", xH = "ℜ", LH = "ℝ", kH = "ℜ", PH = "▭", UH = "®", FH = "®", BH = "∋", GH = "⇋", qH = "⥯", YH = "⥽", HH = "⌋", VH = "𝔯", zH = "ℜ", $H = "⥤", WH = "⇁", KH = "⇀", QH = "⥬", XH = "Ρ", ZH = "ρ", JH = "ϱ", jH = "⟩", eV = "⇥", tV = "→", nV = "→", rV = "⇒", aV = "⇄", oV = "↣", iV = "⌉", sV = "⟧", cV = "⥝", lV = "⥕", _V = "⇂", dV = "⌋", uV = "⇁", pV = "⇀", mV = "⇄", gV = "⇌", EV = "⇉", SV = "↝", fV = "↦", bV = "⊢", TV = "⥛", hV = "⋌", RV = "⧐", CV = "⊳", NV = "⊵", vV = "⥏", OV = "⥜", yV = "⥔", AV = "↾", IV = "⥓", DV = "⇀", wV = "˚", MV = "≓", xV = "⇄", LV = "⇌", kV = "‏", PV = "⎱", UV = "⎱", FV = "⫮", BV = "⟭", GV = "⇾", qV = "⟧", YV = "⦆", HV = "𝕣", VV = "ℝ", zV = "⨮", $V = "⨵", WV = "⥰", KV = ")", QV = "⦔", XV = "⨒", ZV = "⇉", JV = "⇛", jV = "›", ez = "𝓇", tz = "ℛ", nz = "↱", rz = "↱", az = "]", oz = "’", iz = "’", sz = "⋌", cz = "⋊", lz = "▹", _z = "⊵", dz = "▸", uz = "⧎", pz = "⧴", mz = "⥨", gz = "℞", Ez = "Ś", Sz = "ś", fz = "‚", bz = "⪸", Tz = "Š", hz = "š", Rz = "⪼", Cz = "≻", Nz = "≽", vz = "⪰", Oz = "⪴", yz = "Ş", Az = "ş", Iz = "Ŝ", Dz = "ŝ", wz = "⪺", Mz = "⪶", xz = "⋩", Lz = "⨓", kz = "≿", Pz = "С", Uz = "с", Fz = "⊡", Bz = "⋅", Gz = "⩦", qz = "⤥", Yz = "↘", Hz = "⇘", Vz = "↘", zz = "§", $z = ";", Wz = "⤩", Kz = "∖", Qz = "∖", Xz = "✶", Zz = "𝔖", Jz = "𝔰", jz = "⌢", e2 = "♯", t2 = "Щ", n2 = "щ", r2 = "Ш", a2 = "ш", o2 = "↓", i2 = "←", s2 = "∣", c2 = "∥", l2 = "→", _2 = "↑", d2 = "­", u2 = "Σ", p2 = "σ", m2 = "ς", g2 = "ς", E2 = "∼", S2 = "⩪", f2 = "≃", b2 = "≃", T2 = "⪞", h2 = "⪠", R2 = "⪝", C2 = "⪟", N2 = "≆", v2 = "⨤", O2 = "⥲", y2 = "←", A2 = "∘", I2 = "∖", D2 = "⨳", w2 = "⧤", M2 = "∣", x2 = "⌣", L2 = "⪪", k2 = "⪬", P2 = "⪬︀", U2 = "Ь", F2 = "ь", B2 = "⌿", G2 = "⧄", q2 = "/", Y2 = "𝕊", H2 = "𝕤", V2 = "♠", z2 = "♠", $2 = "∥", W2 = "⊓", K2 = "⊓︀", Q2 = "⊔", X2 = "⊔︀", Z2 = "√", J2 = "⊏", j2 = "⊑", e$ = "⊏", t$ = "⊑", n$ = "⊐", r$ = "⊒", a$ = "⊐", o$ = "⊒", i$ = "□", s$ = "□", c$ = "⊓", l$ = "⊏", _$ = "⊑", d$ = "⊐", u$ = "⊒", p$ = "⊔", m$ = "▪", g$ = "□", E$ = "▪", S$ = "→", f$ = "𝒮", b$ = "𝓈", T$ = "∖", h$ = "⌣", R$ = "⋆", C$ = "⋆", N$ = "☆", v$ = "★", O$ = "ϵ", y$ = "ϕ", A$ = "¯", I$ = "⊂", D$ = "⋐", w$ = "⪽", M$ = "⫅", x$ = "⊆", L$ = "⫃", k$ = "⫁", P$ = "⫋", U$ = "⊊", F$ = "⪿", B$ = "⥹", G$ = "⊂", q$ = "⋐", Y$ = "⊆", H$ = "⫅", V$ = "⊆", z$ = "⊊", $$ = "⫋", W$ = "⫇", K$ = "⫕", Q$ = "⫓", X$ = "⪸", Z$ = "≻", J$ = "≽", j$ = "≻", eW = "⪰", tW = "≽", nW = "≿", rW = "⪰", aW = "⪺", oW = "⪶", iW = "⋩", sW = "≿", cW = "∋", lW = "∑", _W = "∑", dW = "♪", uW = "¹", pW = "²", mW = "³", gW = "⊃", EW = "⋑", SW = "⪾", fW = "⫘", bW = "⫆", TW = "⊇", hW = "⫄", RW = "⊃", CW = "⊇", NW = "⟉", vW = "⫗", OW = "⥻", yW = "⫂", AW = "⫌", IW = "⊋", DW = "⫀", wW = "⊃", MW = "⋑", xW = "⊇", LW = "⫆", kW = "⊋", PW = "⫌", UW = "⫈", FW = "⫔", BW = "⫖", GW = "⤦", qW = "↙", YW = "⇙", HW = "↙", VW = "⤪", zW = "ß", $W = "	", WW = "⌖", KW = "Τ", QW = "τ", XW = "⎴", ZW = "Ť", JW = "ť", jW = "Ţ", eK = "ţ", tK = "Т", nK = "т", rK = "⃛", aK = "⌕", oK = "𝔗", iK = "𝔱", sK = "∴", cK = "∴", lK = "∴", _K = "Θ", dK = "θ", uK = "ϑ", pK = "ϑ", mK = "≈", gK = "∼", EK = "  ", SK = " ", fK = " ", bK = "≈", TK = "∼", hK = "Þ", RK = "þ", CK = "˜", NK = "∼", vK = "≃", OK = "≅", yK = "≈", AK = "⨱", IK = "⊠", DK = "×", wK = "⨰", MK = "∭", xK = "⤨", LK = "⌶", kK = "⫱", PK = "⊤", UK = "𝕋", FK = "𝕥", BK = "⫚", GK = "⤩", qK = "‴", YK = "™", HK = "™", VK = "▵", zK = "▿", $K = "◃", WK = "⊴", KK = "≜", QK = "▹", XK = "⊵", ZK = "◬", JK = "≜", jK = "⨺", eQ = "⃛", tQ = "⨹", nQ = "⧍", rQ = "⨻", aQ = "⏢", oQ = "𝒯", iQ = "𝓉", sQ = "Ц", cQ = "ц", lQ = "Ћ", _Q = "ћ", dQ = "Ŧ", uQ = "ŧ", pQ = "≬", mQ = "↞", gQ = "↠", EQ = "Ú", SQ = "ú", fQ = "↑", bQ = "↟", TQ = "⇑", hQ = "⥉", RQ = "Ў", CQ = "ў", NQ = "Ŭ", vQ = "ŭ", OQ = "Û", yQ = "û", AQ = "У", IQ = "у", DQ = "⇅", wQ = "Ű", MQ = "ű", xQ = "⥮", LQ = "⥾", kQ = "𝔘", PQ = "𝔲", UQ = "Ù", FQ = "ù", BQ = "⥣", GQ = "↿", qQ = "↾", YQ = "▀", HQ = "⌜", VQ = "⌜", zQ = "⌏", $Q = "◸", WQ = "Ū", KQ = "ū", QQ = "¨", XQ = "_", ZQ = "⏟", JQ = "⎵", jQ = "⏝", e3 = "⋃", t3 = "⊎", n3 = "Ų", r3 = "ų", a3 = "𝕌", o3 = "𝕦", i3 = "⤒", s3 = "↑", c3 = "↑", l3 = "⇑", _3 = "⇅", d3 = "↕", u3 = "↕", p3 = "⇕", m3 = "⥮", g3 = "↿", E3 = "↾", S3 = "⊎", f3 = "↖", b3 = "↗", T3 = "υ", h3 = "ϒ", R3 = "ϒ", C3 = "Υ", N3 = "υ", v3 = "↥", O3 = "⊥", y3 = "⇈", A3 = "⌝", I3 = "⌝", D3 = "⌎", w3 = "Ů", M3 = "ů", x3 = "◹", L3 = "𝒰", k3 = "𝓊", P3 = "⋰", U3 = "Ũ", F3 = "ũ", B3 = "▵", G3 = "▴", q3 = "⇈", Y3 = "Ü", H3 = "ü", V3 = "⦧", z3 = "⦜", $3 = "ϵ", W3 = "ϰ", K3 = "∅", Q3 = "ϕ", X3 = "ϖ", Z3 = "∝", J3 = "↕", j3 = "⇕", eX = "ϱ", tX = "ς", nX = "⊊︀", rX = "⫋︀", aX = "⊋︀", oX = "⫌︀", iX = "ϑ", sX = "⊲", cX = "⊳", lX = "⫨", _X = "⫫", dX = "⫩", uX = "В", pX = "в", mX = "⊢", gX = "⊨", EX = "⊩", SX = "⊫", fX = "⫦", bX = "⊻", TX = "∨", hX = "⋁", RX = "≚", CX = "⋮", NX = "|", vX = "‖", OX = "|", yX = "‖", AX = "∣", IX = "|", DX = "❘", wX = "≀", MX = " ", xX = "𝔙", LX = "𝔳", kX = "⊲", PX = "⊂⃒", UX = "⊃⃒", FX = "𝕍", BX = "𝕧", GX = "∝", qX = "⊳", YX = "𝒱", HX = "𝓋", VX = "⫋︀", zX = "⊊︀", $X = "⫌︀", WX = "⊋︀", KX = "⊪", QX = "⦚", XX = "Ŵ", ZX = "ŵ", JX = "⩟", jX = "∧", e9 = "⋀", t9 = "≙", n9 = "℘", r9 = "𝔚", a9 = "𝔴", o9 = "𝕎", i9 = "𝕨", s9 = "℘", c9 = "≀", l9 = "≀", _9 = "𝒲", d9 = "𝓌", u9 = "⋂", p9 = "◯", m9 = "⋃", g9 = "▽", E9 = "𝔛", S9 = "𝔵", f9 = "⟷", b9 = "⟺", T9 = "Ξ", h9 = "ξ", R9 = "⟵", C9 = "⟸", N9 = "⟼", v9 = "⋻", O9 = "⨀", y9 = "𝕏", A9 = "𝕩", I9 = "⨁", D9 = "⨂", w9 = "⟶", M9 = "⟹", x9 = "𝒳", L9 = "𝓍", k9 = "⨆", P9 = "⨄", U9 = "△", F9 = "⋁", B9 = "⋀", G9 = "Ý", q9 = "ý", Y9 = "Я", H9 = "я", V9 = "Ŷ", z9 = "ŷ", $9 = "Ы", W9 = "ы", K9 = "¥", Q9 = "𝔜", X9 = "𝔶", Z9 = "Ї", J9 = "ї", j9 = "𝕐", e4 = "𝕪", t4 = "𝒴", n4 = "𝓎", r4 = "Ю", a4 = "ю", o4 = "ÿ", i4 = "Ÿ", s4 = "Ź", c4 = "ź", l4 = "Ž", _4 = "ž", d4 = "З", u4 = "з", p4 = "Ż", m4 = "ż", g4 = "ℨ", E4 = "​", S4 = "Ζ", f4 = "ζ", b4 = "𝔷", T4 = "ℨ", h4 = "Ж", R4 = "ж", C4 = "⇝", N4 = "𝕫", v4 = "ℤ", O4 = "𝒵", y4 = "𝓏", A4 = "‍", I4 = "‌", D4 = {
-  Aacute: uS,
-  aacute: pS,
-  Abreve: mS,
-  abreve: gS,
-  ac: ES,
-  acd: SS,
-  acE: fS,
-  Acirc: bS,
-  acirc: TS,
-  acute: hS,
-  Acy: RS,
-  acy: CS,
-  AElig: NS,
-  aelig: vS,
-  af: OS,
-  Afr: yS,
-  afr: AS,
-  Agrave: IS,
-  agrave: DS,
-  alefsym: wS,
-  aleph: MS,
-  Alpha: xS,
-  alpha: LS,
-  Amacr: kS,
-  amacr: PS,
-  amalg: US,
-  amp: FS,
-  AMP: BS,
-  andand: GS,
-  And: qS,
-  and: YS,
-  andd: HS,
-  andslope: VS,
-  andv: zS,
-  ang: $S,
-  ange: WS,
-  angle: KS,
-  angmsdaa: QS,
-  angmsdab: XS,
-  angmsdac: ZS,
-  angmsdad: JS,
-  angmsdae: jS,
-  angmsdaf: ef,
-  angmsdag: tf,
-  angmsdah: nf,
-  angmsd: rf,
-  angrt: af,
-  angrtvb: of,
-  angrtvbd: sf,
-  angsph: cf,
-  angst: lf,
-  angzarr: _f,
-  Aogon: df,
-  aogon: uf,
-  Aopf: pf,
-  aopf: mf,
-  apacir: gf,
-  ap: Ef,
-  apE: Sf,
-  ape: ff,
-  apid: bf,
-  apos: Tf,
-  ApplyFunction: hf,
-  approx: Rf,
-  approxeq: Cf,
-  Aring: Nf,
-  aring: vf,
-  Ascr: Of,
-  ascr: yf,
-  Assign: Af,
-  ast: If,
-  asymp: Df,
-  asympeq: wf,
-  Atilde: Mf,
-  atilde: xf,
-  Auml: Lf,
-  auml: kf,
-  awconint: Pf,
-  awint: Uf,
-  backcong: Ff,
-  backepsilon: Bf,
-  backprime: Gf,
-  backsim: qf,
-  backsimeq: Yf,
-  Backslash: Hf,
-  Barv: Vf,
-  barvee: zf,
-  barwed: $f,
-  Barwed: Wf,
-  barwedge: Kf,
-  bbrk: Qf,
-  bbrktbrk: Xf,
-  bcong: Zf,
-  Bcy: Jf,
-  bcy: jf,
-  bdquo: eb,
-  becaus: tb,
-  because: nb,
-  Because: rb,
-  bemptyv: ab,
-  bepsi: ob,
-  bernou: ib,
-  Bernoullis: sb,
-  Beta: cb,
-  beta: lb,
-  beth: _b,
-  between: db,
-  Bfr: ub,
-  bfr: pb,
-  bigcap: mb,
-  bigcirc: gb,
-  bigcup: Eb,
-  bigodot: Sb,
-  bigoplus: fb,
-  bigotimes: bb,
-  bigsqcup: Tb,
-  bigstar: hb,
-  bigtriangledown: Rb,
-  bigtriangleup: Cb,
-  biguplus: Nb,
-  bigvee: vb,
-  bigwedge: Ob,
-  bkarow: yb,
-  blacklozenge: Ab,
-  blacksquare: Ib,
-  blacktriangle: Db,
-  blacktriangledown: wb,
-  blacktriangleleft: Mb,
-  blacktriangleright: xb,
-  blank: Lb,
-  blk12: kb,
-  blk14: Pb,
-  blk34: Ub,
-  block: Fb,
-  bne: Bb,
-  bnequiv: Gb,
-  bNot: qb,
-  bnot: Yb,
-  Bopf: Hb,
-  bopf: Vb,
-  bot: zb,
-  bottom: $b,
-  bowtie: Wb,
-  boxbox: Kb,
-  boxdl: Qb,
-  boxdL: Xb,
-  boxDl: Zb,
-  boxDL: Jb,
-  boxdr: jb,
-  boxdR: eT,
-  boxDr: tT,
-  boxDR: nT,
-  boxh: rT,
-  boxH: aT,
-  boxhd: oT,
-  boxHd: iT,
-  boxhD: sT,
-  boxHD: cT,
-  boxhu: lT,
-  boxHu: _T,
-  boxhU: dT,
-  boxHU: uT,
-  boxminus: pT,
-  boxplus: mT,
-  boxtimes: gT,
-  boxul: ET,
-  boxuL: ST,
-  boxUl: fT,
-  boxUL: bT,
-  boxur: TT,
-  boxuR: hT,
-  boxUr: RT,
-  boxUR: CT,
-  boxv: NT,
-  boxV: vT,
-  boxvh: OT,
-  boxvH: yT,
-  boxVh: AT,
-  boxVH: IT,
-  boxvl: DT,
-  boxvL: wT,
-  boxVl: MT,
-  boxVL: xT,
-  boxvr: LT,
-  boxvR: kT,
-  boxVr: PT,
-  boxVR: UT,
-  bprime: FT,
-  breve: BT,
-  Breve: GT,
-  brvbar: qT,
-  bscr: YT,
-  Bscr: HT,
-  bsemi: VT,
-  bsim: zT,
-  bsime: $T,
-  bsolb: WT,
-  bsol: KT,
-  bsolhsub: QT,
-  bull: XT,
-  bullet: ZT,
-  bump: JT,
-  bumpE: jT,
-  bumpe: eh,
-  Bumpeq: th,
-  bumpeq: nh,
-  Cacute: rh,
-  cacute: ah,
-  capand: oh,
-  capbrcup: ih,
-  capcap: sh,
-  cap: ch,
-  Cap: lh,
-  capcup: _h,
-  capdot: dh,
-  CapitalDifferentialD: uh,
-  caps: ph,
-  caret: mh,
-  caron: gh,
-  Cayleys: Eh,
-  ccaps: Sh,
-  Ccaron: fh,
-  ccaron: bh,
-  Ccedil: Th,
-  ccedil: hh,
-  Ccirc: Rh,
-  ccirc: Ch,
-  Cconint: Nh,
-  ccups: vh,
-  ccupssm: Oh,
-  Cdot: yh,
-  cdot: Ah,
-  cedil: Ih,
-  Cedilla: Dh,
-  cemptyv: wh,
-  cent: Mh,
-  centerdot: xh,
-  CenterDot: Lh,
-  cfr: kh,
-  Cfr: Ph,
-  CHcy: Uh,
-  chcy: Fh,
-  check: Bh,
-  checkmark: Gh,
-  Chi: qh,
-  chi: Yh,
-  circ: Hh,
-  circeq: Vh,
-  circlearrowleft: zh,
-  circlearrowright: $h,
-  circledast: Wh,
-  circledcirc: Kh,
-  circleddash: Qh,
-  CircleDot: Xh,
-  circledR: Zh,
-  circledS: Jh,
-  CircleMinus: jh,
-  CirclePlus: eR,
-  CircleTimes: tR,
-  cir: nR,
-  cirE: rR,
-  cire: aR,
-  cirfnint: oR,
-  cirmid: iR,
-  cirscir: sR,
-  ClockwiseContourIntegral: cR,
-  CloseCurlyDoubleQuote: lR,
-  CloseCurlyQuote: _R,
-  clubs: dR,
-  clubsuit: uR,
-  colon: pR,
-  Colon: mR,
-  Colone: gR,
-  colone: ER,
-  coloneq: SR,
-  comma: fR,
-  commat: bR,
-  comp: TR,
-  compfn: hR,
-  complement: RR,
-  complexes: CR,
-  cong: NR,
-  congdot: vR,
-  Congruent: OR,
-  conint: yR,
-  Conint: AR,
-  ContourIntegral: IR,
-  copf: DR,
-  Copf: wR,
-  coprod: MR,
-  Coproduct: xR,
-  copy: LR,
-  COPY: kR,
-  copysr: PR,
-  CounterClockwiseContourIntegral: UR,
-  crarr: FR,
-  cross: BR,
-  Cross: GR,
-  Cscr: qR,
-  cscr: YR,
-  csub: HR,
-  csube: VR,
-  csup: zR,
-  csupe: $R,
-  ctdot: WR,
-  cudarrl: KR,
-  cudarrr: QR,
-  cuepr: XR,
-  cuesc: ZR,
-  cularr: JR,
-  cularrp: jR,
-  cupbrcap: eC,
-  cupcap: tC,
-  CupCap: nC,
-  cup: rC,
-  Cup: aC,
-  cupcup: oC,
-  cupdot: iC,
-  cupor: sC,
-  cups: cC,
-  curarr: lC,
-  curarrm: _C,
-  curlyeqprec: dC,
-  curlyeqsucc: uC,
-  curlyvee: pC,
-  curlywedge: mC,
-  curren: gC,
-  curvearrowleft: EC,
-  curvearrowright: SC,
-  cuvee: fC,
-  cuwed: bC,
-  cwconint: TC,
-  cwint: hC,
-  cylcty: RC,
-  dagger: CC,
-  Dagger: NC,
-  daleth: vC,
-  darr: OC,
-  Darr: yC,
-  dArr: AC,
-  dash: IC,
-  Dashv: DC,
-  dashv: wC,
-  dbkarow: MC,
-  dblac: xC,
-  Dcaron: LC,
-  dcaron: kC,
-  Dcy: PC,
-  dcy: UC,
-  ddagger: FC,
-  ddarr: BC,
-  DD: GC,
-  dd: qC,
-  DDotrahd: YC,
-  ddotseq: HC,
-  deg: VC,
-  Del: zC,
-  Delta: $C,
-  delta: WC,
-  demptyv: KC,
-  dfisht: QC,
-  Dfr: XC,
-  dfr: ZC,
-  dHar: JC,
-  dharl: jC,
-  dharr: eN,
-  DiacriticalAcute: tN,
-  DiacriticalDot: nN,
-  DiacriticalDoubleAcute: rN,
-  DiacriticalGrave: aN,
-  DiacriticalTilde: oN,
-  diam: iN,
-  diamond: sN,
-  Diamond: cN,
-  diamondsuit: lN,
-  diams: _N,
-  die: dN,
-  DifferentialD: uN,
-  digamma: pN,
-  disin: mN,
-  div: gN,
-  divide: EN,
-  divideontimes: SN,
-  divonx: fN,
-  DJcy: bN,
-  djcy: TN,
-  dlcorn: hN,
-  dlcrop: RN,
-  dollar: CN,
-  Dopf: NN,
-  dopf: vN,
-  Dot: ON,
-  dot: yN,
-  DotDot: AN,
-  doteq: IN,
-  doteqdot: DN,
-  DotEqual: wN,
-  dotminus: MN,
-  dotplus: xN,
-  dotsquare: LN,
-  doublebarwedge: kN,
-  DoubleContourIntegral: PN,
-  DoubleDot: UN,
-  DoubleDownArrow: FN,
-  DoubleLeftArrow: BN,
-  DoubleLeftRightArrow: GN,
-  DoubleLeftTee: qN,
-  DoubleLongLeftArrow: YN,
-  DoubleLongLeftRightArrow: HN,
-  DoubleLongRightArrow: VN,
-  DoubleRightArrow: zN,
-  DoubleRightTee: $N,
-  DoubleUpArrow: WN,
-  DoubleUpDownArrow: KN,
-  DoubleVerticalBar: QN,
-  DownArrowBar: XN,
-  downarrow: ZN,
-  DownArrow: JN,
-  Downarrow: jN,
-  DownArrowUpArrow: ev,
-  DownBreve: tv,
-  downdownarrows: nv,
-  downharpoonleft: rv,
-  downharpoonright: av,
-  DownLeftRightVector: ov,
-  DownLeftTeeVector: iv,
-  DownLeftVectorBar: sv,
-  DownLeftVector: cv,
-  DownRightTeeVector: lv,
-  DownRightVectorBar: _v,
-  DownRightVector: dv,
-  DownTeeArrow: uv,
-  DownTee: pv,
-  drbkarow: mv,
-  drcorn: gv,
-  drcrop: Ev,
-  Dscr: Sv,
-  dscr: fv,
-  DScy: bv,
-  dscy: Tv,
-  dsol: hv,
-  Dstrok: Rv,
-  dstrok: Cv,
-  dtdot: Nv,
-  dtri: vv,
-  dtrif: Ov,
-  duarr: yv,
-  duhar: Av,
-  dwangle: Iv,
-  DZcy: Dv,
-  dzcy: wv,
-  dzigrarr: Mv,
-  Eacute: xv,
-  eacute: Lv,
-  easter: kv,
-  Ecaron: Pv,
-  ecaron: Uv,
-  Ecirc: Fv,
-  ecirc: Bv,
-  ecir: Gv,
-  ecolon: qv,
-  Ecy: Yv,
-  ecy: Hv,
-  eDDot: Vv,
-  Edot: zv,
-  edot: $v,
-  eDot: Wv,
-  ee: Kv,
-  efDot: Qv,
-  Efr: Xv,
-  efr: Zv,
-  eg: Jv,
-  Egrave: jv,
-  egrave: eO,
-  egs: tO,
-  egsdot: nO,
-  el: rO,
-  Element: aO,
-  elinters: oO,
-  ell: iO,
-  els: sO,
-  elsdot: cO,
-  Emacr: lO,
-  emacr: _O,
-  empty: dO,
-  emptyset: uO,
-  EmptySmallSquare: pO,
-  emptyv: mO,
-  EmptyVerySmallSquare: gO,
-  emsp13: EO,
-  emsp14: SO,
-  emsp: fO,
-  ENG: bO,
-  eng: TO,
-  ensp: hO,
-  Eogon: RO,
-  eogon: CO,
-  Eopf: NO,
-  eopf: vO,
-  epar: OO,
-  eparsl: yO,
-  eplus: AO,
-  epsi: IO,
-  Epsilon: DO,
-  epsilon: wO,
-  epsiv: MO,
-  eqcirc: xO,
-  eqcolon: LO,
-  eqsim: kO,
-  eqslantgtr: PO,
-  eqslantless: UO,
-  Equal: FO,
-  equals: BO,
-  EqualTilde: GO,
-  equest: qO,
-  Equilibrium: YO,
-  equiv: HO,
-  equivDD: VO,
-  eqvparsl: zO,
-  erarr: $O,
-  erDot: WO,
-  escr: KO,
-  Escr: QO,
-  esdot: XO,
-  Esim: ZO,
-  esim: JO,
-  Eta: jO,
-  eta: ey,
-  ETH: ty,
-  eth: ny,
-  Euml: ry,
-  euml: ay,
-  euro: oy,
-  excl: iy,
-  exist: sy,
-  Exists: cy,
-  expectation: ly,
-  exponentiale: _y,
-  ExponentialE: dy,
-  fallingdotseq: uy,
-  Fcy: py,
-  fcy: my,
-  female: gy,
-  ffilig: Ey,
-  fflig: Sy,
-  ffllig: fy,
-  Ffr: by,
-  ffr: Ty,
-  filig: hy,
-  FilledSmallSquare: Ry,
-  FilledVerySmallSquare: Cy,
-  fjlig: Ny,
-  flat: vy,
-  fllig: Oy,
-  fltns: yy,
-  fnof: Ay,
-  Fopf: Iy,
-  fopf: Dy,
-  forall: wy,
-  ForAll: My,
-  fork: xy,
-  forkv: Ly,
-  Fouriertrf: ky,
-  fpartint: Py,
-  frac12: Uy,
-  frac13: Fy,
-  frac14: By,
-  frac15: Gy,
-  frac16: qy,
-  frac18: Yy,
-  frac23: Hy,
-  frac25: Vy,
-  frac34: zy,
-  frac35: $y,
-  frac38: Wy,
-  frac45: Ky,
-  frac56: Qy,
-  frac58: Xy,
-  frac78: Zy,
-  frasl: Jy,
-  frown: jy,
-  fscr: eA,
-  Fscr: tA,
-  gacute: nA,
-  Gamma: rA,
-  gamma: aA,
-  Gammad: oA,
-  gammad: iA,
-  gap: sA,
-  Gbreve: cA,
-  gbreve: lA,
-  Gcedil: _A,
-  Gcirc: dA,
-  gcirc: uA,
-  Gcy: pA,
-  gcy: mA,
-  Gdot: gA,
-  gdot: EA,
-  ge: SA,
-  gE: fA,
-  gEl: bA,
-  gel: TA,
-  geq: hA,
-  geqq: RA,
-  geqslant: CA,
-  gescc: NA,
-  ges: vA,
-  gesdot: OA,
-  gesdoto: yA,
-  gesdotol: AA,
-  gesl: IA,
-  gesles: DA,
-  Gfr: wA,
-  gfr: MA,
-  gg: xA,
-  Gg: LA,
-  ggg: kA,
-  gimel: PA,
-  GJcy: UA,
-  gjcy: FA,
-  gla: BA,
-  gl: GA,
-  glE: qA,
-  glj: YA,
-  gnap: HA,
-  gnapprox: VA,
-  gne: zA,
-  gnE: $A,
-  gneq: WA,
-  gneqq: KA,
-  gnsim: QA,
-  Gopf: XA,
-  gopf: ZA,
-  grave: JA,
-  GreaterEqual: jA,
-  GreaterEqualLess: eI,
-  GreaterFullEqual: tI,
-  GreaterGreater: nI,
-  GreaterLess: rI,
-  GreaterSlantEqual: aI,
-  GreaterTilde: oI,
-  Gscr: iI,
-  gscr: sI,
-  gsim: cI,
-  gsime: lI,
-  gsiml: _I,
-  gtcc: dI,
-  gtcir: uI,
-  gt: pI,
-  GT: mI,
-  Gt: gI,
-  gtdot: EI,
-  gtlPar: SI,
-  gtquest: fI,
-  gtrapprox: bI,
-  gtrarr: TI,
-  gtrdot: hI,
-  gtreqless: RI,
-  gtreqqless: CI,
-  gtrless: NI,
-  gtrsim: vI,
-  gvertneqq: OI,
-  gvnE: yI,
-  Hacek: AI,
-  hairsp: II,
-  half: DI,
-  hamilt: wI,
-  HARDcy: MI,
-  hardcy: xI,
-  harrcir: LI,
-  harr: kI,
-  hArr: PI,
-  harrw: UI,
-  Hat: FI,
-  hbar: BI,
-  Hcirc: GI,
-  hcirc: qI,
-  hearts: YI,
-  heartsuit: HI,
-  hellip: VI,
-  hercon: zI,
-  hfr: $I,
-  Hfr: WI,
-  HilbertSpace: KI,
-  hksearow: QI,
-  hkswarow: XI,
-  hoarr: ZI,
-  homtht: JI,
-  hookleftarrow: jI,
-  hookrightarrow: eD,
-  hopf: tD,
-  Hopf: nD,
-  horbar: rD,
-  HorizontalLine: aD,
-  hscr: oD,
-  Hscr: iD,
-  hslash: sD,
-  Hstrok: cD,
-  hstrok: lD,
-  HumpDownHump: _D,
-  HumpEqual: dD,
-  hybull: uD,
-  hyphen: pD,
-  Iacute: mD,
-  iacute: gD,
-  ic: ED,
-  Icirc: SD,
-  icirc: fD,
-  Icy: bD,
-  icy: TD,
-  Idot: hD,
-  IEcy: RD,
-  iecy: CD,
-  iexcl: ND,
-  iff: vD,
-  ifr: OD,
-  Ifr: yD,
-  Igrave: AD,
-  igrave: ID,
-  ii: DD,
-  iiiint: wD,
-  iiint: MD,
-  iinfin: xD,
-  iiota: LD,
-  IJlig: kD,
-  ijlig: PD,
-  Imacr: UD,
-  imacr: FD,
-  image: BD,
-  ImaginaryI: GD,
-  imagline: qD,
-  imagpart: YD,
-  imath: HD,
-  Im: VD,
-  imof: zD,
-  imped: $D,
-  Implies: WD,
-  incare: KD,
+const pS = "Á", mS = "á", gS = "Ă", ES = "ă", SS = "∾", fS = "∿", bS = "∾̳", TS = "Â", hS = "â", RS = "´", CS = "А", NS = "а", vS = "Æ", OS = "æ", yS = "⁡", AS = "𝔄", IS = "𝔞", DS = "À", wS = "à", MS = "ℵ", xS = "ℵ", LS = "Α", kS = "α", PS = "Ā", US = "ā", FS = "⨿", BS = "&", GS = "&", qS = "⩕", YS = "⩓", HS = "∧", VS = "⩜", zS = "⩘", $S = "⩚", WS = "∠", KS = "⦤", QS = "∠", XS = "⦨", ZS = "⦩", JS = "⦪", jS = "⦫", ef = "⦬", tf = "⦭", nf = "⦮", rf = "⦯", af = "∡", of = "∟", sf = "⊾", cf = "⦝", lf = "∢", _f = "Å", df = "⍼", uf = "Ą", pf = "ą", mf = "𝔸", gf = "𝕒", Ef = "⩯", Sf = "≈", ff = "⩰", bf = "≊", Tf = "≋", hf = "'", Rf = "⁡", Cf = "≈", Nf = "≊", vf = "Å", Of = "å", yf = "𝒜", Af = "𝒶", If = "≔", Df = "*", wf = "≈", Mf = "≍", xf = "Ã", Lf = "ã", kf = "Ä", Pf = "ä", Uf = "∳", Ff = "⨑", Bf = "≌", Gf = "϶", qf = "‵", Yf = "∽", Hf = "⋍", Vf = "∖", zf = "⫧", $f = "⊽", Wf = "⌅", Kf = "⌆", Qf = "⌅", Xf = "⎵", Zf = "⎶", Jf = "≌", jf = "Б", eb = "б", tb = "„", nb = "∵", rb = "∵", ab = "∵", ob = "⦰", ib = "϶", sb = "ℬ", cb = "ℬ", lb = "Β", _b = "β", db = "ℶ", ub = "≬", pb = "𝔅", mb = "𝔟", gb = "⋂", Eb = "◯", Sb = "⋃", fb = "⨀", bb = "⨁", Tb = "⨂", hb = "⨆", Rb = "★", Cb = "▽", Nb = "△", vb = "⨄", Ob = "⋁", yb = "⋀", Ab = "⤍", Ib = "⧫", Db = "▪", wb = "▴", Mb = "▾", xb = "◂", Lb = "▸", kb = "␣", Pb = "▒", Ub = "░", Fb = "▓", Bb = "█", Gb = "=⃥", qb = "≡⃥", Yb = "⫭", Hb = "⌐", Vb = "𝔹", zb = "𝕓", $b = "⊥", Wb = "⊥", Kb = "⋈", Qb = "⧉", Xb = "┐", Zb = "╕", Jb = "╖", jb = "╗", eT = "┌", tT = "╒", nT = "╓", rT = "╔", aT = "─", oT = "═", iT = "┬", sT = "╤", cT = "╥", lT = "╦", _T = "┴", dT = "╧", uT = "╨", pT = "╩", mT = "⊟", gT = "⊞", ET = "⊠", ST = "┘", fT = "╛", bT = "╜", TT = "╝", hT = "└", RT = "╘", CT = "╙", NT = "╚", vT = "│", OT = "║", yT = "┼", AT = "╪", IT = "╫", DT = "╬", wT = "┤", MT = "╡", xT = "╢", LT = "╣", kT = "├", PT = "╞", UT = "╟", FT = "╠", BT = "‵", GT = "˘", qT = "˘", YT = "¦", HT = "𝒷", VT = "ℬ", zT = "⁏", $T = "∽", WT = "⋍", KT = "⧅", QT = "\\", XT = "⟈", ZT = "•", JT = "•", jT = "≎", eh = "⪮", th = "≏", nh = "≎", rh = "≏", ah = "Ć", oh = "ć", ih = "⩄", sh = "⩉", ch = "⩋", lh = "∩", _h = "⋒", dh = "⩇", uh = "⩀", ph = "ⅅ", mh = "∩︀", gh = "⁁", Eh = "ˇ", Sh = "ℭ", fh = "⩍", bh = "Č", Th = "č", hh = "Ç", Rh = "ç", Ch = "Ĉ", Nh = "ĉ", vh = "∰", Oh = "⩌", yh = "⩐", Ah = "Ċ", Ih = "ċ", Dh = "¸", wh = "¸", Mh = "⦲", xh = "¢", Lh = "·", kh = "·", Ph = "𝔠", Uh = "ℭ", Fh = "Ч", Bh = "ч", Gh = "✓", qh = "✓", Yh = "Χ", Hh = "χ", Vh = "ˆ", zh = "≗", $h = "↺", Wh = "↻", Kh = "⊛", Qh = "⊚", Xh = "⊝", Zh = "⊙", Jh = "®", jh = "Ⓢ", eR = "⊖", tR = "⊕", nR = "⊗", rR = "○", aR = "⧃", oR = "≗", iR = "⨐", sR = "⫯", cR = "⧂", lR = "∲", _R = "”", dR = "’", uR = "♣", pR = "♣", mR = ":", gR = "∷", ER = "⩴", SR = "≔", fR = "≔", bR = ",", TR = "@", hR = "∁", RR = "∘", CR = "∁", NR = "ℂ", vR = "≅", OR = "⩭", yR = "≡", AR = "∮", IR = "∯", DR = "∮", wR = "𝕔", MR = "ℂ", xR = "∐", LR = "∐", kR = "©", PR = "©", UR = "℗", FR = "∳", BR = "↵", GR = "✗", qR = "⨯", YR = "𝒞", HR = "𝒸", VR = "⫏", zR = "⫑", $R = "⫐", WR = "⫒", KR = "⋯", QR = "⤸", XR = "⤵", ZR = "⋞", JR = "⋟", jR = "↶", eC = "⤽", tC = "⩈", nC = "⩆", rC = "≍", aC = "∪", oC = "⋓", iC = "⩊", sC = "⊍", cC = "⩅", lC = "∪︀", _C = "↷", dC = "⤼", uC = "⋞", pC = "⋟", mC = "⋎", gC = "⋏", EC = "¤", SC = "↶", fC = "↷", bC = "⋎", TC = "⋏", hC = "∲", RC = "∱", CC = "⌭", NC = "†", vC = "‡", OC = "ℸ", yC = "↓", AC = "↡", IC = "⇓", DC = "‐", wC = "⫤", MC = "⊣", xC = "⤏", LC = "˝", kC = "Ď", PC = "ď", UC = "Д", FC = "д", BC = "‡", GC = "⇊", qC = "ⅅ", YC = "ⅆ", HC = "⤑", VC = "⩷", zC = "°", $C = "∇", WC = "Δ", KC = "δ", QC = "⦱", XC = "⥿", ZC = "𝔇", JC = "𝔡", jC = "⥥", eN = "⇃", tN = "⇂", nN = "´", rN = "˙", aN = "˝", oN = "`", iN = "˜", sN = "⋄", cN = "⋄", lN = "⋄", _N = "♦", dN = "♦", uN = "¨", pN = "ⅆ", mN = "ϝ", gN = "⋲", EN = "÷", SN = "÷", fN = "⋇", bN = "⋇", TN = "Ђ", hN = "ђ", RN = "⌞", CN = "⌍", NN = "$", vN = "𝔻", ON = "𝕕", yN = "¨", AN = "˙", IN = "⃜", DN = "≐", wN = "≑", MN = "≐", xN = "∸", LN = "∔", kN = "⊡", PN = "⌆", UN = "∯", FN = "¨", BN = "⇓", GN = "⇐", qN = "⇔", YN = "⫤", HN = "⟸", VN = "⟺", zN = "⟹", $N = "⇒", WN = "⊨", KN = "⇑", QN = "⇕", XN = "∥", ZN = "⤓", JN = "↓", jN = "↓", ev = "⇓", tv = "⇵", nv = "̑", rv = "⇊", av = "⇃", ov = "⇂", iv = "⥐", sv = "⥞", cv = "⥖", lv = "↽", _v = "⥟", dv = "⥗", uv = "⇁", pv = "↧", mv = "⊤", gv = "⤐", Ev = "⌟", Sv = "⌌", fv = "𝒟", bv = "𝒹", Tv = "Ѕ", hv = "ѕ", Rv = "⧶", Cv = "Đ", Nv = "đ", vv = "⋱", Ov = "▿", yv = "▾", Av = "⇵", Iv = "⥯", Dv = "⦦", wv = "Џ", Mv = "џ", xv = "⟿", Lv = "É", kv = "é", Pv = "⩮", Uv = "Ě", Fv = "ě", Bv = "Ê", Gv = "ê", qv = "≖", Yv = "≕", Hv = "Э", Vv = "э", zv = "⩷", $v = "Ė", Wv = "ė", Kv = "≑", Qv = "ⅇ", Xv = "≒", Zv = "𝔈", Jv = "𝔢", jv = "⪚", eO = "È", tO = "è", nO = "⪖", rO = "⪘", aO = "⪙", oO = "∈", iO = "⏧", sO = "ℓ", cO = "⪕", lO = "⪗", _O = "Ē", dO = "ē", uO = "∅", pO = "∅", mO = "◻", gO = "∅", EO = "▫", SO = " ", fO = " ", bO = " ", TO = "Ŋ", hO = "ŋ", RO = " ", CO = "Ę", NO = "ę", vO = "𝔼", OO = "𝕖", yO = "⋕", AO = "⧣", IO = "⩱", DO = "ε", wO = "Ε", MO = "ε", xO = "ϵ", LO = "≖", kO = "≕", PO = "≂", UO = "⪖", FO = "⪕", BO = "⩵", GO = "=", qO = "≂", YO = "≟", HO = "⇌", VO = "≡", zO = "⩸", $O = "⧥", WO = "⥱", KO = "≓", QO = "ℯ", XO = "ℰ", ZO = "≐", JO = "⩳", jO = "≂", ey = "Η", ty = "η", ny = "Ð", ry = "ð", ay = "Ë", oy = "ë", iy = "€", sy = "!", cy = "∃", ly = "∃", _y = "ℰ", dy = "ⅇ", uy = "ⅇ", py = "≒", my = "Ф", gy = "ф", Ey = "♀", Sy = "ﬃ", fy = "ﬀ", by = "ﬄ", Ty = "𝔉", hy = "𝔣", Ry = "ﬁ", Cy = "◼", Ny = "▪", vy = "fj", Oy = "♭", yy = "ﬂ", Ay = "▱", Iy = "ƒ", Dy = "𝔽", wy = "𝕗", My = "∀", xy = "∀", Ly = "⋔", ky = "⫙", Py = "ℱ", Uy = "⨍", Fy = "½", By = "⅓", Gy = "¼", qy = "⅕", Yy = "⅙", Hy = "⅛", Vy = "⅔", zy = "⅖", $y = "¾", Wy = "⅗", Ky = "⅜", Qy = "⅘", Xy = "⅚", Zy = "⅝", Jy = "⅞", jy = "⁄", eA = "⌢", tA = "𝒻", nA = "ℱ", rA = "ǵ", aA = "Γ", oA = "γ", iA = "Ϝ", sA = "ϝ", cA = "⪆", lA = "Ğ", _A = "ğ", dA = "Ģ", uA = "Ĝ", pA = "ĝ", mA = "Г", gA = "г", EA = "Ġ", SA = "ġ", fA = "≥", bA = "≧", TA = "⪌", hA = "⋛", RA = "≥", CA = "≧", NA = "⩾", vA = "⪩", OA = "⩾", yA = "⪀", AA = "⪂", IA = "⪄", DA = "⋛︀", wA = "⪔", MA = "𝔊", xA = "𝔤", LA = "≫", kA = "⋙", PA = "⋙", UA = "ℷ", FA = "Ѓ", BA = "ѓ", GA = "⪥", qA = "≷", YA = "⪒", HA = "⪤", VA = "⪊", zA = "⪊", $A = "⪈", WA = "≩", KA = "⪈", QA = "≩", XA = "⋧", ZA = "𝔾", JA = "𝕘", jA = "`", eI = "≥", tI = "⋛", nI = "≧", rI = "⪢", aI = "≷", oI = "⩾", iI = "≳", sI = "𝒢", cI = "ℊ", lI = "≳", _I = "⪎", dI = "⪐", uI = "⪧", pI = "⩺", mI = ">", gI = ">", EI = "≫", SI = "⋗", fI = "⦕", bI = "⩼", TI = "⪆", hI = "⥸", RI = "⋗", CI = "⋛", NI = "⪌", vI = "≷", OI = "≳", yI = "≩︀", AI = "≩︀", II = "ˇ", DI = " ", wI = "½", MI = "ℋ", xI = "Ъ", LI = "ъ", kI = "⥈", PI = "↔", UI = "⇔", FI = "↭", BI = "^", GI = "ℏ", qI = "Ĥ", YI = "ĥ", HI = "♥", VI = "♥", zI = "…", $I = "⊹", WI = "𝔥", KI = "ℌ", QI = "ℋ", XI = "⤥", ZI = "⤦", JI = "⇿", jI = "∻", eD = "↩", tD = "↪", nD = "𝕙", rD = "ℍ", aD = "―", oD = "─", iD = "𝒽", sD = "ℋ", cD = "ℏ", lD = "Ħ", _D = "ħ", dD = "≎", uD = "≏", pD = "⁃", mD = "‐", gD = "Í", ED = "í", SD = "⁣", fD = "Î", bD = "î", TD = "И", hD = "и", RD = "İ", CD = "Е", ND = "е", vD = "¡", OD = "⇔", yD = "𝔦", AD = "ℑ", ID = "Ì", DD = "ì", wD = "ⅈ", MD = "⨌", xD = "∭", LD = "⧜", kD = "℩", PD = "Ĳ", UD = "ĳ", FD = "Ī", BD = "ī", GD = "ℑ", qD = "ⅈ", YD = "ℐ", HD = "ℑ", VD = "ı", zD = "ℑ", $D = "⊷", WD = "Ƶ", KD = "⇒", QD = "℅", XD = "∞", ZD = "⧝", JD = "ı", jD = "⊺", ew = "∫", tw = "∬", nw = "ℤ", rw = "∫", aw = "⊺", ow = "⋂", iw = "⨗", sw = "⨼", cw = "⁣", lw = "⁢", _w = "Ё", dw = "ё", uw = "Į", pw = "į", mw = "𝕀", gw = "𝕚", Ew = "Ι", Sw = "ι", fw = "⨼", bw = "¿", Tw = "𝒾", hw = "ℐ", Rw = "∈", Cw = "⋵", Nw = "⋹", vw = "⋴", Ow = "⋳", yw = "∈", Aw = "⁢", Iw = "Ĩ", Dw = "ĩ", ww = "І", Mw = "і", xw = "Ï", Lw = "ï", kw = "Ĵ", Pw = "ĵ", Uw = "Й", Fw = "й", Bw = "𝔍", Gw = "𝔧", qw = "ȷ", Yw = "𝕁", Hw = "𝕛", Vw = "𝒥", zw = "𝒿", $w = "Ј", Ww = "ј", Kw = "Є", Qw = "є", Xw = "Κ", Zw = "κ", Jw = "ϰ", jw = "Ķ", eM = "ķ", tM = "К", nM = "к", rM = "𝔎", aM = "𝔨", oM = "ĸ", iM = "Х", sM = "х", cM = "Ќ", lM = "ќ", _M = "𝕂", dM = "𝕜", uM = "𝒦", pM = "𝓀", mM = "⇚", gM = "Ĺ", EM = "ĺ", SM = "⦴", fM = "ℒ", bM = "Λ", TM = "λ", hM = "⟨", RM = "⟪", CM = "⦑", NM = "⟨", vM = "⪅", OM = "ℒ", yM = "«", AM = "⇤", IM = "⤟", DM = "←", wM = "↞", MM = "⇐", xM = "⤝", LM = "↩", kM = "↫", PM = "⤹", UM = "⥳", FM = "↢", BM = "⤙", GM = "⤛", qM = "⪫", YM = "⪭", HM = "⪭︀", VM = "⤌", zM = "⤎", $M = "❲", WM = "{", KM = "[", QM = "⦋", XM = "⦏", ZM = "⦍", JM = "Ľ", jM = "ľ", ex = "Ļ", tx = "ļ", nx = "⌈", rx = "{", ax = "Л", ox = "л", ix = "⤶", sx = "“", cx = "„", lx = "⥧", _x = "⥋", dx = "↲", ux = "≤", px = "≦", mx = "⟨", gx = "⇤", Ex = "←", Sx = "←", fx = "⇐", bx = "⇆", Tx = "↢", hx = "⌈", Rx = "⟦", Cx = "⥡", Nx = "⥙", vx = "⇃", Ox = "⌊", yx = "↽", Ax = "↼", Ix = "⇇", Dx = "↔", wx = "↔", Mx = "⇔", xx = "⇆", Lx = "⇋", kx = "↭", Px = "⥎", Ux = "↤", Fx = "⊣", Bx = "⥚", Gx = "⋋", qx = "⧏", Yx = "⊲", Hx = "⊴", Vx = "⥑", zx = "⥠", $x = "⥘", Wx = "↿", Kx = "⥒", Qx = "↼", Xx = "⪋", Zx = "⋚", Jx = "≤", jx = "≦", eL = "⩽", tL = "⪨", nL = "⩽", rL = "⩿", aL = "⪁", oL = "⪃", iL = "⋚︀", sL = "⪓", cL = "⪅", lL = "⋖", _L = "⋚", dL = "⪋", uL = "⋚", pL = "≦", mL = "≶", gL = "≶", EL = "⪡", SL = "≲", fL = "⩽", bL = "≲", TL = "⥼", hL = "⌊", RL = "𝔏", CL = "𝔩", NL = "≶", vL = "⪑", OL = "⥢", yL = "↽", AL = "↼", IL = "⥪", DL = "▄", wL = "Љ", ML = "љ", xL = "⇇", LL = "≪", kL = "⋘", PL = "⌞", UL = "⇚", FL = "⥫", BL = "◺", GL = "Ŀ", qL = "ŀ", YL = "⎰", HL = "⎰", VL = "⪉", zL = "⪉", $L = "⪇", WL = "≨", KL = "⪇", QL = "≨", XL = "⋦", ZL = "⟬", JL = "⇽", jL = "⟦", ek = "⟵", tk = "⟵", nk = "⟸", rk = "⟷", ak = "⟷", ok = "⟺", ik = "⟼", sk = "⟶", ck = "⟶", lk = "⟹", _k = "↫", dk = "↬", uk = "⦅", pk = "𝕃", mk = "𝕝", gk = "⨭", Ek = "⨴", Sk = "∗", fk = "_", bk = "↙", Tk = "↘", hk = "◊", Rk = "◊", Ck = "⧫", Nk = "(", vk = "⦓", Ok = "⇆", yk = "⌟", Ak = "⇋", Ik = "⥭", Dk = "‎", wk = "⊿", Mk = "‹", xk = "𝓁", Lk = "ℒ", kk = "↰", Pk = "↰", Uk = "≲", Fk = "⪍", Bk = "⪏", Gk = "[", qk = "‘", Yk = "‚", Hk = "Ł", Vk = "ł", zk = "⪦", $k = "⩹", Wk = "<", Kk = "<", Qk = "≪", Xk = "⋖", Zk = "⋋", Jk = "⋉", jk = "⥶", eP = "⩻", tP = "◃", nP = "⊴", rP = "◂", aP = "⦖", oP = "⥊", iP = "⥦", sP = "≨︀", cP = "≨︀", lP = "¯", _P = "♂", dP = "✠", uP = "✠", pP = "↦", mP = "↦", gP = "↧", EP = "↤", SP = "↥", fP = "▮", bP = "⨩", TP = "М", hP = "м", RP = "—", CP = "∺", NP = "∡", vP = " ", OP = "ℳ", yP = "𝔐", AP = "𝔪", IP = "℧", DP = "µ", wP = "*", MP = "⫰", xP = "∣", LP = "·", kP = "⊟", PP = "−", UP = "∸", FP = "⨪", BP = "∓", GP = "⫛", qP = "…", YP = "∓", HP = "⊧", VP = "𝕄", zP = "𝕞", $P = "∓", WP = "𝓂", KP = "ℳ", QP = "∾", XP = "Μ", ZP = "μ", JP = "⊸", jP = "⊸", eU = "∇", tU = "Ń", nU = "ń", rU = "∠⃒", aU = "≉", oU = "⩰̸", iU = "≋̸", sU = "ŉ", cU = "≉", lU = "♮", _U = "ℕ", dU = "♮", uU = " ", pU = "≎̸", mU = "≏̸", gU = "⩃", EU = "Ň", SU = "ň", fU = "Ņ", bU = "ņ", TU = "≇", hU = "⩭̸", RU = "⩂", CU = "Н", NU = "н", vU = "–", OU = "⤤", yU = "↗", AU = "⇗", IU = "↗", DU = "≠", wU = "≐̸", MU = "​", xU = "​", LU = "​", kU = "​", PU = "≢", UU = "⤨", FU = "≂̸", BU = "≫", GU = "≪", qU = `
+`, YU = "∄", HU = "∄", VU = "𝔑", zU = "𝔫", $U = "≧̸", WU = "≱", KU = "≱", QU = "≧̸", XU = "⩾̸", ZU = "⩾̸", JU = "⋙̸", jU = "≵", e0 = "≫⃒", t0 = "≯", n0 = "≯", r0 = "≫̸", a0 = "↮", o0 = "⇎", i0 = "⫲", s0 = "∋", c0 = "⋼", l0 = "⋺", _0 = "∋", d0 = "Њ", u0 = "њ", p0 = "↚", m0 = "⇍", g0 = "‥", E0 = "≦̸", S0 = "≰", f0 = "↚", b0 = "⇍", T0 = "↮", h0 = "⇎", R0 = "≰", C0 = "≦̸", N0 = "⩽̸", v0 = "⩽̸", O0 = "≮", y0 = "⋘̸", A0 = "≴", I0 = "≪⃒", D0 = "≮", w0 = "⋪", M0 = "⋬", x0 = "≪̸", L0 = "∤", k0 = "⁠", P0 = " ", U0 = "𝕟", F0 = "ℕ", B0 = "⫬", G0 = "¬", q0 = "≢", Y0 = "≭", H0 = "∦", V0 = "∉", z0 = "≠", $0 = "≂̸", W0 = "∄", K0 = "≯", Q0 = "≱", X0 = "≧̸", Z0 = "≫̸", J0 = "≹", j0 = "⩾̸", eF = "≵", tF = "≎̸", nF = "≏̸", rF = "∉", aF = "⋵̸", oF = "⋹̸", iF = "∉", sF = "⋷", cF = "⋶", lF = "⧏̸", _F = "⋪", dF = "⋬", uF = "≮", pF = "≰", mF = "≸", gF = "≪̸", EF = "⩽̸", SF = "≴", fF = "⪢̸", bF = "⪡̸", TF = "∌", hF = "∌", RF = "⋾", CF = "⋽", NF = "⊀", vF = "⪯̸", OF = "⋠", yF = "∌", AF = "⧐̸", IF = "⋫", DF = "⋭", wF = "⊏̸", MF = "⋢", xF = "⊐̸", LF = "⋣", kF = "⊂⃒", PF = "⊈", UF = "⊁", FF = "⪰̸", BF = "⋡", GF = "≿̸", qF = "⊃⃒", YF = "⊉", HF = "≁", VF = "≄", zF = "≇", $F = "≉", WF = "∤", KF = "∦", QF = "∦", XF = "⫽⃥", ZF = "∂̸", JF = "⨔", jF = "⊀", eB = "⋠", tB = "⊀", nB = "⪯̸", rB = "⪯̸", aB = "⤳̸", oB = "↛", iB = "⇏", sB = "↝̸", cB = "↛", lB = "⇏", _B = "⋫", dB = "⋭", uB = "⊁", pB = "⋡", mB = "⪰̸", gB = "𝒩", EB = "𝓃", SB = "∤", fB = "∦", bB = "≁", TB = "≄", hB = "≄", RB = "∤", CB = "∦", NB = "⋢", vB = "⋣", OB = "⊄", yB = "⫅̸", AB = "⊈", IB = "⊂⃒", DB = "⊈", wB = "⫅̸", MB = "⊁", xB = "⪰̸", LB = "⊅", kB = "⫆̸", PB = "⊉", UB = "⊃⃒", FB = "⊉", BB = "⫆̸", GB = "≹", qB = "Ñ", YB = "ñ", HB = "≸", VB = "⋪", zB = "⋬", $B = "⋫", WB = "⋭", KB = "Ν", QB = "ν", XB = "#", ZB = "№", JB = " ", jB = "≍⃒", eG = "⊬", tG = "⊭", nG = "⊮", rG = "⊯", aG = "≥⃒", oG = ">⃒", iG = "⤄", sG = "⧞", cG = "⤂", lG = "≤⃒", _G = "<⃒", dG = "⊴⃒", uG = "⤃", pG = "⊵⃒", mG = "∼⃒", gG = "⤣", EG = "↖", SG = "⇖", fG = "↖", bG = "⤧", TG = "Ó", hG = "ó", RG = "⊛", CG = "Ô", NG = "ô", vG = "⊚", OG = "О", yG = "о", AG = "⊝", IG = "Ő", DG = "ő", wG = "⨸", MG = "⊙", xG = "⦼", LG = "Œ", kG = "œ", PG = "⦿", UG = "𝔒", FG = "𝔬", BG = "˛", GG = "Ò", qG = "ò", YG = "⧁", HG = "⦵", VG = "Ω", zG = "∮", $G = "↺", WG = "⦾", KG = "⦻", QG = "‾", XG = "⧀", ZG = "Ō", JG = "ō", jG = "Ω", e1 = "ω", t1 = "Ο", n1 = "ο", r1 = "⦶", a1 = "⊖", o1 = "𝕆", i1 = "𝕠", s1 = "⦷", c1 = "“", l1 = "‘", _1 = "⦹", d1 = "⊕", u1 = "↻", p1 = "⩔", m1 = "∨", g1 = "⩝", E1 = "ℴ", S1 = "ℴ", f1 = "ª", b1 = "º", T1 = "⊶", h1 = "⩖", R1 = "⩗", C1 = "⩛", N1 = "Ⓢ", v1 = "𝒪", O1 = "ℴ", y1 = "Ø", A1 = "ø", I1 = "⊘", D1 = "Õ", w1 = "õ", M1 = "⨶", x1 = "⨷", L1 = "⊗", k1 = "Ö", P1 = "ö", U1 = "⌽", F1 = "‾", B1 = "⏞", G1 = "⎴", q1 = "⏜", Y1 = "¶", H1 = "∥", V1 = "∥", z1 = "⫳", $1 = "⫽", W1 = "∂", K1 = "∂", Q1 = "П", X1 = "п", Z1 = "%", J1 = ".", j1 = "‰", eq = "⊥", tq = "‱", nq = "𝔓", rq = "𝔭", aq = "Φ", oq = "φ", iq = "ϕ", sq = "ℳ", cq = "☎", lq = "Π", _q = "π", dq = "⋔", uq = "ϖ", pq = "ℏ", mq = "ℎ", gq = "ℏ", Eq = "⨣", Sq = "⊞", fq = "⨢", bq = "+", Tq = "∔", hq = "⨥", Rq = "⩲", Cq = "±", Nq = "±", vq = "⨦", Oq = "⨧", yq = "±", Aq = "ℌ", Iq = "⨕", Dq = "𝕡", wq = "ℙ", Mq = "£", xq = "⪷", Lq = "⪻", kq = "≺", Pq = "≼", Uq = "⪷", Fq = "≺", Bq = "≼", Gq = "≺", qq = "⪯", Yq = "≼", Hq = "≾", Vq = "⪯", zq = "⪹", $q = "⪵", Wq = "⋨", Kq = "⪯", Qq = "⪳", Xq = "≾", Zq = "′", Jq = "″", jq = "ℙ", eY = "⪹", tY = "⪵", nY = "⋨", rY = "∏", aY = "∏", oY = "⌮", iY = "⌒", sY = "⌓", cY = "∝", lY = "∝", _Y = "∷", dY = "∝", uY = "≾", pY = "⊰", mY = "𝒫", gY = "𝓅", EY = "Ψ", SY = "ψ", fY = " ", bY = "𝔔", TY = "𝔮", hY = "⨌", RY = "𝕢", CY = "ℚ", NY = "⁗", vY = "𝒬", OY = "𝓆", yY = "ℍ", AY = "⨖", IY = "?", DY = "≟", wY = '"', MY = '"', xY = "⇛", LY = "∽̱", kY = "Ŕ", PY = "ŕ", UY = "√", FY = "⦳", BY = "⟩", GY = "⟫", qY = "⦒", YY = "⦥", HY = "⟩", VY = "»", zY = "⥵", $Y = "⇥", WY = "⤠", KY = "⤳", QY = "→", XY = "↠", ZY = "⇒", JY = "⤞", jY = "↪", eH = "↬", tH = "⥅", nH = "⥴", rH = "⤖", aH = "↣", oH = "↝", iH = "⤚", sH = "⤜", cH = "∶", lH = "ℚ", _H = "⤍", dH = "⤏", uH = "⤐", pH = "❳", mH = "}", gH = "]", EH = "⦌", SH = "⦎", fH = "⦐", bH = "Ř", TH = "ř", hH = "Ŗ", RH = "ŗ", CH = "⌉", NH = "}", vH = "Р", OH = "р", yH = "⤷", AH = "⥩", IH = "”", DH = "”", wH = "↳", MH = "ℜ", xH = "ℛ", LH = "ℜ", kH = "ℝ", PH = "ℜ", UH = "▭", FH = "®", BH = "®", GH = "∋", qH = "⇋", YH = "⥯", HH = "⥽", VH = "⌋", zH = "𝔯", $H = "ℜ", WH = "⥤", KH = "⇁", QH = "⇀", XH = "⥬", ZH = "Ρ", JH = "ρ", jH = "ϱ", eV = "⟩", tV = "⇥", nV = "→", rV = "→", aV = "⇒", oV = "⇄", iV = "↣", sV = "⌉", cV = "⟧", lV = "⥝", _V = "⥕", dV = "⇂", uV = "⌋", pV = "⇁", mV = "⇀", gV = "⇄", EV = "⇌", SV = "⇉", fV = "↝", bV = "↦", TV = "⊢", hV = "⥛", RV = "⋌", CV = "⧐", NV = "⊳", vV = "⊵", OV = "⥏", yV = "⥜", AV = "⥔", IV = "↾", DV = "⥓", wV = "⇀", MV = "˚", xV = "≓", LV = "⇄", kV = "⇌", PV = "‏", UV = "⎱", FV = "⎱", BV = "⫮", GV = "⟭", qV = "⇾", YV = "⟧", HV = "⦆", VV = "𝕣", zV = "ℝ", $V = "⨮", WV = "⨵", KV = "⥰", QV = ")", XV = "⦔", ZV = "⨒", JV = "⇉", jV = "⇛", ez = "›", tz = "𝓇", nz = "ℛ", rz = "↱", az = "↱", oz = "]", iz = "’", sz = "’", cz = "⋌", lz = "⋊", _z = "▹", dz = "⊵", uz = "▸", pz = "⧎", mz = "⧴", gz = "⥨", Ez = "℞", Sz = "Ś", fz = "ś", bz = "‚", Tz = "⪸", hz = "Š", Rz = "š", Cz = "⪼", Nz = "≻", vz = "≽", Oz = "⪰", yz = "⪴", Az = "Ş", Iz = "ş", Dz = "Ŝ", wz = "ŝ", Mz = "⪺", xz = "⪶", Lz = "⋩", kz = "⨓", Pz = "≿", Uz = "С", Fz = "с", Bz = "⊡", Gz = "⋅", qz = "⩦", Yz = "⤥", Hz = "↘", Vz = "⇘", zz = "↘", $z = "§", Wz = ";", Kz = "⤩", Qz = "∖", Xz = "∖", Zz = "✶", Jz = "𝔖", jz = "𝔰", e2 = "⌢", t2 = "♯", n2 = "Щ", r2 = "щ", a2 = "Ш", o2 = "ш", i2 = "↓", s2 = "←", c2 = "∣", l2 = "∥", _2 = "→", d2 = "↑", u2 = "­", p2 = "Σ", m2 = "σ", g2 = "ς", E2 = "ς", S2 = "∼", f2 = "⩪", b2 = "≃", T2 = "≃", h2 = "⪞", R2 = "⪠", C2 = "⪝", N2 = "⪟", v2 = "≆", O2 = "⨤", y2 = "⥲", A2 = "←", I2 = "∘", D2 = "∖", w2 = "⨳", M2 = "⧤", x2 = "∣", L2 = "⌣", k2 = "⪪", P2 = "⪬", U2 = "⪬︀", F2 = "Ь", B2 = "ь", G2 = "⌿", q2 = "⧄", Y2 = "/", H2 = "𝕊", V2 = "𝕤", z2 = "♠", $2 = "♠", W2 = "∥", K2 = "⊓", Q2 = "⊓︀", X2 = "⊔", Z2 = "⊔︀", J2 = "√", j2 = "⊏", e$ = "⊑", t$ = "⊏", n$ = "⊑", r$ = "⊐", a$ = "⊒", o$ = "⊐", i$ = "⊒", s$ = "□", c$ = "□", l$ = "⊓", _$ = "⊏", d$ = "⊑", u$ = "⊐", p$ = "⊒", m$ = "⊔", g$ = "▪", E$ = "□", S$ = "▪", f$ = "→", b$ = "𝒮", T$ = "𝓈", h$ = "∖", R$ = "⌣", C$ = "⋆", N$ = "⋆", v$ = "☆", O$ = "★", y$ = "ϵ", A$ = "ϕ", I$ = "¯", D$ = "⊂", w$ = "⋐", M$ = "⪽", x$ = "⫅", L$ = "⊆", k$ = "⫃", P$ = "⫁", U$ = "⫋", F$ = "⊊", B$ = "⪿", G$ = "⥹", q$ = "⊂", Y$ = "⋐", H$ = "⊆", V$ = "⫅", z$ = "⊆", $$ = "⊊", W$ = "⫋", K$ = "⫇", Q$ = "⫕", X$ = "⫓", Z$ = "⪸", J$ = "≻", j$ = "≽", eW = "≻", tW = "⪰", nW = "≽", rW = "≿", aW = "⪰", oW = "⪺", iW = "⪶", sW = "⋩", cW = "≿", lW = "∋", _W = "∑", dW = "∑", uW = "♪", pW = "¹", mW = "²", gW = "³", EW = "⊃", SW = "⋑", fW = "⪾", bW = "⫘", TW = "⫆", hW = "⊇", RW = "⫄", CW = "⊃", NW = "⊇", vW = "⟉", OW = "⫗", yW = "⥻", AW = "⫂", IW = "⫌", DW = "⊋", wW = "⫀", MW = "⊃", xW = "⋑", LW = "⊇", kW = "⫆", PW = "⊋", UW = "⫌", FW = "⫈", BW = "⫔", GW = "⫖", qW = "⤦", YW = "↙", HW = "⇙", VW = "↙", zW = "⤪", $W = "ß", WW = "	", KW = "⌖", QW = "Τ", XW = "τ", ZW = "⎴", JW = "Ť", jW = "ť", eK = "Ţ", tK = "ţ", nK = "Т", rK = "т", aK = "⃛", oK = "⌕", iK = "𝔗", sK = "𝔱", cK = "∴", lK = "∴", _K = "∴", dK = "Θ", uK = "θ", pK = "ϑ", mK = "ϑ", gK = "≈", EK = "∼", SK = "  ", fK = " ", bK = " ", TK = "≈", hK = "∼", RK = "Þ", CK = "þ", NK = "˜", vK = "∼", OK = "≃", yK = "≅", AK = "≈", IK = "⨱", DK = "⊠", wK = "×", MK = "⨰", xK = "∭", LK = "⤨", kK = "⌶", PK = "⫱", UK = "⊤", FK = "𝕋", BK = "𝕥", GK = "⫚", qK = "⤩", YK = "‴", HK = "™", VK = "™", zK = "▵", $K = "▿", WK = "◃", KK = "⊴", QK = "≜", XK = "▹", ZK = "⊵", JK = "◬", jK = "≜", eQ = "⨺", tQ = "⃛", nQ = "⨹", rQ = "⧍", aQ = "⨻", oQ = "⏢", iQ = "𝒯", sQ = "𝓉", cQ = "Ц", lQ = "ц", _Q = "Ћ", dQ = "ћ", uQ = "Ŧ", pQ = "ŧ", mQ = "≬", gQ = "↞", EQ = "↠", SQ = "Ú", fQ = "ú", bQ = "↑", TQ = "↟", hQ = "⇑", RQ = "⥉", CQ = "Ў", NQ = "ў", vQ = "Ŭ", OQ = "ŭ", yQ = "Û", AQ = "û", IQ = "У", DQ = "у", wQ = "⇅", MQ = "Ű", xQ = "ű", LQ = "⥮", kQ = "⥾", PQ = "𝔘", UQ = "𝔲", FQ = "Ù", BQ = "ù", GQ = "⥣", qQ = "↿", YQ = "↾", HQ = "▀", VQ = "⌜", zQ = "⌜", $Q = "⌏", WQ = "◸", KQ = "Ū", QQ = "ū", XQ = "¨", ZQ = "_", JQ = "⏟", jQ = "⎵", e3 = "⏝", t3 = "⋃", n3 = "⊎", r3 = "Ų", a3 = "ų", o3 = "𝕌", i3 = "𝕦", s3 = "⤒", c3 = "↑", l3 = "↑", _3 = "⇑", d3 = "⇅", u3 = "↕", p3 = "↕", m3 = "⇕", g3 = "⥮", E3 = "↿", S3 = "↾", f3 = "⊎", b3 = "↖", T3 = "↗", h3 = "υ", R3 = "ϒ", C3 = "ϒ", N3 = "Υ", v3 = "υ", O3 = "↥", y3 = "⊥", A3 = "⇈", I3 = "⌝", D3 = "⌝", w3 = "⌎", M3 = "Ů", x3 = "ů", L3 = "◹", k3 = "𝒰", P3 = "𝓊", U3 = "⋰", F3 = "Ũ", B3 = "ũ", G3 = "▵", q3 = "▴", Y3 = "⇈", H3 = "Ü", V3 = "ü", z3 = "⦧", $3 = "⦜", W3 = "ϵ", K3 = "ϰ", Q3 = "∅", X3 = "ϕ", Z3 = "ϖ", J3 = "∝", j3 = "↕", eX = "⇕", tX = "ϱ", nX = "ς", rX = "⊊︀", aX = "⫋︀", oX = "⊋︀", iX = "⫌︀", sX = "ϑ", cX = "⊲", lX = "⊳", _X = "⫨", dX = "⫫", uX = "⫩", pX = "В", mX = "в", gX = "⊢", EX = "⊨", SX = "⊩", fX = "⊫", bX = "⫦", TX = "⊻", hX = "∨", RX = "⋁", CX = "≚", NX = "⋮", vX = "|", OX = "‖", yX = "|", AX = "‖", IX = "∣", DX = "|", wX = "❘", MX = "≀", xX = " ", LX = "𝔙", kX = "𝔳", PX = "⊲", UX = "⊂⃒", FX = "⊃⃒", BX = "𝕍", GX = "𝕧", qX = "∝", YX = "⊳", HX = "𝒱", VX = "𝓋", zX = "⫋︀", $X = "⊊︀", WX = "⫌︀", KX = "⊋︀", QX = "⊪", XX = "⦚", ZX = "Ŵ", JX = "ŵ", jX = "⩟", e9 = "∧", t9 = "⋀", n9 = "≙", r9 = "℘", a9 = "𝔚", o9 = "𝔴", i9 = "𝕎", s9 = "𝕨", c9 = "℘", l9 = "≀", _9 = "≀", d9 = "𝒲", u9 = "𝓌", p9 = "⋂", m9 = "◯", g9 = "⋃", E9 = "▽", S9 = "𝔛", f9 = "𝔵", b9 = "⟷", T9 = "⟺", h9 = "Ξ", R9 = "ξ", C9 = "⟵", N9 = "⟸", v9 = "⟼", O9 = "⋻", y9 = "⨀", A9 = "𝕏", I9 = "𝕩", D9 = "⨁", w9 = "⨂", M9 = "⟶", x9 = "⟹", L9 = "𝒳", k9 = "𝓍", P9 = "⨆", U9 = "⨄", F9 = "△", B9 = "⋁", G9 = "⋀", q9 = "Ý", Y9 = "ý", H9 = "Я", V9 = "я", z9 = "Ŷ", $9 = "ŷ", W9 = "Ы", K9 = "ы", Q9 = "¥", X9 = "𝔜", Z9 = "𝔶", J9 = "Ї", j9 = "ї", e4 = "𝕐", t4 = "𝕪", n4 = "𝒴", r4 = "𝓎", a4 = "Ю", o4 = "ю", i4 = "ÿ", s4 = "Ÿ", c4 = "Ź", l4 = "ź", _4 = "Ž", d4 = "ž", u4 = "З", p4 = "з", m4 = "Ż", g4 = "ż", E4 = "ℨ", S4 = "​", f4 = "Ζ", b4 = "ζ", T4 = "𝔷", h4 = "ℨ", R4 = "Ж", C4 = "ж", N4 = "⇝", v4 = "𝕫", O4 = "ℤ", y4 = "𝒵", A4 = "𝓏", I4 = "‍", D4 = "‌", w4 = {
+  Aacute: pS,
+  aacute: mS,
+  Abreve: gS,
+  abreve: ES,
+  ac: SS,
+  acd: fS,
+  acE: bS,
+  Acirc: TS,
+  acirc: hS,
+  acute: RS,
+  Acy: CS,
+  acy: NS,
+  AElig: vS,
+  aelig: OS,
+  af: yS,
+  Afr: AS,
+  afr: IS,
+  Agrave: DS,
+  agrave: wS,
+  alefsym: MS,
+  aleph: xS,
+  Alpha: LS,
+  alpha: kS,
+  Amacr: PS,
+  amacr: US,
+  amalg: FS,
+  amp: BS,
+  AMP: GS,
+  andand: qS,
+  And: YS,
+  and: HS,
+  andd: VS,
+  andslope: zS,
+  andv: $S,
+  ang: WS,
+  ange: KS,
+  angle: QS,
+  angmsdaa: XS,
+  angmsdab: ZS,
+  angmsdac: JS,
+  angmsdad: jS,
+  angmsdae: ef,
+  angmsdaf: tf,
+  angmsdag: nf,
+  angmsdah: rf,
+  angmsd: af,
+  angrt: of,
+  angrtvb: sf,
+  angrtvbd: cf,
+  angsph: lf,
+  angst: _f,
+  angzarr: df,
+  Aogon: uf,
+  aogon: pf,
+  Aopf: mf,
+  aopf: gf,
+  apacir: Ef,
+  ap: Sf,
+  apE: ff,
+  ape: bf,
+  apid: Tf,
+  apos: hf,
+  ApplyFunction: Rf,
+  approx: Cf,
+  approxeq: Nf,
+  Aring: vf,
+  aring: Of,
+  Ascr: yf,
+  ascr: Af,
+  Assign: If,
+  ast: Df,
+  asymp: wf,
+  asympeq: Mf,
+  Atilde: xf,
+  atilde: Lf,
+  Auml: kf,
+  auml: Pf,
+  awconint: Uf,
+  awint: Ff,
+  backcong: Bf,
+  backepsilon: Gf,
+  backprime: qf,
+  backsim: Yf,
+  backsimeq: Hf,
+  Backslash: Vf,
+  Barv: zf,
+  barvee: $f,
+  barwed: Wf,
+  Barwed: Kf,
+  barwedge: Qf,
+  bbrk: Xf,
+  bbrktbrk: Zf,
+  bcong: Jf,
+  Bcy: jf,
+  bcy: eb,
+  bdquo: tb,
+  becaus: nb,
+  because: rb,
+  Because: ab,
+  bemptyv: ob,
+  bepsi: ib,
+  bernou: sb,
+  Bernoullis: cb,
+  Beta: lb,
+  beta: _b,
+  beth: db,
+  between: ub,
+  Bfr: pb,
+  bfr: mb,
+  bigcap: gb,
+  bigcirc: Eb,
+  bigcup: Sb,
+  bigodot: fb,
+  bigoplus: bb,
+  bigotimes: Tb,
+  bigsqcup: hb,
+  bigstar: Rb,
+  bigtriangledown: Cb,
+  bigtriangleup: Nb,
+  biguplus: vb,
+  bigvee: Ob,
+  bigwedge: yb,
+  bkarow: Ab,
+  blacklozenge: Ib,
+  blacksquare: Db,
+  blacktriangle: wb,
+  blacktriangledown: Mb,
+  blacktriangleleft: xb,
+  blacktriangleright: Lb,
+  blank: kb,
+  blk12: Pb,
+  blk14: Ub,
+  blk34: Fb,
+  block: Bb,
+  bne: Gb,
+  bnequiv: qb,
+  bNot: Yb,
+  bnot: Hb,
+  Bopf: Vb,
+  bopf: zb,
+  bot: $b,
+  bottom: Wb,
+  bowtie: Kb,
+  boxbox: Qb,
+  boxdl: Xb,
+  boxdL: Zb,
+  boxDl: Jb,
+  boxDL: jb,
+  boxdr: eT,
+  boxdR: tT,
+  boxDr: nT,
+  boxDR: rT,
+  boxh: aT,
+  boxH: oT,
+  boxhd: iT,
+  boxHd: sT,
+  boxhD: cT,
+  boxHD: lT,
+  boxhu: _T,
+  boxHu: dT,
+  boxhU: uT,
+  boxHU: pT,
+  boxminus: mT,
+  boxplus: gT,
+  boxtimes: ET,
+  boxul: ST,
+  boxuL: fT,
+  boxUl: bT,
+  boxUL: TT,
+  boxur: hT,
+  boxuR: RT,
+  boxUr: CT,
+  boxUR: NT,
+  boxv: vT,
+  boxV: OT,
+  boxvh: yT,
+  boxvH: AT,
+  boxVh: IT,
+  boxVH: DT,
+  boxvl: wT,
+  boxvL: MT,
+  boxVl: xT,
+  boxVL: LT,
+  boxvr: kT,
+  boxvR: PT,
+  boxVr: UT,
+  boxVR: FT,
+  bprime: BT,
+  breve: GT,
+  Breve: qT,
+  brvbar: YT,
+  bscr: HT,
+  Bscr: VT,
+  bsemi: zT,
+  bsim: $T,
+  bsime: WT,
+  bsolb: KT,
+  bsol: QT,
+  bsolhsub: XT,
+  bull: ZT,
+  bullet: JT,
+  bump: jT,
+  bumpE: eh,
+  bumpe: th,
+  Bumpeq: nh,
+  bumpeq: rh,
+  Cacute: ah,
+  cacute: oh,
+  capand: ih,
+  capbrcup: sh,
+  capcap: ch,
+  cap: lh,
+  Cap: _h,
+  capcup: dh,
+  capdot: uh,
+  CapitalDifferentialD: ph,
+  caps: mh,
+  caret: gh,
+  caron: Eh,
+  Cayleys: Sh,
+  ccaps: fh,
+  Ccaron: bh,
+  ccaron: Th,
+  Ccedil: hh,
+  ccedil: Rh,
+  Ccirc: Ch,
+  ccirc: Nh,
+  Cconint: vh,
+  ccups: Oh,
+  ccupssm: yh,
+  Cdot: Ah,
+  cdot: Ih,
+  cedil: Dh,
+  Cedilla: wh,
+  cemptyv: Mh,
+  cent: xh,
+  centerdot: Lh,
+  CenterDot: kh,
+  cfr: Ph,
+  Cfr: Uh,
+  CHcy: Fh,
+  chcy: Bh,
+  check: Gh,
+  checkmark: qh,
+  Chi: Yh,
+  chi: Hh,
+  circ: Vh,
+  circeq: zh,
+  circlearrowleft: $h,
+  circlearrowright: Wh,
+  circledast: Kh,
+  circledcirc: Qh,
+  circleddash: Xh,
+  CircleDot: Zh,
+  circledR: Jh,
+  circledS: jh,
+  CircleMinus: eR,
+  CirclePlus: tR,
+  CircleTimes: nR,
+  cir: rR,
+  cirE: aR,
+  cire: oR,
+  cirfnint: iR,
+  cirmid: sR,
+  cirscir: cR,
+  ClockwiseContourIntegral: lR,
+  CloseCurlyDoubleQuote: _R,
+  CloseCurlyQuote: dR,
+  clubs: uR,
+  clubsuit: pR,
+  colon: mR,
+  Colon: gR,
+  Colone: ER,
+  colone: SR,
+  coloneq: fR,
+  comma: bR,
+  commat: TR,
+  comp: hR,
+  compfn: RR,
+  complement: CR,
+  complexes: NR,
+  cong: vR,
+  congdot: OR,
+  Congruent: yR,
+  conint: AR,
+  Conint: IR,
+  ContourIntegral: DR,
+  copf: wR,
+  Copf: MR,
+  coprod: xR,
+  Coproduct: LR,
+  copy: kR,
+  COPY: PR,
+  copysr: UR,
+  CounterClockwiseContourIntegral: FR,
+  crarr: BR,
+  cross: GR,
+  Cross: qR,
+  Cscr: YR,
+  cscr: HR,
+  csub: VR,
+  csube: zR,
+  csup: $R,
+  csupe: WR,
+  ctdot: KR,
+  cudarrl: QR,
+  cudarrr: XR,
+  cuepr: ZR,
+  cuesc: JR,
+  cularr: jR,
+  cularrp: eC,
+  cupbrcap: tC,
+  cupcap: nC,
+  CupCap: rC,
+  cup: aC,
+  Cup: oC,
+  cupcup: iC,
+  cupdot: sC,
+  cupor: cC,
+  cups: lC,
+  curarr: _C,
+  curarrm: dC,
+  curlyeqprec: uC,
+  curlyeqsucc: pC,
+  curlyvee: mC,
+  curlywedge: gC,
+  curren: EC,
+  curvearrowleft: SC,
+  curvearrowright: fC,
+  cuvee: bC,
+  cuwed: TC,
+  cwconint: hC,
+  cwint: RC,
+  cylcty: CC,
+  dagger: NC,
+  Dagger: vC,
+  daleth: OC,
+  darr: yC,
+  Darr: AC,
+  dArr: IC,
+  dash: DC,
+  Dashv: wC,
+  dashv: MC,
+  dbkarow: xC,
+  dblac: LC,
+  Dcaron: kC,
+  dcaron: PC,
+  Dcy: UC,
+  dcy: FC,
+  ddagger: BC,
+  ddarr: GC,
+  DD: qC,
+  dd: YC,
+  DDotrahd: HC,
+  ddotseq: VC,
+  deg: zC,
+  Del: $C,
+  Delta: WC,
+  delta: KC,
+  demptyv: QC,
+  dfisht: XC,
+  Dfr: ZC,
+  dfr: JC,
+  dHar: jC,
+  dharl: eN,
+  dharr: tN,
+  DiacriticalAcute: nN,
+  DiacriticalDot: rN,
+  DiacriticalDoubleAcute: aN,
+  DiacriticalGrave: oN,
+  DiacriticalTilde: iN,
+  diam: sN,
+  diamond: cN,
+  Diamond: lN,
+  diamondsuit: _N,
+  diams: dN,
+  die: uN,
+  DifferentialD: pN,
+  digamma: mN,
+  disin: gN,
+  div: EN,
+  divide: SN,
+  divideontimes: fN,
+  divonx: bN,
+  DJcy: TN,
+  djcy: hN,
+  dlcorn: RN,
+  dlcrop: CN,
+  dollar: NN,
+  Dopf: vN,
+  dopf: ON,
+  Dot: yN,
+  dot: AN,
+  DotDot: IN,
+  doteq: DN,
+  doteqdot: wN,
+  DotEqual: MN,
+  dotminus: xN,
+  dotplus: LN,
+  dotsquare: kN,
+  doublebarwedge: PN,
+  DoubleContourIntegral: UN,
+  DoubleDot: FN,
+  DoubleDownArrow: BN,
+  DoubleLeftArrow: GN,
+  DoubleLeftRightArrow: qN,
+  DoubleLeftTee: YN,
+  DoubleLongLeftArrow: HN,
+  DoubleLongLeftRightArrow: VN,
+  DoubleLongRightArrow: zN,
+  DoubleRightArrow: $N,
+  DoubleRightTee: WN,
+  DoubleUpArrow: KN,
+  DoubleUpDownArrow: QN,
+  DoubleVerticalBar: XN,
+  DownArrowBar: ZN,
+  downarrow: JN,
+  DownArrow: jN,
+  Downarrow: ev,
+  DownArrowUpArrow: tv,
+  DownBreve: nv,
+  downdownarrows: rv,
+  downharpoonleft: av,
+  downharpoonright: ov,
+  DownLeftRightVector: iv,
+  DownLeftTeeVector: sv,
+  DownLeftVectorBar: cv,
+  DownLeftVector: lv,
+  DownRightTeeVector: _v,
+  DownRightVectorBar: dv,
+  DownRightVector: uv,
+  DownTeeArrow: pv,
+  DownTee: mv,
+  drbkarow: gv,
+  drcorn: Ev,
+  drcrop: Sv,
+  Dscr: fv,
+  dscr: bv,
+  DScy: Tv,
+  dscy: hv,
+  dsol: Rv,
+  Dstrok: Cv,
+  dstrok: Nv,
+  dtdot: vv,
+  dtri: Ov,
+  dtrif: yv,
+  duarr: Av,
+  duhar: Iv,
+  dwangle: Dv,
+  DZcy: wv,
+  dzcy: Mv,
+  dzigrarr: xv,
+  Eacute: Lv,
+  eacute: kv,
+  easter: Pv,
+  Ecaron: Uv,
+  ecaron: Fv,
+  Ecirc: Bv,
+  ecirc: Gv,
+  ecir: qv,
+  ecolon: Yv,
+  Ecy: Hv,
+  ecy: Vv,
+  eDDot: zv,
+  Edot: $v,
+  edot: Wv,
+  eDot: Kv,
+  ee: Qv,
+  efDot: Xv,
+  Efr: Zv,
+  efr: Jv,
+  eg: jv,
+  Egrave: eO,
+  egrave: tO,
+  egs: nO,
+  egsdot: rO,
+  el: aO,
+  Element: oO,
+  elinters: iO,
+  ell: sO,
+  els: cO,
+  elsdot: lO,
+  Emacr: _O,
+  emacr: dO,
+  empty: uO,
+  emptyset: pO,
+  EmptySmallSquare: mO,
+  emptyv: gO,
+  EmptyVerySmallSquare: EO,
+  emsp13: SO,
+  emsp14: fO,
+  emsp: bO,
+  ENG: TO,
+  eng: hO,
+  ensp: RO,
+  Eogon: CO,
+  eogon: NO,
+  Eopf: vO,
+  eopf: OO,
+  epar: yO,
+  eparsl: AO,
+  eplus: IO,
+  epsi: DO,
+  Epsilon: wO,
+  epsilon: MO,
+  epsiv: xO,
+  eqcirc: LO,
+  eqcolon: kO,
+  eqsim: PO,
+  eqslantgtr: UO,
+  eqslantless: FO,
+  Equal: BO,
+  equals: GO,
+  EqualTilde: qO,
+  equest: YO,
+  Equilibrium: HO,
+  equiv: VO,
+  equivDD: zO,
+  eqvparsl: $O,
+  erarr: WO,
+  erDot: KO,
+  escr: QO,
+  Escr: XO,
+  esdot: ZO,
+  Esim: JO,
+  esim: jO,
+  Eta: ey,
+  eta: ty,
+  ETH: ny,
+  eth: ry,
+  Euml: ay,
+  euml: oy,
+  euro: iy,
+  excl: sy,
+  exist: cy,
+  Exists: ly,
+  expectation: _y,
+  exponentiale: dy,
+  ExponentialE: uy,
+  fallingdotseq: py,
+  Fcy: my,
+  fcy: gy,
+  female: Ey,
+  ffilig: Sy,
+  fflig: fy,
+  ffllig: by,
+  Ffr: Ty,
+  ffr: hy,
+  filig: Ry,
+  FilledSmallSquare: Cy,
+  FilledVerySmallSquare: Ny,
+  fjlig: vy,
+  flat: Oy,
+  fllig: yy,
+  fltns: Ay,
+  fnof: Iy,
+  Fopf: Dy,
+  fopf: wy,
+  forall: My,
+  ForAll: xy,
+  fork: Ly,
+  forkv: ky,
+  Fouriertrf: Py,
+  fpartint: Uy,
+  frac12: Fy,
+  frac13: By,
+  frac14: Gy,
+  frac15: qy,
+  frac16: Yy,
+  frac18: Hy,
+  frac23: Vy,
+  frac25: zy,
+  frac34: $y,
+  frac35: Wy,
+  frac38: Ky,
+  frac45: Qy,
+  frac56: Xy,
+  frac58: Zy,
+  frac78: Jy,
+  frasl: jy,
+  frown: eA,
+  fscr: tA,
+  Fscr: nA,
+  gacute: rA,
+  Gamma: aA,
+  gamma: oA,
+  Gammad: iA,
+  gammad: sA,
+  gap: cA,
+  Gbreve: lA,
+  gbreve: _A,
+  Gcedil: dA,
+  Gcirc: uA,
+  gcirc: pA,
+  Gcy: mA,
+  gcy: gA,
+  Gdot: EA,
+  gdot: SA,
+  ge: fA,
+  gE: bA,
+  gEl: TA,
+  gel: hA,
+  geq: RA,
+  geqq: CA,
+  geqslant: NA,
+  gescc: vA,
+  ges: OA,
+  gesdot: yA,
+  gesdoto: AA,
+  gesdotol: IA,
+  gesl: DA,
+  gesles: wA,
+  Gfr: MA,
+  gfr: xA,
+  gg: LA,
+  Gg: kA,
+  ggg: PA,
+  gimel: UA,
+  GJcy: FA,
+  gjcy: BA,
+  gla: GA,
+  gl: qA,
+  glE: YA,
+  glj: HA,
+  gnap: VA,
+  gnapprox: zA,
+  gne: $A,
+  gnE: WA,
+  gneq: KA,
+  gneqq: QA,
+  gnsim: XA,
+  Gopf: ZA,
+  gopf: JA,
+  grave: jA,
+  GreaterEqual: eI,
+  GreaterEqualLess: tI,
+  GreaterFullEqual: nI,
+  GreaterGreater: rI,
+  GreaterLess: aI,
+  GreaterSlantEqual: oI,
+  GreaterTilde: iI,
+  Gscr: sI,
+  gscr: cI,
+  gsim: lI,
+  gsime: _I,
+  gsiml: dI,
+  gtcc: uI,
+  gtcir: pI,
+  gt: mI,
+  GT: gI,
+  Gt: EI,
+  gtdot: SI,
+  gtlPar: fI,
+  gtquest: bI,
+  gtrapprox: TI,
+  gtrarr: hI,
+  gtrdot: RI,
+  gtreqless: CI,
+  gtreqqless: NI,
+  gtrless: vI,
+  gtrsim: OI,
+  gvertneqq: yI,
+  gvnE: AI,
+  Hacek: II,
+  hairsp: DI,
+  half: wI,
+  hamilt: MI,
+  HARDcy: xI,
+  hardcy: LI,
+  harrcir: kI,
+  harr: PI,
+  hArr: UI,
+  harrw: FI,
+  Hat: BI,
+  hbar: GI,
+  Hcirc: qI,
+  hcirc: YI,
+  hearts: HI,
+  heartsuit: VI,
+  hellip: zI,
+  hercon: $I,
+  hfr: WI,
+  Hfr: KI,
+  HilbertSpace: QI,
+  hksearow: XI,
+  hkswarow: ZI,
+  hoarr: JI,
+  homtht: jI,
+  hookleftarrow: eD,
+  hookrightarrow: tD,
+  hopf: nD,
+  Hopf: rD,
+  horbar: aD,
+  HorizontalLine: oD,
+  hscr: iD,
+  Hscr: sD,
+  hslash: cD,
+  Hstrok: lD,
+  hstrok: _D,
+  HumpDownHump: dD,
+  HumpEqual: uD,
+  hybull: pD,
+  hyphen: mD,
+  Iacute: gD,
+  iacute: ED,
+  ic: SD,
+  Icirc: fD,
+  icirc: bD,
+  Icy: TD,
+  icy: hD,
+  Idot: RD,
+  IEcy: CD,
+  iecy: ND,
+  iexcl: vD,
+  iff: OD,
+  ifr: yD,
+  Ifr: AD,
+  Igrave: ID,
+  igrave: DD,
+  ii: wD,
+  iiiint: MD,
+  iiint: xD,
+  iinfin: LD,
+  iiota: kD,
+  IJlig: PD,
+  ijlig: UD,
+  Imacr: FD,
+  imacr: BD,
+  image: GD,
+  ImaginaryI: qD,
+  imagline: YD,
+  imagpart: HD,
+  imath: VD,
+  Im: zD,
+  imof: $D,
+  imped: WD,
+  Implies: KD,
+  incare: QD,
   in: "∈",
-  infin: QD,
-  infintie: XD,
-  inodot: ZD,
-  intcal: JD,
-  int: jD,
-  Int: ew,
-  integers: tw,
-  Integral: nw,
-  intercal: rw,
-  Intersection: aw,
-  intlarhk: ow,
-  intprod: iw,
-  InvisibleComma: sw,
-  InvisibleTimes: cw,
-  IOcy: lw,
-  iocy: _w,
-  Iogon: dw,
-  iogon: uw,
-  Iopf: pw,
-  iopf: mw,
-  Iota: gw,
-  iota: Ew,
-  iprod: Sw,
-  iquest: fw,
-  iscr: bw,
-  Iscr: Tw,
-  isin: hw,
-  isindot: Rw,
-  isinE: Cw,
-  isins: Nw,
-  isinsv: vw,
-  isinv: Ow,
-  it: yw,
-  Itilde: Aw,
-  itilde: Iw,
-  Iukcy: Dw,
-  iukcy: ww,
-  Iuml: Mw,
-  iuml: xw,
-  Jcirc: Lw,
-  jcirc: kw,
-  Jcy: Pw,
-  jcy: Uw,
-  Jfr: Fw,
-  jfr: Bw,
-  jmath: Gw,
-  Jopf: qw,
-  jopf: Yw,
-  Jscr: Hw,
-  jscr: Vw,
-  Jsercy: zw,
-  jsercy: $w,
-  Jukcy: Ww,
-  jukcy: Kw,
-  Kappa: Qw,
-  kappa: Xw,
-  kappav: Zw,
-  Kcedil: Jw,
-  kcedil: jw,
-  Kcy: eM,
-  kcy: tM,
-  Kfr: nM,
-  kfr: rM,
-  kgreen: aM,
-  KHcy: oM,
-  khcy: iM,
-  KJcy: sM,
-  kjcy: cM,
-  Kopf: lM,
-  kopf: _M,
-  Kscr: dM,
-  kscr: uM,
-  lAarr: pM,
-  Lacute: mM,
-  lacute: gM,
-  laemptyv: EM,
-  lagran: SM,
-  Lambda: fM,
-  lambda: bM,
-  lang: TM,
-  Lang: hM,
-  langd: RM,
-  langle: CM,
-  lap: NM,
-  Laplacetrf: vM,
-  laquo: OM,
-  larrb: yM,
-  larrbfs: AM,
-  larr: IM,
-  Larr: DM,
-  lArr: wM,
-  larrfs: MM,
-  larrhk: xM,
-  larrlp: LM,
-  larrpl: kM,
-  larrsim: PM,
-  larrtl: UM,
-  latail: FM,
-  lAtail: BM,
-  lat: GM,
-  late: qM,
-  lates: YM,
-  lbarr: HM,
-  lBarr: VM,
-  lbbrk: zM,
-  lbrace: $M,
-  lbrack: WM,
-  lbrke: KM,
-  lbrksld: QM,
-  lbrkslu: XM,
-  Lcaron: ZM,
-  lcaron: JM,
-  Lcedil: jM,
-  lcedil: ex,
-  lceil: tx,
-  lcub: nx,
-  Lcy: rx,
-  lcy: ax,
-  ldca: ox,
-  ldquo: ix,
-  ldquor: sx,
-  ldrdhar: cx,
-  ldrushar: lx,
-  ldsh: _x,
-  le: dx,
-  lE: ux,
-  LeftAngleBracket: px,
-  LeftArrowBar: mx,
-  leftarrow: gx,
-  LeftArrow: Ex,
-  Leftarrow: Sx,
-  LeftArrowRightArrow: fx,
-  leftarrowtail: bx,
-  LeftCeiling: Tx,
-  LeftDoubleBracket: hx,
-  LeftDownTeeVector: Rx,
-  LeftDownVectorBar: Cx,
-  LeftDownVector: Nx,
-  LeftFloor: vx,
-  leftharpoondown: Ox,
-  leftharpoonup: yx,
-  leftleftarrows: Ax,
-  leftrightarrow: Ix,
-  LeftRightArrow: Dx,
-  Leftrightarrow: wx,
-  leftrightarrows: Mx,
-  leftrightharpoons: xx,
-  leftrightsquigarrow: Lx,
-  LeftRightVector: kx,
-  LeftTeeArrow: Px,
-  LeftTee: Ux,
-  LeftTeeVector: Fx,
-  leftthreetimes: Bx,
-  LeftTriangleBar: Gx,
-  LeftTriangle: qx,
-  LeftTriangleEqual: Yx,
-  LeftUpDownVector: Hx,
-  LeftUpTeeVector: Vx,
-  LeftUpVectorBar: zx,
-  LeftUpVector: $x,
-  LeftVectorBar: Wx,
-  LeftVector: Kx,
-  lEg: Qx,
-  leg: Xx,
-  leq: Zx,
-  leqq: Jx,
-  leqslant: jx,
-  lescc: eL,
-  les: tL,
-  lesdot: nL,
-  lesdoto: rL,
-  lesdotor: aL,
-  lesg: oL,
-  lesges: iL,
-  lessapprox: sL,
-  lessdot: cL,
-  lesseqgtr: lL,
-  lesseqqgtr: _L,
-  LessEqualGreater: dL,
-  LessFullEqual: uL,
-  LessGreater: pL,
-  lessgtr: mL,
-  LessLess: gL,
-  lesssim: EL,
-  LessSlantEqual: SL,
-  LessTilde: fL,
-  lfisht: bL,
-  lfloor: TL,
-  Lfr: hL,
-  lfr: RL,
-  lg: CL,
-  lgE: NL,
-  lHar: vL,
-  lhard: OL,
-  lharu: yL,
-  lharul: AL,
-  lhblk: IL,
-  LJcy: DL,
-  ljcy: wL,
-  llarr: ML,
-  ll: xL,
-  Ll: LL,
-  llcorner: kL,
-  Lleftarrow: PL,
-  llhard: UL,
-  lltri: FL,
-  Lmidot: BL,
-  lmidot: GL,
-  lmoustache: qL,
-  lmoust: YL,
-  lnap: HL,
-  lnapprox: VL,
-  lne: zL,
-  lnE: $L,
-  lneq: WL,
-  lneqq: KL,
-  lnsim: QL,
-  loang: XL,
-  loarr: ZL,
-  lobrk: JL,
-  longleftarrow: jL,
-  LongLeftArrow: ek,
-  Longleftarrow: tk,
-  longleftrightarrow: nk,
-  LongLeftRightArrow: rk,
-  Longleftrightarrow: ak,
-  longmapsto: ok,
-  longrightarrow: ik,
-  LongRightArrow: sk,
-  Longrightarrow: ck,
-  looparrowleft: lk,
-  looparrowright: _k,
-  lopar: dk,
-  Lopf: uk,
-  lopf: pk,
-  loplus: mk,
-  lotimes: gk,
-  lowast: Ek,
-  lowbar: Sk,
-  LowerLeftArrow: fk,
-  LowerRightArrow: bk,
-  loz: Tk,
-  lozenge: hk,
-  lozf: Rk,
-  lpar: Ck,
-  lparlt: Nk,
-  lrarr: vk,
-  lrcorner: Ok,
-  lrhar: yk,
-  lrhard: Ak,
-  lrm: Ik,
-  lrtri: Dk,
-  lsaquo: wk,
-  lscr: Mk,
-  Lscr: xk,
-  lsh: Lk,
-  Lsh: kk,
-  lsim: Pk,
-  lsime: Uk,
-  lsimg: Fk,
-  lsqb: Bk,
-  lsquo: Gk,
-  lsquor: qk,
-  Lstrok: Yk,
-  lstrok: Hk,
-  ltcc: Vk,
-  ltcir: zk,
-  lt: $k,
-  LT: Wk,
-  Lt: Kk,
-  ltdot: Qk,
-  lthree: Xk,
-  ltimes: Zk,
-  ltlarr: Jk,
-  ltquest: jk,
-  ltri: eP,
-  ltrie: tP,
-  ltrif: nP,
-  ltrPar: rP,
-  lurdshar: aP,
-  luruhar: oP,
-  lvertneqq: iP,
-  lvnE: sP,
-  macr: cP,
-  male: lP,
-  malt: _P,
-  maltese: dP,
+  infin: XD,
+  infintie: ZD,
+  inodot: JD,
+  intcal: jD,
+  int: ew,
+  Int: tw,
+  integers: nw,
+  Integral: rw,
+  intercal: aw,
+  Intersection: ow,
+  intlarhk: iw,
+  intprod: sw,
+  InvisibleComma: cw,
+  InvisibleTimes: lw,
+  IOcy: _w,
+  iocy: dw,
+  Iogon: uw,
+  iogon: pw,
+  Iopf: mw,
+  iopf: gw,
+  Iota: Ew,
+  iota: Sw,
+  iprod: fw,
+  iquest: bw,
+  iscr: Tw,
+  Iscr: hw,
+  isin: Rw,
+  isindot: Cw,
+  isinE: Nw,
+  isins: vw,
+  isinsv: Ow,
+  isinv: yw,
+  it: Aw,
+  Itilde: Iw,
+  itilde: Dw,
+  Iukcy: ww,
+  iukcy: Mw,
+  Iuml: xw,
+  iuml: Lw,
+  Jcirc: kw,
+  jcirc: Pw,
+  Jcy: Uw,
+  jcy: Fw,
+  Jfr: Bw,
+  jfr: Gw,
+  jmath: qw,
+  Jopf: Yw,
+  jopf: Hw,
+  Jscr: Vw,
+  jscr: zw,
+  Jsercy: $w,
+  jsercy: Ww,
+  Jukcy: Kw,
+  jukcy: Qw,
+  Kappa: Xw,
+  kappa: Zw,
+  kappav: Jw,
+  Kcedil: jw,
+  kcedil: eM,
+  Kcy: tM,
+  kcy: nM,
+  Kfr: rM,
+  kfr: aM,
+  kgreen: oM,
+  KHcy: iM,
+  khcy: sM,
+  KJcy: cM,
+  kjcy: lM,
+  Kopf: _M,
+  kopf: dM,
+  Kscr: uM,
+  kscr: pM,
+  lAarr: mM,
+  Lacute: gM,
+  lacute: EM,
+  laemptyv: SM,
+  lagran: fM,
+  Lambda: bM,
+  lambda: TM,
+  lang: hM,
+  Lang: RM,
+  langd: CM,
+  langle: NM,
+  lap: vM,
+  Laplacetrf: OM,
+  laquo: yM,
+  larrb: AM,
+  larrbfs: IM,
+  larr: DM,
+  Larr: wM,
+  lArr: MM,
+  larrfs: xM,
+  larrhk: LM,
+  larrlp: kM,
+  larrpl: PM,
+  larrsim: UM,
+  larrtl: FM,
+  latail: BM,
+  lAtail: GM,
+  lat: qM,
+  late: YM,
+  lates: HM,
+  lbarr: VM,
+  lBarr: zM,
+  lbbrk: $M,
+  lbrace: WM,
+  lbrack: KM,
+  lbrke: QM,
+  lbrksld: XM,
+  lbrkslu: ZM,
+  Lcaron: JM,
+  lcaron: jM,
+  Lcedil: ex,
+  lcedil: tx,
+  lceil: nx,
+  lcub: rx,
+  Lcy: ax,
+  lcy: ox,
+  ldca: ix,
+  ldquo: sx,
+  ldquor: cx,
+  ldrdhar: lx,
+  ldrushar: _x,
+  ldsh: dx,
+  le: ux,
+  lE: px,
+  LeftAngleBracket: mx,
+  LeftArrowBar: gx,
+  leftarrow: Ex,
+  LeftArrow: Sx,
+  Leftarrow: fx,
+  LeftArrowRightArrow: bx,
+  leftarrowtail: Tx,
+  LeftCeiling: hx,
+  LeftDoubleBracket: Rx,
+  LeftDownTeeVector: Cx,
+  LeftDownVectorBar: Nx,
+  LeftDownVector: vx,
+  LeftFloor: Ox,
+  leftharpoondown: yx,
+  leftharpoonup: Ax,
+  leftleftarrows: Ix,
+  leftrightarrow: Dx,
+  LeftRightArrow: wx,
+  Leftrightarrow: Mx,
+  leftrightarrows: xx,
+  leftrightharpoons: Lx,
+  leftrightsquigarrow: kx,
+  LeftRightVector: Px,
+  LeftTeeArrow: Ux,
+  LeftTee: Fx,
+  LeftTeeVector: Bx,
+  leftthreetimes: Gx,
+  LeftTriangleBar: qx,
+  LeftTriangle: Yx,
+  LeftTriangleEqual: Hx,
+  LeftUpDownVector: Vx,
+  LeftUpTeeVector: zx,
+  LeftUpVectorBar: $x,
+  LeftUpVector: Wx,
+  LeftVectorBar: Kx,
+  LeftVector: Qx,
+  lEg: Xx,
+  leg: Zx,
+  leq: Jx,
+  leqq: jx,
+  leqslant: eL,
+  lescc: tL,
+  les: nL,
+  lesdot: rL,
+  lesdoto: aL,
+  lesdotor: oL,
+  lesg: iL,
+  lesges: sL,
+  lessapprox: cL,
+  lessdot: lL,
+  lesseqgtr: _L,
+  lesseqqgtr: dL,
+  LessEqualGreater: uL,
+  LessFullEqual: pL,
+  LessGreater: mL,
+  lessgtr: gL,
+  LessLess: EL,
+  lesssim: SL,
+  LessSlantEqual: fL,
+  LessTilde: bL,
+  lfisht: TL,
+  lfloor: hL,
+  Lfr: RL,
+  lfr: CL,
+  lg: NL,
+  lgE: vL,
+  lHar: OL,
+  lhard: yL,
+  lharu: AL,
+  lharul: IL,
+  lhblk: DL,
+  LJcy: wL,
+  ljcy: ML,
+  llarr: xL,
+  ll: LL,
+  Ll: kL,
+  llcorner: PL,
+  Lleftarrow: UL,
+  llhard: FL,
+  lltri: BL,
+  Lmidot: GL,
+  lmidot: qL,
+  lmoustache: YL,
+  lmoust: HL,
+  lnap: VL,
+  lnapprox: zL,
+  lne: $L,
+  lnE: WL,
+  lneq: KL,
+  lneqq: QL,
+  lnsim: XL,
+  loang: ZL,
+  loarr: JL,
+  lobrk: jL,
+  longleftarrow: ek,
+  LongLeftArrow: tk,
+  Longleftarrow: nk,
+  longleftrightarrow: rk,
+  LongLeftRightArrow: ak,
+  Longleftrightarrow: ok,
+  longmapsto: ik,
+  longrightarrow: sk,
+  LongRightArrow: ck,
+  Longrightarrow: lk,
+  looparrowleft: _k,
+  looparrowright: dk,
+  lopar: uk,
+  Lopf: pk,
+  lopf: mk,
+  loplus: gk,
+  lotimes: Ek,
+  lowast: Sk,
+  lowbar: fk,
+  LowerLeftArrow: bk,
+  LowerRightArrow: Tk,
+  loz: hk,
+  lozenge: Rk,
+  lozf: Ck,
+  lpar: Nk,
+  lparlt: vk,
+  lrarr: Ok,
+  lrcorner: yk,
+  lrhar: Ak,
+  lrhard: Ik,
+  lrm: Dk,
+  lrtri: wk,
+  lsaquo: Mk,
+  lscr: xk,
+  Lscr: Lk,
+  lsh: kk,
+  Lsh: Pk,
+  lsim: Uk,
+  lsime: Fk,
+  lsimg: Bk,
+  lsqb: Gk,
+  lsquo: qk,
+  lsquor: Yk,
+  Lstrok: Hk,
+  lstrok: Vk,
+  ltcc: zk,
+  ltcir: $k,
+  lt: Wk,
+  LT: Kk,
+  Lt: Qk,
+  ltdot: Xk,
+  lthree: Zk,
+  ltimes: Jk,
+  ltlarr: jk,
+  ltquest: eP,
+  ltri: tP,
+  ltrie: nP,
+  ltrif: rP,
+  ltrPar: aP,
+  lurdshar: oP,
+  luruhar: iP,
+  lvertneqq: sP,
+  lvnE: cP,
+  macr: lP,
+  male: _P,
+  malt: dP,
+  maltese: uP,
   Map: "⤅",
-  map: uP,
-  mapsto: pP,
-  mapstodown: mP,
-  mapstoleft: gP,
-  mapstoup: EP,
-  marker: SP,
-  mcomma: fP,
-  Mcy: bP,
-  mcy: TP,
-  mdash: hP,
-  mDDot: RP,
-  measuredangle: CP,
-  MediumSpace: NP,
-  Mellintrf: vP,
-  Mfr: OP,
-  mfr: yP,
-  mho: AP,
-  micro: IP,
-  midast: DP,
-  midcir: wP,
-  mid: MP,
-  middot: xP,
-  minusb: LP,
-  minus: kP,
-  minusd: PP,
-  minusdu: UP,
-  MinusPlus: FP,
-  mlcp: BP,
-  mldr: GP,
-  mnplus: qP,
-  models: YP,
-  Mopf: HP,
-  mopf: VP,
-  mp: zP,
-  mscr: $P,
-  Mscr: WP,
-  mstpos: KP,
-  Mu: QP,
-  mu: XP,
-  multimap: ZP,
-  mumap: JP,
-  nabla: jP,
-  Nacute: eU,
-  nacute: tU,
-  nang: nU,
-  nap: rU,
-  napE: aU,
-  napid: oU,
-  napos: iU,
-  napprox: sU,
-  natural: cU,
-  naturals: lU,
-  natur: _U,
-  nbsp: dU,
-  nbump: uU,
-  nbumpe: pU,
-  ncap: mU,
-  Ncaron: gU,
-  ncaron: EU,
-  Ncedil: SU,
-  ncedil: fU,
-  ncong: bU,
-  ncongdot: TU,
-  ncup: hU,
-  Ncy: RU,
-  ncy: CU,
-  ndash: NU,
-  nearhk: vU,
-  nearr: OU,
-  neArr: yU,
-  nearrow: AU,
-  ne: IU,
-  nedot: DU,
-  NegativeMediumSpace: wU,
-  NegativeThickSpace: MU,
-  NegativeThinSpace: xU,
-  NegativeVeryThinSpace: LU,
-  nequiv: kU,
-  nesear: PU,
-  nesim: UU,
-  NestedGreaterGreater: FU,
-  NestedLessLess: BU,
-  NewLine: GU,
-  nexist: qU,
-  nexists: YU,
-  Nfr: HU,
-  nfr: VU,
-  ngE: zU,
-  nge: $U,
-  ngeq: WU,
-  ngeqq: KU,
-  ngeqslant: QU,
-  nges: XU,
-  nGg: ZU,
-  ngsim: JU,
-  nGt: jU,
-  ngt: e0,
-  ngtr: t0,
-  nGtv: n0,
-  nharr: r0,
-  nhArr: a0,
-  nhpar: o0,
-  ni: i0,
-  nis: s0,
-  nisd: c0,
-  niv: l0,
-  NJcy: _0,
-  njcy: d0,
-  nlarr: u0,
-  nlArr: p0,
-  nldr: m0,
-  nlE: g0,
-  nle: E0,
-  nleftarrow: S0,
-  nLeftarrow: f0,
-  nleftrightarrow: b0,
-  nLeftrightarrow: T0,
-  nleq: h0,
-  nleqq: R0,
-  nleqslant: C0,
-  nles: N0,
-  nless: v0,
-  nLl: O0,
-  nlsim: y0,
-  nLt: A0,
-  nlt: I0,
-  nltri: D0,
-  nltrie: w0,
-  nLtv: M0,
-  nmid: x0,
-  NoBreak: L0,
-  NonBreakingSpace: k0,
-  nopf: P0,
-  Nopf: U0,
-  Not: F0,
-  not: B0,
-  NotCongruent: G0,
-  NotCupCap: q0,
-  NotDoubleVerticalBar: Y0,
-  NotElement: H0,
-  NotEqual: V0,
-  NotEqualTilde: z0,
-  NotExists: $0,
-  NotGreater: W0,
-  NotGreaterEqual: K0,
-  NotGreaterFullEqual: Q0,
-  NotGreaterGreater: X0,
-  NotGreaterLess: Z0,
-  NotGreaterSlantEqual: J0,
-  NotGreaterTilde: j0,
-  NotHumpDownHump: eF,
-  NotHumpEqual: tF,
-  notin: nF,
-  notindot: rF,
-  notinE: aF,
-  notinva: oF,
-  notinvb: iF,
-  notinvc: sF,
-  NotLeftTriangleBar: cF,
-  NotLeftTriangle: lF,
-  NotLeftTriangleEqual: _F,
-  NotLess: dF,
-  NotLessEqual: uF,
-  NotLessGreater: pF,
-  NotLessLess: mF,
-  NotLessSlantEqual: gF,
-  NotLessTilde: EF,
-  NotNestedGreaterGreater: SF,
-  NotNestedLessLess: fF,
-  notni: bF,
-  notniva: TF,
-  notnivb: hF,
-  notnivc: RF,
-  NotPrecedes: CF,
-  NotPrecedesEqual: NF,
-  NotPrecedesSlantEqual: vF,
-  NotReverseElement: OF,
-  NotRightTriangleBar: yF,
-  NotRightTriangle: AF,
-  NotRightTriangleEqual: IF,
-  NotSquareSubset: DF,
-  NotSquareSubsetEqual: wF,
-  NotSquareSuperset: MF,
-  NotSquareSupersetEqual: xF,
-  NotSubset: LF,
-  NotSubsetEqual: kF,
-  NotSucceeds: PF,
-  NotSucceedsEqual: UF,
-  NotSucceedsSlantEqual: FF,
-  NotSucceedsTilde: BF,
-  NotSuperset: GF,
-  NotSupersetEqual: qF,
-  NotTilde: YF,
-  NotTildeEqual: HF,
-  NotTildeFullEqual: VF,
-  NotTildeTilde: zF,
-  NotVerticalBar: $F,
-  nparallel: WF,
-  npar: KF,
-  nparsl: QF,
-  npart: XF,
-  npolint: ZF,
-  npr: JF,
-  nprcue: jF,
-  nprec: eB,
-  npreceq: tB,
-  npre: nB,
-  nrarrc: rB,
-  nrarr: aB,
-  nrArr: oB,
-  nrarrw: iB,
-  nrightarrow: sB,
-  nRightarrow: cB,
-  nrtri: lB,
-  nrtrie: _B,
-  nsc: dB,
-  nsccue: uB,
-  nsce: pB,
-  Nscr: mB,
-  nscr: gB,
-  nshortmid: EB,
-  nshortparallel: SB,
-  nsim: fB,
-  nsime: bB,
-  nsimeq: TB,
-  nsmid: hB,
-  nspar: RB,
-  nsqsube: CB,
-  nsqsupe: NB,
-  nsub: vB,
-  nsubE: OB,
-  nsube: yB,
-  nsubset: AB,
-  nsubseteq: IB,
-  nsubseteqq: DB,
-  nsucc: wB,
-  nsucceq: MB,
-  nsup: xB,
-  nsupE: LB,
-  nsupe: kB,
-  nsupset: PB,
-  nsupseteq: UB,
-  nsupseteqq: FB,
-  ntgl: BB,
-  Ntilde: GB,
-  ntilde: qB,
-  ntlg: YB,
-  ntriangleleft: HB,
-  ntrianglelefteq: VB,
-  ntriangleright: zB,
-  ntrianglerighteq: $B,
-  Nu: WB,
-  nu: KB,
-  num: QB,
-  numero: XB,
-  numsp: ZB,
-  nvap: JB,
-  nvdash: jB,
-  nvDash: eG,
-  nVdash: tG,
-  nVDash: nG,
-  nvge: rG,
-  nvgt: aG,
-  nvHarr: oG,
-  nvinfin: iG,
-  nvlArr: sG,
-  nvle: cG,
-  nvlt: lG,
-  nvltrie: _G,
-  nvrArr: dG,
-  nvrtrie: uG,
-  nvsim: pG,
-  nwarhk: mG,
-  nwarr: gG,
-  nwArr: EG,
-  nwarrow: SG,
-  nwnear: fG,
-  Oacute: bG,
-  oacute: TG,
-  oast: hG,
-  Ocirc: RG,
-  ocirc: CG,
-  ocir: NG,
-  Ocy: vG,
-  ocy: OG,
-  odash: yG,
-  Odblac: AG,
-  odblac: IG,
-  odiv: DG,
-  odot: wG,
-  odsold: MG,
-  OElig: xG,
-  oelig: LG,
-  ofcir: kG,
-  Ofr: PG,
-  ofr: UG,
-  ogon: FG,
-  Ograve: BG,
-  ograve: GG,
-  ogt: qG,
-  ohbar: YG,
-  ohm: HG,
-  oint: VG,
-  olarr: zG,
-  olcir: $G,
-  olcross: WG,
-  oline: KG,
-  olt: QG,
-  Omacr: XG,
-  omacr: ZG,
-  Omega: JG,
-  omega: jG,
-  Omicron: e1,
-  omicron: t1,
-  omid: n1,
-  ominus: r1,
-  Oopf: a1,
-  oopf: o1,
-  opar: i1,
-  OpenCurlyDoubleQuote: s1,
-  OpenCurlyQuote: c1,
-  operp: l1,
-  oplus: _1,
-  orarr: d1,
-  Or: u1,
-  or: p1,
-  ord: m1,
-  order: g1,
-  orderof: E1,
-  ordf: S1,
-  ordm: f1,
-  origof: b1,
-  oror: T1,
-  orslope: h1,
-  orv: R1,
-  oS: C1,
-  Oscr: N1,
-  oscr: v1,
-  Oslash: O1,
-  oslash: y1,
-  osol: A1,
-  Otilde: I1,
-  otilde: D1,
-  otimesas: w1,
-  Otimes: M1,
-  otimes: x1,
-  Ouml: L1,
-  ouml: k1,
-  ovbar: P1,
-  OverBar: U1,
-  OverBrace: F1,
-  OverBracket: B1,
-  OverParenthesis: G1,
-  para: q1,
-  parallel: Y1,
-  par: H1,
-  parsim: V1,
-  parsl: z1,
-  part: $1,
-  PartialD: W1,
-  Pcy: K1,
-  pcy: Q1,
-  percnt: X1,
-  period: Z1,
-  permil: J1,
-  perp: j1,
-  pertenk: eq,
-  Pfr: tq,
-  pfr: nq,
-  Phi: rq,
-  phi: aq,
-  phiv: oq,
-  phmmat: iq,
-  phone: sq,
-  Pi: cq,
-  pi: lq,
-  pitchfork: _q,
-  piv: dq,
-  planck: uq,
-  planckh: pq,
-  plankv: mq,
-  plusacir: gq,
-  plusb: Eq,
-  pluscir: Sq,
-  plus: fq,
-  plusdo: bq,
-  plusdu: Tq,
-  pluse: hq,
-  PlusMinus: Rq,
-  plusmn: Cq,
-  plussim: Nq,
-  plustwo: vq,
-  pm: Oq,
-  Poincareplane: yq,
-  pointint: Aq,
-  popf: Iq,
-  Popf: Dq,
-  pound: wq,
-  prap: Mq,
-  Pr: xq,
-  pr: Lq,
-  prcue: kq,
-  precapprox: Pq,
-  prec: Uq,
-  preccurlyeq: Fq,
-  Precedes: Bq,
-  PrecedesEqual: Gq,
-  PrecedesSlantEqual: qq,
-  PrecedesTilde: Yq,
-  preceq: Hq,
-  precnapprox: Vq,
-  precneqq: zq,
-  precnsim: $q,
-  pre: Wq,
-  prE: Kq,
-  precsim: Qq,
-  prime: Xq,
-  Prime: Zq,
-  primes: Jq,
-  prnap: jq,
-  prnE: eY,
-  prnsim: tY,
-  prod: nY,
-  Product: rY,
-  profalar: aY,
-  profline: oY,
-  profsurf: iY,
-  prop: sY,
-  Proportional: cY,
-  Proportion: lY,
-  propto: _Y,
-  prsim: dY,
-  prurel: uY,
-  Pscr: pY,
-  pscr: mY,
-  Psi: gY,
-  psi: EY,
-  puncsp: SY,
-  Qfr: fY,
-  qfr: bY,
-  qint: TY,
-  qopf: hY,
-  Qopf: RY,
-  qprime: CY,
-  Qscr: NY,
-  qscr: vY,
-  quaternions: OY,
-  quatint: yY,
-  quest: AY,
-  questeq: IY,
-  quot: DY,
-  QUOT: wY,
-  rAarr: MY,
-  race: xY,
-  Racute: LY,
-  racute: kY,
-  radic: PY,
-  raemptyv: UY,
-  rang: FY,
-  Rang: BY,
-  rangd: GY,
-  range: qY,
-  rangle: YY,
-  raquo: HY,
-  rarrap: VY,
-  rarrb: zY,
-  rarrbfs: $Y,
-  rarrc: WY,
-  rarr: KY,
-  Rarr: QY,
-  rArr: XY,
-  rarrfs: ZY,
-  rarrhk: JY,
-  rarrlp: jY,
-  rarrpl: eH,
-  rarrsim: tH,
-  Rarrtl: nH,
-  rarrtl: rH,
-  rarrw: aH,
-  ratail: oH,
-  rAtail: iH,
-  ratio: sH,
-  rationals: cH,
-  rbarr: lH,
-  rBarr: _H,
-  RBarr: dH,
-  rbbrk: uH,
-  rbrace: pH,
-  rbrack: mH,
-  rbrke: gH,
-  rbrksld: EH,
-  rbrkslu: SH,
-  Rcaron: fH,
-  rcaron: bH,
-  Rcedil: TH,
-  rcedil: hH,
-  rceil: RH,
-  rcub: CH,
-  Rcy: NH,
-  rcy: vH,
-  rdca: OH,
-  rdldhar: yH,
-  rdquo: AH,
-  rdquor: IH,
-  rdsh: DH,
-  real: wH,
-  realine: MH,
-  realpart: xH,
-  reals: LH,
-  Re: kH,
-  rect: PH,
-  reg: UH,
-  REG: FH,
-  ReverseElement: BH,
-  ReverseEquilibrium: GH,
-  ReverseUpEquilibrium: qH,
-  rfisht: YH,
-  rfloor: HH,
-  rfr: VH,
-  Rfr: zH,
-  rHar: $H,
-  rhard: WH,
-  rharu: KH,
-  rharul: QH,
-  Rho: XH,
-  rho: ZH,
-  rhov: JH,
-  RightAngleBracket: jH,
-  RightArrowBar: eV,
-  rightarrow: tV,
-  RightArrow: nV,
-  Rightarrow: rV,
-  RightArrowLeftArrow: aV,
-  rightarrowtail: oV,
-  RightCeiling: iV,
-  RightDoubleBracket: sV,
-  RightDownTeeVector: cV,
-  RightDownVectorBar: lV,
-  RightDownVector: _V,
-  RightFloor: dV,
-  rightharpoondown: uV,
-  rightharpoonup: pV,
-  rightleftarrows: mV,
-  rightleftharpoons: gV,
-  rightrightarrows: EV,
-  rightsquigarrow: SV,
-  RightTeeArrow: fV,
-  RightTee: bV,
-  RightTeeVector: TV,
-  rightthreetimes: hV,
-  RightTriangleBar: RV,
-  RightTriangle: CV,
-  RightTriangleEqual: NV,
-  RightUpDownVector: vV,
-  RightUpTeeVector: OV,
-  RightUpVectorBar: yV,
-  RightUpVector: AV,
-  RightVectorBar: IV,
-  RightVector: DV,
-  ring: wV,
-  risingdotseq: MV,
-  rlarr: xV,
-  rlhar: LV,
-  rlm: kV,
-  rmoustache: PV,
-  rmoust: UV,
-  rnmid: FV,
-  roang: BV,
-  roarr: GV,
-  robrk: qV,
-  ropar: YV,
-  ropf: HV,
-  Ropf: VV,
-  roplus: zV,
-  rotimes: $V,
-  RoundImplies: WV,
-  rpar: KV,
-  rpargt: QV,
-  rppolint: XV,
-  rrarr: ZV,
-  Rrightarrow: JV,
-  rsaquo: jV,
-  rscr: ez,
-  Rscr: tz,
-  rsh: nz,
-  Rsh: rz,
-  rsqb: az,
-  rsquo: oz,
-  rsquor: iz,
-  rthree: sz,
-  rtimes: cz,
-  rtri: lz,
-  rtrie: _z,
-  rtrif: dz,
-  rtriltri: uz,
-  RuleDelayed: pz,
-  ruluhar: mz,
-  rx: gz,
-  Sacute: Ez,
-  sacute: Sz,
-  sbquo: fz,
-  scap: bz,
-  Scaron: Tz,
-  scaron: hz,
-  Sc: Rz,
-  sc: Cz,
-  sccue: Nz,
-  sce: vz,
-  scE: Oz,
-  Scedil: yz,
-  scedil: Az,
-  Scirc: Iz,
-  scirc: Dz,
-  scnap: wz,
-  scnE: Mz,
-  scnsim: xz,
-  scpolint: Lz,
-  scsim: kz,
-  Scy: Pz,
-  scy: Uz,
-  sdotb: Fz,
-  sdot: Bz,
-  sdote: Gz,
-  searhk: qz,
-  searr: Yz,
-  seArr: Hz,
-  searrow: Vz,
-  sect: zz,
-  semi: $z,
-  seswar: Wz,
-  setminus: Kz,
-  setmn: Qz,
-  sext: Xz,
-  Sfr: Zz,
-  sfr: Jz,
-  sfrown: jz,
-  sharp: e2,
-  SHCHcy: t2,
-  shchcy: n2,
-  SHcy: r2,
-  shcy: a2,
-  ShortDownArrow: o2,
-  ShortLeftArrow: i2,
-  shortmid: s2,
-  shortparallel: c2,
-  ShortRightArrow: l2,
-  ShortUpArrow: _2,
-  shy: d2,
-  Sigma: u2,
-  sigma: p2,
-  sigmaf: m2,
-  sigmav: g2,
-  sim: E2,
-  simdot: S2,
-  sime: f2,
-  simeq: b2,
-  simg: T2,
-  simgE: h2,
-  siml: R2,
-  simlE: C2,
-  simne: N2,
-  simplus: v2,
-  simrarr: O2,
-  slarr: y2,
-  SmallCircle: A2,
-  smallsetminus: I2,
-  smashp: D2,
-  smeparsl: w2,
-  smid: M2,
-  smile: x2,
-  smt: L2,
-  smte: k2,
-  smtes: P2,
-  SOFTcy: U2,
-  softcy: F2,
-  solbar: B2,
-  solb: G2,
-  sol: q2,
-  Sopf: Y2,
-  sopf: H2,
-  spades: V2,
-  spadesuit: z2,
-  spar: $2,
-  sqcap: W2,
-  sqcaps: K2,
-  sqcup: Q2,
-  sqcups: X2,
-  Sqrt: Z2,
-  sqsub: J2,
-  sqsube: j2,
-  sqsubset: e$,
-  sqsubseteq: t$,
-  sqsup: n$,
-  sqsupe: r$,
-  sqsupset: a$,
-  sqsupseteq: o$,
-  square: i$,
-  Square: s$,
-  SquareIntersection: c$,
-  SquareSubset: l$,
-  SquareSubsetEqual: _$,
-  SquareSuperset: d$,
-  SquareSupersetEqual: u$,
-  SquareUnion: p$,
-  squarf: m$,
-  squ: g$,
-  squf: E$,
-  srarr: S$,
-  Sscr: f$,
-  sscr: b$,
-  ssetmn: T$,
-  ssmile: h$,
-  sstarf: R$,
-  Star: C$,
-  star: N$,
-  starf: v$,
-  straightepsilon: O$,
-  straightphi: y$,
-  strns: A$,
-  sub: I$,
-  Sub: D$,
-  subdot: w$,
-  subE: M$,
-  sube: x$,
-  subedot: L$,
-  submult: k$,
-  subnE: P$,
-  subne: U$,
-  subplus: F$,
-  subrarr: B$,
-  subset: G$,
-  Subset: q$,
-  subseteq: Y$,
-  subseteqq: H$,
-  SubsetEqual: V$,
-  subsetneq: z$,
-  subsetneqq: $$,
-  subsim: W$,
-  subsub: K$,
-  subsup: Q$,
-  succapprox: X$,
-  succ: Z$,
-  succcurlyeq: J$,
-  Succeeds: j$,
-  SucceedsEqual: eW,
-  SucceedsSlantEqual: tW,
-  SucceedsTilde: nW,
-  succeq: rW,
-  succnapprox: aW,
-  succneqq: oW,
-  succnsim: iW,
-  succsim: sW,
-  SuchThat: cW,
-  sum: lW,
-  Sum: _W,
-  sung: dW,
-  sup1: uW,
-  sup2: pW,
-  sup3: mW,
-  sup: gW,
-  Sup: EW,
-  supdot: SW,
-  supdsub: fW,
-  supE: bW,
-  supe: TW,
-  supedot: hW,
-  Superset: RW,
-  SupersetEqual: CW,
-  suphsol: NW,
-  suphsub: vW,
-  suplarr: OW,
-  supmult: yW,
-  supnE: AW,
-  supne: IW,
-  supplus: DW,
-  supset: wW,
-  Supset: MW,
-  supseteq: xW,
-  supseteqq: LW,
-  supsetneq: kW,
-  supsetneqq: PW,
-  supsim: UW,
-  supsub: FW,
-  supsup: BW,
-  swarhk: GW,
-  swarr: qW,
-  swArr: YW,
-  swarrow: HW,
-  swnwar: VW,
-  szlig: zW,
-  Tab: $W,
-  target: WW,
-  Tau: KW,
-  tau: QW,
-  tbrk: XW,
-  Tcaron: ZW,
-  tcaron: JW,
-  Tcedil: jW,
-  tcedil: eK,
-  Tcy: tK,
-  tcy: nK,
-  tdot: rK,
-  telrec: aK,
-  Tfr: oK,
-  tfr: iK,
-  there4: sK,
-  therefore: cK,
-  Therefore: lK,
-  Theta: _K,
-  theta: dK,
-  thetasym: uK,
-  thetav: pK,
-  thickapprox: mK,
-  thicksim: gK,
-  ThickSpace: EK,
-  ThinSpace: SK,
-  thinsp: fK,
-  thkap: bK,
-  thksim: TK,
-  THORN: hK,
-  thorn: RK,
-  tilde: CK,
-  Tilde: NK,
-  TildeEqual: vK,
-  TildeFullEqual: OK,
-  TildeTilde: yK,
-  timesbar: AK,
-  timesb: IK,
-  times: DK,
-  timesd: wK,
-  tint: MK,
-  toea: xK,
-  topbot: LK,
-  topcir: kK,
-  top: PK,
-  Topf: UK,
-  topf: FK,
-  topfork: BK,
-  tosa: GK,
-  tprime: qK,
-  trade: YK,
-  TRADE: HK,
-  triangle: VK,
-  triangledown: zK,
-  triangleleft: $K,
-  trianglelefteq: WK,
-  triangleq: KK,
-  triangleright: QK,
-  trianglerighteq: XK,
-  tridot: ZK,
-  trie: JK,
-  triminus: jK,
-  TripleDot: eQ,
-  triplus: tQ,
-  trisb: nQ,
-  tritime: rQ,
-  trpezium: aQ,
-  Tscr: oQ,
-  tscr: iQ,
-  TScy: sQ,
-  tscy: cQ,
-  TSHcy: lQ,
-  tshcy: _Q,
-  Tstrok: dQ,
-  tstrok: uQ,
-  twixt: pQ,
-  twoheadleftarrow: mQ,
-  twoheadrightarrow: gQ,
-  Uacute: EQ,
-  uacute: SQ,
-  uarr: fQ,
-  Uarr: bQ,
-  uArr: TQ,
-  Uarrocir: hQ,
-  Ubrcy: RQ,
-  ubrcy: CQ,
-  Ubreve: NQ,
-  ubreve: vQ,
-  Ucirc: OQ,
-  ucirc: yQ,
-  Ucy: AQ,
-  ucy: IQ,
-  udarr: DQ,
-  Udblac: wQ,
-  udblac: MQ,
-  udhar: xQ,
-  ufisht: LQ,
-  Ufr: kQ,
-  ufr: PQ,
-  Ugrave: UQ,
-  ugrave: FQ,
-  uHar: BQ,
-  uharl: GQ,
-  uharr: qQ,
-  uhblk: YQ,
-  ulcorn: HQ,
-  ulcorner: VQ,
-  ulcrop: zQ,
-  ultri: $Q,
-  Umacr: WQ,
-  umacr: KQ,
-  uml: QQ,
-  UnderBar: XQ,
-  UnderBrace: ZQ,
-  UnderBracket: JQ,
-  UnderParenthesis: jQ,
-  Union: e3,
-  UnionPlus: t3,
-  Uogon: n3,
-  uogon: r3,
-  Uopf: a3,
-  uopf: o3,
-  UpArrowBar: i3,
-  uparrow: s3,
-  UpArrow: c3,
-  Uparrow: l3,
-  UpArrowDownArrow: _3,
-  updownarrow: d3,
-  UpDownArrow: u3,
-  Updownarrow: p3,
-  UpEquilibrium: m3,
-  upharpoonleft: g3,
-  upharpoonright: E3,
-  uplus: S3,
-  UpperLeftArrow: f3,
-  UpperRightArrow: b3,
-  upsi: T3,
-  Upsi: h3,
-  upsih: R3,
-  Upsilon: C3,
-  upsilon: N3,
-  UpTeeArrow: v3,
-  UpTee: O3,
-  upuparrows: y3,
-  urcorn: A3,
-  urcorner: I3,
-  urcrop: D3,
-  Uring: w3,
-  uring: M3,
-  urtri: x3,
-  Uscr: L3,
-  uscr: k3,
-  utdot: P3,
-  Utilde: U3,
-  utilde: F3,
-  utri: B3,
-  utrif: G3,
-  uuarr: q3,
-  Uuml: Y3,
-  uuml: H3,
-  uwangle: V3,
-  vangrt: z3,
-  varepsilon: $3,
-  varkappa: W3,
-  varnothing: K3,
-  varphi: Q3,
-  varpi: X3,
-  varpropto: Z3,
-  varr: J3,
-  vArr: j3,
-  varrho: eX,
-  varsigma: tX,
-  varsubsetneq: nX,
-  varsubsetneqq: rX,
-  varsupsetneq: aX,
-  varsupsetneqq: oX,
-  vartheta: iX,
-  vartriangleleft: sX,
-  vartriangleright: cX,
-  vBar: lX,
-  Vbar: _X,
-  vBarv: dX,
-  Vcy: uX,
-  vcy: pX,
-  vdash: mX,
-  vDash: gX,
-  Vdash: EX,
-  VDash: SX,
-  Vdashl: fX,
-  veebar: bX,
-  vee: TX,
-  Vee: hX,
-  veeeq: RX,
-  vellip: CX,
-  verbar: NX,
-  Verbar: vX,
-  vert: OX,
-  Vert: yX,
-  VerticalBar: AX,
-  VerticalLine: IX,
-  VerticalSeparator: DX,
-  VerticalTilde: wX,
-  VeryThinSpace: MX,
-  Vfr: xX,
-  vfr: LX,
-  vltri: kX,
-  vnsub: PX,
-  vnsup: UX,
-  Vopf: FX,
-  vopf: BX,
-  vprop: GX,
-  vrtri: qX,
-  Vscr: YX,
-  vscr: HX,
-  vsubnE: VX,
-  vsubne: zX,
-  vsupnE: $X,
-  vsupne: WX,
-  Vvdash: KX,
-  vzigzag: QX,
-  Wcirc: XX,
-  wcirc: ZX,
-  wedbar: JX,
-  wedge: jX,
-  Wedge: e9,
-  wedgeq: t9,
-  weierp: n9,
-  Wfr: r9,
-  wfr: a9,
-  Wopf: o9,
-  wopf: i9,
-  wp: s9,
-  wr: c9,
-  wreath: l9,
-  Wscr: _9,
-  wscr: d9,
-  xcap: u9,
-  xcirc: p9,
-  xcup: m9,
-  xdtri: g9,
-  Xfr: E9,
-  xfr: S9,
-  xharr: f9,
-  xhArr: b9,
-  Xi: T9,
-  xi: h9,
-  xlarr: R9,
-  xlArr: C9,
-  xmap: N9,
-  xnis: v9,
-  xodot: O9,
-  Xopf: y9,
-  xopf: A9,
-  xoplus: I9,
-  xotime: D9,
-  xrarr: w9,
-  xrArr: M9,
-  Xscr: x9,
-  xscr: L9,
-  xsqcup: k9,
-  xuplus: P9,
-  xutri: U9,
-  xvee: F9,
-  xwedge: B9,
-  Yacute: G9,
-  yacute: q9,
-  YAcy: Y9,
-  yacy: H9,
-  Ycirc: V9,
-  ycirc: z9,
-  Ycy: $9,
-  ycy: W9,
-  yen: K9,
-  Yfr: Q9,
-  yfr: X9,
-  YIcy: Z9,
-  yicy: J9,
-  Yopf: j9,
-  yopf: e4,
-  Yscr: t4,
-  yscr: n4,
-  YUcy: r4,
-  yucy: a4,
-  yuml: o4,
-  Yuml: i4,
-  Zacute: s4,
-  zacute: c4,
-  Zcaron: l4,
-  zcaron: _4,
-  Zcy: d4,
-  zcy: u4,
-  Zdot: p4,
-  zdot: m4,
-  zeetrf: g4,
-  ZeroWidthSpace: E4,
-  Zeta: S4,
-  zeta: f4,
-  zfr: b4,
-  Zfr: T4,
-  ZHcy: h4,
-  zhcy: R4,
-  zigrarr: C4,
-  zopf: N4,
-  Zopf: v4,
-  Zscr: O4,
-  zscr: y4,
-  zwj: A4,
-  zwnj: I4
+  map: pP,
+  mapsto: mP,
+  mapstodown: gP,
+  mapstoleft: EP,
+  mapstoup: SP,
+  marker: fP,
+  mcomma: bP,
+  Mcy: TP,
+  mcy: hP,
+  mdash: RP,
+  mDDot: CP,
+  measuredangle: NP,
+  MediumSpace: vP,
+  Mellintrf: OP,
+  Mfr: yP,
+  mfr: AP,
+  mho: IP,
+  micro: DP,
+  midast: wP,
+  midcir: MP,
+  mid: xP,
+  middot: LP,
+  minusb: kP,
+  minus: PP,
+  minusd: UP,
+  minusdu: FP,
+  MinusPlus: BP,
+  mlcp: GP,
+  mldr: qP,
+  mnplus: YP,
+  models: HP,
+  Mopf: VP,
+  mopf: zP,
+  mp: $P,
+  mscr: WP,
+  Mscr: KP,
+  mstpos: QP,
+  Mu: XP,
+  mu: ZP,
+  multimap: JP,
+  mumap: jP,
+  nabla: eU,
+  Nacute: tU,
+  nacute: nU,
+  nang: rU,
+  nap: aU,
+  napE: oU,
+  napid: iU,
+  napos: sU,
+  napprox: cU,
+  natural: lU,
+  naturals: _U,
+  natur: dU,
+  nbsp: uU,
+  nbump: pU,
+  nbumpe: mU,
+  ncap: gU,
+  Ncaron: EU,
+  ncaron: SU,
+  Ncedil: fU,
+  ncedil: bU,
+  ncong: TU,
+  ncongdot: hU,
+  ncup: RU,
+  Ncy: CU,
+  ncy: NU,
+  ndash: vU,
+  nearhk: OU,
+  nearr: yU,
+  neArr: AU,
+  nearrow: IU,
+  ne: DU,
+  nedot: wU,
+  NegativeMediumSpace: MU,
+  NegativeThickSpace: xU,
+  NegativeThinSpace: LU,
+  NegativeVeryThinSpace: kU,
+  nequiv: PU,
+  nesear: UU,
+  nesim: FU,
+  NestedGreaterGreater: BU,
+  NestedLessLess: GU,
+  NewLine: qU,
+  nexist: YU,
+  nexists: HU,
+  Nfr: VU,
+  nfr: zU,
+  ngE: $U,
+  nge: WU,
+  ngeq: KU,
+  ngeqq: QU,
+  ngeqslant: XU,
+  nges: ZU,
+  nGg: JU,
+  ngsim: jU,
+  nGt: e0,
+  ngt: t0,
+  ngtr: n0,
+  nGtv: r0,
+  nharr: a0,
+  nhArr: o0,
+  nhpar: i0,
+  ni: s0,
+  nis: c0,
+  nisd: l0,
+  niv: _0,
+  NJcy: d0,
+  njcy: u0,
+  nlarr: p0,
+  nlArr: m0,
+  nldr: g0,
+  nlE: E0,
+  nle: S0,
+  nleftarrow: f0,
+  nLeftarrow: b0,
+  nleftrightarrow: T0,
+  nLeftrightarrow: h0,
+  nleq: R0,
+  nleqq: C0,
+  nleqslant: N0,
+  nles: v0,
+  nless: O0,
+  nLl: y0,
+  nlsim: A0,
+  nLt: I0,
+  nlt: D0,
+  nltri: w0,
+  nltrie: M0,
+  nLtv: x0,
+  nmid: L0,
+  NoBreak: k0,
+  NonBreakingSpace: P0,
+  nopf: U0,
+  Nopf: F0,
+  Not: B0,
+  not: G0,
+  NotCongruent: q0,
+  NotCupCap: Y0,
+  NotDoubleVerticalBar: H0,
+  NotElement: V0,
+  NotEqual: z0,
+  NotEqualTilde: $0,
+  NotExists: W0,
+  NotGreater: K0,
+  NotGreaterEqual: Q0,
+  NotGreaterFullEqual: X0,
+  NotGreaterGreater: Z0,
+  NotGreaterLess: J0,
+  NotGreaterSlantEqual: j0,
+  NotGreaterTilde: eF,
+  NotHumpDownHump: tF,
+  NotHumpEqual: nF,
+  notin: rF,
+  notindot: aF,
+  notinE: oF,
+  notinva: iF,
+  notinvb: sF,
+  notinvc: cF,
+  NotLeftTriangleBar: lF,
+  NotLeftTriangle: _F,
+  NotLeftTriangleEqual: dF,
+  NotLess: uF,
+  NotLessEqual: pF,
+  NotLessGreater: mF,
+  NotLessLess: gF,
+  NotLessSlantEqual: EF,
+  NotLessTilde: SF,
+  NotNestedGreaterGreater: fF,
+  NotNestedLessLess: bF,
+  notni: TF,
+  notniva: hF,
+  notnivb: RF,
+  notnivc: CF,
+  NotPrecedes: NF,
+  NotPrecedesEqual: vF,
+  NotPrecedesSlantEqual: OF,
+  NotReverseElement: yF,
+  NotRightTriangleBar: AF,
+  NotRightTriangle: IF,
+  NotRightTriangleEqual: DF,
+  NotSquareSubset: wF,
+  NotSquareSubsetEqual: MF,
+  NotSquareSuperset: xF,
+  NotSquareSupersetEqual: LF,
+  NotSubset: kF,
+  NotSubsetEqual: PF,
+  NotSucceeds: UF,
+  NotSucceedsEqual: FF,
+  NotSucceedsSlantEqual: BF,
+  NotSucceedsTilde: GF,
+  NotSuperset: qF,
+  NotSupersetEqual: YF,
+  NotTilde: HF,
+  NotTildeEqual: VF,
+  NotTildeFullEqual: zF,
+  NotTildeTilde: $F,
+  NotVerticalBar: WF,
+  nparallel: KF,
+  npar: QF,
+  nparsl: XF,
+  npart: ZF,
+  npolint: JF,
+  npr: jF,
+  nprcue: eB,
+  nprec: tB,
+  npreceq: nB,
+  npre: rB,
+  nrarrc: aB,
+  nrarr: oB,
+  nrArr: iB,
+  nrarrw: sB,
+  nrightarrow: cB,
+  nRightarrow: lB,
+  nrtri: _B,
+  nrtrie: dB,
+  nsc: uB,
+  nsccue: pB,
+  nsce: mB,
+  Nscr: gB,
+  nscr: EB,
+  nshortmid: SB,
+  nshortparallel: fB,
+  nsim: bB,
+  nsime: TB,
+  nsimeq: hB,
+  nsmid: RB,
+  nspar: CB,
+  nsqsube: NB,
+  nsqsupe: vB,
+  nsub: OB,
+  nsubE: yB,
+  nsube: AB,
+  nsubset: IB,
+  nsubseteq: DB,
+  nsubseteqq: wB,
+  nsucc: MB,
+  nsucceq: xB,
+  nsup: LB,
+  nsupE: kB,
+  nsupe: PB,
+  nsupset: UB,
+  nsupseteq: FB,
+  nsupseteqq: BB,
+  ntgl: GB,
+  Ntilde: qB,
+  ntilde: YB,
+  ntlg: HB,
+  ntriangleleft: VB,
+  ntrianglelefteq: zB,
+  ntriangleright: $B,
+  ntrianglerighteq: WB,
+  Nu: KB,
+  nu: QB,
+  num: XB,
+  numero: ZB,
+  numsp: JB,
+  nvap: jB,
+  nvdash: eG,
+  nvDash: tG,
+  nVdash: nG,
+  nVDash: rG,
+  nvge: aG,
+  nvgt: oG,
+  nvHarr: iG,
+  nvinfin: sG,
+  nvlArr: cG,
+  nvle: lG,
+  nvlt: _G,
+  nvltrie: dG,
+  nvrArr: uG,
+  nvrtrie: pG,
+  nvsim: mG,
+  nwarhk: gG,
+  nwarr: EG,
+  nwArr: SG,
+  nwarrow: fG,
+  nwnear: bG,
+  Oacute: TG,
+  oacute: hG,
+  oast: RG,
+  Ocirc: CG,
+  ocirc: NG,
+  ocir: vG,
+  Ocy: OG,
+  ocy: yG,
+  odash: AG,
+  Odblac: IG,
+  odblac: DG,
+  odiv: wG,
+  odot: MG,
+  odsold: xG,
+  OElig: LG,
+  oelig: kG,
+  ofcir: PG,
+  Ofr: UG,
+  ofr: FG,
+  ogon: BG,
+  Ograve: GG,
+  ograve: qG,
+  ogt: YG,
+  ohbar: HG,
+  ohm: VG,
+  oint: zG,
+  olarr: $G,
+  olcir: WG,
+  olcross: KG,
+  oline: QG,
+  olt: XG,
+  Omacr: ZG,
+  omacr: JG,
+  Omega: jG,
+  omega: e1,
+  Omicron: t1,
+  omicron: n1,
+  omid: r1,
+  ominus: a1,
+  Oopf: o1,
+  oopf: i1,
+  opar: s1,
+  OpenCurlyDoubleQuote: c1,
+  OpenCurlyQuote: l1,
+  operp: _1,
+  oplus: d1,
+  orarr: u1,
+  Or: p1,
+  or: m1,
+  ord: g1,
+  order: E1,
+  orderof: S1,
+  ordf: f1,
+  ordm: b1,
+  origof: T1,
+  oror: h1,
+  orslope: R1,
+  orv: C1,
+  oS: N1,
+  Oscr: v1,
+  oscr: O1,
+  Oslash: y1,
+  oslash: A1,
+  osol: I1,
+  Otilde: D1,
+  otilde: w1,
+  otimesas: M1,
+  Otimes: x1,
+  otimes: L1,
+  Ouml: k1,
+  ouml: P1,
+  ovbar: U1,
+  OverBar: F1,
+  OverBrace: B1,
+  OverBracket: G1,
+  OverParenthesis: q1,
+  para: Y1,
+  parallel: H1,
+  par: V1,
+  parsim: z1,
+  parsl: $1,
+  part: W1,
+  PartialD: K1,
+  Pcy: Q1,
+  pcy: X1,
+  percnt: Z1,
+  period: J1,
+  permil: j1,
+  perp: eq,
+  pertenk: tq,
+  Pfr: nq,
+  pfr: rq,
+  Phi: aq,
+  phi: oq,
+  phiv: iq,
+  phmmat: sq,
+  phone: cq,
+  Pi: lq,
+  pi: _q,
+  pitchfork: dq,
+  piv: uq,
+  planck: pq,
+  planckh: mq,
+  plankv: gq,
+  plusacir: Eq,
+  plusb: Sq,
+  pluscir: fq,
+  plus: bq,
+  plusdo: Tq,
+  plusdu: hq,
+  pluse: Rq,
+  PlusMinus: Cq,
+  plusmn: Nq,
+  plussim: vq,
+  plustwo: Oq,
+  pm: yq,
+  Poincareplane: Aq,
+  pointint: Iq,
+  popf: Dq,
+  Popf: wq,
+  pound: Mq,
+  prap: xq,
+  Pr: Lq,
+  pr: kq,
+  prcue: Pq,
+  precapprox: Uq,
+  prec: Fq,
+  preccurlyeq: Bq,
+  Precedes: Gq,
+  PrecedesEqual: qq,
+  PrecedesSlantEqual: Yq,
+  PrecedesTilde: Hq,
+  preceq: Vq,
+  precnapprox: zq,
+  precneqq: $q,
+  precnsim: Wq,
+  pre: Kq,
+  prE: Qq,
+  precsim: Xq,
+  prime: Zq,
+  Prime: Jq,
+  primes: jq,
+  prnap: eY,
+  prnE: tY,
+  prnsim: nY,
+  prod: rY,
+  Product: aY,
+  profalar: oY,
+  profline: iY,
+  profsurf: sY,
+  prop: cY,
+  Proportional: lY,
+  Proportion: _Y,
+  propto: dY,
+  prsim: uY,
+  prurel: pY,
+  Pscr: mY,
+  pscr: gY,
+  Psi: EY,
+  psi: SY,
+  puncsp: fY,
+  Qfr: bY,
+  qfr: TY,
+  qint: hY,
+  qopf: RY,
+  Qopf: CY,
+  qprime: NY,
+  Qscr: vY,
+  qscr: OY,
+  quaternions: yY,
+  quatint: AY,
+  quest: IY,
+  questeq: DY,
+  quot: wY,
+  QUOT: MY,
+  rAarr: xY,
+  race: LY,
+  Racute: kY,
+  racute: PY,
+  radic: UY,
+  raemptyv: FY,
+  rang: BY,
+  Rang: GY,
+  rangd: qY,
+  range: YY,
+  rangle: HY,
+  raquo: VY,
+  rarrap: zY,
+  rarrb: $Y,
+  rarrbfs: WY,
+  rarrc: KY,
+  rarr: QY,
+  Rarr: XY,
+  rArr: ZY,
+  rarrfs: JY,
+  rarrhk: jY,
+  rarrlp: eH,
+  rarrpl: tH,
+  rarrsim: nH,
+  Rarrtl: rH,
+  rarrtl: aH,
+  rarrw: oH,
+  ratail: iH,
+  rAtail: sH,
+  ratio: cH,
+  rationals: lH,
+  rbarr: _H,
+  rBarr: dH,
+  RBarr: uH,
+  rbbrk: pH,
+  rbrace: mH,
+  rbrack: gH,
+  rbrke: EH,
+  rbrksld: SH,
+  rbrkslu: fH,
+  Rcaron: bH,
+  rcaron: TH,
+  Rcedil: hH,
+  rcedil: RH,
+  rceil: CH,
+  rcub: NH,
+  Rcy: vH,
+  rcy: OH,
+  rdca: yH,
+  rdldhar: AH,
+  rdquo: IH,
+  rdquor: DH,
+  rdsh: wH,
+  real: MH,
+  realine: xH,
+  realpart: LH,
+  reals: kH,
+  Re: PH,
+  rect: UH,
+  reg: FH,
+  REG: BH,
+  ReverseElement: GH,
+  ReverseEquilibrium: qH,
+  ReverseUpEquilibrium: YH,
+  rfisht: HH,
+  rfloor: VH,
+  rfr: zH,
+  Rfr: $H,
+  rHar: WH,
+  rhard: KH,
+  rharu: QH,
+  rharul: XH,
+  Rho: ZH,
+  rho: JH,
+  rhov: jH,
+  RightAngleBracket: eV,
+  RightArrowBar: tV,
+  rightarrow: nV,
+  RightArrow: rV,
+  Rightarrow: aV,
+  RightArrowLeftArrow: oV,
+  rightarrowtail: iV,
+  RightCeiling: sV,
+  RightDoubleBracket: cV,
+  RightDownTeeVector: lV,
+  RightDownVectorBar: _V,
+  RightDownVector: dV,
+  RightFloor: uV,
+  rightharpoondown: pV,
+  rightharpoonup: mV,
+  rightleftarrows: gV,
+  rightleftharpoons: EV,
+  rightrightarrows: SV,
+  rightsquigarrow: fV,
+  RightTeeArrow: bV,
+  RightTee: TV,
+  RightTeeVector: hV,
+  rightthreetimes: RV,
+  RightTriangleBar: CV,
+  RightTriangle: NV,
+  RightTriangleEqual: vV,
+  RightUpDownVector: OV,
+  RightUpTeeVector: yV,
+  RightUpVectorBar: AV,
+  RightUpVector: IV,
+  RightVectorBar: DV,
+  RightVector: wV,
+  ring: MV,
+  risingdotseq: xV,
+  rlarr: LV,
+  rlhar: kV,
+  rlm: PV,
+  rmoustache: UV,
+  rmoust: FV,
+  rnmid: BV,
+  roang: GV,
+  roarr: qV,
+  robrk: YV,
+  ropar: HV,
+  ropf: VV,
+  Ropf: zV,
+  roplus: $V,
+  rotimes: WV,
+  RoundImplies: KV,
+  rpar: QV,
+  rpargt: XV,
+  rppolint: ZV,
+  rrarr: JV,
+  Rrightarrow: jV,
+  rsaquo: ez,
+  rscr: tz,
+  Rscr: nz,
+  rsh: rz,
+  Rsh: az,
+  rsqb: oz,
+  rsquo: iz,
+  rsquor: sz,
+  rthree: cz,
+  rtimes: lz,
+  rtri: _z,
+  rtrie: dz,
+  rtrif: uz,
+  rtriltri: pz,
+  RuleDelayed: mz,
+  ruluhar: gz,
+  rx: Ez,
+  Sacute: Sz,
+  sacute: fz,
+  sbquo: bz,
+  scap: Tz,
+  Scaron: hz,
+  scaron: Rz,
+  Sc: Cz,
+  sc: Nz,
+  sccue: vz,
+  sce: Oz,
+  scE: yz,
+  Scedil: Az,
+  scedil: Iz,
+  Scirc: Dz,
+  scirc: wz,
+  scnap: Mz,
+  scnE: xz,
+  scnsim: Lz,
+  scpolint: kz,
+  scsim: Pz,
+  Scy: Uz,
+  scy: Fz,
+  sdotb: Bz,
+  sdot: Gz,
+  sdote: qz,
+  searhk: Yz,
+  searr: Hz,
+  seArr: Vz,
+  searrow: zz,
+  sect: $z,
+  semi: Wz,
+  seswar: Kz,
+  setminus: Qz,
+  setmn: Xz,
+  sext: Zz,
+  Sfr: Jz,
+  sfr: jz,
+  sfrown: e2,
+  sharp: t2,
+  SHCHcy: n2,
+  shchcy: r2,
+  SHcy: a2,
+  shcy: o2,
+  ShortDownArrow: i2,
+  ShortLeftArrow: s2,
+  shortmid: c2,
+  shortparallel: l2,
+  ShortRightArrow: _2,
+  ShortUpArrow: d2,
+  shy: u2,
+  Sigma: p2,
+  sigma: m2,
+  sigmaf: g2,
+  sigmav: E2,
+  sim: S2,
+  simdot: f2,
+  sime: b2,
+  simeq: T2,
+  simg: h2,
+  simgE: R2,
+  siml: C2,
+  simlE: N2,
+  simne: v2,
+  simplus: O2,
+  simrarr: y2,
+  slarr: A2,
+  SmallCircle: I2,
+  smallsetminus: D2,
+  smashp: w2,
+  smeparsl: M2,
+  smid: x2,
+  smile: L2,
+  smt: k2,
+  smte: P2,
+  smtes: U2,
+  SOFTcy: F2,
+  softcy: B2,
+  solbar: G2,
+  solb: q2,
+  sol: Y2,
+  Sopf: H2,
+  sopf: V2,
+  spades: z2,
+  spadesuit: $2,
+  spar: W2,
+  sqcap: K2,
+  sqcaps: Q2,
+  sqcup: X2,
+  sqcups: Z2,
+  Sqrt: J2,
+  sqsub: j2,
+  sqsube: e$,
+  sqsubset: t$,
+  sqsubseteq: n$,
+  sqsup: r$,
+  sqsupe: a$,
+  sqsupset: o$,
+  sqsupseteq: i$,
+  square: s$,
+  Square: c$,
+  SquareIntersection: l$,
+  SquareSubset: _$,
+  SquareSubsetEqual: d$,
+  SquareSuperset: u$,
+  SquareSupersetEqual: p$,
+  SquareUnion: m$,
+  squarf: g$,
+  squ: E$,
+  squf: S$,
+  srarr: f$,
+  Sscr: b$,
+  sscr: T$,
+  ssetmn: h$,
+  ssmile: R$,
+  sstarf: C$,
+  Star: N$,
+  star: v$,
+  starf: O$,
+  straightepsilon: y$,
+  straightphi: A$,
+  strns: I$,
+  sub: D$,
+  Sub: w$,
+  subdot: M$,
+  subE: x$,
+  sube: L$,
+  subedot: k$,
+  submult: P$,
+  subnE: U$,
+  subne: F$,
+  subplus: B$,
+  subrarr: G$,
+  subset: q$,
+  Subset: Y$,
+  subseteq: H$,
+  subseteqq: V$,
+  SubsetEqual: z$,
+  subsetneq: $$,
+  subsetneqq: W$,
+  subsim: K$,
+  subsub: Q$,
+  subsup: X$,
+  succapprox: Z$,
+  succ: J$,
+  succcurlyeq: j$,
+  Succeeds: eW,
+  SucceedsEqual: tW,
+  SucceedsSlantEqual: nW,
+  SucceedsTilde: rW,
+  succeq: aW,
+  succnapprox: oW,
+  succneqq: iW,
+  succnsim: sW,
+  succsim: cW,
+  SuchThat: lW,
+  sum: _W,
+  Sum: dW,
+  sung: uW,
+  sup1: pW,
+  sup2: mW,
+  sup3: gW,
+  sup: EW,
+  Sup: SW,
+  supdot: fW,
+  supdsub: bW,
+  supE: TW,
+  supe: hW,
+  supedot: RW,
+  Superset: CW,
+  SupersetEqual: NW,
+  suphsol: vW,
+  suphsub: OW,
+  suplarr: yW,
+  supmult: AW,
+  supnE: IW,
+  supne: DW,
+  supplus: wW,
+  supset: MW,
+  Supset: xW,
+  supseteq: LW,
+  supseteqq: kW,
+  supsetneq: PW,
+  supsetneqq: UW,
+  supsim: FW,
+  supsub: BW,
+  supsup: GW,
+  swarhk: qW,
+  swarr: YW,
+  swArr: HW,
+  swarrow: VW,
+  swnwar: zW,
+  szlig: $W,
+  Tab: WW,
+  target: KW,
+  Tau: QW,
+  tau: XW,
+  tbrk: ZW,
+  Tcaron: JW,
+  tcaron: jW,
+  Tcedil: eK,
+  tcedil: tK,
+  Tcy: nK,
+  tcy: rK,
+  tdot: aK,
+  telrec: oK,
+  Tfr: iK,
+  tfr: sK,
+  there4: cK,
+  therefore: lK,
+  Therefore: _K,
+  Theta: dK,
+  theta: uK,
+  thetasym: pK,
+  thetav: mK,
+  thickapprox: gK,
+  thicksim: EK,
+  ThickSpace: SK,
+  ThinSpace: fK,
+  thinsp: bK,
+  thkap: TK,
+  thksim: hK,
+  THORN: RK,
+  thorn: CK,
+  tilde: NK,
+  Tilde: vK,
+  TildeEqual: OK,
+  TildeFullEqual: yK,
+  TildeTilde: AK,
+  timesbar: IK,
+  timesb: DK,
+  times: wK,
+  timesd: MK,
+  tint: xK,
+  toea: LK,
+  topbot: kK,
+  topcir: PK,
+  top: UK,
+  Topf: FK,
+  topf: BK,
+  topfork: GK,
+  tosa: qK,
+  tprime: YK,
+  trade: HK,
+  TRADE: VK,
+  triangle: zK,
+  triangledown: $K,
+  triangleleft: WK,
+  trianglelefteq: KK,
+  triangleq: QK,
+  triangleright: XK,
+  trianglerighteq: ZK,
+  tridot: JK,
+  trie: jK,
+  triminus: eQ,
+  TripleDot: tQ,
+  triplus: nQ,
+  trisb: rQ,
+  tritime: aQ,
+  trpezium: oQ,
+  Tscr: iQ,
+  tscr: sQ,
+  TScy: cQ,
+  tscy: lQ,
+  TSHcy: _Q,
+  tshcy: dQ,
+  Tstrok: uQ,
+  tstrok: pQ,
+  twixt: mQ,
+  twoheadleftarrow: gQ,
+  twoheadrightarrow: EQ,
+  Uacute: SQ,
+  uacute: fQ,
+  uarr: bQ,
+  Uarr: TQ,
+  uArr: hQ,
+  Uarrocir: RQ,
+  Ubrcy: CQ,
+  ubrcy: NQ,
+  Ubreve: vQ,
+  ubreve: OQ,
+  Ucirc: yQ,
+  ucirc: AQ,
+  Ucy: IQ,
+  ucy: DQ,
+  udarr: wQ,
+  Udblac: MQ,
+  udblac: xQ,
+  udhar: LQ,
+  ufisht: kQ,
+  Ufr: PQ,
+  ufr: UQ,
+  Ugrave: FQ,
+  ugrave: BQ,
+  uHar: GQ,
+  uharl: qQ,
+  uharr: YQ,
+  uhblk: HQ,
+  ulcorn: VQ,
+  ulcorner: zQ,
+  ulcrop: $Q,
+  ultri: WQ,
+  Umacr: KQ,
+  umacr: QQ,
+  uml: XQ,
+  UnderBar: ZQ,
+  UnderBrace: JQ,
+  UnderBracket: jQ,
+  UnderParenthesis: e3,
+  Union: t3,
+  UnionPlus: n3,
+  Uogon: r3,
+  uogon: a3,
+  Uopf: o3,
+  uopf: i3,
+  UpArrowBar: s3,
+  uparrow: c3,
+  UpArrow: l3,
+  Uparrow: _3,
+  UpArrowDownArrow: d3,
+  updownarrow: u3,
+  UpDownArrow: p3,
+  Updownarrow: m3,
+  UpEquilibrium: g3,
+  upharpoonleft: E3,
+  upharpoonright: S3,
+  uplus: f3,
+  UpperLeftArrow: b3,
+  UpperRightArrow: T3,
+  upsi: h3,
+  Upsi: R3,
+  upsih: C3,
+  Upsilon: N3,
+  upsilon: v3,
+  UpTeeArrow: O3,
+  UpTee: y3,
+  upuparrows: A3,
+  urcorn: I3,
+  urcorner: D3,
+  urcrop: w3,
+  Uring: M3,
+  uring: x3,
+  urtri: L3,
+  Uscr: k3,
+  uscr: P3,
+  utdot: U3,
+  Utilde: F3,
+  utilde: B3,
+  utri: G3,
+  utrif: q3,
+  uuarr: Y3,
+  Uuml: H3,
+  uuml: V3,
+  uwangle: z3,
+  vangrt: $3,
+  varepsilon: W3,
+  varkappa: K3,
+  varnothing: Q3,
+  varphi: X3,
+  varpi: Z3,
+  varpropto: J3,
+  varr: j3,
+  vArr: eX,
+  varrho: tX,
+  varsigma: nX,
+  varsubsetneq: rX,
+  varsubsetneqq: aX,
+  varsupsetneq: oX,
+  varsupsetneqq: iX,
+  vartheta: sX,
+  vartriangleleft: cX,
+  vartriangleright: lX,
+  vBar: _X,
+  Vbar: dX,
+  vBarv: uX,
+  Vcy: pX,
+  vcy: mX,
+  vdash: gX,
+  vDash: EX,
+  Vdash: SX,
+  VDash: fX,
+  Vdashl: bX,
+  veebar: TX,
+  vee: hX,
+  Vee: RX,
+  veeeq: CX,
+  vellip: NX,
+  verbar: vX,
+  Verbar: OX,
+  vert: yX,
+  Vert: AX,
+  VerticalBar: IX,
+  VerticalLine: DX,
+  VerticalSeparator: wX,
+  VerticalTilde: MX,
+  VeryThinSpace: xX,
+  Vfr: LX,
+  vfr: kX,
+  vltri: PX,
+  vnsub: UX,
+  vnsup: FX,
+  Vopf: BX,
+  vopf: GX,
+  vprop: qX,
+  vrtri: YX,
+  Vscr: HX,
+  vscr: VX,
+  vsubnE: zX,
+  vsubne: $X,
+  vsupnE: WX,
+  vsupne: KX,
+  Vvdash: QX,
+  vzigzag: XX,
+  Wcirc: ZX,
+  wcirc: JX,
+  wedbar: jX,
+  wedge: e9,
+  Wedge: t9,
+  wedgeq: n9,
+  weierp: r9,
+  Wfr: a9,
+  wfr: o9,
+  Wopf: i9,
+  wopf: s9,
+  wp: c9,
+  wr: l9,
+  wreath: _9,
+  Wscr: d9,
+  wscr: u9,
+  xcap: p9,
+  xcirc: m9,
+  xcup: g9,
+  xdtri: E9,
+  Xfr: S9,
+  xfr: f9,
+  xharr: b9,
+  xhArr: T9,
+  Xi: h9,
+  xi: R9,
+  xlarr: C9,
+  xlArr: N9,
+  xmap: v9,
+  xnis: O9,
+  xodot: y9,
+  Xopf: A9,
+  xopf: I9,
+  xoplus: D9,
+  xotime: w9,
+  xrarr: M9,
+  xrArr: x9,
+  Xscr: L9,
+  xscr: k9,
+  xsqcup: P9,
+  xuplus: U9,
+  xutri: F9,
+  xvee: B9,
+  xwedge: G9,
+  Yacute: q9,
+  yacute: Y9,
+  YAcy: H9,
+  yacy: V9,
+  Ycirc: z9,
+  ycirc: $9,
+  Ycy: W9,
+  ycy: K9,
+  yen: Q9,
+  Yfr: X9,
+  yfr: Z9,
+  YIcy: J9,
+  yicy: j9,
+  Yopf: e4,
+  yopf: t4,
+  Yscr: n4,
+  yscr: r4,
+  YUcy: a4,
+  yucy: o4,
+  yuml: i4,
+  Yuml: s4,
+  Zacute: c4,
+  zacute: l4,
+  Zcaron: _4,
+  zcaron: d4,
+  Zcy: u4,
+  zcy: p4,
+  Zdot: m4,
+  zdot: g4,
+  zeetrf: E4,
+  ZeroWidthSpace: S4,
+  Zeta: f4,
+  zeta: b4,
+  zfr: T4,
+  Zfr: h4,
+  ZHcy: R4,
+  zhcy: C4,
+  zigrarr: N4,
+  zopf: v4,
+  Zopf: O4,
+  Zscr: y4,
+  zscr: A4,
+  zwj: I4,
+  zwnj: D4
 };
-var hd = D4, pi = /[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4E\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDF55-\uDF59]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDF3C-\uDF3E]|\uD806[\uDC3B\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8]|\uD809[\uDC70-\uDC74]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDE97-\uDE9A]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/, it = {}, T_ = {};
-function w4(t) {
+var hd = w4, pi = /[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4E\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDF55-\uDF59]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDF3C-\uDF3E]|\uD806[\uDC3B\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8]|\uD809[\uDC70-\uDC74]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDE97-\uDE9A]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/, st = {}, T_ = {};
+function M4(t) {
   var e, n, r = T_[t];
   if (r)
     return r;
@@ -35222,32 +35222,32 @@ function w4(t) {
   return r;
 }
 function Vt(t, e, n) {
-  var r, a, i, o, s, c = "";
-  for (typeof e != "string" && (n = e, e = Vt.defaultChars), typeof n > "u" && (n = !0), s = w4(e), r = 0, a = t.length; r < a; r++) {
+  var r, a, i, o, c, s = "";
+  for (typeof e != "string" && (n = e, e = Vt.defaultChars), typeof n > "u" && (n = !0), c = M4(e), r = 0, a = t.length; r < a; r++) {
     if (i = t.charCodeAt(r), n && i === 37 && r + 2 < a && /^[0-9a-f]{2}$/i.test(t.slice(r + 1, r + 3))) {
-      c += t.slice(r, r + 3), r += 2;
+      s += t.slice(r, r + 3), r += 2;
       continue;
     }
     if (i < 128) {
-      c += s[i];
+      s += c[i];
       continue;
     }
     if (i >= 55296 && i <= 57343) {
       if (i >= 55296 && i <= 56319 && r + 1 < a && (o = t.charCodeAt(r + 1), o >= 56320 && o <= 57343)) {
-        c += encodeURIComponent(t[r] + t[r + 1]), r++;
+        s += encodeURIComponent(t[r] + t[r + 1]), r++;
         continue;
       }
-      c += "%EF%BF%BD";
+      s += "%EF%BF%BD";
       continue;
     }
-    c += encodeURIComponent(t[r]);
+    s += encodeURIComponent(t[r]);
   }
-  return c;
+  return s;
 }
 Vt.defaultChars = ";/?:@&=+$,-_.!~*'()#";
 Vt.componentChars = "-_.!~*'()";
-var M4 = Vt, h_ = {};
-function x4(t) {
+var x4 = Vt, h_ = {};
+function L4(t) {
   var e, n, r = h_[t];
   if (r)
     return r;
@@ -35259,23 +35259,23 @@ function x4(t) {
 }
 function zt(t, e) {
   var n;
-  return typeof e != "string" && (e = zt.defaultChars), n = x4(e), t.replace(/(%[a-f0-9]{2})+/gi, function(r) {
-    var a, i, o, s, c, l, _, p = "";
+  return typeof e != "string" && (e = zt.defaultChars), n = L4(e), t.replace(/(%[a-f0-9]{2})+/gi, function(r) {
+    var a, i, o, c, s, l, _, p = "";
     for (a = 0, i = r.length; a < i; a += 3) {
       if (o = parseInt(r.slice(a + 1, a + 3), 16), o < 128) {
         p += n[o];
         continue;
       }
-      if ((o & 224) === 192 && a + 3 < i && (s = parseInt(r.slice(a + 4, a + 6), 16), (s & 192) === 128)) {
-        _ = o << 6 & 1984 | s & 63, _ < 128 ? p += "��" : p += String.fromCharCode(_), a += 3;
+      if ((o & 224) === 192 && a + 3 < i && (c = parseInt(r.slice(a + 4, a + 6), 16), (c & 192) === 128)) {
+        _ = o << 6 & 1984 | c & 63, _ < 128 ? p += "��" : p += String.fromCharCode(_), a += 3;
         continue;
       }
-      if ((o & 240) === 224 && a + 6 < i && (s = parseInt(r.slice(a + 4, a + 6), 16), c = parseInt(r.slice(a + 7, a + 9), 16), (s & 192) === 128 && (c & 192) === 128)) {
-        _ = o << 12 & 61440 | s << 6 & 4032 | c & 63, _ < 2048 || _ >= 55296 && _ <= 57343 ? p += "���" : p += String.fromCharCode(_), a += 6;
+      if ((o & 240) === 224 && a + 6 < i && (c = parseInt(r.slice(a + 4, a + 6), 16), s = parseInt(r.slice(a + 7, a + 9), 16), (c & 192) === 128 && (s & 192) === 128)) {
+        _ = o << 12 & 61440 | c << 6 & 4032 | s & 63, _ < 2048 || _ >= 55296 && _ <= 57343 ? p += "���" : p += String.fromCharCode(_), a += 6;
         continue;
       }
-      if ((o & 248) === 240 && a + 9 < i && (s = parseInt(r.slice(a + 4, a + 6), 16), c = parseInt(r.slice(a + 7, a + 9), 16), l = parseInt(r.slice(a + 10, a + 12), 16), (s & 192) === 128 && (c & 192) === 128 && (l & 192) === 128)) {
-        _ = o << 18 & 1835008 | s << 12 & 258048 | c << 6 & 4032 | l & 63, _ < 65536 || _ > 1114111 ? p += "����" : (_ -= 65536, p += String.fromCharCode(55296 + (_ >> 10), 56320 + (_ & 1023))), a += 9;
+      if ((o & 248) === 240 && a + 9 < i && (c = parseInt(r.slice(a + 4, a + 6), 16), s = parseInt(r.slice(a + 7, a + 9), 16), l = parseInt(r.slice(a + 10, a + 12), 16), (c & 192) === 128 && (s & 192) === 128 && (l & 192) === 128)) {
+        _ = o << 18 & 1835008 | c << 12 & 258048 | s << 6 & 4032 | l & 63, _ < 65536 || _ > 1114111 ? p += "����" : (_ -= 65536, p += String.fromCharCode(55296 + (_ >> 10), 56320 + (_ & 1023))), a += 9;
         continue;
       }
       p += "�";
@@ -35285,15 +35285,15 @@ function zt(t, e) {
 }
 zt.defaultChars = ";/?:@&=+$,#";
 zt.componentChars = "";
-var L4 = zt, k4 = function(e) {
+var k4 = zt, P4 = function(e) {
   var n = "";
   return n += e.protocol || "", n += e.slashes ? "//" : "", n += e.auth ? e.auth + "@" : "", e.hostname && e.hostname.indexOf(":") !== -1 ? n += "[" + e.hostname + "]" : n += e.hostname || "", n += e.port ? ":" + e.port : "", n += e.pathname || "", n += e.search || "", n += e.hash || "", n;
 };
 function Ut() {
   this.protocol = null, this.slashes = null, this.auth = null, this.port = null, this.hostname = null, this.hash = null, this.search = null, this.pathname = null;
 }
-var P4 = /^([a-z0-9.+-]+:)/i, U4 = /:[0-9]*$/, F4 = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/, B4 = ["<", ">", '"', "`", " ", "\r", `
-`, "	"], G4 = ["{", "}", "|", "\\", "^", "`"].concat(B4), q4 = ["'"].concat(G4), R_ = ["%", "/", "?", ";", "#"].concat(q4), C_ = ["/", "?", "#"], Y4 = 255, N_ = /^[+a-z0-9A-Z_-]{0,63}$/, H4 = /^([+a-z0-9A-Z_-]{0,63})(.*)$/, v_ = {
+var U4 = /^([a-z0-9.+-]+:)/i, F4 = /:[0-9]*$/, B4 = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/, G4 = ["<", ">", '"', "`", " ", "\r", `
+`, "	"], q4 = ["{", "}", "|", "\\", "^", "`"].concat(G4), Y4 = ["'"].concat(q4), R_ = ["%", "/", "?", ";", "#"].concat(Y4), C_ = ["/", "?", "#"], H4 = 255, N_ = /^[+a-z0-9A-Z_-]{0,63}$/, V4 = /^([+a-z0-9A-Z_-]{0,63})(.*)$/, v_ = {
   javascript: !0,
   "javascript:": !0
 }, O_ = {
@@ -35308,30 +35308,30 @@ var P4 = /^([a-z0-9.+-]+:)/i, U4 = /:[0-9]*$/, F4 = /^(\/\/?(?!\/)[^\?\s]*)(\?[^
   "gopher:": !0,
   "file:": !0
 };
-function V4(t, e) {
+function z4(t, e) {
   if (t && t instanceof Ut)
     return t;
   var n = new Ut();
   return n.parse(t, e), n;
 }
 Ut.prototype.parse = function(t, e) {
-  var n, r, a, i, o, s = t;
-  if (s = s.trim(), !e && t.split("#").length === 1) {
-    var c = F4.exec(s);
-    if (c)
-      return this.pathname = c[1], c[2] && (this.search = c[2]), this;
+  var n, r, a, i, o, c = t;
+  if (c = c.trim(), !e && t.split("#").length === 1) {
+    var s = B4.exec(c);
+    if (s)
+      return this.pathname = s[1], s[2] && (this.search = s[2]), this;
   }
-  var l = P4.exec(s);
-  if (l && (l = l[0], a = l.toLowerCase(), this.protocol = l, s = s.substr(l.length)), (e || l || s.match(/^\/\/[^@\/]+@[^@\/]+/)) && (o = s.substr(0, 2) === "//", o && !(l && v_[l]) && (s = s.substr(2), this.slashes = !0)), !v_[l] && (o || l && !O_[l])) {
+  var l = U4.exec(c);
+  if (l && (l = l[0], a = l.toLowerCase(), this.protocol = l, c = c.substr(l.length)), (e || l || c.match(/^\/\/[^@\/]+@[^@\/]+/)) && (o = c.substr(0, 2) === "//", o && !(l && v_[l]) && (c = c.substr(2), this.slashes = !0)), !v_[l] && (o || l && !O_[l])) {
     var _ = -1;
     for (n = 0; n < C_.length; n++)
-      i = s.indexOf(C_[n]), i !== -1 && (_ === -1 || i < _) && (_ = i);
+      i = c.indexOf(C_[n]), i !== -1 && (_ === -1 || i < _) && (_ = i);
     var p, d;
-    for (_ === -1 ? d = s.lastIndexOf("@") : d = s.lastIndexOf("@", _), d !== -1 && (p = s.slice(0, d), s = s.slice(d + 1), this.auth = p), _ = -1, n = 0; n < R_.length; n++)
-      i = s.indexOf(R_[n]), i !== -1 && (_ === -1 || i < _) && (_ = i);
-    _ === -1 && (_ = s.length), s[_ - 1] === ":" && _--;
-    var u = s.slice(0, _);
-    s = s.slice(_), this.parseHost(u), this.hostname = this.hostname || "";
+    for (_ === -1 ? d = c.lastIndexOf("@") : d = c.lastIndexOf("@", _), d !== -1 && (p = c.slice(0, d), c = c.slice(d + 1), this.auth = p), _ = -1, n = 0; n < R_.length; n++)
+      i = c.indexOf(R_[n]), i !== -1 && (_ === -1 || i < _) && (_ = i);
+    _ === -1 && (_ = c.length), c[_ - 1] === ":" && _--;
+    var u = c.slice(0, _);
+    c = c.slice(_), this.parseHost(u), this.hostname = this.hostname || "";
     var E = this.hostname[0] === "[" && this.hostname[this.hostname.length - 1] === "]";
     if (!E) {
       var S = this.hostname.split(/\./);
@@ -35341,29 +35341,29 @@ Ut.prototype.parse = function(t, e) {
           for (var f = "", b = 0, h = g.length; b < h; b++)
             g.charCodeAt(b) > 127 ? f += "x" : f += g[b];
           if (!f.match(N_)) {
-            var N = S.slice(0, n), v = S.slice(n + 1), R = g.match(H4);
-            R && (N.push(R[1]), v.unshift(R[2])), v.length && (s = v.join(".") + s), this.hostname = N.join(".");
+            var N = S.slice(0, n), v = S.slice(n + 1), R = g.match(V4);
+            R && (N.push(R[1]), v.unshift(R[2])), v.length && (c = v.join(".") + c), this.hostname = N.join(".");
             break;
           }
         }
       }
     }
-    this.hostname.length > Y4 && (this.hostname = ""), E && (this.hostname = this.hostname.substr(1, this.hostname.length - 2));
+    this.hostname.length > H4 && (this.hostname = ""), E && (this.hostname = this.hostname.substr(1, this.hostname.length - 2));
   }
-  var C = s.indexOf("#");
-  C !== -1 && (this.hash = s.substr(C), s = s.slice(0, C));
-  var w = s.indexOf("?");
-  return w !== -1 && (this.search = s.substr(w), s = s.slice(0, w)), s && (this.pathname = s), O_[a] && this.hostname && !this.pathname && (this.pathname = ""), this;
+  var C = c.indexOf("#");
+  C !== -1 && (this.hash = c.substr(C), c = c.slice(0, C));
+  var w = c.indexOf("?");
+  return w !== -1 && (this.search = c.substr(w), c = c.slice(0, w)), c && (this.pathname = c), O_[a] && this.hostname && !this.pathname && (this.pathname = ""), this;
 };
 Ut.prototype.parseHost = function(t) {
-  var e = U4.exec(t);
+  var e = F4.exec(t);
   e && (e = e[0], e !== ":" && (this.port = e.substr(1)), t = t.substr(0, t.length - e.length)), t && (this.hostname = t);
 };
-var z4 = V4;
-it.encode = M4;
-it.decode = L4;
-it.format = k4;
-it.parse = z4;
+var $4 = z4;
+st.encode = x4;
+st.decode = k4;
+st.format = P4;
+st.parse = $4;
 var ze = {}, Po, y_;
 function Rd() {
   return y_ || (y_ = 1, Po = /[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/), Po;
@@ -35373,7 +35373,7 @@ function Cd() {
   return A_ || (A_ = 1, Uo = /[\0-\x1F\x7F-\x9F]/), Uo;
 }
 var Fo, I_;
-function $4() {
+function W4() {
   return I_ || (I_ = 1, Fo = /[\xAD\u0600-\u0605\u061C\u06DD\u070F\u08E2\u180E\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\uFEFF\uFFF9-\uFFFB]|\uD804[\uDCBD\uDCCD]|\uD82F[\uDCA0-\uDCA3]|\uD834[\uDD73-\uDD7A]|\uDB40[\uDC01\uDC20-\uDC7F]/), Fo;
 }
 var Bo, D_;
@@ -35381,8 +35381,8 @@ function Nd() {
   return D_ || (D_ = 1, Bo = /[ \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/), Bo;
 }
 var w_;
-function W4() {
-  return w_ || (w_ = 1, ze.Any = Rd(), ze.Cc = Cd(), ze.Cf = $4(), ze.P = pi, ze.Z = Nd()), ze;
+function K4() {
+  return w_ || (w_ = 1, ze.Any = Rd(), ze.Cc = Cd(), ze.Cf = W4(), ze.P = pi, ze.Z = Nd()), ze;
 }
 (function(t) {
   function e(I) {
@@ -35410,10 +35410,10 @@ function W4() {
   function o(I, k, D) {
     return [].concat(I.slice(0, k), D, I.slice(k + 1));
   }
-  function s(I) {
+  function c(I) {
     return !(I >= 55296 && I <= 57343 || I >= 64976 && I <= 65007 || (I & 65535) === 65535 || (I & 65535) === 65534 || I >= 0 && I <= 8 || I === 11 || I >= 14 && I <= 31 || I >= 127 && I <= 159 || I > 1114111);
   }
-  function c(I) {
+  function s(I) {
     if (I > 65535) {
       I -= 65536;
       var k = 55296 + (I >> 10), D = 56320 + (I & 1023);
@@ -35424,7 +35424,7 @@ function W4() {
   var l = /\\([!"#$%&'()*+,\-.\/:;<=>?@[\\\]^_`{|}~])/g, _ = /&([a-z#][a-z0-9]{1,31});/gi, p = new RegExp(l.source + "|" + _.source, "gi"), d = /^#((?:x[a-f0-9]{1,8}|[0-9]{1,8}))$/i, u = hd;
   function E(I, k) {
     var D;
-    return a(u, k) ? u[k] : k.charCodeAt(0) === 35 && d.test(k) && (D = k[1].toLowerCase() === "x" ? parseInt(k.slice(2), 16) : parseInt(k.slice(1), 10), s(D)) ? c(D) : I;
+    return a(u, k) ? u[k] : k.charCodeAt(0) === 35 && d.test(k) && (D = k[1].toLowerCase() === "x" ? parseInt(k.slice(2), 16) : parseInt(k.slice(1), 10), c(D)) ? s(D) : I;
   }
   function S(I) {
     return I.indexOf("\\") < 0 ? I : I.replace(l, "$1");
@@ -35523,25 +35523,25 @@ function W4() {
   function q(I) {
     return I = I.trim().replace(/\s+/g, " "), "ẞ".toLowerCase() === "Ṿ" && (I = I.replace(/ẞ/g, "ß")), I.toLowerCase().toUpperCase();
   }
-  t.lib = {}, t.lib.mdurl = it, t.lib.ucmicro = W4(), t.assign = i, t.isString = n, t.has = a, t.unescapeMd = S, t.unescapeAll = g, t.isValidEntityCode = s, t.fromCodePoint = c, t.escapeHtml = v, t.arrayReplaceAt = o, t.isSpace = w, t.isWhiteSpace = L, t.isMdAsciiPunct = P, t.isPunctChar = G, t.escapeRE = C, t.normalizeReference = q;
+  t.lib = {}, t.lib.mdurl = st, t.lib.ucmicro = K4(), t.assign = i, t.isString = n, t.has = a, t.unescapeMd = S, t.unescapeAll = g, t.isValidEntityCode = c, t.fromCodePoint = s, t.escapeHtml = v, t.arrayReplaceAt = o, t.isSpace = w, t.isWhiteSpace = L, t.isMdAsciiPunct = P, t.isPunctChar = G, t.escapeRE = C, t.normalizeReference = q;
 })(Q);
-var $t = {}, K4 = function(e, n, r) {
-  var a, i, o, s, c = -1, l = e.posMax, _ = e.pos;
+var $t = {}, Q4 = function(e, n, r) {
+  var a, i, o, c, s = -1, l = e.posMax, _ = e.pos;
   for (e.pos = n + 1, a = 1; e.pos < l; ) {
     if (o = e.src.charCodeAt(e.pos), o === 93 && (a--, a === 0)) {
       i = !0;
       break;
     }
-    if (s = e.pos, e.md.inline.skipToken(e), o === 91) {
-      if (s === e.pos - 1)
+    if (c = e.pos, e.md.inline.skipToken(e), o === 91) {
+      if (c === e.pos - 1)
         a++;
       else if (r)
         return e.pos = _, -1;
     }
   }
-  return i && (c = e.pos), e.pos = _, c;
-}, M_ = Q.unescapeAll, Q4 = function(e, n, r) {
-  var a, i, o = n, s = {
+  return i && (s = e.pos), e.pos = _, s;
+}, M_ = Q.unescapeAll, X4 = function(e, n, r) {
+  var a, i, o = n, c = {
     ok: !1,
     pos: 0,
     lines: 0,
@@ -35550,16 +35550,16 @@ var $t = {}, K4 = function(e, n, r) {
   if (e.charCodeAt(o) === 60) {
     for (o++; o < r; ) {
       if (a = e.charCodeAt(o), a === 10 || a === 60)
-        return s;
+        return c;
       if (a === 62)
-        return s.pos = o + 1, s.str = M_(e.slice(n + 1, o)), s.ok = !0, s;
+        return c.pos = o + 1, c.str = M_(e.slice(n + 1, o)), c.ok = !0, c;
       if (a === 92 && o + 1 < r) {
         o += 2;
         continue;
       }
       o++;
     }
-    return s;
+    return c;
   }
   for (i = 0; o < r && (a = e.charCodeAt(o), !(a === 32 || a < 32 || a === 127)); ) {
     if (a === 92 && o + 1 < r) {
@@ -35569,7 +35569,7 @@ var $t = {}, K4 = function(e, n, r) {
       continue;
     }
     if (a === 40 && (i++, i > 32))
-      return s;
+      return c;
     if (a === 41) {
       if (i === 0)
         break;
@@ -35577,29 +35577,29 @@ var $t = {}, K4 = function(e, n, r) {
     }
     o++;
   }
-  return n === o || i !== 0 || (s.str = M_(e.slice(n, o)), s.pos = o, s.ok = !0), s;
-}, X4 = Q.unescapeAll, Z4 = function(e, n, r) {
-  var a, i, o = 0, s = n, c = {
+  return n === o || i !== 0 || (c.str = M_(e.slice(n, o)), c.pos = o, c.ok = !0), c;
+}, Z4 = Q.unescapeAll, J4 = function(e, n, r) {
+  var a, i, o = 0, c = n, s = {
     ok: !1,
     pos: 0,
     lines: 0,
     str: ""
   };
-  if (s >= r || (i = e.charCodeAt(s), i !== 34 && i !== 39 && i !== 40))
-    return c;
-  for (s++, i === 40 && (i = 41); s < r; ) {
-    if (a = e.charCodeAt(s), a === i)
-      return c.pos = s + 1, c.lines = o, c.str = X4(e.slice(n + 1, s)), c.ok = !0, c;
+  if (c >= r || (i = e.charCodeAt(c), i !== 34 && i !== 39 && i !== 40))
+    return s;
+  for (c++, i === 40 && (i = 41); c < r; ) {
+    if (a = e.charCodeAt(c), a === i)
+      return s.pos = c + 1, s.lines = o, s.str = Z4(e.slice(n + 1, c)), s.ok = !0, s;
     if (a === 40 && i === 41)
-      return c;
-    a === 10 ? o++ : a === 92 && s + 1 < r && (s++, e.charCodeAt(s) === 10 && o++), s++;
+      return s;
+    a === 10 ? o++ : a === 92 && c + 1 < r && (c++, e.charCodeAt(c) === 10 && o++), c++;
   }
-  return c;
+  return s;
 };
-$t.parseLinkLabel = K4;
-$t.parseLinkDestination = Q4;
-$t.parseLinkTitle = Z4;
-var J4 = Q.assign, j4 = Q.unescapeAll, We = Q.escapeHtml, De = {};
+$t.parseLinkLabel = Q4;
+$t.parseLinkDestination = X4;
+$t.parseLinkTitle = J4;
+var j4 = Q.assign, e5 = Q.unescapeAll, We = Q.escapeHtml, De = {};
 De.code_inline = function(t, e, n, r, a) {
   var i = t[e];
   return "<code" + a.renderAttrs(i) + ">" + We(i.content) + "</code>";
@@ -35610,9 +35610,9 @@ De.code_block = function(t, e, n, r, a) {
 `;
 };
 De.fence = function(t, e, n, r, a) {
-  var i = t[e], o = i.info ? j4(i.info).trim() : "", s = "", c = "", l, _, p, d, u;
-  return o && (p = o.split(/(\s+)/g), s = p[0], c = p.slice(2).join("")), n.highlight ? l = n.highlight(i.content, s, c) || We(i.content) : l = We(i.content), l.indexOf("<pre") === 0 ? l + `
-` : o ? (_ = i.attrIndex("class"), d = i.attrs ? i.attrs.slice() : [], _ < 0 ? d.push(["class", n.langPrefix + s]) : (d[_] = d[_].slice(), d[_][1] += " " + n.langPrefix + s), u = {
+  var i = t[e], o = i.info ? e5(i.info).trim() : "", c = "", s = "", l, _, p, d, u;
+  return o && (p = o.split(/(\s+)/g), c = p[0], s = p.slice(2).join("")), n.highlight ? l = n.highlight(i.content, c, s) || We(i.content) : l = We(i.content), l.indexOf("<pre") === 0 ? l + `
+` : o ? (_ = i.attrIndex("class"), d = i.attrs ? i.attrs.slice() : [], _ < 0 ? d.push(["class", n.langPrefix + c]) : (d[_] = d[_].slice(), d[_][1] += " " + n.langPrefix + c), u = {
     attrs: d
   }, "<pre><code" + a.renderAttrs(u) + ">" + l + `</code></pre>
 `) : "<pre><code" + a.renderAttrs(i) + ">" + l + `</code></pre>
@@ -35642,10 +35642,10 @@ De.html_block = function(t, e) {
 De.html_inline = function(t, e) {
   return t[e].content;
 };
-function st() {
-  this.rules = J4({}, De);
+function ct() {
+  this.rules = j4({}, De);
 }
-st.prototype.renderAttrs = function(e) {
+ct.prototype.renderAttrs = function(e) {
   var n, r, a;
   if (!e.attrs)
     return "";
@@ -35653,30 +35653,30 @@ st.prototype.renderAttrs = function(e) {
     a += " " + We(e.attrs[n][0]) + '="' + We(e.attrs[n][1]) + '"';
   return a;
 };
-st.prototype.renderToken = function(e, n, r) {
-  var a, i = "", o = !1, s = e[n];
-  return s.hidden ? "" : (s.block && s.nesting !== -1 && n && e[n - 1].hidden && (i += `
-`), i += (s.nesting === -1 ? "</" : "<") + s.tag, i += this.renderAttrs(s), s.nesting === 0 && r.xhtmlOut && (i += " /"), s.block && (o = !0, s.nesting === 1 && n + 1 < e.length && (a = e[n + 1], (a.type === "inline" || a.hidden || a.nesting === -1 && a.tag === s.tag) && (o = !1))), i += o ? `>
+ct.prototype.renderToken = function(e, n, r) {
+  var a, i = "", o = !1, c = e[n];
+  return c.hidden ? "" : (c.block && c.nesting !== -1 && n && e[n - 1].hidden && (i += `
+`), i += (c.nesting === -1 ? "</" : "<") + c.tag, i += this.renderAttrs(c), c.nesting === 0 && r.xhtmlOut && (i += " /"), c.block && (o = !0, c.nesting === 1 && n + 1 < e.length && (a = e[n + 1], (a.type === "inline" || a.hidden || a.nesting === -1 && a.tag === c.tag) && (o = !1))), i += o ? `>
 ` : ">", i);
 };
-st.prototype.renderInline = function(t, e, n) {
-  for (var r, a = "", i = this.rules, o = 0, s = t.length; o < s; o++)
+ct.prototype.renderInline = function(t, e, n) {
+  for (var r, a = "", i = this.rules, o = 0, c = t.length; o < c; o++)
     r = t[o].type, typeof i[r] < "u" ? a += i[r](t, o, e, n, this) : a += this.renderToken(t, o, e);
   return a;
 };
-st.prototype.renderInlineAsText = function(t, e, n) {
+ct.prototype.renderInlineAsText = function(t, e, n) {
   for (var r = "", a = 0, i = t.length; a < i; a++)
     t[a].type === "text" ? r += t[a].content : t[a].type === "image" ? r += this.renderInlineAsText(t[a].children, e, n) : t[a].type === "softbreak" && (r += `
 `);
   return r;
 };
-st.prototype.render = function(t, e, n) {
-  var r, a, i, o = "", s = this.rules;
+ct.prototype.render = function(t, e, n) {
+  var r, a, i, o = "", c = this.rules;
   for (r = 0, a = t.length; r < a; r++)
-    i = t[r].type, i === "inline" ? o += this.renderInline(t[r].children, e, n) : typeof s[i] < "u" ? o += s[i](t, r, e, n, this) : o += this.renderToken(t, r, e, n);
+    i = t[r].type, i === "inline" ? o += this.renderInline(t[r].children, e, n) : typeof c[i] < "u" ? o += c[i](t, r, e, n, this) : o += this.renderToken(t, r, e, n);
   return o;
 };
-var e5 = st;
+var t5 = ct;
 function ve() {
   this.__rules__ = [], this.__cache__ = null;
 }
@@ -35769,78 +35769,78 @@ ve.prototype.disable = function(t, e) {
 ve.prototype.getRules = function(t) {
   return this.__cache__ === null && this.__compile__(), this.__cache__[t] || [];
 };
-var mi = ve, t5 = /\r\n?|\n/g, n5 = /\0/g, r5 = function(e) {
+var mi = ve, n5 = /\r\n?|\n/g, r5 = /\0/g, a5 = function(e) {
   var n;
-  n = e.src.replace(t5, `
-`), n = n.replace(n5, "�"), e.src = n;
-}, a5 = function(e) {
+  n = e.src.replace(n5, `
+`), n = n.replace(r5, "�"), e.src = n;
+}, o5 = function(e) {
   var n;
   e.inlineMode ? (n = new e.Token("inline", "", 0), n.content = e.src, n.map = [0, 1], n.children = [], e.tokens.push(n)) : e.md.block.parse(e.src, e.md, e.env, e.tokens);
-}, o5 = function(e) {
+}, i5 = function(e) {
   var n = e.tokens, r, a, i;
   for (a = 0, i = n.length; a < i; a++)
     r = n[a], r.type === "inline" && e.md.inline.parse(r.content, e.md, e.env, r.children);
-}, i5 = Q.arrayReplaceAt;
-function s5(t) {
+}, s5 = Q.arrayReplaceAt;
+function c5(t) {
   return /^<a[>\s]/i.test(t);
 }
-function c5(t) {
+function l5(t) {
   return /^<\/a\s*>/i.test(t);
 }
-var l5 = function(e) {
-  var n, r, a, i, o, s, c, l, _, p, d, u, E, S, g, f, b = e.tokens, h;
+var _5 = function(e) {
+  var n, r, a, i, o, c, s, l, _, p, d, u, E, S, g, f, b = e.tokens, h;
   if (e.md.options.linkify) {
     for (r = 0, a = b.length; r < a; r++)
       if (!(b[r].type !== "inline" || !e.md.linkify.pretest(b[r].content)))
         for (i = b[r].children, E = 0, n = i.length - 1; n >= 0; n--) {
-          if (s = i[n], s.type === "link_close") {
-            for (n--; i[n].level !== s.level && i[n].type !== "link_open"; )
+          if (c = i[n], c.type === "link_close") {
+            for (n--; i[n].level !== c.level && i[n].type !== "link_open"; )
               n--;
             continue;
           }
-          if (s.type === "html_inline" && (s5(s.content) && E > 0 && E--, c5(s.content) && E++), !(E > 0) && s.type === "text" && e.md.linkify.test(s.content)) {
-            for (_ = s.content, h = e.md.linkify.match(_), c = [], u = s.level, d = 0, h.length > 0 && h[0].index === 0 && n > 0 && i[n - 1].type === "text_special" && (h = h.slice(1)), l = 0; l < h.length; l++)
-              S = h[l].url, g = e.md.normalizeLink(S), e.md.validateLink(g) && (f = h[l].text, h[l].schema ? h[l].schema === "mailto:" && !/^mailto:/i.test(f) ? f = e.md.normalizeLinkText("mailto:" + f).replace(/^mailto:/, "") : f = e.md.normalizeLinkText(f) : f = e.md.normalizeLinkText("http://" + f).replace(/^http:\/\//, ""), p = h[l].index, p > d && (o = new e.Token("text", "", 0), o.content = _.slice(d, p), o.level = u, c.push(o)), o = new e.Token("link_open", "a", 1), o.attrs = [["href", g]], o.level = u++, o.markup = "linkify", o.info = "auto", c.push(o), o = new e.Token("text", "", 0), o.content = f, o.level = u, c.push(o), o = new e.Token("link_close", "a", -1), o.level = --u, o.markup = "linkify", o.info = "auto", c.push(o), d = h[l].lastIndex);
-            d < _.length && (o = new e.Token("text", "", 0), o.content = _.slice(d), o.level = u, c.push(o)), b[r].children = i = i5(i, n, c);
+          if (c.type === "html_inline" && (c5(c.content) && E > 0 && E--, l5(c.content) && E++), !(E > 0) && c.type === "text" && e.md.linkify.test(c.content)) {
+            for (_ = c.content, h = e.md.linkify.match(_), s = [], u = c.level, d = 0, h.length > 0 && h[0].index === 0 && n > 0 && i[n - 1].type === "text_special" && (h = h.slice(1)), l = 0; l < h.length; l++)
+              S = h[l].url, g = e.md.normalizeLink(S), e.md.validateLink(g) && (f = h[l].text, h[l].schema ? h[l].schema === "mailto:" && !/^mailto:/i.test(f) ? f = e.md.normalizeLinkText("mailto:" + f).replace(/^mailto:/, "") : f = e.md.normalizeLinkText(f) : f = e.md.normalizeLinkText("http://" + f).replace(/^http:\/\//, ""), p = h[l].index, p > d && (o = new e.Token("text", "", 0), o.content = _.slice(d, p), o.level = u, s.push(o)), o = new e.Token("link_open", "a", 1), o.attrs = [["href", g]], o.level = u++, o.markup = "linkify", o.info = "auto", s.push(o), o = new e.Token("text", "", 0), o.content = f, o.level = u, s.push(o), o = new e.Token("link_close", "a", -1), o.level = --u, o.markup = "linkify", o.info = "auto", s.push(o), d = h[l].lastIndex);
+            d < _.length && (o = new e.Token("text", "", 0), o.content = _.slice(d), o.level = u, s.push(o)), b[r].children = i = s5(i, n, s);
           }
         }
   }
-}, vd = /\+-|\.\.|\?\?\?\?|!!!!|,,|--/, _5 = /\((c|tm|r)\)/i, d5 = /\((c|tm|r)\)/ig, u5 = {
+}, vd = /\+-|\.\.|\?\?\?\?|!!!!|,,|--/, d5 = /\((c|tm|r)\)/i, u5 = /\((c|tm|r)\)/ig, p5 = {
   c: "©",
   r: "®",
   tm: "™"
 };
-function p5(t, e) {
-  return u5[e.toLowerCase()];
-}
-function m5(t) {
-  var e, n, r = 0;
-  for (e = t.length - 1; e >= 0; e--)
-    n = t[e], n.type === "text" && !r && (n.content = n.content.replace(d5, p5)), n.type === "link_open" && n.info === "auto" && r--, n.type === "link_close" && n.info === "auto" && r++;
+function m5(t, e) {
+  return p5[e.toLowerCase()];
 }
 function g5(t) {
   var e, n, r = 0;
   for (e = t.length - 1; e >= 0; e--)
+    n = t[e], n.type === "text" && !r && (n.content = n.content.replace(u5, m5)), n.type === "link_open" && n.info === "auto" && r--, n.type === "link_close" && n.info === "auto" && r++;
+}
+function E5(t) {
+  var e, n, r = 0;
+  for (e = t.length - 1; e >= 0; e--)
     n = t[e], n.type === "text" && !r && vd.test(n.content) && (n.content = n.content.replace(/\+-/g, "±").replace(/\.{2,}/g, "…").replace(/([?!])…/g, "$1..").replace(/([?!]){4,}/g, "$1$1$1").replace(/,{2,}/g, ",").replace(/(^|[^-])---(?=[^-]|$)/mg, "$1—").replace(/(^|\s)--(?=\s|$)/mg, "$1–").replace(/(^|[^-\s])--(?=[^-\s]|$)/mg, "$1–")), n.type === "link_open" && n.info === "auto" && r--, n.type === "link_close" && n.info === "auto" && r++;
 }
-var E5 = function(e) {
+var S5 = function(e) {
   var n;
   if (e.md.options.typographer)
     for (n = e.tokens.length - 1; n >= 0; n--)
-      e.tokens[n].type === "inline" && (_5.test(e.tokens[n].content) && m5(e.tokens[n].children), vd.test(e.tokens[n].content) && g5(e.tokens[n].children));
-}, x_ = Q.isWhiteSpace, L_ = Q.isPunctChar, k_ = Q.isMdAsciiPunct, S5 = /['"]/, P_ = /['"]/g, U_ = "’";
+      e.tokens[n].type === "inline" && (d5.test(e.tokens[n].content) && g5(e.tokens[n].children), vd.test(e.tokens[n].content) && E5(e.tokens[n].children));
+}, x_ = Q.isWhiteSpace, L_ = Q.isPunctChar, k_ = Q.isMdAsciiPunct, f5 = /['"]/, P_ = /['"]/g, U_ = "’";
 function wt(t, e, n) {
   return t.slice(0, e) + n + t.slice(e + 1);
 }
-function f5(t, e) {
-  var n, r, a, i, o, s, c, l, _, p, d, u, E, S, g, f, b, h, N, v, R;
+function b5(t, e) {
+  var n, r, a, i, o, c, s, l, _, p, d, u, E, S, g, f, b, h, N, v, R;
   for (N = [], n = 0; n < t.length; n++) {
-    for (r = t[n], c = t[n].level, b = N.length - 1; b >= 0 && !(N[b].level <= c); b--)
+    for (r = t[n], s = t[n].level, b = N.length - 1; b >= 0 && !(N[b].level <= s); b--)
       ;
     if (N.length = b + 1, r.type === "text") {
-      a = r.content, o = 0, s = a.length;
+      a = r.content, o = 0, c = a.length;
       e:
-        for (; o < s && (P_.lastIndex = o, i = P_.exec(a), !!i); ) {
+        for (; o < c && (P_.lastIndex = o, i = P_.exec(a), !!i); ) {
           if (g = f = !0, o = i.index + 1, h = i[0] === "'", _ = 32, i.index - 1 >= 0)
             _ = a.charCodeAt(i.index - 1);
           else
@@ -35849,7 +35849,7 @@ function f5(t, e) {
                 _ = t[b].content.charCodeAt(t[b].content.length - 1);
                 break;
               }
-          if (p = 32, o < s)
+          if (p = 32, o < c)
             p = a.charCodeAt(o);
           else
             for (b = n + 1; b < t.length && !(t[b].type === "softbreak" || t[b].type === "hardbreak"); b++)
@@ -35862,13 +35862,13 @@ function f5(t, e) {
             continue;
           }
           if (f) {
-            for (b = N.length - 1; b >= 0 && (l = N[b], !(N[b].level < c)); b--)
-              if (l.single === h && N[b].level === c) {
+            for (b = N.length - 1; b >= 0 && (l = N[b], !(N[b].level < s)); b--)
+              if (l.single === h && N[b].level === s) {
                 l = N[b], h ? (v = e.md.options.quotes[2], R = e.md.options.quotes[3]) : (v = e.md.options.quotes[0], R = e.md.options.quotes[1]), r.content = wt(r.content, i.index, R), t[l.token].content = wt(
                   t[l.token].content,
                   l.pos,
                   v
-                ), o += R.length - 1, l.token === n && (o += v.length - 1), a = r.content, s = a.length, N.length = b;
+                ), o += R.length - 1, l.token === n && (o += v.length - 1), a = r.content, c = a.length, N.length = b;
                 continue e;
               }
           }
@@ -35876,32 +35876,32 @@ function f5(t, e) {
             token: n,
             pos: i.index,
             single: h,
-            level: c
+            level: s
           }) : f && h && (r.content = wt(r.content, i.index, U_));
         }
     }
   }
 }
-var b5 = function(e) {
+var T5 = function(e) {
   var n;
   if (e.md.options.typographer)
     for (n = e.tokens.length - 1; n >= 0; n--)
-      e.tokens[n].type !== "inline" || !S5.test(e.tokens[n].content) || f5(e.tokens[n].children, e);
-}, T5 = function(e) {
-  var n, r, a, i, o, s, c = e.tokens;
-  for (n = 0, r = c.length; n < r; n++)
-    if (c[n].type === "inline") {
-      for (a = c[n].children, o = a.length, i = 0; i < o; i++)
+      e.tokens[n].type !== "inline" || !f5.test(e.tokens[n].content) || b5(e.tokens[n].children, e);
+}, h5 = function(e) {
+  var n, r, a, i, o, c, s = e.tokens;
+  for (n = 0, r = s.length; n < r; n++)
+    if (s[n].type === "inline") {
+      for (a = s[n].children, o = a.length, i = 0; i < o; i++)
         a[i].type === "text_special" && (a[i].type = "text");
-      for (i = s = 0; i < o; i++)
-        a[i].type === "text" && i + 1 < o && a[i + 1].type === "text" ? a[i + 1].content = a[i].content + a[i + 1].content : (i !== s && (a[s] = a[i]), s++);
-      i !== s && (a.length = s);
+      for (i = c = 0; i < o; i++)
+        a[i].type === "text" && i + 1 < o && a[i + 1].type === "text" ? a[i + 1].content = a[i].content + a[i + 1].content : (i !== c && (a[c] = a[i]), c++);
+      i !== c && (a.length = c);
     }
 };
-function ct(t, e, n) {
+function lt(t, e, n) {
   this.type = t, this.tag = e, this.attrs = null, this.map = null, this.nesting = n, this.level = 0, this.children = null, this.content = "", this.markup = "", this.info = "", this.meta = null, this.block = !1, this.hidden = !1;
 }
-ct.prototype.attrIndex = function(e) {
+lt.prototype.attrIndex = function(e) {
   var n, r, a;
   if (!this.attrs)
     return -1;
@@ -35910,39 +35910,39 @@ ct.prototype.attrIndex = function(e) {
       return r;
   return -1;
 };
-ct.prototype.attrPush = function(e) {
+lt.prototype.attrPush = function(e) {
   this.attrs ? this.attrs.push(e) : this.attrs = [e];
 };
-ct.prototype.attrSet = function(e, n) {
+lt.prototype.attrSet = function(e, n) {
   var r = this.attrIndex(e), a = [e, n];
   r < 0 ? this.attrPush(a) : this.attrs[r] = a;
 };
-ct.prototype.attrGet = function(e) {
+lt.prototype.attrGet = function(e) {
   var n = this.attrIndex(e), r = null;
   return n >= 0 && (r = this.attrs[n][1]), r;
 };
-ct.prototype.attrJoin = function(e, n) {
+lt.prototype.attrJoin = function(e, n) {
   var r = this.attrIndex(e);
   r < 0 ? this.attrPush([e, n]) : this.attrs[r][1] = this.attrs[r][1] + " " + n;
 };
-var gi = ct, h5 = gi;
+var gi = lt, R5 = gi;
 function Od(t, e, n) {
   this.src = t, this.env = n, this.tokens = [], this.inlineMode = !1, this.md = e;
 }
-Od.prototype.Token = h5;
-var R5 = Od, C5 = mi, Go = [
-  ["normalize", r5],
-  ["block", a5],
-  ["inline", o5],
-  ["linkify", l5],
-  ["replacements", E5],
-  ["smartquotes", b5],
+Od.prototype.Token = R5;
+var C5 = Od, N5 = mi, Go = [
+  ["normalize", a5],
+  ["block", o5],
+  ["inline", i5],
+  ["linkify", _5],
+  ["replacements", S5],
+  ["smartquotes", T5],
   // `text_join` finds `text_special` tokens (for escape sequences)
   // and joins them with the rest of the text
-  ["text_join", T5]
+  ["text_join", h5]
 ];
 function Ei() {
-  this.ruler = new C5();
+  this.ruler = new N5();
   for (var t = 0; t < Go.length; t++)
     this.ruler.push(Go[t][0], Go[t][1]);
 }
@@ -35951,30 +35951,30 @@ Ei.prototype.process = function(t) {
   for (r = this.ruler.getRules(""), e = 0, n = r.length; e < n; e++)
     r[e](t);
 };
-Ei.prototype.State = R5;
-var N5 = Ei, qo = Q.isSpace;
+Ei.prototype.State = C5;
+var v5 = Ei, qo = Q.isSpace;
 function Yo(t, e) {
   var n = t.bMarks[e] + t.tShift[e], r = t.eMarks[e];
   return t.src.slice(n, r);
 }
 function F_(t) {
-  var e = [], n = 0, r = t.length, a, i = !1, o = 0, s = "";
+  var e = [], n = 0, r = t.length, a, i = !1, o = 0, c = "";
   for (a = t.charCodeAt(n); n < r; )
-    a === 124 && (i ? (s += t.substring(o, n - 1), o = n) : (e.push(s + t.substring(o, n)), s = "", o = n + 1)), i = a === 92, n++, a = t.charCodeAt(n);
-  return e.push(s + t.substring(o)), e;
+    a === 124 && (i ? (c += t.substring(o, n - 1), o = n) : (e.push(c + t.substring(o, n)), c = "", o = n + 1)), i = a === 92, n++, a = t.charCodeAt(n);
+  return e.push(c + t.substring(o)), e;
 }
-var v5 = function(e, n, r, a) {
-  var i, o, s, c, l, _, p, d, u, E, S, g, f, b, h, N, v, R;
-  if (n + 2 > r || (_ = n + 1, e.sCount[_] < e.blkIndent) || e.sCount[_] - e.blkIndent >= 4 || (s = e.bMarks[_] + e.tShift[_], s >= e.eMarks[_]) || (v = e.src.charCodeAt(s++), v !== 124 && v !== 45 && v !== 58) || s >= e.eMarks[_] || (R = e.src.charCodeAt(s++), R !== 124 && R !== 45 && R !== 58 && !qo(R)) || v === 45 && qo(R))
+var O5 = function(e, n, r, a) {
+  var i, o, c, s, l, _, p, d, u, E, S, g, f, b, h, N, v, R;
+  if (n + 2 > r || (_ = n + 1, e.sCount[_] < e.blkIndent) || e.sCount[_] - e.blkIndent >= 4 || (c = e.bMarks[_] + e.tShift[_], c >= e.eMarks[_]) || (v = e.src.charCodeAt(c++), v !== 124 && v !== 45 && v !== 58) || c >= e.eMarks[_] || (R = e.src.charCodeAt(c++), R !== 124 && R !== 45 && R !== 58 && !qo(R)) || v === 45 && qo(R))
     return !1;
-  for (; s < e.eMarks[_]; ) {
-    if (i = e.src.charCodeAt(s), i !== 124 && i !== 45 && i !== 58 && !qo(i))
+  for (; c < e.eMarks[_]; ) {
+    if (i = e.src.charCodeAt(c), i !== 124 && i !== 45 && i !== 58 && !qo(i))
       return !1;
-    s++;
+    c++;
   }
-  for (o = Yo(e, n + 1), p = o.split("|"), E = [], c = 0; c < p.length; c++) {
-    if (S = p[c].trim(), !S) {
-      if (c === 0 || c === p.length - 1)
+  for (o = Yo(e, n + 1), p = o.split("|"), E = [], s = 0; s < p.length; s++) {
+    if (S = p[s].trim(), !S) {
+      if (s === 0 || s === p.length - 1)
         continue;
       return !1;
     }
@@ -35986,22 +35986,22 @@ var v5 = function(e, n, r, a) {
     return !1;
   if (a)
     return !0;
-  for (b = e.parentType, e.parentType = "table", N = e.md.block.ruler.getRules("blockquote"), u = e.push("table_open", "table", 1), u.map = g = [n, 0], u = e.push("thead_open", "thead", 1), u.map = [n, n + 1], u = e.push("tr_open", "tr", 1), u.map = [n, n + 1], c = 0; c < p.length; c++)
-    u = e.push("th_open", "th", 1), E[c] && (u.attrs = [["style", "text-align:" + E[c]]]), u = e.push("inline", "", 0), u.content = p[c].trim(), u.children = [], u = e.push("th_close", "th", -1);
+  for (b = e.parentType, e.parentType = "table", N = e.md.block.ruler.getRules("blockquote"), u = e.push("table_open", "table", 1), u.map = g = [n, 0], u = e.push("thead_open", "thead", 1), u.map = [n, n + 1], u = e.push("tr_open", "tr", 1), u.map = [n, n + 1], s = 0; s < p.length; s++)
+    u = e.push("th_open", "th", 1), E[s] && (u.attrs = [["style", "text-align:" + E[s]]]), u = e.push("inline", "", 0), u.content = p[s].trim(), u.children = [], u = e.push("th_close", "th", -1);
   for (u = e.push("tr_close", "tr", -1), u = e.push("thead_close", "thead", -1), _ = n + 2; _ < r && !(e.sCount[_] < e.blkIndent); _++) {
-    for (h = !1, c = 0, l = N.length; c < l; c++)
-      if (N[c](e, _, r, !0)) {
+    for (h = !1, s = 0, l = N.length; s < l; s++)
+      if (N[s](e, _, r, !0)) {
         h = !0;
         break;
       }
     if (h || (o = Yo(e, _).trim(), !o) || e.sCount[_] - e.blkIndent >= 4)
       break;
-    for (p = F_(o), p.length && p[0] === "" && p.shift(), p.length && p[p.length - 1] === "" && p.pop(), _ === n + 2 && (u = e.push("tbody_open", "tbody", 1), u.map = f = [n + 2, 0]), u = e.push("tr_open", "tr", 1), u.map = [_, _ + 1], c = 0; c < d; c++)
-      u = e.push("td_open", "td", 1), E[c] && (u.attrs = [["style", "text-align:" + E[c]]]), u = e.push("inline", "", 0), u.content = p[c] ? p[c].trim() : "", u.children = [], u = e.push("td_close", "td", -1);
+    for (p = F_(o), p.length && p[0] === "" && p.shift(), p.length && p[p.length - 1] === "" && p.pop(), _ === n + 2 && (u = e.push("tbody_open", "tbody", 1), u.map = f = [n + 2, 0]), u = e.push("tr_open", "tr", 1), u.map = [_, _ + 1], s = 0; s < d; s++)
+      u = e.push("td_open", "td", 1), E[s] && (u.attrs = [["style", "text-align:" + E[s]]]), u = e.push("inline", "", 0), u.content = p[s] ? p[s].trim() : "", u.children = [], u = e.push("td_close", "td", -1);
     u = e.push("tr_close", "tr", -1);
   }
   return f && (u = e.push("tbody_close", "tbody", -1), f[1] = _), u = e.push("table_close", "table", -1), g[1] = _, e.parentType = b, e.line = _, !0;
-}, O5 = function(e, n, r) {
+}, y5 = function(e, n, r) {
   var a, i, o;
   if (e.sCount[n] - e.blkIndent < 4)
     return !1;
@@ -36018,37 +36018,37 @@ var v5 = function(e, n, r, a) {
   }
   return e.line = i, o = e.push("code_block", "code", 0), o.content = e.getLines(n, i, 4 + e.blkIndent, !1) + `
 `, o.map = [n, e.line], !0;
-}, y5 = function(e, n, r, a) {
-  var i, o, s, c, l, _, p, d = !1, u = e.bMarks[n] + e.tShift[n], E = e.eMarks[n];
-  if (e.sCount[n] - e.blkIndent >= 4 || u + 3 > E || (i = e.src.charCodeAt(u), i !== 126 && i !== 96) || (l = u, u = e.skipChars(u, i), o = u - l, o < 3) || (p = e.src.slice(l, u), s = e.src.slice(u, E), i === 96 && s.indexOf(String.fromCharCode(i)) >= 0))
+}, A5 = function(e, n, r, a) {
+  var i, o, c, s, l, _, p, d = !1, u = e.bMarks[n] + e.tShift[n], E = e.eMarks[n];
+  if (e.sCount[n] - e.blkIndent >= 4 || u + 3 > E || (i = e.src.charCodeAt(u), i !== 126 && i !== 96) || (l = u, u = e.skipChars(u, i), o = u - l, o < 3) || (p = e.src.slice(l, u), c = e.src.slice(u, E), i === 96 && c.indexOf(String.fromCharCode(i)) >= 0))
     return !1;
   if (a)
     return !0;
-  for (c = n; c++, !(c >= r || (u = l = e.bMarks[c] + e.tShift[c], E = e.eMarks[c], u < E && e.sCount[c] < e.blkIndent)); )
-    if (e.src.charCodeAt(u) === i && !(e.sCount[c] - e.blkIndent >= 4) && (u = e.skipChars(u, i), !(u - l < o) && (u = e.skipSpaces(u), !(u < E)))) {
+  for (s = n; s++, !(s >= r || (u = l = e.bMarks[s] + e.tShift[s], E = e.eMarks[s], u < E && e.sCount[s] < e.blkIndent)); )
+    if (e.src.charCodeAt(u) === i && !(e.sCount[s] - e.blkIndent >= 4) && (u = e.skipChars(u, i), !(u - l < o) && (u = e.skipSpaces(u), !(u < E)))) {
       d = !0;
       break;
     }
-  return o = e.sCount[n], e.line = c + (d ? 1 : 0), _ = e.push("fence", "code", 0), _.info = s, _.content = e.getLines(n + 1, c, o, !0), _.markup = p, _.map = [n, e.line], !0;
-}, A5 = Q.isSpace, I5 = function(e, n, r, a) {
-  var i, o, s, c, l, _, p, d, u, E, S, g, f, b, h, N, v, R, C, w, L = e.lineMax, y = e.bMarks[n] + e.tShift[n], G = e.eMarks[n];
+  return o = e.sCount[n], e.line = s + (d ? 1 : 0), _ = e.push("fence", "code", 0), _.info = c, _.content = e.getLines(n + 1, s, o, !0), _.markup = p, _.map = [n, e.line], !0;
+}, I5 = Q.isSpace, D5 = function(e, n, r, a) {
+  var i, o, c, s, l, _, p, d, u, E, S, g, f, b, h, N, v, R, C, w, L = e.lineMax, y = e.bMarks[n] + e.tShift[n], G = e.eMarks[n];
   if (e.sCount[n] - e.blkIndent >= 4 || e.src.charCodeAt(y) !== 62)
     return !1;
   if (a)
     return !0;
   for (E = [], S = [], b = [], h = [], R = e.md.block.ruler.getRules("blockquote"), f = e.parentType, e.parentType = "blockquote", d = n; d < r && (w = e.sCount[d] < e.blkIndent, y = e.bMarks[d] + e.tShift[d], G = e.eMarks[d], !(y >= G)); d++) {
     if (e.src.charCodeAt(y++) === 62 && !w) {
-      for (c = e.sCount[d] + 1, e.src.charCodeAt(y) === 32 ? (y++, c++, i = !1, N = !0) : e.src.charCodeAt(y) === 9 ? (N = !0, (e.bsCount[d] + c) % 4 === 3 ? (y++, c++, i = !1) : i = !0) : N = !1, u = c, E.push(e.bMarks[d]), e.bMarks[d] = y; y < G && (o = e.src.charCodeAt(y), A5(o)); ) {
+      for (s = e.sCount[d] + 1, e.src.charCodeAt(y) === 32 ? (y++, s++, i = !1, N = !0) : e.src.charCodeAt(y) === 9 ? (N = !0, (e.bsCount[d] + s) % 4 === 3 ? (y++, s++, i = !1) : i = !0) : N = !1, u = s, E.push(e.bMarks[d]), e.bMarks[d] = y; y < G && (o = e.src.charCodeAt(y), I5(o)); ) {
         o === 9 ? u += 4 - (u + e.bsCount[d] + (i ? 1 : 0)) % 4 : u++;
         y++;
       }
-      _ = y >= G, S.push(e.bsCount[d]), e.bsCount[d] = e.sCount[d] + 1 + (N ? 1 : 0), b.push(e.sCount[d]), e.sCount[d] = u - c, h.push(e.tShift[d]), e.tShift[d] = y - e.bMarks[d];
+      _ = y >= G, S.push(e.bsCount[d]), e.bsCount[d] = e.sCount[d] + 1 + (N ? 1 : 0), b.push(e.sCount[d]), e.sCount[d] = u - s, h.push(e.tShift[d]), e.tShift[d] = y - e.bMarks[d];
       continue;
     }
     if (_)
       break;
-    for (v = !1, s = 0, l = R.length; s < l; s++)
-      if (R[s](e, d, r, !0)) {
+    for (v = !1, c = 0, l = R.length; c < l; c++)
+      if (R[c](e, d, r, !0)) {
         v = !0;
         break;
       }
@@ -36058,19 +36058,19 @@ var v5 = function(e, n, r, a) {
     }
     E.push(e.bMarks[d]), S.push(e.bsCount[d]), h.push(e.tShift[d]), b.push(e.sCount[d]), e.sCount[d] = -1;
   }
-  for (g = e.blkIndent, e.blkIndent = 0, C = e.push("blockquote_open", "blockquote", 1), C.markup = ">", C.map = p = [n, 0], e.md.block.tokenize(e, n, d), C = e.push("blockquote_close", "blockquote", -1), C.markup = ">", e.lineMax = L, e.parentType = f, p[1] = e.line, s = 0; s < h.length; s++)
-    e.bMarks[s + n] = E[s], e.tShift[s + n] = h[s], e.sCount[s + n] = b[s], e.bsCount[s + n] = S[s];
+  for (g = e.blkIndent, e.blkIndent = 0, C = e.push("blockquote_open", "blockquote", 1), C.markup = ">", C.map = p = [n, 0], e.md.block.tokenize(e, n, d), C = e.push("blockquote_close", "blockquote", -1), C.markup = ">", e.lineMax = L, e.parentType = f, p[1] = e.line, c = 0; c < h.length; c++)
+    e.bMarks[c + n] = E[c], e.tShift[c + n] = h[c], e.sCount[c + n] = b[c], e.bsCount[c + n] = S[c];
   return e.blkIndent = g, !0;
-}, D5 = Q.isSpace, w5 = function(e, n, r, a) {
-  var i, o, s, c, l = e.bMarks[n] + e.tShift[n], _ = e.eMarks[n];
+}, w5 = Q.isSpace, M5 = function(e, n, r, a) {
+  var i, o, c, s, l = e.bMarks[n] + e.tShift[n], _ = e.eMarks[n];
   if (e.sCount[n] - e.blkIndent >= 4 || (i = e.src.charCodeAt(l++), i !== 42 && i !== 45 && i !== 95))
     return !1;
   for (o = 1; l < _; ) {
-    if (s = e.src.charCodeAt(l++), s !== i && !D5(s))
+    if (c = e.src.charCodeAt(l++), c !== i && !w5(c))
       return !1;
-    s === i && o++;
+    c === i && o++;
   }
-  return o < 3 ? !1 : (a || (e.line = n + 1, c = e.push("hr", "hr", 0), c.map = [n, e.line], c.markup = Array(o + 1).join(String.fromCharCode(i))), !0);
+  return o < 3 ? !1 : (a || (e.line = n + 1, s = e.push("hr", "hr", 0), s.map = [n, e.line], s.markup = Array(o + 1).join(String.fromCharCode(i))), !0);
 }, yd = Q.isSpace;
 function B_(t, e) {
   var n, r, a, i;
@@ -36094,13 +36094,13 @@ function G_(t, e) {
   }
   return a < i && (n = t.src.charCodeAt(a), !yd(n)) ? -1 : a;
 }
-function M5(t, e) {
+function x5(t, e) {
   var n, r, a = t.level + 2;
   for (n = e + 2, r = t.tokens.length - 2; n < r; n++)
     t.tokens[n].level === a && t.tokens[n].type === "paragraph_open" && (t.tokens[n + 2].hidden = !0, t.tokens[n].hidden = !0, n += 2);
 }
-var x5 = function(e, n, r, a) {
-  var i, o, s, c, l, _, p, d, u, E, S, g, f, b, h, N, v, R, C, w, L, y, G, P, q, I, k, D = n, $ = !1, te = !0;
+var L5 = function(e, n, r, a) {
+  var i, o, c, s, l, _, p, d, u, E, S, g, f, b, h, N, v, R, C, w, L, y, G, P, q, I, k, D = n, $ = !1, te = !0;
   if (e.sCount[D] - e.blkIndent >= 4 || e.listIndent >= 0 && e.sCount[D] - e.listIndent >= 4 && e.sCount[D] < e.blkIndent)
     return !1;
   if (a && e.parentType === "paragraph" && e.sCount[D] >= e.blkIndent && ($ = !0), (y = G_(e, D)) >= 0) {
@@ -36123,10 +36123,10 @@ var x5 = function(e, n, r, a) {
         break;
       L++;
     }
-    if (o = L, o >= b ? l = 1 : l = h - _, l > 4 && (l = 1), c = _ + l, k = e.push("list_item_open", "li", 1), k.markup = String.fromCharCode(g), k.map = d = [D, 0], p && (k.info = e.src.slice(P, y - 1)), w = e.tight, C = e.tShift[D], R = e.sCount[D], N = e.listIndent, e.listIndent = e.blkIndent, e.blkIndent = c, e.tight = !0, e.tShift[D] = o - e.bMarks[D], e.sCount[D] = h, o >= b && e.isEmpty(D + 1) ? e.line = Math.min(e.line + 2, r) : e.md.block.tokenize(e, D, r, !0), (!e.tight || G) && (te = !1), G = e.line - D > 1 && e.isEmpty(e.line - 1), e.blkIndent = e.listIndent, e.listIndent = N, e.tShift[D] = C, e.sCount[D] = R, e.tight = w, k = e.push("list_item_close", "li", -1), k.markup = String.fromCharCode(g), D = e.line, d[1] = D, D >= r || e.sCount[D] < e.blkIndent || e.sCount[D] - e.blkIndent >= 4)
+    if (o = L, o >= b ? l = 1 : l = h - _, l > 4 && (l = 1), s = _ + l, k = e.push("list_item_open", "li", 1), k.markup = String.fromCharCode(g), k.map = d = [D, 0], p && (k.info = e.src.slice(P, y - 1)), w = e.tight, C = e.tShift[D], R = e.sCount[D], N = e.listIndent, e.listIndent = e.blkIndent, e.blkIndent = s, e.tight = !0, e.tShift[D] = o - e.bMarks[D], e.sCount[D] = h, o >= b && e.isEmpty(D + 1) ? e.line = Math.min(e.line + 2, r) : e.md.block.tokenize(e, D, r, !0), (!e.tight || G) && (te = !1), G = e.line - D > 1 && e.isEmpty(e.line - 1), e.blkIndent = e.listIndent, e.listIndent = N, e.tShift[D] = C, e.sCount[D] = R, e.tight = w, k = e.push("list_item_close", "li", -1), k.markup = String.fromCharCode(g), D = e.line, d[1] = D, D >= r || e.sCount[D] < e.blkIndent || e.sCount[D] - e.blkIndent >= 4)
       break;
-    for (q = !1, s = 0, u = I.length; s < u; s++)
-      if (I[s](e, D, r, !0)) {
+    for (q = !1, c = 0, u = I.length; c < u; c++)
+      if (I[c](e, D, r, !0)) {
         q = !0;
         break;
       }
@@ -36141,9 +36141,9 @@ var x5 = function(e, n, r, a) {
     if (g !== e.src.charCodeAt(y - 1))
       break;
   }
-  return p ? k = e.push("ordered_list_close", "ol", -1) : k = e.push("bullet_list_close", "ul", -1), k.markup = String.fromCharCode(g), E[1] = D, e.line = D, e.parentType = v, te && M5(e, S), !0;
-}, L5 = Q.normalizeReference, Mt = Q.isSpace, k5 = function(e, n, r, a) {
-  var i, o, s, c, l, _, p, d, u, E, S, g, f, b, h, N, v = 0, R = e.bMarks[n] + e.tShift[n], C = e.eMarks[n], w = n + 1;
+  return p ? k = e.push("ordered_list_close", "ol", -1) : k = e.push("bullet_list_close", "ul", -1), k.markup = String.fromCharCode(g), E[1] = D, e.line = D, e.parentType = v, te && x5(e, S), !0;
+}, k5 = Q.normalizeReference, Mt = Q.isSpace, P5 = function(e, n, r, a) {
+  var i, o, c, s, l, _, p, d, u, E, S, g, f, b, h, N, v = 0, R = e.bMarks[n] + e.tShift[n], C = e.eMarks[n], w = n + 1;
   if (e.sCount[n] - e.blkIndent >= 4 || e.src.charCodeAt(R) !== 91)
     return !1;
   for (; ++R < C; )
@@ -36152,10 +36152,10 @@ var x5 = function(e, n, r, a) {
         return !1;
       break;
     }
-  for (c = e.lineMax, h = e.md.block.ruler.getRules("reference"), E = e.parentType, e.parentType = "reference"; w < c && !e.isEmpty(w); w++)
+  for (s = e.lineMax, h = e.md.block.ruler.getRules("reference"), E = e.parentType, e.parentType = "reference"; w < s && !e.isEmpty(w); w++)
     if (!(e.sCount[w] - e.blkIndent > 3) && !(e.sCount[w] < 0)) {
       for (b = !1, _ = 0, p = h.length; _ < p; _++)
-        if (h[_](e, w, c, !0)) {
+        if (h[_](e, w, s, !0)) {
           b = !0;
           break;
         }
@@ -36178,17 +36178,17 @@ var x5 = function(e, n, r, a) {
     else if (!Mt(i)) break;
   if (S = e.md.helpers.parseLinkDestination(f, R, C), !S.ok || (l = e.md.normalizeLink(S.str), !e.md.validateLink(l)))
     return !1;
-  for (R = S.pos, v += S.lines, o = R, s = v, g = R; R < C; R++)
+  for (R = S.pos, v += S.lines, o = R, c = v, g = R; R < C; R++)
     if (i = f.charCodeAt(R), i === 10)
       v++;
     else if (!Mt(i)) break;
-  for (S = e.md.helpers.parseLinkTitle(f, R, C), R < C && g !== R && S.ok ? (N = S.str, R = S.pos, v += S.lines) : (N = "", R = o, v = s); R < C && (i = f.charCodeAt(R), !!Mt(i)); )
+  for (S = e.md.helpers.parseLinkTitle(f, R, C), R < C && g !== R && S.ok ? (N = S.str, R = S.pos, v += S.lines) : (N = "", R = o, v = c); R < C && (i = f.charCodeAt(R), !!Mt(i)); )
     R++;
   if (R < C && f.charCodeAt(R) !== 10 && N)
-    for (N = "", R = o, v = s; R < C && (i = f.charCodeAt(R), !!Mt(i)); )
+    for (N = "", R = o, v = c; R < C && (i = f.charCodeAt(R), !!Mt(i)); )
       R++;
-  return R < C && f.charCodeAt(R) !== 10 || (d = L5(f.slice(1, u)), !d) ? !1 : (a || (typeof e.env.references > "u" && (e.env.references = {}), typeof e.env.references[d] > "u" && (e.env.references[d] = { title: N, href: l }), e.parentType = E, e.line = n + v + 1), !0);
-}, P5 = [
+  return R < C && f.charCodeAt(R) !== 10 || (d = k5(f.slice(1, u)), !d) ? !1 : (a || (typeof e.env.references > "u" && (e.env.references = {}), typeof e.env.references[d] > "u" && (e.env.references[d] = { title: N, href: l }), e.parentType = E, e.line = n + v + 1), !0);
+}, U5 = [
   "address",
   "article",
   "aside",
@@ -36251,44 +36251,44 @@ var x5 = function(e, n, r, a) {
   "tr",
   "track",
   "ul"
-], Wt = {}, U5 = "[a-zA-Z_:][a-zA-Z0-9:._-]*", F5 = "[^\"'=<>`\\x00-\\x20]+", B5 = "'[^']*'", G5 = '"[^"]*"', q5 = "(?:" + F5 + "|" + B5 + "|" + G5 + ")", Y5 = "(?:\\s+" + U5 + "(?:\\s*=\\s*" + q5 + ")?)", Ad = "<[A-Za-z][A-Za-z0-9\\-]*" + Y5 + "*\\s*\\/?>", Id = "<\\/[A-Za-z][A-Za-z0-9\\-]*\\s*>", H5 = "<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->", V5 = "<[?][\\s\\S]*?[?]>", z5 = "<![A-Z]+\\s+[^>]*>", $5 = "<!\\[CDATA\\[[\\s\\S]*?\\]\\]>", W5 = new RegExp("^(?:" + Ad + "|" + Id + "|" + H5 + "|" + V5 + "|" + z5 + "|" + $5 + ")"), K5 = new RegExp("^(?:" + Ad + "|" + Id + ")");
-Wt.HTML_TAG_RE = W5;
-Wt.HTML_OPEN_CLOSE_TAG_RE = K5;
-var Q5 = P5, X5 = Wt.HTML_OPEN_CLOSE_TAG_RE, Ze = [
+], Wt = {}, F5 = "[a-zA-Z_:][a-zA-Z0-9:._-]*", B5 = "[^\"'=<>`\\x00-\\x20]+", G5 = "'[^']*'", q5 = '"[^"]*"', Y5 = "(?:" + B5 + "|" + G5 + "|" + q5 + ")", H5 = "(?:\\s+" + F5 + "(?:\\s*=\\s*" + Y5 + ")?)", Ad = "<[A-Za-z][A-Za-z0-9\\-]*" + H5 + "*\\s*\\/?>", Id = "<\\/[A-Za-z][A-Za-z0-9\\-]*\\s*>", V5 = "<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->", z5 = "<[?][\\s\\S]*?[?]>", $5 = "<![A-Z]+\\s+[^>]*>", W5 = "<!\\[CDATA\\[[\\s\\S]*?\\]\\]>", K5 = new RegExp("^(?:" + Ad + "|" + Id + "|" + V5 + "|" + z5 + "|" + $5 + "|" + W5 + ")"), Q5 = new RegExp("^(?:" + Ad + "|" + Id + ")");
+Wt.HTML_TAG_RE = K5;
+Wt.HTML_OPEN_CLOSE_TAG_RE = Q5;
+var X5 = U5, Z5 = Wt.HTML_OPEN_CLOSE_TAG_RE, Ze = [
   [/^<(script|pre|style|textarea)(?=(\s|>|$))/i, /<\/(script|pre|style|textarea)>/i, !0],
   [/^<!--/, /-->/, !0],
   [/^<\?/, /\?>/, !0],
   [/^<![A-Z]/, />/, !0],
   [/^<!\[CDATA\[/, /\]\]>/, !0],
-  [new RegExp("^</?(" + Q5.join("|") + ")(?=(\\s|/?>|$))", "i"), /^$/, !0],
-  [new RegExp(X5.source + "\\s*$"), /^$/, !1]
-], Z5 = function(e, n, r, a) {
-  var i, o, s, c, l = e.bMarks[n] + e.tShift[n], _ = e.eMarks[n];
+  [new RegExp("^</?(" + X5.join("|") + ")(?=(\\s|/?>|$))", "i"), /^$/, !0],
+  [new RegExp(Z5.source + "\\s*$"), /^$/, !1]
+], J5 = function(e, n, r, a) {
+  var i, o, c, s, l = e.bMarks[n] + e.tShift[n], _ = e.eMarks[n];
   if (e.sCount[n] - e.blkIndent >= 4 || !e.md.options.html || e.src.charCodeAt(l) !== 60)
     return !1;
-  for (c = e.src.slice(l, _), i = 0; i < Ze.length && !Ze[i][0].test(c); i++)
+  for (s = e.src.slice(l, _), i = 0; i < Ze.length && !Ze[i][0].test(s); i++)
     ;
   if (i === Ze.length)
     return !1;
   if (a)
     return Ze[i][2];
-  if (o = n + 1, !Ze[i][1].test(c)) {
+  if (o = n + 1, !Ze[i][1].test(s)) {
     for (; o < r && !(e.sCount[o] < e.blkIndent); o++)
-      if (l = e.bMarks[o] + e.tShift[o], _ = e.eMarks[o], c = e.src.slice(l, _), Ze[i][1].test(c)) {
-        c.length !== 0 && o++;
+      if (l = e.bMarks[o] + e.tShift[o], _ = e.eMarks[o], s = e.src.slice(l, _), Ze[i][1].test(s)) {
+        s.length !== 0 && o++;
         break;
       }
   }
-  return e.line = o, s = e.push("html_block", "", 0), s.map = [n, o], s.content = e.getLines(n, o, e.blkIndent, !0), !0;
-}, q_ = Q.isSpace, J5 = function(e, n, r, a) {
-  var i, o, s, c, l = e.bMarks[n] + e.tShift[n], _ = e.eMarks[n];
+  return e.line = o, c = e.push("html_block", "", 0), c.map = [n, o], c.content = e.getLines(n, o, e.blkIndent, !0), !0;
+}, q_ = Q.isSpace, j5 = function(e, n, r, a) {
+  var i, o, c, s, l = e.bMarks[n] + e.tShift[n], _ = e.eMarks[n];
   if (e.sCount[n] - e.blkIndent >= 4 || (i = e.src.charCodeAt(l), i !== 35 || l >= _))
     return !1;
   for (o = 1, i = e.src.charCodeAt(++l); i === 35 && l < _ && o <= 6; )
     o++, i = e.src.charCodeAt(++l);
-  return o > 6 || l < _ && !q_(i) ? !1 : (a || (_ = e.skipSpacesBack(_, l), s = e.skipCharsBack(_, 35, l), s > l && q_(e.src.charCodeAt(s - 1)) && (_ = s), e.line = n + 1, c = e.push("heading_open", "h" + String(o), 1), c.markup = "########".slice(0, o), c.map = [n, e.line], c = e.push("inline", "", 0), c.content = e.src.slice(l, _).trim(), c.map = [n, e.line], c.children = [], c = e.push("heading_close", "h" + String(o), -1), c.markup = "########".slice(0, o)), !0);
-}, j5 = function(e, n, r) {
-  var a, i, o, s, c, l, _, p, d, u = n + 1, E, S = e.md.block.ruler.getRules("paragraph");
+  return o > 6 || l < _ && !q_(i) ? !1 : (a || (_ = e.skipSpacesBack(_, l), c = e.skipCharsBack(_, 35, l), c > l && q_(e.src.charCodeAt(c - 1)) && (_ = c), e.line = n + 1, s = e.push("heading_open", "h" + String(o), 1), s.markup = "########".slice(0, o), s.map = [n, e.line], s = e.push("inline", "", 0), s.content = e.src.slice(l, _).trim(), s.map = [n, e.line], s.children = [], s = e.push("heading_close", "h" + String(o), -1), s.markup = "########".slice(0, o)), !0);
+}, eZ = function(e, n, r) {
+  var a, i, o, c, s, l, _, p, d, u = n + 1, E, S = e.md.block.ruler.getRules("paragraph");
   if (e.sCount[n] - e.blkIndent >= 4)
     return !1;
   for (E = e.parentType, e.parentType = "paragraph"; u < r && !e.isEmpty(u); u++)
@@ -36298,7 +36298,7 @@ var Q5 = P5, X5 = Wt.HTML_OPEN_CLOSE_TAG_RE, Ze = [
         break;
       }
       if (!(e.sCount[u] < 0)) {
-        for (i = !1, o = 0, s = S.length; o < s; o++)
+        for (i = !1, o = 0, c = S.length; o < c; o++)
           if (S[o](e, u, r, !0)) {
             i = !0;
             break;
@@ -36307,12 +36307,12 @@ var Q5 = P5, X5 = Wt.HTML_OPEN_CLOSE_TAG_RE, Ze = [
           break;
       }
     }
-  return p ? (a = e.getLines(n, u, e.blkIndent, !1).trim(), e.line = u + 1, c = e.push("heading_open", "h" + String(p), 1), c.markup = String.fromCharCode(d), c.map = [n, e.line], c = e.push("inline", "", 0), c.content = a, c.map = [n, e.line - 1], c.children = [], c = e.push("heading_close", "h" + String(p), -1), c.markup = String.fromCharCode(d), e.parentType = E, !0) : !1;
-}, eZ = function(e, n, r) {
-  var a, i, o, s, c, l, _ = n + 1, p = e.md.block.ruler.getRules("paragraph");
+  return p ? (a = e.getLines(n, u, e.blkIndent, !1).trim(), e.line = u + 1, s = e.push("heading_open", "h" + String(p), 1), s.markup = String.fromCharCode(d), s.map = [n, e.line], s = e.push("inline", "", 0), s.content = a, s.map = [n, e.line - 1], s.children = [], s = e.push("heading_close", "h" + String(p), -1), s.markup = String.fromCharCode(d), e.parentType = E, !0) : !1;
+}, tZ = function(e, n, r) {
+  var a, i, o, c, s, l, _ = n + 1, p = e.md.block.ruler.getRules("paragraph");
   for (l = e.parentType, e.parentType = "paragraph"; _ < r && !e.isEmpty(_); _++)
     if (!(e.sCount[_] - e.blkIndent > 3) && !(e.sCount[_] < 0)) {
-      for (i = !1, o = 0, s = p.length; o < s; o++)
+      for (i = !1, o = 0, c = p.length; o < c; o++)
         if (p[o](e, _, r, !0)) {
           i = !0;
           break;
@@ -36320,18 +36320,18 @@ var Q5 = P5, X5 = Wt.HTML_OPEN_CLOSE_TAG_RE, Ze = [
       if (i)
         break;
     }
-  return a = e.getLines(n, _, e.blkIndent, !1).trim(), e.line = _, c = e.push("paragraph_open", "p", 1), c.map = [n, e.line], c = e.push("inline", "", 0), c.content = a, c.map = [n, e.line], c.children = [], c = e.push("paragraph_close", "p", -1), e.parentType = l, !0;
+  return a = e.getLines(n, _, e.blkIndent, !1).trim(), e.line = _, s = e.push("paragraph_open", "p", 1), s.map = [n, e.line], s = e.push("inline", "", 0), s.content = a, s.map = [n, e.line], s.children = [], s = e.push("paragraph_close", "p", -1), e.parentType = l, !0;
 }, Dd = gi, Kt = Q.isSpace;
 function we(t, e, n, r) {
-  var a, i, o, s, c, l, _, p;
-  for (this.src = t, this.md = e, this.env = n, this.tokens = r, this.bMarks = [], this.eMarks = [], this.tShift = [], this.sCount = [], this.bsCount = [], this.blkIndent = 0, this.line = 0, this.lineMax = 0, this.tight = !1, this.ddIndent = -1, this.listIndent = -1, this.parentType = "root", this.level = 0, this.result = "", i = this.src, p = !1, o = s = l = _ = 0, c = i.length; s < c; s++) {
-    if (a = i.charCodeAt(s), !p)
+  var a, i, o, c, s, l, _, p;
+  for (this.src = t, this.md = e, this.env = n, this.tokens = r, this.bMarks = [], this.eMarks = [], this.tShift = [], this.sCount = [], this.bsCount = [], this.blkIndent = 0, this.line = 0, this.lineMax = 0, this.tight = !1, this.ddIndent = -1, this.listIndent = -1, this.parentType = "root", this.level = 0, this.result = "", i = this.src, p = !1, o = c = l = _ = 0, s = i.length; c < s; c++) {
+    if (a = i.charCodeAt(c), !p)
       if (Kt(a)) {
         l++, a === 9 ? _ += 4 - _ % 4 : _++;
         continue;
       } else
         p = !0;
-    (a === 10 || s === c - 1) && (a !== 10 && s++, this.bMarks.push(o), this.eMarks.push(s), this.tShift.push(l), this.sCount.push(_), this.bsCount.push(0), p = !1, l = 0, _ = 0, o = s + 1);
+    (a === 10 || c === s - 1) && (a !== 10 && c++, this.bMarks.push(o), this.eMarks.push(c), this.tShift.push(l), this.sCount.push(_), this.bsCount.push(0), p = !1, l = 0, _ = 0, o = c + 1);
   }
   this.bMarks.push(i.length), this.eMarks.push(i.length), this.tShift.push(0), this.sCount.push(0), this.bsCount.push(0), this.lineMax = this.bMarks.length - 1;
 }
@@ -36374,67 +36374,67 @@ we.prototype.skipCharsBack = function(e, n, r) {
   return e;
 };
 we.prototype.getLines = function(e, n, r, a) {
-  var i, o, s, c, l, _, p, d = e;
+  var i, o, c, s, l, _, p, d = e;
   if (e >= n)
     return "";
   for (_ = new Array(n - e), i = 0; d < n; d++, i++) {
-    for (o = 0, p = c = this.bMarks[d], d + 1 < n || a ? l = this.eMarks[d] + 1 : l = this.eMarks[d]; c < l && o < r; ) {
-      if (s = this.src.charCodeAt(c), Kt(s))
-        s === 9 ? o += 4 - (o + this.bsCount[d]) % 4 : o++;
-      else if (c - p < this.tShift[d])
+    for (o = 0, p = s = this.bMarks[d], d + 1 < n || a ? l = this.eMarks[d] + 1 : l = this.eMarks[d]; s < l && o < r; ) {
+      if (c = this.src.charCodeAt(s), Kt(c))
+        c === 9 ? o += 4 - (o + this.bsCount[d]) % 4 : o++;
+      else if (s - p < this.tShift[d])
         o++;
       else
         break;
-      c++;
+      s++;
     }
-    o > r ? _[i] = new Array(o - r + 1).join(" ") + this.src.slice(c, l) : _[i] = this.src.slice(c, l);
+    o > r ? _[i] = new Array(o - r + 1).join(" ") + this.src.slice(s, l) : _[i] = this.src.slice(s, l);
   }
   return _.join("");
 };
 we.prototype.Token = Dd;
-var tZ = we, nZ = mi, xt = [
+var nZ = we, rZ = mi, xt = [
   // First 2 params - rule name & source. Secondary array - list of rules,
   // which can be terminated by this one.
-  ["table", v5, ["paragraph", "reference"]],
-  ["code", O5],
-  ["fence", y5, ["paragraph", "reference", "blockquote", "list"]],
-  ["blockquote", I5, ["paragraph", "reference", "blockquote", "list"]],
-  ["hr", w5, ["paragraph", "reference", "blockquote", "list"]],
-  ["list", x5, ["paragraph", "reference", "blockquote"]],
-  ["reference", k5],
-  ["html_block", Z5, ["paragraph", "reference", "blockquote"]],
-  ["heading", J5, ["paragraph", "reference", "blockquote"]],
-  ["lheading", j5],
-  ["paragraph", eZ]
+  ["table", O5, ["paragraph", "reference"]],
+  ["code", y5],
+  ["fence", A5, ["paragraph", "reference", "blockquote", "list"]],
+  ["blockquote", D5, ["paragraph", "reference", "blockquote", "list"]],
+  ["hr", M5, ["paragraph", "reference", "blockquote", "list"]],
+  ["list", L5, ["paragraph", "reference", "blockquote"]],
+  ["reference", P5],
+  ["html_block", J5, ["paragraph", "reference", "blockquote"]],
+  ["heading", j5, ["paragraph", "reference", "blockquote"]],
+  ["lheading", eZ],
+  ["paragraph", tZ]
 ];
 function Qt() {
-  this.ruler = new nZ();
+  this.ruler = new rZ();
   for (var t = 0; t < xt.length; t++)
     this.ruler.push(xt[t][0], xt[t][1], { alt: (xt[t][2] || []).slice() });
 }
 Qt.prototype.tokenize = function(t, e, n) {
-  for (var r, a, i, o = this.ruler.getRules(""), s = o.length, c = e, l = !1, _ = t.md.options.maxNesting; c < n && (t.line = c = t.skipEmptyLines(c), !(c >= n || t.sCount[c] < t.blkIndent)); ) {
+  for (var r, a, i, o = this.ruler.getRules(""), c = o.length, s = e, l = !1, _ = t.md.options.maxNesting; s < n && (t.line = s = t.skipEmptyLines(s), !(s >= n || t.sCount[s] < t.blkIndent)); ) {
     if (t.level >= _) {
       t.line = n;
       break;
     }
-    for (i = t.line, a = 0; a < s; a++)
-      if (r = o[a](t, c, n, !1), r) {
+    for (i = t.line, a = 0; a < c; a++)
+      if (r = o[a](t, s, n, !1), r) {
         if (i >= t.line)
           throw new Error("block rule didn't increment state.line");
         break;
       }
     if (!r) throw new Error("none of the block rules matched");
-    t.tight = !l, t.isEmpty(t.line - 1) && (l = !0), c = t.line, c < n && t.isEmpty(c) && (l = !0, c++, t.line = c);
+    t.tight = !l, t.isEmpty(t.line - 1) && (l = !0), s = t.line, s < n && t.isEmpty(s) && (l = !0, s++, t.line = s);
   }
 };
 Qt.prototype.parse = function(t, e, n, r) {
   var a;
   t && (a = new this.State(t, e, n, r), this.tokenize(a, a.line, a.lineMax));
 };
-Qt.prototype.State = tZ;
-var rZ = Qt;
-function aZ(t) {
+Qt.prototype.State = nZ;
+var aZ = Qt;
+function oZ(t) {
   switch (t) {
     case 10:
     case 33:
@@ -36464,14 +36464,14 @@ function aZ(t) {
       return !1;
   }
 }
-var oZ = function(e, n) {
-  for (var r = e.pos; r < e.posMax && !aZ(e.src.charCodeAt(r)); )
+var iZ = function(e, n) {
+  for (var r = e.pos; r < e.posMax && !oZ(e.src.charCodeAt(r)); )
     r++;
   return r === e.pos ? !1 : (n || (e.pending += e.src.slice(e.pos, r)), e.pos = r, !0);
-}, iZ = /(?:^|[^a-z0-9.+-])([a-z][a-z0-9.+-]*)$/i, sZ = function(e, n) {
-  var r, a, i, o, s, c, l, _;
-  return !e.md.options.linkify || e.linkLevel > 0 || (r = e.pos, a = e.posMax, r + 3 > a) || e.src.charCodeAt(r) !== 58 || e.src.charCodeAt(r + 1) !== 47 || e.src.charCodeAt(r + 2) !== 47 || (i = e.pending.match(iZ), !i) || (o = i[1], s = e.md.linkify.matchAtStart(e.src.slice(r - o.length)), !s) || (c = s.url, c.length <= o.length) || (c = c.replace(/\*+$/, ""), l = e.md.normalizeLink(c), !e.md.validateLink(l)) ? !1 : (n || (e.pending = e.pending.slice(0, -o.length), _ = e.push("link_open", "a", 1), _.attrs = [["href", l]], _.markup = "linkify", _.info = "auto", _ = e.push("text", "", 0), _.content = e.md.normalizeLinkText(c), _ = e.push("link_close", "a", -1), _.markup = "linkify", _.info = "auto"), e.pos += c.length - o.length, !0);
-}, cZ = Q.isSpace, lZ = function(e, n) {
+}, sZ = /(?:^|[^a-z0-9.+-])([a-z][a-z0-9.+-]*)$/i, cZ = function(e, n) {
+  var r, a, i, o, c, s, l, _;
+  return !e.md.options.linkify || e.linkLevel > 0 || (r = e.pos, a = e.posMax, r + 3 > a) || e.src.charCodeAt(r) !== 58 || e.src.charCodeAt(r + 1) !== 47 || e.src.charCodeAt(r + 2) !== 47 || (i = e.pending.match(sZ), !i) || (o = i[1], c = e.md.linkify.matchAtStart(e.src.slice(r - o.length)), !c) || (s = c.url, s.length <= o.length) || (s = s.replace(/\*+$/, ""), l = e.md.normalizeLink(s), !e.md.validateLink(l)) ? !1 : (n || (e.pending = e.pending.slice(0, -o.length), _ = e.push("link_open", "a", 1), _.attrs = [["href", l]], _.markup = "linkify", _.info = "auto", _ = e.push("text", "", 0), _.content = e.md.normalizeLinkText(s), _ = e.push("link_close", "a", -1), _.markup = "linkify", _.info = "auto"), e.pos += s.length - o.length, !0);
+}, lZ = Q.isSpace, _Z = function(e, n) {
   var r, a, i, o = e.pos;
   if (e.src.charCodeAt(o) !== 10)
     return !1;
@@ -36484,47 +36484,47 @@ var oZ = function(e, n) {
         e.pending = e.pending.slice(0, -1), e.push("softbreak", "br", 0);
     else
       e.push("softbreak", "br", 0);
-  for (o++; o < a && cZ(e.src.charCodeAt(o)); )
+  for (o++; o < a && lZ(e.src.charCodeAt(o)); )
     o++;
   return e.pos = o, !0;
-}, _Z = Q.isSpace, Si = [];
+}, dZ = Q.isSpace, Si = [];
 for (var Y_ = 0; Y_ < 256; Y_++)
   Si.push(0);
 "\\!\"#$%&'()*+,./:;<=>?@[]^_`{|}~-".split("").forEach(function(t) {
   Si[t.charCodeAt(0)] = 1;
 });
-var dZ = function(e, n) {
-  var r, a, i, o, s, c = e.pos, l = e.posMax;
-  if (e.src.charCodeAt(c) !== 92 || (c++, c >= l)) return !1;
-  if (r = e.src.charCodeAt(c), r === 10) {
-    for (n || e.push("hardbreak", "br", 0), c++; c < l && (r = e.src.charCodeAt(c), !!_Z(r)); )
-      c++;
-    return e.pos = c, !0;
+var uZ = function(e, n) {
+  var r, a, i, o, c, s = e.pos, l = e.posMax;
+  if (e.src.charCodeAt(s) !== 92 || (s++, s >= l)) return !1;
+  if (r = e.src.charCodeAt(s), r === 10) {
+    for (n || e.push("hardbreak", "br", 0), s++; s < l && (r = e.src.charCodeAt(s), !!dZ(r)); )
+      s++;
+    return e.pos = s, !0;
   }
-  return o = e.src[c], r >= 55296 && r <= 56319 && c + 1 < l && (a = e.src.charCodeAt(c + 1), a >= 56320 && a <= 57343 && (o += e.src[c + 1], c++)), i = "\\" + o, n || (s = e.push("text_special", "", 0), r < 256 && Si[r] !== 0 ? s.content = o : s.content = i, s.markup = i, s.info = "escape"), e.pos = c + 1, !0;
-}, uZ = function(e, n) {
-  var r, a, i, o, s, c, l, _, p = e.pos, d = e.src.charCodeAt(p);
+  return o = e.src[s], r >= 55296 && r <= 56319 && s + 1 < l && (a = e.src.charCodeAt(s + 1), a >= 56320 && a <= 57343 && (o += e.src[s + 1], s++)), i = "\\" + o, n || (c = e.push("text_special", "", 0), r < 256 && Si[r] !== 0 ? c.content = o : c.content = i, c.markup = i, c.info = "escape"), e.pos = s + 1, !0;
+}, pZ = function(e, n) {
+  var r, a, i, o, c, s, l, _, p = e.pos, d = e.src.charCodeAt(p);
   if (d !== 96)
     return !1;
   for (r = p, p++, a = e.posMax; p < a && e.src.charCodeAt(p) === 96; )
     p++;
   if (i = e.src.slice(r, p), l = i.length, e.backticksScanned && (e.backticks[l] || 0) <= r)
     return n || (e.pending += i), e.pos += l, !0;
-  for (c = p; (s = e.src.indexOf("`", c)) !== -1; ) {
-    for (c = s + 1; c < a && e.src.charCodeAt(c) === 96; )
-      c++;
-    if (_ = c - s, _ === l)
-      return n || (o = e.push("code_inline", "code", 0), o.markup = i, o.content = e.src.slice(p, s).replace(/\n/g, " ").replace(/^ (.+) $/, "$1")), e.pos = c, !0;
-    e.backticks[_] = s;
+  for (s = p; (c = e.src.indexOf("`", s)) !== -1; ) {
+    for (s = c + 1; s < a && e.src.charCodeAt(s) === 96; )
+      s++;
+    if (_ = s - c, _ === l)
+      return n || (o = e.push("code_inline", "code", 0), o.markup = i, o.content = e.src.slice(p, c).replace(/\n/g, " ").replace(/^ (.+) $/, "$1")), e.pos = s, !0;
+    e.backticks[_] = c;
   }
   return e.backticksScanned = !0, n || (e.pending += i), e.pos += l, !0;
 }, Xt = {};
 Xt.tokenize = function(e, n) {
-  var r, a, i, o, s, c = e.pos, l = e.src.charCodeAt(c);
-  if (n || l !== 126 || (a = e.scanDelims(e.pos, !0), o = a.length, s = String.fromCharCode(l), o < 2))
+  var r, a, i, o, c, s = e.pos, l = e.src.charCodeAt(s);
+  if (n || l !== 126 || (a = e.scanDelims(e.pos, !0), o = a.length, c = String.fromCharCode(l), o < 2))
     return !1;
-  for (o % 2 && (i = e.push("text", "", 0), i.content = s, o--), r = 0; r < o; r += 2)
-    i = e.push("text", "", 0), i.content = s + s, e.delimiters.push({
+  for (o % 2 && (i = e.push("text", "", 0), i.content = c, o--), r = 0; r < o; r += 2)
+    i = e.push("text", "", 0), i.content = c + c, e.delimiters.push({
       marker: l,
       length: 0,
       // disable "rule of 3" length checks meant for emphasis
@@ -36536,11 +36536,11 @@ Xt.tokenize = function(e, n) {
   return e.pos += a.length, !0;
 };
 function H_(t, e) {
-  var n, r, a, i, o, s = [], c = e.length;
-  for (n = 0; n < c; n++)
-    a = e[n], a.marker === 126 && a.end !== -1 && (i = e[a.end], o = t.tokens[a.token], o.type = "s_open", o.tag = "s", o.nesting = 1, o.markup = "~~", o.content = "", o = t.tokens[i.token], o.type = "s_close", o.tag = "s", o.nesting = -1, o.markup = "~~", o.content = "", t.tokens[i.token - 1].type === "text" && t.tokens[i.token - 1].content === "~" && s.push(i.token - 1));
-  for (; s.length; ) {
-    for (n = s.pop(), r = n + 1; r < t.tokens.length && t.tokens[r].type === "s_close"; )
+  var n, r, a, i, o, c = [], s = e.length;
+  for (n = 0; n < s; n++)
+    a = e[n], a.marker === 126 && a.end !== -1 && (i = e[a.end], o = t.tokens[a.token], o.type = "s_open", o.tag = "s", o.nesting = 1, o.markup = "~~", o.content = "", o = t.tokens[i.token], o.type = "s_close", o.tag = "s", o.nesting = -1, o.markup = "~~", o.content = "", t.tokens[i.token - 1].type === "text" && t.tokens[i.token - 1].content === "~" && c.push(i.token - 1));
+  for (; c.length; ) {
+    for (n = c.pop(), r = n + 1; r < t.tokens.length && t.tokens[r].type === "s_close"; )
       r++;
     r--, n !== r && (o = t.tokens[r], t.tokens[r] = t.tokens[n], t.tokens[n] = o);
   }
@@ -36552,14 +36552,14 @@ Xt.postProcess = function(e) {
 };
 var Zt = {};
 Zt.tokenize = function(e, n) {
-  var r, a, i, o = e.pos, s = e.src.charCodeAt(o);
-  if (n || s !== 95 && s !== 42)
+  var r, a, i, o = e.pos, c = e.src.charCodeAt(o);
+  if (n || c !== 95 && c !== 42)
     return !1;
-  for (a = e.scanDelims(e.pos, s === 42), r = 0; r < a.length; r++)
-    i = e.push("text", "", 0), i.content = String.fromCharCode(s), e.delimiters.push({
+  for (a = e.scanDelims(e.pos, c === 42), r = 0; r < a.length; r++)
+    i = e.push("text", "", 0), i.content = String.fromCharCode(c), e.delimiters.push({
       // Char code of the starting marker (number).
       //
-      marker: s,
+      marker: c,
       // Total length of these series of delimiters.
       //
       length: a.length,
@@ -36579,48 +36579,48 @@ Zt.tokenize = function(e, n) {
   return e.pos += a.length, !0;
 };
 function V_(t, e) {
-  var n, r, a, i, o, s, c = e.length;
-  for (n = c - 1; n >= 0; n--)
-    r = e[n], !(r.marker !== 95 && r.marker !== 42) && r.end !== -1 && (a = e[r.end], s = n > 0 && e[n - 1].end === r.end + 1 && // check that first two markers match and adjacent
+  var n, r, a, i, o, c, s = e.length;
+  for (n = s - 1; n >= 0; n--)
+    r = e[n], !(r.marker !== 95 && r.marker !== 42) && r.end !== -1 && (a = e[r.end], c = n > 0 && e[n - 1].end === r.end + 1 && // check that first two markers match and adjacent
     e[n - 1].marker === r.marker && e[n - 1].token === r.token - 1 && // check that last two markers are adjacent (we can safely assume they match)
-    e[r.end + 1].token === a.token + 1, o = String.fromCharCode(r.marker), i = t.tokens[r.token], i.type = s ? "strong_open" : "em_open", i.tag = s ? "strong" : "em", i.nesting = 1, i.markup = s ? o + o : o, i.content = "", i = t.tokens[a.token], i.type = s ? "strong_close" : "em_close", i.tag = s ? "strong" : "em", i.nesting = -1, i.markup = s ? o + o : o, i.content = "", s && (t.tokens[e[n - 1].token].content = "", t.tokens[e[r.end + 1].token].content = "", n--));
+    e[r.end + 1].token === a.token + 1, o = String.fromCharCode(r.marker), i = t.tokens[r.token], i.type = c ? "strong_open" : "em_open", i.tag = c ? "strong" : "em", i.nesting = 1, i.markup = c ? o + o : o, i.content = "", i = t.tokens[a.token], i.type = c ? "strong_close" : "em_close", i.tag = c ? "strong" : "em", i.nesting = -1, i.markup = c ? o + o : o, i.content = "", c && (t.tokens[e[n - 1].token].content = "", t.tokens[e[r.end + 1].token].content = "", n--));
 }
 Zt.postProcess = function(e) {
   var n, r = e.tokens_meta, a = e.tokens_meta.length;
   for (V_(e, e.delimiters), n = 0; n < a; n++)
     r[n] && r[n].delimiters && V_(e, r[n].delimiters);
 };
-var pZ = Q.normalizeReference, Ho = Q.isSpace, mZ = function(e, n) {
-  var r, a, i, o, s, c, l, _, p, d = "", u = "", E = e.pos, S = e.posMax, g = e.pos, f = !0;
-  if (e.src.charCodeAt(e.pos) !== 91 || (s = e.pos + 1, o = e.md.helpers.parseLinkLabel(e, e.pos, !0), o < 0))
+var mZ = Q.normalizeReference, Ho = Q.isSpace, gZ = function(e, n) {
+  var r, a, i, o, c, s, l, _, p, d = "", u = "", E = e.pos, S = e.posMax, g = e.pos, f = !0;
+  if (e.src.charCodeAt(e.pos) !== 91 || (c = e.pos + 1, o = e.md.helpers.parseLinkLabel(e, e.pos, !0), o < 0))
     return !1;
-  if (c = o + 1, c < S && e.src.charCodeAt(c) === 40) {
-    for (f = !1, c++; c < S && (a = e.src.charCodeAt(c), !(!Ho(a) && a !== 10)); c++)
+  if (s = o + 1, s < S && e.src.charCodeAt(s) === 40) {
+    for (f = !1, s++; s < S && (a = e.src.charCodeAt(s), !(!Ho(a) && a !== 10)); s++)
       ;
-    if (c >= S)
+    if (s >= S)
       return !1;
-    if (g = c, l = e.md.helpers.parseLinkDestination(e.src, c, e.posMax), l.ok) {
-      for (d = e.md.normalizeLink(l.str), e.md.validateLink(d) ? c = l.pos : d = "", g = c; c < S && (a = e.src.charCodeAt(c), !(!Ho(a) && a !== 10)); c++)
+    if (g = s, l = e.md.helpers.parseLinkDestination(e.src, s, e.posMax), l.ok) {
+      for (d = e.md.normalizeLink(l.str), e.md.validateLink(d) ? s = l.pos : d = "", g = s; s < S && (a = e.src.charCodeAt(s), !(!Ho(a) && a !== 10)); s++)
         ;
-      if (l = e.md.helpers.parseLinkTitle(e.src, c, e.posMax), c < S && g !== c && l.ok)
-        for (u = l.str, c = l.pos; c < S && (a = e.src.charCodeAt(c), !(!Ho(a) && a !== 10)); c++)
+      if (l = e.md.helpers.parseLinkTitle(e.src, s, e.posMax), s < S && g !== s && l.ok)
+        for (u = l.str, s = l.pos; s < S && (a = e.src.charCodeAt(s), !(!Ho(a) && a !== 10)); s++)
           ;
     }
-    (c >= S || e.src.charCodeAt(c) !== 41) && (f = !0), c++;
+    (s >= S || e.src.charCodeAt(s) !== 41) && (f = !0), s++;
   }
   if (f) {
     if (typeof e.env.references > "u")
       return !1;
-    if (c < S && e.src.charCodeAt(c) === 91 ? (g = c + 1, c = e.md.helpers.parseLinkLabel(e, c), c >= 0 ? i = e.src.slice(g, c++) : c = o + 1) : c = o + 1, i || (i = e.src.slice(s, o)), _ = e.env.references[pZ(i)], !_)
+    if (s < S && e.src.charCodeAt(s) === 91 ? (g = s + 1, s = e.md.helpers.parseLinkLabel(e, s), s >= 0 ? i = e.src.slice(g, s++) : s = o + 1) : s = o + 1, i || (i = e.src.slice(c, o)), _ = e.env.references[mZ(i)], !_)
       return e.pos = E, !1;
     d = _.href, u = _.title;
   }
-  return n || (e.pos = s, e.posMax = o, p = e.push("link_open", "a", 1), p.attrs = r = [["href", d]], u && r.push(["title", u]), e.linkLevel++, e.md.inline.tokenize(e), e.linkLevel--, p = e.push("link_close", "a", -1)), e.pos = c, e.posMax = S, !0;
-}, gZ = Q.normalizeReference, Vo = Q.isSpace, EZ = function(e, n) {
-  var r, a, i, o, s, c, l, _, p, d, u, E, S, g = "", f = e.pos, b = e.posMax;
-  if (e.src.charCodeAt(e.pos) !== 33 || e.src.charCodeAt(e.pos + 1) !== 91 || (c = e.pos + 2, s = e.md.helpers.parseLinkLabel(e, e.pos + 1, !1), s < 0))
+  return n || (e.pos = c, e.posMax = o, p = e.push("link_open", "a", 1), p.attrs = r = [["href", d]], u && r.push(["title", u]), e.linkLevel++, e.md.inline.tokenize(e), e.linkLevel--, p = e.push("link_close", "a", -1)), e.pos = s, e.posMax = S, !0;
+}, EZ = Q.normalizeReference, Vo = Q.isSpace, SZ = function(e, n) {
+  var r, a, i, o, c, s, l, _, p, d, u, E, S, g = "", f = e.pos, b = e.posMax;
+  if (e.src.charCodeAt(e.pos) !== 33 || e.src.charCodeAt(e.pos + 1) !== 91 || (s = e.pos + 2, c = e.md.helpers.parseLinkLabel(e, e.pos + 1, !1), c < 0))
     return !1;
-  if (l = s + 1, l < b && e.src.charCodeAt(l) === 40) {
+  if (l = c + 1, l < b && e.src.charCodeAt(l) === 40) {
     for (l++; l < b && (a = e.src.charCodeAt(l), !(!Vo(a) && a !== 10)); l++)
       ;
     if (l >= b)
@@ -36638,69 +36638,69 @@ var pZ = Q.normalizeReference, Ho = Q.isSpace, mZ = function(e, n) {
   } else {
     if (typeof e.env.references > "u")
       return !1;
-    if (l < b && e.src.charCodeAt(l) === 91 ? (S = l + 1, l = e.md.helpers.parseLinkLabel(e, l), l >= 0 ? o = e.src.slice(S, l++) : l = s + 1) : l = s + 1, o || (o = e.src.slice(c, s)), _ = e.env.references[gZ(o)], !_)
+    if (l < b && e.src.charCodeAt(l) === 91 ? (S = l + 1, l = e.md.helpers.parseLinkLabel(e, l), l >= 0 ? o = e.src.slice(S, l++) : l = c + 1) : l = c + 1, o || (o = e.src.slice(s, c)), _ = e.env.references[EZ(o)], !_)
       return e.pos = f, !1;
     g = _.href, d = _.title;
   }
-  return n || (i = e.src.slice(c, s), e.md.inline.parse(
+  return n || (i = e.src.slice(s, c), e.md.inline.parse(
     i,
     e.md,
     e.env,
     E = []
   ), u = e.push("image", "img", 0), u.attrs = r = [["src", g], ["alt", ""]], u.children = E, u.content = i, d && r.push(["title", d])), e.pos = l, e.posMax = b, !0;
-}, SZ = /^([a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)$/, fZ = /^([a-zA-Z][a-zA-Z0-9+.\-]{1,31}):([^<>\x00-\x20]*)$/, bZ = function(e, n) {
-  var r, a, i, o, s, c, l = e.pos;
+}, fZ = /^([a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)$/, bZ = /^([a-zA-Z][a-zA-Z0-9+.\-]{1,31}):([^<>\x00-\x20]*)$/, TZ = function(e, n) {
+  var r, a, i, o, c, s, l = e.pos;
   if (e.src.charCodeAt(l) !== 60)
     return !1;
-  for (s = e.pos, c = e.posMax; ; ) {
-    if (++l >= c || (o = e.src.charCodeAt(l), o === 60)) return !1;
+  for (c = e.pos, s = e.posMax; ; ) {
+    if (++l >= s || (o = e.src.charCodeAt(l), o === 60)) return !1;
     if (o === 62) break;
   }
-  return r = e.src.slice(s + 1, l), fZ.test(r) ? (a = e.md.normalizeLink(r), e.md.validateLink(a) ? (n || (i = e.push("link_open", "a", 1), i.attrs = [["href", a]], i.markup = "autolink", i.info = "auto", i = e.push("text", "", 0), i.content = e.md.normalizeLinkText(r), i = e.push("link_close", "a", -1), i.markup = "autolink", i.info = "auto"), e.pos += r.length + 2, !0) : !1) : SZ.test(r) ? (a = e.md.normalizeLink("mailto:" + r), e.md.validateLink(a) ? (n || (i = e.push("link_open", "a", 1), i.attrs = [["href", a]], i.markup = "autolink", i.info = "auto", i = e.push("text", "", 0), i.content = e.md.normalizeLinkText(r), i = e.push("link_close", "a", -1), i.markup = "autolink", i.info = "auto"), e.pos += r.length + 2, !0) : !1) : !1;
-}, TZ = Wt.HTML_TAG_RE;
-function hZ(t) {
+  return r = e.src.slice(c + 1, l), bZ.test(r) ? (a = e.md.normalizeLink(r), e.md.validateLink(a) ? (n || (i = e.push("link_open", "a", 1), i.attrs = [["href", a]], i.markup = "autolink", i.info = "auto", i = e.push("text", "", 0), i.content = e.md.normalizeLinkText(r), i = e.push("link_close", "a", -1), i.markup = "autolink", i.info = "auto"), e.pos += r.length + 2, !0) : !1) : fZ.test(r) ? (a = e.md.normalizeLink("mailto:" + r), e.md.validateLink(a) ? (n || (i = e.push("link_open", "a", 1), i.attrs = [["href", a]], i.markup = "autolink", i.info = "auto", i = e.push("text", "", 0), i.content = e.md.normalizeLinkText(r), i = e.push("link_close", "a", -1), i.markup = "autolink", i.info = "auto"), e.pos += r.length + 2, !0) : !1) : !1;
+}, hZ = Wt.HTML_TAG_RE;
+function RZ(t) {
   return /^<a[>\s]/i.test(t);
 }
-function RZ(t) {
+function CZ(t) {
   return /^<\/a\s*>/i.test(t);
 }
-function CZ(t) {
+function NZ(t) {
   var e = t | 32;
   return e >= 97 && e <= 122;
 }
-var NZ = function(e, n) {
-  var r, a, i, o, s = e.pos;
-  return !e.md.options.html || (i = e.posMax, e.src.charCodeAt(s) !== 60 || s + 2 >= i) || (r = e.src.charCodeAt(s + 1), r !== 33 && r !== 63 && r !== 47 && !CZ(r)) || (a = e.src.slice(s).match(TZ), !a) ? !1 : (n || (o = e.push("html_inline", "", 0), o.content = a[0], hZ(o.content) && e.linkLevel++, RZ(o.content) && e.linkLevel--), e.pos += a[0].length, !0);
-}, z_ = hd, vZ = Q.has, OZ = Q.isValidEntityCode, $_ = Q.fromCodePoint, yZ = /^&#((?:x[a-f0-9]{1,6}|[0-9]{1,7}));/i, AZ = /^&([a-z][a-z0-9]{1,31});/i, IZ = function(e, n) {
-  var r, a, i, o, s = e.pos, c = e.posMax;
-  if (e.src.charCodeAt(s) !== 38 || s + 1 >= c) return !1;
-  if (r = e.src.charCodeAt(s + 1), r === 35) {
-    if (i = e.src.slice(s).match(yZ), i)
-      return n || (a = i[1][0].toLowerCase() === "x" ? parseInt(i[1].slice(1), 16) : parseInt(i[1], 10), o = e.push("text_special", "", 0), o.content = OZ(a) ? $_(a) : $_(65533), o.markup = i[0], o.info = "entity"), e.pos += i[0].length, !0;
-  } else if (i = e.src.slice(s).match(AZ), i && vZ(z_, i[1]))
+var vZ = function(e, n) {
+  var r, a, i, o, c = e.pos;
+  return !e.md.options.html || (i = e.posMax, e.src.charCodeAt(c) !== 60 || c + 2 >= i) || (r = e.src.charCodeAt(c + 1), r !== 33 && r !== 63 && r !== 47 && !NZ(r)) || (a = e.src.slice(c).match(hZ), !a) ? !1 : (n || (o = e.push("html_inline", "", 0), o.content = a[0], RZ(o.content) && e.linkLevel++, CZ(o.content) && e.linkLevel--), e.pos += a[0].length, !0);
+}, z_ = hd, OZ = Q.has, yZ = Q.isValidEntityCode, $_ = Q.fromCodePoint, AZ = /^&#((?:x[a-f0-9]{1,6}|[0-9]{1,7}));/i, IZ = /^&([a-z][a-z0-9]{1,31});/i, DZ = function(e, n) {
+  var r, a, i, o, c = e.pos, s = e.posMax;
+  if (e.src.charCodeAt(c) !== 38 || c + 1 >= s) return !1;
+  if (r = e.src.charCodeAt(c + 1), r === 35) {
+    if (i = e.src.slice(c).match(AZ), i)
+      return n || (a = i[1][0].toLowerCase() === "x" ? parseInt(i[1].slice(1), 16) : parseInt(i[1], 10), o = e.push("text_special", "", 0), o.content = yZ(a) ? $_(a) : $_(65533), o.markup = i[0], o.info = "entity"), e.pos += i[0].length, !0;
+  } else if (i = e.src.slice(c).match(IZ), i && OZ(z_, i[1]))
     return n || (o = e.push("text_special", "", 0), o.content = z_[i[1]], o.markup = i[0], o.info = "entity"), e.pos += i[0].length, !0;
   return !1;
 };
 function W_(t) {
-  var e, n, r, a, i, o, s, c, l = {}, _ = t.length;
+  var e, n, r, a, i, o, c, s, l = {}, _ = t.length;
   if (_) {
     var p = 0, d = -2, u = [];
     for (e = 0; e < _; e++)
       if (r = t[e], u.push(0), (t[p].marker !== r.marker || d !== r.token - 1) && (p = e), d = r.token, r.length = r.length || 0, !!r.close) {
         for (l.hasOwnProperty(r.marker) || (l[r.marker] = [-1, -1, -1, -1, -1, -1]), i = l[r.marker][(r.open ? 3 : 0) + r.length % 3], n = p - u[p] - 1, o = n; n > i; n -= u[n] + 1)
-          if (a = t[n], a.marker === r.marker && a.open && a.end < 0 && (s = !1, (a.close || r.open) && (a.length + r.length) % 3 === 0 && (a.length % 3 !== 0 || r.length % 3 !== 0) && (s = !0), !s)) {
-            c = n > 0 && !t[n - 1].open ? u[n - 1] + 1 : 0, u[e] = e - n + c, u[n] = c, r.open = !1, a.end = e, a.close = !1, o = -1, d = -2;
+          if (a = t[n], a.marker === r.marker && a.open && a.end < 0 && (c = !1, (a.close || r.open) && (a.length + r.length) % 3 === 0 && (a.length % 3 !== 0 || r.length % 3 !== 0) && (c = !0), !c)) {
+            s = n > 0 && !t[n - 1].open ? u[n - 1] + 1 : 0, u[e] = e - n + s, u[n] = s, r.open = !1, a.end = e, a.close = !1, o = -1, d = -2;
             break;
           }
         o !== -1 && (l[r.marker][(r.open ? 3 : 0) + (r.length || 0) % 3] = o);
       }
   }
 }
-var DZ = function(e) {
+var wZ = function(e) {
   var n, r = e.tokens_meta, a = e.tokens_meta.length;
   for (W_(e.delimiters), n = 0; n < a; n++)
     r[n] && r[n].delimiters && W_(r[n].delimiters);
-}, wZ = function(e) {
+}, MZ = function(e) {
   var n, r, a = 0, i = e.tokens, o = e.tokens.length;
   for (n = r = 0; n < o; n++)
     i[n].nesting < 0 && a--, i[n].level = a, i[n].nesting > 0 && a++, i[n].type === "text" && n + 1 < o && i[n + 1].type === "text" ? i[n + 1].content = i[n].content + i[n + 1].content : (n !== r && (i[r] = i[n]), r++);
@@ -36719,36 +36719,36 @@ ht.prototype.push = function(t, e, n) {
   return n < 0 && (this.level--, this.delimiters = this._prev_delimiters.pop()), r.level = this.level, n > 0 && (this.level++, this._prev_delimiters.push(this.delimiters), this.delimiters = [], a = { delimiters: this.delimiters }), this.pendingLevel = this.level, this.tokens.push(r), this.tokens_meta.push(a), r;
 };
 ht.prototype.scanDelims = function(t, e) {
-  var n = t, r, a, i, o, s, c, l, _, p, d = !0, u = !0, E = this.posMax, S = this.src.charCodeAt(t);
+  var n = t, r, a, i, o, c, s, l, _, p, d = !0, u = !0, E = this.posMax, S = this.src.charCodeAt(t);
   for (r = t > 0 ? this.src.charCodeAt(t - 1) : 32; n < E && this.src.charCodeAt(n) === S; )
     n++;
-  return i = n - t, a = n < E ? this.src.charCodeAt(n) : 32, l = X_(r) || Q_(String.fromCharCode(r)), p = X_(a) || Q_(String.fromCharCode(a)), c = K_(r), _ = K_(a), _ ? d = !1 : p && (c || l || (d = !1)), c ? u = !1 : l && (_ || p || (u = !1)), e ? (o = d, s = u) : (o = d && (!u || l), s = u && (!d || p)), {
+  return i = n - t, a = n < E ? this.src.charCodeAt(n) : 32, l = X_(r) || Q_(String.fromCharCode(r)), p = X_(a) || Q_(String.fromCharCode(a)), s = K_(r), _ = K_(a), _ ? d = !1 : p && (s || l || (d = !1)), s ? u = !1 : l && (_ || p || (u = !1)), e ? (o = d, c = u) : (o = d && (!u || l), c = u && (!d || p)), {
     can_open: o,
-    can_close: s,
+    can_close: c,
     length: i
   };
 };
 ht.prototype.Token = fi;
-var MZ = ht, Z_ = mi, zo = [
-  ["text", oZ],
-  ["linkify", sZ],
-  ["newline", lZ],
-  ["escape", dZ],
-  ["backticks", uZ],
+var xZ = ht, Z_ = mi, zo = [
+  ["text", iZ],
+  ["linkify", cZ],
+  ["newline", _Z],
+  ["escape", uZ],
+  ["backticks", pZ],
   ["strikethrough", Xt.tokenize],
   ["emphasis", Zt.tokenize],
-  ["link", mZ],
-  ["image", EZ],
-  ["autolink", bZ],
-  ["html_inline", NZ],
-  ["entity", IZ]
+  ["link", gZ],
+  ["image", SZ],
+  ["autolink", TZ],
+  ["html_inline", vZ],
+  ["entity", DZ]
 ], $o = [
-  ["balance_pairs", DZ],
+  ["balance_pairs", wZ],
   ["strikethrough", Xt.postProcess],
   ["emphasis", Zt.postProcess],
   // rules for pairs separate '**' into its own text tokens, which may be left unused,
   // rule below merges unused segments back with the rest of the text
-  ["fragments_join", wZ]
+  ["fragments_join", MZ]
 ];
 function Rt() {
   var t;
@@ -36758,9 +36758,9 @@ function Rt() {
     this.ruler2.push($o[t][0], $o[t][1]);
 }
 Rt.prototype.skipToken = function(t) {
-  var e, n, r = t.pos, a = this.ruler.getRules(""), i = a.length, o = t.md.options.maxNesting, s = t.cache;
-  if (typeof s[r] < "u") {
-    t.pos = s[r];
+  var e, n, r = t.pos, a = this.ruler.getRules(""), i = a.length, o = t.md.options.maxNesting, c = t.cache;
+  if (typeof c[r] < "u") {
+    t.pos = c[r];
     return;
   }
   if (t.level < o) {
@@ -36772,11 +36772,11 @@ Rt.prototype.skipToken = function(t) {
       }
   } else
     t.pos = t.posMax;
-  e || t.pos++, s[r] = t.pos;
+  e || t.pos++, c[r] = t.pos;
 };
 Rt.prototype.tokenize = function(t) {
-  for (var e, n, r, a = this.ruler.getRules(""), i = a.length, o = t.posMax, s = t.md.options.maxNesting; t.pos < o; ) {
-    if (r = t.pos, t.level < s) {
+  for (var e, n, r, a = this.ruler.getRules(""), i = a.length, o = t.posMax, c = t.md.options.maxNesting; t.pos < o; ) {
+    if (r = t.pos, t.level < c) {
       for (n = 0; n < i; n++)
         if (e = a[n](t, !1), e) {
           if (r >= t.pos)
@@ -36794,13 +36794,13 @@ Rt.prototype.tokenize = function(t) {
   t.pending && t.pushPending();
 };
 Rt.prototype.parse = function(t, e, n, r) {
-  var a, i, o, s = new this.State(t, e, n, r);
-  for (this.tokenize(s), i = this.ruler2.getRules(""), o = i.length, a = 0; a < o; a++)
-    i[a](s);
+  var a, i, o, c = new this.State(t, e, n, r);
+  for (this.tokenize(c), i = this.ruler2.getRules(""), o = i.length, a = 0; a < o; a++)
+    i[a](c);
 };
-Rt.prototype.State = MZ;
-var xZ = Rt, Wo, J_;
-function LZ() {
+Rt.prototype.State = xZ;
+var LZ = Rt, Wo, J_;
+function kZ() {
   return J_ || (J_ = 1, Wo = function(t) {
     var e = {};
     t = t || {}, e.src_Any = Rd().source, e.src_Cc = Cd().source, e.src_Z = Nd().source, e.src_P = pi.source, e.src_ZPCc = [e.src_Z, e.src_P, e.src_Cc].join("|"), e.src_ZCc = [e.src_Z, e.src_Cc].join("|");
@@ -36824,19 +36824,19 @@ function ti(t) {
 function Jt(t) {
   return Object.prototype.toString.call(t);
 }
-function kZ(t) {
+function PZ(t) {
   return Jt(t) === "[object String]";
 }
-function PZ(t) {
+function UZ(t) {
   return Jt(t) === "[object Object]";
 }
-function UZ(t) {
+function FZ(t) {
   return Jt(t) === "[object RegExp]";
 }
 function j_(t) {
   return Jt(t) === "[object Function]";
 }
-function FZ(t) {
+function BZ(t) {
   return t.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
 }
 var wd = {
@@ -36844,12 +36844,12 @@ var wd = {
   fuzzyEmail: !0,
   fuzzyIP: !1
 };
-function BZ(t) {
+function GZ(t) {
   return Object.keys(t || {}).reduce(function(e, n) {
     return e || wd.hasOwnProperty(n);
   }, !1);
 }
-var GZ = {
+var qZ = {
   "http:": {
     validate: function(t, e, n) {
       var r = t.slice(e);
@@ -36881,11 +36881,11 @@ var GZ = {
       )), n.re.mailto.test(r) ? r.match(n.re.mailto)[0].length : 0;
     }
   }
-}, qZ = "a[cdefgilmnoqrstuwxz]|b[abdefghijmnorstvwyz]|c[acdfghiklmnoruvwxyz]|d[ejkmoz]|e[cegrstu]|f[ijkmor]|g[abdefghilmnpqrstuwy]|h[kmnrtu]|i[delmnoqrst]|j[emop]|k[eghimnprwyz]|l[abcikrstuvy]|m[acdeghklmnopqrstuvwxyz]|n[acefgilopruz]|om|p[aefghklmnrstwy]|qa|r[eosuw]|s[abcdeghijklmnortuvxyz]|t[cdfghjklmnortvwz]|u[agksyz]|v[aceginu]|w[fs]|y[et]|z[amw]", YZ = "biz|com|edu|gov|net|org|pro|web|xxx|aero|asia|coop|info|museum|name|shop|рф".split("|");
-function HZ(t) {
+}, YZ = "a[cdefgilmnoqrstuwxz]|b[abdefghijmnorstvwyz]|c[acdfghiklmnoruvwxyz]|d[ejkmoz]|e[cegrstu]|f[ijkmor]|g[abdefghilmnpqrstuwy]|h[kmnrtu]|i[delmnoqrst]|j[emop]|k[eghimnprwyz]|l[abcikrstuvy]|m[acdeghklmnopqrstuvwxyz]|n[acefgilopruz]|om|p[aefghklmnrstwy]|qa|r[eosuw]|s[abcdeghijklmnortuvxyz]|t[cdfghjklmnortvwz]|u[agksyz]|v[aceginu]|w[fs]|y[et]|z[amw]", HZ = "biz|com|edu|gov|net|org|pro|web|xxx|aero|asia|coop|info|museum|name|shop|рф".split("|");
+function VZ(t) {
   t.__index__ = -1, t.__text_cache__ = "";
 }
-function VZ(t) {
+function zZ(t) {
   return function(e, n) {
     var r = e.slice(n);
     return t.test(r) ? r.match(t)[0].length : 0;
@@ -36897,54 +36897,54 @@ function ed() {
   };
 }
 function Ft(t) {
-  var e = t.re = LZ()(t.__opts__), n = t.__tlds__.slice();
-  t.onCompile(), t.__tlds_replaced__ || n.push(qZ), n.push(e.src_xn), e.src_tlds = n.join("|");
-  function r(s) {
-    return s.replace("%TLDS%", e.src_tlds);
+  var e = t.re = kZ()(t.__opts__), n = t.__tlds__.slice();
+  t.onCompile(), t.__tlds_replaced__ || n.push(YZ), n.push(e.src_xn), e.src_tlds = n.join("|");
+  function r(c) {
+    return c.replace("%TLDS%", e.src_tlds);
   }
   e.email_fuzzy = RegExp(r(e.tpl_email_fuzzy), "i"), e.link_fuzzy = RegExp(r(e.tpl_link_fuzzy), "i"), e.link_no_ip_fuzzy = RegExp(r(e.tpl_link_no_ip_fuzzy), "i"), e.host_fuzzy_test = RegExp(r(e.tpl_host_fuzzy_test), "i");
   var a = [];
   t.__compiled__ = {};
-  function i(s, c) {
-    throw new Error('(LinkifyIt) Invalid schema "' + s + '": ' + c);
+  function i(c, s) {
+    throw new Error('(LinkifyIt) Invalid schema "' + c + '": ' + s);
   }
-  Object.keys(t.__schemas__).forEach(function(s) {
-    var c = t.__schemas__[s];
-    if (c !== null) {
+  Object.keys(t.__schemas__).forEach(function(c) {
+    var s = t.__schemas__[c];
+    if (s !== null) {
       var l = { validate: null, link: null };
-      if (t.__compiled__[s] = l, PZ(c)) {
-        UZ(c.validate) ? l.validate = VZ(c.validate) : j_(c.validate) ? l.validate = c.validate : i(s, c), j_(c.normalize) ? l.normalize = c.normalize : c.normalize ? i(s, c) : l.normalize = ed();
+      if (t.__compiled__[c] = l, UZ(s)) {
+        FZ(s.validate) ? l.validate = zZ(s.validate) : j_(s.validate) ? l.validate = s.validate : i(c, s), j_(s.normalize) ? l.normalize = s.normalize : s.normalize ? i(c, s) : l.normalize = ed();
         return;
       }
-      if (kZ(c)) {
-        a.push(s);
+      if (PZ(s)) {
+        a.push(c);
         return;
       }
-      i(s, c);
+      i(c, s);
     }
-  }), a.forEach(function(s) {
-    t.__compiled__[t.__schemas__[s]] && (t.__compiled__[s].validate = t.__compiled__[t.__schemas__[s]].validate, t.__compiled__[s].normalize = t.__compiled__[t.__schemas__[s]].normalize);
+  }), a.forEach(function(c) {
+    t.__compiled__[t.__schemas__[c]] && (t.__compiled__[c].validate = t.__compiled__[t.__schemas__[c]].validate, t.__compiled__[c].normalize = t.__compiled__[t.__schemas__[c]].normalize);
   }), t.__compiled__[""] = { validate: null, normalize: ed() };
-  var o = Object.keys(t.__compiled__).filter(function(s) {
-    return s.length > 0 && t.__compiled__[s];
-  }).map(FZ).join("|");
+  var o = Object.keys(t.__compiled__).filter(function(c) {
+    return c.length > 0 && t.__compiled__[c];
+  }).map(BZ).join("|");
   t.re.schema_test = RegExp("(^|(?!_)(?:[><｜]|" + e.src_ZPCc + "))(" + o + ")", "i"), t.re.schema_search = RegExp("(^|(?!_)(?:[><｜]|" + e.src_ZPCc + "))(" + o + ")", "ig"), t.re.schema_at_start = RegExp("^" + t.re.schema_search.source, "i"), t.re.pretest = RegExp(
     "(" + t.re.schema_test.source + ")|(" + t.re.host_fuzzy_test.source + ")|@",
     "i"
-  ), HZ(t);
+  ), VZ(t);
 }
-function zZ(t, e) {
+function $Z(t, e) {
   var n = t.__index__, r = t.__last_index__, a = t.__text_cache__.slice(n, r);
   this.schema = t.__schema__.toLowerCase(), this.index = n + e, this.lastIndex = r + e, this.raw = a, this.text = a, this.url = a;
 }
 function ni(t, e) {
-  var n = new zZ(t, e);
+  var n = new $Z(t, e);
   return t.__compiled__[n.schema].normalize(n, t), n;
 }
 function Te(t, e) {
   if (!(this instanceof Te))
     return new Te(t, e);
-  e || BZ(t) && (e = t, t = {}), this.__opts__ = ti({}, wd, e), this.__index__ = -1, this.__last_index__ = -1, this.__schema__ = "", this.__text_cache__ = "", this.__schemas__ = ti({}, GZ, t), this.__compiled__ = {}, this.__tlds__ = YZ, this.__tlds_replaced__ = !1, this.re = {}, Ft(this);
+  e || GZ(t) && (e = t, t = {}), this.__opts__ = ti({}, wd, e), this.__index__ = -1, this.__last_index__ = -1, this.__schema__ = "", this.__text_cache__ = "", this.__schemas__ = ti({}, qZ, t), this.__compiled__ = {}, this.__tlds__ = HZ, this.__tlds_replaced__ = !1, this.re = {}, Ft(this);
 }
 Te.prototype.add = function(e, n) {
   return this.__schemas__[e] = n, Ft(this), this;
@@ -36955,15 +36955,15 @@ Te.prototype.set = function(e) {
 Te.prototype.test = function(e) {
   if (this.__text_cache__ = e, this.__index__ = -1, !e.length)
     return !1;
-  var n, r, a, i, o, s, c, l, _;
+  var n, r, a, i, o, c, s, l, _;
   if (this.re.schema_test.test(e)) {
-    for (c = this.re.schema_search, c.lastIndex = 0; (n = c.exec(e)) !== null; )
-      if (i = this.testSchemaAt(e, n[2], c.lastIndex), i) {
+    for (s = this.re.schema_search, s.lastIndex = 0; (n = s.exec(e)) !== null; )
+      if (i = this.testSchemaAt(e, n[2], s.lastIndex), i) {
         this.__schema__ = n[2], this.__index__ = n.index + n[1].length, this.__last_index__ = n.index + n[0].length + i;
         break;
       }
   }
-  return this.__opts__.fuzzyLink && this.__compiled__["http:"] && (l = e.search(this.re.host_fuzzy_test), l >= 0 && (this.__index__ < 0 || l < this.__index__) && (r = e.match(this.__opts__.fuzzyIP ? this.re.link_fuzzy : this.re.link_no_ip_fuzzy)) !== null && (o = r.index + r[1].length, (this.__index__ < 0 || o < this.__index__) && (this.__schema__ = "", this.__index__ = o, this.__last_index__ = r.index + r[0].length))), this.__opts__.fuzzyEmail && this.__compiled__["mailto:"] && (_ = e.indexOf("@"), _ >= 0 && (a = e.match(this.re.email_fuzzy)) !== null && (o = a.index + a[1].length, s = a.index + a[0].length, (this.__index__ < 0 || o < this.__index__ || o === this.__index__ && s > this.__last_index__) && (this.__schema__ = "mailto:", this.__index__ = o, this.__last_index__ = s))), this.__index__ >= 0;
+  return this.__opts__.fuzzyLink && this.__compiled__["http:"] && (l = e.search(this.re.host_fuzzy_test), l >= 0 && (this.__index__ < 0 || l < this.__index__) && (r = e.match(this.__opts__.fuzzyIP ? this.re.link_fuzzy : this.re.link_no_ip_fuzzy)) !== null && (o = r.index + r[1].length, (this.__index__ < 0 || o < this.__index__) && (this.__schema__ = "", this.__index__ = o, this.__last_index__ = r.index + r[0].length))), this.__opts__.fuzzyEmail && this.__compiled__["mailto:"] && (_ = e.indexOf("@"), _ >= 0 && (a = e.match(this.re.email_fuzzy)) !== null && (o = a.index + a[1].length, c = a.index + a[0].length, (this.__index__ < 0 || o < this.__index__ || o === this.__index__ && c > this.__last_index__) && (this.__schema__ = "mailto:", this.__index__ = o, this.__last_index__ = c))), this.__index__ >= 0;
 };
 Te.prototype.pretest = function(e) {
   return this.re.pretest.test(e);
@@ -36995,7 +36995,7 @@ Te.prototype.normalize = function(e) {
 };
 Te.prototype.onCompile = function() {
 };
-var $Z = Te, WZ = {
+var WZ = Te, KZ = {
   options: {
     html: !1,
     // Enable HTML tags in source
@@ -37031,7 +37031,7 @@ var $Z = Te, WZ = {
     block: {},
     inline: {}
   }
-}, KZ = {
+}, QZ = {
   options: {
     html: !1,
     // Enable HTML tags in source
@@ -37086,7 +37086,7 @@ var $Z = Te, WZ = {
       ]
     }
   }
-}, QZ = {
+}, XZ = {
   options: {
     html: !0,
     // Enable HTML tags in source
@@ -37160,17 +37160,17 @@ var $Z = Te, WZ = {
       ]
     }
   }
-}, pt = Q, XZ = $t, ZZ = e5, JZ = N5, jZ = rZ, e6 = xZ, t6 = $Z, $e = it, Md = Du, n6 = {
-  default: WZ,
-  zero: KZ,
-  commonmark: QZ
-}, r6 = /^(vbscript|javascript|file|data):/, a6 = /^data:image\/(gif|png|jpeg|webp);/;
-function o6(t) {
+}, mt = Q, ZZ = $t, JZ = t5, jZ = v5, e6 = aZ, t6 = LZ, n6 = WZ, $e = st, Md = wu, r6 = {
+  default: KZ,
+  zero: QZ,
+  commonmark: XZ
+}, a6 = /^(vbscript|javascript|file|data):/, o6 = /^data:image\/(gif|png|jpeg|webp);/;
+function i6(t) {
   var e = t.trim().toLowerCase();
-  return r6.test(e) ? !!a6.test(e) : !0;
+  return a6.test(e) ? !!o6.test(e) : !0;
 }
 var xd = ["http:", "https:", "mailto:"];
-function i6(t) {
+function s6(t) {
   var e = $e.parse(t, !0);
   if (e.hostname && (!e.protocol || xd.indexOf(e.protocol) >= 0))
     try {
@@ -37179,7 +37179,7 @@ function i6(t) {
     }
   return $e.encode($e.format(e));
 }
-function s6(t) {
+function c6(t) {
   var e = $e.parse(t, !0);
   if (e.hostname && (!e.protocol || xd.indexOf(e.protocol) >= 0))
     try {
@@ -37191,14 +37191,14 @@ function s6(t) {
 function Ne(t, e) {
   if (!(this instanceof Ne))
     return new Ne(t, e);
-  e || pt.isString(t) || (e = t || {}, t = "default"), this.inline = new e6(), this.block = new jZ(), this.core = new JZ(), this.renderer = new ZZ(), this.linkify = new t6(), this.validateLink = o6, this.normalizeLink = i6, this.normalizeLinkText = s6, this.utils = pt, this.helpers = pt.assign({}, XZ), this.options = {}, this.configure(t), e && this.set(e);
+  e || mt.isString(t) || (e = t || {}, t = "default"), this.inline = new t6(), this.block = new e6(), this.core = new jZ(), this.renderer = new JZ(), this.linkify = new n6(), this.validateLink = i6, this.normalizeLink = s6, this.normalizeLinkText = c6, this.utils = mt, this.helpers = mt.assign({}, ZZ), this.options = {}, this.configure(t), e && this.set(e);
 }
 Ne.prototype.set = function(t) {
-  return pt.assign(this.options, t), this;
+  return mt.assign(this.options, t), this;
 };
 Ne.prototype.configure = function(t) {
   var e = this, n;
-  if (pt.isString(t) && (n = t, t = n6[n], !t))
+  if (mt.isString(t) && (n = t, t = r6[n], !t))
     throw new Error('Wrong `markdown-it` preset "' + n + '", check name');
   if (!t)
     throw new Error("Wrong `markdown-it` preset, can't be empty");
@@ -37250,11 +37250,11 @@ Ne.prototype.parseInline = function(t, e) {
 Ne.prototype.renderInline = function(t, e) {
   return e = e || {}, this.renderer.render(this.parseInline(t, e), this.options, e);
 };
-var c6 = Ne, l6 = c6;
-const _6 = /* @__PURE__ */ ye(l6);
-var d6 = function(e) {
+var l6 = Ne, _6 = l6;
+const d6 = /* @__PURE__ */ ye(_6);
+var u6 = function(e) {
   var n = e.utils.escapeRE, r = e.utils.arrayReplaceAt, a = " \r\n$+<=>^`|~", i = e.utils.lib.ucmicro.P.source, o = e.utils.lib.ucmicro.Z.source;
-  function s(l, _, p, d) {
+  function c(l, _, p, d) {
     var u, E, S, g, f, b = l.bMarks[_] + l.tShift[_], h = l.eMarks[_];
     if (b + 2 >= h || l.src.charCodeAt(b++) !== 42 || l.src.charCodeAt(b++) !== 91)
       return !1;
@@ -37268,7 +37268,7 @@ var d6 = function(e) {
     }
     return f < 0 || l.src.charCodeAt(f + 1) !== 58 ? !1 : d ? !0 : (u = l.src.slice(g, f).replace(/\\(.)/g, "$1"), E = l.src.slice(f + 2, h).trim(), u.length === 0 || E.length === 0 ? !1 : (l.env.abbreviations || (l.env.abbreviations = {}), typeof l.env.abbreviations[":" + u] > "u" && (l.env.abbreviations[":" + u] = E), l.line = _ + 1, !0));
   }
-  function c(l) {
+  function s(l) {
     var _, p, d, u, E, S, g, f, b, h, N, v, R, C = l.tokens;
     if (l.env.abbreviations) {
       for (v = new RegExp("(?:" + Object.keys(l.env.abbreviations).map(function(w) {
@@ -37290,10 +37290,10 @@ var d6 = function(e) {
         }
     }
   }
-  e.block.ruler.before("reference", "abbr_def", s, { alt: ["paragraph", "reference"] }), e.core.ruler.after("linkify", "abbr_replace", c);
+  e.block.ruler.before("reference", "abbr_def", c, { alt: ["paragraph", "reference"] }), e.core.ruler.after("linkify", "abbr_replace", s);
 };
-const u6 = /* @__PURE__ */ ye(d6);
-var p6 = function(e, n, r) {
+const p6 = /* @__PURE__ */ ye(u6);
+var m6 = function(e, n, r) {
   function a(u) {
     return u.trim().split(" ", 2)[0] === n;
   }
@@ -37301,20 +37301,20 @@ var p6 = function(e, n, r) {
     return u[E].nesting === 1 && u[E].attrJoin("class", n), f.renderToken(u, E, S, g, f);
   }
   r = r || {};
-  var o = 3, s = r.marker || ":", c = s.charCodeAt(0), l = s.length, _ = r.validate || a, p = r.render || i;
+  var o = 3, c = r.marker || ":", s = c.charCodeAt(0), l = c.length, _ = r.validate || a, p = r.render || i;
   function d(u, E, S, g) {
     var f, b, h, N, v, R, C, w, L = !1, y = u.bMarks[E] + u.tShift[E], G = u.eMarks[E];
-    if (c !== u.src.charCodeAt(y))
+    if (s !== u.src.charCodeAt(y))
       return !1;
-    for (f = y + 1; f <= G && s[(f - y) % l] === u.src[f]; f++)
+    for (f = y + 1; f <= G && c[(f - y) % l] === u.src[f]; f++)
       ;
     if (h = Math.floor((f - y) / l), h < o || (f -= (f - y) % l, N = u.src.slice(y, f), v = u.src.slice(f, G), !_(v, N)))
       return !1;
     if (g)
       return !0;
     for (b = E; b++, !(b >= S || (y = u.bMarks[b] + u.tShift[b], G = u.eMarks[b], y < G && u.sCount[b] < u.blkIndent)); )
-      if (c === u.src.charCodeAt(y) && !(u.sCount[b] - u.blkIndent >= 4)) {
-        for (f = y + 1; f <= G && s[(f - y) % l] === u.src[f]; f++)
+      if (s === u.src.charCodeAt(y) && !(u.sCount[b] - u.blkIndent >= 4)) {
+        for (f = y + 1; f <= G && c[(f - y) % l] === u.src[f]; f++)
           ;
         if (!(Math.floor((f - y) / l) < h) && (f -= (f - y) % l, f = u.skipSpaces(f), !(f < G))) {
           L = !0;
@@ -37327,25 +37327,25 @@ var p6 = function(e, n, r) {
     alt: ["paragraph", "reference", "blockquote", "list"]
   }), e.renderer.rules["container_" + n + "_open"] = p, e.renderer.rules["container_" + n + "_close"] = p;
 };
-const td = /* @__PURE__ */ ye(p6);
-var m6 = function(e) {
+const td = /* @__PURE__ */ ye(m6);
+var g6 = function(e) {
   var n = e.utils.isSpace;
-  function r(o, s) {
-    var c, l, _ = o.bMarks[s] + o.tShift[s], p = o.eMarks[s];
-    return _ >= p || (l = o.src.charCodeAt(_++), l !== 126 && l !== 58) || (c = o.skipSpaces(_), _ === c) || c >= p ? -1 : _;
+  function r(o, c) {
+    var s, l, _ = o.bMarks[c] + o.tShift[c], p = o.eMarks[c];
+    return _ >= p || (l = o.src.charCodeAt(_++), l !== 126 && l !== 58) || (s = o.skipSpaces(_), _ === s) || s >= p ? -1 : _;
   }
-  function a(o, s) {
-    var c, l, _ = o.level + 2;
-    for (c = s + 2, l = o.tokens.length - 2; c < l; c++)
-      o.tokens[c].level === _ && o.tokens[c].type === "paragraph_open" && (o.tokens[c + 2].hidden = !0, o.tokens[c].hidden = !0, c += 2);
+  function a(o, c) {
+    var s, l, _ = o.level + 2;
+    for (s = c + 2, l = o.tokens.length - 2; s < l; s++)
+      o.tokens[s].level === _ && o.tokens[s].type === "paragraph_open" && (o.tokens[s + 2].hidden = !0, o.tokens[s].hidden = !0, s += 2);
   }
-  function i(o, s, c, l) {
+  function i(o, c, s, l) {
     var _, p, d, u, E, S, g, f, b, h, N, v, R, C, w, L, y, G, P, q;
     if (l)
-      return o.ddIndent < 0 ? !1 : r(o, s) >= 0;
-    if (b = s + 1, b >= c || o.isEmpty(b) && (b++, b >= c) || o.sCount[b] < o.blkIndent || (p = r(o, b), p < 0))
+      return o.ddIndent < 0 ? !1 : r(o, c) >= 0;
+    if (b = c + 1, b >= s || o.isEmpty(b) && (b++, b >= s) || o.sCount[b] < o.blkIndent || (p = r(o, b), p < 0))
       return !1;
-    g = o.tokens.length, P = !0, q = o.push("dl_open", "dl", 1), q.map = S = [s, 0], u = s, d = b;
+    g = o.tokens.length, P = !0, q = o.push("dl_open", "dl", 1), q.map = S = [c, 0], u = c, d = b;
     e:
       for (; ; ) {
         for (G = !1, q = o.push("dt_open", "dt", 1), q.map = [u, u], q = o.push("inline", "", 0), q.map = [u, u], q.content = o.getLines(u, u + 1, o.blkIndent, !1).trim(), q.children = [], q = o.push("dt_close", "dt", -1); ; ) {
@@ -37353,1860 +37353,1860 @@ var m6 = function(e) {
             _ === 9 ? h += 4 - h % 4 : h++;
             y++;
           }
-          if (p = y, L = o.tight, N = o.ddIndent, v = o.blkIndent, w = o.tShift[d], C = o.sCount[d], R = o.parentType, o.blkIndent = o.ddIndent = o.sCount[d] + 2, o.tShift[d] = p - o.bMarks[d], o.sCount[d] = h, o.tight = !0, o.parentType = "deflist", o.md.block.tokenize(o, d, c, !0), (!o.tight || G) && (P = !1), G = o.line - d > 1 && o.isEmpty(o.line - 1), o.tShift[d] = w, o.sCount[d] = C, o.tight = L, o.parentType = R, o.blkIndent = v, o.ddIndent = N, q = o.push("dd_close", "dd", -1), E[1] = b = o.line, b >= c || o.sCount[b] < o.blkIndent)
+          if (p = y, L = o.tight, N = o.ddIndent, v = o.blkIndent, w = o.tShift[d], C = o.sCount[d], R = o.parentType, o.blkIndent = o.ddIndent = o.sCount[d] + 2, o.tShift[d] = p - o.bMarks[d], o.sCount[d] = h, o.tight = !0, o.parentType = "deflist", o.md.block.tokenize(o, d, s, !0), (!o.tight || G) && (P = !1), G = o.line - d > 1 && o.isEmpty(o.line - 1), o.tShift[d] = w, o.sCount[d] = C, o.tight = L, o.parentType = R, o.blkIndent = v, o.ddIndent = N, q = o.push("dd_close", "dd", -1), E[1] = b = o.line, b >= s || o.sCount[b] < o.blkIndent)
             break e;
           if (p = r(o, b), p < 0)
             break;
           d = b;
         }
-        if (b >= c || (u = b, o.isEmpty(u)) || o.sCount[u] < o.blkIndent || (d = u + 1, d >= c) || (o.isEmpty(d) && d++, d >= c) || o.sCount[d] < o.blkIndent || (p = r(o, d), p < 0))
+        if (b >= s || (u = b, o.isEmpty(u)) || o.sCount[u] < o.blkIndent || (d = u + 1, d >= s) || (o.isEmpty(d) && d++, d >= s) || o.sCount[d] < o.blkIndent || (p = r(o, d), p < 0))
           break;
       }
     return q = o.push("dl_close", "dl", -1), S[1] = b, o.line = b, P && a(o, g), !0;
   }
   e.block.ruler.before("paragraph", "deflist", i, { alt: ["paragraph", "reference", "blockquote"] });
 };
-const g6 = /* @__PURE__ */ ye(m6), E6 = "😀", S6 = "😃", f6 = "😄", b6 = "😁", T6 = "😆", h6 = "😆", R6 = "😅", C6 = "🤣", N6 = "😂", v6 = "🙂", O6 = "🙃", y6 = "😉", A6 = "😊", I6 = "😇", D6 = "🥰", w6 = "😍", M6 = "🤩", x6 = "😘", L6 = "😗", k6 = "☺️", P6 = "😚", U6 = "😙", F6 = "🥲", B6 = "😋", G6 = "😛", q6 = "😜", Y6 = "🤪", H6 = "😝", V6 = "🤑", z6 = "🤗", $6 = "🤭", W6 = "🤫", K6 = "🤔", Q6 = "🤐", X6 = "🤨", Z6 = "😐", J6 = "😑", j6 = "😶", e8 = "😏", t8 = "😒", n8 = "🙄", r8 = "😬", a8 = "🤥", o8 = "😌", i8 = "😔", s8 = "😪", c8 = "🤤", l8 = "😴", _8 = "😷", d8 = "🤒", u8 = "🤕", p8 = "🤢", m8 = "🤮", g8 = "🤧", E8 = "🥵", S8 = "🥶", f8 = "🥴", b8 = "😵", T8 = "🤯", h8 = "🤠", R8 = "🥳", C8 = "🥸", N8 = "😎", v8 = "🤓", O8 = "🧐", y8 = "😕", A8 = "😟", I8 = "🙁", D8 = "☹️", w8 = "😮", M8 = "😯", x8 = "😲", L8 = "😳", k8 = "🥺", P8 = "😦", U8 = "😧", F8 = "😨", B8 = "😰", G8 = "😥", q8 = "😢", Y8 = "😭", H8 = "😱", V8 = "😖", z8 = "😣", $8 = "😞", W8 = "😓", K8 = "😩", Q8 = "😫", X8 = "🥱", Z8 = "😤", J8 = "😡", j8 = "😡", eJ = "😠", tJ = "🤬", nJ = "😈", rJ = "👿", aJ = "💀", oJ = "☠️", iJ = "💩", sJ = "💩", cJ = "💩", lJ = "🤡", _J = "👹", dJ = "👺", uJ = "👻", pJ = "👽", mJ = "👾", gJ = "🤖", EJ = "😺", SJ = "😸", fJ = "😹", bJ = "😻", TJ = "😼", hJ = "😽", RJ = "🙀", CJ = "😿", NJ = "😾", vJ = "🙈", OJ = "🙉", yJ = "🙊", AJ = "💋", IJ = "💌", DJ = "💘", wJ = "💝", MJ = "💖", xJ = "💗", LJ = "💓", kJ = "💞", PJ = "💕", UJ = "💟", FJ = "❣️", BJ = "💔", GJ = "❤️", qJ = "🧡", YJ = "💛", HJ = "💚", VJ = "💙", zJ = "💜", $J = "🤎", WJ = "🖤", KJ = "🤍", QJ = "💢", XJ = "💥", ZJ = "💥", JJ = "💫", jJ = "💦", e7 = "💨", t7 = "🕳️", n7 = "💣", r7 = "💬", a7 = "👁️‍🗨️", o7 = "🗨️", i7 = "🗯️", s7 = "💭", c7 = "💤", l7 = "👋", _7 = "🤚", d7 = "🖐️", u7 = "✋", p7 = "✋", m7 = "🖖", g7 = "👌", E7 = "🤌", S7 = "🤏", f7 = "✌️", b7 = "🤞", T7 = "🤟", h7 = "🤘", R7 = "🤙", C7 = "👈", N7 = "👉", v7 = "👆", O7 = "🖕", y7 = "🖕", A7 = "👇", I7 = "☝️", D7 = "👍", w7 = "👎", M7 = "✊", x7 = "✊", L7 = "👊", k7 = "👊", P7 = "👊", U7 = "🤛", F7 = "🤜", B7 = "👏", G7 = "🙌", q7 = "👐", Y7 = "🤲", H7 = "🤝", V7 = "🙏", z7 = "✍️", $7 = "💅", W7 = "🤳", K7 = "💪", Q7 = "🦾", X7 = "🦿", Z7 = "🦵", J7 = "🦶", j7 = "👂", ej = "🦻", tj = "👃", nj = "🧠", rj = "🫀", aj = "🫁", oj = "🦷", ij = "🦴", sj = "👀", cj = "👁️", lj = "👅", _j = "👄", dj = "👶", uj = "🧒", pj = "👦", mj = "👧", gj = "🧑", Ej = "👱", Sj = "👨", fj = "🧔", bj = "👨‍🦰", Tj = "👨‍🦱", hj = "👨‍🦳", Rj = "👨‍🦲", Cj = "👩", Nj = "👩‍🦰", vj = "🧑‍🦰", Oj = "👩‍🦱", yj = "🧑‍🦱", Aj = "👩‍🦳", Ij = "🧑‍🦳", Dj = "👩‍🦲", wj = "🧑‍🦲", Mj = "👱‍♀️", xj = "👱‍♀️", Lj = "👱‍♂️", kj = "🧓", Pj = "👴", Uj = "👵", Fj = "🙍", Bj = "🙍‍♂️", Gj = "🙍‍♀️", qj = "🙎", Yj = "🙎‍♂️", Hj = "🙎‍♀️", Vj = "🙅", zj = "🙅‍♂️", $j = "🙅‍♂️", Wj = "🙅‍♀️", Kj = "🙅‍♀️", Qj = "🙆", Xj = "🙆‍♂️", Zj = "🙆‍♀️", Jj = "💁", jj = "💁", eee = "💁‍♂️", tee = "💁‍♂️", nee = "💁‍♀️", ree = "💁‍♀️", aee = "🙋", oee = "🙋‍♂️", iee = "🙋‍♀️", see = "🧏", cee = "🧏‍♂️", lee = "🧏‍♀️", _ee = "🙇", dee = "🙇‍♂️", uee = "🙇‍♀️", pee = "🤦", mee = "🤦‍♂️", gee = "🤦‍♀️", Eee = "🤷", See = "🤷‍♂️", fee = "🤷‍♀️", bee = "🧑‍⚕️", Tee = "👨‍⚕️", hee = "👩‍⚕️", Ree = "🧑‍🎓", Cee = "👨‍🎓", Nee = "👩‍🎓", vee = "🧑‍🏫", Oee = "👨‍🏫", yee = "👩‍🏫", Aee = "🧑‍⚖️", Iee = "👨‍⚖️", Dee = "👩‍⚖️", wee = "🧑‍🌾", Mee = "👨‍🌾", xee = "👩‍🌾", Lee = "🧑‍🍳", kee = "👨‍🍳", Pee = "👩‍🍳", Uee = "🧑‍🔧", Fee = "👨‍🔧", Bee = "👩‍🔧", Gee = "🧑‍🏭", qee = "👨‍🏭", Yee = "👩‍🏭", Hee = "🧑‍💼", Vee = "👨‍💼", zee = "👩‍💼", $ee = "🧑‍🔬", Wee = "👨‍🔬", Kee = "👩‍🔬", Qee = "🧑‍💻", Xee = "👨‍💻", Zee = "👩‍💻", Jee = "🧑‍🎤", jee = "👨‍🎤", ete = "👩‍🎤", tte = "🧑‍🎨", nte = "👨‍🎨", rte = "👩‍🎨", ate = "🧑‍✈️", ote = "👨‍✈️", ite = "👩‍✈️", ste = "🧑‍🚀", cte = "👨‍🚀", lte = "👩‍🚀", _te = "🧑‍🚒", dte = "👨‍🚒", ute = "👩‍🚒", pte = "👮", mte = "👮", gte = "👮‍♂️", Ete = "👮‍♀️", Ste = "🕵️", fte = "🕵️‍♂️", bte = "🕵️‍♀️", Tte = "💂", hte = "💂‍♂️", Rte = "💂‍♀️", Cte = "🥷", Nte = "👷", vte = "👷‍♂️", Ote = "👷‍♀️", yte = "🤴", Ate = "👸", Ite = "👳", Dte = "👳‍♂️", wte = "👳‍♀️", Mte = "👲", xte = "🧕", Lte = "🤵", kte = "🤵‍♂️", Pte = "🤵‍♀️", Ute = "👰", Fte = "👰‍♂️", Bte = "👰‍♀️", Gte = "👰‍♀️", qte = "🤰", Yte = "🤱", Hte = "👩‍🍼", Vte = "👨‍🍼", zte = "🧑‍🍼", $te = "👼", Wte = "🎅", Kte = "🤶", Qte = "🧑‍🎄", Xte = "🦸", Zte = "🦸‍♂️", Jte = "🦸‍♀️", jte = "🦹", ene = "🦹‍♂️", tne = "🦹‍♀️", nne = "🧙", rne = "🧙‍♂️", ane = "🧙‍♀️", one = "🧚", ine = "🧚‍♂️", sne = "🧚‍♀️", cne = "🧛", lne = "🧛‍♂️", _ne = "🧛‍♀️", dne = "🧜", une = "🧜‍♂️", pne = "🧜‍♀️", mne = "🧝", gne = "🧝‍♂️", Ene = "🧝‍♀️", Sne = "🧞", fne = "🧞‍♂️", bne = "🧞‍♀️", Tne = "🧟", hne = "🧟‍♂️", Rne = "🧟‍♀️", Cne = "💆", Nne = "💆‍♂️", vne = "💆‍♀️", One = "💇", yne = "💇‍♂️", Ane = "💇‍♀️", Ine = "🚶", Dne = "🚶‍♂️", wne = "🚶‍♀️", Mne = "🧍", xne = "🧍‍♂️", Lne = "🧍‍♀️", kne = "🧎", Pne = "🧎‍♂️", Une = "🧎‍♀️", Fne = "🧑‍🦯", Bne = "👨‍🦯", Gne = "👩‍🦯", qne = "🧑‍🦼", Yne = "👨‍🦼", Hne = "👩‍🦼", Vne = "🧑‍🦽", zne = "👨‍🦽", $ne = "👩‍🦽", Wne = "🏃", Kne = "🏃", Qne = "🏃‍♂️", Xne = "🏃‍♀️", Zne = "💃", Jne = "💃", jne = "🕺", ere = "🕴️", tre = "👯", nre = "👯‍♂️", rre = "👯‍♀️", are = "🧖", ore = "🧖‍♂️", ire = "🧖‍♀️", sre = "🧗", cre = "🧗‍♂️", lre = "🧗‍♀️", _re = "🤺", dre = "🏇", ure = "⛷️", pre = "🏂", mre = "🏌️", gre = "🏌️‍♂️", Ere = "🏌️‍♀️", Sre = "🏄", fre = "🏄‍♂️", bre = "🏄‍♀️", Tre = "🚣", hre = "🚣‍♂️", Rre = "🚣‍♀️", Cre = "🏊", Nre = "🏊‍♂️", vre = "🏊‍♀️", Ore = "⛹️", yre = "⛹️‍♂️", Are = "⛹️‍♂️", Ire = "⛹️‍♀️", Dre = "⛹️‍♀️", wre = "🏋️", Mre = "🏋️‍♂️", xre = "🏋️‍♀️", Lre = "🚴", kre = "🚴‍♂️", Pre = "🚴‍♀️", Ure = "🚵", Fre = "🚵‍♂️", Bre = "🚵‍♀️", Gre = "🤸", qre = "🤸‍♂️", Yre = "🤸‍♀️", Hre = "🤼", Vre = "🤼‍♂️", zre = "🤼‍♀️", $re = "🤽", Wre = "🤽‍♂️", Kre = "🤽‍♀️", Qre = "🤾", Xre = "🤾‍♂️", Zre = "🤾‍♀️", Jre = "🤹", jre = "🤹‍♂️", eae = "🤹‍♀️", tae = "🧘", nae = "🧘‍♂️", rae = "🧘‍♀️", aae = "🛀", oae = "🛌", iae = "🧑‍🤝‍🧑", sae = "👭", cae = "👫", lae = "👬", _ae = "💏", dae = "👩‍❤️‍💋‍👨", uae = "👨‍❤️‍💋‍👨", pae = "👩‍❤️‍💋‍👩", mae = "💑", gae = "👩‍❤️‍👨", Eae = "👨‍❤️‍👨", Sae = "👩‍❤️‍👩", fae = "👪", bae = "👨‍👩‍👦", Tae = "👨‍👩‍👧", hae = "👨‍👩‍👧‍👦", Rae = "👨‍👩‍👦‍👦", Cae = "👨‍👩‍👧‍👧", Nae = "👨‍👨‍👦", vae = "👨‍👨‍👧", Oae = "👨‍👨‍👧‍👦", yae = "👨‍👨‍👦‍👦", Aae = "👨‍👨‍👧‍👧", Iae = "👩‍👩‍👦", Dae = "👩‍👩‍👧", wae = "👩‍👩‍👧‍👦", Mae = "👩‍👩‍👦‍👦", xae = "👩‍👩‍👧‍👧", Lae = "👨‍👦", kae = "👨‍👦‍👦", Pae = "👨‍👧", Uae = "👨‍👧‍👦", Fae = "👨‍👧‍👧", Bae = "👩‍👦", Gae = "👩‍👦‍👦", qae = "👩‍👧", Yae = "👩‍👧‍👦", Hae = "👩‍👧‍👧", Vae = "🗣️", zae = "👤", $ae = "👥", Wae = "🫂", Kae = "👣", Qae = "🐵", Xae = "🐒", Zae = "🦍", Jae = "🦧", jae = "🐶", eoe = "🐕", toe = "🦮", noe = "🐕‍🦺", roe = "🐩", aoe = "🐺", ooe = "🦊", ioe = "🦝", soe = "🐱", coe = "🐈", loe = "🐈‍⬛", _oe = "🦁", doe = "🐯", uoe = "🐅", poe = "🐆", moe = "🐴", goe = "🐎", Eoe = "🦄", Soe = "🦓", foe = "🦌", boe = "🦬", Toe = "🐮", hoe = "🐂", Roe = "🐃", Coe = "🐄", Noe = "🐷", voe = "🐖", Ooe = "🐗", yoe = "🐽", Aoe = "🐏", Ioe = "🐑", Doe = "🐐", woe = "🐪", Moe = "🐫", xoe = "🦙", Loe = "🦒", koe = "🐘", Poe = "🦣", Uoe = "🦏", Foe = "🦛", Boe = "🐭", Goe = "🐁", qoe = "🐀", Yoe = "🐹", Hoe = "🐰", Voe = "🐇", zoe = "🐿️", $oe = "🦫", Woe = "🦔", Koe = "🦇", Qoe = "🐻", Xoe = "🐻‍❄️", Zoe = "🐨", Joe = "🐼", joe = "🦥", eie = "🦦", tie = "🦨", nie = "🦘", rie = "🦡", aie = "🐾", oie = "🐾", iie = "🦃", sie = "🐔", cie = "🐓", lie = "🐣", _ie = "🐤", die = "🐥", uie = "🐦", pie = "🐧", mie = "🕊️", gie = "🦅", Eie = "🦆", Sie = "🦢", fie = "🦉", bie = "🦤", Tie = "🪶", hie = "🦩", Rie = "🦚", Cie = "🦜", Nie = "🐸", vie = "🐊", Oie = "🐢", yie = "🦎", Aie = "🐍", Iie = "🐲", Die = "🐉", wie = "🦕", Mie = "🐳", xie = "🐋", Lie = "🐬", kie = "🐬", Pie = "🦭", Uie = "🐟", Fie = "🐠", Bie = "🐡", Gie = "🦈", qie = "🐙", Yie = "🐚", Hie = "🐌", Vie = "🦋", zie = "🐛", $ie = "🐜", Wie = "🐝", Kie = "🐝", Qie = "🪲", Xie = "🐞", Zie = "🦗", Jie = "🪳", jie = "🕷️", ese = "🕸️", tse = "🦂", nse = "🦟", rse = "🪰", ase = "🪱", ose = "🦠", ise = "💐", sse = "🌸", cse = "💮", lse = "🏵️", _se = "🌹", dse = "🥀", use = "🌺", pse = "🌻", mse = "🌼", gse = "🌷", Ese = "🌱", Sse = "🪴", fse = "🌲", bse = "🌳", Tse = "🌴", hse = "🌵", Rse = "🌾", Cse = "🌿", Nse = "☘️", vse = "🍀", Ose = "🍁", yse = "🍂", Ase = "🍃", Ise = "🍇", Dse = "🍈", wse = "🍉", Mse = "🍊", xse = "🍊", Lse = "🍊", kse = "🍋", Pse = "🍌", Use = "🍍", Fse = "🥭", Bse = "🍎", Gse = "🍏", qse = "🍐", Yse = "🍑", Hse = "🍒", Vse = "🍓", zse = "🫐", $se = "🥝", Wse = "🍅", Kse = "🫒", Qse = "🥥", Xse = "🥑", Zse = "🍆", Jse = "🥔", jse = "🥕", ece = "🌽", tce = "🌶️", nce = "🫑", rce = "🥒", ace = "🥬", oce = "🥦", ice = "🧄", sce = "🧅", cce = "🍄", lce = "🥜", _ce = "🌰", dce = "🍞", uce = "🥐", pce = "🥖", mce = "🫓", gce = "🥨", Ece = "🥯", Sce = "🥞", fce = "🧇", bce = "🧀", Tce = "🍖", hce = "🍗", Rce = "🥩", Cce = "🥓", Nce = "🍔", vce = "🍟", Oce = "🍕", yce = "🌭", Ace = "🥪", Ice = "🌮", Dce = "🌯", wce = "🫔", Mce = "🥙", xce = "🧆", Lce = "🥚", kce = "🍳", Pce = "🥘", Uce = "🍲", Fce = "🫕", Bce = "🥣", Gce = "🥗", qce = "🍿", Yce = "🧈", Hce = "🧂", Vce = "🥫", zce = "🍱", $ce = "🍘", Wce = "🍙", Kce = "🍚", Qce = "🍛", Xce = "🍜", Zce = "🍝", Jce = "🍠", jce = "🍢", ele = "🍣", tle = "🍤", nle = "🍥", rle = "🥮", ale = "🍡", ole = "🥟", ile = "🥠", sle = "🥡", cle = "🦀", lle = "🦞", _le = "🦐", dle = "🦑", ule = "🦪", ple = "🍦", mle = "🍧", gle = "🍨", Ele = "🍩", Sle = "🍪", fle = "🎂", ble = "🍰", Tle = "🧁", hle = "🥧", Rle = "🍫", Cle = "🍬", Nle = "🍭", vle = "🍮", Ole = "🍯", yle = "🍼", Ale = "🥛", Ile = "☕", Dle = "🫖", wle = "🍵", Mle = "🍶", xle = "🍾", Lle = "🍷", kle = "🍸", Ple = "🍹", Ule = "🍺", Fle = "🍻", Ble = "🥂", Gle = "🥃", qle = "🥤", Yle = "🧋", Hle = "🧃", Vle = "🧉", zle = "🧊", $le = "🥢", Wle = "🍽️", Kle = "🍴", Qle = "🥄", Xle = "🔪", Zle = "🔪", Jle = "🏺", jle = "🌍", e_e = "🌎", t_e = "🌏", n_e = "🌐", r_e = "🗺️", a_e = "🗾", o_e = "🧭", i_e = "🏔️", s_e = "⛰️", c_e = "🌋", l_e = "🗻", __e = "🏕️", d_e = "🏖️", u_e = "🏜️", p_e = "🏝️", m_e = "🏞️", g_e = "🏟️", E_e = "🏛️", S_e = "🏗️", f_e = "🧱", b_e = "🪨", T_e = "🪵", h_e = "🛖", R_e = "🏘️", C_e = "🏚️", N_e = "🏠", v_e = "🏡", O_e = "🏢", y_e = "🏣", A_e = "🏤", I_e = "🏥", D_e = "🏦", w_e = "🏨", M_e = "🏩", x_e = "🏪", L_e = "🏫", k_e = "🏬", P_e = "🏭", U_e = "🏯", F_e = "🏰", B_e = "💒", G_e = "🗼", q_e = "🗽", Y_e = "⛪", H_e = "🕌", V_e = "🛕", z_e = "🕍", $_e = "⛩️", W_e = "🕋", K_e = "⛲", Q_e = "⛺", X_e = "🌁", Z_e = "🌃", J_e = "🏙️", j_e = "🌄", ede = "🌅", tde = "🌆", nde = "🌇", rde = "🌉", ade = "♨️", ode = "🎠", ide = "🎡", sde = "🎢", cde = "💈", lde = "🎪", _de = "🚂", dde = "🚃", ude = "🚄", pde = "🚅", mde = "🚆", gde = "🚇", Ede = "🚈", Sde = "🚉", fde = "🚊", bde = "🚝", Tde = "🚞", hde = "🚋", Rde = "🚌", Cde = "🚍", Nde = "🚎", vde = "🚐", Ode = "🚑", yde = "🚒", Ade = "🚓", Ide = "🚔", Dde = "🚕", wde = "🚖", Mde = "🚗", xde = "🚗", Lde = "🚘", kde = "🚙", Pde = "🛻", Ude = "🚚", Fde = "🚛", Bde = "🚜", Gde = "🏎️", qde = "🏍️", Yde = "🛵", Hde = "🦽", Vde = "🦼", zde = "🛺", $de = "🚲", Wde = "🛴", Kde = "🛹", Qde = "🛼", Xde = "🚏", Zde = "🛣️", Jde = "🛤️", jde = "🛢️", eue = "⛽", tue = "🚨", nue = "🚥", rue = "🚦", aue = "🛑", oue = "🚧", iue = "⚓", sue = "⛵", cue = "⛵", lue = "🛶", _ue = "🚤", due = "🛳️", uue = "⛴️", pue = "🛥️", mue = "🚢", gue = "✈️", Eue = "🛩️", Sue = "🛫", fue = "🛬", bue = "🪂", Tue = "💺", hue = "🚁", Rue = "🚟", Cue = "🚠", Nue = "🚡", vue = "🛰️", Oue = "🚀", yue = "🛸", Aue = "🛎️", Iue = "🧳", Due = "⌛", wue = "⏳", Mue = "⌚", xue = "⏰", Lue = "⏱️", kue = "⏲️", Pue = "🕰️", Uue = "🕛", Fue = "🕧", Bue = "🕐", Gue = "🕜", que = "🕑", Yue = "🕝", Hue = "🕒", Vue = "🕞", zue = "🕓", $ue = "🕟", Wue = "🕔", Kue = "🕠", Que = "🕕", Xue = "🕡", Zue = "🕖", Jue = "🕢", jue = "🕗", epe = "🕣", tpe = "🕘", npe = "🕤", rpe = "🕙", ape = "🕥", ope = "🕚", ipe = "🕦", spe = "🌑", cpe = "🌒", lpe = "🌓", _pe = "🌔", dpe = "🌔", upe = "🌕", ppe = "🌖", mpe = "🌗", gpe = "🌘", Epe = "🌙", Spe = "🌚", fpe = "🌛", bpe = "🌜", Tpe = "🌡️", hpe = "☀️", Rpe = "🌝", Cpe = "🌞", Npe = "🪐", vpe = "⭐", Ope = "🌟", ype = "🌠", Ape = "🌌", Ipe = "☁️", Dpe = "⛅", wpe = "⛈️", Mpe = "🌤️", xpe = "🌥️", Lpe = "🌦️", kpe = "🌧️", Ppe = "🌨️", Upe = "🌩️", Fpe = "🌪️", Bpe = "🌫️", Gpe = "🌬️", qpe = "🌀", Ype = "🌈", Hpe = "🌂", Vpe = "☂️", zpe = "☔", $pe = "⛱️", Wpe = "⚡", Kpe = "❄️", Qpe = "☃️", Xpe = "⛄", Zpe = "☄️", Jpe = "🔥", jpe = "💧", eme = "🌊", tme = "🎃", nme = "🎄", rme = "🎆", ame = "🎇", ome = "🧨", ime = "✨", sme = "🎈", cme = "🎉", lme = "🎊", _me = "🎋", dme = "🎍", ume = "🎎", pme = "🎏", mme = "🎐", gme = "🎑", Eme = "🧧", Sme = "🎀", fme = "🎁", bme = "🎗️", Tme = "🎟️", hme = "🎫", Rme = "🎖️", Cme = "🏆", Nme = "🏅", vme = "⚽", Ome = "⚾", yme = "🥎", Ame = "🏀", Ime = "🏐", Dme = "🏈", wme = "🏉", Mme = "🎾", xme = "🥏", Lme = "🎳", kme = "🏏", Pme = "🏑", Ume = "🏒", Fme = "🥍", Bme = "🏓", Gme = "🏸", qme = "🥊", Yme = "🥋", Hme = "🥅", Vme = "⛳", zme = "⛸️", $me = "🎣", Wme = "🤿", Kme = "🎽", Qme = "🎿", Xme = "🛷", Zme = "🥌", Jme = "🎯", jme = "🪀", ege = "🪁", tge = "🔮", nge = "🪄", rge = "🧿", age = "🎮", oge = "🕹️", ige = "🎰", sge = "🎲", cge = "🧩", lge = "🧸", _ge = "🪅", dge = "🪆", uge = "♠️", pge = "♥️", mge = "♦️", gge = "♣️", Ege = "♟️", Sge = "🃏", fge = "🀄", bge = "🎴", Tge = "🎭", hge = "🖼️", Rge = "🎨", Cge = "🧵", Nge = "🪡", vge = "🧶", Oge = "🪢", yge = "👓", Age = "🕶️", Ige = "🥽", Dge = "🥼", wge = "🦺", Mge = "👔", xge = "👕", Lge = "👕", kge = "👖", Pge = "🧣", Uge = "🧤", Fge = "🧥", Bge = "🧦", Gge = "👗", qge = "👘", Yge = "🥻", Hge = "🩱", Vge = "🩲", zge = "🩳", $ge = "👙", Wge = "👚", Kge = "👛", Qge = "👜", Xge = "👝", Zge = "🛍️", Jge = "🎒", jge = "🩴", eEe = "👞", tEe = "👞", nEe = "👟", rEe = "🥾", aEe = "🥿", oEe = "👠", iEe = "👡", sEe = "🩰", cEe = "👢", lEe = "👑", _Ee = "👒", dEe = "🎩", uEe = "🎓", pEe = "🧢", mEe = "🪖", gEe = "⛑️", EEe = "📿", SEe = "💄", fEe = "💍", bEe = "💎", TEe = "🔇", hEe = "🔈", REe = "🔉", CEe = "🔊", NEe = "📢", vEe = "📣", OEe = "📯", yEe = "🔔", AEe = "🔕", IEe = "🎼", DEe = "🎵", wEe = "🎶", MEe = "🎙️", xEe = "🎚️", LEe = "🎛️", kEe = "🎤", PEe = "🎧", UEe = "📻", FEe = "🎷", BEe = "🪗", GEe = "🎸", qEe = "🎹", YEe = "🎺", HEe = "🎻", VEe = "🪕", zEe = "🥁", $Ee = "🪘", WEe = "📱", KEe = "📲", QEe = "☎️", XEe = "☎️", ZEe = "📞", JEe = "📟", jEe = "📠", eSe = "🔋", tSe = "🔌", nSe = "💻", rSe = "🖥️", aSe = "🖨️", oSe = "⌨️", iSe = "🖱️", sSe = "🖲️", cSe = "💽", lSe = "💾", _Se = "💿", dSe = "📀", uSe = "🧮", pSe = "🎥", mSe = "🎞️", gSe = "📽️", ESe = "🎬", SSe = "📺", fSe = "📷", bSe = "📸", TSe = "📹", hSe = "📼", RSe = "🔍", CSe = "🔎", NSe = "🕯️", vSe = "💡", OSe = "🔦", ySe = "🏮", ASe = "🏮", ISe = "🪔", DSe = "📔", wSe = "📕", MSe = "📖", xSe = "📖", LSe = "📗", kSe = "📘", PSe = "📙", USe = "📚", FSe = "📓", BSe = "📒", GSe = "📃", qSe = "📜", YSe = "📄", HSe = "📰", VSe = "🗞️", zSe = "📑", $Se = "🔖", WSe = "🏷️", KSe = "💰", QSe = "🪙", XSe = "💴", ZSe = "💵", JSe = "💶", jSe = "💷", efe = "💸", tfe = "💳", nfe = "🧾", rfe = "💹", afe = "✉️", ofe = "📧", ife = "📨", sfe = "📩", cfe = "📤", lfe = "📥", _fe = "📫", dfe = "📪", ufe = "📬", pfe = "📭", mfe = "📮", gfe = "🗳️", Efe = "✏️", Sfe = "✒️", ffe = "🖋️", bfe = "🖊️", Tfe = "🖌️", hfe = "🖍️", Rfe = "📝", Cfe = "📝", Nfe = "💼", vfe = "📁", Ofe = "📂", yfe = "🗂️", Afe = "📅", Ife = "📆", Dfe = "🗒️", wfe = "🗓️", Mfe = "📇", xfe = "📈", Lfe = "📉", kfe = "📊", Pfe = "📋", Ufe = "📌", Ffe = "📍", Bfe = "📎", Gfe = "🖇️", qfe = "📏", Yfe = "📐", Hfe = "✂️", Vfe = "🗃️", zfe = "🗄️", $fe = "🗑️", Wfe = "🔒", Kfe = "🔓", Qfe = "🔏", Xfe = "🔐", Zfe = "🔑", Jfe = "🗝️", jfe = "🔨", ebe = "🪓", tbe = "⛏️", nbe = "⚒️", rbe = "🛠️", abe = "🗡️", obe = "⚔️", ibe = "🔫", sbe = "🪃", cbe = "🏹", lbe = "🛡️", _be = "🪚", dbe = "🔧", ube = "🪛", pbe = "🔩", mbe = "⚙️", gbe = "🗜️", Ebe = "⚖️", Sbe = "🦯", fbe = "🔗", bbe = "⛓️", Tbe = "🪝", hbe = "🧰", Rbe = "🧲", Cbe = "🪜", Nbe = "⚗️", vbe = "🧪", Obe = "🧫", ybe = "🧬", Abe = "🔬", Ibe = "🔭", Dbe = "📡", wbe = "💉", Mbe = "🩸", xbe = "💊", Lbe = "🩹", kbe = "🩺", Pbe = "🚪", Ube = "🛗", Fbe = "🪞", Bbe = "🪟", Gbe = "🛏️", qbe = "🛋️", Ybe = "🪑", Hbe = "🚽", Vbe = "🪠", zbe = "🚿", $be = "🛁", Wbe = "🪤", Kbe = "🪒", Qbe = "🧴", Xbe = "🧷", Zbe = "🧹", Jbe = "🧺", jbe = "🧻", eTe = "🪣", tTe = "🧼", nTe = "🪥", rTe = "🧽", aTe = "🧯", oTe = "🛒", iTe = "🚬", sTe = "⚰️", cTe = "🪦", lTe = "⚱️", _Te = "🗿", dTe = "🪧", uTe = "🏧", pTe = "🚮", mTe = "🚰", gTe = "♿", ETe = "🚹", STe = "🚺", fTe = "🚻", bTe = "🚼", TTe = "🚾", hTe = "🛂", RTe = "🛃", CTe = "🛄", NTe = "🛅", vTe = "⚠️", OTe = "🚸", yTe = "⛔", ATe = "🚫", ITe = "🚳", DTe = "🚭", wTe = "🚯", MTe = "🚷", xTe = "📵", LTe = "🔞", kTe = "☢️", PTe = "☣️", UTe = "⬆️", FTe = "↗️", BTe = "➡️", GTe = "↘️", qTe = "⬇️", YTe = "↙️", HTe = "⬅️", VTe = "↖️", zTe = "↕️", $Te = "↔️", WTe = "↩️", KTe = "↪️", QTe = "⤴️", XTe = "⤵️", ZTe = "🔃", JTe = "🔄", jTe = "🔙", ehe = "🔚", the = "🔛", nhe = "🔜", rhe = "🔝", ahe = "🛐", ohe = "⚛️", ihe = "🕉️", she = "✡️", che = "☸️", lhe = "☯️", _he = "✝️", dhe = "☦️", uhe = "☪️", phe = "☮️", mhe = "🕎", ghe = "🔯", Ehe = "♈", She = "♉", fhe = "♊", bhe = "♋", The = "♌", hhe = "♍", Rhe = "♎", Che = "♏", Nhe = "♐", vhe = "♑", Ohe = "♒", yhe = "♓", Ahe = "⛎", Ihe = "🔀", Dhe = "🔁", whe = "🔂", Mhe = "▶️", xhe = "⏩", Lhe = "⏭️", khe = "⏯️", Phe = "◀️", Uhe = "⏪", Fhe = "⏮️", Bhe = "🔼", Ghe = "⏫", qhe = "🔽", Yhe = "⏬", Hhe = "⏸️", Vhe = "⏹️", zhe = "⏺️", $he = "⏏️", Whe = "🎦", Khe = "🔅", Qhe = "🔆", Xhe = "📶", Zhe = "📳", Jhe = "📴", jhe = "♀️", eRe = "♂️", tRe = "⚧️", nRe = "✖️", rRe = "➕", aRe = "➖", oRe = "➗", iRe = "♾️", sRe = "‼️", cRe = "⁉️", lRe = "❓", _Re = "❔", dRe = "❕", uRe = "❗", pRe = "❗", mRe = "〰️", gRe = "💱", ERe = "💲", SRe = "⚕️", fRe = "♻️", bRe = "⚜️", TRe = "🔱", hRe = "📛", RRe = "🔰", CRe = "⭕", NRe = "✅", vRe = "☑️", ORe = "✔️", yRe = "❌", ARe = "❎", IRe = "➰", DRe = "➿", wRe = "〽️", MRe = "✳️", xRe = "✴️", LRe = "❇️", kRe = "©️", PRe = "®️", URe = "™️", FRe = "#️⃣", BRe = "*️⃣", GRe = "0️⃣", qRe = "1️⃣", YRe = "2️⃣", HRe = "3️⃣", VRe = "4️⃣", zRe = "5️⃣", $Re = "6️⃣", WRe = "7️⃣", KRe = "8️⃣", QRe = "9️⃣", XRe = "🔟", ZRe = "🔠", JRe = "🔡", jRe = "🔣", eCe = "🔤", tCe = "🅰️", nCe = "🆎", rCe = "🅱️", aCe = "🆑", oCe = "🆒", iCe = "🆓", sCe = "ℹ️", cCe = "🆔", lCe = "Ⓜ️", _Ce = "🆖", dCe = "🅾️", uCe = "🆗", pCe = "🅿️", mCe = "🆘", gCe = "🆙", ECe = "🆚", SCe = "🈁", fCe = "🈂️", bCe = "🉐", TCe = "🉑", hCe = "㊗️", RCe = "㊙️", CCe = "🈵", NCe = "🔴", vCe = "🟠", OCe = "🟡", yCe = "🟢", ACe = "🔵", ICe = "🟣", DCe = "🟤", wCe = "⚫", MCe = "⚪", xCe = "🟥", LCe = "🟧", kCe = "🟨", PCe = "🟩", UCe = "🟦", FCe = "🟪", BCe = "🟫", GCe = "⬛", qCe = "⬜", YCe = "◼️", HCe = "◻️", VCe = "◾", zCe = "◽", $Ce = "▪️", WCe = "▫️", KCe = "🔶", QCe = "🔷", XCe = "🔸", ZCe = "🔹", JCe = "🔺", jCe = "🔻", eNe = "💠", tNe = "🔘", nNe = "🔳", rNe = "🔲", aNe = "🏁", oNe = "🚩", iNe = "🎌", sNe = "🏴", cNe = "🏳️", lNe = "🏳️‍🌈", _Ne = "🏳️‍⚧️", dNe = "🏴‍☠️", uNe = "🇦🇨", pNe = "🇦🇩", mNe = "🇦🇪", gNe = "🇦🇫", ENe = "🇦🇬", SNe = "🇦🇮", fNe = "🇦🇱", bNe = "🇦🇲", TNe = "🇦🇴", hNe = "🇦🇶", RNe = "🇦🇷", CNe = "🇦🇸", NNe = "🇦🇹", vNe = "🇦🇺", ONe = "🇦🇼", yNe = "🇦🇽", ANe = "🇦🇿", INe = "🇧🇦", DNe = "🇧🇧", wNe = "🇧🇩", MNe = "🇧🇪", xNe = "🇧🇫", LNe = "🇧🇬", kNe = "🇧🇭", PNe = "🇧🇮", UNe = "🇧🇯", FNe = "🇧🇱", BNe = "🇧🇲", GNe = "🇧🇳", qNe = "🇧🇴", YNe = "🇧🇶", HNe = "🇧🇷", VNe = "🇧🇸", zNe = "🇧🇹", $Ne = "🇧🇻", WNe = "🇧🇼", KNe = "🇧🇾", QNe = "🇧🇿", XNe = "🇨🇦", ZNe = "🇨🇨", JNe = "🇨🇩", jNe = "🇨🇫", eve = "🇨🇬", tve = "🇨🇭", nve = "🇨🇮", rve = "🇨🇰", ave = "🇨🇱", ove = "🇨🇲", ive = "🇨🇳", sve = "🇨🇴", cve = "🇨🇵", lve = "🇨🇷", _ve = "🇨🇺", dve = "🇨🇻", uve = "🇨🇼", pve = "🇨🇽", mve = "🇨🇾", gve = "🇨🇿", Eve = "🇩🇪", Sve = "🇩🇬", fve = "🇩🇯", bve = "🇩🇰", Tve = "🇩🇲", hve = "🇩🇴", Rve = "🇩🇿", Cve = "🇪🇦", Nve = "🇪🇨", vve = "🇪🇪", Ove = "🇪🇬", yve = "🇪🇭", Ave = "🇪🇷", Ive = "🇪🇸", Dve = "🇪🇹", wve = "🇪🇺", Mve = "🇪🇺", xve = "🇫🇮", Lve = "🇫🇯", kve = "🇫🇰", Pve = "🇫🇲", Uve = "🇫🇴", Fve = "🇫🇷", Bve = "🇬🇦", Gve = "🇬🇧", qve = "🇬🇧", Yve = "🇬🇩", Hve = "🇬🇪", Vve = "🇬🇫", zve = "🇬🇬", $ve = "🇬🇭", Wve = "🇬🇮", Kve = "🇬🇱", Qve = "🇬🇲", Xve = "🇬🇳", Zve = "🇬🇵", Jve = "🇬🇶", jve = "🇬🇷", eOe = "🇬🇸", tOe = "🇬🇹", nOe = "🇬🇺", rOe = "🇬🇼", aOe = "🇬🇾", oOe = "🇭🇰", iOe = "🇭🇲", sOe = "🇭🇳", cOe = "🇭🇷", lOe = "🇭🇹", _Oe = "🇭🇺", dOe = "🇮🇨", uOe = "🇮🇩", pOe = "🇮🇪", mOe = "🇮🇱", gOe = "🇮🇲", EOe = "🇮🇳", SOe = "🇮🇴", fOe = "🇮🇶", bOe = "🇮🇷", TOe = "🇮🇸", hOe = "🇮🇹", ROe = "🇯🇪", COe = "🇯🇲", NOe = "🇯🇴", vOe = "🇯🇵", OOe = "🇰🇪", yOe = "🇰🇬", AOe = "🇰🇭", IOe = "🇰🇮", DOe = "🇰🇲", wOe = "🇰🇳", MOe = "🇰🇵", xOe = "🇰🇷", LOe = "🇰🇼", kOe = "🇰🇾", POe = "🇰🇿", UOe = "🇱🇦", FOe = "🇱🇧", BOe = "🇱🇨", GOe = "🇱🇮", qOe = "🇱🇰", YOe = "🇱🇷", HOe = "🇱🇸", VOe = "🇱🇹", zOe = "🇱🇺", $Oe = "🇱🇻", WOe = "🇱🇾", KOe = "🇲🇦", QOe = "🇲🇨", XOe = "🇲🇩", ZOe = "🇲🇪", JOe = "🇲🇫", jOe = "🇲🇬", eye = "🇲🇭", tye = "🇲🇰", nye = "🇲🇱", rye = "🇲🇲", aye = "🇲🇳", oye = "🇲🇴", iye = "🇲🇵", sye = "🇲🇶", cye = "🇲🇷", lye = "🇲🇸", _ye = "🇲🇹", dye = "🇲🇺", uye = "🇲🇻", pye = "🇲🇼", mye = "🇲🇽", gye = "🇲🇾", Eye = "🇲🇿", Sye = "🇳🇦", fye = "🇳🇨", bye = "🇳🇪", Tye = "🇳🇫", hye = "🇳🇬", Rye = "🇳🇮", Cye = "🇳🇱", Nye = "🇳🇴", vye = "🇳🇵", Oye = "🇳🇷", yye = "🇳🇺", Aye = "🇳🇿", Iye = "🇴🇲", Dye = "🇵🇦", wye = "🇵🇪", Mye = "🇵🇫", xye = "🇵🇬", Lye = "🇵🇭", kye = "🇵🇰", Pye = "🇵🇱", Uye = "🇵🇲", Fye = "🇵🇳", Bye = "🇵🇷", Gye = "🇵🇸", qye = "🇵🇹", Yye = "🇵🇼", Hye = "🇵🇾", Vye = "🇶🇦", zye = "🇷🇪", $ye = "🇷🇴", Wye = "🇷🇸", Kye = "🇷🇺", Qye = "🇷🇼", Xye = "🇸🇦", Zye = "🇸🇧", Jye = "🇸🇨", jye = "🇸🇩", eAe = "🇸🇪", tAe = "🇸🇬", nAe = "🇸🇭", rAe = "🇸🇮", aAe = "🇸🇯", oAe = "🇸🇰", iAe = "🇸🇱", sAe = "🇸🇲", cAe = "🇸🇳", lAe = "🇸🇴", _Ae = "🇸🇷", dAe = "🇸🇸", uAe = "🇸🇹", pAe = "🇸🇻", mAe = "🇸🇽", gAe = "🇸🇾", EAe = "🇸🇿", SAe = "🇹🇦", fAe = "🇹🇨", bAe = "🇹🇩", TAe = "🇹🇫", hAe = "🇹🇬", RAe = "🇹🇭", CAe = "🇹🇯", NAe = "🇹🇰", vAe = "🇹🇱", OAe = "🇹🇲", yAe = "🇹🇳", AAe = "🇹🇴", IAe = "🇹🇷", DAe = "🇹🇹", wAe = "🇹🇻", MAe = "🇹🇼", xAe = "🇹🇿", LAe = "🇺🇦", kAe = "🇺🇬", PAe = "🇺🇲", UAe = "🇺🇳", FAe = "🇺🇸", BAe = "🇺🇾", GAe = "🇺🇿", qAe = "🇻🇦", YAe = "🇻🇨", HAe = "🇻🇪", VAe = "🇻🇬", zAe = "🇻🇮", $Ae = "🇻🇳", WAe = "🇻🇺", KAe = "🇼🇫", QAe = "🇼🇸", XAe = "🇽🇰", ZAe = "🇾🇪", JAe = "🇾🇹", jAe = "🇿🇦", eIe = "🇿🇲", tIe = "🇿🇼", nIe = "🏴󠁧󠁢󠁥󠁮󠁧󠁿", rIe = "🏴󠁧󠁢󠁳󠁣󠁴󠁿", aIe = "🏴󠁧󠁢󠁷󠁬󠁳󠁿", oIe = {
+const E6 = /* @__PURE__ */ ye(g6), S6 = "😀", f6 = "😃", b6 = "😄", T6 = "😁", h6 = "😆", R6 = "😆", C6 = "😅", N6 = "🤣", v6 = "😂", O6 = "🙂", y6 = "🙃", A6 = "😉", I6 = "😊", D6 = "😇", w6 = "🥰", M6 = "😍", x6 = "🤩", L6 = "😘", k6 = "😗", P6 = "☺️", U6 = "😚", F6 = "😙", B6 = "🥲", G6 = "😋", q6 = "😛", Y6 = "😜", H6 = "🤪", V6 = "😝", z6 = "🤑", $6 = "🤗", W6 = "🤭", K6 = "🤫", Q6 = "🤔", X6 = "🤐", Z6 = "🤨", J6 = "😐", j6 = "😑", e8 = "😶", t8 = "😏", n8 = "😒", r8 = "🙄", a8 = "😬", o8 = "🤥", i8 = "😌", s8 = "😔", c8 = "😪", l8 = "🤤", _8 = "😴", d8 = "😷", u8 = "🤒", p8 = "🤕", m8 = "🤢", g8 = "🤮", E8 = "🤧", S8 = "🥵", f8 = "🥶", b8 = "🥴", T8 = "😵", h8 = "🤯", R8 = "🤠", C8 = "🥳", N8 = "🥸", v8 = "😎", O8 = "🤓", y8 = "🧐", A8 = "😕", I8 = "😟", D8 = "🙁", w8 = "☹️", M8 = "😮", x8 = "😯", L8 = "😲", k8 = "😳", P8 = "🥺", U8 = "😦", F8 = "😧", B8 = "😨", G8 = "😰", q8 = "😥", Y8 = "😢", H8 = "😭", V8 = "😱", z8 = "😖", $8 = "😣", W8 = "😞", K8 = "😓", Q8 = "😩", X8 = "😫", Z8 = "🥱", J8 = "😤", j8 = "😡", eJ = "😡", tJ = "😠", nJ = "🤬", rJ = "😈", aJ = "👿", oJ = "💀", iJ = "☠️", sJ = "💩", cJ = "💩", lJ = "💩", _J = "🤡", dJ = "👹", uJ = "👺", pJ = "👻", mJ = "👽", gJ = "👾", EJ = "🤖", SJ = "😺", fJ = "😸", bJ = "😹", TJ = "😻", hJ = "😼", RJ = "😽", CJ = "🙀", NJ = "😿", vJ = "😾", OJ = "🙈", yJ = "🙉", AJ = "🙊", IJ = "💋", DJ = "💌", wJ = "💘", MJ = "💝", xJ = "💖", LJ = "💗", kJ = "💓", PJ = "💞", UJ = "💕", FJ = "💟", BJ = "❣️", GJ = "💔", qJ = "❤️", YJ = "🧡", HJ = "💛", VJ = "💚", zJ = "💙", $J = "💜", WJ = "🤎", KJ = "🖤", QJ = "🤍", XJ = "💢", ZJ = "💥", JJ = "💥", jJ = "💫", e7 = "💦", t7 = "💨", n7 = "🕳️", r7 = "💣", a7 = "💬", o7 = "👁️‍🗨️", i7 = "🗨️", s7 = "🗯️", c7 = "💭", l7 = "💤", _7 = "👋", d7 = "🤚", u7 = "🖐️", p7 = "✋", m7 = "✋", g7 = "🖖", E7 = "👌", S7 = "🤌", f7 = "🤏", b7 = "✌️", T7 = "🤞", h7 = "🤟", R7 = "🤘", C7 = "🤙", N7 = "👈", v7 = "👉", O7 = "👆", y7 = "🖕", A7 = "🖕", I7 = "👇", D7 = "☝️", w7 = "👍", M7 = "👎", x7 = "✊", L7 = "✊", k7 = "👊", P7 = "👊", U7 = "👊", F7 = "🤛", B7 = "🤜", G7 = "👏", q7 = "🙌", Y7 = "👐", H7 = "🤲", V7 = "🤝", z7 = "🙏", $7 = "✍️", W7 = "💅", K7 = "🤳", Q7 = "💪", X7 = "🦾", Z7 = "🦿", J7 = "🦵", j7 = "🦶", ej = "👂", tj = "🦻", nj = "👃", rj = "🧠", aj = "🫀", oj = "🫁", ij = "🦷", sj = "🦴", cj = "👀", lj = "👁️", _j = "👅", dj = "👄", uj = "👶", pj = "🧒", mj = "👦", gj = "👧", Ej = "🧑", Sj = "👱", fj = "👨", bj = "🧔", Tj = "👨‍🦰", hj = "👨‍🦱", Rj = "👨‍🦳", Cj = "👨‍🦲", Nj = "👩", vj = "👩‍🦰", Oj = "🧑‍🦰", yj = "👩‍🦱", Aj = "🧑‍🦱", Ij = "👩‍🦳", Dj = "🧑‍🦳", wj = "👩‍🦲", Mj = "🧑‍🦲", xj = "👱‍♀️", Lj = "👱‍♀️", kj = "👱‍♂️", Pj = "🧓", Uj = "👴", Fj = "👵", Bj = "🙍", Gj = "🙍‍♂️", qj = "🙍‍♀️", Yj = "🙎", Hj = "🙎‍♂️", Vj = "🙎‍♀️", zj = "🙅", $j = "🙅‍♂️", Wj = "🙅‍♂️", Kj = "🙅‍♀️", Qj = "🙅‍♀️", Xj = "🙆", Zj = "🙆‍♂️", Jj = "🙆‍♀️", jj = "💁", eee = "💁", tee = "💁‍♂️", nee = "💁‍♂️", ree = "💁‍♀️", aee = "💁‍♀️", oee = "🙋", iee = "🙋‍♂️", see = "🙋‍♀️", cee = "🧏", lee = "🧏‍♂️", _ee = "🧏‍♀️", dee = "🙇", uee = "🙇‍♂️", pee = "🙇‍♀️", mee = "🤦", gee = "🤦‍♂️", Eee = "🤦‍♀️", See = "🤷", fee = "🤷‍♂️", bee = "🤷‍♀️", Tee = "🧑‍⚕️", hee = "👨‍⚕️", Ree = "👩‍⚕️", Cee = "🧑‍🎓", Nee = "👨‍🎓", vee = "👩‍🎓", Oee = "🧑‍🏫", yee = "👨‍🏫", Aee = "👩‍🏫", Iee = "🧑‍⚖️", Dee = "👨‍⚖️", wee = "👩‍⚖️", Mee = "🧑‍🌾", xee = "👨‍🌾", Lee = "👩‍🌾", kee = "🧑‍🍳", Pee = "👨‍🍳", Uee = "👩‍🍳", Fee = "🧑‍🔧", Bee = "👨‍🔧", Gee = "👩‍🔧", qee = "🧑‍🏭", Yee = "👨‍🏭", Hee = "👩‍🏭", Vee = "🧑‍💼", zee = "👨‍💼", $ee = "👩‍💼", Wee = "🧑‍🔬", Kee = "👨‍🔬", Qee = "👩‍🔬", Xee = "🧑‍💻", Zee = "👨‍💻", Jee = "👩‍💻", jee = "🧑‍🎤", ete = "👨‍🎤", tte = "👩‍🎤", nte = "🧑‍🎨", rte = "👨‍🎨", ate = "👩‍🎨", ote = "🧑‍✈️", ite = "👨‍✈️", ste = "👩‍✈️", cte = "🧑‍🚀", lte = "👨‍🚀", _te = "👩‍🚀", dte = "🧑‍🚒", ute = "👨‍🚒", pte = "👩‍🚒", mte = "👮", gte = "👮", Ete = "👮‍♂️", Ste = "👮‍♀️", fte = "🕵️", bte = "🕵️‍♂️", Tte = "🕵️‍♀️", hte = "💂", Rte = "💂‍♂️", Cte = "💂‍♀️", Nte = "🥷", vte = "👷", Ote = "👷‍♂️", yte = "👷‍♀️", Ate = "🤴", Ite = "👸", Dte = "👳", wte = "👳‍♂️", Mte = "👳‍♀️", xte = "👲", Lte = "🧕", kte = "🤵", Pte = "🤵‍♂️", Ute = "🤵‍♀️", Fte = "👰", Bte = "👰‍♂️", Gte = "👰‍♀️", qte = "👰‍♀️", Yte = "🤰", Hte = "🤱", Vte = "👩‍🍼", zte = "👨‍🍼", $te = "🧑‍🍼", Wte = "👼", Kte = "🎅", Qte = "🤶", Xte = "🧑‍🎄", Zte = "🦸", Jte = "🦸‍♂️", jte = "🦸‍♀️", ene = "🦹", tne = "🦹‍♂️", nne = "🦹‍♀️", rne = "🧙", ane = "🧙‍♂️", one = "🧙‍♀️", ine = "🧚", sne = "🧚‍♂️", cne = "🧚‍♀️", lne = "🧛", _ne = "🧛‍♂️", dne = "🧛‍♀️", une = "🧜", pne = "🧜‍♂️", mne = "🧜‍♀️", gne = "🧝", Ene = "🧝‍♂️", Sne = "🧝‍♀️", fne = "🧞", bne = "🧞‍♂️", Tne = "🧞‍♀️", hne = "🧟", Rne = "🧟‍♂️", Cne = "🧟‍♀️", Nne = "💆", vne = "💆‍♂️", One = "💆‍♀️", yne = "💇", Ane = "💇‍♂️", Ine = "💇‍♀️", Dne = "🚶", wne = "🚶‍♂️", Mne = "🚶‍♀️", xne = "🧍", Lne = "🧍‍♂️", kne = "🧍‍♀️", Pne = "🧎", Une = "🧎‍♂️", Fne = "🧎‍♀️", Bne = "🧑‍🦯", Gne = "👨‍🦯", qne = "👩‍🦯", Yne = "🧑‍🦼", Hne = "👨‍🦼", Vne = "👩‍🦼", zne = "🧑‍🦽", $ne = "👨‍🦽", Wne = "👩‍🦽", Kne = "🏃", Qne = "🏃", Xne = "🏃‍♂️", Zne = "🏃‍♀️", Jne = "💃", jne = "💃", ere = "🕺", tre = "🕴️", nre = "👯", rre = "👯‍♂️", are = "👯‍♀️", ore = "🧖", ire = "🧖‍♂️", sre = "🧖‍♀️", cre = "🧗", lre = "🧗‍♂️", _re = "🧗‍♀️", dre = "🤺", ure = "🏇", pre = "⛷️", mre = "🏂", gre = "🏌️", Ere = "🏌️‍♂️", Sre = "🏌️‍♀️", fre = "🏄", bre = "🏄‍♂️", Tre = "🏄‍♀️", hre = "🚣", Rre = "🚣‍♂️", Cre = "🚣‍♀️", Nre = "🏊", vre = "🏊‍♂️", Ore = "🏊‍♀️", yre = "⛹️", Are = "⛹️‍♂️", Ire = "⛹️‍♂️", Dre = "⛹️‍♀️", wre = "⛹️‍♀️", Mre = "🏋️", xre = "🏋️‍♂️", Lre = "🏋️‍♀️", kre = "🚴", Pre = "🚴‍♂️", Ure = "🚴‍♀️", Fre = "🚵", Bre = "🚵‍♂️", Gre = "🚵‍♀️", qre = "🤸", Yre = "🤸‍♂️", Hre = "🤸‍♀️", Vre = "🤼", zre = "🤼‍♂️", $re = "🤼‍♀️", Wre = "🤽", Kre = "🤽‍♂️", Qre = "🤽‍♀️", Xre = "🤾", Zre = "🤾‍♂️", Jre = "🤾‍♀️", jre = "🤹", eae = "🤹‍♂️", tae = "🤹‍♀️", nae = "🧘", rae = "🧘‍♂️", aae = "🧘‍♀️", oae = "🛀", iae = "🛌", sae = "🧑‍🤝‍🧑", cae = "👭", lae = "👫", _ae = "👬", dae = "💏", uae = "👩‍❤️‍💋‍👨", pae = "👨‍❤️‍💋‍👨", mae = "👩‍❤️‍💋‍👩", gae = "💑", Eae = "👩‍❤️‍👨", Sae = "👨‍❤️‍👨", fae = "👩‍❤️‍👩", bae = "👪", Tae = "👨‍👩‍👦", hae = "👨‍👩‍👧", Rae = "👨‍👩‍👧‍👦", Cae = "👨‍👩‍👦‍👦", Nae = "👨‍👩‍👧‍👧", vae = "👨‍👨‍👦", Oae = "👨‍👨‍👧", yae = "👨‍👨‍👧‍👦", Aae = "👨‍👨‍👦‍👦", Iae = "👨‍👨‍👧‍👧", Dae = "👩‍👩‍👦", wae = "👩‍👩‍👧", Mae = "👩‍👩‍👧‍👦", xae = "👩‍👩‍👦‍👦", Lae = "👩‍👩‍👧‍👧", kae = "👨‍👦", Pae = "👨‍👦‍👦", Uae = "👨‍👧", Fae = "👨‍👧‍👦", Bae = "👨‍👧‍👧", Gae = "👩‍👦", qae = "👩‍👦‍👦", Yae = "👩‍👧", Hae = "👩‍👧‍👦", Vae = "👩‍👧‍👧", zae = "🗣️", $ae = "👤", Wae = "👥", Kae = "🫂", Qae = "👣", Xae = "🐵", Zae = "🐒", Jae = "🦍", jae = "🦧", eoe = "🐶", toe = "🐕", noe = "🦮", roe = "🐕‍🦺", aoe = "🐩", ooe = "🐺", ioe = "🦊", soe = "🦝", coe = "🐱", loe = "🐈", _oe = "🐈‍⬛", doe = "🦁", uoe = "🐯", poe = "🐅", moe = "🐆", goe = "🐴", Eoe = "🐎", Soe = "🦄", foe = "🦓", boe = "🦌", Toe = "🦬", hoe = "🐮", Roe = "🐂", Coe = "🐃", Noe = "🐄", voe = "🐷", Ooe = "🐖", yoe = "🐗", Aoe = "🐽", Ioe = "🐏", Doe = "🐑", woe = "🐐", Moe = "🐪", xoe = "🐫", Loe = "🦙", koe = "🦒", Poe = "🐘", Uoe = "🦣", Foe = "🦏", Boe = "🦛", Goe = "🐭", qoe = "🐁", Yoe = "🐀", Hoe = "🐹", Voe = "🐰", zoe = "🐇", $oe = "🐿️", Woe = "🦫", Koe = "🦔", Qoe = "🦇", Xoe = "🐻", Zoe = "🐻‍❄️", Joe = "🐨", joe = "🐼", eie = "🦥", tie = "🦦", nie = "🦨", rie = "🦘", aie = "🦡", oie = "🐾", iie = "🐾", sie = "🦃", cie = "🐔", lie = "🐓", _ie = "🐣", die = "🐤", uie = "🐥", pie = "🐦", mie = "🐧", gie = "🕊️", Eie = "🦅", Sie = "🦆", fie = "🦢", bie = "🦉", Tie = "🦤", hie = "🪶", Rie = "🦩", Cie = "🦚", Nie = "🦜", vie = "🐸", Oie = "🐊", yie = "🐢", Aie = "🦎", Iie = "🐍", Die = "🐲", wie = "🐉", Mie = "🦕", xie = "🐳", Lie = "🐋", kie = "🐬", Pie = "🐬", Uie = "🦭", Fie = "🐟", Bie = "🐠", Gie = "🐡", qie = "🦈", Yie = "🐙", Hie = "🐚", Vie = "🐌", zie = "🦋", $ie = "🐛", Wie = "🐜", Kie = "🐝", Qie = "🐝", Xie = "🪲", Zie = "🐞", Jie = "🦗", jie = "🪳", ese = "🕷️", tse = "🕸️", nse = "🦂", rse = "🦟", ase = "🪰", ose = "🪱", ise = "🦠", sse = "💐", cse = "🌸", lse = "💮", _se = "🏵️", dse = "🌹", use = "🥀", pse = "🌺", mse = "🌻", gse = "🌼", Ese = "🌷", Sse = "🌱", fse = "🪴", bse = "🌲", Tse = "🌳", hse = "🌴", Rse = "🌵", Cse = "🌾", Nse = "🌿", vse = "☘️", Ose = "🍀", yse = "🍁", Ase = "🍂", Ise = "🍃", Dse = "🍇", wse = "🍈", Mse = "🍉", xse = "🍊", Lse = "🍊", kse = "🍊", Pse = "🍋", Use = "🍌", Fse = "🍍", Bse = "🥭", Gse = "🍎", qse = "🍏", Yse = "🍐", Hse = "🍑", Vse = "🍒", zse = "🍓", $se = "🫐", Wse = "🥝", Kse = "🍅", Qse = "🫒", Xse = "🥥", Zse = "🥑", Jse = "🍆", jse = "🥔", ece = "🥕", tce = "🌽", nce = "🌶️", rce = "🫑", ace = "🥒", oce = "🥬", ice = "🥦", sce = "🧄", cce = "🧅", lce = "🍄", _ce = "🥜", dce = "🌰", uce = "🍞", pce = "🥐", mce = "🥖", gce = "🫓", Ece = "🥨", Sce = "🥯", fce = "🥞", bce = "🧇", Tce = "🧀", hce = "🍖", Rce = "🍗", Cce = "🥩", Nce = "🥓", vce = "🍔", Oce = "🍟", yce = "🍕", Ace = "🌭", Ice = "🥪", Dce = "🌮", wce = "🌯", Mce = "🫔", xce = "🥙", Lce = "🧆", kce = "🥚", Pce = "🍳", Uce = "🥘", Fce = "🍲", Bce = "🫕", Gce = "🥣", qce = "🥗", Yce = "🍿", Hce = "🧈", Vce = "🧂", zce = "🥫", $ce = "🍱", Wce = "🍘", Kce = "🍙", Qce = "🍚", Xce = "🍛", Zce = "🍜", Jce = "🍝", jce = "🍠", ele = "🍢", tle = "🍣", nle = "🍤", rle = "🍥", ale = "🥮", ole = "🍡", ile = "🥟", sle = "🥠", cle = "🥡", lle = "🦀", _le = "🦞", dle = "🦐", ule = "🦑", ple = "🦪", mle = "🍦", gle = "🍧", Ele = "🍨", Sle = "🍩", fle = "🍪", ble = "🎂", Tle = "🍰", hle = "🧁", Rle = "🥧", Cle = "🍫", Nle = "🍬", vle = "🍭", Ole = "🍮", yle = "🍯", Ale = "🍼", Ile = "🥛", Dle = "☕", wle = "🫖", Mle = "🍵", xle = "🍶", Lle = "🍾", kle = "🍷", Ple = "🍸", Ule = "🍹", Fle = "🍺", Ble = "🍻", Gle = "🥂", qle = "🥃", Yle = "🥤", Hle = "🧋", Vle = "🧃", zle = "🧉", $le = "🧊", Wle = "🥢", Kle = "🍽️", Qle = "🍴", Xle = "🥄", Zle = "🔪", Jle = "🔪", jle = "🏺", e_e = "🌍", t_e = "🌎", n_e = "🌏", r_e = "🌐", a_e = "🗺️", o_e = "🗾", i_e = "🧭", s_e = "🏔️", c_e = "⛰️", l_e = "🌋", __e = "🗻", d_e = "🏕️", u_e = "🏖️", p_e = "🏜️", m_e = "🏝️", g_e = "🏞️", E_e = "🏟️", S_e = "🏛️", f_e = "🏗️", b_e = "🧱", T_e = "🪨", h_e = "🪵", R_e = "🛖", C_e = "🏘️", N_e = "🏚️", v_e = "🏠", O_e = "🏡", y_e = "🏢", A_e = "🏣", I_e = "🏤", D_e = "🏥", w_e = "🏦", M_e = "🏨", x_e = "🏩", L_e = "🏪", k_e = "🏫", P_e = "🏬", U_e = "🏭", F_e = "🏯", B_e = "🏰", G_e = "💒", q_e = "🗼", Y_e = "🗽", H_e = "⛪", V_e = "🕌", z_e = "🛕", $_e = "🕍", W_e = "⛩️", K_e = "🕋", Q_e = "⛲", X_e = "⛺", Z_e = "🌁", J_e = "🌃", j_e = "🏙️", ede = "🌄", tde = "🌅", nde = "🌆", rde = "🌇", ade = "🌉", ode = "♨️", ide = "🎠", sde = "🎡", cde = "🎢", lde = "💈", _de = "🎪", dde = "🚂", ude = "🚃", pde = "🚄", mde = "🚅", gde = "🚆", Ede = "🚇", Sde = "🚈", fde = "🚉", bde = "🚊", Tde = "🚝", hde = "🚞", Rde = "🚋", Cde = "🚌", Nde = "🚍", vde = "🚎", Ode = "🚐", yde = "🚑", Ade = "🚒", Ide = "🚓", Dde = "🚔", wde = "🚕", Mde = "🚖", xde = "🚗", Lde = "🚗", kde = "🚘", Pde = "🚙", Ude = "🛻", Fde = "🚚", Bde = "🚛", Gde = "🚜", qde = "🏎️", Yde = "🏍️", Hde = "🛵", Vde = "🦽", zde = "🦼", $de = "🛺", Wde = "🚲", Kde = "🛴", Qde = "🛹", Xde = "🛼", Zde = "🚏", Jde = "🛣️", jde = "🛤️", eue = "🛢️", tue = "⛽", nue = "🚨", rue = "🚥", aue = "🚦", oue = "🛑", iue = "🚧", sue = "⚓", cue = "⛵", lue = "⛵", _ue = "🛶", due = "🚤", uue = "🛳️", pue = "⛴️", mue = "🛥️", gue = "🚢", Eue = "✈️", Sue = "🛩️", fue = "🛫", bue = "🛬", Tue = "🪂", hue = "💺", Rue = "🚁", Cue = "🚟", Nue = "🚠", vue = "🚡", Oue = "🛰️", yue = "🚀", Aue = "🛸", Iue = "🛎️", Due = "🧳", wue = "⌛", Mue = "⏳", xue = "⌚", Lue = "⏰", kue = "⏱️", Pue = "⏲️", Uue = "🕰️", Fue = "🕛", Bue = "🕧", Gue = "🕐", que = "🕜", Yue = "🕑", Hue = "🕝", Vue = "🕒", zue = "🕞", $ue = "🕓", Wue = "🕟", Kue = "🕔", Que = "🕠", Xue = "🕕", Zue = "🕡", Jue = "🕖", jue = "🕢", epe = "🕗", tpe = "🕣", npe = "🕘", rpe = "🕤", ape = "🕙", ope = "🕥", ipe = "🕚", spe = "🕦", cpe = "🌑", lpe = "🌒", _pe = "🌓", dpe = "🌔", upe = "🌔", ppe = "🌕", mpe = "🌖", gpe = "🌗", Epe = "🌘", Spe = "🌙", fpe = "🌚", bpe = "🌛", Tpe = "🌜", hpe = "🌡️", Rpe = "☀️", Cpe = "🌝", Npe = "🌞", vpe = "🪐", Ope = "⭐", ype = "🌟", Ape = "🌠", Ipe = "🌌", Dpe = "☁️", wpe = "⛅", Mpe = "⛈️", xpe = "🌤️", Lpe = "🌥️", kpe = "🌦️", Ppe = "🌧️", Upe = "🌨️", Fpe = "🌩️", Bpe = "🌪️", Gpe = "🌫️", qpe = "🌬️", Ype = "🌀", Hpe = "🌈", Vpe = "🌂", zpe = "☂️", $pe = "☔", Wpe = "⛱️", Kpe = "⚡", Qpe = "❄️", Xpe = "☃️", Zpe = "⛄", Jpe = "☄️", jpe = "🔥", eme = "💧", tme = "🌊", nme = "🎃", rme = "🎄", ame = "🎆", ome = "🎇", ime = "🧨", sme = "✨", cme = "🎈", lme = "🎉", _me = "🎊", dme = "🎋", ume = "🎍", pme = "🎎", mme = "🎏", gme = "🎐", Eme = "🎑", Sme = "🧧", fme = "🎀", bme = "🎁", Tme = "🎗️", hme = "🎟️", Rme = "🎫", Cme = "🎖️", Nme = "🏆", vme = "🏅", Ome = "⚽", yme = "⚾", Ame = "🥎", Ime = "🏀", Dme = "🏐", wme = "🏈", Mme = "🏉", xme = "🎾", Lme = "🥏", kme = "🎳", Pme = "🏏", Ume = "🏑", Fme = "🏒", Bme = "🥍", Gme = "🏓", qme = "🏸", Yme = "🥊", Hme = "🥋", Vme = "🥅", zme = "⛳", $me = "⛸️", Wme = "🎣", Kme = "🤿", Qme = "🎽", Xme = "🎿", Zme = "🛷", Jme = "🥌", jme = "🎯", ege = "🪀", tge = "🪁", nge = "🔮", rge = "🪄", age = "🧿", oge = "🎮", ige = "🕹️", sge = "🎰", cge = "🎲", lge = "🧩", _ge = "🧸", dge = "🪅", uge = "🪆", pge = "♠️", mge = "♥️", gge = "♦️", Ege = "♣️", Sge = "♟️", fge = "🃏", bge = "🀄", Tge = "🎴", hge = "🎭", Rge = "🖼️", Cge = "🎨", Nge = "🧵", vge = "🪡", Oge = "🧶", yge = "🪢", Age = "👓", Ige = "🕶️", Dge = "🥽", wge = "🥼", Mge = "🦺", xge = "👔", Lge = "👕", kge = "👕", Pge = "👖", Uge = "🧣", Fge = "🧤", Bge = "🧥", Gge = "🧦", qge = "👗", Yge = "👘", Hge = "🥻", Vge = "🩱", zge = "🩲", $ge = "🩳", Wge = "👙", Kge = "👚", Qge = "👛", Xge = "👜", Zge = "👝", Jge = "🛍️", jge = "🎒", eEe = "🩴", tEe = "👞", nEe = "👞", rEe = "👟", aEe = "🥾", oEe = "🥿", iEe = "👠", sEe = "👡", cEe = "🩰", lEe = "👢", _Ee = "👑", dEe = "👒", uEe = "🎩", pEe = "🎓", mEe = "🧢", gEe = "🪖", EEe = "⛑️", SEe = "📿", fEe = "💄", bEe = "💍", TEe = "💎", hEe = "🔇", REe = "🔈", CEe = "🔉", NEe = "🔊", vEe = "📢", OEe = "📣", yEe = "📯", AEe = "🔔", IEe = "🔕", DEe = "🎼", wEe = "🎵", MEe = "🎶", xEe = "🎙️", LEe = "🎚️", kEe = "🎛️", PEe = "🎤", UEe = "🎧", FEe = "📻", BEe = "🎷", GEe = "🪗", qEe = "🎸", YEe = "🎹", HEe = "🎺", VEe = "🎻", zEe = "🪕", $Ee = "🥁", WEe = "🪘", KEe = "📱", QEe = "📲", XEe = "☎️", ZEe = "☎️", JEe = "📞", jEe = "📟", eSe = "📠", tSe = "🔋", nSe = "🔌", rSe = "💻", aSe = "🖥️", oSe = "🖨️", iSe = "⌨️", sSe = "🖱️", cSe = "🖲️", lSe = "💽", _Se = "💾", dSe = "💿", uSe = "📀", pSe = "🧮", mSe = "🎥", gSe = "🎞️", ESe = "📽️", SSe = "🎬", fSe = "📺", bSe = "📷", TSe = "📸", hSe = "📹", RSe = "📼", CSe = "🔍", NSe = "🔎", vSe = "🕯️", OSe = "💡", ySe = "🔦", ASe = "🏮", ISe = "🏮", DSe = "🪔", wSe = "📔", MSe = "📕", xSe = "📖", LSe = "📖", kSe = "📗", PSe = "📘", USe = "📙", FSe = "📚", BSe = "📓", GSe = "📒", qSe = "📃", YSe = "📜", HSe = "📄", VSe = "📰", zSe = "🗞️", $Se = "📑", WSe = "🔖", KSe = "🏷️", QSe = "💰", XSe = "🪙", ZSe = "💴", JSe = "💵", jSe = "💶", efe = "💷", tfe = "💸", nfe = "💳", rfe = "🧾", afe = "💹", ofe = "✉️", ife = "📧", sfe = "📨", cfe = "📩", lfe = "📤", _fe = "📥", dfe = "📫", ufe = "📪", pfe = "📬", mfe = "📭", gfe = "📮", Efe = "🗳️", Sfe = "✏️", ffe = "✒️", bfe = "🖋️", Tfe = "🖊️", hfe = "🖌️", Rfe = "🖍️", Cfe = "📝", Nfe = "📝", vfe = "💼", Ofe = "📁", yfe = "📂", Afe = "🗂️", Ife = "📅", Dfe = "📆", wfe = "🗒️", Mfe = "🗓️", xfe = "📇", Lfe = "📈", kfe = "📉", Pfe = "📊", Ufe = "📋", Ffe = "📌", Bfe = "📍", Gfe = "📎", qfe = "🖇️", Yfe = "📏", Hfe = "📐", Vfe = "✂️", zfe = "🗃️", $fe = "🗄️", Wfe = "🗑️", Kfe = "🔒", Qfe = "🔓", Xfe = "🔏", Zfe = "🔐", Jfe = "🔑", jfe = "🗝️", ebe = "🔨", tbe = "🪓", nbe = "⛏️", rbe = "⚒️", abe = "🛠️", obe = "🗡️", ibe = "⚔️", sbe = "🔫", cbe = "🪃", lbe = "🏹", _be = "🛡️", dbe = "🪚", ube = "🔧", pbe = "🪛", mbe = "🔩", gbe = "⚙️", Ebe = "🗜️", Sbe = "⚖️", fbe = "🦯", bbe = "🔗", Tbe = "⛓️", hbe = "🪝", Rbe = "🧰", Cbe = "🧲", Nbe = "🪜", vbe = "⚗️", Obe = "🧪", ybe = "🧫", Abe = "🧬", Ibe = "🔬", Dbe = "🔭", wbe = "📡", Mbe = "💉", xbe = "🩸", Lbe = "💊", kbe = "🩹", Pbe = "🩺", Ube = "🚪", Fbe = "🛗", Bbe = "🪞", Gbe = "🪟", qbe = "🛏️", Ybe = "🛋️", Hbe = "🪑", Vbe = "🚽", zbe = "🪠", $be = "🚿", Wbe = "🛁", Kbe = "🪤", Qbe = "🪒", Xbe = "🧴", Zbe = "🧷", Jbe = "🧹", jbe = "🧺", eTe = "🧻", tTe = "🪣", nTe = "🧼", rTe = "🪥", aTe = "🧽", oTe = "🧯", iTe = "🛒", sTe = "🚬", cTe = "⚰️", lTe = "🪦", _Te = "⚱️", dTe = "🗿", uTe = "🪧", pTe = "🏧", mTe = "🚮", gTe = "🚰", ETe = "♿", STe = "🚹", fTe = "🚺", bTe = "🚻", TTe = "🚼", hTe = "🚾", RTe = "🛂", CTe = "🛃", NTe = "🛄", vTe = "🛅", OTe = "⚠️", yTe = "🚸", ATe = "⛔", ITe = "🚫", DTe = "🚳", wTe = "🚭", MTe = "🚯", xTe = "🚷", LTe = "📵", kTe = "🔞", PTe = "☢️", UTe = "☣️", FTe = "⬆️", BTe = "↗️", GTe = "➡️", qTe = "↘️", YTe = "⬇️", HTe = "↙️", VTe = "⬅️", zTe = "↖️", $Te = "↕️", WTe = "↔️", KTe = "↩️", QTe = "↪️", XTe = "⤴️", ZTe = "⤵️", JTe = "🔃", jTe = "🔄", ehe = "🔙", the = "🔚", nhe = "🔛", rhe = "🔜", ahe = "🔝", ohe = "🛐", ihe = "⚛️", she = "🕉️", che = "✡️", lhe = "☸️", _he = "☯️", dhe = "✝️", uhe = "☦️", phe = "☪️", mhe = "☮️", ghe = "🕎", Ehe = "🔯", She = "♈", fhe = "♉", bhe = "♊", The = "♋", hhe = "♌", Rhe = "♍", Che = "♎", Nhe = "♏", vhe = "♐", Ohe = "♑", yhe = "♒", Ahe = "♓", Ihe = "⛎", Dhe = "🔀", whe = "🔁", Mhe = "🔂", xhe = "▶️", Lhe = "⏩", khe = "⏭️", Phe = "⏯️", Uhe = "◀️", Fhe = "⏪", Bhe = "⏮️", Ghe = "🔼", qhe = "⏫", Yhe = "🔽", Hhe = "⏬", Vhe = "⏸️", zhe = "⏹️", $he = "⏺️", Whe = "⏏️", Khe = "🎦", Qhe = "🔅", Xhe = "🔆", Zhe = "📶", Jhe = "📳", jhe = "📴", eRe = "♀️", tRe = "♂️", nRe = "⚧️", rRe = "✖️", aRe = "➕", oRe = "➖", iRe = "➗", sRe = "♾️", cRe = "‼️", lRe = "⁉️", _Re = "❓", dRe = "❔", uRe = "❕", pRe = "❗", mRe = "❗", gRe = "〰️", ERe = "💱", SRe = "💲", fRe = "⚕️", bRe = "♻️", TRe = "⚜️", hRe = "🔱", RRe = "📛", CRe = "🔰", NRe = "⭕", vRe = "✅", ORe = "☑️", yRe = "✔️", ARe = "❌", IRe = "❎", DRe = "➰", wRe = "➿", MRe = "〽️", xRe = "✳️", LRe = "✴️", kRe = "❇️", PRe = "©️", URe = "®️", FRe = "™️", BRe = "#️⃣", GRe = "*️⃣", qRe = "0️⃣", YRe = "1️⃣", HRe = "2️⃣", VRe = "3️⃣", zRe = "4️⃣", $Re = "5️⃣", WRe = "6️⃣", KRe = "7️⃣", QRe = "8️⃣", XRe = "9️⃣", ZRe = "🔟", JRe = "🔠", jRe = "🔡", eCe = "🔣", tCe = "🔤", nCe = "🅰️", rCe = "🆎", aCe = "🅱️", oCe = "🆑", iCe = "🆒", sCe = "🆓", cCe = "ℹ️", lCe = "🆔", _Ce = "Ⓜ️", dCe = "🆖", uCe = "🅾️", pCe = "🆗", mCe = "🅿️", gCe = "🆘", ECe = "🆙", SCe = "🆚", fCe = "🈁", bCe = "🈂️", TCe = "🉐", hCe = "🉑", RCe = "㊗️", CCe = "㊙️", NCe = "🈵", vCe = "🔴", OCe = "🟠", yCe = "🟡", ACe = "🟢", ICe = "🔵", DCe = "🟣", wCe = "🟤", MCe = "⚫", xCe = "⚪", LCe = "🟥", kCe = "🟧", PCe = "🟨", UCe = "🟩", FCe = "🟦", BCe = "🟪", GCe = "🟫", qCe = "⬛", YCe = "⬜", HCe = "◼️", VCe = "◻️", zCe = "◾", $Ce = "◽", WCe = "▪️", KCe = "▫️", QCe = "🔶", XCe = "🔷", ZCe = "🔸", JCe = "🔹", jCe = "🔺", eNe = "🔻", tNe = "💠", nNe = "🔘", rNe = "🔳", aNe = "🔲", oNe = "🏁", iNe = "🚩", sNe = "🎌", cNe = "🏴", lNe = "🏳️", _Ne = "🏳️‍🌈", dNe = "🏳️‍⚧️", uNe = "🏴‍☠️", pNe = "🇦🇨", mNe = "🇦🇩", gNe = "🇦🇪", ENe = "🇦🇫", SNe = "🇦🇬", fNe = "🇦🇮", bNe = "🇦🇱", TNe = "🇦🇲", hNe = "🇦🇴", RNe = "🇦🇶", CNe = "🇦🇷", NNe = "🇦🇸", vNe = "🇦🇹", ONe = "🇦🇺", yNe = "🇦🇼", ANe = "🇦🇽", INe = "🇦🇿", DNe = "🇧🇦", wNe = "🇧🇧", MNe = "🇧🇩", xNe = "🇧🇪", LNe = "🇧🇫", kNe = "🇧🇬", PNe = "🇧🇭", UNe = "🇧🇮", FNe = "🇧🇯", BNe = "🇧🇱", GNe = "🇧🇲", qNe = "🇧🇳", YNe = "🇧🇴", HNe = "🇧🇶", VNe = "🇧🇷", zNe = "🇧🇸", $Ne = "🇧🇹", WNe = "🇧🇻", KNe = "🇧🇼", QNe = "🇧🇾", XNe = "🇧🇿", ZNe = "🇨🇦", JNe = "🇨🇨", jNe = "🇨🇩", eve = "🇨🇫", tve = "🇨🇬", nve = "🇨🇭", rve = "🇨🇮", ave = "🇨🇰", ove = "🇨🇱", ive = "🇨🇲", sve = "🇨🇳", cve = "🇨🇴", lve = "🇨🇵", _ve = "🇨🇷", dve = "🇨🇺", uve = "🇨🇻", pve = "🇨🇼", mve = "🇨🇽", gve = "🇨🇾", Eve = "🇨🇿", Sve = "🇩🇪", fve = "🇩🇬", bve = "🇩🇯", Tve = "🇩🇰", hve = "🇩🇲", Rve = "🇩🇴", Cve = "🇩🇿", Nve = "🇪🇦", vve = "🇪🇨", Ove = "🇪🇪", yve = "🇪🇬", Ave = "🇪🇭", Ive = "🇪🇷", Dve = "🇪🇸", wve = "🇪🇹", Mve = "🇪🇺", xve = "🇪🇺", Lve = "🇫🇮", kve = "🇫🇯", Pve = "🇫🇰", Uve = "🇫🇲", Fve = "🇫🇴", Bve = "🇫🇷", Gve = "🇬🇦", qve = "🇬🇧", Yve = "🇬🇧", Hve = "🇬🇩", Vve = "🇬🇪", zve = "🇬🇫", $ve = "🇬🇬", Wve = "🇬🇭", Kve = "🇬🇮", Qve = "🇬🇱", Xve = "🇬🇲", Zve = "🇬🇳", Jve = "🇬🇵", jve = "🇬🇶", eOe = "🇬🇷", tOe = "🇬🇸", nOe = "🇬🇹", rOe = "🇬🇺", aOe = "🇬🇼", oOe = "🇬🇾", iOe = "🇭🇰", sOe = "🇭🇲", cOe = "🇭🇳", lOe = "🇭🇷", _Oe = "🇭🇹", dOe = "🇭🇺", uOe = "🇮🇨", pOe = "🇮🇩", mOe = "🇮🇪", gOe = "🇮🇱", EOe = "🇮🇲", SOe = "🇮🇳", fOe = "🇮🇴", bOe = "🇮🇶", TOe = "🇮🇷", hOe = "🇮🇸", ROe = "🇮🇹", COe = "🇯🇪", NOe = "🇯🇲", vOe = "🇯🇴", OOe = "🇯🇵", yOe = "🇰🇪", AOe = "🇰🇬", IOe = "🇰🇭", DOe = "🇰🇮", wOe = "🇰🇲", MOe = "🇰🇳", xOe = "🇰🇵", LOe = "🇰🇷", kOe = "🇰🇼", POe = "🇰🇾", UOe = "🇰🇿", FOe = "🇱🇦", BOe = "🇱🇧", GOe = "🇱🇨", qOe = "🇱🇮", YOe = "🇱🇰", HOe = "🇱🇷", VOe = "🇱🇸", zOe = "🇱🇹", $Oe = "🇱🇺", WOe = "🇱🇻", KOe = "🇱🇾", QOe = "🇲🇦", XOe = "🇲🇨", ZOe = "🇲🇩", JOe = "🇲🇪", jOe = "🇲🇫", eye = "🇲🇬", tye = "🇲🇭", nye = "🇲🇰", rye = "🇲🇱", aye = "🇲🇲", oye = "🇲🇳", iye = "🇲🇴", sye = "🇲🇵", cye = "🇲🇶", lye = "🇲🇷", _ye = "🇲🇸", dye = "🇲🇹", uye = "🇲🇺", pye = "🇲🇻", mye = "🇲🇼", gye = "🇲🇽", Eye = "🇲🇾", Sye = "🇲🇿", fye = "🇳🇦", bye = "🇳🇨", Tye = "🇳🇪", hye = "🇳🇫", Rye = "🇳🇬", Cye = "🇳🇮", Nye = "🇳🇱", vye = "🇳🇴", Oye = "🇳🇵", yye = "🇳🇷", Aye = "🇳🇺", Iye = "🇳🇿", Dye = "🇴🇲", wye = "🇵🇦", Mye = "🇵🇪", xye = "🇵🇫", Lye = "🇵🇬", kye = "🇵🇭", Pye = "🇵🇰", Uye = "🇵🇱", Fye = "🇵🇲", Bye = "🇵🇳", Gye = "🇵🇷", qye = "🇵🇸", Yye = "🇵🇹", Hye = "🇵🇼", Vye = "🇵🇾", zye = "🇶🇦", $ye = "🇷🇪", Wye = "🇷🇴", Kye = "🇷🇸", Qye = "🇷🇺", Xye = "🇷🇼", Zye = "🇸🇦", Jye = "🇸🇧", jye = "🇸🇨", eAe = "🇸🇩", tAe = "🇸🇪", nAe = "🇸🇬", rAe = "🇸🇭", aAe = "🇸🇮", oAe = "🇸🇯", iAe = "🇸🇰", sAe = "🇸🇱", cAe = "🇸🇲", lAe = "🇸🇳", _Ae = "🇸🇴", dAe = "🇸🇷", uAe = "🇸🇸", pAe = "🇸🇹", mAe = "🇸🇻", gAe = "🇸🇽", EAe = "🇸🇾", SAe = "🇸🇿", fAe = "🇹🇦", bAe = "🇹🇨", TAe = "🇹🇩", hAe = "🇹🇫", RAe = "🇹🇬", CAe = "🇹🇭", NAe = "🇹🇯", vAe = "🇹🇰", OAe = "🇹🇱", yAe = "🇹🇲", AAe = "🇹🇳", IAe = "🇹🇴", DAe = "🇹🇷", wAe = "🇹🇹", MAe = "🇹🇻", xAe = "🇹🇼", LAe = "🇹🇿", kAe = "🇺🇦", PAe = "🇺🇬", UAe = "🇺🇲", FAe = "🇺🇳", BAe = "🇺🇸", GAe = "🇺🇾", qAe = "🇺🇿", YAe = "🇻🇦", HAe = "🇻🇨", VAe = "🇻🇪", zAe = "🇻🇬", $Ae = "🇻🇮", WAe = "🇻🇳", KAe = "🇻🇺", QAe = "🇼🇫", XAe = "🇼🇸", ZAe = "🇽🇰", JAe = "🇾🇪", jAe = "🇾🇹", eIe = "🇿🇦", tIe = "🇿🇲", nIe = "🇿🇼", rIe = "🏴󠁧󠁢󠁥󠁮󠁧󠁿", aIe = "🏴󠁧󠁢󠁳󠁣󠁴󠁿", oIe = "🏴󠁧󠁢󠁷󠁬󠁳󠁿", iIe = {
   100: "💯",
   1234: "🔢",
-  grinning: E6,
-  smiley: S6,
-  smile: f6,
-  grin: b6,
-  laughing: T6,
-  satisfied: h6,
-  sweat_smile: R6,
-  rofl: C6,
-  joy: N6,
-  slightly_smiling_face: v6,
-  upside_down_face: O6,
-  wink: y6,
-  blush: A6,
-  innocent: I6,
-  smiling_face_with_three_hearts: D6,
-  heart_eyes: w6,
-  star_struck: M6,
-  kissing_heart: x6,
-  kissing: L6,
-  relaxed: k6,
-  kissing_closed_eyes: P6,
-  kissing_smiling_eyes: U6,
-  smiling_face_with_tear: F6,
-  yum: B6,
-  stuck_out_tongue: G6,
-  stuck_out_tongue_winking_eye: q6,
-  zany_face: Y6,
-  stuck_out_tongue_closed_eyes: H6,
-  money_mouth_face: V6,
-  hugs: z6,
-  hand_over_mouth: $6,
-  shushing_face: W6,
-  thinking: K6,
-  zipper_mouth_face: Q6,
-  raised_eyebrow: X6,
-  neutral_face: Z6,
-  expressionless: J6,
-  no_mouth: j6,
-  smirk: e8,
-  unamused: t8,
-  roll_eyes: n8,
-  grimacing: r8,
-  lying_face: a8,
-  relieved: o8,
-  pensive: i8,
-  sleepy: s8,
-  drooling_face: c8,
-  sleeping: l8,
-  mask: _8,
-  face_with_thermometer: d8,
-  face_with_head_bandage: u8,
-  nauseated_face: p8,
-  vomiting_face: m8,
-  sneezing_face: g8,
-  hot_face: E8,
-  cold_face: S8,
-  woozy_face: f8,
-  dizzy_face: b8,
-  exploding_head: T8,
-  cowboy_hat_face: h8,
-  partying_face: R8,
-  disguised_face: C8,
-  sunglasses: N8,
-  nerd_face: v8,
-  monocle_face: O8,
-  confused: y8,
-  worried: A8,
-  slightly_frowning_face: I8,
-  frowning_face: D8,
-  open_mouth: w8,
-  hushed: M8,
-  astonished: x8,
-  flushed: L8,
-  pleading_face: k8,
-  frowning: P8,
-  anguished: U8,
-  fearful: F8,
-  cold_sweat: B8,
-  disappointed_relieved: G8,
-  cry: q8,
-  sob: Y8,
-  scream: H8,
-  confounded: V8,
-  persevere: z8,
-  disappointed: $8,
-  sweat: W8,
-  weary: K8,
-  tired_face: Q8,
-  yawning_face: X8,
-  triumph: Z8,
-  rage: J8,
-  pout: j8,
-  angry: eJ,
-  cursing_face: tJ,
-  smiling_imp: nJ,
-  imp: rJ,
-  skull: aJ,
-  skull_and_crossbones: oJ,
-  hankey: iJ,
-  poop: sJ,
-  shit: cJ,
-  clown_face: lJ,
-  japanese_ogre: _J,
-  japanese_goblin: dJ,
-  ghost: uJ,
-  alien: pJ,
-  space_invader: mJ,
-  robot: gJ,
-  smiley_cat: EJ,
-  smile_cat: SJ,
-  joy_cat: fJ,
-  heart_eyes_cat: bJ,
-  smirk_cat: TJ,
-  kissing_cat: hJ,
-  scream_cat: RJ,
-  crying_cat_face: CJ,
-  pouting_cat: NJ,
-  see_no_evil: vJ,
-  hear_no_evil: OJ,
-  speak_no_evil: yJ,
-  kiss: AJ,
-  love_letter: IJ,
-  cupid: DJ,
-  gift_heart: wJ,
-  sparkling_heart: MJ,
-  heartpulse: xJ,
-  heartbeat: LJ,
-  revolving_hearts: kJ,
-  two_hearts: PJ,
-  heart_decoration: UJ,
-  heavy_heart_exclamation: FJ,
-  broken_heart: BJ,
-  heart: GJ,
-  orange_heart: qJ,
-  yellow_heart: YJ,
-  green_heart: HJ,
-  blue_heart: VJ,
-  purple_heart: zJ,
-  brown_heart: $J,
-  black_heart: WJ,
-  white_heart: KJ,
-  anger: QJ,
-  boom: XJ,
-  collision: ZJ,
-  dizzy: JJ,
-  sweat_drops: jJ,
-  dash: e7,
-  hole: t7,
-  bomb: n7,
-  speech_balloon: r7,
-  eye_speech_bubble: a7,
-  left_speech_bubble: o7,
-  right_anger_bubble: i7,
-  thought_balloon: s7,
-  zzz: c7,
-  wave: l7,
-  raised_back_of_hand: _7,
-  raised_hand_with_fingers_splayed: d7,
-  hand: u7,
-  raised_hand: p7,
-  vulcan_salute: m7,
-  ok_hand: g7,
-  pinched_fingers: E7,
-  pinching_hand: S7,
-  v: f7,
-  crossed_fingers: b7,
-  love_you_gesture: T7,
-  metal: h7,
-  call_me_hand: R7,
-  point_left: C7,
-  point_right: N7,
-  point_up_2: v7,
-  middle_finger: O7,
-  fu: y7,
-  point_down: A7,
-  point_up: I7,
+  grinning: S6,
+  smiley: f6,
+  smile: b6,
+  grin: T6,
+  laughing: h6,
+  satisfied: R6,
+  sweat_smile: C6,
+  rofl: N6,
+  joy: v6,
+  slightly_smiling_face: O6,
+  upside_down_face: y6,
+  wink: A6,
+  blush: I6,
+  innocent: D6,
+  smiling_face_with_three_hearts: w6,
+  heart_eyes: M6,
+  star_struck: x6,
+  kissing_heart: L6,
+  kissing: k6,
+  relaxed: P6,
+  kissing_closed_eyes: U6,
+  kissing_smiling_eyes: F6,
+  smiling_face_with_tear: B6,
+  yum: G6,
+  stuck_out_tongue: q6,
+  stuck_out_tongue_winking_eye: Y6,
+  zany_face: H6,
+  stuck_out_tongue_closed_eyes: V6,
+  money_mouth_face: z6,
+  hugs: $6,
+  hand_over_mouth: W6,
+  shushing_face: K6,
+  thinking: Q6,
+  zipper_mouth_face: X6,
+  raised_eyebrow: Z6,
+  neutral_face: J6,
+  expressionless: j6,
+  no_mouth: e8,
+  smirk: t8,
+  unamused: n8,
+  roll_eyes: r8,
+  grimacing: a8,
+  lying_face: o8,
+  relieved: i8,
+  pensive: s8,
+  sleepy: c8,
+  drooling_face: l8,
+  sleeping: _8,
+  mask: d8,
+  face_with_thermometer: u8,
+  face_with_head_bandage: p8,
+  nauseated_face: m8,
+  vomiting_face: g8,
+  sneezing_face: E8,
+  hot_face: S8,
+  cold_face: f8,
+  woozy_face: b8,
+  dizzy_face: T8,
+  exploding_head: h8,
+  cowboy_hat_face: R8,
+  partying_face: C8,
+  disguised_face: N8,
+  sunglasses: v8,
+  nerd_face: O8,
+  monocle_face: y8,
+  confused: A8,
+  worried: I8,
+  slightly_frowning_face: D8,
+  frowning_face: w8,
+  open_mouth: M8,
+  hushed: x8,
+  astonished: L8,
+  flushed: k8,
+  pleading_face: P8,
+  frowning: U8,
+  anguished: F8,
+  fearful: B8,
+  cold_sweat: G8,
+  disappointed_relieved: q8,
+  cry: Y8,
+  sob: H8,
+  scream: V8,
+  confounded: z8,
+  persevere: $8,
+  disappointed: W8,
+  sweat: K8,
+  weary: Q8,
+  tired_face: X8,
+  yawning_face: Z8,
+  triumph: J8,
+  rage: j8,
+  pout: eJ,
+  angry: tJ,
+  cursing_face: nJ,
+  smiling_imp: rJ,
+  imp: aJ,
+  skull: oJ,
+  skull_and_crossbones: iJ,
+  hankey: sJ,
+  poop: cJ,
+  shit: lJ,
+  clown_face: _J,
+  japanese_ogre: dJ,
+  japanese_goblin: uJ,
+  ghost: pJ,
+  alien: mJ,
+  space_invader: gJ,
+  robot: EJ,
+  smiley_cat: SJ,
+  smile_cat: fJ,
+  joy_cat: bJ,
+  heart_eyes_cat: TJ,
+  smirk_cat: hJ,
+  kissing_cat: RJ,
+  scream_cat: CJ,
+  crying_cat_face: NJ,
+  pouting_cat: vJ,
+  see_no_evil: OJ,
+  hear_no_evil: yJ,
+  speak_no_evil: AJ,
+  kiss: IJ,
+  love_letter: DJ,
+  cupid: wJ,
+  gift_heart: MJ,
+  sparkling_heart: xJ,
+  heartpulse: LJ,
+  heartbeat: kJ,
+  revolving_hearts: PJ,
+  two_hearts: UJ,
+  heart_decoration: FJ,
+  heavy_heart_exclamation: BJ,
+  broken_heart: GJ,
+  heart: qJ,
+  orange_heart: YJ,
+  yellow_heart: HJ,
+  green_heart: VJ,
+  blue_heart: zJ,
+  purple_heart: $J,
+  brown_heart: WJ,
+  black_heart: KJ,
+  white_heart: QJ,
+  anger: XJ,
+  boom: ZJ,
+  collision: JJ,
+  dizzy: jJ,
+  sweat_drops: e7,
+  dash: t7,
+  hole: n7,
+  bomb: r7,
+  speech_balloon: a7,
+  eye_speech_bubble: o7,
+  left_speech_bubble: i7,
+  right_anger_bubble: s7,
+  thought_balloon: c7,
+  zzz: l7,
+  wave: _7,
+  raised_back_of_hand: d7,
+  raised_hand_with_fingers_splayed: u7,
+  hand: p7,
+  raised_hand: m7,
+  vulcan_salute: g7,
+  ok_hand: E7,
+  pinched_fingers: S7,
+  pinching_hand: f7,
+  v: b7,
+  crossed_fingers: T7,
+  love_you_gesture: h7,
+  metal: R7,
+  call_me_hand: C7,
+  point_left: N7,
+  point_right: v7,
+  point_up_2: O7,
+  middle_finger: y7,
+  fu: A7,
+  point_down: I7,
+  point_up: D7,
   "+1": "👍",
-  thumbsup: D7,
+  thumbsup: w7,
   "-1": "👎",
-  thumbsdown: w7,
-  fist_raised: M7,
-  fist: x7,
-  fist_oncoming: L7,
-  facepunch: k7,
-  punch: P7,
-  fist_left: U7,
-  fist_right: F7,
-  clap: B7,
-  raised_hands: G7,
-  open_hands: q7,
-  palms_up_together: Y7,
-  handshake: H7,
-  pray: V7,
-  writing_hand: z7,
-  nail_care: $7,
-  selfie: W7,
-  muscle: K7,
-  mechanical_arm: Q7,
-  mechanical_leg: X7,
-  leg: Z7,
-  foot: J7,
-  ear: j7,
-  ear_with_hearing_aid: ej,
-  nose: tj,
-  brain: nj,
-  anatomical_heart: rj,
-  lungs: aj,
-  tooth: oj,
-  bone: ij,
-  eyes: sj,
-  eye: cj,
-  tongue: lj,
-  lips: _j,
-  baby: dj,
-  child: uj,
-  boy: pj,
-  girl: mj,
-  adult: gj,
-  blond_haired_person: Ej,
-  man: Sj,
-  bearded_person: fj,
-  red_haired_man: bj,
-  curly_haired_man: Tj,
-  white_haired_man: hj,
-  bald_man: Rj,
-  woman: Cj,
-  red_haired_woman: Nj,
-  person_red_hair: vj,
-  curly_haired_woman: Oj,
-  person_curly_hair: yj,
-  white_haired_woman: Aj,
-  person_white_hair: Ij,
-  bald_woman: Dj,
-  person_bald: wj,
-  blond_haired_woman: Mj,
-  blonde_woman: xj,
-  blond_haired_man: Lj,
-  older_adult: kj,
-  older_man: Pj,
-  older_woman: Uj,
-  frowning_person: Fj,
-  frowning_man: Bj,
-  frowning_woman: Gj,
-  pouting_face: qj,
-  pouting_man: Yj,
-  pouting_woman: Hj,
-  no_good: Vj,
-  no_good_man: zj,
-  ng_man: $j,
-  no_good_woman: Wj,
-  ng_woman: Kj,
-  ok_person: Qj,
-  ok_man: Xj,
-  ok_woman: Zj,
-  tipping_hand_person: Jj,
-  information_desk_person: jj,
-  tipping_hand_man: eee,
-  sassy_man: tee,
-  tipping_hand_woman: nee,
-  sassy_woman: ree,
-  raising_hand: aee,
-  raising_hand_man: oee,
-  raising_hand_woman: iee,
-  deaf_person: see,
-  deaf_man: cee,
-  deaf_woman: lee,
-  bow: _ee,
-  bowing_man: dee,
-  bowing_woman: uee,
-  facepalm: pee,
-  man_facepalming: mee,
-  woman_facepalming: gee,
-  shrug: Eee,
-  man_shrugging: See,
-  woman_shrugging: fee,
-  health_worker: bee,
-  man_health_worker: Tee,
-  woman_health_worker: hee,
-  student: Ree,
-  man_student: Cee,
-  woman_student: Nee,
-  teacher: vee,
-  man_teacher: Oee,
-  woman_teacher: yee,
-  judge: Aee,
-  man_judge: Iee,
-  woman_judge: Dee,
-  farmer: wee,
-  man_farmer: Mee,
-  woman_farmer: xee,
-  cook: Lee,
-  man_cook: kee,
-  woman_cook: Pee,
-  mechanic: Uee,
-  man_mechanic: Fee,
-  woman_mechanic: Bee,
-  factory_worker: Gee,
-  man_factory_worker: qee,
-  woman_factory_worker: Yee,
-  office_worker: Hee,
-  man_office_worker: Vee,
-  woman_office_worker: zee,
-  scientist: $ee,
-  man_scientist: Wee,
-  woman_scientist: Kee,
-  technologist: Qee,
-  man_technologist: Xee,
-  woman_technologist: Zee,
-  singer: Jee,
-  man_singer: jee,
-  woman_singer: ete,
-  artist: tte,
-  man_artist: nte,
-  woman_artist: rte,
-  pilot: ate,
-  man_pilot: ote,
-  woman_pilot: ite,
-  astronaut: ste,
-  man_astronaut: cte,
-  woman_astronaut: lte,
-  firefighter: _te,
-  man_firefighter: dte,
-  woman_firefighter: ute,
-  police_officer: pte,
-  cop: mte,
-  policeman: gte,
-  policewoman: Ete,
-  detective: Ste,
-  male_detective: fte,
-  female_detective: bte,
-  guard: Tte,
-  guardsman: hte,
-  guardswoman: Rte,
-  ninja: Cte,
-  construction_worker: Nte,
-  construction_worker_man: vte,
-  construction_worker_woman: Ote,
-  prince: yte,
-  princess: Ate,
-  person_with_turban: Ite,
-  man_with_turban: Dte,
-  woman_with_turban: wte,
-  man_with_gua_pi_mao: Mte,
-  woman_with_headscarf: xte,
-  person_in_tuxedo: Lte,
-  man_in_tuxedo: kte,
-  woman_in_tuxedo: Pte,
-  person_with_veil: Ute,
-  man_with_veil: Fte,
-  woman_with_veil: Bte,
-  bride_with_veil: Gte,
-  pregnant_woman: qte,
-  breast_feeding: Yte,
-  woman_feeding_baby: Hte,
-  man_feeding_baby: Vte,
-  person_feeding_baby: zte,
-  angel: $te,
-  santa: Wte,
-  mrs_claus: Kte,
-  mx_claus: Qte,
-  superhero: Xte,
-  superhero_man: Zte,
-  superhero_woman: Jte,
-  supervillain: jte,
-  supervillain_man: ene,
-  supervillain_woman: tne,
-  mage: nne,
-  mage_man: rne,
-  mage_woman: ane,
-  fairy: one,
-  fairy_man: ine,
-  fairy_woman: sne,
-  vampire: cne,
-  vampire_man: lne,
-  vampire_woman: _ne,
-  merperson: dne,
-  merman: une,
-  mermaid: pne,
-  elf: mne,
-  elf_man: gne,
-  elf_woman: Ene,
-  genie: Sne,
-  genie_man: fne,
-  genie_woman: bne,
-  zombie: Tne,
-  zombie_man: hne,
-  zombie_woman: Rne,
-  massage: Cne,
-  massage_man: Nne,
-  massage_woman: vne,
-  haircut: One,
-  haircut_man: yne,
-  haircut_woman: Ane,
-  walking: Ine,
-  walking_man: Dne,
-  walking_woman: wne,
-  standing_person: Mne,
-  standing_man: xne,
-  standing_woman: Lne,
-  kneeling_person: kne,
-  kneeling_man: Pne,
-  kneeling_woman: Une,
-  person_with_probing_cane: Fne,
-  man_with_probing_cane: Bne,
-  woman_with_probing_cane: Gne,
-  person_in_motorized_wheelchair: qne,
-  man_in_motorized_wheelchair: Yne,
-  woman_in_motorized_wheelchair: Hne,
-  person_in_manual_wheelchair: Vne,
-  man_in_manual_wheelchair: zne,
-  woman_in_manual_wheelchair: $ne,
-  runner: Wne,
-  running: Kne,
-  running_man: Qne,
-  running_woman: Xne,
-  woman_dancing: Zne,
-  dancer: Jne,
-  man_dancing: jne,
-  business_suit_levitating: ere,
-  dancers: tre,
-  dancing_men: nre,
-  dancing_women: rre,
-  sauna_person: are,
-  sauna_man: ore,
-  sauna_woman: ire,
-  climbing: sre,
-  climbing_man: cre,
-  climbing_woman: lre,
-  person_fencing: _re,
-  horse_racing: dre,
-  skier: ure,
-  snowboarder: pre,
-  golfing: mre,
-  golfing_man: gre,
-  golfing_woman: Ere,
-  surfer: Sre,
-  surfing_man: fre,
-  surfing_woman: bre,
-  rowboat: Tre,
-  rowing_man: hre,
-  rowing_woman: Rre,
-  swimmer: Cre,
-  swimming_man: Nre,
-  swimming_woman: vre,
-  bouncing_ball_person: Ore,
-  bouncing_ball_man: yre,
-  basketball_man: Are,
-  bouncing_ball_woman: Ire,
-  basketball_woman: Dre,
-  weight_lifting: wre,
-  weight_lifting_man: Mre,
-  weight_lifting_woman: xre,
-  bicyclist: Lre,
-  biking_man: kre,
-  biking_woman: Pre,
-  mountain_bicyclist: Ure,
-  mountain_biking_man: Fre,
-  mountain_biking_woman: Bre,
-  cartwheeling: Gre,
-  man_cartwheeling: qre,
-  woman_cartwheeling: Yre,
-  wrestling: Hre,
-  men_wrestling: Vre,
-  women_wrestling: zre,
-  water_polo: $re,
-  man_playing_water_polo: Wre,
-  woman_playing_water_polo: Kre,
-  handball_person: Qre,
-  man_playing_handball: Xre,
-  woman_playing_handball: Zre,
-  juggling_person: Jre,
-  man_juggling: jre,
-  woman_juggling: eae,
-  lotus_position: tae,
-  lotus_position_man: nae,
-  lotus_position_woman: rae,
-  bath: aae,
-  sleeping_bed: oae,
-  people_holding_hands: iae,
-  two_women_holding_hands: sae,
-  couple: cae,
-  two_men_holding_hands: lae,
-  couplekiss: _ae,
-  couplekiss_man_woman: dae,
-  couplekiss_man_man: uae,
-  couplekiss_woman_woman: pae,
-  couple_with_heart: mae,
-  couple_with_heart_woman_man: gae,
-  couple_with_heart_man_man: Eae,
-  couple_with_heart_woman_woman: Sae,
-  family: fae,
-  family_man_woman_boy: bae,
-  family_man_woman_girl: Tae,
-  family_man_woman_girl_boy: hae,
-  family_man_woman_boy_boy: Rae,
-  family_man_woman_girl_girl: Cae,
-  family_man_man_boy: Nae,
-  family_man_man_girl: vae,
-  family_man_man_girl_boy: Oae,
-  family_man_man_boy_boy: yae,
-  family_man_man_girl_girl: Aae,
-  family_woman_woman_boy: Iae,
-  family_woman_woman_girl: Dae,
-  family_woman_woman_girl_boy: wae,
-  family_woman_woman_boy_boy: Mae,
-  family_woman_woman_girl_girl: xae,
-  family_man_boy: Lae,
-  family_man_boy_boy: kae,
-  family_man_girl: Pae,
-  family_man_girl_boy: Uae,
-  family_man_girl_girl: Fae,
-  family_woman_boy: Bae,
-  family_woman_boy_boy: Gae,
-  family_woman_girl: qae,
-  family_woman_girl_boy: Yae,
-  family_woman_girl_girl: Hae,
-  speaking_head: Vae,
-  bust_in_silhouette: zae,
-  busts_in_silhouette: $ae,
-  people_hugging: Wae,
-  footprints: Kae,
-  monkey_face: Qae,
-  monkey: Xae,
-  gorilla: Zae,
-  orangutan: Jae,
-  dog: jae,
-  dog2: eoe,
-  guide_dog: toe,
-  service_dog: noe,
-  poodle: roe,
-  wolf: aoe,
-  fox_face: ooe,
-  raccoon: ioe,
-  cat: soe,
-  cat2: coe,
-  black_cat: loe,
-  lion: _oe,
-  tiger: doe,
-  tiger2: uoe,
-  leopard: poe,
-  horse: moe,
-  racehorse: goe,
-  unicorn: Eoe,
-  zebra: Soe,
-  deer: foe,
-  bison: boe,
-  cow: Toe,
-  ox: hoe,
-  water_buffalo: Roe,
-  cow2: Coe,
-  pig: Noe,
-  pig2: voe,
-  boar: Ooe,
-  pig_nose: yoe,
-  ram: Aoe,
-  sheep: Ioe,
-  goat: Doe,
-  dromedary_camel: woe,
-  camel: Moe,
-  llama: xoe,
-  giraffe: Loe,
-  elephant: koe,
-  mammoth: Poe,
-  rhinoceros: Uoe,
-  hippopotamus: Foe,
-  mouse: Boe,
-  mouse2: Goe,
-  rat: qoe,
-  hamster: Yoe,
-  rabbit: Hoe,
-  rabbit2: Voe,
-  chipmunk: zoe,
-  beaver: $oe,
-  hedgehog: Woe,
-  bat: Koe,
-  bear: Qoe,
-  polar_bear: Xoe,
-  koala: Zoe,
-  panda_face: Joe,
-  sloth: joe,
-  otter: eie,
-  skunk: tie,
-  kangaroo: nie,
-  badger: rie,
-  feet: aie,
-  paw_prints: oie,
-  turkey: iie,
-  chicken: sie,
-  rooster: cie,
-  hatching_chick: lie,
-  baby_chick: _ie,
-  hatched_chick: die,
-  bird: uie,
-  penguin: pie,
-  dove: mie,
-  eagle: gie,
-  duck: Eie,
-  swan: Sie,
-  owl: fie,
-  dodo: bie,
-  feather: Tie,
-  flamingo: hie,
-  peacock: Rie,
-  parrot: Cie,
-  frog: Nie,
-  crocodile: vie,
-  turtle: Oie,
-  lizard: yie,
-  snake: Aie,
-  dragon_face: Iie,
-  dragon: Die,
-  sauropod: wie,
+  thumbsdown: M7,
+  fist_raised: x7,
+  fist: L7,
+  fist_oncoming: k7,
+  facepunch: P7,
+  punch: U7,
+  fist_left: F7,
+  fist_right: B7,
+  clap: G7,
+  raised_hands: q7,
+  open_hands: Y7,
+  palms_up_together: H7,
+  handshake: V7,
+  pray: z7,
+  writing_hand: $7,
+  nail_care: W7,
+  selfie: K7,
+  muscle: Q7,
+  mechanical_arm: X7,
+  mechanical_leg: Z7,
+  leg: J7,
+  foot: j7,
+  ear: ej,
+  ear_with_hearing_aid: tj,
+  nose: nj,
+  brain: rj,
+  anatomical_heart: aj,
+  lungs: oj,
+  tooth: ij,
+  bone: sj,
+  eyes: cj,
+  eye: lj,
+  tongue: _j,
+  lips: dj,
+  baby: uj,
+  child: pj,
+  boy: mj,
+  girl: gj,
+  adult: Ej,
+  blond_haired_person: Sj,
+  man: fj,
+  bearded_person: bj,
+  red_haired_man: Tj,
+  curly_haired_man: hj,
+  white_haired_man: Rj,
+  bald_man: Cj,
+  woman: Nj,
+  red_haired_woman: vj,
+  person_red_hair: Oj,
+  curly_haired_woman: yj,
+  person_curly_hair: Aj,
+  white_haired_woman: Ij,
+  person_white_hair: Dj,
+  bald_woman: wj,
+  person_bald: Mj,
+  blond_haired_woman: xj,
+  blonde_woman: Lj,
+  blond_haired_man: kj,
+  older_adult: Pj,
+  older_man: Uj,
+  older_woman: Fj,
+  frowning_person: Bj,
+  frowning_man: Gj,
+  frowning_woman: qj,
+  pouting_face: Yj,
+  pouting_man: Hj,
+  pouting_woman: Vj,
+  no_good: zj,
+  no_good_man: $j,
+  ng_man: Wj,
+  no_good_woman: Kj,
+  ng_woman: Qj,
+  ok_person: Xj,
+  ok_man: Zj,
+  ok_woman: Jj,
+  tipping_hand_person: jj,
+  information_desk_person: eee,
+  tipping_hand_man: tee,
+  sassy_man: nee,
+  tipping_hand_woman: ree,
+  sassy_woman: aee,
+  raising_hand: oee,
+  raising_hand_man: iee,
+  raising_hand_woman: see,
+  deaf_person: cee,
+  deaf_man: lee,
+  deaf_woman: _ee,
+  bow: dee,
+  bowing_man: uee,
+  bowing_woman: pee,
+  facepalm: mee,
+  man_facepalming: gee,
+  woman_facepalming: Eee,
+  shrug: See,
+  man_shrugging: fee,
+  woman_shrugging: bee,
+  health_worker: Tee,
+  man_health_worker: hee,
+  woman_health_worker: Ree,
+  student: Cee,
+  man_student: Nee,
+  woman_student: vee,
+  teacher: Oee,
+  man_teacher: yee,
+  woman_teacher: Aee,
+  judge: Iee,
+  man_judge: Dee,
+  woman_judge: wee,
+  farmer: Mee,
+  man_farmer: xee,
+  woman_farmer: Lee,
+  cook: kee,
+  man_cook: Pee,
+  woman_cook: Uee,
+  mechanic: Fee,
+  man_mechanic: Bee,
+  woman_mechanic: Gee,
+  factory_worker: qee,
+  man_factory_worker: Yee,
+  woman_factory_worker: Hee,
+  office_worker: Vee,
+  man_office_worker: zee,
+  woman_office_worker: $ee,
+  scientist: Wee,
+  man_scientist: Kee,
+  woman_scientist: Qee,
+  technologist: Xee,
+  man_technologist: Zee,
+  woman_technologist: Jee,
+  singer: jee,
+  man_singer: ete,
+  woman_singer: tte,
+  artist: nte,
+  man_artist: rte,
+  woman_artist: ate,
+  pilot: ote,
+  man_pilot: ite,
+  woman_pilot: ste,
+  astronaut: cte,
+  man_astronaut: lte,
+  woman_astronaut: _te,
+  firefighter: dte,
+  man_firefighter: ute,
+  woman_firefighter: pte,
+  police_officer: mte,
+  cop: gte,
+  policeman: Ete,
+  policewoman: Ste,
+  detective: fte,
+  male_detective: bte,
+  female_detective: Tte,
+  guard: hte,
+  guardsman: Rte,
+  guardswoman: Cte,
+  ninja: Nte,
+  construction_worker: vte,
+  construction_worker_man: Ote,
+  construction_worker_woman: yte,
+  prince: Ate,
+  princess: Ite,
+  person_with_turban: Dte,
+  man_with_turban: wte,
+  woman_with_turban: Mte,
+  man_with_gua_pi_mao: xte,
+  woman_with_headscarf: Lte,
+  person_in_tuxedo: kte,
+  man_in_tuxedo: Pte,
+  woman_in_tuxedo: Ute,
+  person_with_veil: Fte,
+  man_with_veil: Bte,
+  woman_with_veil: Gte,
+  bride_with_veil: qte,
+  pregnant_woman: Yte,
+  breast_feeding: Hte,
+  woman_feeding_baby: Vte,
+  man_feeding_baby: zte,
+  person_feeding_baby: $te,
+  angel: Wte,
+  santa: Kte,
+  mrs_claus: Qte,
+  mx_claus: Xte,
+  superhero: Zte,
+  superhero_man: Jte,
+  superhero_woman: jte,
+  supervillain: ene,
+  supervillain_man: tne,
+  supervillain_woman: nne,
+  mage: rne,
+  mage_man: ane,
+  mage_woman: one,
+  fairy: ine,
+  fairy_man: sne,
+  fairy_woman: cne,
+  vampire: lne,
+  vampire_man: _ne,
+  vampire_woman: dne,
+  merperson: une,
+  merman: pne,
+  mermaid: mne,
+  elf: gne,
+  elf_man: Ene,
+  elf_woman: Sne,
+  genie: fne,
+  genie_man: bne,
+  genie_woman: Tne,
+  zombie: hne,
+  zombie_man: Rne,
+  zombie_woman: Cne,
+  massage: Nne,
+  massage_man: vne,
+  massage_woman: One,
+  haircut: yne,
+  haircut_man: Ane,
+  haircut_woman: Ine,
+  walking: Dne,
+  walking_man: wne,
+  walking_woman: Mne,
+  standing_person: xne,
+  standing_man: Lne,
+  standing_woman: kne,
+  kneeling_person: Pne,
+  kneeling_man: Une,
+  kneeling_woman: Fne,
+  person_with_probing_cane: Bne,
+  man_with_probing_cane: Gne,
+  woman_with_probing_cane: qne,
+  person_in_motorized_wheelchair: Yne,
+  man_in_motorized_wheelchair: Hne,
+  woman_in_motorized_wheelchair: Vne,
+  person_in_manual_wheelchair: zne,
+  man_in_manual_wheelchair: $ne,
+  woman_in_manual_wheelchair: Wne,
+  runner: Kne,
+  running: Qne,
+  running_man: Xne,
+  running_woman: Zne,
+  woman_dancing: Jne,
+  dancer: jne,
+  man_dancing: ere,
+  business_suit_levitating: tre,
+  dancers: nre,
+  dancing_men: rre,
+  dancing_women: are,
+  sauna_person: ore,
+  sauna_man: ire,
+  sauna_woman: sre,
+  climbing: cre,
+  climbing_man: lre,
+  climbing_woman: _re,
+  person_fencing: dre,
+  horse_racing: ure,
+  skier: pre,
+  snowboarder: mre,
+  golfing: gre,
+  golfing_man: Ere,
+  golfing_woman: Sre,
+  surfer: fre,
+  surfing_man: bre,
+  surfing_woman: Tre,
+  rowboat: hre,
+  rowing_man: Rre,
+  rowing_woman: Cre,
+  swimmer: Nre,
+  swimming_man: vre,
+  swimming_woman: Ore,
+  bouncing_ball_person: yre,
+  bouncing_ball_man: Are,
+  basketball_man: Ire,
+  bouncing_ball_woman: Dre,
+  basketball_woman: wre,
+  weight_lifting: Mre,
+  weight_lifting_man: xre,
+  weight_lifting_woman: Lre,
+  bicyclist: kre,
+  biking_man: Pre,
+  biking_woman: Ure,
+  mountain_bicyclist: Fre,
+  mountain_biking_man: Bre,
+  mountain_biking_woman: Gre,
+  cartwheeling: qre,
+  man_cartwheeling: Yre,
+  woman_cartwheeling: Hre,
+  wrestling: Vre,
+  men_wrestling: zre,
+  women_wrestling: $re,
+  water_polo: Wre,
+  man_playing_water_polo: Kre,
+  woman_playing_water_polo: Qre,
+  handball_person: Xre,
+  man_playing_handball: Zre,
+  woman_playing_handball: Jre,
+  juggling_person: jre,
+  man_juggling: eae,
+  woman_juggling: tae,
+  lotus_position: nae,
+  lotus_position_man: rae,
+  lotus_position_woman: aae,
+  bath: oae,
+  sleeping_bed: iae,
+  people_holding_hands: sae,
+  two_women_holding_hands: cae,
+  couple: lae,
+  two_men_holding_hands: _ae,
+  couplekiss: dae,
+  couplekiss_man_woman: uae,
+  couplekiss_man_man: pae,
+  couplekiss_woman_woman: mae,
+  couple_with_heart: gae,
+  couple_with_heart_woman_man: Eae,
+  couple_with_heart_man_man: Sae,
+  couple_with_heart_woman_woman: fae,
+  family: bae,
+  family_man_woman_boy: Tae,
+  family_man_woman_girl: hae,
+  family_man_woman_girl_boy: Rae,
+  family_man_woman_boy_boy: Cae,
+  family_man_woman_girl_girl: Nae,
+  family_man_man_boy: vae,
+  family_man_man_girl: Oae,
+  family_man_man_girl_boy: yae,
+  family_man_man_boy_boy: Aae,
+  family_man_man_girl_girl: Iae,
+  family_woman_woman_boy: Dae,
+  family_woman_woman_girl: wae,
+  family_woman_woman_girl_boy: Mae,
+  family_woman_woman_boy_boy: xae,
+  family_woman_woman_girl_girl: Lae,
+  family_man_boy: kae,
+  family_man_boy_boy: Pae,
+  family_man_girl: Uae,
+  family_man_girl_boy: Fae,
+  family_man_girl_girl: Bae,
+  family_woman_boy: Gae,
+  family_woman_boy_boy: qae,
+  family_woman_girl: Yae,
+  family_woman_girl_boy: Hae,
+  family_woman_girl_girl: Vae,
+  speaking_head: zae,
+  bust_in_silhouette: $ae,
+  busts_in_silhouette: Wae,
+  people_hugging: Kae,
+  footprints: Qae,
+  monkey_face: Xae,
+  monkey: Zae,
+  gorilla: Jae,
+  orangutan: jae,
+  dog: eoe,
+  dog2: toe,
+  guide_dog: noe,
+  service_dog: roe,
+  poodle: aoe,
+  wolf: ooe,
+  fox_face: ioe,
+  raccoon: soe,
+  cat: coe,
+  cat2: loe,
+  black_cat: _oe,
+  lion: doe,
+  tiger: uoe,
+  tiger2: poe,
+  leopard: moe,
+  horse: goe,
+  racehorse: Eoe,
+  unicorn: Soe,
+  zebra: foe,
+  deer: boe,
+  bison: Toe,
+  cow: hoe,
+  ox: Roe,
+  water_buffalo: Coe,
+  cow2: Noe,
+  pig: voe,
+  pig2: Ooe,
+  boar: yoe,
+  pig_nose: Aoe,
+  ram: Ioe,
+  sheep: Doe,
+  goat: woe,
+  dromedary_camel: Moe,
+  camel: xoe,
+  llama: Loe,
+  giraffe: koe,
+  elephant: Poe,
+  mammoth: Uoe,
+  rhinoceros: Foe,
+  hippopotamus: Boe,
+  mouse: Goe,
+  mouse2: qoe,
+  rat: Yoe,
+  hamster: Hoe,
+  rabbit: Voe,
+  rabbit2: zoe,
+  chipmunk: $oe,
+  beaver: Woe,
+  hedgehog: Koe,
+  bat: Qoe,
+  bear: Xoe,
+  polar_bear: Zoe,
+  koala: Joe,
+  panda_face: joe,
+  sloth: eie,
+  otter: tie,
+  skunk: nie,
+  kangaroo: rie,
+  badger: aie,
+  feet: oie,
+  paw_prints: iie,
+  turkey: sie,
+  chicken: cie,
+  rooster: lie,
+  hatching_chick: _ie,
+  baby_chick: die,
+  hatched_chick: uie,
+  bird: pie,
+  penguin: mie,
+  dove: gie,
+  eagle: Eie,
+  duck: Sie,
+  swan: fie,
+  owl: bie,
+  dodo: Tie,
+  feather: hie,
+  flamingo: Rie,
+  peacock: Cie,
+  parrot: Nie,
+  frog: vie,
+  crocodile: Oie,
+  turtle: yie,
+  lizard: Aie,
+  snake: Iie,
+  dragon_face: Die,
+  dragon: wie,
+  sauropod: Mie,
   "t-rex": "🦖",
-  whale: Mie,
-  whale2: xie,
-  dolphin: Lie,
-  flipper: kie,
-  seal: Pie,
-  fish: Uie,
-  tropical_fish: Fie,
-  blowfish: Bie,
-  shark: Gie,
-  octopus: qie,
-  shell: Yie,
-  snail: Hie,
-  butterfly: Vie,
-  bug: zie,
-  ant: $ie,
-  bee: Wie,
-  honeybee: Kie,
-  beetle: Qie,
-  lady_beetle: Xie,
-  cricket: Zie,
-  cockroach: Jie,
-  spider: jie,
-  spider_web: ese,
-  scorpion: tse,
-  mosquito: nse,
-  fly: rse,
-  worm: ase,
-  microbe: ose,
-  bouquet: ise,
-  cherry_blossom: sse,
-  white_flower: cse,
-  rosette: lse,
-  rose: _se,
-  wilted_flower: dse,
-  hibiscus: use,
-  sunflower: pse,
-  blossom: mse,
-  tulip: gse,
-  seedling: Ese,
-  potted_plant: Sse,
-  evergreen_tree: fse,
-  deciduous_tree: bse,
-  palm_tree: Tse,
-  cactus: hse,
-  ear_of_rice: Rse,
-  herb: Cse,
-  shamrock: Nse,
-  four_leaf_clover: vse,
-  maple_leaf: Ose,
-  fallen_leaf: yse,
-  leaves: Ase,
-  grapes: Ise,
-  melon: Dse,
-  watermelon: wse,
-  tangerine: Mse,
-  orange: xse,
-  mandarin: Lse,
-  lemon: kse,
-  banana: Pse,
-  pineapple: Use,
-  mango: Fse,
-  apple: Bse,
-  green_apple: Gse,
-  pear: qse,
-  peach: Yse,
-  cherries: Hse,
-  strawberry: Vse,
-  blueberries: zse,
-  kiwi_fruit: $se,
-  tomato: Wse,
-  olive: Kse,
-  coconut: Qse,
-  avocado: Xse,
-  eggplant: Zse,
-  potato: Jse,
-  carrot: jse,
-  corn: ece,
-  hot_pepper: tce,
-  bell_pepper: nce,
-  cucumber: rce,
-  leafy_green: ace,
-  broccoli: oce,
-  garlic: ice,
-  onion: sce,
-  mushroom: cce,
-  peanuts: lce,
-  chestnut: _ce,
-  bread: dce,
-  croissant: uce,
-  baguette_bread: pce,
-  flatbread: mce,
-  pretzel: gce,
-  bagel: Ece,
-  pancakes: Sce,
-  waffle: fce,
-  cheese: bce,
-  meat_on_bone: Tce,
-  poultry_leg: hce,
-  cut_of_meat: Rce,
-  bacon: Cce,
-  hamburger: Nce,
-  fries: vce,
-  pizza: Oce,
-  hotdog: yce,
-  sandwich: Ace,
-  taco: Ice,
-  burrito: Dce,
-  tamale: wce,
-  stuffed_flatbread: Mce,
-  falafel: xce,
-  egg: Lce,
-  fried_egg: kce,
-  shallow_pan_of_food: Pce,
-  stew: Uce,
-  fondue: Fce,
-  bowl_with_spoon: Bce,
-  green_salad: Gce,
-  popcorn: qce,
-  butter: Yce,
-  salt: Hce,
-  canned_food: Vce,
-  bento: zce,
-  rice_cracker: $ce,
-  rice_ball: Wce,
-  rice: Kce,
-  curry: Qce,
-  ramen: Xce,
-  spaghetti: Zce,
-  sweet_potato: Jce,
-  oden: jce,
-  sushi: ele,
-  fried_shrimp: tle,
-  fish_cake: nle,
-  moon_cake: rle,
-  dango: ale,
-  dumpling: ole,
-  fortune_cookie: ile,
-  takeout_box: sle,
-  crab: cle,
-  lobster: lle,
-  shrimp: _le,
-  squid: dle,
-  oyster: ule,
-  icecream: ple,
-  shaved_ice: mle,
-  ice_cream: gle,
-  doughnut: Ele,
-  cookie: Sle,
-  birthday: fle,
-  cake: ble,
-  cupcake: Tle,
-  pie: hle,
-  chocolate_bar: Rle,
-  candy: Cle,
-  lollipop: Nle,
-  custard: vle,
-  honey_pot: Ole,
-  baby_bottle: yle,
-  milk_glass: Ale,
-  coffee: Ile,
-  teapot: Dle,
-  tea: wle,
-  sake: Mle,
-  champagne: xle,
-  wine_glass: Lle,
-  cocktail: kle,
-  tropical_drink: Ple,
-  beer: Ule,
-  beers: Fle,
-  clinking_glasses: Ble,
-  tumbler_glass: Gle,
-  cup_with_straw: qle,
-  bubble_tea: Yle,
-  beverage_box: Hle,
-  mate: Vle,
-  ice_cube: zle,
-  chopsticks: $le,
-  plate_with_cutlery: Wle,
-  fork_and_knife: Kle,
-  spoon: Qle,
-  hocho: Xle,
-  knife: Zle,
-  amphora: Jle,
-  earth_africa: jle,
-  earth_americas: e_e,
-  earth_asia: t_e,
-  globe_with_meridians: n_e,
-  world_map: r_e,
-  japan: a_e,
-  compass: o_e,
-  mountain_snow: i_e,
-  mountain: s_e,
-  volcano: c_e,
-  mount_fuji: l_e,
-  camping: __e,
-  beach_umbrella: d_e,
-  desert: u_e,
-  desert_island: p_e,
-  national_park: m_e,
-  stadium: g_e,
-  classical_building: E_e,
-  building_construction: S_e,
-  bricks: f_e,
-  rock: b_e,
-  wood: T_e,
-  hut: h_e,
-  houses: R_e,
-  derelict_house: C_e,
-  house: N_e,
-  house_with_garden: v_e,
-  office: O_e,
-  post_office: y_e,
-  european_post_office: A_e,
-  hospital: I_e,
-  bank: D_e,
-  hotel: w_e,
-  love_hotel: M_e,
-  convenience_store: x_e,
-  school: L_e,
-  department_store: k_e,
-  factory: P_e,
-  japanese_castle: U_e,
-  european_castle: F_e,
-  wedding: B_e,
-  tokyo_tower: G_e,
-  statue_of_liberty: q_e,
-  church: Y_e,
-  mosque: H_e,
-  hindu_temple: V_e,
-  synagogue: z_e,
-  shinto_shrine: $_e,
-  kaaba: W_e,
-  fountain: K_e,
-  tent: Q_e,
-  foggy: X_e,
-  night_with_stars: Z_e,
-  cityscape: J_e,
-  sunrise_over_mountains: j_e,
-  sunrise: ede,
-  city_sunset: tde,
-  city_sunrise: nde,
-  bridge_at_night: rde,
-  hotsprings: ade,
-  carousel_horse: ode,
-  ferris_wheel: ide,
-  roller_coaster: sde,
-  barber: cde,
-  circus_tent: lde,
-  steam_locomotive: _de,
-  railway_car: dde,
-  bullettrain_side: ude,
-  bullettrain_front: pde,
-  train2: mde,
-  metro: gde,
-  light_rail: Ede,
-  station: Sde,
-  tram: fde,
-  monorail: bde,
-  mountain_railway: Tde,
-  train: hde,
-  bus: Rde,
-  oncoming_bus: Cde,
-  trolleybus: Nde,
-  minibus: vde,
-  ambulance: Ode,
-  fire_engine: yde,
-  police_car: Ade,
-  oncoming_police_car: Ide,
-  taxi: Dde,
-  oncoming_taxi: wde,
-  car: Mde,
-  red_car: xde,
-  oncoming_automobile: Lde,
-  blue_car: kde,
-  pickup_truck: Pde,
-  truck: Ude,
-  articulated_lorry: Fde,
-  tractor: Bde,
-  racing_car: Gde,
-  motorcycle: qde,
-  motor_scooter: Yde,
-  manual_wheelchair: Hde,
-  motorized_wheelchair: Vde,
-  auto_rickshaw: zde,
-  bike: $de,
-  kick_scooter: Wde,
-  skateboard: Kde,
-  roller_skate: Qde,
-  busstop: Xde,
-  motorway: Zde,
-  railway_track: Jde,
-  oil_drum: jde,
-  fuelpump: eue,
-  rotating_light: tue,
-  traffic_light: nue,
-  vertical_traffic_light: rue,
-  stop_sign: aue,
-  construction: oue,
-  anchor: iue,
-  boat: sue,
-  sailboat: cue,
-  canoe: lue,
-  speedboat: _ue,
-  passenger_ship: due,
-  ferry: uue,
-  motor_boat: pue,
-  ship: mue,
-  airplane: gue,
-  small_airplane: Eue,
-  flight_departure: Sue,
-  flight_arrival: fue,
-  parachute: bue,
-  seat: Tue,
-  helicopter: hue,
-  suspension_railway: Rue,
-  mountain_cableway: Cue,
-  aerial_tramway: Nue,
-  artificial_satellite: vue,
-  rocket: Oue,
-  flying_saucer: yue,
-  bellhop_bell: Aue,
-  luggage: Iue,
-  hourglass: Due,
-  hourglass_flowing_sand: wue,
-  watch: Mue,
-  alarm_clock: xue,
-  stopwatch: Lue,
-  timer_clock: kue,
-  mantelpiece_clock: Pue,
-  clock12: Uue,
-  clock1230: Fue,
-  clock1: Bue,
-  clock130: Gue,
-  clock2: que,
-  clock230: Yue,
-  clock3: Hue,
-  clock330: Vue,
-  clock4: zue,
-  clock430: $ue,
-  clock5: Wue,
-  clock530: Kue,
-  clock6: Que,
-  clock630: Xue,
-  clock7: Zue,
-  clock730: Jue,
-  clock8: jue,
-  clock830: epe,
-  clock9: tpe,
-  clock930: npe,
-  clock10: rpe,
-  clock1030: ape,
-  clock11: ope,
-  clock1130: ipe,
-  new_moon: spe,
-  waxing_crescent_moon: cpe,
-  first_quarter_moon: lpe,
-  moon: _pe,
-  waxing_gibbous_moon: dpe,
-  full_moon: upe,
-  waning_gibbous_moon: ppe,
-  last_quarter_moon: mpe,
-  waning_crescent_moon: gpe,
-  crescent_moon: Epe,
-  new_moon_with_face: Spe,
-  first_quarter_moon_with_face: fpe,
-  last_quarter_moon_with_face: bpe,
-  thermometer: Tpe,
-  sunny: hpe,
-  full_moon_with_face: Rpe,
-  sun_with_face: Cpe,
-  ringed_planet: Npe,
-  star: vpe,
-  star2: Ope,
-  stars: ype,
-  milky_way: Ape,
-  cloud: Ipe,
-  partly_sunny: Dpe,
-  cloud_with_lightning_and_rain: wpe,
-  sun_behind_small_cloud: Mpe,
-  sun_behind_large_cloud: xpe,
-  sun_behind_rain_cloud: Lpe,
-  cloud_with_rain: kpe,
-  cloud_with_snow: Ppe,
-  cloud_with_lightning: Upe,
-  tornado: Fpe,
-  fog: Bpe,
-  wind_face: Gpe,
-  cyclone: qpe,
-  rainbow: Ype,
-  closed_umbrella: Hpe,
-  open_umbrella: Vpe,
-  umbrella: zpe,
-  parasol_on_ground: $pe,
-  zap: Wpe,
-  snowflake: Kpe,
-  snowman_with_snow: Qpe,
-  snowman: Xpe,
-  comet: Zpe,
-  fire: Jpe,
-  droplet: jpe,
-  ocean: eme,
-  jack_o_lantern: tme,
-  christmas_tree: nme,
-  fireworks: rme,
-  sparkler: ame,
-  firecracker: ome,
-  sparkles: ime,
-  balloon: sme,
-  tada: cme,
-  confetti_ball: lme,
-  tanabata_tree: _me,
-  bamboo: dme,
-  dolls: ume,
-  flags: pme,
-  wind_chime: mme,
-  rice_scene: gme,
-  red_envelope: Eme,
-  ribbon: Sme,
-  gift: fme,
-  reminder_ribbon: bme,
-  tickets: Tme,
-  ticket: hme,
-  medal_military: Rme,
-  trophy: Cme,
-  medal_sports: Nme,
+  whale: xie,
+  whale2: Lie,
+  dolphin: kie,
+  flipper: Pie,
+  seal: Uie,
+  fish: Fie,
+  tropical_fish: Bie,
+  blowfish: Gie,
+  shark: qie,
+  octopus: Yie,
+  shell: Hie,
+  snail: Vie,
+  butterfly: zie,
+  bug: $ie,
+  ant: Wie,
+  bee: Kie,
+  honeybee: Qie,
+  beetle: Xie,
+  lady_beetle: Zie,
+  cricket: Jie,
+  cockroach: jie,
+  spider: ese,
+  spider_web: tse,
+  scorpion: nse,
+  mosquito: rse,
+  fly: ase,
+  worm: ose,
+  microbe: ise,
+  bouquet: sse,
+  cherry_blossom: cse,
+  white_flower: lse,
+  rosette: _se,
+  rose: dse,
+  wilted_flower: use,
+  hibiscus: pse,
+  sunflower: mse,
+  blossom: gse,
+  tulip: Ese,
+  seedling: Sse,
+  potted_plant: fse,
+  evergreen_tree: bse,
+  deciduous_tree: Tse,
+  palm_tree: hse,
+  cactus: Rse,
+  ear_of_rice: Cse,
+  herb: Nse,
+  shamrock: vse,
+  four_leaf_clover: Ose,
+  maple_leaf: yse,
+  fallen_leaf: Ase,
+  leaves: Ise,
+  grapes: Dse,
+  melon: wse,
+  watermelon: Mse,
+  tangerine: xse,
+  orange: Lse,
+  mandarin: kse,
+  lemon: Pse,
+  banana: Use,
+  pineapple: Fse,
+  mango: Bse,
+  apple: Gse,
+  green_apple: qse,
+  pear: Yse,
+  peach: Hse,
+  cherries: Vse,
+  strawberry: zse,
+  blueberries: $se,
+  kiwi_fruit: Wse,
+  tomato: Kse,
+  olive: Qse,
+  coconut: Xse,
+  avocado: Zse,
+  eggplant: Jse,
+  potato: jse,
+  carrot: ece,
+  corn: tce,
+  hot_pepper: nce,
+  bell_pepper: rce,
+  cucumber: ace,
+  leafy_green: oce,
+  broccoli: ice,
+  garlic: sce,
+  onion: cce,
+  mushroom: lce,
+  peanuts: _ce,
+  chestnut: dce,
+  bread: uce,
+  croissant: pce,
+  baguette_bread: mce,
+  flatbread: gce,
+  pretzel: Ece,
+  bagel: Sce,
+  pancakes: fce,
+  waffle: bce,
+  cheese: Tce,
+  meat_on_bone: hce,
+  poultry_leg: Rce,
+  cut_of_meat: Cce,
+  bacon: Nce,
+  hamburger: vce,
+  fries: Oce,
+  pizza: yce,
+  hotdog: Ace,
+  sandwich: Ice,
+  taco: Dce,
+  burrito: wce,
+  tamale: Mce,
+  stuffed_flatbread: xce,
+  falafel: Lce,
+  egg: kce,
+  fried_egg: Pce,
+  shallow_pan_of_food: Uce,
+  stew: Fce,
+  fondue: Bce,
+  bowl_with_spoon: Gce,
+  green_salad: qce,
+  popcorn: Yce,
+  butter: Hce,
+  salt: Vce,
+  canned_food: zce,
+  bento: $ce,
+  rice_cracker: Wce,
+  rice_ball: Kce,
+  rice: Qce,
+  curry: Xce,
+  ramen: Zce,
+  spaghetti: Jce,
+  sweet_potato: jce,
+  oden: ele,
+  sushi: tle,
+  fried_shrimp: nle,
+  fish_cake: rle,
+  moon_cake: ale,
+  dango: ole,
+  dumpling: ile,
+  fortune_cookie: sle,
+  takeout_box: cle,
+  crab: lle,
+  lobster: _le,
+  shrimp: dle,
+  squid: ule,
+  oyster: ple,
+  icecream: mle,
+  shaved_ice: gle,
+  ice_cream: Ele,
+  doughnut: Sle,
+  cookie: fle,
+  birthday: ble,
+  cake: Tle,
+  cupcake: hle,
+  pie: Rle,
+  chocolate_bar: Cle,
+  candy: Nle,
+  lollipop: vle,
+  custard: Ole,
+  honey_pot: yle,
+  baby_bottle: Ale,
+  milk_glass: Ile,
+  coffee: Dle,
+  teapot: wle,
+  tea: Mle,
+  sake: xle,
+  champagne: Lle,
+  wine_glass: kle,
+  cocktail: Ple,
+  tropical_drink: Ule,
+  beer: Fle,
+  beers: Ble,
+  clinking_glasses: Gle,
+  tumbler_glass: qle,
+  cup_with_straw: Yle,
+  bubble_tea: Hle,
+  beverage_box: Vle,
+  mate: zle,
+  ice_cube: $le,
+  chopsticks: Wle,
+  plate_with_cutlery: Kle,
+  fork_and_knife: Qle,
+  spoon: Xle,
+  hocho: Zle,
+  knife: Jle,
+  amphora: jle,
+  earth_africa: e_e,
+  earth_americas: t_e,
+  earth_asia: n_e,
+  globe_with_meridians: r_e,
+  world_map: a_e,
+  japan: o_e,
+  compass: i_e,
+  mountain_snow: s_e,
+  mountain: c_e,
+  volcano: l_e,
+  mount_fuji: __e,
+  camping: d_e,
+  beach_umbrella: u_e,
+  desert: p_e,
+  desert_island: m_e,
+  national_park: g_e,
+  stadium: E_e,
+  classical_building: S_e,
+  building_construction: f_e,
+  bricks: b_e,
+  rock: T_e,
+  wood: h_e,
+  hut: R_e,
+  houses: C_e,
+  derelict_house: N_e,
+  house: v_e,
+  house_with_garden: O_e,
+  office: y_e,
+  post_office: A_e,
+  european_post_office: I_e,
+  hospital: D_e,
+  bank: w_e,
+  hotel: M_e,
+  love_hotel: x_e,
+  convenience_store: L_e,
+  school: k_e,
+  department_store: P_e,
+  factory: U_e,
+  japanese_castle: F_e,
+  european_castle: B_e,
+  wedding: G_e,
+  tokyo_tower: q_e,
+  statue_of_liberty: Y_e,
+  church: H_e,
+  mosque: V_e,
+  hindu_temple: z_e,
+  synagogue: $_e,
+  shinto_shrine: W_e,
+  kaaba: K_e,
+  fountain: Q_e,
+  tent: X_e,
+  foggy: Z_e,
+  night_with_stars: J_e,
+  cityscape: j_e,
+  sunrise_over_mountains: ede,
+  sunrise: tde,
+  city_sunset: nde,
+  city_sunrise: rde,
+  bridge_at_night: ade,
+  hotsprings: ode,
+  carousel_horse: ide,
+  ferris_wheel: sde,
+  roller_coaster: cde,
+  barber: lde,
+  circus_tent: _de,
+  steam_locomotive: dde,
+  railway_car: ude,
+  bullettrain_side: pde,
+  bullettrain_front: mde,
+  train2: gde,
+  metro: Ede,
+  light_rail: Sde,
+  station: fde,
+  tram: bde,
+  monorail: Tde,
+  mountain_railway: hde,
+  train: Rde,
+  bus: Cde,
+  oncoming_bus: Nde,
+  trolleybus: vde,
+  minibus: Ode,
+  ambulance: yde,
+  fire_engine: Ade,
+  police_car: Ide,
+  oncoming_police_car: Dde,
+  taxi: wde,
+  oncoming_taxi: Mde,
+  car: xde,
+  red_car: Lde,
+  oncoming_automobile: kde,
+  blue_car: Pde,
+  pickup_truck: Ude,
+  truck: Fde,
+  articulated_lorry: Bde,
+  tractor: Gde,
+  racing_car: qde,
+  motorcycle: Yde,
+  motor_scooter: Hde,
+  manual_wheelchair: Vde,
+  motorized_wheelchair: zde,
+  auto_rickshaw: $de,
+  bike: Wde,
+  kick_scooter: Kde,
+  skateboard: Qde,
+  roller_skate: Xde,
+  busstop: Zde,
+  motorway: Jde,
+  railway_track: jde,
+  oil_drum: eue,
+  fuelpump: tue,
+  rotating_light: nue,
+  traffic_light: rue,
+  vertical_traffic_light: aue,
+  stop_sign: oue,
+  construction: iue,
+  anchor: sue,
+  boat: cue,
+  sailboat: lue,
+  canoe: _ue,
+  speedboat: due,
+  passenger_ship: uue,
+  ferry: pue,
+  motor_boat: mue,
+  ship: gue,
+  airplane: Eue,
+  small_airplane: Sue,
+  flight_departure: fue,
+  flight_arrival: bue,
+  parachute: Tue,
+  seat: hue,
+  helicopter: Rue,
+  suspension_railway: Cue,
+  mountain_cableway: Nue,
+  aerial_tramway: vue,
+  artificial_satellite: Oue,
+  rocket: yue,
+  flying_saucer: Aue,
+  bellhop_bell: Iue,
+  luggage: Due,
+  hourglass: wue,
+  hourglass_flowing_sand: Mue,
+  watch: xue,
+  alarm_clock: Lue,
+  stopwatch: kue,
+  timer_clock: Pue,
+  mantelpiece_clock: Uue,
+  clock12: Fue,
+  clock1230: Bue,
+  clock1: Gue,
+  clock130: que,
+  clock2: Yue,
+  clock230: Hue,
+  clock3: Vue,
+  clock330: zue,
+  clock4: $ue,
+  clock430: Wue,
+  clock5: Kue,
+  clock530: Que,
+  clock6: Xue,
+  clock630: Zue,
+  clock7: Jue,
+  clock730: jue,
+  clock8: epe,
+  clock830: tpe,
+  clock9: npe,
+  clock930: rpe,
+  clock10: ape,
+  clock1030: ope,
+  clock11: ipe,
+  clock1130: spe,
+  new_moon: cpe,
+  waxing_crescent_moon: lpe,
+  first_quarter_moon: _pe,
+  moon: dpe,
+  waxing_gibbous_moon: upe,
+  full_moon: ppe,
+  waning_gibbous_moon: mpe,
+  last_quarter_moon: gpe,
+  waning_crescent_moon: Epe,
+  crescent_moon: Spe,
+  new_moon_with_face: fpe,
+  first_quarter_moon_with_face: bpe,
+  last_quarter_moon_with_face: Tpe,
+  thermometer: hpe,
+  sunny: Rpe,
+  full_moon_with_face: Cpe,
+  sun_with_face: Npe,
+  ringed_planet: vpe,
+  star: Ope,
+  star2: ype,
+  stars: Ape,
+  milky_way: Ipe,
+  cloud: Dpe,
+  partly_sunny: wpe,
+  cloud_with_lightning_and_rain: Mpe,
+  sun_behind_small_cloud: xpe,
+  sun_behind_large_cloud: Lpe,
+  sun_behind_rain_cloud: kpe,
+  cloud_with_rain: Ppe,
+  cloud_with_snow: Upe,
+  cloud_with_lightning: Fpe,
+  tornado: Bpe,
+  fog: Gpe,
+  wind_face: qpe,
+  cyclone: Ype,
+  rainbow: Hpe,
+  closed_umbrella: Vpe,
+  open_umbrella: zpe,
+  umbrella: $pe,
+  parasol_on_ground: Wpe,
+  zap: Kpe,
+  snowflake: Qpe,
+  snowman_with_snow: Xpe,
+  snowman: Zpe,
+  comet: Jpe,
+  fire: jpe,
+  droplet: eme,
+  ocean: tme,
+  jack_o_lantern: nme,
+  christmas_tree: rme,
+  fireworks: ame,
+  sparkler: ome,
+  firecracker: ime,
+  sparkles: sme,
+  balloon: cme,
+  tada: lme,
+  confetti_ball: _me,
+  tanabata_tree: dme,
+  bamboo: ume,
+  dolls: pme,
+  flags: mme,
+  wind_chime: gme,
+  rice_scene: Eme,
+  red_envelope: Sme,
+  ribbon: fme,
+  gift: bme,
+  reminder_ribbon: Tme,
+  tickets: hme,
+  ticket: Rme,
+  medal_military: Cme,
+  trophy: Nme,
+  medal_sports: vme,
   "1st_place_medal": "🥇",
   "2nd_place_medal": "🥈",
   "3rd_place_medal": "🥉",
-  soccer: vme,
-  baseball: Ome,
-  softball: yme,
-  basketball: Ame,
-  volleyball: Ime,
-  football: Dme,
-  rugby_football: wme,
-  tennis: Mme,
-  flying_disc: xme,
-  bowling: Lme,
-  cricket_game: kme,
-  field_hockey: Pme,
-  ice_hockey: Ume,
-  lacrosse: Fme,
-  ping_pong: Bme,
-  badminton: Gme,
-  boxing_glove: qme,
-  martial_arts_uniform: Yme,
-  goal_net: Hme,
-  golf: Vme,
-  ice_skate: zme,
-  fishing_pole_and_fish: $me,
-  diving_mask: Wme,
-  running_shirt_with_sash: Kme,
-  ski: Qme,
-  sled: Xme,
-  curling_stone: Zme,
-  dart: Jme,
-  yo_yo: jme,
-  kite: ege,
+  soccer: Ome,
+  baseball: yme,
+  softball: Ame,
+  basketball: Ime,
+  volleyball: Dme,
+  football: wme,
+  rugby_football: Mme,
+  tennis: xme,
+  flying_disc: Lme,
+  bowling: kme,
+  cricket_game: Pme,
+  field_hockey: Ume,
+  ice_hockey: Fme,
+  lacrosse: Bme,
+  ping_pong: Gme,
+  badminton: qme,
+  boxing_glove: Yme,
+  martial_arts_uniform: Hme,
+  goal_net: Vme,
+  golf: zme,
+  ice_skate: $me,
+  fishing_pole_and_fish: Wme,
+  diving_mask: Kme,
+  running_shirt_with_sash: Qme,
+  ski: Xme,
+  sled: Zme,
+  curling_stone: Jme,
+  dart: jme,
+  yo_yo: ege,
+  kite: tge,
   "8ball": "🎱",
-  crystal_ball: tge,
-  magic_wand: nge,
-  nazar_amulet: rge,
-  video_game: age,
-  joystick: oge,
-  slot_machine: ige,
-  game_die: sge,
-  jigsaw: cge,
-  teddy_bear: lge,
-  pinata: _ge,
-  nesting_dolls: dge,
-  spades: uge,
-  hearts: pge,
-  diamonds: mge,
-  clubs: gge,
-  chess_pawn: Ege,
-  black_joker: Sge,
-  mahjong: fge,
-  flower_playing_cards: bge,
-  performing_arts: Tge,
-  framed_picture: hge,
-  art: Rge,
-  thread: Cge,
-  sewing_needle: Nge,
-  yarn: vge,
-  knot: Oge,
-  eyeglasses: yge,
-  dark_sunglasses: Age,
-  goggles: Ige,
-  lab_coat: Dge,
-  safety_vest: wge,
-  necktie: Mge,
-  shirt: xge,
-  tshirt: Lge,
-  jeans: kge,
-  scarf: Pge,
-  gloves: Uge,
-  coat: Fge,
-  socks: Bge,
-  dress: Gge,
-  kimono: qge,
-  sari: Yge,
-  one_piece_swimsuit: Hge,
-  swim_brief: Vge,
-  shorts: zge,
-  bikini: $ge,
-  womans_clothes: Wge,
-  purse: Kge,
-  handbag: Qge,
-  pouch: Xge,
-  shopping: Zge,
-  school_satchel: Jge,
-  thong_sandal: jge,
-  mans_shoe: eEe,
-  shoe: tEe,
-  athletic_shoe: nEe,
-  hiking_boot: rEe,
-  flat_shoe: aEe,
-  high_heel: oEe,
-  sandal: iEe,
-  ballet_shoes: sEe,
-  boot: cEe,
-  crown: lEe,
-  womans_hat: _Ee,
-  tophat: dEe,
-  mortar_board: uEe,
-  billed_cap: pEe,
-  military_helmet: mEe,
-  rescue_worker_helmet: gEe,
-  prayer_beads: EEe,
-  lipstick: SEe,
-  ring: fEe,
-  gem: bEe,
-  mute: TEe,
-  speaker: hEe,
-  sound: REe,
-  loud_sound: CEe,
-  loudspeaker: NEe,
-  mega: vEe,
-  postal_horn: OEe,
-  bell: yEe,
-  no_bell: AEe,
-  musical_score: IEe,
-  musical_note: DEe,
-  notes: wEe,
-  studio_microphone: MEe,
-  level_slider: xEe,
-  control_knobs: LEe,
-  microphone: kEe,
-  headphones: PEe,
-  radio: UEe,
-  saxophone: FEe,
-  accordion: BEe,
-  guitar: GEe,
-  musical_keyboard: qEe,
-  trumpet: YEe,
-  violin: HEe,
-  banjo: VEe,
-  drum: zEe,
-  long_drum: $Ee,
-  iphone: WEe,
-  calling: KEe,
-  phone: QEe,
-  telephone: XEe,
-  telephone_receiver: ZEe,
-  pager: JEe,
-  fax: jEe,
-  battery: eSe,
-  electric_plug: tSe,
-  computer: nSe,
-  desktop_computer: rSe,
-  printer: aSe,
-  keyboard: oSe,
-  computer_mouse: iSe,
-  trackball: sSe,
-  minidisc: cSe,
-  floppy_disk: lSe,
-  cd: _Se,
-  dvd: dSe,
-  abacus: uSe,
-  movie_camera: pSe,
-  film_strip: mSe,
-  film_projector: gSe,
-  clapper: ESe,
-  tv: SSe,
-  camera: fSe,
-  camera_flash: bSe,
-  video_camera: TSe,
-  vhs: hSe,
-  mag: RSe,
-  mag_right: CSe,
-  candle: NSe,
-  bulb: vSe,
-  flashlight: OSe,
-  izakaya_lantern: ySe,
-  lantern: ASe,
-  diya_lamp: ISe,
-  notebook_with_decorative_cover: DSe,
-  closed_book: wSe,
-  book: MSe,
-  open_book: xSe,
-  green_book: LSe,
-  blue_book: kSe,
-  orange_book: PSe,
-  books: USe,
-  notebook: FSe,
-  ledger: BSe,
-  page_with_curl: GSe,
-  scroll: qSe,
-  page_facing_up: YSe,
-  newspaper: HSe,
-  newspaper_roll: VSe,
-  bookmark_tabs: zSe,
-  bookmark: $Se,
-  label: WSe,
-  moneybag: KSe,
-  coin: QSe,
-  yen: XSe,
-  dollar: ZSe,
-  euro: JSe,
-  pound: jSe,
-  money_with_wings: efe,
-  credit_card: tfe,
-  receipt: nfe,
-  chart: rfe,
-  envelope: afe,
-  email: ofe,
+  crystal_ball: nge,
+  magic_wand: rge,
+  nazar_amulet: age,
+  video_game: oge,
+  joystick: ige,
+  slot_machine: sge,
+  game_die: cge,
+  jigsaw: lge,
+  teddy_bear: _ge,
+  pinata: dge,
+  nesting_dolls: uge,
+  spades: pge,
+  hearts: mge,
+  diamonds: gge,
+  clubs: Ege,
+  chess_pawn: Sge,
+  black_joker: fge,
+  mahjong: bge,
+  flower_playing_cards: Tge,
+  performing_arts: hge,
+  framed_picture: Rge,
+  art: Cge,
+  thread: Nge,
+  sewing_needle: vge,
+  yarn: Oge,
+  knot: yge,
+  eyeglasses: Age,
+  dark_sunglasses: Ige,
+  goggles: Dge,
+  lab_coat: wge,
+  safety_vest: Mge,
+  necktie: xge,
+  shirt: Lge,
+  tshirt: kge,
+  jeans: Pge,
+  scarf: Uge,
+  gloves: Fge,
+  coat: Bge,
+  socks: Gge,
+  dress: qge,
+  kimono: Yge,
+  sari: Hge,
+  one_piece_swimsuit: Vge,
+  swim_brief: zge,
+  shorts: $ge,
+  bikini: Wge,
+  womans_clothes: Kge,
+  purse: Qge,
+  handbag: Xge,
+  pouch: Zge,
+  shopping: Jge,
+  school_satchel: jge,
+  thong_sandal: eEe,
+  mans_shoe: tEe,
+  shoe: nEe,
+  athletic_shoe: rEe,
+  hiking_boot: aEe,
+  flat_shoe: oEe,
+  high_heel: iEe,
+  sandal: sEe,
+  ballet_shoes: cEe,
+  boot: lEe,
+  crown: _Ee,
+  womans_hat: dEe,
+  tophat: uEe,
+  mortar_board: pEe,
+  billed_cap: mEe,
+  military_helmet: gEe,
+  rescue_worker_helmet: EEe,
+  prayer_beads: SEe,
+  lipstick: fEe,
+  ring: bEe,
+  gem: TEe,
+  mute: hEe,
+  speaker: REe,
+  sound: CEe,
+  loud_sound: NEe,
+  loudspeaker: vEe,
+  mega: OEe,
+  postal_horn: yEe,
+  bell: AEe,
+  no_bell: IEe,
+  musical_score: DEe,
+  musical_note: wEe,
+  notes: MEe,
+  studio_microphone: xEe,
+  level_slider: LEe,
+  control_knobs: kEe,
+  microphone: PEe,
+  headphones: UEe,
+  radio: FEe,
+  saxophone: BEe,
+  accordion: GEe,
+  guitar: qEe,
+  musical_keyboard: YEe,
+  trumpet: HEe,
+  violin: VEe,
+  banjo: zEe,
+  drum: $Ee,
+  long_drum: WEe,
+  iphone: KEe,
+  calling: QEe,
+  phone: XEe,
+  telephone: ZEe,
+  telephone_receiver: JEe,
+  pager: jEe,
+  fax: eSe,
+  battery: tSe,
+  electric_plug: nSe,
+  computer: rSe,
+  desktop_computer: aSe,
+  printer: oSe,
+  keyboard: iSe,
+  computer_mouse: sSe,
+  trackball: cSe,
+  minidisc: lSe,
+  floppy_disk: _Se,
+  cd: dSe,
+  dvd: uSe,
+  abacus: pSe,
+  movie_camera: mSe,
+  film_strip: gSe,
+  film_projector: ESe,
+  clapper: SSe,
+  tv: fSe,
+  camera: bSe,
+  camera_flash: TSe,
+  video_camera: hSe,
+  vhs: RSe,
+  mag: CSe,
+  mag_right: NSe,
+  candle: vSe,
+  bulb: OSe,
+  flashlight: ySe,
+  izakaya_lantern: ASe,
+  lantern: ISe,
+  diya_lamp: DSe,
+  notebook_with_decorative_cover: wSe,
+  closed_book: MSe,
+  book: xSe,
+  open_book: LSe,
+  green_book: kSe,
+  blue_book: PSe,
+  orange_book: USe,
+  books: FSe,
+  notebook: BSe,
+  ledger: GSe,
+  page_with_curl: qSe,
+  scroll: YSe,
+  page_facing_up: HSe,
+  newspaper: VSe,
+  newspaper_roll: zSe,
+  bookmark_tabs: $Se,
+  bookmark: WSe,
+  label: KSe,
+  moneybag: QSe,
+  coin: XSe,
+  yen: ZSe,
+  dollar: JSe,
+  euro: jSe,
+  pound: efe,
+  money_with_wings: tfe,
+  credit_card: nfe,
+  receipt: rfe,
+  chart: afe,
+  envelope: ofe,
+  email: ife,
   "e-mail": "📧",
-  incoming_envelope: ife,
-  envelope_with_arrow: sfe,
-  outbox_tray: cfe,
-  inbox_tray: lfe,
+  incoming_envelope: sfe,
+  envelope_with_arrow: cfe,
+  outbox_tray: lfe,
+  inbox_tray: _fe,
   package: "📦",
-  mailbox: _fe,
-  mailbox_closed: dfe,
-  mailbox_with_mail: ufe,
-  mailbox_with_no_mail: pfe,
-  postbox: mfe,
-  ballot_box: gfe,
-  pencil2: Efe,
-  black_nib: Sfe,
-  fountain_pen: ffe,
-  pen: bfe,
-  paintbrush: Tfe,
-  crayon: hfe,
-  memo: Rfe,
-  pencil: Cfe,
-  briefcase: Nfe,
-  file_folder: vfe,
-  open_file_folder: Ofe,
-  card_index_dividers: yfe,
-  date: Afe,
-  calendar: Ife,
-  spiral_notepad: Dfe,
-  spiral_calendar: wfe,
-  card_index: Mfe,
-  chart_with_upwards_trend: xfe,
-  chart_with_downwards_trend: Lfe,
-  bar_chart: kfe,
-  clipboard: Pfe,
-  pushpin: Ufe,
-  round_pushpin: Ffe,
-  paperclip: Bfe,
-  paperclips: Gfe,
-  straight_ruler: qfe,
-  triangular_ruler: Yfe,
-  scissors: Hfe,
-  card_file_box: Vfe,
-  file_cabinet: zfe,
-  wastebasket: $fe,
-  lock: Wfe,
-  unlock: Kfe,
-  lock_with_ink_pen: Qfe,
-  closed_lock_with_key: Xfe,
-  key: Zfe,
-  old_key: Jfe,
-  hammer: jfe,
-  axe: ebe,
-  pick: tbe,
-  hammer_and_pick: nbe,
-  hammer_and_wrench: rbe,
-  dagger: abe,
-  crossed_swords: obe,
-  gun: ibe,
-  boomerang: sbe,
-  bow_and_arrow: cbe,
-  shield: lbe,
-  carpentry_saw: _be,
-  wrench: dbe,
-  screwdriver: ube,
-  nut_and_bolt: pbe,
-  gear: mbe,
-  clamp: gbe,
-  balance_scale: Ebe,
-  probing_cane: Sbe,
-  link: fbe,
-  chains: bbe,
-  hook: Tbe,
-  toolbox: hbe,
-  magnet: Rbe,
-  ladder: Cbe,
-  alembic: Nbe,
-  test_tube: vbe,
-  petri_dish: Obe,
-  dna: ybe,
-  microscope: Abe,
-  telescope: Ibe,
-  satellite: Dbe,
-  syringe: wbe,
-  drop_of_blood: Mbe,
-  pill: xbe,
-  adhesive_bandage: Lbe,
-  stethoscope: kbe,
-  door: Pbe,
-  elevator: Ube,
-  mirror: Fbe,
-  window: Bbe,
-  bed: Gbe,
-  couch_and_lamp: qbe,
-  chair: Ybe,
-  toilet: Hbe,
-  plunger: Vbe,
-  shower: zbe,
-  bathtub: $be,
-  mouse_trap: Wbe,
-  razor: Kbe,
-  lotion_bottle: Qbe,
-  safety_pin: Xbe,
-  broom: Zbe,
-  basket: Jbe,
-  roll_of_paper: jbe,
-  bucket: eTe,
-  soap: tTe,
-  toothbrush: nTe,
-  sponge: rTe,
-  fire_extinguisher: aTe,
-  shopping_cart: oTe,
-  smoking: iTe,
-  coffin: sTe,
-  headstone: cTe,
-  funeral_urn: lTe,
-  moyai: _Te,
-  placard: dTe,
-  atm: uTe,
-  put_litter_in_its_place: pTe,
-  potable_water: mTe,
-  wheelchair: gTe,
-  mens: ETe,
-  womens: STe,
-  restroom: fTe,
-  baby_symbol: bTe,
-  wc: TTe,
-  passport_control: hTe,
-  customs: RTe,
-  baggage_claim: CTe,
-  left_luggage: NTe,
-  warning: vTe,
-  children_crossing: OTe,
-  no_entry: yTe,
-  no_entry_sign: ATe,
-  no_bicycles: ITe,
-  no_smoking: DTe,
-  do_not_litter: wTe,
+  mailbox: dfe,
+  mailbox_closed: ufe,
+  mailbox_with_mail: pfe,
+  mailbox_with_no_mail: mfe,
+  postbox: gfe,
+  ballot_box: Efe,
+  pencil2: Sfe,
+  black_nib: ffe,
+  fountain_pen: bfe,
+  pen: Tfe,
+  paintbrush: hfe,
+  crayon: Rfe,
+  memo: Cfe,
+  pencil: Nfe,
+  briefcase: vfe,
+  file_folder: Ofe,
+  open_file_folder: yfe,
+  card_index_dividers: Afe,
+  date: Ife,
+  calendar: Dfe,
+  spiral_notepad: wfe,
+  spiral_calendar: Mfe,
+  card_index: xfe,
+  chart_with_upwards_trend: Lfe,
+  chart_with_downwards_trend: kfe,
+  bar_chart: Pfe,
+  clipboard: Ufe,
+  pushpin: Ffe,
+  round_pushpin: Bfe,
+  paperclip: Gfe,
+  paperclips: qfe,
+  straight_ruler: Yfe,
+  triangular_ruler: Hfe,
+  scissors: Vfe,
+  card_file_box: zfe,
+  file_cabinet: $fe,
+  wastebasket: Wfe,
+  lock: Kfe,
+  unlock: Qfe,
+  lock_with_ink_pen: Xfe,
+  closed_lock_with_key: Zfe,
+  key: Jfe,
+  old_key: jfe,
+  hammer: ebe,
+  axe: tbe,
+  pick: nbe,
+  hammer_and_pick: rbe,
+  hammer_and_wrench: abe,
+  dagger: obe,
+  crossed_swords: ibe,
+  gun: sbe,
+  boomerang: cbe,
+  bow_and_arrow: lbe,
+  shield: _be,
+  carpentry_saw: dbe,
+  wrench: ube,
+  screwdriver: pbe,
+  nut_and_bolt: mbe,
+  gear: gbe,
+  clamp: Ebe,
+  balance_scale: Sbe,
+  probing_cane: fbe,
+  link: bbe,
+  chains: Tbe,
+  hook: hbe,
+  toolbox: Rbe,
+  magnet: Cbe,
+  ladder: Nbe,
+  alembic: vbe,
+  test_tube: Obe,
+  petri_dish: ybe,
+  dna: Abe,
+  microscope: Ibe,
+  telescope: Dbe,
+  satellite: wbe,
+  syringe: Mbe,
+  drop_of_blood: xbe,
+  pill: Lbe,
+  adhesive_bandage: kbe,
+  stethoscope: Pbe,
+  door: Ube,
+  elevator: Fbe,
+  mirror: Bbe,
+  window: Gbe,
+  bed: qbe,
+  couch_and_lamp: Ybe,
+  chair: Hbe,
+  toilet: Vbe,
+  plunger: zbe,
+  shower: $be,
+  bathtub: Wbe,
+  mouse_trap: Kbe,
+  razor: Qbe,
+  lotion_bottle: Xbe,
+  safety_pin: Zbe,
+  broom: Jbe,
+  basket: jbe,
+  roll_of_paper: eTe,
+  bucket: tTe,
+  soap: nTe,
+  toothbrush: rTe,
+  sponge: aTe,
+  fire_extinguisher: oTe,
+  shopping_cart: iTe,
+  smoking: sTe,
+  coffin: cTe,
+  headstone: lTe,
+  funeral_urn: _Te,
+  moyai: dTe,
+  placard: uTe,
+  atm: pTe,
+  put_litter_in_its_place: mTe,
+  potable_water: gTe,
+  wheelchair: ETe,
+  mens: STe,
+  womens: fTe,
+  restroom: bTe,
+  baby_symbol: TTe,
+  wc: hTe,
+  passport_control: RTe,
+  customs: CTe,
+  baggage_claim: NTe,
+  left_luggage: vTe,
+  warning: OTe,
+  children_crossing: yTe,
+  no_entry: ATe,
+  no_entry_sign: ITe,
+  no_bicycles: DTe,
+  no_smoking: wTe,
+  do_not_litter: MTe,
   "non-potable_water": "🚱",
-  no_pedestrians: MTe,
-  no_mobile_phones: xTe,
-  underage: LTe,
-  radioactive: kTe,
-  biohazard: PTe,
-  arrow_up: UTe,
-  arrow_upper_right: FTe,
-  arrow_right: BTe,
-  arrow_lower_right: GTe,
-  arrow_down: qTe,
-  arrow_lower_left: YTe,
-  arrow_left: HTe,
-  arrow_upper_left: VTe,
-  arrow_up_down: zTe,
-  left_right_arrow: $Te,
-  leftwards_arrow_with_hook: WTe,
-  arrow_right_hook: KTe,
-  arrow_heading_up: QTe,
-  arrow_heading_down: XTe,
-  arrows_clockwise: ZTe,
-  arrows_counterclockwise: JTe,
-  back: jTe,
-  end: ehe,
-  on: the,
-  soon: nhe,
-  top: rhe,
-  place_of_worship: ahe,
-  atom_symbol: ohe,
-  om: ihe,
-  star_of_david: she,
-  wheel_of_dharma: che,
-  yin_yang: lhe,
-  latin_cross: _he,
-  orthodox_cross: dhe,
-  star_and_crescent: uhe,
-  peace_symbol: phe,
-  menorah: mhe,
-  six_pointed_star: ghe,
-  aries: Ehe,
-  taurus: She,
-  gemini: fhe,
-  cancer: bhe,
-  leo: The,
-  virgo: hhe,
-  libra: Rhe,
-  scorpius: Che,
-  sagittarius: Nhe,
-  capricorn: vhe,
-  aquarius: Ohe,
-  pisces: yhe,
-  ophiuchus: Ahe,
-  twisted_rightwards_arrows: Ihe,
-  repeat: Dhe,
-  repeat_one: whe,
-  arrow_forward: Mhe,
-  fast_forward: xhe,
-  next_track_button: Lhe,
-  play_or_pause_button: khe,
-  arrow_backward: Phe,
-  rewind: Uhe,
-  previous_track_button: Fhe,
-  arrow_up_small: Bhe,
-  arrow_double_up: Ghe,
-  arrow_down_small: qhe,
-  arrow_double_down: Yhe,
-  pause_button: Hhe,
-  stop_button: Vhe,
-  record_button: zhe,
-  eject_button: $he,
-  cinema: Whe,
-  low_brightness: Khe,
-  high_brightness: Qhe,
-  signal_strength: Xhe,
-  vibration_mode: Zhe,
-  mobile_phone_off: Jhe,
-  female_sign: jhe,
-  male_sign: eRe,
-  transgender_symbol: tRe,
-  heavy_multiplication_x: nRe,
-  heavy_plus_sign: rRe,
-  heavy_minus_sign: aRe,
-  heavy_division_sign: oRe,
-  infinity: iRe,
-  bangbang: sRe,
-  interrobang: cRe,
-  question: lRe,
-  grey_question: _Re,
-  grey_exclamation: dRe,
-  exclamation: uRe,
-  heavy_exclamation_mark: pRe,
-  wavy_dash: mRe,
-  currency_exchange: gRe,
-  heavy_dollar_sign: ERe,
-  medical_symbol: SRe,
-  recycle: fRe,
-  fleur_de_lis: bRe,
-  trident: TRe,
-  name_badge: hRe,
-  beginner: RRe,
-  o: CRe,
-  white_check_mark: NRe,
-  ballot_box_with_check: vRe,
-  heavy_check_mark: ORe,
-  x: yRe,
-  negative_squared_cross_mark: ARe,
-  curly_loop: IRe,
-  loop: DRe,
-  part_alternation_mark: wRe,
-  eight_spoked_asterisk: MRe,
-  eight_pointed_black_star: xRe,
-  sparkle: LRe,
-  copyright: kRe,
-  registered: PRe,
-  tm: URe,
-  hash: FRe,
-  asterisk: BRe,
-  zero: GRe,
-  one: qRe,
-  two: YRe,
-  three: HRe,
-  four: VRe,
-  five: zRe,
-  six: $Re,
-  seven: WRe,
-  eight: KRe,
-  nine: QRe,
-  keycap_ten: XRe,
-  capital_abcd: ZRe,
-  abcd: JRe,
-  symbols: jRe,
-  abc: eCe,
-  a: tCe,
-  ab: nCe,
-  b: rCe,
-  cl: aCe,
-  cool: oCe,
-  free: iCe,
-  information_source: sCe,
-  id: cCe,
-  m: lCe,
+  no_pedestrians: xTe,
+  no_mobile_phones: LTe,
+  underage: kTe,
+  radioactive: PTe,
+  biohazard: UTe,
+  arrow_up: FTe,
+  arrow_upper_right: BTe,
+  arrow_right: GTe,
+  arrow_lower_right: qTe,
+  arrow_down: YTe,
+  arrow_lower_left: HTe,
+  arrow_left: VTe,
+  arrow_upper_left: zTe,
+  arrow_up_down: $Te,
+  left_right_arrow: WTe,
+  leftwards_arrow_with_hook: KTe,
+  arrow_right_hook: QTe,
+  arrow_heading_up: XTe,
+  arrow_heading_down: ZTe,
+  arrows_clockwise: JTe,
+  arrows_counterclockwise: jTe,
+  back: ehe,
+  end: the,
+  on: nhe,
+  soon: rhe,
+  top: ahe,
+  place_of_worship: ohe,
+  atom_symbol: ihe,
+  om: she,
+  star_of_david: che,
+  wheel_of_dharma: lhe,
+  yin_yang: _he,
+  latin_cross: dhe,
+  orthodox_cross: uhe,
+  star_and_crescent: phe,
+  peace_symbol: mhe,
+  menorah: ghe,
+  six_pointed_star: Ehe,
+  aries: She,
+  taurus: fhe,
+  gemini: bhe,
+  cancer: The,
+  leo: hhe,
+  virgo: Rhe,
+  libra: Che,
+  scorpius: Nhe,
+  sagittarius: vhe,
+  capricorn: Ohe,
+  aquarius: yhe,
+  pisces: Ahe,
+  ophiuchus: Ihe,
+  twisted_rightwards_arrows: Dhe,
+  repeat: whe,
+  repeat_one: Mhe,
+  arrow_forward: xhe,
+  fast_forward: Lhe,
+  next_track_button: khe,
+  play_or_pause_button: Phe,
+  arrow_backward: Uhe,
+  rewind: Fhe,
+  previous_track_button: Bhe,
+  arrow_up_small: Ghe,
+  arrow_double_up: qhe,
+  arrow_down_small: Yhe,
+  arrow_double_down: Hhe,
+  pause_button: Vhe,
+  stop_button: zhe,
+  record_button: $he,
+  eject_button: Whe,
+  cinema: Khe,
+  low_brightness: Qhe,
+  high_brightness: Xhe,
+  signal_strength: Zhe,
+  vibration_mode: Jhe,
+  mobile_phone_off: jhe,
+  female_sign: eRe,
+  male_sign: tRe,
+  transgender_symbol: nRe,
+  heavy_multiplication_x: rRe,
+  heavy_plus_sign: aRe,
+  heavy_minus_sign: oRe,
+  heavy_division_sign: iRe,
+  infinity: sRe,
+  bangbang: cRe,
+  interrobang: lRe,
+  question: _Re,
+  grey_question: dRe,
+  grey_exclamation: uRe,
+  exclamation: pRe,
+  heavy_exclamation_mark: mRe,
+  wavy_dash: gRe,
+  currency_exchange: ERe,
+  heavy_dollar_sign: SRe,
+  medical_symbol: fRe,
+  recycle: bRe,
+  fleur_de_lis: TRe,
+  trident: hRe,
+  name_badge: RRe,
+  beginner: CRe,
+  o: NRe,
+  white_check_mark: vRe,
+  ballot_box_with_check: ORe,
+  heavy_check_mark: yRe,
+  x: ARe,
+  negative_squared_cross_mark: IRe,
+  curly_loop: DRe,
+  loop: wRe,
+  part_alternation_mark: MRe,
+  eight_spoked_asterisk: xRe,
+  eight_pointed_black_star: LRe,
+  sparkle: kRe,
+  copyright: PRe,
+  registered: URe,
+  tm: FRe,
+  hash: BRe,
+  asterisk: GRe,
+  zero: qRe,
+  one: YRe,
+  two: HRe,
+  three: VRe,
+  four: zRe,
+  five: $Re,
+  six: WRe,
+  seven: KRe,
+  eight: QRe,
+  nine: XRe,
+  keycap_ten: ZRe,
+  capital_abcd: JRe,
+  abcd: jRe,
+  symbols: eCe,
+  abc: tCe,
+  a: nCe,
+  ab: rCe,
+  b: aCe,
+  cl: oCe,
+  cool: iCe,
+  free: sCe,
+  information_source: cCe,
+  id: lCe,
+  m: _Ce,
   new: "🆕",
-  ng: _Ce,
-  o2: dCe,
-  ok: uCe,
-  parking: pCe,
-  sos: mCe,
-  up: gCe,
-  vs: ECe,
-  koko: SCe,
-  sa: fCe,
-  ideograph_advantage: bCe,
-  accept: TCe,
-  congratulations: hCe,
-  secret: RCe,
-  u6e80: CCe,
-  red_circle: NCe,
-  orange_circle: vCe,
-  yellow_circle: OCe,
-  green_circle: yCe,
-  large_blue_circle: ACe,
-  purple_circle: ICe,
-  brown_circle: DCe,
-  black_circle: wCe,
-  white_circle: MCe,
-  red_square: xCe,
-  orange_square: LCe,
-  yellow_square: kCe,
-  green_square: PCe,
-  blue_square: UCe,
-  purple_square: FCe,
-  brown_square: BCe,
-  black_large_square: GCe,
-  white_large_square: qCe,
-  black_medium_square: YCe,
-  white_medium_square: HCe,
-  black_medium_small_square: VCe,
-  white_medium_small_square: zCe,
-  black_small_square: $Ce,
-  white_small_square: WCe,
-  large_orange_diamond: KCe,
-  large_blue_diamond: QCe,
-  small_orange_diamond: XCe,
-  small_blue_diamond: ZCe,
-  small_red_triangle: JCe,
-  small_red_triangle_down: jCe,
-  diamond_shape_with_a_dot_inside: eNe,
-  radio_button: tNe,
-  white_square_button: nNe,
-  black_square_button: rNe,
-  checkered_flag: aNe,
-  triangular_flag_on_post: oNe,
-  crossed_flags: iNe,
-  black_flag: sNe,
-  white_flag: cNe,
-  rainbow_flag: lNe,
-  transgender_flag: _Ne,
-  pirate_flag: dNe,
-  ascension_island: uNe,
-  andorra: pNe,
-  united_arab_emirates: mNe,
-  afghanistan: gNe,
-  antigua_barbuda: ENe,
-  anguilla: SNe,
-  albania: fNe,
-  armenia: bNe,
-  angola: TNe,
-  antarctica: hNe,
-  argentina: RNe,
-  american_samoa: CNe,
-  austria: NNe,
-  australia: vNe,
-  aruba: ONe,
-  aland_islands: yNe,
-  azerbaijan: ANe,
-  bosnia_herzegovina: INe,
-  barbados: DNe,
-  bangladesh: wNe,
-  belgium: MNe,
-  burkina_faso: xNe,
-  bulgaria: LNe,
-  bahrain: kNe,
-  burundi: PNe,
-  benin: UNe,
-  st_barthelemy: FNe,
-  bermuda: BNe,
-  brunei: GNe,
-  bolivia: qNe,
-  caribbean_netherlands: YNe,
-  brazil: HNe,
-  bahamas: VNe,
-  bhutan: zNe,
-  bouvet_island: $Ne,
-  botswana: WNe,
-  belarus: KNe,
-  belize: QNe,
-  canada: XNe,
-  cocos_islands: ZNe,
-  congo_kinshasa: JNe,
-  central_african_republic: jNe,
-  congo_brazzaville: eve,
-  switzerland: tve,
-  cote_divoire: nve,
-  cook_islands: rve,
-  chile: ave,
-  cameroon: ove,
-  cn: ive,
-  colombia: sve,
-  clipperton_island: cve,
-  costa_rica: lve,
-  cuba: _ve,
-  cape_verde: dve,
-  curacao: uve,
-  christmas_island: pve,
-  cyprus: mve,
-  czech_republic: gve,
-  de: Eve,
-  diego_garcia: Sve,
-  djibouti: fve,
-  denmark: bve,
-  dominica: Tve,
-  dominican_republic: hve,
-  algeria: Rve,
-  ceuta_melilla: Cve,
-  ecuador: Nve,
-  estonia: vve,
-  egypt: Ove,
-  western_sahara: yve,
-  eritrea: Ave,
-  es: Ive,
-  ethiopia: Dve,
-  eu: wve,
-  european_union: Mve,
-  finland: xve,
-  fiji: Lve,
-  falkland_islands: kve,
-  micronesia: Pve,
-  faroe_islands: Uve,
-  fr: Fve,
-  gabon: Bve,
-  gb: Gve,
-  uk: qve,
-  grenada: Yve,
-  georgia: Hve,
-  french_guiana: Vve,
-  guernsey: zve,
-  ghana: $ve,
-  gibraltar: Wve,
-  greenland: Kve,
-  gambia: Qve,
-  guinea: Xve,
-  guadeloupe: Zve,
-  equatorial_guinea: Jve,
-  greece: jve,
-  south_georgia_south_sandwich_islands: eOe,
-  guatemala: tOe,
-  guam: nOe,
-  guinea_bissau: rOe,
-  guyana: aOe,
-  hong_kong: oOe,
-  heard_mcdonald_islands: iOe,
-  honduras: sOe,
-  croatia: cOe,
-  haiti: lOe,
-  hungary: _Oe,
-  canary_islands: dOe,
-  indonesia: uOe,
-  ireland: pOe,
-  israel: mOe,
-  isle_of_man: gOe,
-  india: EOe,
-  british_indian_ocean_territory: SOe,
-  iraq: fOe,
-  iran: bOe,
-  iceland: TOe,
-  it: hOe,
-  jersey: ROe,
-  jamaica: COe,
-  jordan: NOe,
-  jp: vOe,
-  kenya: OOe,
-  kyrgyzstan: yOe,
-  cambodia: AOe,
-  kiribati: IOe,
-  comoros: DOe,
-  st_kitts_nevis: wOe,
-  north_korea: MOe,
-  kr: xOe,
-  kuwait: LOe,
-  cayman_islands: kOe,
-  kazakhstan: POe,
-  laos: UOe,
-  lebanon: FOe,
-  st_lucia: BOe,
-  liechtenstein: GOe,
-  sri_lanka: qOe,
-  liberia: YOe,
-  lesotho: HOe,
-  lithuania: VOe,
-  luxembourg: zOe,
-  latvia: $Oe,
-  libya: WOe,
-  morocco: KOe,
-  monaco: QOe,
-  moldova: XOe,
-  montenegro: ZOe,
-  st_martin: JOe,
-  madagascar: jOe,
-  marshall_islands: eye,
-  macedonia: tye,
-  mali: nye,
-  myanmar: rye,
-  mongolia: aye,
-  macau: oye,
-  northern_mariana_islands: iye,
-  martinique: sye,
-  mauritania: cye,
-  montserrat: lye,
-  malta: _ye,
-  mauritius: dye,
-  maldives: uye,
-  malawi: pye,
-  mexico: mye,
-  malaysia: gye,
-  mozambique: Eye,
-  namibia: Sye,
-  new_caledonia: fye,
-  niger: bye,
-  norfolk_island: Tye,
-  nigeria: hye,
-  nicaragua: Rye,
-  netherlands: Cye,
-  norway: Nye,
-  nepal: vye,
-  nauru: Oye,
-  niue: yye,
-  new_zealand: Aye,
-  oman: Iye,
-  panama: Dye,
-  peru: wye,
-  french_polynesia: Mye,
-  papua_new_guinea: xye,
-  philippines: Lye,
-  pakistan: kye,
-  poland: Pye,
-  st_pierre_miquelon: Uye,
-  pitcairn_islands: Fye,
-  puerto_rico: Bye,
-  palestinian_territories: Gye,
-  portugal: qye,
-  palau: Yye,
-  paraguay: Hye,
-  qatar: Vye,
-  reunion: zye,
-  romania: $ye,
-  serbia: Wye,
-  ru: Kye,
-  rwanda: Qye,
-  saudi_arabia: Xye,
-  solomon_islands: Zye,
-  seychelles: Jye,
-  sudan: jye,
-  sweden: eAe,
-  singapore: tAe,
-  st_helena: nAe,
-  slovenia: rAe,
-  svalbard_jan_mayen: aAe,
-  slovakia: oAe,
-  sierra_leone: iAe,
-  san_marino: sAe,
-  senegal: cAe,
-  somalia: lAe,
-  suriname: _Ae,
-  south_sudan: dAe,
-  sao_tome_principe: uAe,
-  el_salvador: pAe,
-  sint_maarten: mAe,
-  syria: gAe,
-  swaziland: EAe,
-  tristan_da_cunha: SAe,
-  turks_caicos_islands: fAe,
-  chad: bAe,
-  french_southern_territories: TAe,
-  togo: hAe,
-  thailand: RAe,
-  tajikistan: CAe,
-  tokelau: NAe,
-  timor_leste: vAe,
-  turkmenistan: OAe,
-  tunisia: yAe,
-  tonga: AAe,
-  tr: IAe,
-  trinidad_tobago: DAe,
-  tuvalu: wAe,
-  taiwan: MAe,
-  tanzania: xAe,
-  ukraine: LAe,
-  uganda: kAe,
-  us_outlying_islands: PAe,
-  united_nations: UAe,
-  us: FAe,
-  uruguay: BAe,
-  uzbekistan: GAe,
-  vatican_city: qAe,
-  st_vincent_grenadines: YAe,
-  venezuela: HAe,
-  british_virgin_islands: VAe,
-  us_virgin_islands: zAe,
-  vietnam: $Ae,
-  vanuatu: WAe,
-  wallis_futuna: KAe,
-  samoa: QAe,
-  kosovo: XAe,
-  yemen: ZAe,
-  mayotte: JAe,
-  south_africa: jAe,
-  zambia: eIe,
-  zimbabwe: tIe,
-  england: nIe,
-  scotland: rIe,
-  wales: aIe
+  ng: dCe,
+  o2: uCe,
+  ok: pCe,
+  parking: mCe,
+  sos: gCe,
+  up: ECe,
+  vs: SCe,
+  koko: fCe,
+  sa: bCe,
+  ideograph_advantage: TCe,
+  accept: hCe,
+  congratulations: RCe,
+  secret: CCe,
+  u6e80: NCe,
+  red_circle: vCe,
+  orange_circle: OCe,
+  yellow_circle: yCe,
+  green_circle: ACe,
+  large_blue_circle: ICe,
+  purple_circle: DCe,
+  brown_circle: wCe,
+  black_circle: MCe,
+  white_circle: xCe,
+  red_square: LCe,
+  orange_square: kCe,
+  yellow_square: PCe,
+  green_square: UCe,
+  blue_square: FCe,
+  purple_square: BCe,
+  brown_square: GCe,
+  black_large_square: qCe,
+  white_large_square: YCe,
+  black_medium_square: HCe,
+  white_medium_square: VCe,
+  black_medium_small_square: zCe,
+  white_medium_small_square: $Ce,
+  black_small_square: WCe,
+  white_small_square: KCe,
+  large_orange_diamond: QCe,
+  large_blue_diamond: XCe,
+  small_orange_diamond: ZCe,
+  small_blue_diamond: JCe,
+  small_red_triangle: jCe,
+  small_red_triangle_down: eNe,
+  diamond_shape_with_a_dot_inside: tNe,
+  radio_button: nNe,
+  white_square_button: rNe,
+  black_square_button: aNe,
+  checkered_flag: oNe,
+  triangular_flag_on_post: iNe,
+  crossed_flags: sNe,
+  black_flag: cNe,
+  white_flag: lNe,
+  rainbow_flag: _Ne,
+  transgender_flag: dNe,
+  pirate_flag: uNe,
+  ascension_island: pNe,
+  andorra: mNe,
+  united_arab_emirates: gNe,
+  afghanistan: ENe,
+  antigua_barbuda: SNe,
+  anguilla: fNe,
+  albania: bNe,
+  armenia: TNe,
+  angola: hNe,
+  antarctica: RNe,
+  argentina: CNe,
+  american_samoa: NNe,
+  austria: vNe,
+  australia: ONe,
+  aruba: yNe,
+  aland_islands: ANe,
+  azerbaijan: INe,
+  bosnia_herzegovina: DNe,
+  barbados: wNe,
+  bangladesh: MNe,
+  belgium: xNe,
+  burkina_faso: LNe,
+  bulgaria: kNe,
+  bahrain: PNe,
+  burundi: UNe,
+  benin: FNe,
+  st_barthelemy: BNe,
+  bermuda: GNe,
+  brunei: qNe,
+  bolivia: YNe,
+  caribbean_netherlands: HNe,
+  brazil: VNe,
+  bahamas: zNe,
+  bhutan: $Ne,
+  bouvet_island: WNe,
+  botswana: KNe,
+  belarus: QNe,
+  belize: XNe,
+  canada: ZNe,
+  cocos_islands: JNe,
+  congo_kinshasa: jNe,
+  central_african_republic: eve,
+  congo_brazzaville: tve,
+  switzerland: nve,
+  cote_divoire: rve,
+  cook_islands: ave,
+  chile: ove,
+  cameroon: ive,
+  cn: sve,
+  colombia: cve,
+  clipperton_island: lve,
+  costa_rica: _ve,
+  cuba: dve,
+  cape_verde: uve,
+  curacao: pve,
+  christmas_island: mve,
+  cyprus: gve,
+  czech_republic: Eve,
+  de: Sve,
+  diego_garcia: fve,
+  djibouti: bve,
+  denmark: Tve,
+  dominica: hve,
+  dominican_republic: Rve,
+  algeria: Cve,
+  ceuta_melilla: Nve,
+  ecuador: vve,
+  estonia: Ove,
+  egypt: yve,
+  western_sahara: Ave,
+  eritrea: Ive,
+  es: Dve,
+  ethiopia: wve,
+  eu: Mve,
+  european_union: xve,
+  finland: Lve,
+  fiji: kve,
+  falkland_islands: Pve,
+  micronesia: Uve,
+  faroe_islands: Fve,
+  fr: Bve,
+  gabon: Gve,
+  gb: qve,
+  uk: Yve,
+  grenada: Hve,
+  georgia: Vve,
+  french_guiana: zve,
+  guernsey: $ve,
+  ghana: Wve,
+  gibraltar: Kve,
+  greenland: Qve,
+  gambia: Xve,
+  guinea: Zve,
+  guadeloupe: Jve,
+  equatorial_guinea: jve,
+  greece: eOe,
+  south_georgia_south_sandwich_islands: tOe,
+  guatemala: nOe,
+  guam: rOe,
+  guinea_bissau: aOe,
+  guyana: oOe,
+  hong_kong: iOe,
+  heard_mcdonald_islands: sOe,
+  honduras: cOe,
+  croatia: lOe,
+  haiti: _Oe,
+  hungary: dOe,
+  canary_islands: uOe,
+  indonesia: pOe,
+  ireland: mOe,
+  israel: gOe,
+  isle_of_man: EOe,
+  india: SOe,
+  british_indian_ocean_territory: fOe,
+  iraq: bOe,
+  iran: TOe,
+  iceland: hOe,
+  it: ROe,
+  jersey: COe,
+  jamaica: NOe,
+  jordan: vOe,
+  jp: OOe,
+  kenya: yOe,
+  kyrgyzstan: AOe,
+  cambodia: IOe,
+  kiribati: DOe,
+  comoros: wOe,
+  st_kitts_nevis: MOe,
+  north_korea: xOe,
+  kr: LOe,
+  kuwait: kOe,
+  cayman_islands: POe,
+  kazakhstan: UOe,
+  laos: FOe,
+  lebanon: BOe,
+  st_lucia: GOe,
+  liechtenstein: qOe,
+  sri_lanka: YOe,
+  liberia: HOe,
+  lesotho: VOe,
+  lithuania: zOe,
+  luxembourg: $Oe,
+  latvia: WOe,
+  libya: KOe,
+  morocco: QOe,
+  monaco: XOe,
+  moldova: ZOe,
+  montenegro: JOe,
+  st_martin: jOe,
+  madagascar: eye,
+  marshall_islands: tye,
+  macedonia: nye,
+  mali: rye,
+  myanmar: aye,
+  mongolia: oye,
+  macau: iye,
+  northern_mariana_islands: sye,
+  martinique: cye,
+  mauritania: lye,
+  montserrat: _ye,
+  malta: dye,
+  mauritius: uye,
+  maldives: pye,
+  malawi: mye,
+  mexico: gye,
+  malaysia: Eye,
+  mozambique: Sye,
+  namibia: fye,
+  new_caledonia: bye,
+  niger: Tye,
+  norfolk_island: hye,
+  nigeria: Rye,
+  nicaragua: Cye,
+  netherlands: Nye,
+  norway: vye,
+  nepal: Oye,
+  nauru: yye,
+  niue: Aye,
+  new_zealand: Iye,
+  oman: Dye,
+  panama: wye,
+  peru: Mye,
+  french_polynesia: xye,
+  papua_new_guinea: Lye,
+  philippines: kye,
+  pakistan: Pye,
+  poland: Uye,
+  st_pierre_miquelon: Fye,
+  pitcairn_islands: Bye,
+  puerto_rico: Gye,
+  palestinian_territories: qye,
+  portugal: Yye,
+  palau: Hye,
+  paraguay: Vye,
+  qatar: zye,
+  reunion: $ye,
+  romania: Wye,
+  serbia: Kye,
+  ru: Qye,
+  rwanda: Xye,
+  saudi_arabia: Zye,
+  solomon_islands: Jye,
+  seychelles: jye,
+  sudan: eAe,
+  sweden: tAe,
+  singapore: nAe,
+  st_helena: rAe,
+  slovenia: aAe,
+  svalbard_jan_mayen: oAe,
+  slovakia: iAe,
+  sierra_leone: sAe,
+  san_marino: cAe,
+  senegal: lAe,
+  somalia: _Ae,
+  suriname: dAe,
+  south_sudan: uAe,
+  sao_tome_principe: pAe,
+  el_salvador: mAe,
+  sint_maarten: gAe,
+  syria: EAe,
+  swaziland: SAe,
+  tristan_da_cunha: fAe,
+  turks_caicos_islands: bAe,
+  chad: TAe,
+  french_southern_territories: hAe,
+  togo: RAe,
+  thailand: CAe,
+  tajikistan: NAe,
+  tokelau: vAe,
+  timor_leste: OAe,
+  turkmenistan: yAe,
+  tunisia: AAe,
+  tonga: IAe,
+  tr: DAe,
+  trinidad_tobago: wAe,
+  tuvalu: MAe,
+  taiwan: xAe,
+  tanzania: LAe,
+  ukraine: kAe,
+  uganda: PAe,
+  us_outlying_islands: UAe,
+  united_nations: FAe,
+  us: BAe,
+  uruguay: GAe,
+  uzbekistan: qAe,
+  vatican_city: YAe,
+  st_vincent_grenadines: HAe,
+  venezuela: VAe,
+  british_virgin_islands: zAe,
+  us_virgin_islands: $Ae,
+  vietnam: WAe,
+  vanuatu: KAe,
+  wallis_futuna: QAe,
+  samoa: XAe,
+  kosovo: ZAe,
+  yemen: JAe,
+  mayotte: jAe,
+  south_africa: eIe,
+  zambia: tIe,
+  zimbabwe: nIe,
+  england: rIe,
+  scotland: aIe,
+  wales: oIe
 };
-var iIe = {
+var sIe = {
   angry: [">:(", ">:-("],
   blush: [':")', ':-")'],
   broken_heart: ["</3", "<\\3"],
@@ -39234,16 +39234,16 @@ var iIe = {
   sweat_smile: [",:)", ",:-)"],
   unamused: [":s", ":-S", ":z", ":-Z", ":$", ":-$"],
   wink: [";)", ";-)"]
-}, sIe = function(e, n) {
+}, cIe = function(e, n) {
   return e[n].content;
-}, cIe = function(e, n, r, a, i) {
-  var o = e.utils.arrayReplaceAt, s = e.utils.lib.ucmicro, c = new RegExp([s.Z.source, s.P.source, s.Cc.source].join("|"));
+}, lIe = function(e, n, r, a, i) {
+  var o = e.utils.arrayReplaceAt, c = e.utils.lib.ucmicro, s = new RegExp([c.Z.source, c.P.source, c.Cc.source].join("|"));
   function l(_, p, d) {
     var u, E = 0, S = [];
     return _.replace(i, function(g, f, b) {
       var h;
       if (r.hasOwnProperty(g)) {
-        if (h = r[g], f > 0 && !c.test(b[f - 1]) || f + g.length < b.length && !c.test(b[f + g.length]))
+        if (h = r[g], f > 0 && !s.test(b[f - 1]) || f + g.length < b.length && !s.test(b[f + g.length]))
           return;
       } else
         h = g.slice(1, -1);
@@ -39262,157 +39262,157 @@ var iIe = {
           ));
   };
 };
-function lIe(t) {
+function _Ie(t) {
   return t.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
 }
-var _Ie = function(e) {
+var dIe = function(e) {
   var n = e.defs, r;
-  e.enabled.length && (n = Object.keys(n).reduce(function(c, l) {
-    return e.enabled.indexOf(l) >= 0 && (c[l] = n[l]), c;
-  }, {})), r = Object.keys(e.shortcuts).reduce(function(c, l) {
+  e.enabled.length && (n = Object.keys(n).reduce(function(s, l) {
+    return e.enabled.indexOf(l) >= 0 && (s[l] = n[l]), s;
+  }, {})), r = Object.keys(e.shortcuts).reduce(function(s, l) {
     return n[l] ? Array.isArray(e.shortcuts[l]) ? (e.shortcuts[l].forEach(function(_) {
-      c[_] = l;
-    }), c) : (c[e.shortcuts[l]] = l, c) : c;
+      s[_] = l;
+    }), s) : (s[e.shortcuts[l]] = l, s) : s;
   }, {});
   var a = Object.keys(n), i;
-  a.length === 0 ? i = "^$" : i = a.map(function(c) {
-    return ":" + c + ":";
-  }).concat(Object.keys(r)).sort().reverse().map(function(c) {
-    return lIe(c);
+  a.length === 0 ? i = "^$" : i = a.map(function(s) {
+    return ":" + s + ":";
+  }).concat(Object.keys(r)).sort().reverse().map(function(s) {
+    return _Ie(s);
   }).join("|");
-  var o = RegExp(i), s = RegExp(i, "g");
+  var o = RegExp(i), c = RegExp(i, "g");
   return {
     defs: n,
     shortcuts: r,
     scanRE: o,
-    replaceRE: s
+    replaceRE: c
   };
-}, dIe = sIe, uIe = cIe, pIe = _Ie, mIe = function(e, n) {
+}, uIe = cIe, pIe = lIe, mIe = dIe, gIe = function(e, n) {
   var r = {
     defs: {},
     shortcuts: {},
     enabled: []
-  }, a = pIe(e.utils.assign({}, r, n || {}));
-  e.renderer.rules.emoji = dIe, e.core.ruler.after(
+  }, a = mIe(e.utils.assign({}, r, n || {}));
+  e.renderer.rules.emoji = uIe, e.core.ruler.after(
     "linkify",
     "emoji",
-    uIe(e, a.defs, a.shortcuts, a.scanRE, a.replaceRE)
+    pIe(e, a.defs, a.shortcuts, a.scanRE, a.replaceRE)
   );
-}, gIe = oIe, EIe = iIe, SIe = mIe, fIe = function(e, n) {
+}, EIe = iIe, SIe = sIe, fIe = gIe, bIe = function(e, n) {
   var r = {
-    defs: gIe,
-    shortcuts: EIe,
+    defs: EIe,
+    shortcuts: SIe,
     enabled: []
   }, a = e.utils.assign({}, r, n || {});
-  SIe(e, a);
+  fIe(e, a);
 };
-const bIe = /* @__PURE__ */ ye(fIe);
-function TIe(t, e, n, r) {
+const TIe = /* @__PURE__ */ ye(bIe);
+function hIe(t, e, n, r) {
   var a = Number(t[e].meta.id + 1).toString(), i = "";
   return typeof r.docId == "string" && (i = "-" + r.docId + "-"), i + a;
 }
-function hIe(t, e) {
+function RIe(t, e) {
   var n = Number(t[e].meta.id + 1).toString();
   return t[e].meta.subId > 0 && (n += ":" + t[e].meta.subId), "[" + n + "]";
 }
-function RIe(t, e, n, r, a) {
-  var i = a.rules.footnote_anchor_name(t, e, n, r, a), o = a.rules.footnote_caption(t, e, n, r, a), s = i;
-  return t[e].meta.subId > 0 && (s += ":" + t[e].meta.subId), '<sup class="footnote-ref"><a href="#fn' + i + '" id="fnref' + s + '">' + o + "</a></sup>";
+function CIe(t, e, n, r, a) {
+  var i = a.rules.footnote_anchor_name(t, e, n, r, a), o = a.rules.footnote_caption(t, e, n, r, a), c = i;
+  return t[e].meta.subId > 0 && (c += ":" + t[e].meta.subId), '<sup class="footnote-ref"><a href="#fn' + i + '" id="fnref' + c + '">' + o + "</a></sup>";
 }
-function CIe(t, e, n) {
+function NIe(t, e, n) {
   return (n.xhtmlOut ? `<hr class="footnotes-sep" />
 ` : `<hr class="footnotes-sep">
 `) + `<section class="footnotes">
 <ol class="footnotes-list">
 `;
 }
-function NIe() {
+function vIe() {
   return `</ol>
 </section>
 `;
 }
-function vIe(t, e, n, r, a) {
+function OIe(t, e, n, r, a) {
   var i = a.rules.footnote_anchor_name(t, e, n, r, a);
   return t[e].meta.subId > 0 && (i += ":" + t[e].meta.subId), '<li id="fn' + i + '" class="footnote-item">';
 }
-function OIe() {
+function yIe() {
   return `</li>
 `;
 }
-function yIe(t, e, n, r, a) {
+function AIe(t, e, n, r, a) {
   var i = a.rules.footnote_anchor_name(t, e, n, r, a);
   return t[e].meta.subId > 0 && (i += ":" + t[e].meta.subId), ' <a href="#fnref' + i + '" class="footnote-backref">↩︎</a>';
 }
-var AIe = function(e) {
+var IIe = function(e) {
   var n = e.helpers.parseLinkLabel, r = e.utils.isSpace;
-  e.renderer.rules.footnote_ref = RIe, e.renderer.rules.footnote_block_open = CIe, e.renderer.rules.footnote_block_close = NIe, e.renderer.rules.footnote_open = vIe, e.renderer.rules.footnote_close = OIe, e.renderer.rules.footnote_anchor = yIe, e.renderer.rules.footnote_caption = hIe, e.renderer.rules.footnote_anchor_name = TIe;
-  function a(c, l, _, p) {
-    var d, u, E, S, g, f, b, h, N, v, R, C = c.bMarks[l] + c.tShift[l], w = c.eMarks[l];
-    if (C + 4 > w || c.src.charCodeAt(C) !== 91 || c.src.charCodeAt(C + 1) !== 94)
+  e.renderer.rules.footnote_ref = CIe, e.renderer.rules.footnote_block_open = NIe, e.renderer.rules.footnote_block_close = vIe, e.renderer.rules.footnote_open = OIe, e.renderer.rules.footnote_close = yIe, e.renderer.rules.footnote_anchor = AIe, e.renderer.rules.footnote_caption = RIe, e.renderer.rules.footnote_anchor_name = hIe;
+  function a(s, l, _, p) {
+    var d, u, E, S, g, f, b, h, N, v, R, C = s.bMarks[l] + s.tShift[l], w = s.eMarks[l];
+    if (C + 4 > w || s.src.charCodeAt(C) !== 91 || s.src.charCodeAt(C + 1) !== 94)
       return !1;
     for (g = C + 2; g < w; g++) {
-      if (c.src.charCodeAt(g) === 32)
+      if (s.src.charCodeAt(g) === 32)
         return !1;
-      if (c.src.charCodeAt(g) === 93)
+      if (s.src.charCodeAt(g) === 93)
         break;
     }
-    if (g === C + 2 || g + 1 >= w || c.src.charCodeAt(++g) !== 58)
+    if (g === C + 2 || g + 1 >= w || s.src.charCodeAt(++g) !== 58)
       return !1;
     if (p)
       return !0;
-    for (g++, c.env.footnotes || (c.env.footnotes = {}), c.env.footnotes.refs || (c.env.footnotes.refs = {}), f = c.src.slice(C + 2, g - 2), c.env.footnotes.refs[":" + f] = -1, b = new c.Token("footnote_reference_open", "", 1), b.meta = { label: f }, b.level = c.level++, c.tokens.push(b), d = c.bMarks[l], u = c.tShift[l], E = c.sCount[l], S = c.parentType, R = g, h = N = c.sCount[l] + g - (c.bMarks[l] + c.tShift[l]); g < w && (v = c.src.charCodeAt(g), r(v)); ) {
+    for (g++, s.env.footnotes || (s.env.footnotes = {}), s.env.footnotes.refs || (s.env.footnotes.refs = {}), f = s.src.slice(C + 2, g - 2), s.env.footnotes.refs[":" + f] = -1, b = new s.Token("footnote_reference_open", "", 1), b.meta = { label: f }, b.level = s.level++, s.tokens.push(b), d = s.bMarks[l], u = s.tShift[l], E = s.sCount[l], S = s.parentType, R = g, h = N = s.sCount[l] + g - (s.bMarks[l] + s.tShift[l]); g < w && (v = s.src.charCodeAt(g), r(v)); ) {
       v === 9 ? N += 4 - N % 4 : N++;
       g++;
     }
-    return c.tShift[l] = g - R, c.sCount[l] = N - h, c.bMarks[l] = R, c.blkIndent += 4, c.parentType = "footnote", c.sCount[l] < c.blkIndent && (c.sCount[l] += c.blkIndent), c.md.block.tokenize(c, l, _, !0), c.parentType = S, c.blkIndent -= 4, c.tShift[l] = u, c.sCount[l] = E, c.bMarks[l] = d, b = new c.Token("footnote_reference_close", "", -1), b.level = --c.level, c.tokens.push(b), !0;
+    return s.tShift[l] = g - R, s.sCount[l] = N - h, s.bMarks[l] = R, s.blkIndent += 4, s.parentType = "footnote", s.sCount[l] < s.blkIndent && (s.sCount[l] += s.blkIndent), s.md.block.tokenize(s, l, _, !0), s.parentType = S, s.blkIndent -= 4, s.tShift[l] = u, s.sCount[l] = E, s.bMarks[l] = d, b = new s.Token("footnote_reference_close", "", -1), b.level = --s.level, s.tokens.push(b), !0;
   }
-  function i(c, l) {
-    var _, p, d, u, E, S = c.posMax, g = c.pos;
-    return g + 2 >= S || c.src.charCodeAt(g) !== 94 || c.src.charCodeAt(g + 1) !== 91 || (_ = g + 2, p = n(c, g + 1), p < 0) ? !1 : (l || (c.env.footnotes || (c.env.footnotes = {}), c.env.footnotes.list || (c.env.footnotes.list = []), d = c.env.footnotes.list.length, c.md.inline.parse(
-      c.src.slice(_, p),
-      c.md,
-      c.env,
+  function i(s, l) {
+    var _, p, d, u, E, S = s.posMax, g = s.pos;
+    return g + 2 >= S || s.src.charCodeAt(g) !== 94 || s.src.charCodeAt(g + 1) !== 91 || (_ = g + 2, p = n(s, g + 1), p < 0) ? !1 : (l || (s.env.footnotes || (s.env.footnotes = {}), s.env.footnotes.list || (s.env.footnotes.list = []), d = s.env.footnotes.list.length, s.md.inline.parse(
+      s.src.slice(_, p),
+      s.md,
+      s.env,
       E = []
-    ), u = c.push("footnote_ref", "", 0), u.meta = { id: d }, c.env.footnotes.list[d] = {
-      content: c.src.slice(_, p),
+    ), u = s.push("footnote_ref", "", 0), u.meta = { id: d }, s.env.footnotes.list[d] = {
+      content: s.src.slice(_, p),
       tokens: E
-    }), c.pos = p + 1, c.posMax = S, !0);
+    }), s.pos = p + 1, s.posMax = S, !0);
   }
-  function o(c, l) {
-    var _, p, d, u, E, S = c.posMax, g = c.pos;
-    if (g + 3 > S || !c.env.footnotes || !c.env.footnotes.refs || c.src.charCodeAt(g) !== 91 || c.src.charCodeAt(g + 1) !== 94)
+  function o(s, l) {
+    var _, p, d, u, E, S = s.posMax, g = s.pos;
+    if (g + 3 > S || !s.env.footnotes || !s.env.footnotes.refs || s.src.charCodeAt(g) !== 91 || s.src.charCodeAt(g + 1) !== 94)
       return !1;
     for (p = g + 2; p < S; p++) {
-      if (c.src.charCodeAt(p) === 32 || c.src.charCodeAt(p) === 10)
+      if (s.src.charCodeAt(p) === 32 || s.src.charCodeAt(p) === 10)
         return !1;
-      if (c.src.charCodeAt(p) === 93)
+      if (s.src.charCodeAt(p) === 93)
         break;
     }
-    return p === g + 2 || p >= S || (p++, _ = c.src.slice(g + 2, p - 1), typeof c.env.footnotes.refs[":" + _] > "u") ? !1 : (l || (c.env.footnotes.list || (c.env.footnotes.list = []), c.env.footnotes.refs[":" + _] < 0 ? (d = c.env.footnotes.list.length, c.env.footnotes.list[d] = { label: _, count: 0 }, c.env.footnotes.refs[":" + _] = d) : d = c.env.footnotes.refs[":" + _], u = c.env.footnotes.list[d].count, c.env.footnotes.list[d].count++, E = c.push("footnote_ref", "", 0), E.meta = { id: d, subId: u, label: _ }), c.pos = p, c.posMax = S, !0);
+    return p === g + 2 || p >= S || (p++, _ = s.src.slice(g + 2, p - 1), typeof s.env.footnotes.refs[":" + _] > "u") ? !1 : (l || (s.env.footnotes.list || (s.env.footnotes.list = []), s.env.footnotes.refs[":" + _] < 0 ? (d = s.env.footnotes.list.length, s.env.footnotes.list[d] = { label: _, count: 0 }, s.env.footnotes.refs[":" + _] = d) : d = s.env.footnotes.refs[":" + _], u = s.env.footnotes.list[d].count, s.env.footnotes.list[d].count++, E = s.push("footnote_ref", "", 0), E.meta = { id: d, subId: u, label: _ }), s.pos = p, s.posMax = S, !0);
   }
-  function s(c) {
+  function c(s) {
     var l, _, p, d, u, E, S, g, f, b, h = !1, N = {};
-    if (c.env.footnotes && (c.tokens = c.tokens.filter(function(v) {
+    if (s.env.footnotes && (s.tokens = s.tokens.filter(function(v) {
       return v.type === "footnote_reference_open" ? (h = !0, f = [], b = v.meta.label, !1) : v.type === "footnote_reference_close" ? (h = !1, N[":" + b] = f, !1) : (h && f.push(v), !h);
-    }), !!c.env.footnotes.list)) {
-      for (E = c.env.footnotes.list, S = new c.Token("footnote_block_open", "", 1), c.tokens.push(S), l = 0, _ = E.length; l < _; l++) {
-        for (S = new c.Token("footnote_open", "", 1), S.meta = { id: l, label: E[l].label }, c.tokens.push(S), E[l].tokens ? (g = [], S = new c.Token("paragraph_open", "p", 1), S.block = !0, g.push(S), S = new c.Token("inline", "", 0), S.children = E[l].tokens, S.content = E[l].content, g.push(S), S = new c.Token("paragraph_close", "p", -1), S.block = !0, g.push(S)) : E[l].label && (g = N[":" + E[l].label]), g && (c.tokens = c.tokens.concat(g)), c.tokens[c.tokens.length - 1].type === "paragraph_close" ? u = c.tokens.pop() : u = null, d = E[l].count > 0 ? E[l].count : 1, p = 0; p < d; p++)
-          S = new c.Token("footnote_anchor", "", 0), S.meta = { id: l, subId: p, label: E[l].label }, c.tokens.push(S);
-        u && c.tokens.push(u), S = new c.Token("footnote_close", "", -1), c.tokens.push(S);
+    }), !!s.env.footnotes.list)) {
+      for (E = s.env.footnotes.list, S = new s.Token("footnote_block_open", "", 1), s.tokens.push(S), l = 0, _ = E.length; l < _; l++) {
+        for (S = new s.Token("footnote_open", "", 1), S.meta = { id: l, label: E[l].label }, s.tokens.push(S), E[l].tokens ? (g = [], S = new s.Token("paragraph_open", "p", 1), S.block = !0, g.push(S), S = new s.Token("inline", "", 0), S.children = E[l].tokens, S.content = E[l].content, g.push(S), S = new s.Token("paragraph_close", "p", -1), S.block = !0, g.push(S)) : E[l].label && (g = N[":" + E[l].label]), g && (s.tokens = s.tokens.concat(g)), s.tokens[s.tokens.length - 1].type === "paragraph_close" ? u = s.tokens.pop() : u = null, d = E[l].count > 0 ? E[l].count : 1, p = 0; p < d; p++)
+          S = new s.Token("footnote_anchor", "", 0), S.meta = { id: l, subId: p, label: E[l].label }, s.tokens.push(S);
+        u && s.tokens.push(u), S = new s.Token("footnote_close", "", -1), s.tokens.push(S);
       }
-      S = new c.Token("footnote_block_close", "", -1), c.tokens.push(S);
+      S = new s.Token("footnote_block_close", "", -1), s.tokens.push(S);
     }
   }
-  e.block.ruler.before("reference", "footnote_def", a, { alt: ["paragraph", "reference"] }), e.inline.ruler.after("image", "footnote_inline", i), e.inline.ruler.after("footnote_inline", "footnote_ref", o), e.core.ruler.after("inline", "footnote_tail", s);
+  e.block.ruler.before("reference", "footnote_def", a, { alt: ["paragraph", "reference"] }), e.inline.ruler.after("image", "footnote_inline", i), e.inline.ruler.after("footnote_inline", "footnote_ref", o), e.core.ruler.after("inline", "footnote_tail", c);
 };
-const IIe = /* @__PURE__ */ ye(AIe);
-var DIe = function(e) {
+const DIe = /* @__PURE__ */ ye(IIe);
+var wIe = function(e) {
   function n(a, i) {
-    var o, s, c, l, _, p = a.pos, d = a.src.charCodeAt(p);
-    if (i || d !== 43 || (s = a.scanDelims(a.pos, !0), l = s.length, _ = String.fromCharCode(d), l < 2))
+    var o, c, s, l, _, p = a.pos, d = a.src.charCodeAt(p);
+    if (i || d !== 43 || (c = a.scanDelims(a.pos, !0), l = c.length, _ = String.fromCharCode(d), l < 2))
       return !1;
-    for (l % 2 && (c = a.push("text", "", 0), c.content = _, l--), o = 0; o < l; o += 2)
-      c = a.push("text", "", 0), c.content = _ + _, !(!s.can_open && !s.can_close) && a.delimiters.push({
+    for (l % 2 && (s = a.push("text", "", 0), s.content = _, l--), o = 0; o < l; o += 2)
+      s = a.push("text", "", 0), s.content = _ + _, !(!c.can_open && !c.can_close) && a.delimiters.push({
         marker: d,
         length: 0,
         // disable "rule of 3" length checks meant for emphasis
@@ -39420,35 +39420,35 @@ var DIe = function(e) {
         // 1 delimiter = 2 characters
         token: a.tokens.length - 1,
         end: -1,
-        open: s.can_open,
-        close: s.can_close
+        open: c.can_open,
+        close: c.can_close
       });
-    return a.pos += s.length, !0;
+    return a.pos += c.length, !0;
   }
   function r(a, i) {
-    var o, s, c, l, _, p = [], d = i.length;
+    var o, c, s, l, _, p = [], d = i.length;
     for (o = 0; o < d; o++)
-      c = i[o], c.marker === 43 && c.end !== -1 && (l = i[c.end], _ = a.tokens[c.token], _.type = "ins_open", _.tag = "ins", _.nesting = 1, _.markup = "++", _.content = "", _ = a.tokens[l.token], _.type = "ins_close", _.tag = "ins", _.nesting = -1, _.markup = "++", _.content = "", a.tokens[l.token - 1].type === "text" && a.tokens[l.token - 1].content === "+" && p.push(l.token - 1));
+      s = i[o], s.marker === 43 && s.end !== -1 && (l = i[s.end], _ = a.tokens[s.token], _.type = "ins_open", _.tag = "ins", _.nesting = 1, _.markup = "++", _.content = "", _ = a.tokens[l.token], _.type = "ins_close", _.tag = "ins", _.nesting = -1, _.markup = "++", _.content = "", a.tokens[l.token - 1].type === "text" && a.tokens[l.token - 1].content === "+" && p.push(l.token - 1));
     for (; p.length; ) {
-      for (o = p.pop(), s = o + 1; s < a.tokens.length && a.tokens[s].type === "ins_close"; )
-        s++;
-      s--, o !== s && (_ = a.tokens[s], a.tokens[s] = a.tokens[o], a.tokens[o] = _);
+      for (o = p.pop(), c = o + 1; c < a.tokens.length && a.tokens[c].type === "ins_close"; )
+        c++;
+      c--, o !== c && (_ = a.tokens[c], a.tokens[c] = a.tokens[o], a.tokens[o] = _);
     }
   }
   e.inline.ruler.before("emphasis", "ins", n), e.inline.ruler2.before("emphasis", "ins", function(a) {
-    var i, o = a.tokens_meta, s = (a.tokens_meta || []).length;
-    for (r(a, a.delimiters), i = 0; i < s; i++)
+    var i, o = a.tokens_meta, c = (a.tokens_meta || []).length;
+    for (r(a, a.delimiters), i = 0; i < c; i++)
       o[i] && o[i].delimiters && r(a, o[i].delimiters);
   });
 };
-const wIe = /* @__PURE__ */ ye(DIe);
-var MIe = function(e) {
+const MIe = /* @__PURE__ */ ye(wIe);
+var xIe = function(e) {
   function n(a, i) {
-    var o, s, c, l, _, p = a.pos, d = a.src.charCodeAt(p);
-    if (i || d !== 61 || (s = a.scanDelims(a.pos, !0), l = s.length, _ = String.fromCharCode(d), l < 2))
+    var o, c, s, l, _, p = a.pos, d = a.src.charCodeAt(p);
+    if (i || d !== 61 || (c = a.scanDelims(a.pos, !0), l = c.length, _ = String.fromCharCode(d), l < 2))
       return !1;
-    for (l % 2 && (c = a.push("text", "", 0), c.content = _, l--), o = 0; o < l; o += 2)
-      c = a.push("text", "", 0), c.content = _ + _, !(!s.can_open && !s.can_close) && a.delimiters.push({
+    for (l % 2 && (s = a.push("text", "", 0), s.content = _, l--), o = 0; o < l; o += 2)
+      s = a.push("text", "", 0), s.content = _ + _, !(!c.can_open && !c.can_close) && a.delimiters.push({
         marker: d,
         length: 0,
         // disable "rule of 3" length checks meant for emphasis
@@ -39456,30 +39456,30 @@ var MIe = function(e) {
         // 1 delimiter = 2 characters
         token: a.tokens.length - 1,
         end: -1,
-        open: s.can_open,
-        close: s.can_close
+        open: c.can_open,
+        close: c.can_close
       });
-    return a.pos += s.length, !0;
+    return a.pos += c.length, !0;
   }
   function r(a, i) {
-    var o, s, c, l, _, p = [], d = i.length;
+    var o, c, s, l, _, p = [], d = i.length;
     for (o = 0; o < d; o++)
-      c = i[o], c.marker === 61 && c.end !== -1 && (l = i[c.end], _ = a.tokens[c.token], _.type = "mark_open", _.tag = "mark", _.nesting = 1, _.markup = "==", _.content = "", _ = a.tokens[l.token], _.type = "mark_close", _.tag = "mark", _.nesting = -1, _.markup = "==", _.content = "", a.tokens[l.token - 1].type === "text" && a.tokens[l.token - 1].content === "=" && p.push(l.token - 1));
+      s = i[o], s.marker === 61 && s.end !== -1 && (l = i[s.end], _ = a.tokens[s.token], _.type = "mark_open", _.tag = "mark", _.nesting = 1, _.markup = "==", _.content = "", _ = a.tokens[l.token], _.type = "mark_close", _.tag = "mark", _.nesting = -1, _.markup = "==", _.content = "", a.tokens[l.token - 1].type === "text" && a.tokens[l.token - 1].content === "=" && p.push(l.token - 1));
     for (; p.length; ) {
-      for (o = p.pop(), s = o + 1; s < a.tokens.length && a.tokens[s].type === "mark_close"; )
-        s++;
-      s--, o !== s && (_ = a.tokens[s], a.tokens[s] = a.tokens[o], a.tokens[o] = _);
+      for (o = p.pop(), c = o + 1; c < a.tokens.length && a.tokens[c].type === "mark_close"; )
+        c++;
+      c--, o !== c && (_ = a.tokens[c], a.tokens[c] = a.tokens[o], a.tokens[o] = _);
     }
   }
   e.inline.ruler.before("emphasis", "mark", n), e.inline.ruler2.before("emphasis", "mark", function(a) {
-    var i, o = a.tokens_meta, s = (a.tokens_meta || []).length;
-    for (r(a, a.delimiters), i = 0; i < s; i++)
+    var i, o = a.tokens_meta, c = (a.tokens_meta || []).length;
+    for (r(a, a.delimiters), i = 0; i < c; i++)
       o[i] && o[i].delimiters && r(a, o[i].delimiters);
   });
 };
-const xIe = /* @__PURE__ */ ye(MIe);
-var LIe = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/g;
-function kIe(t, e) {
+const LIe = /* @__PURE__ */ ye(xIe);
+var kIe = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/g;
+function PIe(t, e) {
   var n, r, a, i = t.posMax, o = t.pos;
   if (t.src.charCodeAt(o) !== 126 || e || o + 2 >= i)
     return !1;
@@ -39490,14 +39490,14 @@ function kIe(t, e) {
     }
     t.md.inline.skipToken(t);
   }
-  return !n || o + 1 === t.pos || (r = t.src.slice(o + 1, t.pos), r.match(/(^|[^\\])(\\\\)*\s/)) ? (t.pos = o, !1) : (t.posMax = t.pos, t.pos = o + 1, a = t.push("sub_open", "sub", 1), a.markup = "~", a = t.push("text", "", 0), a.content = r.replace(LIe, "$1"), a = t.push("sub_close", "sub", -1), a.markup = "~", t.pos = t.posMax + 1, t.posMax = i, !0);
+  return !n || o + 1 === t.pos || (r = t.src.slice(o + 1, t.pos), r.match(/(^|[^\\])(\\\\)*\s/)) ? (t.pos = o, !1) : (t.posMax = t.pos, t.pos = o + 1, a = t.push("sub_open", "sub", 1), a.markup = "~", a = t.push("text", "", 0), a.content = r.replace(kIe, "$1"), a = t.push("sub_close", "sub", -1), a.markup = "~", t.pos = t.posMax + 1, t.posMax = i, !0);
 }
-var PIe = function(e) {
-  e.inline.ruler.after("emphasis", "sub", kIe);
+var UIe = function(e) {
+  e.inline.ruler.after("emphasis", "sub", PIe);
 };
-const UIe = /* @__PURE__ */ ye(PIe);
-var FIe = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/g;
-function BIe(t, e) {
+const FIe = /* @__PURE__ */ ye(UIe);
+var BIe = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/g;
+function GIe(t, e) {
   var n, r, a, i = t.posMax, o = t.pos;
   if (t.src.charCodeAt(o) !== 94 || e || o + 2 >= i)
     return !1;
@@ -39508,12 +39508,12 @@ function BIe(t, e) {
     }
     t.md.inline.skipToken(t);
   }
-  return !n || o + 1 === t.pos || (r = t.src.slice(o + 1, t.pos), r.match(/(^|[^\\])(\\\\)*\s/)) ? (t.pos = o, !1) : (t.posMax = t.pos, t.pos = o + 1, a = t.push("sup_open", "sup", 1), a.markup = "^", a = t.push("text", "", 0), a.content = r.replace(FIe, "$1"), a = t.push("sup_close", "sup", -1), a.markup = "^", t.pos = t.posMax + 1, t.posMax = i, !0);
+  return !n || o + 1 === t.pos || (r = t.src.slice(o + 1, t.pos), r.match(/(^|[^\\])(\\\\)*\s/)) ? (t.pos = o, !1) : (t.posMax = t.pos, t.pos = o + 1, a = t.push("sup_open", "sup", 1), a.markup = "^", a = t.push("text", "", 0), a.content = r.replace(BIe, "$1"), a = t.push("sup_close", "sup", -1), a.markup = "^", t.pos = t.posMax + 1, t.posMax = i, !0);
 }
-var GIe = function(e) {
-  e.inline.ruler.after("emphasis", "sup", BIe);
+var qIe = function(e) {
+  e.inline.ruler.after("emphasis", "sup", GIe);
 };
-const qIe = /* @__PURE__ */ ye(GIe), tt = new _6({
+const YIe = /* @__PURE__ */ ye(qIe), tt = new d6({
   html: !0,
   // Enable HTML tags in source
   xhtmlOut: !1,
@@ -39531,7 +39531,7 @@ const qIe = /* @__PURE__ */ ye(GIe), tt = new _6({
     }
     return '<pre class="hljs"><code>' + tt.utils.escapeHtml(t) + "</code></pre>";
   }
-}).use(u6).use(td, "warning").use(td, "tip").use(g6).use(bIe).use(IIe).use(wIe).use(xIe).use(UIe).use(qIe);
+}).use(p6).use(td, "warning").use(td, "tip").use(E6).use(TIe).use(DIe).use(MIe).use(LIe).use(FIe).use(YIe);
 tt.renderer.rules.footnote_ref = (t, e, n, r, a) => '<sup class="footnote-ref"><span>' + a.rules.footnote_caption?.(t, e, n, r, a) + "</span></sup>";
 tt.renderer.rules.footnote_anchor = () => ' <span class="footnote-backref">↩︎</span>';
 const Ld = ({ data: t = "" }) => {
@@ -39548,8 +39548,8 @@ const Ld = ({ data: t = "" }) => {
     }),
     [t]
   );
-  return /* @__PURE__ */ m(YIe, { children: /* @__PURE__ */ m("div", { dangerouslySetInnerHTML: { __html: e } }) });
-}, YIe = Ie.div`
+  return /* @__PURE__ */ m(HIe, { children: /* @__PURE__ */ m("div", { dangerouslySetInnerHTML: { __html: e } }) });
+}, HIe = Ie.div`
   position: absolute;
   top: 0;
   width: 100%;
@@ -39692,17 +39692,17 @@ const Ld = ({ data: t = "" }) => {
     }
   }
 `;
-var kt = /^(\s*)(>[> ]*|[*+-] \[[x ]\]\s|[*+-]\s|(\d+)([.)]))(\s*)/, HIe = /^(\s*)(>[> ]*|[*+-] \[[x ]\]|[*+-]|(\d+)[.)])(\s*)$/, VIe = /[*+-]\s/;
-function zIe(t) {
+var kt = /^(\s*)(>[> ]*|[*+-] \[[x ]\]\s|[*+-]\s|(\d+)([.)]))(\s*)/, VIe = /^(\s*)(>[> ]*|[*+-] \[[x ]\]|[*+-]|(\d+)[.)])(\s*)$/, zIe = /[*+-]\s/;
+function $Ie(t) {
   if (t.getOption("disableInput")) return Zo.Pass;
   for (var e = t.listSelections(), n = [], r = 0; r < e.length; r++) {
-    var a = e[r].head, i = t.getStateAfter(a.line), o = i.list !== !1, s = i.quote !== 0, c = t.getLine(a.line), l = kt.exec(c), _ = /^\s*$/.test(c.slice(0, a.ch));
-    if (!e[r].empty() || !o && !s || !l || _) {
+    var a = e[r].head, i = t.getStateAfter(a.line), o = i.list !== !1, c = i.quote !== 0, s = t.getLine(a.line), l = kt.exec(s), _ = /^\s*$/.test(s.slice(0, a.ch));
+    if (!e[r].empty() || !o && !c || !l || _) {
       t.execCommand("newlineAndIndent");
       return;
     }
-    if (HIe.test(c)) {
-      var p = s && />\s*$/.test(c), d = !/>\s*$/.test(c);
+    if (VIe.test(s)) {
+      var p = c && />\s*$/.test(s), d = !/>\s*$/.test(s);
       (p || d) && t.replaceRange(
         "",
         {
@@ -39716,30 +39716,30 @@ function zIe(t) {
       ), n[r] = `
 `;
     } else {
-      var u = l[1], E = l[5], S = !(VIe.test(l[2]) || l[2].indexOf(">") >= 0), g = S ? parseInt(l[3], 10) + 1 + l[4] : l[2].replace("x", " ");
+      var u = l[1], E = l[5], S = !(zIe.test(l[2]) || l[2].indexOf(">") >= 0), g = S ? parseInt(l[3], 10) + 1 + l[4] : l[2].replace("x", " ");
       n[r] = `
-` + u + g + E, S && $Ie(t, a);
+` + u + g + E, S && WIe(t, a);
     }
   }
   t.replaceSelections(n);
 }
-function $Ie(t, e) {
+function WIe(t, e) {
   var n = e.line, r = 0, a = 0, i = kt.exec(t.getLine(n)), o = i[1];
   do {
     r += 1;
-    var s = n + r, c = t.getLine(s), l = kt.exec(c);
+    var c = n + r, s = t.getLine(c), l = kt.exec(s);
     if (l) {
       var _ = l[1], p = parseInt(i[3], 10) + r - a, d = parseInt(l[3], 10), u = d;
       if (o === _ && !isNaN(d))
         p === d && (u = d + 1), p > d && (u = p + 1), t.replaceRange(
-          c.replace(kt, _ + u + l[4] + l[5]),
+          s.replace(kt, _ + u + l[4] + l[5]),
           {
-            line: s,
+            line: c,
             ch: 0
           },
           {
-            line: s,
-            ch: c.length
+            line: c,
+            ch: s.length
           }
         );
       else {
@@ -39749,7 +39749,7 @@ function $Ie(t, e) {
     }
   } while (l);
 }
-const WIe = ue.forwardRef(
+const KIe = ue.forwardRef(
   ({
     disabled: t,
     editorRef: e,
@@ -39758,13 +39758,13 @@ const WIe = ue.forwardRef(
     isExpandMode: a,
     name: i,
     onChange: o,
-    placeholder: s,
-    textareaRef: c,
+    placeholder: c,
+    textareaRef: s,
     value: l
   }, _) => {
     const p = ue.useRef(o);
     return ue.useEffect(() => {
-      e.current && e.current.toTextArea(), e.current = Zo.fromTextArea(c.current, {
+      e.current && e.current.toTextArea(), e.current = Zo.fromTextArea(s.current, {
         lineWrapping: !0,
         extraKeys: {
           Enter: "newlineAndIndentContinueMarkdownList",
@@ -39773,13 +39773,13 @@ const WIe = ue.forwardRef(
         },
         readOnly: !1,
         smartIndent: !1,
-        placeholder: s,
+        placeholder: c,
         spellcheck: !0,
         inputStyle: "contenteditable"
-      }), Zo.commands.newlineAndIndentContinueMarkdownList = zIe, e.current.on("change", (d) => {
+      }), Zo.commands.newlineAndIndentContinueMarkdownList = $Ie, e.current.on("change", (d) => {
         p.current(i, d.getValue());
       });
-    }, [e, c, i, s]), ue.useEffect(() => {
+    }, [e, s, i, c]), ue.useEffect(() => {
       l && !e.current.hasFocus() && e.current.setValue(l || "");
     }, [e, l]), ue.useEffect(() => {
       r || t ? e.current.setOption("readOnly", "nocursor") : e.current.setOption("readOnly", !1);
@@ -39796,15 +39796,15 @@ const WIe = ue.forwardRef(
         }
       }),
       [e]
-    ), /* @__PURE__ */ M(KIe, { children: [
-      /* @__PURE__ */ m(QIe, { $isExpandMode: a, $disabled: t || r, children: /* @__PURE__ */ m("textarea", { ref: c }) }),
+    ), /* @__PURE__ */ M(QIe, { children: [
+      /* @__PURE__ */ m(XIe, { $isExpandMode: a, $disabled: t || r, children: /* @__PURE__ */ m("textarea", { ref: s }) }),
       r && /* @__PURE__ */ m(Ld, { data: l || "" })
     ] });
   }
-), KIe = Ie.div`
+), QIe = Ie.div`
   position: relative;
   height: calc(100% - 48px);
-`, QIe = Ie.div`
+`, XIe = Ie.div`
   cursor: ${({ $disabled: t }) => t ? "not-allowed !important" : "auto"};
   height: 100%;
   /* BASICS */
@@ -40143,7 +40143,7 @@ const WIe = ue.forwardRef(
   span {
     color: ${({ theme: t }) => t.colors.neutral800} !important;
   }
-`, XIe = ({
+`, ZIe = ({
   children: t,
   isExpandMode: e,
   error: n,
@@ -40154,7 +40154,7 @@ const WIe = ue.forwardRef(
   return ue.useEffect(() => (e && document.body.classList.add("lock-body-scroll"), () => {
     document.body.classList.remove("lock-body-scroll");
   }), [e]), e ? /* @__PURE__ */ m(iu, { role: "dialog", "aria-modal": !1, children: /* @__PURE__ */ m(su, { onEscape: a, children: /* @__PURE__ */ m(
-    ZIe,
+    JIe,
     {
       position: "fixed",
       top: 0,
@@ -40175,7 +40175,7 @@ const WIe = ue.forwardRef(
           height: "90%",
           onClick: (o) => o.stopPropagation(),
           children: /* @__PURE__ */ M(W, { height: "100%", alignItems: "flex-start", children: [
-            /* @__PURE__ */ m(JIe, { flex: "1", height: "100%", children: t }),
+            /* @__PURE__ */ m(jIe, { flex: "1", height: "100%", children: t }),
             /* @__PURE__ */ M(W, { alignItems: "start", direction: "column", flex: 1, height: "100%", width: "100%", children: [
               /* @__PURE__ */ m(
                 W,
@@ -40185,7 +40185,7 @@ const WIe = ue.forwardRef(
                   justifyContent: "flex-end",
                   shrink: 0,
                   width: "100%",
-                  children: /* @__PURE__ */ M(jIe, { onClick: a, variant: "tertiary", size: "M", children: [
+                  children: /* @__PURE__ */ M(eDe, { onClick: a, variant: "tertiary", size: "M", children: [
                     /* @__PURE__ */ m(K, { children: i({
                       id: "components.Wysiwyg.collapse",
                       defaultMessage: "Collapse"
@@ -40212,11 +40212,11 @@ const WIe = ue.forwardRef(
       children: t
     }
   );
-}, ZIe = Ie(W)`
+}, JIe = Ie(W)`
   background: ${({ theme: t }) => `${t.colors.neutral800}${Math.floor(0.2 * 255).toString(16).padStart(2, "0")}`};
-`, JIe = Ie(oe)`
+`, jIe = Ie(oe)`
   border-right: 1px solid ${({ theme: t }) => t.colors.neutral200};
-`, jIe = Ie(Se)`
+`, eDe = Ie(Se)`
   background-color: transparent;
   border: none;
   align-items: center;
@@ -40341,60 +40341,60 @@ ${t}
     t.current.replaceSelection(a), t.current.focus();
   } else {
     r = Pd(e), t.current.replaceSelection(r.editedText), t.current.focus();
-    const { line: a, ch: i } = t.current.getCursor(), o = i - r.selection.end, s = i - r.selection.end - r.selection.start;
-    t.current.setSelection({ line: a, ch: s }, { line: a, ch: o });
+    const { line: a, ch: i } = t.current.getCursor(), o = i - r.selection.end, c = i - r.selection.end - r.selection.start;
+    t.current.setSelection({ line: a, ch: c }, { line: a, ch: o });
   }
-}, eDe = (t, e) => {
+}, tDe = (t, e) => {
   const n = t.current.getDoc(), r = e === "BulletList" ? "- " : "1. ";
   if (n.somethingSelected()) {
     const a = n.listSelections();
     let i = null;
     t.current.operation(function() {
       a.forEach(function(o) {
-        const s = [o.head.line, o.anchor.line].sort();
-        i == null && (i = n.getLine(s[0]).startsWith(r));
-        for (let c = s[0]; c <= s[1]; c++)
+        const c = [o.head.line, o.anchor.line].sort();
+        i == null && (i = n.getLine(c[0]).startsWith(r));
+        for (let s = c[0]; s <= c[1]; s++)
           if (i)
-            n.getLine(c).startsWith(r) && n.replaceRange("", { line: c, ch: 0 }, { line: c, ch: r.length });
+            n.getLine(s).startsWith(r) && n.replaceRange("", { line: s, ch: 0 }, { line: s, ch: r.length });
           else {
-            const l = e === "BulletList" ? "- " : `${c + 1}. `;
-            n.replaceRange(l, { line: c, ch: 0 });
+            const l = e === "BulletList" ? "- " : `${s + 1}. `;
+            n.replaceRange(l, { line: s, ch: 0 });
           }
       });
     });
   } else {
-    const { line: a } = n.getCursor(), i = Ud(e), o = t.current.getLine(a), s = i + o;
+    const { line: a } = n.getCursor(), i = Ud(e), o = t.current.getLine(a), c = i + o;
     t.current.setSelection(
       { line: a, ch: 0 },
       { line: a, ch: o.length }
-    ), t.current.replaceSelection(s);
+    ), t.current.replaceSelection(c);
   }
   t.current.focus();
-}, tDe = (t, e) => {
+}, nDe = (t, e) => {
   const { line: n } = t.current.getCursor(), r = Ud(e), a = t.current.getLine(n), i = a.replace(/#{1,6}\s/g, "").trim(), o = r + i;
   t.current.setSelection(
     { line: n, ch: 0 },
     { line: n, ch: a.length }
   ), t.current.replaceSelection(o), setTimeout(() => {
-    const s = t.current.getLine(n).length;
-    t.current.focus(), t.current.setCursor({ line: n, ch: s });
+    const c = t.current.getLine(n).length;
+    t.current.focus(), t.current.setCursor({ line: n, ch: c });
   }, 0);
-}, nDe = (t, e, n, r, a) => {
+}, rDe = (t, e, n, r, a) => {
   const i = kd(e, a), o = t.current.getRange(
     { line: n + 1, ch: 0 },
     { line: 1 / 0, ch: 1 / 0 }
   );
   if (t.current.replaceRange("", { line: n + 1, ch: 0 }, { line: 1 / 0, ch: 1 / 0 }), t.current.replaceSelection(""), t.current.setCursor({ line: n, ch: r }), t.current.replaceSelection(`
 `), t.current.replaceSelection(i), e === "Code") {
-    const { line: s } = t.current.getCursor();
-    t.current.setCursor({ line: s - 1, ch: a.length });
+    const { line: c } = t.current.getCursor();
+    t.current.setCursor({ line: c - 1, ch: a.length });
   }
   t.current.replaceRange(
     o,
     { line: n + 4, ch: 0 },
     { line: 1 / 0, ch: 1 / 0 }
   ), t.current.focus();
-}, rDe = (t, e, n, r) => {
+}, aDe = (t, e, n, r) => {
   const a = Pd(e), i = t.current.getRange(
     { line: n + 1, ch: 0 },
     { line: 1 / 0, ch: 1 / 0 }
@@ -40404,24 +40404,24 @@ ${t}
     n += 2, t.current.setSelection({ line: n, ch: 0 }, { line: n, ch: 4 });
   else {
     n += 1;
-    const { ch: o } = t.current.getCursor(), s = o - a.selection.end, c = o - a.selection.end - a.selection.start;
-    t.current.setSelection({ line: n, ch: c }, { line: n, ch: s });
+    const { ch: o } = t.current.getCursor(), c = o - a.selection.end, s = o - a.selection.end - a.selection.start;
+    t.current.setSelection({ line: n, ch: s }, { line: n, ch: c });
   }
   t.current.replaceRange(
     i,
     { line: n + 2, ch: 0 },
     { line: 1 / 0, ch: 1 / 0 }
   ), t.current.focus();
-}, aDe = (t, e) => {
+}, oDe = (t, e) => {
   const n = t.current.getSelection(), { line: r } = t.current.getCursor(), a = t.current.getLine(r).length;
-  n ? nDe(t, e, r, a, n) : rDe(t, e, r, a);
+  n ? rDe(t, e, r, a, n) : aDe(t, e, r, a);
 }, rd = Ie(Bt)`
   margin-left: ${({ theme: t }) => t.spaces[4]};
 `, ad = Ie(ee)`
   margin: ${({ theme: t }) => `0 ${t.spaces[2]}`};
-`, oDe = Ie(Bt)`
+`, iDe = Ie(Bt)`
   margin-right: ${({ theme: t }) => `${t.spaces[2]}`};
-`, iDe = Ie(Se)`
+`, sDe = Ie(Se)`
   background-color: transparent;
   border: none;
   align-items: center;
@@ -40442,16 +40442,16 @@ ${t}
       height: 1.2rem;
     }
   }
-`, sDe = ({ onToggleExpand: t }) => {
+`, cDe = ({ onToggleExpand: t }) => {
   const { formatMessage: e } = Ke();
-  return /* @__PURE__ */ m(oe, { padding: 2, background: "neutral100", borderRadius: "0 0 0.4rem 0.4rem", children: /* @__PURE__ */ m(W, { justifyContent: "flex-end", alignItems: "flex-end", children: /* @__PURE__ */ M(iDe, { id: "expand", onClick: t, variant: "tertiary", size: "M", children: [
+  return /* @__PURE__ */ m(oe, { padding: 2, background: "neutral100", borderRadius: "0 0 0.4rem 0.4rem", children: /* @__PURE__ */ m(W, { justifyContent: "flex-end", alignItems: "flex-end", children: /* @__PURE__ */ M(sDe, { id: "expand", onClick: t, variant: "tertiary", size: "M", children: [
     /* @__PURE__ */ m(K, { textColor: "neutral800", children: e({
       id: "components.WysiwygBottomControls.fullscreen",
       defaultMessage: "Expand"
     }) }),
     /* @__PURE__ */ m(lu, {})
   ] }) }) });
-}, cDe = ({
+}, lDe = ({
   disabled: t,
   editorRef: e,
   isExpandMode: n,
@@ -40459,13 +40459,13 @@ ${t}
   onActionClick: a,
   onTogglePreviewMode: i
 }) => {
-  const [o, s] = ue.useState(!1), { formatMessage: c } = Ke(), l = c({
+  const [o, c] = ue.useState(!1), { formatMessage: s } = Ke(), l = s({
     id: "components.Wysiwyg.selectOptions.title",
     defaultMessage: "Add a title"
   });
   ue.useRef(null);
   const _ = () => {
-    s((p) => !p);
+    c((p) => !p);
   };
   return t || r ? /* @__PURE__ */ M(
     W,
@@ -40500,7 +40500,7 @@ ${t}
           ] }),
           /* @__PURE__ */ m(ad, { disabled: !0, label: A("common.more", "More"), children: /* @__PURE__ */ m(wi, {}) })
         ] }),
-        !n && /* @__PURE__ */ m(Se, { onClick: i, variant: "tertiary", children: c({
+        !n && /* @__PURE__ */ m(Se, { onClick: i, variant: "tertiary", children: s({
           id: "components.Wysiwyg.ToggleMode.markdown-mode",
           defaultMessage: "Markdown mode"
         }) })
@@ -40556,7 +40556,7 @@ ${t}
           /* @__PURE__ */ M(en.Root, { children: [
             /* @__PURE__ */ m(en.Trigger, { children: /* @__PURE__ */ m(ad, { label: A("common.more", "More"), children: /* @__PURE__ */ m(wi, {}) }) }),
             /* @__PURE__ */ m(en.Content, { sideOffset: 12, children: /* @__PURE__ */ M(W, { padding: 2, children: [
-              /* @__PURE__ */ M(oDe, { children: [
+              /* @__PURE__ */ M(iDe, { children: [
                 /* @__PURE__ */ m(
                   ee,
                   {
@@ -40617,16 +40617,16 @@ ${t}
             ] }) })
           ] })
         ] }),
-        i && /* @__PURE__ */ m(Se, { onClick: i, variant: "tertiary", children: c({
+        i && /* @__PURE__ */ m(Se, { onClick: i, variant: "tertiary", children: s({
           id: "components.Wysiwyg.ToggleMode.preview-mode",
           defaultMessage: "Preview mode"
         }) })
       ]
     }
   );
-}, lDe = ue.forwardRef(
+}, _De = ue.forwardRef(
   ({ disabled: t, name: e, placeholder: n, label: r, onChange: a, value: i }, o) => {
-    const s = ue.useRef(null), c = ue.useRef(
+    const c = ue.useRef(null), s = ue.useRef(
       null
     ), [l, _] = ue.useState(!1), [p, d] = ue.useState(!1), u = () => _((g) => !g), E = () => {
       _(!1), d((g) => !g);
@@ -40639,7 +40639,7 @@ ${t}
         }
         case "Code":
         case "Quote": {
-          aDe(f, g), b?.();
+          oDe(f, g), b?.();
           break;
         }
         case "Bold":
@@ -40650,7 +40650,7 @@ ${t}
         }
         case "BulletList":
         case "NumberList": {
-          eDe(f, g), b?.();
+          tDe(f, g), b?.();
           break;
         }
         case "h1":
@@ -40659,7 +40659,7 @@ ${t}
         case "h4":
         case "h5":
         case "h6": {
-          tDe(f, g);
+          nDe(f, g);
           break;
         }
       }
@@ -40667,17 +40667,17 @@ ${t}
     return /* @__PURE__ */ m(Je.Root, { name: e, required: !0, children: /* @__PURE__ */ M(W, { direction: "column", alignItems: "stretch", gap: 1, children: [
       r && /* @__PURE__ */ m(Je.Label, { children: r }),
       /* @__PURE__ */ M(
-        XIe,
+        ZIe,
         {
           isExpandMode: p,
           previewContent: i,
           onCollapse: E,
           children: [
             /* @__PURE__ */ m(
-              cDe,
+              lDe,
               {
                 isExpandMode: p,
-                editorRef: c,
+                editorRef: s,
                 isPreviewMode: l,
                 onActionClick: S,
                 onTogglePreviewMode: p ? void 0 : u,
@@ -40685,21 +40685,21 @@ ${t}
               }
             ),
             /* @__PURE__ */ m(
-              WIe,
+              KIe,
               {
                 disabled: t,
                 isExpandMode: p,
-                editorRef: c,
+                editorRef: s,
                 isPreviewMode: l,
                 name: e,
                 onChange: a,
                 placeholder: n,
-                textareaRef: s,
+                textareaRef: c,
                 value: i,
                 ref: o
               }
             ),
-            !p && /* @__PURE__ */ m(sDe, { onToggleExpand: E })
+            !p && /* @__PURE__ */ m(cDe, { onToggleExpand: E })
           ]
         }
       ),
@@ -40707,12 +40707,12 @@ ${t}
       /* @__PURE__ */ m(Je.Error, {})
     ] }) });
   }
-), Fd = ue.memo(lDe), od = ({ id: t, content: e, title: n, Icon: r }) => {
-  const [a, i] = ke(!1), o = ud(null), { toggleNotification: s } = rt(), c = Ae(), l = fe(), _ = ci(), p = (f) => async () => {
-    await c.invalidateQueries({
+), Fd = ue.memo(_De), od = ({ id: t, content: e, title: n, Icon: r }) => {
+  const [a, i] = ke(!1), o = ud(null), { toggleNotification: c } = at(), s = Ae(), l = fe(), _ = ci(), p = (f) => async () => {
+    await s.invalidateQueries({
       queryKey: l.comments.findOne.getKey(),
       exact: !1
-    }), i(!1), s({
+    }), i(!1), c({
       message: A(f),
       type: "success"
     });
@@ -40767,7 +40767,7 @@ ${t}
       ] }) })
     ] })
   ] });
-}, _De = 16, dDe = ({ width: t, height: e, size: n = 16 }) => /* @__PURE__ */ m(
+}, dDe = 16, uDe = ({ width: t, height: e, size: n = 16 }) => /* @__PURE__ */ m(
   "svg",
   {
     width: t || n,
@@ -40776,7 +40776,7 @@ ${t}
     style: { width: `${t || n}px`, height: `${e || n}px` },
     xmlns: "http://www.w3.org/2000/svg",
     fill: "currentColor",
-    children: /* @__PURE__ */ m("g", { style: { transform: `scale(${(t || n) / _De})` }, children: /* @__PURE__ */ m(
+    children: /* @__PURE__ */ m("g", { style: { transform: `scale(${(t || n) / dDe})` }, children: /* @__PURE__ */ m(
       "path",
       {
         fillRule: "evenodd",
@@ -40785,7 +40785,7 @@ ${t}
       }
     ) })
   }
-), uDe = (t) => {
+), pDe = (t) => {
   switch (t) {
     case Mi.DISCRIMINATION:
       return "danger";
@@ -40794,8 +40794,8 @@ ${t}
     default:
       return "neutral";
   }
-}, pDe = ({ reason: t }) => {
-  const e = qt(() => uDe(t), [t]);
+}, mDe = ({ reason: t }) => {
+  const e = qt(() => pDe(t), [t]);
   return /* @__PURE__ */ m(
     Yt,
     {
@@ -40808,7 +40808,7 @@ ${t}
       )
     }
   );
-}, mDe = (t) => {
+}, gDe = (t) => {
   switch (t) {
     case Ce.RESOLVED:
       return "success";
@@ -40817,10 +40817,10 @@ ${t}
     default:
       return "alternative";
   }
-}, gDe = ({ resolved: t }) => {
+}, EDe = ({ resolved: t }) => {
   const { color: e, status: n } = qt(() => {
     const r = t ? Ce.RESOLVED : Ce.OPEN;
-    return { color: mDe(r), status: r };
+    return { color: gDe(r), status: r };
   }, [t]);
   return /* @__PURE__ */ m(
     Yt,
@@ -40834,7 +40834,7 @@ ${t}
       )
     }
   );
-}, EDe = ({
+}, SDe = ({
   commentId: t,
   reports: e,
   selectedItems: n,
@@ -40842,9 +40842,9 @@ ${t}
   onBlockButtonsStateChange: i,
   onSelectionChange: o
 }) => {
-  const { formatDate: s } = Ke(), c = fe(), l = Ae(), { toggleNotification: _ } = rt(), p = ge({
+  const { formatDate: c } = Ke(), s = fe(), l = Ae(), { toggleNotification: _ } = at(), p = ge({
     mutationKey: ["resolveReport", t],
-    mutationFn: c.reports.resolve
+    mutationFn: s.reports.resolve
   }), d = (g) => {
     o(g ? e.map((f) => f.id) : []);
   }, u = (g) => (f) => {
@@ -40852,7 +40852,7 @@ ${t}
   }, E = (g) => async () => {
     try {
       await p.mutateAsync({ id: t, reportId: g }), await l.invalidateQueries({
-        queryKey: c.comments.findAll.getKey()
+        queryKey: s.comments.findAll.getKey()
       });
     } catch {
     }
@@ -40860,7 +40860,7 @@ ${t}
   return /* @__PURE__ */ M(ai, { children: [
     /* @__PURE__ */ m(oi, { children: /* @__PURE__ */ M(nt, { children: [
       /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(
-        mt,
+        gt,
         {
           checked: S,
           onCheckedChange: d,
@@ -40875,20 +40875,20 @@ ${t}
     ] }) }),
     /* @__PURE__ */ m(ii, { children: e.map((g) => /* @__PURE__ */ M(nt, { children: [
       /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(
-        mt,
+        gt,
         {
           checked: n.includes(g.id),
           onCheckedChange: u(g),
           disabled: g.resolved
         }
       ) }),
-      /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(pDe, { reason: g.reason }) }),
+      /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(mDe, { reason: g.reason }) }),
       /* @__PURE__ */ m(de, { children: g.content }),
-      /* @__PURE__ */ m(de, { children: s(g.createdAt, {
+      /* @__PURE__ */ m(de, { children: c(g.createdAt, {
         dateStyle: "short",
         timeStyle: "short"
       }) }),
-      /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(gDe, { resolved: g.resolved }) }),
+      /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(EDe, { resolved: g.resolved }) }),
       /* @__PURE__ */ m(de, { children: !g.resolved && /* @__PURE__ */ m(
         Se,
         {
@@ -40906,13 +40906,13 @@ ${t}
 }, Bd = ({
   item: t
 }) => {
-  const { canModerate: e, canAccessReports: n, canReviewReports: r } = Tt(), { blockedThread: a, reports: i } = t, o = fe(), [s, c] = ke(!1), [l, _] = ke(a), [p, d] = ke([]), { toggleNotification: u } = rt(), E = Ae(), S = p.length > 0, { reportMutation: g, commentMutation: f } = ot({
+  const { canModerate: e, canAccessReports: n, canReviewReports: r } = Tt(), { blockedThread: a, reports: i } = t, o = fe(), [c, s] = ke(!1), [l, _] = ke(a), [p, d] = ke([]), { toggleNotification: u } = at(), E = Ae(), S = p.length > 0, { reportMutation: g, commentMutation: f } = it({
     report: {
       resolveMultipleSuccess: () => E.invalidateQueries({
         queryKey: o.comments.findAll.getKey()
       })
     }
-  }), b = (C) => _(C), h = () => c((C) => !C), N = async () => {
+  }), b = (C) => _(C), h = () => s((C) => !C), N = async () => {
     await Promise.all([
       g.resolveAllAbuse.mutateAsync(t.id),
       f.block.mutateAsync(t.id)
@@ -40927,12 +40927,12 @@ ${t}
       reportIds: p
     });
   };
-  return /* @__PURE__ */ M(ne.Root, { open: s, onOpenChange: h, children: [
+  return /* @__PURE__ */ M(ne.Root, { open: c, onOpenChange: h, children: [
     /* @__PURE__ */ m(ne.Trigger, { children: r && i?.length && /* @__PURE__ */ m(
       ee,
       {
         label: "Review",
-        children: /* @__PURE__ */ m(dDe, {})
+        children: /* @__PURE__ */ m(uDe, {})
       }
     ) }),
     /* @__PURE__ */ M(ne.Content, { children: [
@@ -40952,7 +40952,7 @@ ${t}
           }
         ),
         /* @__PURE__ */ m(
-          EDe,
+          SDe,
           {
             commentId: t.id,
             reports: i || [],
@@ -40971,7 +40971,7 @@ ${t}
             {
               onClick: e ? N : void 0,
               variant: "danger-light",
-              startIcon: /* @__PURE__ */ m(ut, {}),
+              startIcon: /* @__PURE__ */ m(pt, {}),
               disabled: l,
               children: A("page.details.actions.comment.block")
             }
@@ -40981,7 +40981,7 @@ ${t}
             {
               onClick: e ? v : void 0,
               variant: "danger",
-              startIcon: /* @__PURE__ */ m(ut, {}),
+              startIcon: /* @__PURE__ */ m(pt, {}),
               disabled: l,
               children: A("page.details.actions.thread.block")
             }
@@ -41008,32 +41008,32 @@ ${t}
       ] }) })
     ] })
   ] });
-}, SDe = ({ item: t, pinned: e, preview: n }) => {
+}, fDe = ({ item: t, pinned: e, preview: n }) => {
   const {
     id: r,
     blocked: a,
     removed: i,
     content: o,
-    blockedThread: s,
-    gotThread: c,
+    blockedThread: c,
+    gotThread: s,
     threadFirstItemId: l,
     reports: _ = [],
     approvalStatus: p,
     author: d,
     isAdminComment: u
-  } = t, E = ci(), S = fe(), { canModerate: g, canAccessReports: f, canReviewReports: b } = Tt(), h = dd(), { toggleNotification: N } = rt(), v = Ae(), R = Gt(() => {
+  } = t, E = ci(), S = fe(), { canModerate: g, canAccessReports: f, canReviewReports: b } = Tt(), h = dd(), { toggleNotification: N } = at(), v = Ae(), R = Gt(() => {
     const Z = S.comments.findOne.getKey(r);
     return v.invalidateQueries({
       queryKey: Z,
       exact: !1
     });
-  }, [v, S.comments.findOne, r]), { commentMutation: C, reportMutation: w } = ot({
+  }, [v, S.comments.findOne, r]), { commentMutation: C, reportMutation: w } = it({
     comment: {
       blockSuccess: R,
       unBlockSuccess: R,
       deleteSuccess: R
     }
-  }), L = String(E?.id) === d?.id, y = !ae.isNil(p), G = !u && y && p === J.PENDING, P = a || s, q = y && p === J.REJECTED, I = _?.filter((Z) => !Z.resolved), k = !ae.isEmpty(I), D = (f || b) && k, $ = c && !(i || n || e || s), te = P || D;
+  }), L = String(E?.id) === d?.id, y = !ae.isNil(p), G = !u && y && p === J.PENDING, P = a || c, q = y && p === J.REJECTED, I = _?.filter((Z) => !Z.resolved), k = !ae.isEmpty(I), D = (f || b) && k, $ = s && !(i || n || e || c), te = P || D;
   C.unBlock.isPending || C.block.isPending || C.blockThread.isPending || C.unBlockThread.isPending;
   const le = () => {
     C.unBlockThread.mutate(r);
@@ -41049,7 +41049,7 @@ ${t}
       w.resolveAllAbuseThread.mutateAsync(r)
     ]);
   }, x = async () => {
-    l && h(wu(`discover/${l}`));
+    l && h(Mu(`discover/${l}`));
   };
   if (i || q || !g)
     return /* @__PURE__ */ m(W, { direction: "row", marginLeft: 1, alignItems: "flex-start", children: /* @__PURE__ */ m(
@@ -41060,7 +41060,7 @@ ${t}
         hasReports: k
       }
     ) });
-  const Y = G || D || !s, z = !s && !(a || G), X = !s && a, pe = !s && !a && L, ie = !$ && !e && !s && !a;
+  const Y = G || D || !c, z = !c && !(a || G), X = !c && a, pe = !c && !a && L, ie = !$ && !e && !c && !a;
   return /* @__PURE__ */ m(qe, { children: /* @__PURE__ */ M(W, { direction: "row", marginLeft: 1, alignItems: "flex-start", children: [
     te && /* @__PURE__ */ m(
       jo,
@@ -41070,7 +41070,7 @@ ${t}
         hasReports: k
       }
     ),
-    !s && (c || e) && /* @__PURE__ */ m(
+    !c && (s || e) && /* @__PURE__ */ m(
       xi,
       {
         title: A(
@@ -41083,13 +41083,13 @@ ${t}
           "components.confirmation.dialog.button.cancel",
           "Cancel"
         ),
-        iconConfirm: /* @__PURE__ */ m(ut, {}),
+        iconConfirm: /* @__PURE__ */ m(pt, {}),
         onConfirm: O,
         Trigger: ({ onClick: Z }) => /* @__PURE__ */ m(
           Jo,
           {
             onClick: Z,
-            startIcon: /* @__PURE__ */ m(ut, {}),
+            startIcon: /* @__PURE__ */ m(pt, {}),
             loading: C.unBlockThread.isPending,
             variant: "danger",
             children: A(
@@ -41103,7 +41103,7 @@ ${t}
         )
       }
     ),
-    s && (c || e) && /* @__PURE__ */ m(
+    c && (s || e) && /* @__PURE__ */ m(
       Jo,
       {
         onClick: le,
@@ -41138,7 +41138,7 @@ ${t}
                 onClick: Z,
                 loading: C.block.isPending,
                 label: A("page.details.actions.comment.block"),
-                children: /* @__PURE__ */ m(ut, {})
+                children: /* @__PURE__ */ m(pt, {})
               }
             ),
             children: A(
@@ -41196,7 +41196,7 @@ ${t}
       {
         onClick: x,
         label: A("page.details.panel.discussion.nav.drilldown"),
-        style: a && !s ? { marginTop: "1px", marginRight: ".5rem" } : {},
+        style: a && !c ? { marginTop: "1px", marginRight: ".5rem" } : {},
         children: /* @__PURE__ */ m(si, {})
       }
     ) }),
@@ -41232,16 +41232,16 @@ ${t}
     return e ? /* @__PURE__ */ m(id, { children: r ? /* @__PURE__ */ m(At.Item, { src: r, alt: n }) : null }) : r ? /* @__PURE__ */ m(At.Item, { src: r, alt: n }) : null;
   }
   return e ? /* @__PURE__ */ m(id, { children: n ? /* @__PURE__ */ m(At.Item, { fallback: ki(n) }) : null }) : n ? /* @__PURE__ */ m(At.Item, { fallback: ki(n) }) : null;
-}, fDe = at(W)(() => ({
+}, bDe = ot(W)(() => ({
   "* + *": {
     marginLeft: "8px"
   }
-})), bDe = ({ item: t, children: e }) => {
+})), TDe = ({ item: t, children: e }) => {
   const { formatDate: n } = Ke(), r = n(t.updatedAt || t.createdAt, {
     dateStyle: "medium",
     timeStyle: "short"
   }), { name: a, avatar: i, email: o } = t.author || {};
-  return /* @__PURE__ */ m(W, { direction: "row", paddingTop: 2, children: /* @__PURE__ */ M(fDe, { children: [
+  return /* @__PURE__ */ m(W, { direction: "row", paddingTop: 2, children: /* @__PURE__ */ M(bDe, { children: [
     /* @__PURE__ */ m(
       Qo,
       {
@@ -41258,7 +41258,7 @@ ${t}
     /* @__PURE__ */ m(K, { variant: "pi", textColor: "neutral600", children: r }),
     e
   ] }) });
-}, TDe = at("div")(() => ({
+}, hDe = ot("div")(() => ({
   strong: {
     fontWeight: "bold"
   },
@@ -41295,9 +41295,9 @@ ${t}
           width: "100%",
           children: [
             /* @__PURE__ */ M(W, { width: "100%", justifyContent: "space-between", marginTop: "6px", children: [
-              /* @__PURE__ */ m(W, { grow: 1, alignItems: "center", children: /* @__PURE__ */ m(K, { variant: "omega", textColor: "neutral800", children: /* @__PURE__ */ m(TDe, { dangerouslySetInnerHTML: { __html: r.content } }) }) }),
+              /* @__PURE__ */ m(W, { grow: 1, alignItems: "center", children: /* @__PURE__ */ m(K, { variant: "omega", textColor: "neutral800", children: /* @__PURE__ */ m(hDe, { dangerouslySetInnerHTML: { __html: r.content } }) }) }),
               !n && /* @__PURE__ */ m(
-                SDe,
+                fDe,
                 {
                   ...t,
                   root: e || i,
@@ -41305,13 +41305,13 @@ ${t}
                 }
               )
             ] }),
-            /* @__PURE__ */ m(bDe, { ...t })
+            /* @__PURE__ */ m(TDe, { ...t })
           ]
         }
       )
     }
   ) });
-}, hDe = at(oe)(() => ({
+}, RDe = ot(oe)(() => ({
   alignItems: "center",
   background: "rgba(255, 255, 255, 0.7)",
   bottom: 0,
@@ -41323,19 +41323,19 @@ ${t}
   right: 0,
   top: 0,
   zIndex: 1
-})), RDe = () => /* @__PURE__ */ m(hDe, { children: /* @__PURE__ */ m(Tu, {}) }), CDe = ({ id: t, blockedThread: e }) => {
+})), CDe = () => /* @__PURE__ */ m(RDe, { children: /* @__PURE__ */ m(Tu, {}) }), NDe = ({ id: t, blockedThread: e }) => {
   const n = ud(null), r = Ae(), a = fe(), i = ci(), {
     commentMutation: o
-  } = ot({
+  } = it({
     comment: {
       postCommentSuccess: () => r.invalidateQueries({
         queryKey: a.comments.findOne.getKey(),
         exact: !1
       })
     }
-  }), s = async (l) => {
+  }), c = async (l) => {
     await o.postComment.mutateAsync({ id: t, ...l, author: i });
-  }, c = (l) => async () => {
+  }, s = (l) => async () => {
     await o.unBlockThread.mutateAsync(t), await o.postComment.mutateAsync({ id: t, content: l, author: i });
   };
   return /* @__PURE__ */ M(oe, { width: "100%", children: [
@@ -41346,7 +41346,7 @@ ${t}
         ref: n,
         width: "auto",
         height: "auto",
-        onSubmit: s,
+        onSubmit: c,
         method: "POST",
         initialValues: {
           content: ""
@@ -41374,7 +41374,7 @@ ${t}
               Se,
               {
                 variant: "secondary",
-                onClick: c(l.content),
+                onClick: s(l.content),
                 type: "button",
                 disabled: !l.content,
                 children: A("page.details.panel.discussion.reopen", "Re-open")
@@ -41393,10 +41393,10 @@ ${t}
       }
     ) })
   ] });
-}, NDe = ({ isReloading: t, level: e, selected: n }) => {
+}, vDe = ({ isReloading: t, level: e, selected: n }) => {
   const r = n?.threadOf;
   return /* @__PURE__ */ M(oe, { background: "neutral0", width: "100%", padding: 4, position: "relative", height: "100%", children: [
-    t && /* @__PURE__ */ m(RDe, {}),
+    t && /* @__PURE__ */ m(CDe, {}),
     /* @__PURE__ */ M(
       W,
       {
@@ -41439,7 +41439,7 @@ ${t}
         );
       }),
       r && /* @__PURE__ */ m(
-        CDe,
+        NDe,
         {
           id: r.id,
           blockedThread: !!r.blockedThread
@@ -41447,16 +41447,16 @@ ${t}
       )
     ] })
   ] });
-}, vDe = ({ config: t }) => {
+}, ODe = ({ config: t }) => {
   const e = fe(), { id: n } = Zd(), [r, a] = ke({}), {
     canAccess: i,
     canModerate: o,
-    canAccessReports: s,
-    canReviewReports: c
+    canAccessReports: c,
+    canReviewReports: s
   } = Tt(), l = new RegExp(
     Pi(t.regex.uid).value,
     Pi(t.regex.uid).flags
-  ), { data: { entity: _, level: p, selected: d }, isLoading: u, isFetching: E } = gt({
+  ), { data: { entity: _, level: p, selected: d }, isLoading: u, isFetching: E } = rt({
     queryKey: e.comments.findOne.getKey(n, r),
     queryFn: () => e.comments.findOne.query(n, r),
     initialData: {
@@ -41464,7 +41464,7 @@ ${t}
       selected: {},
       entity: {}
     }
-  }), S = _?.uid && l.test(_.uid), { data: g } = gt({
+  }), S = _?.uid && l.test(_.uid), { data: g } = rt({
     queryKey: e.contentTypeBuilder.single.getKey(_?.uid, i),
     queryFn: () => e.contentTypeBuilder.single.query(_?.uid),
     enabled: !!S
@@ -41495,20 +41495,20 @@ ${t}
       ),
       /* @__PURE__ */ m(Oe.Content, { children: /* @__PURE__ */ M(tn.Root, { gap: 4, children: [
         /* @__PURE__ */ m(tn.Item, { col: 9, s: 12, children: /* @__PURE__ */ m(
-          NDe,
+          vDe,
           {
             level: p,
             selected: d,
             isReloading: f,
             allowedActions: {
               canModerate: o,
-              canAccessReports: s,
-              canReviewReports: c
+              canAccessReports: c,
+              canReviewReports: s
             }
           }
         ) }),
         /* @__PURE__ */ m(tn.Item, { col: 3, s: 12, alignItems: "flex-start", children: /* @__PURE__ */ m(
-          Gu,
+          qu,
           {
             config: t,
             entity: _,
@@ -41520,12 +41520,12 @@ ${t}
       ] }) })
     ] })
   ] }) : null;
-}, ODe = ({ item: t }) => {
+}, yDe = ({ item: t }) => {
   const {
     canAccessReports: e,
     canModerate: n,
     canReviewReports: r
-  } = Tt(), a = fe(), i = dd(), { formatDate: o } = Ke(), s = !ae.isEmpty(t.reports?.filter((g) => !g.resolved)), c = e && s && !(t.blocked || t.blockedThread), _ = !ae.isNil(t.approvalStatus) && t.approvalStatus === "PENDING", p = (g) => (f) => {
+  } = Tt(), a = fe(), i = dd(), { formatDate: o } = Ke(), c = !ae.isEmpty(t.reports?.filter((g) => !g.resolved)), s = e && c && !(t.blocked || t.blockedThread), _ = !ae.isNil(t.approvalStatus) && t.approvalStatus === "PENDING", p = (g) => (f) => {
     f.preventDefault(), f.stopPropagation(), i(g.toString());
   }, d = qt(() => {
     const g = t.related;
@@ -41581,10 +41581,10 @@ ${t}
       {
         item: t,
         canAccessReports: e,
-        hasReports: s
+        hasReports: c
       }
     ) }),
-    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(W, { direction: "column", alignItems: "flex-end", children: /* @__PURE__ */ M(Lt, { isSingle: !(c || n && _), children: [
+    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(W, { direction: "column", alignItems: "flex-end", children: /* @__PURE__ */ M(Lt, { isSingle: !(s || n && _), children: [
       n && _ && /* @__PURE__ */ m(
         pd,
         {
@@ -41604,14 +41604,14 @@ ${t}
       )
     ] }) }) })
   ] });
-}, yDe = [
+}, ADe = [
   J.OPEN,
   J.BLOCKED,
   J.REMOVED,
   J.APPROVED,
   J.REJECTED,
   J.PENDING
-], ADe = (t) => {
+], IDe = (t) => {
   switch (t) {
     case J.BLOCKED:
       return {
@@ -41635,11 +41635,11 @@ ${t}
         approvalStatus: t
       };
   }
-}, IDe = () => {
+}, DDe = () => {
   const [t, e] = ft(), [n, r] = ke(), a = (i) => {
     r(i), e({
       page: {},
-      filters: ADe(i)
+      filters: IDe(i)
     });
   };
   return /* @__PURE__ */ m(
@@ -41649,10 +41649,10 @@ ${t}
       value: n,
       onClear: () => a(void 0),
       onChange: a,
-      children: yDe.map((i) => /* @__PURE__ */ m(be, { value: i, children: A(`page.common.item.status.${i}`) }))
+      children: ADe.map((i) => /* @__PURE__ */ m(be, { value: i, children: A(`page.common.item.status.${i}`) }))
     }
   );
-}, DDe = (t, e) => {
+}, wDe = (t, e) => {
   switch (e) {
     case "asc":
     case "ASC":
@@ -41667,16 +41667,16 @@ ${t}
   return /* @__PURE__ */ M(de, { onClick: () => {
     r({
       page: {},
-      orderBy: DDe(e, o)
+      orderBy: wDe(e, o)
     });
   }, style: { cursor: "pointer" }, children: [
     /* @__PURE__ */ m(K, { variant: "sigma", style: { marginRight: "8px" }, children: t }),
     `${i}:${o}` == `${e}:asc` && /* @__PURE__ */ m(Ru, {}),
     `${i}:${o}` == `${e}:desc` && /* @__PURE__ */ m(Cu, {})
   ] });
-}, wDe = (t) => {
+}, MDe = (t) => {
   const e = fe();
-  return gt({
+  return rt({
     queryKey: e.comments.findAll.getKey(t),
     queryFn: () => e.comments.findAll.query(t).then((n) => ({
       ...n,
@@ -41687,10 +41687,26 @@ ${t}
     })),
     initialData: { result: [], pagination: { page: 0, pageSize: 0, pageCount: 0, total: 0 } }
   });
-}, MDe = ({ filterOptions: t }) => {
-  const [e, n] = ft(), [r, a] = ke(), i = (o) => {
+}, xDe = () => {
+  const t = fe();
+  return rt({
+    queryKey: t.comments.findAllSections.getKey(),
+    queryFn: () => t.comments.findAllSections.query(),
+    initialData: { sections: [] },
+    retry: 1
+  });
+}, LDe = ({ filterOptions: t }) => {
+  const [{ query: e }, n] = ft(), [r, a] = ke(e.filters?.section);
+  Du(() => {
+    a(e.filters?.section);
+  }, [e.filters?.section]);
+  const i = (o) => {
     a(o), n({
+      ...e,
+      page: {},
+      // Reset pagination when filter changes
       filters: {
+        ...e.filters,
         section: o
       }
     });
@@ -41702,10 +41718,10 @@ ${t}
       value: r,
       onClear: () => i(void 0),
       onChange: i,
-      children: t.map((o) => /* @__PURE__ */ m(be, { value: o, children: o }))
+      children: t && t.length > 0 ? t.map((o) => /* @__PURE__ */ m(be, { value: o, children: o }, o)) : /* @__PURE__ */ m(be, { value: "", disabled: !0, children: "No sections available" })
     }
   );
-}, xDe = [
+}, kDe = [
   { label: "page.discover.table.header.id" },
   { label: "page.discover.table.header.author" },
   { label: "page.discover.table.header.message", orderBy: "content" },
@@ -41713,11 +41729,11 @@ ${t}
   { label: "page.discover.table.header.entry" },
   { label: "page.discover.table.header.lastUpdate", orderBy: "updatedAt" },
   { label: "page.discover.table.header.status" }
-], LDe = (t) => {
+], PDe = (t) => {
   const e = t.map((n) => n.section).filter((n) => typeof n == "string");
   return Array.from(new Set(e));
-}, kDe = ({ config: t }) => {
-  const [{ query: e }, n] = ft(), { data: { result: r, pagination: a } } = wDe(e), i = LDe(r);
+}, UDe = ({ config: t }) => {
+  const [{ query: e }, n] = ft(), { data: { result: r, pagination: a } } = MDe(e), { data: { sections: i }, isLoading: o, error: c } = xDe(), s = PDe(r), l = i || [], _ = o || c || l.length === 0 ? s : l;
   return /* @__PURE__ */ M(qe, { children: [
     /* @__PURE__ */ m(Be.Title, { children: "Comments - discover" }),
     /* @__PURE__ */ M(Be.Main, { children: [
@@ -41739,27 +41755,27 @@ ${t}
       ),
       /* @__PURE__ */ m(Oe.Action, { startActions: /* @__PURE__ */ M(qe, { children: [
         /* @__PURE__ */ m(_d, { label: A("common.search", "Search") }),
-        /* @__PURE__ */ m(IDe, {}),
-        /* @__PURE__ */ m(MDe, { filterOptions: i })
+        /* @__PURE__ */ m(DDe, {}),
+        /* @__PURE__ */ m(LDe, { filterOptions: _ })
       ] }) }),
       /* @__PURE__ */ M(Oe.Content, { children: [
         /* @__PURE__ */ M(ai, { children: [
           /* @__PURE__ */ m(oi, { children: /* @__PURE__ */ M(nt, { children: [
-            xDe.map(({ label: o, orderBy: s }) => /* @__PURE__ */ m(qe, { children: s ? /* @__PURE__ */ m(
+            kDe.map(({ label: p, orderBy: d }) => /* @__PURE__ */ m(qe, { children: d ? /* @__PURE__ */ m(
               qd,
               {
-                label: A(o),
-                orderByKey: s
+                label: A(p),
+                orderByKey: d
               }
-            ) : /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(K, { variant: "sigma", children: A(o) }) }) })),
+            ) : /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(K, { variant: "sigma", children: A(p) }) }) })),
             /* @__PURE__ */ m(de, {})
           ] }) }),
-          /* @__PURE__ */ m(ii, { children: r.map((o) => /* @__PURE__ */ m(
-            ODe,
+          /* @__PURE__ */ m(ii, { children: r.map((p) => /* @__PURE__ */ m(
+            yDe,
             {
-              item: o
+              item: p
             },
-            o.id
+            p.id
           )) })
         ] }),
         /* @__PURE__ */ M(je.Root, { pageCount: a.pageCount, total: a.total, children: [
@@ -41769,8 +41785,8 @@ ${t}
       ] })
     ] })
   ] });
-}, PDe = ({ item: t }) => {
-  const e = ku(t), n = Pu(e);
+}, FDe = ({ item: t }) => {
+  const e = Pu(t), n = Uu(e);
   return /* @__PURE__ */ m(
     Yt,
     {
@@ -41780,7 +41796,7 @@ ${t}
       children: ae.startCase(e.toLowerCase())
     }
   );
-}, UDe = ({ item: t }) => {
+}, BDe = ({ item: t }) => {
   const [e, n] = ke(!1), r = () => n((a) => !a);
   return /* @__PURE__ */ M(ne.Root, { open: e, onOpenChange: r, children: [
     /* @__PURE__ */ m(ne.Trigger, { children: /* @__PURE__ */ m(
@@ -41813,19 +41829,19 @@ ${t}
       ) })
     ] })
   ] });
-}, FDe = { minHeight: "2em", paddingLeft: "5px", paddingRight: "12px" }, sd = ({ type: t, item: e }) => {
+}, GDe = { minHeight: "2em", paddingLeft: "5px", paddingRight: "12px" }, sd = ({ type: t, item: e }) => {
   const n = Ae(), r = fe(), a = async () => {
     await n.invalidateQueries({
       queryKey: r.reports.findAll.getKey()
     });
-  }, { commentMutation: i } = ot({
+  }, { commentMutation: i } = it({
     comment: {
       blockSuccess: a,
       unBlockSuccess: a,
       blockThreadSuccess: a,
       unBlockThreadSuccess: a
     }
-  }), o = t === "icon", { related: { blockedThread: s, gotThread: c, blocked: l } } = e, _ = async () => {
+  }), o = t === "icon", { related: { blockedThread: c, gotThread: s, blocked: l } } = e, _ = async () => {
     await i.block.mutateAsync(e.related.id);
   }, p = async () => {
     await i.unBlock.mutateAsync(e.related.id);
@@ -41839,12 +41855,12 @@ ${t}
     {
       label: o ? null : "Block",
       variant: "danger-light",
-      style: o ? FDe : null,
+      style: o ? GDe : null,
       children: [
         l ? /* @__PURE__ */ m(
           It,
           {
-            disabled: s,
+            disabled: c,
             onClick: p,
             children: A(
               "page.details.actions.comment.unblock",
@@ -41854,7 +41870,7 @@ ${t}
         ) : /* @__PURE__ */ m(
           It,
           {
-            disabled: s,
+            disabled: c,
             onClick: _,
             children: A(
               "page.details.actions.comment.block",
@@ -41862,7 +41878,7 @@ ${t}
             )
           }
         ),
-        c && (s ? /* @__PURE__ */ m(
+        s && (c ? /* @__PURE__ */ m(
           It,
           {
             onClick: u,
@@ -41884,8 +41900,8 @@ ${t}
       ]
     }
   );
-}, BDe = ({ item: t }) => {
-  const { resolved: e } = t, n = fe(), { reportMutation: r } = ot(), a = Ae();
+}, qDe = ({ item: t }) => {
+  const { resolved: e } = t, n = fe(), { reportMutation: r } = it(), a = Ae();
   return /* @__PURE__ */ M(W, { children: [
     e ? /* @__PURE__ */ m(sd, { item: t }) : /* @__PURE__ */ m(
       Jo,
@@ -41913,10 +41929,10 @@ ${t}
       }
     )
   ] });
-}, cd = { maxWidth: "30vw" }, GDe = ({ item: t, isChecked: e, onSelectionChange: n }) => {
+}, cd = { maxWidth: "30vw" }, YDe = ({ item: t, isChecked: e, onSelectionChange: n }) => {
   const { formatDate: r } = Ke();
   return /* @__PURE__ */ M(nt, { children: [
-    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(mt, { checked: e, onCheckedChange: () => {
+    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(gt, { checked: e, onCheckedChange: () => {
       n(t.id);
     } }) }),
     /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ M(K, { textColor: "neutral800", fontWeight: "bold", children: [
@@ -41925,22 +41941,22 @@ ${t}
     ] }) }),
     /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(K, { textColor: "neutral800", variant: "pi", children: t.reason || A("components.reason.unknown") }) }),
     /* @__PURE__ */ m(Ee, { style: cd, children: /* @__PURE__ */ m(K, { textColor: "neutral800", ellipsis: !0, children: t.content || A("compontents.content.unknown") }) }),
-    /* @__PURE__ */ m(Ee, { style: cd, children: /* @__PURE__ */ m(K, { textColor: "neutral800", ellipsis: !0, children: /* @__PURE__ */ m(PDe, { item: t }) }) }),
+    /* @__PURE__ */ m(Ee, { style: cd, children: /* @__PURE__ */ m(K, { textColor: "neutral800", ellipsis: !0, children: /* @__PURE__ */ m(FDe, { item: t }) }) }),
     /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(K, { textColor: "neutral800", children: r(t.updatedAt || t.createdAt, {
       dateStyle: "long",
       timeStyle: "short"
     }) }) }),
-    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(UDe, { item: t }) }),
-    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(BDe, { item: t }) })
+    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(BDe, { item: t }) }),
+    /* @__PURE__ */ m(Ee, { children: /* @__PURE__ */ m(qDe, { item: t }) })
   ] });
-}, qDe = (t) => {
+}, HDe = (t) => {
   const e = fe();
-  return gt({
+  return rt({
     queryKey: e.reports.findAll.getKey(t),
     queryFn: () => e.reports.findAll.query(t).then((n) => n),
     initialData: { result: [], pagination: { page: 0, pageSize: 0, pageCount: 0, total: 0 } }
   });
-}, YDe = [
+}, VDe = [
   { label: "page.reports.table.header.id" },
   { label: "page.reports.table.header.reason" },
   { label: "page.reports.table.header.content", orderBy: "content" },
@@ -41948,9 +41964,9 @@ ${t}
   { label: "page.reports.table.header.issueDate", orderBy: "updatedAt" },
   { label: "page.reports.table.header.relatedComment" },
   { label: "page.reports.table.header.actions" }
-], HDe = ({ config: t }) => {
-  const { toggleNotification: e } = rt(), n = fe(), [{ query: r }] = ft(), [a, i] = ke([]), { reportMutation: o } = ot(), s = Ae(), { data: { result: c, pagination: l } } = qDe(r), _ = a.length > 0 ? a.length === c.length ? !0 : "indeterminate" : !1, p = (E) => {
-    i(E ? c.map((S) => S.id) : []);
+], zDe = ({ config: t }) => {
+  const { toggleNotification: e } = at(), n = fe(), [{ query: r }] = ft(), [a, i] = ke([]), { reportMutation: o } = it(), c = Ae(), { data: { result: s, pagination: l } } = HDe(r), _ = a.length > 0 ? a.length === s.length ? !0 : "indeterminate" : !1, p = (E) => {
+    i(E ? s.map((S) => S.id) : []);
   }, d = Gt(
     (E) => {
       i((S) => S.includes(E) ? S.filter((g) => g !== E) : [...S, E]);
@@ -41959,7 +41975,7 @@ ${t}
   ), u = async () => {
     await o.resolveMultiple.mutateAsync({
       reportIds: a
-    }), await s.invalidateQueries({
+    }), await c.invalidateQueries({
       exact: !1,
       queryKey: n.reports.findAll.getKey()
     }), i([]);
@@ -42007,14 +42023,14 @@ ${t}
         /* @__PURE__ */ M(ai, { children: [
           /* @__PURE__ */ m(oi, { children: /* @__PURE__ */ M(nt, { children: [
             /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(
-              mt,
+              gt,
               {
                 checked: _,
                 onCheckedChange: p,
-                disabled: c.filter((E) => !E.resolved).length === 0
+                disabled: s.filter((E) => !E.resolved).length === 0
               }
             ) }),
-            YDe.map(({ label: E, orderBy: S }) => /* @__PURE__ */ m(qe, { children: S ? /* @__PURE__ */ m(
+            VDe.map(({ label: E, orderBy: S }) => /* @__PURE__ */ m(qe, { children: S ? /* @__PURE__ */ m(
               qd,
               {
                 label: A(E),
@@ -42022,8 +42038,8 @@ ${t}
               }
             ) : /* @__PURE__ */ m(de, { children: /* @__PURE__ */ m(K, { variant: "sigma", children: A(E) }) }) }))
           ] }) }),
-          /* @__PURE__ */ m(ii, { children: c.map((E) => /* @__PURE__ */ m(
-            GDe,
+          /* @__PURE__ */ m(ii, { children: s.map((E) => /* @__PURE__ */ m(
+            YDe,
             {
               item: E,
               isChecked: a.includes(E.id),
@@ -42039,15 +42055,15 @@ ${t}
       ] })
     ] })
   ] });
-}, VDe = () => {
-  const t = Bu((r) => r.setSettings), { isLoading: e, data: n } = Fu(t);
-  return e || !n ? /* @__PURE__ */ m("div", { children: "Loading..." }) : /* @__PURE__ */ m(Oe.Root, { sideNav: /* @__PURE__ */ m(Uu, {}), children: /* @__PURE__ */ M(Jd, { children: [
-    /* @__PURE__ */ m(yt, { path: "/discover", element: /* @__PURE__ */ m(kDe, { config: n }) }),
-    /* @__PURE__ */ m(yt, { path: "/discover/:id", element: /* @__PURE__ */ m(vDe, { config: n }) }),
-    /* @__PURE__ */ m(yt, { path: "/reports", element: /* @__PURE__ */ m(HDe, { config: n }) }),
+}, $De = () => {
+  const t = Gu((r) => r.setSettings), { isLoading: e, data: n } = Bu(t);
+  return e || !n ? /* @__PURE__ */ m("div", { children: "Loading..." }) : /* @__PURE__ */ m(Oe.Root, { sideNav: /* @__PURE__ */ m(Fu, {}), children: /* @__PURE__ */ M(Jd, { children: [
+    /* @__PURE__ */ m(yt, { path: "/discover", element: /* @__PURE__ */ m(UDe, { config: n }) }),
+    /* @__PURE__ */ m(yt, { path: "/discover/:id", element: /* @__PURE__ */ m(ODe, { config: n }) }),
+    /* @__PURE__ */ m(yt, { path: "/reports", element: /* @__PURE__ */ m(zDe, { config: n }) }),
     /* @__PURE__ */ m(yt, { path: "*", element: /* @__PURE__ */ m(jd, { to: "discover", replace: !0 }) })
   ] }) });
-}, lMe = () => /* @__PURE__ */ m(Ou, { children: /* @__PURE__ */ m(VDe, {}) });
+}, dMe = () => /* @__PURE__ */ m(Ou, { children: /* @__PURE__ */ m($De, {}) });
 export {
-  lMe as default
+  dMe as default
 };

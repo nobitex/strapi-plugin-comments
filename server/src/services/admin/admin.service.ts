@@ -44,6 +44,35 @@ export default ({ strapi }: StrapiContext) => {
       };
     },
 
+    // Find all unique sections
+    async findAllSections() {
+      try {
+        const commentRepository = getCommentRepository(strapi);
+        
+        // Get all comments and filter sections in memory
+        const allComments = await commentRepository.findMany({
+          limit: 10000
+        });
+
+        // Filter comments that have valid sections
+        const commentsWithSections = allComments.filter(c => 
+          c.section && 
+          typeof c.section === 'string' && 
+          c.section.trim() !== '' &&
+          c.section !== null &&
+          c.section !== undefined
+        );
+
+        const sections = Array.from(new Set(
+          commentsWithSections.map(comment => comment.section.trim())
+        ));
+
+        return { sections };
+      } catch (error) {
+        return { sections: [] };
+      }
+    },
+
     async findReports({ _q, orderBy, page, pageSize }: adminValidator.ReportFindReportsValidator) {
       const params = utils.findReports.createParams(
         orderBy,

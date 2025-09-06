@@ -1,4 +1,4 @@
-import { ad as Kt, ae as Qt, af as Pr, ag as rt, p as Jt, ah as Xt, ai as Or, l as $r, aj as Zt, ak as ee, al as V, F as en, am as rn, T as tn, e as wr } from "./index-DiKfRfmm.mjs";
+import { ad as Yt, ae as Qt, af as Pr, ag as rt, p as Jt, ah as Xt, ai as Or, l as $r, aj as Zt, ak as ee, al as V, F as en, am as rn, T as tn, e as wr } from "./index-GrrzTSFM.mjs";
 import * as ae from "react";
 import { useState as rr, useEffect as nn, useMemo as tt, createContext as on } from "react";
 import { jsx as C, jsxs as Ee } from "react/jsx-runtime";
@@ -11,11 +11,11 @@ const sn = () => {
     const o = r() ? "dark" : "light", i = window.localStorage?.STRAPI_THEME;
     t(i === "system" ? o : i);
   }, []), {
-    theme: e === "dark" ? Kt : Qt,
+    theme: e === "dark" ? Yt : Qt,
     themeName: e
   };
 };
-var tr = { exports: {} }, b = {};
+var tr = { exports: {} }, E = {};
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -26,7 +26,7 @@ var tr = { exports: {} }, b = {};
  */
 var Rr;
 function pn() {
-  if (Rr) return b;
+  if (Rr) return E;
   Rr = 1;
   var r = typeof Symbol == "function" && Symbol.for, e = r ? Symbol.for("react.element") : 60103, t = r ? Symbol.for("react.portal") : 60106, n = r ? Symbol.for("react.fragment") : 60107, o = r ? Symbol.for("react.strict_mode") : 60108, i = r ? Symbol.for("react.profiler") : 60114, u = r ? Symbol.for("react.provider") : 60109, l = r ? Symbol.for("react.context") : 60110, c = r ? Symbol.for("react.async_mode") : 60111, f = r ? Symbol.for("react.concurrent_mode") : 60111, y = r ? Symbol.for("react.forward_ref") : 60112, d = r ? Symbol.for("react.suspense") : 60113, m = r ? Symbol.for("react.suspense_list") : 60120, h = r ? Symbol.for("react.memo") : 60115, v = r ? Symbol.for("react.lazy") : 60116, $ = r ? Symbol.for("react.block") : 60121, _ = r ? Symbol.for("react.fundamental") : 60117, S = r ? Symbol.for("react.responder") : 60118, x = r ? Symbol.for("react.scope") : 60119;
   function P(s) {
@@ -62,35 +62,35 @@ function pn() {
   function O(s) {
     return P(s) === f;
   }
-  return b.AsyncMode = c, b.ConcurrentMode = f, b.ContextConsumer = l, b.ContextProvider = u, b.Element = e, b.ForwardRef = y, b.Fragment = n, b.Lazy = v, b.Memo = h, b.Portal = t, b.Profiler = i, b.StrictMode = o, b.Suspense = d, b.isAsyncMode = function(s) {
+  return E.AsyncMode = c, E.ConcurrentMode = f, E.ContextConsumer = l, E.ContextProvider = u, E.Element = e, E.ForwardRef = y, E.Fragment = n, E.Lazy = v, E.Memo = h, E.Portal = t, E.Profiler = i, E.StrictMode = o, E.Suspense = d, E.isAsyncMode = function(s) {
     return O(s) || P(s) === c;
-  }, b.isConcurrentMode = O, b.isContextConsumer = function(s) {
+  }, E.isConcurrentMode = O, E.isContextConsumer = function(s) {
     return P(s) === l;
-  }, b.isContextProvider = function(s) {
+  }, E.isContextProvider = function(s) {
     return P(s) === u;
-  }, b.isElement = function(s) {
+  }, E.isElement = function(s) {
     return typeof s == "object" && s !== null && s.$$typeof === e;
-  }, b.isForwardRef = function(s) {
+  }, E.isForwardRef = function(s) {
     return P(s) === y;
-  }, b.isFragment = function(s) {
+  }, E.isFragment = function(s) {
     return P(s) === n;
-  }, b.isLazy = function(s) {
+  }, E.isLazy = function(s) {
     return P(s) === v;
-  }, b.isMemo = function(s) {
+  }, E.isMemo = function(s) {
     return P(s) === h;
-  }, b.isPortal = function(s) {
+  }, E.isPortal = function(s) {
     return P(s) === t;
-  }, b.isProfiler = function(s) {
+  }, E.isProfiler = function(s) {
     return P(s) === i;
-  }, b.isStrictMode = function(s) {
+  }, E.isStrictMode = function(s) {
     return P(s) === o;
-  }, b.isSuspense = function(s) {
+  }, E.isSuspense = function(s) {
     return P(s) === d;
-  }, b.isValidElementType = function(s) {
+  }, E.isValidElementType = function(s) {
     return typeof s == "string" || typeof s == "function" || s === n || s === f || s === i || s === o || s === d || s === m || typeof s == "object" && s !== null && (s.$$typeof === v || s.$$typeof === h || s.$$typeof === u || s.$$typeof === l || s.$$typeof === y || s.$$typeof === _ || s.$$typeof === S || s.$$typeof === x || s.$$typeof === $);
-  }, b.typeOf = P, b;
+  }, E.typeOf = P, E;
 }
-var E = {};
+var A = {};
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -139,7 +139,7 @@ function yn() {
         }
       }
     }
-    var s = c, F = f, B = l, M = u, W = e, q = y, K = n, I = v, N = h, G = t, Z = i, j = o, Dt = d, br = !1;
+    var s = c, F = f, B = l, M = u, W = e, q = y, Y = n, I = v, N = h, G = t, Z = i, j = o, Dt = d, br = !1;
     function Lt(p) {
       return br || (br = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), Er(p) || O(p) === c;
     }
@@ -176,11 +176,11 @@ function yn() {
     function Ht(p) {
       return O(p) === o;
     }
-    function Yt(p) {
+    function Kt(p) {
       return O(p) === d;
     }
-    E.AsyncMode = s, E.ConcurrentMode = F, E.ContextConsumer = B, E.ContextProvider = M, E.Element = W, E.ForwardRef = q, E.Fragment = K, E.Lazy = I, E.Memo = N, E.Portal = G, E.Profiler = Z, E.StrictMode = j, E.Suspense = Dt, E.isAsyncMode = Lt, E.isConcurrentMode = Er, E.isContextConsumer = Bt, E.isContextProvider = Ut, E.isElement = kt, E.isForwardRef = Wt, E.isFragment = qt, E.isLazy = Gt, E.isMemo = jt, E.isPortal = Vt, E.isProfiler = zt, E.isStrictMode = Ht, E.isSuspense = Yt, E.isValidElementType = P, E.typeOf = O;
-  }()), E;
+    A.AsyncMode = s, A.ConcurrentMode = F, A.ContextConsumer = B, A.ContextProvider = M, A.Element = W, A.ForwardRef = q, A.Fragment = Y, A.Lazy = I, A.Memo = N, A.Portal = G, A.Profiler = Z, A.StrictMode = j, A.Suspense = Dt, A.isAsyncMode = Lt, A.isConcurrentMode = Er, A.isContextConsumer = Bt, A.isContextProvider = Ut, A.isElement = kt, A.isForwardRef = Wt, A.isFragment = qt, A.isLazy = Gt, A.isMemo = jt, A.isPortal = Vt, A.isProfiler = zt, A.isStrictMode = Ht, A.isSuspense = Kt, A.isValidElementType = P, A.typeOf = O;
+  }()), A;
 }
 process.env.NODE_ENV === "production" ? tr.exports = pn() : tr.exports = yn();
 var dn = tr.exports, nt = dn, mn = {
@@ -278,7 +278,7 @@ const Hi = (r, e = "", t = !0) => {
   PENDING: "PENDING",
   APPROVED: "APPROVED",
   REJECTED: "REJECTED"
-}, Yi = {
+}, Ki = {
   ...it,
   BLOCKED: "BLOCKED",
   OPEN: "OPEN",
@@ -406,7 +406,7 @@ var lr = wn, Lr = lr.custom, Br = st(Lr) ? Lr : null, ct = {
       s.push(m(G, e, !0) + " => " + m(N, e));
     }), kr("Map", Re.call(e), s, d);
   }
-  if (Kn(e)) {
+  if (Yn(e)) {
     var F = [];
     return _r && _r.call(e, function(N) {
       F.push(m(N, e));
@@ -416,7 +416,7 @@ var lr = wn, Lr = lr.custom, Br = st(Lr) ? Lr : null, ct = {
     return ke("WeakMap");
   if (Qn(e))
     return ke("WeakSet");
-  if (Yn(e))
+  if (Kn(e))
     return ke("WeakRef");
   if (Wn(e))
     return fe(m(Number(e)));
@@ -431,7 +431,7 @@ var lr = wn, Lr = lr.custom, Br = st(Lr) ? Lr : null, ct = {
   if (typeof globalThis < "u" && e === globalThis || typeof Or < "u" && e === Or)
     return "{ [object globalThis] }";
   if (!Bn(e) && !Ur(e)) {
-    var B = Ae(e, m), M = Mr ? Mr(e) === Object.prototype : e instanceof Object || e.constructor === Object, W = e instanceof Object ? "" : "null prototype", q = !M && ye && Object(e) === e && ye in e ? vr.call(Y(e), 8, -1) : W ? "Object" : "", K = M || typeof e.constructor != "function" ? "" : e.constructor.name ? e.constructor.name + " " : "", I = K + (q || W ? "[" + L.call(Nr.call([], q || [], W || []), ": ") + "] " : "");
+    var B = Ae(e, m), M = Mr ? Mr(e) === Object.prototype : e instanceof Object || e.constructor === Object, W = e instanceof Object ? "" : "null prototype", q = !M && ye && Object(e) === e && ye in e ? vr.call(K(e), 8, -1) : W ? "Object" : "", Y = M || typeof e.constructor != "function" ? "" : e.constructor.name ? e.constructor.name + " " : "", I = Y + (q || W ? "[" + L.call(Nr.call([], q || [], W || []), ": ") + "] " : "");
     return B.length === 0 ? I + "{}" : d ? I + "{" + cr(B, d) + "}" : I + "{ " + L.call(B, ", ") + " }";
   }
   return String(e);
@@ -447,25 +447,25 @@ function X(r) {
   return !ye || !(typeof r == "object" && (ye in r || typeof r[ye] < "u"));
 }
 function ur(r) {
-  return Y(r) === "[object Array]" && X(r);
+  return K(r) === "[object Array]" && X(r);
 }
 function Bn(r) {
-  return Y(r) === "[object Date]" && X(r);
+  return K(r) === "[object Date]" && X(r);
 }
 function Ur(r) {
-  return Y(r) === "[object RegExp]" && X(r);
+  return K(r) === "[object RegExp]" && X(r);
 }
 function Un(r) {
-  return Y(r) === "[object Error]" && X(r);
+  return K(r) === "[object Error]" && X(r);
 }
 function kn(r) {
-  return Y(r) === "[object String]" && X(r);
+  return K(r) === "[object String]" && X(r);
 }
 function Wn(r) {
-  return Y(r) === "[object Number]" && X(r);
+  return K(r) === "[object Number]" && X(r);
 }
 function qn(r) {
-  return Y(r) === "[object Boolean]" && X(r);
+  return K(r) === "[object Boolean]" && X(r);
 }
 function st(r) {
   if (ie)
@@ -495,7 +495,7 @@ var jn = Object.prototype.hasOwnProperty || function(r) {
 function U(r, e) {
   return jn.call(r, e);
 }
-function Y(r) {
+function K(r) {
   return xn.call(r);
 }
 function Vn(r) {
@@ -542,7 +542,7 @@ function Hn(r) {
   }
   return !1;
 }
-function Yn(r) {
+function Kn(r) {
   if (!xr || !r || typeof r != "object")
     return !1;
   try {
@@ -551,7 +551,7 @@ function Yn(r) {
   }
   return !1;
 }
-function Kn(r) {
+function Yn(r) {
   if (!Te || !r || typeof r != "object")
     return !1;
   try {
@@ -852,10 +852,10 @@ function zo() {
     }
   ) : !1, ze;
 }
-var He, Yr;
+var He, Kr;
 function Ho() {
-  if (Yr) return He;
-  Yr = 1;
+  if (Kr) return He;
+  Kr = 1;
   var r = vt(), e = gt(), t = zo();
   return He = r ? function(o) {
     return r(o);
@@ -867,14 +867,14 @@ function Ho() {
     return t(o);
   } : null, He;
 }
-var Ye, Kr;
-function Yo() {
-  if (Kr) return Ye;
-  Kr = 1;
+var Ke, Yr;
+function Ko() {
+  if (Yr) return Ke;
+  Yr = 1;
   var r = Function.prototype.call, e = Object.prototype.hasOwnProperty, t = Fe;
-  return Ye = t.call(r, e), Ye;
+  return Ke = t.call(r, e), Ke;
 }
-var g, Ko = dt, Qo = uo, Jo = co, Xo = fo, Zo = so, le = po, oe = ce, ea = yo, ra = mo, ta = vo, na = go, oa = ho, aa = So, ia = bo, la = Po, bt = Function, Ke = function(r) {
+var g, Yo = dt, Qo = uo, Jo = co, Xo = fo, Zo = so, le = po, oe = ce, ea = yo, ra = mo, ta = vo, na = go, oa = ho, aa = So, ia = bo, la = Po, bt = Function, Ye = function(r) {
   try {
     return bt('"use strict"; return (' + r + ").constructor;")();
   } catch {
@@ -934,7 +934,7 @@ var g, Ko = dt, Qo = uo, Jo = co, Xo = fo, Zo = so, le = po, oe = ce, ea = yo, r
   "%MapIteratorPrototype%": typeof Map > "u" || !re || !R ? g : R((/* @__PURE__ */ new Map())[Symbol.iterator]()),
   "%Math%": Math,
   "%Number%": Number,
-  "%Object%": Ko,
+  "%Object%": Yo,
   "%Object.getOwnPropertyDescriptor%": me,
   "%parseFloat%": parseFloat,
   "%parseInt%": parseInt,
@@ -985,11 +985,11 @@ if (R)
 var da = function r(e) {
   var t;
   if (e === "%AsyncFunction%")
-    t = Ke("async function () {}");
+    t = Ye("async function () {}");
   else if (e === "%GeneratorFunction%")
-    t = Ke("function* () {}");
+    t = Ye("function* () {}");
   else if (e === "%AsyncGeneratorFunction%")
-    t = Ke("async function* () {}");
+    t = Ye("async function* () {}");
   else if (e === "%AsyncGenerator%") {
     var n = r("%AsyncGeneratorFunction%");
     n && (t = n.prototype);
@@ -1051,7 +1051,7 @@ var da = function r(e) {
   "%URIErrorPrototype%": ["URIError", "prototype"],
   "%WeakMapPrototype%": ["WeakMap", "prototype"],
   "%WeakSetPrototype%": ["WeakSet", "prototype"]
-}, he = Fe, Ce = Yo(), ma = he.call(ge, Array.prototype.concat), va = he.call(Et, Array.prototype.splice), Jr = he.call(ge, String.prototype.replace), _e = he.call(ge, String.prototype.slice), ga = he.call(ge, RegExp.prototype.exec), ha = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g, Sa = /\\(\\)?/g, ba = function(e) {
+}, he = Fe, Ce = Ko(), ma = he.call(ge, Array.prototype.concat), va = he.call(Et, Array.prototype.splice), Jr = he.call(ge, String.prototype.replace), _e = he.call(ge, String.prototype.slice), ga = he.call(ge, RegExp.prototype.exec), ha = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g, Sa = /\\(\\)?/g, ba = function(e) {
   var t = _e(e, 0, 1), n = _e(e, -1);
   if (t === "%" && n !== "%")
     throw new le("invalid intrinsic syntax, expected closing `%`");
@@ -1202,11 +1202,11 @@ function() {
   },
   RFC1738: Je.RFC1738,
   RFC3986: Je.RFC3986
-}, Ya = Sr, Xe = Object.prototype.hasOwnProperty, Q = Array.isArray, D = function() {
+}, Ka = Sr, Xe = Object.prototype.hasOwnProperty, Q = Array.isArray, D = function() {
   for (var r = [], e = 0; e < 256; ++e)
     r.push("%" + ((e < 16 ? "0" : "") + e.toString(16)).toUpperCase());
   return r;
-}(), Ka = function(e) {
+}(), Ya = function(e) {
   for (; e.length > 1; ) {
     var t = e.pop(), n = t.obj[t.prop];
     if (Q(n)) {
@@ -1267,7 +1267,7 @@ function() {
     });
   for (var l = "", c = 0; c < u.length; ++c) {
     var f = u.charCodeAt(c);
-    if (f === 45 || f === 46 || f === 95 || f === 126 || f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || i === Ya.RFC1738 && (f === 40 || f === 41)) {
+    if (f === 45 || f === 46 || f === 95 || f === 126 || f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || i === Ka.RFC1738 && (f === 40 || f === 41)) {
       l += u.charAt(c);
       continue;
     }
@@ -1292,7 +1292,7 @@ function() {
       var f = l[c], y = u[f];
       typeof y == "object" && y !== null && n.indexOf(y) === -1 && (t.push({ obj: u, prop: f }), n.push(y));
     }
-  return Ka(t), e;
+  return Ya(t), e;
 }, ri = function(e) {
   return Object.prototype.toString.call(e) === "[object RegExp]";
 }, ti = function(e) {
@@ -1386,8 +1386,8 @@ function() {
     var W = Object.keys(S);
     M = f ? W.sort(f) : W;
   }
-  for (var q = o && k(S) && S.length === 1 ? t + "[]" : t, K = 0; K < M.length; ++K) {
-    var I = M[K], N = typeof I == "object" && typeof I.value < "u" ? I.value : S[I];
+  for (var q = o && k(S) && S.length === 1 ? t + "[]" : t, Y = 0; Y < M.length; ++Y) {
+    var I = M[Y], N = typeof I == "object" && typeof I.value < "u" ? I.value : S[I];
     if (!(u && N === null)) {
       var G = k(S) ? typeof n == "function" ? n(q, I) : q : q + (y ? "." + I : "[" + I + "]");
       _.set(e, P);
@@ -1770,20 +1770,20 @@ const Ft = sr(), Ri = a.object({
       })
     )
   })
-}), A = "comments", Di = $r.once((r) => ({
+}), b = "comments", Di = $r.once((r) => ({
   config: {
     getKey() {
-      return [A, "config"];
+      return [b, "config"];
     },
     async query() {
-      const e = await r.get(`/${A}/settings/config`);
+      const e = await r.get(`/${b}/settings/config`);
       return Oi.parseAsync(e.data);
     }
   },
   contentTypeBuilder: {
     single: {
       getKey(e, t) {
-        return [A, "moderate", "content-type", t, e];
+        return [b, "moderate", "content-type", t, e];
       },
       async query(e) {
         const t = await r.get(`/content-type-builder/content-types/${e}`);
@@ -1792,7 +1792,7 @@ const Ft = sr(), Ri = a.object({
     },
     all: {
       getKey() {
-        return [A, "moderate", "content-types"];
+        return [b, "moderate", "content-types"];
       },
       async query() {
         const e = await r.get("/content-type-builder/content-types");
@@ -1802,7 +1802,7 @@ const Ft = sr(), Ri = a.object({
   },
   roles: {
     getKey() {
-      return [A, "moderate", "roles"];
+      return [b, "moderate", "roles"];
     },
     async query() {
       const e = await r.get("/admin/roles");
@@ -1811,7 +1811,7 @@ const Ft = sr(), Ri = a.object({
   },
   user: {
     getKey() {
-      return [A, "moderate", "user"];
+      return [b, "moderate", "user"];
     },
     async query() {
       const e = await r.get("/admin/users/me");
@@ -1821,85 +1821,93 @@ const Ft = sr(), Ri = a.object({
   comments: {
     findAll: {
       getKey(e) {
-        return [A, "moderate", "all", e ? JSON.stringify(e) : void 0].filter(Boolean);
+        return [b, "moderate", "all", e ? JSON.stringify(e) : void 0].filter(Boolean);
       },
       async query(e) {
-        const t = await r.get(`/${A}/moderate/all?${er.stringify(e, { encode: !1 })}`);
+        const t = await r.get(`/${b}/moderate/all?${er.stringify(e, { encode: !1 })}`);
         return Ri.parseAsync(t.data);
+      }
+    },
+    findAllSections: {
+      getKey() {
+        return [b, "moderate", "sections"];
+      },
+      async query() {
+        return (await r.get(`/${b}/moderate/sections`)).data;
       }
     },
     findOne: {
       getKey(e, t) {
-        return [A, "details", e?.toString(), t ? JSON.stringify(t) : void 0].filter(Boolean);
+        return [b, "details", e?.toString(), t ? JSON.stringify(t) : void 0].filter(Boolean);
       },
       async query(e, t) {
-        const n = $r.isEmpty(t) ? "" : `?${er.stringify(t, { encode: !1 })}`, o = await r.get(`/${A}/moderate/single/${e}${n}`);
+        const n = $r.isEmpty(t) ? "" : `?${er.stringify(t, { encode: !1 })}`, o = await r.get(`/${b}/moderate/single/${e}${n}`);
         return Ti.parseAsync(o.data);
       }
     },
     approve(e) {
-      return r.put(`/${A}/moderate/single/${e}/approve`);
+      return r.put(`/${b}/moderate/single/${e}/approve`);
     },
     reject(e) {
-      return r.put(`/${A}/moderate/single/${e}/reject`);
+      return r.put(`/${b}/moderate/single/${e}/reject`);
     },
     block(e) {
-      return r.put(`/${A}/moderate/single/${e}/block`);
+      return r.put(`/${b}/moderate/single/${e}/block`);
     },
     unblock(e) {
-      return r.put(`/${A}/moderate/single/${e}/unblock`);
+      return r.put(`/${b}/moderate/single/${e}/unblock`);
     },
     blockThread(e) {
-      return r.put(`/${A}/moderate/thread/${e}/block`);
+      return r.put(`/${b}/moderate/thread/${e}/block`);
     },
     unBlockThread(e) {
-      return r.put(`/${A}/moderate/thread/${e}/unblock`);
+      return r.put(`/${b}/moderate/thread/${e}/unblock`);
     },
     delete(e) {
-      return r.del(`/${A}/moderate/single/${e}/delete`);
+      return r.del(`/${b}/moderate/single/${e}/delete`);
     },
     postComment({ id: e, content: t, author: n }) {
-      return r.post(`/${A}/moderate/thread/${e}/postComment`, { content: t, author: n });
+      return r.post(`/${b}/moderate/thread/${e}/postComment`, { content: t, author: n });
     },
     updateComment({ id: e, content: t }) {
-      return r.put(`/${A}/moderate/single/${e}/update`, { content: t });
+      return r.put(`/${b}/moderate/single/${e}/update`, { content: t });
     }
   },
   reports: {
     findAll: {
       getKey(e) {
-        return [A, "moderate", "reports", e ? JSON.stringify(e) : void 0].filter(Boolean);
+        return [b, "moderate", "reports", e ? JSON.stringify(e) : void 0].filter(Boolean);
       },
       async query(e) {
-        const t = await r.get(`/${A}/moderate/reports${e ? `?${er.stringify(e, { encode: !1 })}` : ""}`);
+        const t = await r.get(`/${b}/moderate/reports${e ? `?${er.stringify(e, { encode: !1 })}` : ""}`);
         return Ii.parseAsync(t.data);
       }
     },
     resolve({ id: e, reportId: t }) {
-      return r.put(`/${A}/moderate/single/${e}/report/${t}/resolve`);
+      return r.put(`/${b}/moderate/single/${e}/report/${t}/resolve`);
     },
     resolveMultipleReports({ reportIds: e }) {
-      return r.put(`/${A}/moderate/multiple/report/resolve`, { reportIds: e });
+      return r.put(`/${b}/moderate/multiple/report/resolve`, { reportIds: e });
     },
     resolveCommentMultipleReports({ id: e, reportIds: t }) {
-      return r.put(`/${A}/moderate/single/${e}/report/resolve`, { reportIds: t });
+      return r.put(`/${b}/moderate/single/${e}/report/resolve`, { reportIds: t });
     },
     resolveAllAbuseReportsForComment(e) {
-      return r.put(`/${A}/moderate/all/${e}/report/resolve`);
+      return r.put(`/${b}/moderate/all/${e}/report/resolve`);
     },
     resolveAllAbuseReportsForThread(e) {
-      return r.put(`/${A}/moderate/thread/${e}/report/resolve-thread`);
+      return r.put(`/${b}/moderate/thread/${e}/report/resolve-thread`);
     }
   },
   settings: {
     update(e) {
-      return r.put(`/${A}/settings/config`, e);
+      return r.put(`/${b}/settings/config`, e);
     },
     restore() {
-      return r.del(`/${A}/settings/config`);
+      return r.del(`/${b}/settings/config`);
     },
     restart() {
-      return r.post(`/${A}/settings/restart`);
+      return r.post(`/${b}/settings/restart`);
     }
   }
 })), Li = () => {
@@ -1918,7 +1926,7 @@ const Ft = sr(), Ri = a.object({
       refetchOnWindowFocus: !1
     }
   }
-}), Ki = ({ children: r }) => {
+}), Yi = ({ children: r }) => {
   const e = sn();
   return /* @__PURE__ */ C(ln, { client: ki, children: /* @__PURE__ */ C(Zt, { theme: { theme: e }, children: /* @__PURE__ */ C(Ui, { children: r }) }) });
 }, Qi = () => {
@@ -1999,13 +2007,13 @@ const Ft = sr(), Ri = a.object({
 };
 export {
   z as C,
-  Yi as R,
+  Ki as R,
   Bi as U,
   Qi as a,
   yr as b,
   Pn as c,
   Ji as d,
-  Ki as e,
+  Yi as e,
   Hi as g,
   Li as u
 };

@@ -93,6 +93,9 @@ declare const controllers: {
                 };
             }[];
         }>;
+        findAllSections(ctx: import("../@types").RequestContext): Promise<{
+            sections: string[];
+        }>;
         findReports(ctx: import("../@types").RequestContext): Promise<{
             result: {
                 id?: number;

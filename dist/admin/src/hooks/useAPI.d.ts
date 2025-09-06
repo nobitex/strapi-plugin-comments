@@ -119,6 +119,10 @@ export declare const useAPI: () => {
                 result: import("../api/schemas").Comment[];
             }>;
         };
+        findAllSections: {
+            getKey(): string[];
+            query(): Promise<any>;
+        };
         findOne: {
             getKey(id?: string | number | undefined, filters?: any): string[];
             query(id: string | number, filters: any): Promise<{

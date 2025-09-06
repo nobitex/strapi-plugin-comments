@@ -98,6 +98,9 @@ declare const controllers: ({ strapi }: StrapiContext) => {
             };
         }[];
     }>;
+    findAllSections(ctx: RequestContext): Promise<{
+        sections: string[];
+    }>;
     findReports(ctx: RequestContext): Promise<{
         result: {
             id?: number;

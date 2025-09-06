@@ -108,6 +108,7 @@ export const queryPaginationSchema = z.object({ pageSize: stringToNumberValidato
                                         filters: getFiltersOperators({
                                           removed: true,
                                           approvalStatus: true,
+                                          section: true,
                                         })
                                         .merge(
                                           z.object({

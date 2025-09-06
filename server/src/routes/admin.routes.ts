@@ -11,6 +11,14 @@ const adminRoutes: StrapiRoute<'admin'>[] = [
   },
   {
     method: 'GET',
+    path: '/moderate/sections',
+    handler: 'admin.findAllSections',
+    config: {
+      policies: [],
+    },
+  },
+  {
+    method: 'GET',
     path: '/moderate/reports',
     handler: 'admin.findReports',
     config: {

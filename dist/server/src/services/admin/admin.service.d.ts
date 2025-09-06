@@ -5775,6 +5775,9 @@ declare const _default: ({ strapi }: StrapiContext) => {
             };
         }[];
     }>;
+    findAllSections(): Promise<{
+        sections: string[];
+    }>;
     findReports({ _q, orderBy, page, pageSize }: adminValidator.ReportFindReportsValidator): Promise<{
         result: {
             id?: number;

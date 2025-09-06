@@ -18,6 +18,10 @@ const controllers = ({ strapi }: StrapiContext) => ({
     throw throwError(ctx, unwrapEither(either));
   },
 
+  async findAllSections(ctx: RequestContext) {
+    return this.getService('admin').findAllSections();
+  },
+
   async findReports(ctx: RequestContext) {
     const either = adminValidator.getReportFindReportsValidator(ctx.query);
     if (isRight(either)) {

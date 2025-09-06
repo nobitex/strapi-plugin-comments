@@ -122,6 +122,10 @@ export declare const getApiClient: (fetch: ReturnType<typeof getFetchClient>) =>
                 result: import("./schemas").Comment[];
             }>;
         };
+        findAllSections: {
+            getKey(): string[];
+            query(): Promise<any>;
+        };
         findOne: {
             getKey(id?: number | string, filters?: any): string[];
             query(id: number | string, filters: any): Promise<{

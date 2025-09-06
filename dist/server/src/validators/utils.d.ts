@@ -999,6 +999,115 @@ export declare const queryPaginationSchema: z.ZodObject<{
         }, {
             $notNull?: boolean;
         }>]>;
+        section: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodUnion<[z.ZodObject<{
+            $eq: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $eq?: string;
+        }, {
+            $eq?: string;
+        }>, z.ZodObject<{
+            $eqi: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $eqi?: string;
+        }, {
+            $eqi?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $ne: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $ne?: string;
+        }, {
+            $ne?: string;
+        }>, z.ZodObject<{
+            $nei: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $nei?: string;
+        }, {
+            $nei?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $gt: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $gt?: string;
+        }, {
+            $gt?: string;
+        }>, z.ZodObject<{
+            $gte: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $gte?: string;
+        }, {
+            $gte?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $lt: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $lt?: string;
+        }, {
+            $lt?: string;
+        }>, z.ZodObject<{
+            $lte: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $lte?: string;
+        }, {
+            $lte?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $startsWith: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $startsWith?: string;
+        }, {
+            $startsWith?: string;
+        }>, z.ZodObject<{
+            $startsWithi: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $startsWithi?: string;
+        }, {
+            $startsWithi?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $endsWith: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $endsWith?: string;
+        }, {
+            $endsWith?: string;
+        }>, z.ZodObject<{
+            $endsWithi: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $endsWithi?: string;
+        }, {
+            $endsWithi?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $contains: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $contains?: string;
+        }, {
+            $contains?: string;
+        }>, z.ZodObject<{
+            $containsi: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $containsi?: string;
+        }, {
+            $containsi?: string;
+        }>]>, z.ZodUnion<[z.ZodObject<{
+            $notContains: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $notContains?: string;
+        }, {
+            $notContains?: string;
+        }>, z.ZodObject<{
+            $notContainsi: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $notContainsi?: string;
+        }, {
+            $notContainsi?: string;
+        }>]>, z.ZodObject<{
+            $null: z.ZodString;
+        }, "strip", z.ZodTypeAny, {
+            $null?: string;
+        }, {
+            $null?: string;
+        }>, z.ZodObject<{
+            $notNull: z.ZodBoolean;
+        }, "strip", z.ZodTypeAny, {
+            $notNull?: boolean;
+        }, {
+            $notNull?: boolean;
+        }>]>;
     } & {
         $or: z.ZodOptional<z.ZodArray<z.ZodObject<{
             blocked: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodUnion<[z.ZodObject<{
@@ -1445,6 +1554,43 @@ export declare const queryPaginationSchema: z.ZodObject<{
         } | {
             $notNull?: boolean;
         };
+        section?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
         $or?: {
             blocked?: string | number | {
                 $eq?: string;
@@ -1560,6 +1706,43 @@ export declare const queryPaginationSchema: z.ZodObject<{
             $notNull?: boolean;
         };
         approvalStatus?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
+        section?: string | number | {
             $eq?: string;
         } | {
             $eqi?: string;
@@ -1753,6 +1936,43 @@ export declare const queryPaginationSchema: z.ZodObject<{
         } | {
             $notNull?: boolean;
         };
+        section?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
         $or?: {
             blocked?: string | number | {
                 $eq?: string;
@@ -1874,6 +2094,43 @@ export declare const queryPaginationSchema: z.ZodObject<{
             $notNull?: boolean;
         };
         approvalStatus?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
+        section?: string | number | {
             $eq?: string;
         } | {
             $eqi?: string;

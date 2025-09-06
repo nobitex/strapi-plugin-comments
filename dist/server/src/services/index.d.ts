@@ -5762,6 +5762,43 @@ declare const pluginServices: {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 $or?: {
                     blocked?: string | number | {
                         $eq?: string;
@@ -5931,6 +5968,9 @@ declare const pluginServices: {
                 };
             }[];
         }>;
+        findAllSections(): Promise<{
+            sections: string[];
+        }>;
         findReports({ _q, orderBy, page, pageSize }: {
             page?: number;
             pageSize?: number;
@@ -5975,6 +6015,43 @@ declare const pluginServices: {
                     $notNull?: boolean;
                 };
                 approvalStatus?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
+                section?: string | number | {
                     $eq?: string;
                 } | {
                     $eqi?: string;

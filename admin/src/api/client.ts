@@ -65,6 +65,15 @@ export const getApiClient = once((fetch: ReturnType<typeof getFetchClient>) => (
         return commentsSchema.parseAsync(response.data);
       },
     },
+    findAllSections: {
+      getKey() {
+        return [URL_PREFIX, 'moderate', 'sections'];
+      },
+      async query() {
+        const response = await fetch.get(`/${URL_PREFIX}/moderate/sections`);
+        return response.data;
+      },
+    },
     findOne: {
       getKey(id?: number | string, filters?: any) {
         return [URL_PREFIX, 'details', id?.toString(), filters ? JSON.stringify(filters) : undefined].filter(Boolean) as string[];
