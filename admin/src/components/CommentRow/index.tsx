@@ -1,15 +1,17 @@
 import { Flex, IconButton, Link, Td, Tooltip, Tr, Typography } from '@strapi/design-system';
-import { Eye } from '@strapi/icons';
+import { Eye, Trash } from '@strapi/icons';
 import {first, isEmpty, isNil} from 'lodash';
 import {FC, SyntheticEvent, useMemo, useState} from 'react';
 import { useIntl } from 'react-intl';
 import {useNavigate} from 'react-router-dom';
 import {Comment} from '../../api/schemas';
 import { useAPI } from '../../hooks/useAPI';
+import { useCommentMutations } from '../../hooks/useCommentMutations';
 import { usePermissions } from '../../hooks/usePermissions';
 import { getMessage } from '../../utils';
 import { ApproveFlow } from '../ApproveFlow';
 import { CommentStatusBadge } from '../CommentStatusBadge';
+import { ConfirmationDialog } from '../ConfirmationDialog';
 import { IconButtonGroup } from '../IconButtonGroup';
 import { ReviewFlow } from '../ReviewFlow';
 import { UserAvatar } from '../UserAvatar';
@@ -26,6 +28,14 @@ export const CommentRow: FC<Props> = ({ item }) => {
   const api = useAPI();
   const navigate = useNavigate();
   const { formatDate } = useIntl();
+  const { commentMutation } = useCommentMutations({
+    comment: {
+      deleteSuccess: () => {
+        // Refresh the comments list
+        window.location.reload();
+      },
+    },
+  });
 
 
 
@@ -40,6 +50,10 @@ export const CommentRow: FC<Props> = ({ item }) => {
     evt.preventDefault();
     evt.stopPropagation();
     navigate(id.toString());
+  };
+
+  const handleDeleteConfirm = () => {
+    commentMutation.delete.mutate(item.id);
   };
 
 
@@ -124,7 +138,7 @@ export const CommentRow: FC<Props> = ({ item }) => {
       </Td>
       <Td>
         <Flex direction="column" alignItems="flex-end">
-          <IconButtonGroup isSingle={!(reviewFlowEnabled || (canModerate && needsApproval))}>
+          <IconButtonGroup isSingle={!(reviewFlowEnabled || (canModerate && needsApproval) || canModerate)}>
             {canModerate && needsApproval && (
               <ApproveFlow
                 id={item.id}
@@ -133,6 +147,25 @@ export const CommentRow: FC<Props> = ({ item }) => {
               />
             )}
             {canReviewReports && <ReviewFlow item={item} />}
+            {canModerate && (
+              <ConfirmationDialog
+                title={getMessage("page.details.actions.comment.delete", "Delete comment")}
+                labelConfirm={getMessage("page.details.actions.comment.delete", "Delete")}
+                labelCancel={getMessage("common.button.cancel", "Cancel")}
+                onConfirm={handleDeleteConfirm}
+                Trigger={({ onClick }) => (
+                  <IconButton
+                    onClick={onClick}
+                    label={getMessage("page.details.actions.comment.delete", "Delete comment")}
+                    loading={commentMutation.delete.isPending}
+                  >
+                    <Trash />
+                  </IconButton>
+                )}
+              >
+                {getMessage("page.details.actions.comment.delete.confirmation", "Are you sure you want to delete this comment? This action cannot be undone.")}
+              </ConfirmationDialog>
+            )}
             <IconButton
               onClick={onClickDetails(item.id)}
               label={getMessage("page.details.filters.label", "View")}

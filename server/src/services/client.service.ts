@@ -73,6 +73,15 @@ export const clientService = ({ strapi }: StrapiContext) => {
         throw unwrapEither(threadData);
       }
       const linkToThread = unwrapEither(threadData);
+      
+      // Check if the parent comment (thread) is blocked
+      if (linkToThread && (linkToThread.blocked || linkToThread.blockedThread)) {
+        throw new PluginError(
+          400,
+          'Cannot reply to a blocked comment or comment in a blocked thread.',
+        );
+      }
+      
       if (!author && !this.getCommonService().isValidUserContext(user)) {
         throw resolveUserContextError(user);
       }

@@ -38536,7 +38536,7 @@ const pte = "strapi-plugin-comments", mte = {
     { action: en.render(en.settings.change), subject: null }
   ]
 }, Ri = pte.replace(/^strapi-plugin-/i, ""), Zw = {
-  en: () => import("./en-DeZtLd2b.mjs"),
+  en: () => import("./en-CWOVrGvQ.mjs"),
   fr: () => import("./fr-xcXYnLl6.mjs"),
   "pt-BR": () => import("./pt-BR-KCmyuDgJ.mjs"),
   tr: () => import("./tr-BW_iq8S7.mjs"),
@@ -38553,7 +38553,7 @@ const pte = "strapi-plugin-comments", mte = {
         id: `${Ri}.plugin.name`,
         defaultMessage: Qw
       },
-      Component: () => import("./index-DWKJA4Sc.mjs"),
+      Component: () => import("./index-CgZjPC4G.mjs"),
       permissions: jw.access
     }), t.createSettingSection(
       {
@@ -38571,7 +38571,7 @@ const pte = "strapi-plugin-comments", mte = {
           },
           id: "comments",
           to: `/settings/${Ri}`,
-          Component: () => import("./index-D89v-eJa.mjs"),
+          Component: () => import("./index-4I0uqiF2.mjs"),
           permissions: jw.settings
         }
       ]

@@ -99,7 +99,9 @@ declare const en: {
     'page.details.actions.comment.unblock': string;
     'page.details.actions.comment.unblock.confirmation.success': string;
     'page.details.actions.comment.delete': string;
+    'page.details.actions.comment.delete.confirmation': string;
     'page.details.actions.comment.delete.confirmation.success': string;
+    'common.button.cancel': string;
     'page.details.actions.comment.reports.review': string;
     'page.details.actions.comment.reports.approve': string;
     'page.details.actions.comment.reports.reject': string;

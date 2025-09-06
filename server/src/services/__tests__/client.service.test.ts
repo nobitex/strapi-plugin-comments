@@ -267,6 +267,58 @@ describe('client.service', () => {
         PluginError
       );
     });
+
+    it('should throw error when trying to reply to a blocked comment', async () => {
+      const strapi = getStrapi();
+      const service = getService(strapi);
+      const mockPayloadWithThread = {
+        ...mockPayload,
+        threadOf: 1,
+      };
+      const mockBlockedComment = {
+        id: 1,
+        content: 'Blocked comment',
+        blocked: true,
+        blockedThread: false,
+      };
+
+      mockCommonService.parseRelationString.mockReturnValue({
+        uid: 'api::test.test',
+        relatedId: '1',
+      });
+      mockFindOne.mockResolvedValue({ id: 1 });
+      mockCommonService.findOne.mockResolvedValue(mockBlockedComment);
+
+      await expect(service.create(mockPayloadWithThread, mockUser)).rejects.toThrow(
+        'Cannot reply to a blocked comment or comment in a blocked thread.'
+      );
+    });
+
+    it('should throw error when trying to reply to a comment in a blocked thread', async () => {
+      const strapi = getStrapi();
+      const service = getService(strapi);
+      const mockPayloadWithThread = {
+        ...mockPayload,
+        threadOf: 1,
+      };
+      const mockBlockedThreadComment = {
+        id: 1,
+        content: 'Comment in blocked thread',
+        blocked: false,
+        blockedThread: true,
+      };
+
+      mockCommonService.parseRelationString.mockReturnValue({
+        uid: 'api::test.test',
+        relatedId: '1',
+      });
+      mockFindOne.mockResolvedValue({ id: 1 });
+      mockCommonService.findOne.mockResolvedValue(mockBlockedThreadComment);
+
+      await expect(service.create(mockPayloadWithThread, mockUser)).rejects.toThrow(
+        'Cannot reply to a blocked comment or comment in a blocked thread.'
+      );
+    });
   });
 
   describe('update', () => {

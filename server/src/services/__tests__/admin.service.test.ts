@@ -359,6 +359,46 @@ describe('admin.service', () => {
         author: { id: 1, email: 'admin@test.com' },
       })).rejects.toThrow('Not found');
     });
+
+    it('should throw error when trying to reply to a blocked comment', async () => {
+      const strapi = getStrapi();
+      const service = getService(strapi);
+      const mockBlockedComment = {
+        id: 1,
+        content: 'Blocked comment',
+        blocked: true,
+        blockedThread: false,
+        related: 'api::test.test:1',
+      };
+
+      mockCommentRepository.findOne.mockResolvedValue(mockBlockedComment);
+
+      await expect(service.postComment({
+        id: 1,
+        content: 'Admin reply',
+        author: { id: 1, email: 'admin@test.com' },
+      })).rejects.toThrow('Cannot reply to a blocked comment or comment in a blocked thread.');
+    });
+
+    it('should throw error when trying to reply to a comment in a blocked thread', async () => {
+      const strapi = getStrapi();
+      const service = getService(strapi);
+      const mockBlockedThreadComment = {
+        id: 1,
+        content: 'Comment in blocked thread',
+        blocked: false,
+        blockedThread: true,
+        related: 'api::test.test:1',
+      };
+
+      mockCommentRepository.findOne.mockResolvedValue(mockBlockedThreadComment);
+
+      await expect(service.postComment({
+        id: 1,
+        content: 'Admin reply',
+        author: { id: 1, email: 'admin@test.com' },
+      })).rejects.toThrow('Cannot reply to a blocked comment or comment in a blocked thread.');
+    });
   });
 
   describe('deleteComment', () => {

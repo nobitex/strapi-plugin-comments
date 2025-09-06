@@ -339,6 +339,15 @@ export default ({ strapi }: StrapiContext) => {
       if (!entity) {
         throw new PluginError(404, 'Not found');
       }
+      
+      // Check if the parent comment is blocked
+      if (entity.blocked || entity.blockedThread) {
+        throw new PluginError(
+          400,
+          'Cannot reply to a blocked comment or comment in a blocked thread.',
+        );
+      }
+      
       return getCommentRepository(strapi).create({
         data: {
           content,
