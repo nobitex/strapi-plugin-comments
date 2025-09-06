@@ -1,8 +1,8 @@
 import { jsxs as M, jsx as m, Fragment as qe } from "react/jsx-runtime";
 import { useNotification as ot, Form as ld, Page as Be, Layouts as Oe, useQueryParams as ft, SearchInput as _d, Pagination as et } from "@strapi/strapi/admin";
 import { useNavigate as dd, useParams as Jd, Routes as jd, Route as yt, Navigate as eu } from "react-router-dom";
-import { p as ai, l as ae, S as tu, a as nu, b as ru, c as au, d as Ai, B as oe, T as K, D as Ko, F as W, C as gt, e as Se, I as ee, f as bt, g as ou, h as iu, i as Bt, j as ye, P as su, k as cu, m as lu, n as _u, o as je, q as Pt, r as be, s as Ii, t as Di, u as wi, v as Mi, w as en, x as du, y as uu, z as pu, A as mu, E as gu, G as Eu, M as ne, H as oi, J as ii, K as rt, L as de, N as si, O as Su, Q as ud, R as ci, U as fu, V as bu, W as At, X as Qo, Y as Tu, Z as Xo, _ as hu, $ as tn, a0 as Ee, a1 as Cu, a2 as Ru, a3 as Nu, a4 as It } from "./index-B77on8vo.mjs";
-import { C as J, R as Re, g as A, u as fe, a as Tt, U as vu, b as Ke, c as xi, d as Zo, e as Ou } from "./index-DPMHTffC.mjs";
+import { p as ai, l as ae, S as tu, a as nu, b as ru, c as au, d as Ai, B as oe, T as K, D as Ko, F as W, C as gt, e as Se, I as ee, f as bt, g as ou, h as iu, i as Bt, j as ye, P as su, k as cu, m as lu, n as _u, o as je, q as Pt, r as be, s as Ii, t as Di, u as wi, v as Mi, w as en, x as du, y as uu, z as pu, A as mu, E as gu, G as Eu, M as ne, H as oi, J as ii, K as rt, L as de, N as si, O as Su, Q as ud, R as ci, U as fu, V as bu, W as At, X as Qo, Y as Tu, Z as Xo, _ as hu, $ as tn, a0 as Ee, a1 as Cu, a2 as Ru, a3 as Nu, a4 as It } from "./index-CLh6xcgQ.mjs";
+import { C as J, R as Re, g as A, u as fe, a as Tt, U as vu, b as Ke, c as xi, d as Zo, e as Ou } from "./index-GXtHJPC_.mjs";
 import { useQuery as at, useQueryClient as Ae, useMutation as ge } from "@tanstack/react-query";
 import { create as yu } from "zustand/react";
 import * as ue from "react";
