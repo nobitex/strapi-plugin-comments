@@ -1155,6 +1155,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1176,6 +1177,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1222,6 +1224,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1244,6 +1247,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1265,6 +1269,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1287,6 +1292,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1308,6 +1314,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1329,6 +1336,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1351,6 +1359,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1372,6 +1381,7 @@ declare const controllers: {
                     OTHER?: import("../const").REPORT_REASON.OTHER;
                 };
                 isGQLPluginEnabled?: boolean;
+                emailEnabled?: boolean;
                 gql?: {
                     auth?: boolean;
                 };
@@ -1929,6 +1939,43 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 $or?: {
                     id?: string | number | {
                         $eq?: string;
@@ -2338,6 +2385,43 @@ declare const controllers: {
                         $notNull?: boolean;
                     };
                     authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    section?: string | number | {
                         $eq?: string;
                     } | {
                         $eqi?: string;
@@ -2784,6 +2868,43 @@ declare const controllers: {
                         $notNull?: boolean;
                     };
                     authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    section?: string | number | {
                         $eq?: string;
                     } | {
                         $eqi?: string;
@@ -3453,6 +3574,43 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 $or?: {
                     id?: string | number | {
                         $eq?: string;
@@ -3862,6 +4020,43 @@ declare const controllers: {
                         $notNull?: boolean;
                     };
                     authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    section?: string | number | {
                         $eq?: string;
                     } | {
                         $eqi?: string;
@@ -4308,6 +4503,43 @@ declare const controllers: {
                         $notNull?: boolean;
                     };
                     authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    section?: string | number | {
                         $eq?: string;
                     } | {
                         $eqi?: string;
@@ -4820,6 +5052,43 @@ declare const controllers: {
                 } | {
                     $notNull?: boolean;
                 };
+                section?: string | number | {
+                    $eq?: string;
+                } | {
+                    $eqi?: string;
+                } | {
+                    $ne?: string;
+                } | {
+                    $nei?: string;
+                } | {
+                    $gt?: string;
+                } | {
+                    $gte?: string;
+                } | {
+                    $lt?: string;
+                } | {
+                    $lte?: string;
+                } | {
+                    $startsWith?: string;
+                } | {
+                    $startsWithi?: string;
+                } | {
+                    $endsWith?: string;
+                } | {
+                    $endsWithi?: string;
+                } | {
+                    $contains?: string;
+                } | {
+                    $containsi?: string;
+                } | {
+                    $notContains?: string;
+                } | {
+                    $notContainsi?: string;
+                } | {
+                    $null?: string;
+                } | {
+                    $notNull?: boolean;
+                };
                 $or?: {
                     id?: string | number | {
                         $eq?: string;
@@ -5229,6 +5498,43 @@ declare const controllers: {
                         $notNull?: boolean;
                     };
                     authorEmail?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
+                    section?: string | number | {
                         $eq?: string;
                     } | {
                         $eqi?: string;
@@ -5711,6 +6017,43 @@ declare const controllers: {
                     } | {
                         $notNull?: boolean;
                     };
+                    section?: string | number | {
+                        $eq?: string;
+                    } | {
+                        $eqi?: string;
+                    } | {
+                        $ne?: string;
+                    } | {
+                        $nei?: string;
+                    } | {
+                        $gt?: string;
+                    } | {
+                        $gte?: string;
+                    } | {
+                        $lt?: string;
+                    } | {
+                        $lte?: string;
+                    } | {
+                        $startsWith?: string;
+                    } | {
+                        $startsWithi?: string;
+                    } | {
+                        $endsWith?: string;
+                    } | {
+                        $endsWithi?: string;
+                    } | {
+                        $contains?: string;
+                    } | {
+                        $containsi?: string;
+                    } | {
+                        $notContains?: string;
+                    } | {
+                        $notContainsi?: string;
+                    } | {
+                        $null?: string;
+                    } | {
+                        $notNull?: boolean;
+                    };
                 }[];
             };
             limit?: number;
@@ -6149,6 +6492,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6170,6 +6514,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6192,6 +6537,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6213,6 +6559,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6235,6 +6582,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6256,6 +6604,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6277,6 +6626,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6299,6 +6649,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };
@@ -6320,6 +6671,7 @@ declare const controllers: {
                 OTHER?: import("../const").REPORT_REASON.OTHER;
             };
             isGQLPluginEnabled?: boolean;
+            emailEnabled?: boolean;
             gql?: {
                 auth?: boolean;
             };

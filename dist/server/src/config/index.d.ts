@@ -22,6 +22,7 @@ export declare const schemaConfig: z.ZodObject<{
     entryLabel: z.ZodRecord<z.ZodString, z.ZodArray<z.ZodString, "many">>;
     badWords: z.ZodOptional<z.ZodBoolean>;
     blockedAuthorProps: z.ZodArray<z.ZodString, "many">;
+    emailEnabled: z.ZodOptional<z.ZodBoolean>;
     gql: z.ZodOptional<z.ZodObject<{
         auth: z.ZodOptional<z.ZodBoolean>;
     }, "strip", z.ZodTypeAny, {
@@ -53,6 +54,7 @@ export declare const schemaConfig: z.ZodObject<{
         OTHER?: REPORT_REASON.OTHER;
     };
     isGQLPluginEnabled?: boolean;
+    emailEnabled?: boolean;
     gql?: {
         auth?: boolean;
     };
@@ -74,6 +76,7 @@ export declare const schemaConfig: z.ZodObject<{
         OTHER?: REPORT_REASON.OTHER;
     };
     isGQLPluginEnabled?: boolean;
+    emailEnabled?: boolean;
     gql?: {
         auth?: boolean;
     };
@@ -98,6 +101,7 @@ declare const config: {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -120,6 +124,7 @@ declare const config: {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -141,6 +146,7 @@ declare const config: {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };

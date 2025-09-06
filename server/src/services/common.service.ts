@@ -215,6 +215,18 @@ const commonService = ({ strapi }: StrapiContext) => ({
         related: (filters as any)?.related,
         approvalStatus: 'APPROVED',
         ...(locale ? { locale } : {}),
+        // Preserve scalar filters like section, content, authorId, etc.
+        ...(filters as any)?.section ? { section: (filters as any).section } : {},
+        ...(filters as any)?.content ? { content: (filters as any).content } : {},
+        ...(filters as any)?.authorId ? { authorId: (filters as any).authorId } : {},
+        ...(filters as any)?.authorName ? { authorName: (filters as any).authorName } : {},
+        ...(filters as any)?.authorEmail ? { authorEmail: (filters as any).authorEmail } : {},
+        ...(filters as any)?.createdAt ? { createdAt: (filters as any).createdAt } : {},
+        ...(filters as any)?.updatedAt ? { updatedAt: (filters as any).updatedAt } : {},
+        ...(filters as any)?.removed ? { removed: (filters as any).removed } : {},
+        ...(filters as any)?.blocked ? { blocked: (filters as any).blocked } : {},
+        ...(filters as any)?.blockedThread ? { blockedThread: (filters as any).blockedThread } : {},
+        ...(filters as any)?.isAdminComment ? { isAdminComment: (filters as any).isAdminComment } : {},
       };
       const childrenBatches = await Promise.all(
         uniqueParentIds.map((parentId) => this.findAllFlat({

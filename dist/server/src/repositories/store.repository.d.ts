@@ -17,6 +17,7 @@ export declare const getStoreRepositorySource: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -65,6 +66,7 @@ export declare const getStoreRepositorySource: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -86,6 +88,7 @@ export declare const getStoreRepositorySource: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -108,6 +111,7 @@ export declare const getStoreRepositorySource: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -129,6 +133,7 @@ export declare const getStoreRepositorySource: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -153,6 +158,7 @@ export declare const getStoreRepository: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -201,6 +207,7 @@ export declare const getStoreRepository: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -222,6 +229,7 @@ export declare const getStoreRepository: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -244,6 +252,7 @@ export declare const getStoreRepository: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -265,6 +274,7 @@ export declare const getStoreRepository: (strapi: CoreStrapi) => {
             OTHER?: REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };

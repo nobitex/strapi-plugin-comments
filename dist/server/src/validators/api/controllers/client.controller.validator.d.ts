@@ -485,6 +485,43 @@ export declare const findAllFlatValidator: (enabledCollections: string[], relati
         } | {
             $notNull?: boolean;
         };
+        section?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
         $or?: {
             id?: string | number | {
                 $eq?: string;
@@ -894,6 +931,43 @@ export declare const findAllFlatValidator: (enabledCollections: string[], relati
                 $notNull?: boolean;
             };
             authorEmail?: string | number | {
+                $eq?: string;
+            } | {
+                $eqi?: string;
+            } | {
+                $ne?: string;
+            } | {
+                $nei?: string;
+            } | {
+                $gt?: string;
+            } | {
+                $gte?: string;
+            } | {
+                $lt?: string;
+            } | {
+                $lte?: string;
+            } | {
+                $startsWith?: string;
+            } | {
+                $startsWithi?: string;
+            } | {
+                $endsWith?: string;
+            } | {
+                $endsWithi?: string;
+            } | {
+                $contains?: string;
+            } | {
+                $containsi?: string;
+            } | {
+                $notContains?: string;
+            } | {
+                $notContainsi?: string;
+            } | {
+                $null?: string;
+            } | {
+                $notNull?: boolean;
+            };
+            section?: string | number | {
                 $eq?: string;
             } | {
                 $eqi?: string;
@@ -1340,6 +1414,43 @@ export declare const findAllFlatValidator: (enabledCollections: string[], relati
                 $notNull?: boolean;
             };
             authorEmail?: string | number | {
+                $eq?: string;
+            } | {
+                $eqi?: string;
+            } | {
+                $ne?: string;
+            } | {
+                $nei?: string;
+            } | {
+                $gt?: string;
+            } | {
+                $gte?: string;
+            } | {
+                $lt?: string;
+            } | {
+                $lte?: string;
+            } | {
+                $startsWith?: string;
+            } | {
+                $startsWithi?: string;
+            } | {
+                $endsWith?: string;
+            } | {
+                $endsWithi?: string;
+            } | {
+                $contains?: string;
+            } | {
+                $containsi?: string;
+            } | {
+                $notContains?: string;
+            } | {
+                $notContainsi?: string;
+            } | {
+                $null?: string;
+            } | {
+                $notNull?: boolean;
+            };
+            section?: string | number | {
                 $eq?: string;
             } | {
                 $eqi?: string;
@@ -1842,6 +1953,43 @@ export declare const findAllInHierarchyValidator: (enabledCollections: string[],
         } | {
             $notNull?: boolean;
         };
+        section?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
         $or?: {
             id?: string | number | {
                 $eq?: string;
@@ -2251,6 +2399,43 @@ export declare const findAllInHierarchyValidator: (enabledCollections: string[],
                 $notNull?: boolean;
             };
             authorEmail?: string | number | {
+                $eq?: string;
+            } | {
+                $eqi?: string;
+            } | {
+                $ne?: string;
+            } | {
+                $nei?: string;
+            } | {
+                $gt?: string;
+            } | {
+                $gte?: string;
+            } | {
+                $lt?: string;
+            } | {
+                $lte?: string;
+            } | {
+                $startsWith?: string;
+            } | {
+                $startsWithi?: string;
+            } | {
+                $endsWith?: string;
+            } | {
+                $endsWithi?: string;
+            } | {
+                $contains?: string;
+            } | {
+                $containsi?: string;
+            } | {
+                $notContains?: string;
+            } | {
+                $notContainsi?: string;
+            } | {
+                $null?: string;
+            } | {
+                $notNull?: boolean;
+            };
+            section?: string | number | {
                 $eq?: string;
             } | {
                 $eqi?: string;
@@ -2697,6 +2882,43 @@ export declare const findAllInHierarchyValidator: (enabledCollections: string[],
                 $notNull?: boolean;
             };
             authorEmail?: string | number | {
+                $eq?: string;
+            } | {
+                $eqi?: string;
+            } | {
+                $ne?: string;
+            } | {
+                $nei?: string;
+            } | {
+                $gt?: string;
+            } | {
+                $gte?: string;
+            } | {
+                $lt?: string;
+            } | {
+                $lte?: string;
+            } | {
+                $startsWith?: string;
+            } | {
+                $startsWithi?: string;
+            } | {
+                $endsWith?: string;
+            } | {
+                $endsWithi?: string;
+            } | {
+                $contains?: string;
+            } | {
+                $containsi?: string;
+            } | {
+                $notContains?: string;
+            } | {
+                $notContainsi?: string;
+            } | {
+                $null?: string;
+            } | {
+                $notNull?: boolean;
+            };
+            section?: string | number | {
                 $eq?: string;
             } | {
                 $eqi?: string;
@@ -3202,6 +3424,43 @@ export declare const findAllPerAuthorValidator: (params: object, payload: object
         } | {
             $notNull?: boolean;
         };
+        section?: string | number | {
+            $eq?: string;
+        } | {
+            $eqi?: string;
+        } | {
+            $ne?: string;
+        } | {
+            $nei?: string;
+        } | {
+            $gt?: string;
+        } | {
+            $gte?: string;
+        } | {
+            $lt?: string;
+        } | {
+            $lte?: string;
+        } | {
+            $startsWith?: string;
+        } | {
+            $startsWithi?: string;
+        } | {
+            $endsWith?: string;
+        } | {
+            $endsWithi?: string;
+        } | {
+            $contains?: string;
+        } | {
+            $containsi?: string;
+        } | {
+            $notContains?: string;
+        } | {
+            $notContainsi?: string;
+        } | {
+            $null?: string;
+        } | {
+            $notNull?: boolean;
+        };
         $or?: {
             id?: string | number | {
                 $eq?: string;
@@ -3611,6 +3870,43 @@ export declare const findAllPerAuthorValidator: (params: object, payload: object
                 $notNull?: boolean;
             };
             authorEmail?: string | number | {
+                $eq?: string;
+            } | {
+                $eqi?: string;
+            } | {
+                $ne?: string;
+            } | {
+                $nei?: string;
+            } | {
+                $gt?: string;
+            } | {
+                $gte?: string;
+            } | {
+                $lt?: string;
+            } | {
+                $lte?: string;
+            } | {
+                $startsWith?: string;
+            } | {
+                $startsWithi?: string;
+            } | {
+                $endsWith?: string;
+            } | {
+                $endsWithi?: string;
+            } | {
+                $contains?: string;
+            } | {
+                $containsi?: string;
+            } | {
+                $notContains?: string;
+            } | {
+                $notContainsi?: string;
+            } | {
+                $null?: string;
+            } | {
+                $notNull?: boolean;
+            };
+            section?: string | number | {
                 $eq?: string;
             } | {
                 $eqi?: string;
@@ -4057,6 +4353,43 @@ export declare const findAllPerAuthorValidator: (params: object, payload: object
                 $notNull?: boolean;
             };
             authorEmail?: string | number | {
+                $eq?: string;
+            } | {
+                $eqi?: string;
+            } | {
+                $ne?: string;
+            } | {
+                $nei?: string;
+            } | {
+                $gt?: string;
+            } | {
+                $gte?: string;
+            } | {
+                $lt?: string;
+            } | {
+                $lte?: string;
+            } | {
+                $startsWith?: string;
+            } | {
+                $startsWithi?: string;
+            } | {
+                $endsWith?: string;
+            } | {
+                $endsWithi?: string;
+            } | {
+                $contains?: string;
+            } | {
+                $containsi?: string;
+            } | {
+                $notContains?: string;
+            } | {
+                $notContainsi?: string;
+            } | {
+                $null?: string;
+            } | {
+                $notNull?: boolean;
+            };
+            section?: string | number | {
                 $eq?: string;
             } | {
                 $eqi?: string;

@@ -70,6 +70,7 @@ const getBaseFindSchema = (enabledCollections: string[]) => {
     blockedThread: true,
     approvalStatus: true,
     isAdminComment: true,
+    section: true,
   });
   return z
     .object({

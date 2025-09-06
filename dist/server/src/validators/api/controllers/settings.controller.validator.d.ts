@@ -12,6 +12,7 @@ export declare const validateConfig: (config: unknown) => import("../../../utils
         OTHER?: import("../../../const").REPORT_REASON.OTHER;
     };
     isGQLPluginEnabled?: boolean;
+    emailEnabled?: boolean;
     gql?: {
         auth?: boolean;
     };

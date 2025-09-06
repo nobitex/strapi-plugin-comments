@@ -7,6 +7,7 @@ export const getComment = (nexus: Nexus) => {
         t.id("id");
         t.string("documentId");
         t.nonNull.string("content");
+        t.string("section");
         t.boolean("blocked");
         t.boolean("blockedThread");
         t.boolean("removed");

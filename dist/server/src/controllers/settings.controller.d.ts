@@ -15,6 +15,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -36,6 +37,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -58,6 +60,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -79,6 +82,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -101,6 +105,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -122,6 +127,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -144,6 +150,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
@@ -165,6 +172,7 @@ declare const settingsController: ({ strapi }: StrapiContext) => {
             OTHER?: import("../const").REPORT_REASON.OTHER;
         };
         isGQLPluginEnabled?: boolean;
+        emailEnabled?: boolean;
         gql?: {
             auth?: boolean;
         };
