@@ -1,5 +1,5 @@
 {
-  "name": "@nobitex/strapi-plugin-comments",
+  "name": "strapi-plugin-comments",
   "version": "3.0.17",
   "description": "Strapi - Comments plugin",
   "private": true,
