@@ -2,6 +2,7 @@
   "name": "@nobitex/strapi-plugin-comments",
   "version": "3.0.17",
   "description": "Strapi - Comments plugin",
+  "private": true,
   "strapi": {
     "name": "comments",
     "displayName": "Comments",
@@ -29,7 +30,6 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky install",
     "publish:latest": "npm publish --tag latest",
     "publish:beta": "npm publish --tag beta",
     "build": "yarn clean && strapi-plugin build --minify",
@@ -103,11 +103,6 @@
       "./**/__tests__/*"
     ],
     "ext": "js,json,ts"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && yarn test:unit"
-    }
   },
   "author": {
     "name": "VirtusLab",
